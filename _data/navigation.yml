@@ -9,5 +9,5 @@ main:
     url: /about/
     
     # Added by Noah
-  - title: "Test Guide"
-    url: /test_guide/
+  - title: "Sample Guide"
+    url: /sample_guide/

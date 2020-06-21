@@ -8,3 +8,7 @@ main:
   - title: "About"
     url: /about/
 
+    
+    # Added by Noah
+  - title: "Sample Guide"
+    url: /sample_guide/

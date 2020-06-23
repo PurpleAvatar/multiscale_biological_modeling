@@ -11,3 +11,5 @@ main:
     url: /sample_guide/
   - title: "Test Page"
     url: /test_page/
+  - title: ""
+    url: /

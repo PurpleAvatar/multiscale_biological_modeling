@@ -1,6 +1,6 @@
 # Multiscale Biological Modeling Test Website
 
-*Remember to use F5 as a hard refresh when looking to make rapid edits + previews 
+*Remember to use F5 as a hard refresh when looking to make rapid edits + previews* 
 
 Useful link: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
 

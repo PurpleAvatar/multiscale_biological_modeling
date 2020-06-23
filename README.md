@@ -1,7 +1,7 @@
 # Multiscale Biological Modeling Test Website
 
 *Remember to use F5 as a hard refresh when looking to make rapid edits + previews* 
-Strange bug: occasionally, will refresh to 1 version behind. E.g.
+Strange refresh order: it seems certain elements do not update on Github Pages at same time. E.g.
   1. Edit text in file to say "Hi" + change navigation
   2. Wait a few minutes, refresh preview, see changed navigation but no text
   3. Edit text in file to say "Hi2"

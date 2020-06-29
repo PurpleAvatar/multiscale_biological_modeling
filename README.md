@@ -11,6 +11,8 @@ Github Pages References: https://mmistakes.github.io/minimal-mistakes/docs/quick
 
 Kramdown Markdown Reference: https://kramdown.gettalong.org/quickref.html
 
+Which page layout to use? https://mmistakes.github.io/minimal-mistakes/docs/layouts/
+
 The home page is "/index.md"
 
 To add a new page, add a file (html or markdown) to "_pages" update "_data/navigation.yml"

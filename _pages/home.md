@@ -2,6 +2,7 @@
 permalink: /
 title: "home"
 layout: home
----
+classes: wide 
 
-This is the home page, but not featured in the navigation bar
+---
+"Classes: wide" extends content to the right of this page. This is the home page, (now) featured in the navigation bar

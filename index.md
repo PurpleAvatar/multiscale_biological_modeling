@@ -2,7 +2,7 @@
 layout: single
 classes: wide 
 sidebar:
-  - toc: true
+  - {toc:}
 ---
 
 # Title2 

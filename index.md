@@ -2,12 +2,12 @@
 layout: single
 classes: wide 
 sidebar: 
-  toc: true
+  toc: left
   toc_label: "Table of Contents"
   toc_icon: "cog"
 ---
 
-#Title
+#  Title
 
 Where does this (here) text go? (index.md) Changing as we go
 

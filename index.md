@@ -1,18 +1,7 @@
 ---
-layout: single
-classes: wide 
+layout: single 
 toc: true
 ---
-
-    <div class="page-content">
-      <div id="left-side">
-        {{ content | toc_generate }}
-      </div>
-      <p>here</p>
-      <div class="wrapper">
-        {{ content }}
-      </div>
-    </div>
 
 # Title2 
 

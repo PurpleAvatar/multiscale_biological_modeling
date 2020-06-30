@@ -2,8 +2,9 @@
 layout: single
 classes: wide 
 toc: true
-sidebar: {:toc}
 ---
+
+sidebar: {:toc}
 
 # Title2 
 

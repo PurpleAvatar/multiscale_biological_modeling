@@ -1,8 +1,8 @@
 ---
 layout: single
 classes: wide 
-toc: true
-sidebar: toc
+sidebar: 
+ toc: true
 ---
 
 # Title2 

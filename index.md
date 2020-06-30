@@ -2,9 +2,7 @@
 layout: single
 classes: wide 
 sidebar: 
-  toc: left
-  toc_label: "Table of Contents"
-  toc_icon: "cog"
+  {toc: left}
 ---
 
 #  Title

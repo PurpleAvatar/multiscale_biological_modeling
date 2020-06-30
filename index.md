@@ -1,12 +1,7 @@
 ---
 layout: single
 classes: wide 
-sidebar:
-  - title: "Title"
-    image: http://placehold.it/350x250
-  - toc: true
-    toc_label: "My Table of Contents"
-    toc_icon: "cog"
+sidebar: toc
 ---
 
 # Title2 

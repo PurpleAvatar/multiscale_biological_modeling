@@ -1,9 +1,10 @@
 ---
 layout: single
 classes: wide 
-toc: true
-toc_label: "My Table of Contents"
-toc_icon: "cog"
+sidebar: 
+  toc: true
+  toc_label: "My Table of Contents"
+  toc_icon: "cog"
 ---
 
 

@@ -3,6 +3,7 @@ layout: single
 classes: wide 
 sidebar:
   - toc
+toc: true
 ---
 
 # Title2 

@@ -4,7 +4,15 @@ classes: wide
 toc: true
 ---
 
-sidebar: {:toc}
+    <div class="page-content">
+      <div id="left-side">
+        {{ content | toc_generate }}
+      </div>
+      <p>here</p>
+      <div class="wrapper">
+        {{ content }}
+      </div>
+    </div>
 
 # Title2 
 

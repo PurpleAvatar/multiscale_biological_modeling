@@ -2,6 +2,7 @@
 layout: single
 toc: true
 classes: full
+title: This is the Home Page
 ---
 
 Try not to repeat the title with a wide layout, but did that pound sign break everything? Return back to the single format

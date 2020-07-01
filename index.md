@@ -1,5 +1,5 @@
 ---
-layout: wide2
+layout: wide
 toc: true
 ---
 

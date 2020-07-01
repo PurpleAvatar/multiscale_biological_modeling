@@ -1,7 +1,6 @@
 ---
 layout: single
 toc: true
-classes: full
 title: This is the Home Page
 ---
 

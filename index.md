@@ -3,9 +3,7 @@ layout: wide
 toc: true
 ---
 
-#  
-
-Try not to repeat the title with a wide layout
+Try not to repeat the title with a wide layout, but did that pound sign break everything?
 
 Where does this (here) text go? (index.md) Changing as we go10
 

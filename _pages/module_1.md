@@ -1,7 +1,6 @@
 ---
 permalink: /module_1/
 title: "Module 1"
-classes: full
 ---
 
 Full class looks like this now

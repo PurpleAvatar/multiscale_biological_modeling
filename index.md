@@ -1,9 +1,11 @@
 ---
-layout: single 
+layout: wide2
 toc: true
 ---
 
-# Title2 
+#  
+
+Try not to repeat the title
 
 Where does this (here) text go? (index.md) Changing as we go10
 

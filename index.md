@@ -5,7 +5,7 @@ toc: true
 
 #  
 
-Try not to repeat the title
+Try not to repeat the title with a wide layout
 
 Where does this (here) text go? (index.md) Changing as we go10
 

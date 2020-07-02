@@ -9,3 +9,5 @@ No class with TOC looks like this
 Biological networks and extending our particle simulators to answer questions about "why" and "how" unintelligent systems can build nontrivial systems
 
 Very boring markdown file
+
+But, can images be used easily here? ![gras](assets/images/md1_image1.png)

@@ -12,4 +12,4 @@ Very boring markdown file
 
 But, can images be used easily here? 
 
-![image-center](/assets/images/m1_image1.png){: .align-center}
+![image-center](./assets/images/m1_image1.png){: .align-center}

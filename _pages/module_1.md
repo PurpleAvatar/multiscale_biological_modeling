@@ -2,13 +2,14 @@
 permalink: /module_1/
 title: "Module 1"
 toc: true
+toc_sticky: true
 ---
 
 No class with TOC looks like this
 
 Biological networks and extending our particle simulators to answer questions about "why" and "how" unintelligent systems can build nontrivial systems
 
-Very boring markdown file
+Very boring markdown file {: .notice--primary}
 
 But, can images be used easily here? 
 

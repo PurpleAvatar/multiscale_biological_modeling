@@ -15,6 +15,9 @@ Which page layout to use? https://mmistakes.github.io/minimal-mistakes/docs/layo
 
 The home page is "/index.md"
 
+**Notice** Text in a notice should start with a double asteriks for emphasis, and requires a special piece of code on the next line 
+{: .notice--primary}
+
 To add a new page, add a file (html or markdown) to "_pages" update "_data/navigation.yml"
 
 Quick References: 

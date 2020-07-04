@@ -9,7 +9,8 @@ No class with TOC looks like this
 
 Biological networks and extending our particle simulators to answer questions about "why" and "how" unintelligent systems can build nontrivial systems
 
-Very boring markdown file {: .notice--primary}
+Very boring markdown file, but this text has "{: .notice--primary}" on the next line so it looks like this
+{: .notice--primary}
 
 But, can images be used easily here? 
 

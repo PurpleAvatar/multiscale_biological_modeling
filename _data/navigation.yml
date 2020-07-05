@@ -6,7 +6,7 @@ main:
   - title: "Prologue"
     url: /prologue/
   - title: "Module 1"
-    url: /module_1/start
+    url: /module_1/home
   - title: "Module 2"
     url: /module_2/
   - title: "Module 3"
@@ -20,7 +20,7 @@ mod1:
   - title: Setting up CellBlender
     children:
       - title: "Start"
-        url: /module_1/start/
+        url: /module_1/home/
       - title: "Set up"
         url: /module_1/setup
 

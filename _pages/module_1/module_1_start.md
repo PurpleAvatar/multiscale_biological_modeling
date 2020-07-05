@@ -1,5 +1,5 @@
 ---
-permalink: /module_1/
+permalink: /module_1/start
 title: "Module 1"
 toc: true
 ---

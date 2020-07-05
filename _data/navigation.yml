@@ -6,7 +6,7 @@ main:
   - title: "Prologue"
     url: /prologue/
   - title: "Module 1"
-    url: /module_1/
+    url: /module_1/start
   - title: "Module 2"
     url: /module_2/
   - title: "Module 3"
@@ -16,3 +16,17 @@ main:
   - title: "Test Port"
     url: /port/
 
+mod1:
+  - title: Setting up CellBlender
+    children:
+      - title: "Start"
+        url: /module_1/start/
+      - title: "Set up"
+        url: /module_1/setup
+
+  - title: Feed Forward Loop
+    children:
+      - title: "Basic Concepts"
+        url: /module_1/setup/
+
+  - title: 

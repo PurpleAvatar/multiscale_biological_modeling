@@ -7,13 +7,16 @@ toc: true
 toc_sticky: true
 ---
 
+## Setting up Module 1
+
+*Will be using CellBlender*
 
 ### Setting up CellBlender 
 Setting up CellBlender can be done using the default tutorial with just a few changes from the original installation instructions.
 
-Follow the instructions from the CellBlender website: https://mcell.org/downloads/windows/install_2019_05/index.html
+Follow the instructions from the [CellBlender website] (https://mcell.org/downloads/windows/install_2019_05/index.html)
 
-With the following two changes: 
+**Watch out!** CellBlender is based on a legacy version of Blender. Use the following two changes to the default installation instructions. {: .notice--primary}
 
 1. Instead of downloading the newest version of Blender, go to the previous versions tab...
 ![image-center](../assets/images/m1_image13.png){: .align-center}

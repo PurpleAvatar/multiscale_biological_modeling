@@ -1,8 +1,6 @@
 main:
   - title: "About"
     url: /about/ 
-  - title: "Sample Guide" 
-    url: /sample_guide/
   - title: "Prologue"
     url: /prologue/
   - title: "Module 1"
@@ -13,8 +11,6 @@ main:
     url: /module_3/
   - title: "Module 4"
     url: /module_4/
-  - title: "Test Port"
-    url: /port/
 
 mod1:
   - title: Intro to CellBlender

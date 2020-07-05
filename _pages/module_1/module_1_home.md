@@ -23,7 +23,7 @@ But, can images be used easily here?
 ![image-center](../assets/images/m1_image1.png){: .align-center}
 
 
-These buttons should bring you to top of page
+## These buttons should bring you to top of page
 
 <a href="#" class="btn--success">Success Button</a>
 

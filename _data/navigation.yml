@@ -20,7 +20,7 @@ mod1:
   - title: Setting up CellBlender
     children:
       - title: "Start"
-        url: /module_1/home/
+        url: /module_1/home
       - title: "Set up"
         url: /module_1/setup
 

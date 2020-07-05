@@ -29,8 +29,8 @@ But, can images be used easily here?
 
 And this button
 
-[Large Button](#link){: .btn .btn--primary .btn--large}
-
+[Prev Button](www.google.com){: .btn .btn--primary .btn--large}
+[Next Button](www.google.com){: .btn .btn--primary .btn--large}
 
 ## Instructions for CellBlender Simulations 
 

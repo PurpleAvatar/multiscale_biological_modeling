@@ -1,6 +1,8 @@
 ---
 permalink: /module_1/start
 title: "Module 1"
+sidebar: 
+ nav: "mod1"
 toc: true
 toc_sticky: true
 ---

@@ -21,16 +21,6 @@ With the following two changes:
 
 2. Once Blender is downloaded,  the file path may be different from what is shown in the CellBlender tutorial- instead of *Blender/2.79/python/bin*, the pathway may be something like: *blender-2.79/2.79/python/bin*. Changing the name of the downloaded Blender folder to match the path in the tutorial may help reduce confusion. 
 
-### CellBlender Layout
-
-When a new file has been created, the following shows the menu options available: 
-![image-center](../assets/images/m1_image3.png){: .align-center}
-A. This is the window for modules like CellBlender. To start CellBlender, you must click on the “CellBlender” tab and then click the “Initialize CellBlender” button as shown in the image. This will then display the image shown in “D” 
-B. There are many “View” tabs throughout the Blender window. When referring to the “View” tab in future tutorials,  this is the one which will be referenced. 
-C. This window contains many options relating to a selected object. 
-
-![image-center](../assets/images/m1_image12.png){: .align-center}
-D. This is the CellBlender menu, which contains sub-menus which will be noted as follows: CellBlender > Model Objects. It is recommended that the edge of the window is dragged outward to increase visibility (see box “e” on the image) 
 
 ### Setting-up Simulations
 

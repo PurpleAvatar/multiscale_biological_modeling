@@ -13,8 +13,7 @@ toc_sticky: true
 
 *Sample picture of something interesting*
 
-**Watch out** file, but this text has something special on the next line so it looks like this
-{: .notice--primary}
+**Watch out** file, but this text has something special on the next line so it looks like this {: .notice--primary}
 
 But, can images be used easily here? 
 

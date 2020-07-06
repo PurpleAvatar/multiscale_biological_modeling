@@ -16,7 +16,8 @@ Setting up CellBlender can be done using the default tutorial with just a few ch
 
 Follow the instructions from the [CellBlender website] (https://mcell.org/downloads/windows/install_2019_05/index.html)
 
-**Watch out!** CellBlender is based on a legacy version of Blender. Use the following two changes to the default installation instructions. {: .notice--primary}
+**Watch out!** CellBlender is based on a legacy version of Blender. Use the following two changes to the default installation instructions. 
+{: .notice--primary}
 
 1. Instead of downloading the newest version of Blender, go to the previous versions tab...
 ![image-center](../assets/images/m1_image13.png){: .align-center}
@@ -27,7 +28,8 @@ Follow the instructions from the [CellBlender website] (https://mcell.org/downlo
 
 ### Setting-up Simulations
 
-See “CellBlender Layout” for instructions on any underlined items. 
+See [CellBlender Layout](https://purpleavatar.github.io/multiscale_biological_modeling/module_1/navigation)� for instructions on any underlined items. 
+
 Step 0: 
 From a new Blender file, initialize CellBlender
 Delete the existing default cube by right clicking on the cube to select the cube (an orange outline should be around the cube when it is selected) and pressing the “x” key to delete

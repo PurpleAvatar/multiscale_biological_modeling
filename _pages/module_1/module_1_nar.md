@@ -7,11 +7,15 @@ toc: true
 toc_sticky: true
 ---
 
+*Once CellBlender is installed and set-up, we can take a look at how ...something about NAR, motivations for NAR.*
 
-### Rules for Non-NAR (Non-Negative Auto-Regulation)
+### A Cell's Response
+
+*Some motivation about how a cell needs to produce something, perhaps as a signal response. What are requirements for production? Fast production.*
+
+### Non-NAR (Non-Negative Auto-Regulation)
 
 Go to CellBlender > Molecules and create the following molecules:
-
 
 Select CellBlender > Molecules
 Create a molecule by clicking the “+” button
@@ -21,13 +25,10 @@ Change molecule type to “Surface Molecule”
 Change the diffusion constant to “1e-6”
 Change the scale factor to “5.0” 
 
-
-
 Create another  molecule named “Hidden”
 Set the molecule type to “Surface Molecule”  and the diffusion constant to “1e-6”
 
 Go to CellBlender > Molecule Placement to set the following options; 
-
 
 Select CellBlender > Molecule Placement
 Add a new release site by pressing the “+” button 
@@ -37,13 +38,11 @@ Set the Quantity to Release to 300
 
 Go to CellBlender > Reactions to create the following reactions:
 
-
 Select CellBlender > Reactions
 Add a new reaction by pressing the “+” button 
 Under Reactants, type “ Hidden’ “. Note: the apostrophe is required to indicate the directionality of a surface molecule.  
 Under Products, type “ Hidden’ + Y’ “. 
 Set the Forward Rate to “2e2”
-
 
 Add a new reaction by pressing the “+” button 
 Under Reactants, type “ Y’ “. 
@@ -51,7 +50,6 @@ Under Products, type “ NULL“.
 Set the Forward Rate to “3e2”
 
 Go to CellBlender > Plot Output Settings to set up a plot as follows: 
-
 
 Select CellBlender > Plot Output Settings
 Add a new plot by pressing the “+” button 
@@ -61,11 +59,9 @@ Optional: select “Molecule Colors” to match the same colors in the plot as t
 
 Go to CellBlender > Run Simulation and select the following options: un Simulation using 12000 frames, which should take less than 5 seconds to finish
 
-
 Select CellBlender > Run Simulation
 Change the number of iterations to “12,000”
 Click “Export & Run”
-
 
 Press the CellBlender > Reload Visualization Data button 
 
@@ -74,12 +70,13 @@ Fig. NN.1 - After pressing the Reload Visualization Data button, the animated si
 Go back to CellBlender > Plot Output Settings and click the plot button. NOTE: if no plot displays, see [additional instructions on trying other plotters or the jupyter notebook]
  
 
-
 Fig. NN.2 - The plot above should be displayed when completing the No-NAR tutorial
 
 Save your file as “CellBlender_Non_NAR_test.blend” 
 
-### Rules for NAR (Negative Auto-Regulation)
+### NAR (Negative Auto-Regulation)
+
+*What if a cell needs a faster response? Could just increase the rate of production, but that would lead to higher steady state (can test on own). Simplest way? Common mechanism- NAR*
 
 See “Setting-up Simulations” before starting these steps
 
@@ -88,6 +85,8 @@ Load the file from Non-NAR tutorial
 Add the following reactions
 Change Hidden’ -> Hidden’ + Y’ to a forward rate of 1e3
 Y’ + Y’ →  Y’   with a forward rate of 1e2
+
+*Now we can compare visuals on the graphs and see how much faster for the same steady state*
 
 
 

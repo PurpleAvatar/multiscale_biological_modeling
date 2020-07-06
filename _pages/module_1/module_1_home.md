@@ -9,6 +9,10 @@ toc_sticky: true
 
 *Introduction about our next scale: proteins, mRNA, etc. (cell components?). We will be using X and Y software. Biological networks and extending our particle simulators to answer questions about "why" and "how" unintelligent systems can build nontrivial systems*
 
+*Here are the learning goals*
+
+*Sample picture of something interesting*
+
 **Watch out** file, but this text has something special on the next line so it looks like this
 {: .notice--primary}
 
@@ -26,5 +30,5 @@ But, can images be used easily here?
 And this button
 
 [Prev Button](#link){: .btn .btn--primary .btn--large}
-[Next Button](/setup){: .btn .btn--primary .btn--large}
+[Next Button](multiscale_biological_modeling/module_1/setup){: .btn .btn--primary .btn--large}
 

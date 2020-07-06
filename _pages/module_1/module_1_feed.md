@@ -7,6 +7,7 @@ toc: true
 toc_sticky: true
 ---
 
+*So we saw how the motif of NAR is useful. Motivations for FeedForward Loop. What if we want even faster?* 
 
 ### Rules for Feedforward Loop
 

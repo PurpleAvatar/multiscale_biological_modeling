@@ -7,13 +7,16 @@ toc: true
 toc_sticky: true
 ---
 
+*Now that we've seen...NAR & FFL... let's look at (motivation for oscillations)*
 
-### Rules for Dampened Oscillations 
+### The Repressilator
 
-See “Setting-up Simulations” before starting these steps
+*Here's an explanation and motivation for the repressilator model. If you're more interested, see the expanded section under "Extras"*
 
-Quick Tutorial: 
-Load the file from Non-NAR tutorial
+### CellBlender Rules
+
+If you are starting from the *file-name* file from *page-link*, you can use the following rules to view the oscillator.  
+
 Change the Y molecule to have a diffusion constant of 2e-6
 Add the following molecules
 X, diffusion constant of 2e-6
@@ -23,6 +26,10 @@ X' > X' + Y' , rate: 5e2
 Y' + X' > Y' , rate: 2e2
 X' > NULL, rate: 1e3
 Y' > NULL, rate: 3e2
+
+### Full Tutorial
+
+Starting from scratch
 
 
 

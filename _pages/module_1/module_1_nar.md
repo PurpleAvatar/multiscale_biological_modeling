@@ -88,6 +88,8 @@ Y’ + Y’ →  Y’   with a forward rate of 1e2
 
 *Now we can compare visuals on the graphs and see how much faster for the same steady state*
 
+[Previous](navigation){: .btn .btn--primary .btn--x-large} [Next Page](feed){: .btn .btn--primary .btn--x-large}
+{: style="font-size: 100%; text-align: center;"}
 
 
 

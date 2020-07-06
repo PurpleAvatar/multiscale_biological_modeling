@@ -24,3 +24,6 @@ C. This window contains many options relating to a selected object.
 ![image-center](../assets/images/m1_image12.png){: .align-center}
 
 D. This is the CellBlender menu, which contains sub-menus which will be noted as follows: CellBlender > Model Objects. It is recommended that the edge of the window is dragged outward to increase visibility (see box “e” on the image) 
+
+[Previous](setup){: .btn .btn--primary .btn--x-large} [Next Page](nar){: .btn .btn--primary .btn--x-large}
+{: style="font-size: 100%; text-align: center;"}

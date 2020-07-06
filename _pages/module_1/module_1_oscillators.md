@@ -31,5 +31,7 @@ Y' > NULL, rate: 3e2
 
 Starting from scratch
 
+[Previous](feed){: .btn .btn--primary .btn--x-large} [Next Page](#){: .btn .btn--primary .btn--x-large}
+{: style="font-size: 100%; text-align: center;"}
 
 

@@ -30,3 +30,5 @@ Y' -> NULL, rate: 3e2
 Z' -> NULL, rate: 5e2
 Hidden’ -> NULL, 3e3
 
+[Previous](nar){: .btn .btn--primary .btn--x-large} [Next Page](oscillators){: .btn .btn--primary .btn--x-large}
+{: style="font-size: 100%; text-align: center;"}

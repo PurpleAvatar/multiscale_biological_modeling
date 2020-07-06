@@ -30,5 +30,5 @@ But, can images be used easily here?
 And this button
 
 [Prev Button](#link){: .btn .btn--primary .btn--large}
-[Next Button](module_1/setup){: .btn .btn--primary .btn--large}
+[Next Button](setup){: .btn .btn--primary .btn--large}
 

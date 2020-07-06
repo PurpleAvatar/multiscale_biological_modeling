@@ -29,7 +29,7 @@ But, can images be used easily here?
 
 And this button
 
-[Previous](#link){: .btn .btn--primary .btn--x-large}  [Next Page](setup){: .btn .btn--primary .btn--x-large}
-{: style="font-size: 120%; text-align: center;"}
+[Previous](#link){: .btn .btn--primary .btn--x-large}    [Next Page](setup){: .btn .btn--primary .btn--x-large}
+{: style="font-size: 100%; text-align: center;"}
 
 

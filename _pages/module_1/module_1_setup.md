@@ -14,8 +14,8 @@ toc_sticky: true
 ### Setting up CellBlender 
 Setting up CellBlender can be done using the default tutorial with just a few changes from the original installation instructions.
 
-Follow the instructions from the [CellBlender website] (https://mcell.org/downloads/windows/install_2019_05/index.html)
-TEST LINK [link](http://kramdown.gettalong.org)
+Follow the instructions from the [CellBlender website](https://mcell.org/downloads/windows/install_2019_05/index.html)
+
 **Watch out!** CellBlender is based on a legacy version of Blender. Use the following two changes to the default installation instructions. 
 {: .notice--primary}
 
@@ -29,7 +29,7 @@ TEST LINK [link](http://kramdown.gettalong.org)
 
 ### Setting-up Simulations
 
-Link broken here
+See [CellBlender Layout](https://purpleavatar.github.io/multiscale_biological_modeling/module_1/navigation) for instructions on any underlined items. 
 
 Step 0: 
 From a new Blender file, initialize CellBlender

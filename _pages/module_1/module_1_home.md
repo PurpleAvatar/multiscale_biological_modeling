@@ -29,9 +29,7 @@ But, can images be used easily here?
 
 And this button
 
-[Prev Button](#link){: .btn .btn--primary .btn--large}
-{: style="color:gray; font-size: 80%; text-align: center;"}
-[Next Button](setup){: .btn .btn--primary .btn--large}
-{: style="color:gray; font-size: 80%; text-align: center;"}
+[Prev Button](#link){: .btn .btn--primary .btn--large}[Next Button](setup){: .btn .btn--primary .btn--large}
+{: style="text-align: center;"}
 
 

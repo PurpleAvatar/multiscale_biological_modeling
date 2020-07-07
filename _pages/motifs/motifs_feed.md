@@ -1,8 +1,8 @@
 ---
-permalink: /module_1/feed
+permalink: /motifs/feed
 title: "Feed-Forward Loop"
 sidebar: 
- nav: "mod1"
+ nav: "motifs"
 toc: true
 toc_sticky: true
 ---

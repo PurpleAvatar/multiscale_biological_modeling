@@ -1,8 +1,8 @@
 ---
-permalink: /module_1/oscillators
+permalink: /motifs/oscillators
 title: "Oscillators"
 sidebar: 
- nav: "mod1"
+ nav: "motifs"
 toc: true
 toc_sticky: true
 ---

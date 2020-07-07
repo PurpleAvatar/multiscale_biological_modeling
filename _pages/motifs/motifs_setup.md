@@ -1,8 +1,8 @@
 ---
-permalink: /module_1/setup
+permalink: /motifs/setup
 title: "Setup"
 sidebar: 
- nav: "mod1"
+ nav: "motifs"
 toc: true
 toc_sticky: true
 ---

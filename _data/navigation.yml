@@ -3,8 +3,8 @@ main:
     url: /about/ 
   - title: "Prologue"
     url: /prologue/
-  - title: "Module 1"
-    url: /module_1/home
+  - title: "Motifs"
+    url: /motifs/home
   - title: "Module 2"
     url: /module_2/
   - title: "Module 3"
@@ -16,17 +16,17 @@ mod1:
   - title: Intro to CellBlender
     children:
       - title: "About this module"
-        url: /module_1/home
+        url: /motifs/home
       - title: "Setup"
-        url: /module_1/setup
+        url: /motifs/setup
       - title: "Navigating CellBlender"
-        url: /module_1/navigation
+        url: /motifs/navigation
 
   - title: CellBlender Simulations
     children:
       - title: "Negative-Autoregulation"
-        url: /module_1/nar
+        url: /motifs/nar
       - title: "Feed-Forward Loop"
-        url: /module_1/feed
+        url: /motifs/feed
       - title: "Oscillators"
-        url: /module_1/oscillators 
+        url: /motifs/oscillators 

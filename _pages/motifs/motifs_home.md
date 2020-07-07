@@ -1,8 +1,8 @@
 ---
-permalink: /module_1/home
+permalink: /motifs/home
 title: "Module 1: Title"
 sidebar: 
- nav: "mod1"
+ nav: "motifs"
 toc: true
 toc_sticky: true
 ---

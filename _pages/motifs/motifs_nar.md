@@ -1,8 +1,8 @@
 ---
-permalink: /module_1/nar
+permalink: /motifs/nar
 title: "NAR"
 sidebar: 
- nav: "mod1"
+ nav: "motifs"
 toc: true
 toc_sticky: true
 ---

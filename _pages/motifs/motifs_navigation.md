@@ -1,8 +1,8 @@
 ---
-permalink: /module_1/navigation
+permalink: /motifs/navigation
 title: "Navigating CellBlender"
 sidebar: 
- nav: "mod1"
+ nav: "motifs"
 toc: true
 toc_sticky: true
 ---

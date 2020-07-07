@@ -12,7 +12,7 @@ main:
   - title: "Module 4"
     url: /module_4/
 
-mod1:
+motifs:
   - title: Intro to CellBlender
     children:
       - title: "About this module"

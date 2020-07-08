@@ -10,13 +10,13 @@
 2. Rename the folder to your desired code, hereby referenced as *moduleX*
 3. For each file inside the *moduleX* folder, rename each file to replace *motifs* with *moduleX*
 4. Inside each file, information about the file and how it should be rendered is contained within the "YAML Front Matter", within the two "---" lines at the top
-    A. Change the permalink, which is used by the *navigation.yml* file mentioned in step [], to swap *motifs* for *moduleX*
-    B. Change the variable *nav: "motifs"* to *nav: moduleX*
+    * Change the permalink, which is used by the *navigation.yml* file mentioned in step [], to swap *motifs* for *moduleX*
+    * Change the variable *nav: "motifs"* to *nav: moduleX*
 5. Go to the *_data/navigation.yml* file
-    A. If you wish to have this module shown in the menu at the top of the website, add in another *- title:* / *url:* pair to reflect the permalink of your module's homepage
-    B. Duplicate the *motifs:* variable and all its *title:*s and *children:*
-    C. Change the variable name from *motifs* to *moduleX*
-    D. Rename all *url: /motifs/pagename* to *url: /moduleX/pagename*
+    * If you wish to have this module shown in the menu at the top of the website, add in another *- title:* / *url:* pair to reflect the permalink of your module's homepage
+    * Duplicate the *motifs:* variable and all its *title:*s and *children:*
+    * Change the variable name from *motifs* to *moduleX*
+    * Rename all *url: /motifs/pagename* to *url: /moduleX/pagename*
 6. Change all titles and pagenames as you see fit
 
 Lastly, you can repair or delete the "Previous" and "Next Page" buttons at the bottom of each *moduleX_pagename.md* file.   

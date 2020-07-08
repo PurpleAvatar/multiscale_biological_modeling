@@ -21,7 +21,15 @@
 
 Lastly, you can repair or delete the "Previous" and "Next Page" buttons at the bottom of each *moduleX_pagename.md* file.   
 
-The syntax shown here: "[Previous](#)" represents "[Text inside button](link)", where a pound sign "#" references a link to the header of the same page and a pagename, such as *setup*, references the permalink page */moduleX/setup*
+The syntax shown here: 
+~~~
+[Previous](#)
+~~~
+represents 
+~~~
+[Text inside button](link)
+~~~
+where a pound sign "#" references a link to the header of the same page and a pagename, such as *setup*, references the permalink page */moduleX/setup*
 
 ### Small Notes
 

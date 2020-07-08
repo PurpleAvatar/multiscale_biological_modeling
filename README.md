@@ -1,11 +1,37 @@
 # Multiscale Biological Modeling Test Website
 
-*Remember to use F5 as a hard refresh when looking to make rapid edits + previews* 
-Strange refresh order: it seems certain elements do not update on Github Pages at same time. E.g.
+*Remember to use F5 as a hard refresh when previewing the GitHub Pages website, as your computer might otherwise save the page information and not display updates* 
+
+**Notice:** The home page of the website is the file *index.md*
+
+### Quick guide to add a new module
+
+1. Inside *_pages*, duplicate (or copy and paste) the "motifs" folder
+2. Rename the folder to your desired code, hereby referenced as *moduleX*
+3. For each file inside the *moduleX* folder, rename each file to replace *motifs* with *moduleX*
+4. Inside each file, information about the file and how it should be rendered is contained within the "YAML Front Matter", within the two "---" lines at the top
+	A. Change the permalink, which is used by the *navigation.yml* file mentioned in step [], to swap *motifs* for *moduleX*
+	B. Change the variable *nav: "motifs"* to *nav: moduleX*
+5. Go to the *_data/navigation.yml* file
+	A. If you wish to have this module shown in the menu at the top of the website, add in another *- title:* / *url:* pair to reflect the permalink of your module's homepage
+	B. Duplicate the *motifs:* variable and all its *title:*s and *children:*
+	C. Change the variable name from *motifs* to *moduleX*
+	D. Rename all *url: /motifs/pagename* to *url: /moduleX/pagename*
+6. Change all titles and pagenames as you see fit
+
+Lastly, you can repair or delete the "Previous" and "Next Page" buttons at the bottom of each *moduleX_pagename.md* file.   
+
+The syntax shown here: "[Previous](#)" represents "[Text inside button](link)", where a pound sign "#" references a link to the header of the same page and a pagename, such as *setup*, references the permalink page */moduleX/setup*
+
+### Small Notes
+
+Only sometimes noticable- specific page build order: it seems certain elements do not update on Github Pages at same time. E.g.
   1. Edit text in file to say "Hi" + change navigation
   2. Wait a few minutes, refresh preview, see changed navigation but no text
   3. Edit text in file to say "Hi2"
   4. Wait a few minutes, refresh preview, see changed navigation and "Hi"
+
+### Quick References: 
 
 Github Pages References: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
 
@@ -13,14 +39,9 @@ Kramdown Markdown Reference: https://kramdown.gettalong.org/quickref.html
 
 Which page layout to use? https://mmistakes.github.io/minimal-mistakes/docs/layouts/
 
-The home page is "/index.md"
-
 **Notice** Text in a notice should start with a double asteriks for emphasis, and requires a special piece of code on the next line 
 {: .notice--primary}
 
-To add a new page, add a file (html or markdown) to "_pages" update "_data/navigation.yml"
-
-Quick References: 
 
 ~~~~~~
 This is also a code block.

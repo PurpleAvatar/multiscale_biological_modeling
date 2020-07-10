@@ -21,7 +21,7 @@ Follow the instructions from the [CellBlender website](https://mcell.org/downloa
 
 1. Instead of downloading the newest version of Blender, go to the previous versions tab...
 
-![image-center](../assets/images/m1_image13.png){: .align-center}
+![image-center](../assets/images/motifs_13.png){: .align-center}
 
 ...and download Blender 2.79b
 

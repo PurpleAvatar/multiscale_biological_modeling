@@ -13,7 +13,7 @@ toc_sticky: true
 
 *Sample picture of something interesting*
 
-![image-center](../assets/images/m1_image1.png){: .align-center}
+![image-center](../assets/images/motifs_1.png){: .align-center}
 
 [Previous](#){: .btn .btn--primary .btn--x-large} [Next Page](setup){: .btn .btn--primary .btn--x-large}
 {: style="font-size: 100%; text-align: center;"}

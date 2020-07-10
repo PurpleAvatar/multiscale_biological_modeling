@@ -2,7 +2,7 @@ main:
   - title: "About"
     url: /about/ 
   - title: "Prologue"
-    url: /prologue/
+    url: /prologue/home
   - title: "Motifs"
     url: /motifs/home
   - title: "Module 2"
@@ -11,6 +11,16 @@ main:
     url: /module_3/
   - title: "Module 4"
     url: /module_4/
+
+prologue:
+  - title: Intro to CellBlender
+    children:
+      - title: "About this module"
+        url: /prologue/home
+      - title: "Setup"
+        url: /prologue/setup
+      - title: "Navigating CellBlender"
+        url: /prologue/navigation
 
 motifs:
   - title: Intro to CellBlender

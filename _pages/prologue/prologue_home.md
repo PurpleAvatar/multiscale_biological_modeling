@@ -3,8 +3,6 @@ permalink: /prologue/home
 title: "Module 1: Title"
 sidebar: 
  nav: "prologue"
-toc: true
-toc_sticky: true
 ---
 
 *Introduction*

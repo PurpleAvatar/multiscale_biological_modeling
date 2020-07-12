@@ -15,8 +15,6 @@ toc_sticky: true
 * It shouldn’t be a surprise that randomness is useful for drawing big-picture conclusions to those who have a background with computer programming.
 * For example, whether we are forecasting an election from polling data, predicting the weather tomorrow, or simulating moves of stock prices to determine derivative prices – all of these require us to embrace the effects of randomness to determine average-case behavior.
 
-
-
 [Previous](#){: .btn .btn--primary .btn--x-large} [Next Page](turing){: .btn .btn--primary .btn--x-large}
 {: style="font-size: 100%; text-align: center;"}
 

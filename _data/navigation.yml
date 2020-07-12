@@ -13,14 +13,18 @@ main:
     url: /module_4/
 
 prologue:
-  - title: Intro to CellBlender
+  - title: Why Model? Now?
     children:
-      - title: "About this module"
+      - title: "Randomness"
         url: /prologue/home
-      - title: "Setup"
-        url: /prologue/setup
-      - title: "Navigating CellBlender"
-        url: /prologue/navigation
+      - title: "Alan Turing's Patterns"
+        url: /prologue/turing
+      - title: "Random Walks"
+        url: /prologue/rwalk
+      - title: "Back to Zebras"
+        url: /prologue/animals
+      - title: "From Particles to Blocks"
+        url: /prologue/blocks
 
 motifs:
   - title: Intro to CellBlender

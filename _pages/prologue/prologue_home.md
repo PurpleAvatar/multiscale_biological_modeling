@@ -13,7 +13,7 @@ toc_sticky: true
 * Item two
 * Item three
 * We know from quantum physics that everything that happens in the universe is as a result of the interactions of particles, and that much of the movement of these particles boils down to randomness.
-* It is difficult for “macro” oriented 
+* It is difficult for "macro"-oriented 
 
 [Previous](#){: .btn .btn--primary .btn--x-large} [Next Page](turing){: .btn .btn--primary .btn--x-large}
 {: style="font-size: 100%; text-align: center;"}

@@ -22,6 +22,12 @@ No backslash started
 
 <div style="text-align:center">
 	<video width="320" height="240" controls>
-	  <source type="video/mkv" src="assets/random_walk_1.mkv">
+	  <source type="video/mp4" src="assets/random_walk_1.mp4">
+	</video>
+</div>
+
+<div style="text-align:center">
+	<video width="320" height="240" controls>
+	  <source type="video/mp4" src="assets/random_walk_200.mp4">
 	</video>
 </div>

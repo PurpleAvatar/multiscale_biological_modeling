@@ -10,8 +10,8 @@ toc_sticky: true
 *Intro*
 
 * Item one
-+ Item two
-- Item three
+* Item two
+* Item three
 
 [Previous](#){: .btn .btn--primary .btn--x-large} [Next Page](turing){: .btn .btn--primary .btn--x-large}
 {: style="font-size: 100%; text-align: center;"}

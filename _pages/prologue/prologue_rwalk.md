@@ -29,5 +29,5 @@ toc_sticky: true
 Embed this video: https://www.youtube.com/watch?v=KQgydF-fXvc#t=6m10s
 
 
-[Previous](home){: .btn .btn--primary .btn--x-large} [Next Page](rwalk){: .btn .btn--primary .btn--x-large}
+[Previous](home){: .btn .btn--primary .btn--x-large} [Next Page](animals){: .btn .btn--primary .btn--x-large}
 {: style="font-size: 100%; text-align: center;"}

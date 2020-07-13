@@ -30,7 +30,7 @@ sidebar:
 * Why should a scientist care? Because the fact that randomly particles will find themselves moving farther and farther away from their starting point explains much of what we already know about the world. Whether our particles are the viral particles in a superspreading event or the wonderful smells that drift upward from the kitchen in a multi-story house, we appreciate that randomly moving particles will spread out with absolute certainty.
 * A beautiful animation illustrating just how far a single particle can travel in a relatively small amount of time is shown in the following excellent instructional video from the Pittsburgh Supercomputing Center simulating the path taken by a glucose molecule as the result of Brownian motion.
 
-{% include video id="KQgydF-fXvc&start=6m10s" provider="youtube" %}
+{% include video id="KQgydF-fXvc&start=370s" provider="youtube" %}
 
 Embed this video: https://www.youtube.com/watch?v=KQgydF-fXvc#t=6m10s
 

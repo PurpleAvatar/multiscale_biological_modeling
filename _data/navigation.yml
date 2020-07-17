@@ -5,10 +5,10 @@ main:
     url: /prologue/home
   - title: "Motifs"
     url: /motifs/home
-  - title: "Module 2"
-    url: /module_2/
-  - title: "Module 3"
-    url: /module_3/
+  - title: "Chemotaxis"
+    url: /chemotaxis/home
+  - title: "Chris"
+    url: /chris/home
   - title: "Module 4"
     url: /module_4/
 

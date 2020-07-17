@@ -16,7 +16,7 @@ Some text
 
 Inserting a picture below, notice in the code how the link is set up? Need to reference the assets folder:  
 
-![image-center](../assets/images/motifs_norm.png){: .align-center}
+![image-center](../assets/images/motifs_norm_graph.png){: .align-center}
 
 Insert a video below, notice in the code how the link is set up? Need to reference the assets folder: 
 

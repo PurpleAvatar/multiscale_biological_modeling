@@ -44,3 +44,24 @@ motifs:
         url: /motifs/feed
       - title: "Oscillators"
         url: /motifs/oscillators 
+
+chemotaxis:
+  - title: Title? Here?
+    children:
+      - title: "Home"
+        url: /chemotaxis/home
+      - title: "Beautiful"
+        url: /chemotaxis/page1
+      - title: "Fantastic"
+        url: /chemotaxis/page2
+
+chris:
+  - title: Title? Here?
+    children:
+      - title: "Home"
+        url: /chris/home
+      - title: "Beautiful"
+        url: /chris/page1
+      - title: "Fantastic"
+        url: /chris/page2
+

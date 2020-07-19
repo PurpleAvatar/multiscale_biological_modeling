@@ -26,7 +26,7 @@ Insert a video below, notice in the code how the link is set up? Need to referen
 	</video>
 </div>
 
-[Previous](#){: .btn .btn--primary .btn--x-large} [Next Page](page1){: .btn .btn--primary .btn--x-large}
+[Previous](#){: .btn .btn--primary .btn--x-large} [Next Page](tutorial_lr){: .btn .btn--primary .btn--x-large}
 {: style="font-size: 100%; text-align: center;"}
 
 

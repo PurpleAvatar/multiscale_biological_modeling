@@ -1,5 +1,5 @@
 ---
-permalink: /chemotaxis/page1
+permalink: /chemotaxis/tutorial_lr
 title: "Module 1: Title"
 sidebar: 
  nav: "chemotaxis"
@@ -37,7 +37,7 @@ We would like to tell BNG the rules for our model. To specify our model, specify
 
 	end model
 
-Now let's also add reaction rules within the model. At the left-hand-side (LHS), by specifying `L(r)`, we select only unbound `L` molecules; if we would like to select any molecule, we can simply write `L`. At the right-hand-side (RHS) of the reaction, `L(r!1).R(l!1)` indicates the formation of the intermediate. `!1` indicates formation of bond, we use numerical values to indicate bond types. Since the reaction is bidirectional, we need to specify rate of reaction for both. *Note: be careful with spaces.*
+Now let's also add reaction rules within the model. At the left-hand-side (LHS), by specifying `L(r)`, we select only unbound `L` molecules; if we would like to select any molecule, we can simply write `L`. At the right-hand-side (RHS) of the reaction, `L(r!1).R(l!1)` indicates the formation of the intermediate. `!1` indicates formation of bond, we use numerical values to indicate bond types. Since the reaction is bidirectional, we need to specify rate of reaction for both. *Note: if you compile now, an error will occur because we haven't define k1 and k2 yet.*
 
 	begin reaction rules
 		LigandReceptor: L(r) + R(l) <-> L(r!1).R(l!1) k1, k2
@@ -68,7 +68,7 @@ Before simulating our model, we would also like to define the observables under 
 
 	begin observables
 		Molecules L_free L(r)
-		Molecules L_bound L(r!l).R(l!l)
+		Molecules L_bound L(r!1).R(l!1)
 	end observables
 
 And now we are ready to simulate! Add the `generate network` and `simulate` command outside of your model specification. `t_end` specify the simulation duration, and `n_steps` tells the program to break the simulation into how many time points to report the concentration.
@@ -103,7 +103,7 @@ The whole simulation code for ligand-receptor dynamics:
 
 	begin observables
 		Molecules L_free L(r)
-		Molecules L_bound L(r!l).R(l!l)
+		Molecules L_bound L(r!1).R(l!1)
 	end observables
 
 	end model
@@ -115,7 +115,11 @@ Go to `Simulation` at the right side of the Contact Map button and click `Run`. 
 
 ![image-center](../assets/images/chemotaxis_tutorial4.png){: .align-center}
 
-[Previous](home){: .btn .btn--primary .btn--x-large} [Next Page](page2){: .btn .btn--primary .btn--x-large}
+In the next page, we will start adding phosphorylation in our model!
+
+If you are interested, a more detailed tutorial on BNG modeling can be found [here](http://comet.lehman.cuny.edu/griffeth/BioNetGenTutorialFromBioNetWiki.pdf).
+
+[Previous](home){: .btn .btn--primary .btn--x-large} [Next Page](tutorial_phos){: .btn .btn--primary .btn--x-large}
 {: style="font-size: 100%; text-align: center;"}
 
 

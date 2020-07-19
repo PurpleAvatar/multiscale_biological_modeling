@@ -50,7 +50,7 @@ chemotaxis:
     children:
       - title: "Home"
         url: /chemotaxis/home
-      - title: "Beautiful"
+      - title: "Building BNG Simulation"
         url: /chemotaxis/page1
       - title: "Fantastic"
         url: /chemotaxis/page2

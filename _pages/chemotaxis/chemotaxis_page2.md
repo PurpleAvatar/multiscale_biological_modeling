@@ -9,7 +9,7 @@ sidebar:
 
 Ligand binding and dissociation should change the conformation of the ligand and therefore impact the downstream reactions. Now let's include more downstream reactions in our model.
 
-- Ligand binding and dissociation: L + R <-> LR with rate $k1, k2$
+- Ligand binding and dissociation: L + R <-> LR with rate \$$k1, k2$$
 - Let's say the receptor is a complex of proteins, and one of the protein undergoes autophosphorylation, the rate of autophosphorylation depends on conformation of the receptor. When receptor is not bound with ligand, autophosphorylation is faster.
 	- LR + P -> LR-P $k3$
 	- R + P -> R-P   $k3 \times 0.2$

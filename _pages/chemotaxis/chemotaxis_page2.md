@@ -5,18 +5,19 @@ sidebar:
  nav: "chemotaxis"
 ---
 
+
 ### Adding Phosphorylation
 
 Ligand binding and dissociation should change the conformation of the ligand and therefore impact the downstream reactions. Now let's include more downstream reactions in our model.
 
-- Ligand binding and dissociation: L + R <-> LR with rate \$$k1, k2$$
+- Ligand binding and dissociation: L + R <-> LR with rate *k1, k2*
 - Let's say the receptor is a complex of proteins, and one of the protein undergoes autophosphorylation, the rate of autophosphorylation depends on conformation of the receptor. When receptor is not bound with ligand, autophosphorylation is faster.
-	- LR + P -> LR-P $k3$
-	- R + P -> R-P   $k3 \times 0.2$
+	- LR + P -> LR-P *k3*
+	- R + P -> R-P   *k3 x 0.2*
 - Then the autophosphorylated receptor complex can phosphorylate a downstream protein, call it Y. The phosphorylated Y will be able to some observable cellular response, so we will use the level of Y-P to indicate the level of cellular response later.
-	- R-P + Y -> R + Y-P  $k4$
+	- R-P + Y -> R + Y-P  *k4*
 - But if the Y stay phosphorylated forever, the cell will remain in the same actions. So we would also like to include a molecule Z to catalyze the removal the phosphoryl group from Y-P.
-	- Z + Y-P -> Z + Y + P $k5$
+	- Z + Y-P -> Z + Y + P *k5*
 
 Now let's include these into our BNG model.
 
@@ -135,7 +136,7 @@ Observe the simulation for longer. Change `t_end` at the bottom to 20. Now the w
 
 ### So What?
 
-Before running the simulation, let's think about what will happen. If we don't add any ligand molecule into the system, then R phosphorylation happens at rate $k3$, and R will phosphorylates Y, which will also be dephosphorylated by Z. The concentrations of phosphorylated R and Y will stay at an equilibrium - actually conveniently the 50\% phosphorylated we defined in the `seed species` section. When we add ligand molecules into the system, as there are more bound R, there will be less R-P, and therefore less Y-P.
+Before running the simulation, let's think about what will happen. If we don't add any ligand molecule into the system, then R phosphorylation happens at rate *k3*, and R will phosphorylates Y, which will also be dephosphorylated by Z. The concentrations of phosphorylated R and Y will stay at an equilibrium - actually conveniently the 50% phosphorylated we defined in the `seed species` section. When we add ligand molecules into the system, as there are more bound R, there will be less R-P, and therefore less Y-P.
 
 Change `L0` in the `parameters` section to 0, and then click `Simulate` and `Run`. You could observe the constant level of R-P and Y-P.
 
@@ -156,5 +157,5 @@ But this is only half of the story. In the next section, we will code up the ada
 If you would like to continue using this model for the next section, rename R to T (T stands for ternary complex, we want to avoid confusion with CheR). You could rename `Y` to `CheY`, `Z` to `CheZ` if you prefer.
 
 
-[Previous](tutorial_lr){: .btn .btn--primary .btn--x-large} [Next Page](tutorial_adaptation){: .btn .btn--primary .btn--x-large}
+[Previous](tutorial_lr){: .btn .btn--primary .btn--x-large} [Next Page](tutorial_adap){: .btn .btn--primary .btn--x-large}
 {: style="font-size: 100%; text-align: center;"}

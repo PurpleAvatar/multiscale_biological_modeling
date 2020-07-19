@@ -50,10 +50,10 @@ chemotaxis:
     children:
       - title: "Home"
         url: /chemotaxis/home
-      - title: "Building BNG Simulation"
-        url: /chemotaxis/page1
-      - title: "Fantastic"
-        url: /chemotaxis/page2
+      - title: "Starting BNG Simulation"
+        url: /chemotaxis/tutorial_lr
+      - title: "Adding Phosphorylation to BNG model"
+        url: /chemotaxis/tutorial_phos
 
 chris:
   - title: Title? Here?

@@ -60,8 +60,8 @@ chris:
     children:
       - title: "Home"
         url: /chris/home
-      - title: "Beautiful"
-        url: /chris/page1
+      - title: "Protein Structure Prediction"
+        url: /chris/prediction
       - title: "Fantastic"
         url: /chris/page2
 

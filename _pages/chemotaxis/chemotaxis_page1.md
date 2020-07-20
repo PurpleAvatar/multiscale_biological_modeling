@@ -26,7 +26,7 @@ Rename your `.bngl` file as `ligand_receptor.bngl`. Now you should be able to st
 
 ![image-center](../assets/images/chemotaxis_tutorial2.png){: .align-center}
 
-We would like to tell BNG the rules for our model. To specify our model, specify the `begin model` and `end model`. We will add all model specification information between the two lines. We would also like to add our molecules to the model under the `molecule types` section. The `(r)` specifies that molecule `L` contains one component, same for `R` and we will use this component for L-R binding later. 
+We would like to tell BNG the rules for our model. To specify our model, specify the `begin model` and `end model`. We will add all model specification information between the two lines. We would also like to add our molecules to the model under the `molecule types` section. The `(r)` specifies that molecule `L` contains one component, same for `R` and we will use this component for L-R binding later. *Don't worry if you get lost, we will show the complete code.*
 	
 	begin model
 

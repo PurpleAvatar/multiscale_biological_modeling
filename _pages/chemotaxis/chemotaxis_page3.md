@@ -9,6 +9,8 @@ sidebar:
 
 If one *E. coli* is in a well-mixed glucose solution with a concentration of *A*, and another is in a well-mixed glucose with a concentration of *10A*, should they have the same tumbling frequency? If the second one tumbles less, it will have a harder time to move towards a even higher concentration. So now let's add methylation states to model how *E. coli* can adapt to a higher attractant concentrations and bring back the tumbling frequency.
 
+Our model will be based on the [model](https://www.pnas.org/content/94/14/7263) by Spiro et al. [^1]
+
 The methylation states of the receptors store the *past* ligand concentrations. If we have a high level ligand-receptor binding, and that is consistent with the methylation states, then the cell doesn't need to decrease its tumbling frequency because no gradient is present. This is achieved by using higher methylation states to reflect higher past ligand concentration, and higher rates of autophosphorylation for higher methylation states. The increased phosphorylation due to higher methylation states can compensate for the low phosphorylation due to high levels of ligand binding. 
 
 Let's first add methylation states, low (A), medium (B), high (C), for the ternary complex. Also add a component `r` for later introduction of CheR. Update `T` to be `T(l,r,Meth~A~B~C,Phos~U~P)`.
@@ -274,11 +276,17 @@ Now run the simulation (please change `t_end` and `n_steps` to 1000). You should
 
 ![image-center](../assets/images/chemotaxis_tutorial_oneadd0.png){: .align-center}
 
-Try with higher concentrations (L0 = 1e4, 1e5, 1e6, 1e7, 1e8), highlight the line showing CheY-P, we could see a clear drop in CheY-P at the start of the simulation, and then returns to the original concentration. We could also see how the methylation states changed. You can also simulate the first 10 seconds of the simulation to observe the minumum of CheY-P occured within the first second.
+Try with higher concentrations (L0 = 1e4, 1e5, 1e6, 1e7, 1e8), highlight the line showing CheY-P, we could see a drop in CheY-P at the start of the simulation, and then returns to the original concentration. We could also see how the methylation states changed. You can also simulate the first 10 seconds of the simulation to observe the minumum of CheY-P occured within the first second.
 
 ![image-center](../assets/images/chemotaxis_tutorial_oneadd1e7.png){: .align-center}
 
+We can see that the higher the concentration, the lower the valley becomes. But this limited to a range of concentrations - going over a concentration where all receptors can already saturate instantly can't lead to more response; and a very low concentration won't initiate a response. Our results are also consistent with other simulations[^2] and experimental observations[^3]. 
+
 We will be simulating exponential gradients in the next page!
+
+[^1] Spiro PA, Parkinson JS, and Othmer H. 1997. A model of excitation and adaptation in bacterial chemotaxis. Biochemistry 94:7263-7268. [Available online](https://www.pnas.org/content/94/14/7263).
+[^2] Bray D, Bourret RB, Simon MI. 1993. Computer simulation of phosphorylation cascade controlling bacterial chemotaxis. Molecular Biology of the Cell. [Available online](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC300951/)
+[^3] Shimizu TS, Delalez N, Pichler K, and Berg HC. 2005. Monitoring bacterial chemotaxis by using bioluminescence resonance energy transfer: absence of feedback from the flagellar motors. PNAS. [Available online](https://www.pnas.org/content/103/7/2093/)
 
 
 [Previous](tutorial_phos){: .btn .btn--primary .btn--x-large} [Next Page](home){: .btn .btn--primary .btn--x-large}

@@ -54,6 +54,8 @@ chemotaxis:
         url: /chemotaxis/tutorial_lr
       - title: "Adding Phosphorylation to BNG model"
         url: /chemotaxis/tutorial_phos
+      - title: "Modeling Adaptation"
+        url: /chemotaxis/tutorial_adap
 
 chris:
   - title: Title? Here?

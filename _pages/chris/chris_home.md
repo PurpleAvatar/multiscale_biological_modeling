@@ -15,7 +15,7 @@ Proteins are one of the most important groups of macromolecules in living organi
 ### VMD
 [VMD](https://www.ks.uiuc.edu/Research/vmd/) (Visual Molecular Dynamics) is a program that is designed for modeling of molecules and macromolecules. Many plugins are available for in-depth analysis, including molecular dynamics simulations and interaction energy analysis. NMWiz (normal mode wizard), which was designed as a GUI for ProDy, is included within VMD, allowing for visualization of analysis using ProDy.
 
-[Previous](#){: .btn .btn--primary .btn--x-large} [Next Page](page1){: .btn .btn--primary .btn--x-large}
+[Previous](#){: .btn .btn--primary .btn--x-large} [Next Page](prediction){: .btn .btn--primary .btn--x-large}
 {: style="font-size: 100%; text-align: center;"}
 
 

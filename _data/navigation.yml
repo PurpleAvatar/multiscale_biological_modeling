@@ -64,6 +64,6 @@ chris:
         url: /chris/home
       - title: "Protein Structure Prediction"
         url: /chris/prediction
-      - title: "Fantastic"
-        url: /chris/page2
+      - title: "Using ProDy to Calculate RMSD"
+        url: /chris/rmsd_prody
 

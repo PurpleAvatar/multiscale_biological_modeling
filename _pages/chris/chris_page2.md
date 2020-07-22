@@ -9,10 +9,15 @@ sidebar:
 This is a short tutorial on how to use ProDy to calculate RMSD between two structures. Please be sure to have the following installed:
 
 <a href="https://www.python.org/downloads/" target="_blank">Python</a> (2.7, 3.5, or later)
+
 <a href="http://prody.csb.pitt.edu/downloads/" target="_blank">ProDy</a>
+
 <a href="https://numpy.org/install/" target="_blank">NumPy</a>
+
 <a href="https://biopython.org/" target="_blank">Biopython</a>
-<a href="hhttps://ipython.org/" target="_blank">IPython</a>
+
+<a href="https://ipython.org/" target="_blank">IPython</a>
+
 <a href="https://matplotlib.org/" target="_blank">Matplotlib</a>
 
 #### Getting Started

@@ -16,20 +16,20 @@ Three protein prediction software were chosen for template-based modeling of the
 #### SWISS-MODEL
 [SWISS-MODEL](https://swissmodel.expasy.org/) is a well-known structural bioinformatics web-server that specializes in homology modeling. The pipeline is comprised for four steps. 1) Using BLAST and HHblits, templates are identified and stored in the SWISS-MODEL Template Library. 2) The target sequence and template structure(s) are aligned. 3) Building the predicted models through a rigid fragment assembly approach. 4) Qualitiative Model Energy Analysis (QMEAN), a composite scoring function for model quality assessment. SWISS-MODEL was chosen to model the entire SARS-CoV-2 Spike protein and produced three models.
 
-[CoV2SpikeProtein Sequence](/files/CoV2SpikeProteinSeq.txt)
+<a href="/multiscale_biological_modeling/_pages/chris/files/CoV2SpikeProteinSeq.txt" download>CoV-2 Spike Sequence </a>
 
 #### GalaxyWEB
 [GalaxyWEB](http://galaxy.seoklab.org/) is a web-server with many available services including protein structure prediction, structure refinement, protein interaction prediction, and GPCR applications. GalaxyTBM (the template-based modeling service) uses HHsearch to identify up to 20 templates, then aligns the core sequence with the templates using PROMALS3D. Next, models are generated using MODELLERCSA. GalaxyWEB was chosen to model the receptor binding domain (RBD) of the SARS-CoV-2 Spike protein and produced five models.
 ##### SARS-CoV-2 RBD
 
-<a href="/_pages/chris/files/CoV2SpikeRBDSeq.txt" download>CoV2RBDSeq.txt</a>
+<a href="/multiscale_biological_modeling/_pages/chris/files/CoV2SpikeRBDSeq.txt" download>CoV-2 RBD Sequence </a>
 
 #### Robetta
 [Robetta](https://robetta.bakerlab.org/) is a web-server that provides comparative and *ab initio* modeling of protein domains by utilizing the Rosetta fragment insertion method and de novo protocols. It allows for custom sequence alignments and can model multi-chain complexes. Robetta was chosen to model a single chain of the SARS-CoV-2 Spike protein and produced five models.
 
 ##### SARS-CoV-2 Spike Protein Chain A
 
-<a href="/_pages/chris/files/CoV2SpikeASeq.txt" download>CoV2SpikeASeq.txt</a>
+<a href="/multiscale_biological_modeling/_pages/chris/files/CoV2SpikeASeq.txt" download>CoV-2 Spike Chain A Sequence </a>
 
 ### Structure Comparison with RMSD
 RMSD is a common method to quantitatively measure the difference between two paired sets of values, such as coordinates. A lower RMSD value indicates a higher similarity between the two sets and a RMSD value of 0 indicates a perfect fit. This is especially useful in preliminary structure comparisons between proteins since protein structures are often represented as atomic coordinates. By comparing the RMSD between the predicted model the published model, a quantitative measure of the model's accuracy can be obtained. The formula for calculating RMSD is as follows:

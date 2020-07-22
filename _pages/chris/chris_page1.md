@@ -16,7 +16,7 @@ Three protein prediction software were chosen for template-based modeling of the
 #### SWISS-MODEL
 [SWISS-MODEL](https://swissmodel.expasy.org/) is a well-known structural bioinformatics web-server that specializes in homology modeling. The pipeline is comprised for four steps. 1) Using BLAST and HHblits, templates are identified and stored in the SWISS-MODEL Template Library. 2) The target sequence and template structure(s) are aligned. 3) Building the predicted models through a rigid fragment assembly approach. 4) Qualitiative Model Energy Analysis (QMEAN), a composite scoring function for model quality assessment. SWISS-MODEL was chosen to model the entire SARS-CoV-2 Spike protein and produced three models.
 
-<a href="/_pages/chris/files/CoV2SpikeProteinSeq.txt" download>CoV2SpikeProteinSeq.txt</a>
+[CoV2SpikeProtein Sequence](/files/CoV2SpikeProteinSeq.txt)
 
 #### GalaxyWEB
 [GalaxyWEB](http://galaxy.seoklab.org/) is a web-server with many available services including protein structure prediction, structure refinement, protein interaction prediction, and GPCR applications. GalaxyTBM (the template-based modeling service) uses HHsearch to identify up to 20 templates, then aligns the core sequence with the templates using PROMALS3D. Next, models are generated using MODELLERCSA. GalaxyWEB was chosen to model the receptor binding domain (RBD) of the SARS-CoV-2 Spike protein and produced five models.

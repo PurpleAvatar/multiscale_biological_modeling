@@ -29,7 +29,7 @@ Three protein prediction software were chosen for template-based modeling of the
 
 ##### SARS-CoV-2 Spike Protein Chain A
 
-<a href=/_pages/chris/files/CoV2SpikeASeq.txt" download>CoV2SpikeASeq.txt</a>
+<a href="/_pages/chris/files/CoV2SpikeASeq.txt" download>CoV2SpikeASeq.txt</a>
 
 ### Structure Comparison with RMSD
 RMSD is a common method to quantitatively measure the difference between two paired sets of values, such as coordinates. A lower RMSD value indicates a higher similarity between the two sets and a RMSD value of 0 indicates a perfect fit. This is especially useful in preliminary structure comparisons between proteins since protein structures are often represented as atomic coordinates. By comparing the RMSD between the predicted model the published model, a quantitative measure of the model's accuracy can be obtained. The formula for calculating RMSD is as follows:

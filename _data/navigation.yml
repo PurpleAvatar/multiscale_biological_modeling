@@ -70,4 +70,6 @@ chris:
         url: /chris/prediction
       - title: "Using ProDy to Calculate RMSD"
         url: /chris/rmsd_prody
+      - title: "More on RMSD"
+        url: /chris/rmsd2
 

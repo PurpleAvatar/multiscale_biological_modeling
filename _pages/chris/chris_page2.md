@@ -95,5 +95,5 @@ In[#]: calcRMSD(first_ca, second_ca)
 ~~~~~~
 The result should be an RMSD score of around 11.
 
-[Previous](prediction){: .btn .btn--primary .btn--x-large} [Next Page](#){: .btn .btn--primary .btn--x-large}
+[Previous](prediction){: .btn .btn--primary .btn--x-large} [Next Page](rmsd2){: .btn .btn--primary .btn--x-large}
 {: style="font-size: 100%; text-align: center;"}

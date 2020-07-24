@@ -1,20 +1,20 @@
 main:
   - title: "About"
     url: /about/ 
-  - title: "Prologue"
-    url: /prologue/home
-  - title: "Motifs"
-    url: /motifs/home
-  - title: "Chemotaxis"
-    url: /chemotaxis/home
-  - title: "Chris"
-    url: /chris/home
-  - title: "Dropdown"
+  - title: "Take the Course"
     sublinks:
-      - title: First
+      - title: "Prologue"
+        url: /prologue/home
+      - title: "Motifs"
         url: /motifs/home
-      - title: Second
+      - title: "Chemotaxis"
         url: /chemotaxis/home
+      - title: "Chris"
+        url: /chris/home
+  - title: "Meet the Team"
+    url: /meet-the-team/
+  - title: "Adopt the Course"
+    url: /adopt-the-course/
 
 prologue:
   - title: Why Model? Now?

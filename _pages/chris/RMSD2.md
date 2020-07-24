@@ -11,7 +11,7 @@ To use RMSD as a quantitative measure for comparing protein structures, the stru
 Back in the tutorial, superposing was accomplished by utilizing the *calcTransformation()* function, which returns the optimal transformation matrix between two structures such that the RMSD is minimized. This transformation matrix is consists of translation vector and rotation matrix, which can be calculated using the Kabsch Algorithm.
 
 The source code for *calcTransformation()* can be found 
-<a href="http://prody.csb.pitt.edu/_modules/prody/measure/transform.html#calcTransformation" target="_blank">here</a>
+<a href="http://prody.csb.pitt.edu/_modules/prody/measure/transform.html#calcTransformation" target="_blank">here</a>.
 
 #### How it Works: Kabsch Algorithm (Partial Procrustes Superimposition)
 
@@ -26,28 +26,28 @@ Each set of points is translated such that their centroid lies on the origin of 
 ##### Covariance Step
 The next step is to calculate the cross-covariance matrix. Let H be the cross-covariance matrix, and P and Q be the two translated input matrixes such that for the result of the algorithm, P will be rotated into Q.
 
-<a href="https://www.codecogs.com/eqnedit.php?latex=H&space;=&space;P^{T}Q" target="_blank"><img src="https://latex.codecogs.com/gif.latex?H&space;=&space;P^{T}Q" title="H = P^{T}Q" /></a>
+<a href="https://www.codecogs.com/eqnedit.php?latex=\large&space;H&space;=&space;P^{T}Q" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\large&space;H&space;=&space;P^{T}Q" title="\large H = P^{T}Q" /></a>
 
 Or in summation notation:
 
-<a href="https://www.codecogs.com/eqnedit.php?latex=H_{i,j}&space;=&space;\sum_{N}^{k=1}&space;P_{k,i}&space;Q_{k,j}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?H_{i,j}&space;=&space;\sum_{N}^{k=1}&space;P_{k,i}&space;Q_{k,j}" title="H_{i,j} = \sum_{N}^{k=1} P_{k,i} Q_{k,j}" /></a>
+<a href="https://www.codecogs.com/eqnedit.php?latex=\large&space;H_{i,j}&space;=&space;\sum_{N}^{k=1}&space;P_{k,i}&space;Q_{k,j}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\large&space;H_{i,j}&space;=&space;\sum_{N}^{k=1}&space;P_{k,i}&space;Q_{k,j}" title="\large H_{i,j} = \sum_{N}^{k=1} P_{k,i} Q_{k,j}" /></a>
 
 ##### Singluar Value Decomposition (SVD) Step
 It is possible to get the optimal rotation matrix, R, with the formula:
 
-<a href="https://www.codecogs.com/eqnedit.php?latex=R&space;=&space;(H^TH)^{\frac{1}{2}}H^{-1}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?R&space;=&space;(H^TH)^{\frac{1}{2}}H^{-1}" title="R = (H^TH)^{\frac{1}{2}}H^{-1}" /></a>
+<a href="https://www.codecogs.com/eqnedit.php?latex=\large&space;R&space;=&space;(H^TH)^{\frac{1}{2}}H^{-1}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\large&space;R&space;=&space;(H^TH)^{\frac{1}{2}}H^{-1}" title="\large R = (H^TH)^{\frac{1}{2}}H^{-1}" /></a>
 
 However, this is not always possible and can become quite complicated (e.g. H not having an inverse). Another method is to use singular value decomposition of the covariance matrix. Kabsch algorith utilizes SVD of H to compute R:
 
-<a href="https://www.codecogs.com/eqnedit.php?latex=H&space;=&space;VSW^T" target="_blank"><img src="https://latex.codecogs.com/gif.latex?H&space;=&space;VSW^T" title="H = VSW^T" /></a>
+<a href="https://www.codecogs.com/eqnedit.php?latex=\large&space;H&space;=&space;VSW^T" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\large&space;H&space;=&space;VSW^T" title="\large H = VSW^T" /></a>
 
 In order to ensure that the rotation matrix is a right-handed coordinate system, the matrix may need to be corrected by calculating the determinant of the dot product of W and V<sup>T</sup>:
 
-<a href="https://www.codecogs.com/eqnedit.php?latex=d&space;=&space;sign(det(WV^T))" target="_blank"><img src="https://latex.codecogs.com/gif.latex?d&space;=&space;sign(det(WV^T))" title="d = sign(det(WV^T))" /></a>
+<a href="https://www.codecogs.com/eqnedit.php?latex=\large&space;d&space;=&space;sign(det(WV^T))" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\large&space;d&space;=&space;sign(det(WV^T))" title="\large d = sign(det(WV^T))" /></a>
 
 Finally, R can be calculated with the following matrix formula:
 
-<a href="https://www.codecogs.com/eqnedit.php?latex=R&space;=&space;W\bigl(\begin{smallmatrix}&space;1&space;&&space;0&space;&&space;0\\&space;0&space;&&space;1&space;&&space;0\\&space;0&space;&&space;0&space;&&space;d&space;\end{smallmatrix}\bigr)&space;V^T" target="_blank"><img src="https://latex.codecogs.com/gif.latex?R&space;=&space;W\bigl(\begin{smallmatrix}&space;1&space;&&space;0&space;&&space;0\\&space;0&space;&&space;1&space;&&space;0\\&space;0&space;&&space;0&space;&&space;d&space;\end{smallmatrix}\bigr)&space;V^T" title="R = W\bigl(\begin{smallmatrix} 1 & 0 & 0\\ 0 & 1 & 0\\ 0 & 0 & d \end{smallmatrix}\bigr) V^T" /></a>
+<a href="https://www.codecogs.com/eqnedit.php?latex=\large&space;R&space;=&space;W\bigl(\begin{smallmatrix}&space;1&space;&&space;0&space;&&space;0\\&space;0&space;&&space;1&space;&&space;0\\&space;0&space;&&space;0&space;&&space;d&space;\end{smallmatrix}\bigr)&space;V^T" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\large&space;R&space;=&space;W\bigl(\begin{smallmatrix}&space;1&space;&&space;0&space;&&space;0\\&space;0&space;&&space;1&space;&&space;0\\&space;0&space;&&space;0&space;&&space;d&space;\end{smallmatrix}\bigr)&space;V^T" title="\large R = W\bigl(\begin{smallmatrix} 1 & 0 & 0\\ 0 & 1 & 0\\ 0 & 0 & d \end{smallmatrix}\bigr) V^T" /></a>
 
 
 

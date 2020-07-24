@@ -9,8 +9,12 @@ main:
     url: /chemotaxis/home
   - title: "Chris"
     url: /chris/home
-  - title: "Module 4"
-    url: /module_4/
+  - title: "Dropdown"
+    sublinks:
+      - title: First
+        url: /motifs/home
+      - title: Second
+        url: /chemotaxis/home
 
 prologue:
   - title: Why Model? Now?

@@ -32,6 +32,8 @@ sidebar:
 
 {% include video id="KQgydF-fXvc&start=370" provider="youtube" %}
 
+<iframe width="640" height="360" src="https://www.youtube-nocookie.com/embed/KQgydF-fXvc&start=370" frameborder="0" allowfullscreen></iframe>
+
 Embed this video: https://www.youtube.com/watch?v=KQgydF-fXvc#t=6m10s
 
 

@@ -1,8 +1,8 @@
 ---
-permalink: /chris/prediction
+permalink: /coronavirus/prediction
 title: "Module 1: Title"
 sidebar: 
- nav: "chris"
+ nav: "coronavirus"
 ---
 
 

@@ -1,8 +1,8 @@
 ---
-permalink: /chris/page2
+permalink: /coronavirus/page2
 title: "Module 1: Title"
 sidebar: 
- nav: "chris"
+ nav: "coronavirus"
 ---
 
 *Introduction*

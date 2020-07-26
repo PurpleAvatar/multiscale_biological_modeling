@@ -1,8 +1,8 @@
 ---
-permalink: /chris/home
+permalink: /coronavirus/home
 title: "Module 3: Title"
 sidebar: 
- nav: "chris"
+ nav: "coronavirus"
 ---
 
 

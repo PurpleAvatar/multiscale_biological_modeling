@@ -1,8 +1,8 @@
 ---
-permalink: /chris/rmsd_prody
+permalink: /coronavirus/rmsd_prody
 title: "Module 1: Title"
 sidebar: 
- nav: "chris"
+ nav: "coronavirus"
 ---
 ### Using ProDy to Calculate RMSD
 

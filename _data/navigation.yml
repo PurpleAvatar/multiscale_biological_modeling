@@ -9,8 +9,8 @@ main:
         url: /motifs/home
       - title: "Chemotaxis"
         url: /chemotaxis/home
-      - title: "Chris"
-        url: /chris/home
+      - title: "Coronavirus"
+        url: /coronavirus/home
   - title: "Meet the Team"
     url: /meet-the-team/
   - title: "Adopt the Course"
@@ -61,15 +61,15 @@ chemotaxis:
       - title: "Modeling Adaptation"
         url: /chemotaxis/tutorial_adap
 
-chris:
+coronavirus:
   - title: Title? Here?
     children:
       - title: "Home"
-        url: /chris/home
+        url: /coronavirus/home
       - title: "Protein Structure Prediction"
-        url: /chris/prediction
+        url: /coronavirus/prediction
       - title: "Using ProDy to Calculate RMSD"
-        url: /chris/rmsd_prody
+        url: /coronavirus/rmsd_prody
       - title: "More on RMSD"
-        url: /chris/rmsd2
+        url: /coronavirus/rmsd2
 

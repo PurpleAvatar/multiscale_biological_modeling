@@ -31,23 +31,31 @@ prologue:
         url: /prologue/blocks
 
 motifs:
-  - title: Intro to CellBlender
+  - title: About This Module
+    url: /motifs/home
+  - title: Common Motifs
     children:
-      - title: "About this module"
-        url: /motifs/home
-      - title: "Setup"
+      - title: "Finding Motifs"
+        url: /motifs/finding
+      - title: "Negative Autoregulation"
+        url: /motifs/nar
+      - title: "Feed-Forward Loops"
+        url: /motifs/feed
+      - title: "Resilient Oscillators"
+        url: /motifs/oscillators
+  - title: Tutorials
+    children:
+      - title: "Setting up CellBlender"
         url: /motifs/setup
       - title: "Navigating CellBlender"
         url: /motifs/navigation
-
-  - title: CellBlender Simulations
-    children:
       - title: "Negative-Autoregulation"
-        url: /motifs/nar
+        url: /motifs/tutorial_nar
       - title: "Feed-Forward Loop"
-        url: /motifs/feed
+        url: /motifs/tutorial_feed
       - title: "Oscillators"
-        url: /motifs/oscillators 
+        url: /motifs/tutorial_oscillators
+     
 
 chemotaxis:
   - title: Title? Here?

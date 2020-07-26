@@ -1,6 +1,6 @@
 ---
-permalink: /motifs/home
-title: "Module 1: Title"
+permalink: /motifs/finding
+title: "Finding Motifs"
 sidebar: 
  nav: "motifs"
 ---
@@ -13,7 +13,7 @@ sidebar:
 
 ![image-center](../assets/images/motifs_norm.png){: .align-center}
 
-[Previous](#){: .btn .btn--primary .btn--x-large} [Next Page](finding){: .btn .btn--primary .btn--x-large}
+[Previous](home){: .btn .btn--primary .btn--x-large} [Next Page](nar){: .btn .btn--primary .btn--x-large}
 {: style="font-size: 100%; text-align: center;"}
 
 

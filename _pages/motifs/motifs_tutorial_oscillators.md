@@ -1,6 +1,6 @@
 ---
-permalink: /motifs/oscillators
-title: "Resilient Oscillators"
+permalink: /motifs/tutorial_oscillators
+title: "Oscillators"
 sidebar: 
  nav: "motifs"
 toc: true
@@ -31,7 +31,7 @@ Y' > NULL, rate: 3e2
 
 Starting from scratch
 
-[Previous](feed){: .btn .btn--primary .btn--x-large} [Next Page](setup){: .btn .btn--primary .btn--x-large}
+[Previous](tutorial_feed){: .btn .btn--primary .btn--x-large} [Next Page](#){: .btn .btn--primary .btn--x-large}
 {: style="font-size: 100%; text-align: center;"}
 
 

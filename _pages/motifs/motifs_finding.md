@@ -11,7 +11,7 @@ sidebar:
 
 *Let's look at a real gene regulatory network from e. coli*
 
-![image-center](../assets/images/motifs_finding_ecoli_1.jpg){: .align-center}
+![image-center](../assets/images/motifs_finding_ecoli_1.jpeg){: .align-center}
 
 *Each node (repr. gene) can be connected to other genes, and we can break down into these simple arrangements*
 
@@ -22,11 +22,11 @@ sidebar:
 ## Jupyter Notebook Walkthrough
 
 Let's take another look at that E. coli network, file can be downloaded here: 
-<a href="https://purpleavatar.github.io/multiscale_biological_modeling/downloads/network_tf_tf_clean.txt" download="network_tf_tf_clean">E. coli Network</a>
+<a href="https://purpleavatar.github.io/multiscale_biological_modeling/downloads/network_tf_tf_clean.txt" download="network_tf_tf_clean.txt">E. coli Network</a>
 
 
 For the full Jupyter Notebook below, download here: 
-<a href="https://purpleavatar.github.io/multiscale_biological_modeling/downloads/Network_Demo.ipynb" download="Network_Demo">Jupyter Notebook</a>
+<a href="https://purpleavatar.github.io/multiscale_biological_modeling/downloads/Network_Demo.ipynb" download="Network_Demo.ipynb">Jupyter Notebook</a>
 
 There are a few packages which need to be installed, here's list
 1. this

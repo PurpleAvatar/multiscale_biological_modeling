@@ -1,6 +1,6 @@
 ---
 permalink: /coronavirus/rmsd2
-title: "Module 1: Title"
+title: "More on RMSD"
 sidebar: 
  nav: "coronavirus"
 ---

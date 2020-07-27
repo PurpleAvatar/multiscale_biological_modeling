@@ -1,6 +1,6 @@
 ---
 permalink: /coronavirus/home
-title: "Module 3: Title"
+title: "Module 3: Coronavirus"
 sidebar: 
  nav: "coronavirus"
 ---

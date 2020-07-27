@@ -73,7 +73,7 @@ coronavirus:
   - title: About This Module
     children:
       - title: "Introduction"
-        url: /coronavirus/home
+        url: /coronavirus/home      
   - title: Protein Structure
     children:
       - title: "Protein Structure Prediction"
@@ -82,10 +82,9 @@ coronavirus:
         url: /coronavirus/rmsd_prody
       - title: "More on RMSD"
         url: /coronavirus/rmsd2
-   - title: Visualizing and Analyzing Differences
-     children:
-       - title: "Structural and ACE2 Interaction Differences"
-         url: /coronavirus/structural_diff
-       - title: "VMD Tutorial"
-         url: /cornavirus/VMDTutorial
-
+  - title: Visualizing and Analyzing Differences
+    children:
+      - title: "Structural and ACE2 Interaction Differences"
+        url: /coronavirus/structural_diff
+      - title: "VMD Tutorial"
+        url: /coronavirus/VMDTutorial

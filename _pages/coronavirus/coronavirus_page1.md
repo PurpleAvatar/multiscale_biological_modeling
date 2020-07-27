@@ -24,7 +24,7 @@ Three protein prediction software were chosen for template-based modeling of the
 
 <a href="/multiscale_biological_modeling/_pages/coronavirus/files/CoV2SpikeRBDSeq.txt" download>CoV-2 RBD Sequence </a>
 
-<a href="/multiscale_biological_modeling/_pages/coronavirus/files/GalaxyWEB_Models.zip)" download> GalaxyWEB Results </a>
+<a href="/multiscale_biological_modeling/_pages/coronavirus/files/GalaxyWEB_Models.zip" download> GalaxyWEB Results </a>
 
 #### Robetta
 <a href="https://robetta.bakerlab.org/" target="_blank">Robetta</a> is a web-server that provides comparative and *ab initio* modeling of protein domains by utilizing the Rosetta fragment insertion method and de novo protocols. It allows for custom sequence alignments and can model multi-chain complexes. Robetta was chosen to model a single chain of the SARS-CoV-2 Spike protein and produced five models.

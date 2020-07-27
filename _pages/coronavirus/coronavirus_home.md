@@ -20,19 +20,18 @@ This module will consist of two main sections. First, we will utilize three publ
 <a href="https://www.ks.uiuc.edu/Research/vmd/" target="_blank">VMD</a> (Visual Molecular Dynamics) is a program that is designed for modeling of molecules and macromolecules. Many plugins are available for in-depth analysis, including molecular dynamics simulations and interaction energy analysis. NMWiz (normal mode wizard), which was designed as a GUI for ProDy, is included within VMD, allowing for visualization of analysis using ProDy.
 
 The spike protein is a trimer that is responsible for binding with human receptor ACE2. The RBD is located at the "top".
-<div style="text-align:center">
-	<video width="320" height="240" autoplay loop>
-	  <source type="video/mp4" src="../_pages/coronavirus/files/6vxxQSurf.mpg">
-	</video>
-</div>
 
-<div style="text-align:center">
-	<video width="320" height="240" autoplay loop>
-	  <source type="video/mp4" src="../_pages/coronavirus/files/6vxx.mpg">
-	</video>
-</div>
+<video width="320" height="240" controls>
+<source type="video/mp4" src="../_pages/coronavirus/files/6vxxQSurf.mpg">
+</video>
 
-[image-center](../_pages/coronavirus/files/SpikeRBDTop.png){: .align-center}
+
+<video width="320" height="240" controls>
+<source type="video/mp4" src="../_pages/coronavirus/files/6vxx.mpg">
+</video>
+
+
+<img src="../_pages/coronavirus/files/SpikeRBDTop.png">
 
 
 [Previous](#){: .btn .btn--primary .btn--x-large} [Next Page](prediction){: .btn .btn--primary .btn--x-large}

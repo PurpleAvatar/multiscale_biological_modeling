@@ -1,6 +1,6 @@
 ---
 permalink: /coronavirus/rmsd_prody
-title: "Module 1: Title"
+title: "Using ProDy to Calculate RMSD"
 sidebar: 
  nav: "coronavirus"
 ---

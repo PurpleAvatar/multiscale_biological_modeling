@@ -7,7 +7,7 @@ Very boring markdown file
 
 
 Contact Replaced #3: 
-<form id="fs-frm" name="simple-contact-form" accept-charset="utf-8" action="https://formspree.io/mnqgllnn" method="post">
+<form id="fs-frm" name="simple-contact-form" accept-charset="utf-8" action="https://formspree.io/mwkrayyn" method="post">
   <fieldset id="fs-frm-inputs">
     <label for="full-name">Your Name</label>
     <label for="email-address">Email Address</label>

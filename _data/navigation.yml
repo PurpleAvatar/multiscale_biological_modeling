@@ -78,13 +78,15 @@ coronavirus:
     children:
       - title: "Protein Structure Prediction"
         url: /coronavirus/prediction
-      - title: "Using ProDy to Calculate RMSD"
-        url: /coronavirus/rmsd_prody
       - title: "More on RMSD"
         url: /coronavirus/rmsd2
   - title: Visualizing and Analyzing Differences
     children:
       - title: "Structural and ACE2 Interaction Differences"
         url: /coronavirus/structural_diff
+  - title: Tutorials
+    children:
+      - title: "Using ProDy to Calculate RMSD"
+        url: /coronavirus/rmsd_prody
       - title: "VMD Tutorial"
         url: /coronavirus/VMDTutorial

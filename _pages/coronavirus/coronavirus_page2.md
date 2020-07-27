@@ -4,7 +4,6 @@ title: "Using ProDy to Calculate RMSD"
 sidebar: 
  nav: "coronavirus"
 ---
-### Using ProDy to Calculate RMSD
 
 This is a short tutorial on how to use ProDy to calculate RMSD between two structures. Please be sure to have the following installed:
 

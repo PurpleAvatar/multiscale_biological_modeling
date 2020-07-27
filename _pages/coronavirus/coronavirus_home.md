@@ -22,12 +22,12 @@ This module will consist of two main sections. First, we will utilize three publ
 The spike protein is a trimer that is responsible for binding with human receptor ACE2. The RBD is located at the "top".
 
 <video width="320" height="240" controls>
-<source type="video/mp4" src="../_pages/coronavirus/files/6vxxQSurf.mpg">
+<source type="video/mp4" src="../_pages/coronavirus/files/6vxxQSurf.mp4">
 </video>
 
 
 <video width="320" height="240" controls>
-<source type="video/mp4" src="../_pages/coronavirus/files/6vxx.mpg">
+<source type="video/mp4" src="../_pages/coronavirus/files/6vxx.mp4">
 </video>
 
 

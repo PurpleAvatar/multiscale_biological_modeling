@@ -14,10 +14,10 @@ One of the most significant difference between the SARS (SARS-CoV 2003) and SARS
 This module will consist of two main sections. First, we will utilize three publicly available structure-prediction softwares to model the SARS-CoV-2 spike protein and assess their accuracy using ProDy. Next, using ProDy and VMD, we will visualize and analyze the SARS-CoV-2 spike protein and compare it with the SARS spike protein.
 
 ### ProDy
-[ProDy](http://prody.csb.pitt.edu/) is an open-source Python package that allows users to perform protein structural dynamics analysis. Its flexibility allows users to select specific parts or atoms of the structure for conducting normal mode analysis and structure comparison.
+<a href="http://prody.csb.pitt.edu/" target="_blank">ProDy</a> is an open-source Python package that allows users to perform protein structural dynamics analysis. Its flexibility allows users to select specific parts or atoms of the structure for conducting normal mode analysis and structure comparison.
 
 ### VMD
-[VMD](https://www.ks.uiuc.edu/Research/vmd/) (Visual Molecular Dynamics) is a program that is designed for modeling of molecules and macromolecules. Many plugins are available for in-depth analysis, including molecular dynamics simulations and interaction energy analysis. NMWiz (normal mode wizard), which was designed as a GUI for ProDy, is included within VMD, allowing for visualization of analysis using ProDy.
+<a href="https://www.ks.uiuc.edu/Research/vmd/" target="_blank">VMD</a> (Visual Molecular Dynamics) is a program that is designed for modeling of molecules and macromolecules. Many plugins are available for in-depth analysis, including molecular dynamics simulations and interaction energy analysis. NMWiz (normal mode wizard), which was designed as a GUI for ProDy, is included within VMD, allowing for visualization of analysis using ProDy.
 
 [Previous](#){: .btn .btn--primary .btn--x-large} [Next Page](prediction){: .btn .btn--primary .btn--x-large}
 {: style="font-size: 100%; text-align: center;"}

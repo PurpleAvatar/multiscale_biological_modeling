@@ -17,7 +17,7 @@ Three protein prediction software were chosen for template-based modeling of the
 
 <a href="/multiscale_biological_modeling/_pages/coronavirus/files/CoV2SpikeProteinSeq.txt" download>CoV-2 Spike Sequence </a>
 
-<a href="/multiscale_biological_modeling/_pages/coronavirus/files/SWISS-MODEL%20(Spike)" download> SWISS-MODEL Results </a>
+<a href="/multiscale_biological_modeling/_pages/coronavirus/files/SWISS_Model.zip" download> SWISS-MODEL Results </a>
 
 #### GalaxyWEB
 <a href="http://galaxy.seoklab.org/" target="_blank">GalaxyWEB</a> is a web-server with many available services including protein structure prediction, structure refinement, protein interaction prediction, and GPCR applications. GalaxyTBM (the template-based modeling service) uses HHsearch to identify up to 20 templates, then aligns the core sequence with the templates using PROMALS3D. Next, models are generated using MODELLERCSA. GalaxyWEB was chosen to model the receptor binding domain (RBD) of the SARS-CoV-2 Spike protein and produced five models.
@@ -31,7 +31,7 @@ Three protein prediction software were chosen for template-based modeling of the
 
 <a href="/multiscale_biological_modeling/_pages/coronavirus/files/CoV2SpikeASeq.txt" download>CoV-2 Spike Chain A Sequence </a>
 
-<a href="/multiscale_biological_modeling/_pages/coronavirus/files/Robetta%20Model%20(Spike%20A)" download> Robetta Results </a>
+<a href="/multiscale_biological_modeling/_pages/coronavirus/files/Robetta_Model.zip" download> Robetta Results </a>
 
 ### Structure Comparison with RMSD
 RMSD is a common method to quantitatively measure the difference between two paired sets of values, such as coordinates. A lower RMSD value indicates a higher similarity between the two sets and a RMSD value of 0 indicates a perfect fit. This is especially useful in preliminary structure comparisons between proteins since protein structures are often represented as atomic coordinates. By comparing the RMSD between the predicted model the published model, a quantitative measure of the model's accuracy can be obtained. The formula for calculating RMSD is as follows:

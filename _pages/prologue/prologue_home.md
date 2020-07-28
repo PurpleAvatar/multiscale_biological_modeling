@@ -1,5 +1,5 @@
 ---
-permalink: /prologue/home
+permalink: /prologue/
 title: "Module 1: Title"
 sidebar: 
  nav: "prologue"

@@ -13,8 +13,8 @@ main:
         url: /coronavirus/home
   - title: "Meet the Team"
     url: /meet-the-team/
-  - title: "Adopt the Course"
-    url: /adopt-the-course/
+  - title: "Contact"
+    url: /contact/
 
 prologue:
   - title: Why Model? Now?

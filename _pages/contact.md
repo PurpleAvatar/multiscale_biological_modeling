@@ -3,7 +3,7 @@ permalink: /contact/
 title: "Contact Us"
 ---
 
-This project is an ongoing work in progress. If you have any questions about this project, or to report typos/bugs, please use the form below.
+Work on this project is ongoing. If you have any questions about this project, or to report typos/bugs, please use the form below.
 
 We also would be happy to hear from you if you are a learner who is interested in providing a testimonial about how this course has been useful to you.
 
@@ -11,9 +11,8 @@ Finally, if you are an instructor who is interested in adopting this course in y
 
 We look forward to hearing from you!
 
-# Contact Form
+## Contact Form
 
-Contact Replaced #3: 
 <form id="fs-frm" name="simple-contact-form" accept-charset="utf-8" action="https://formspree.io/mwkrayyn" method="post">
   <fieldset id="fs-frm-inputs">
     <label for="full-name">Your Name</label>

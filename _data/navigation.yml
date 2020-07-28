@@ -20,7 +20,7 @@ prologue:
   - title: Why Model? Now?
     children:
       - title: "Randomness"
-        url: /prologue/home
+        url: /prologue/
       - title: "Alan Turing's Patterns"
         url: /prologue/turing
       - title: "Random Walks"

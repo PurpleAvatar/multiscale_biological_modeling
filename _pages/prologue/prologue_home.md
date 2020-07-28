@@ -1,17 +1,19 @@
 ---
 permalink: /prologue/
-title: "Module 1: Title"
+title: "Prologue: INSERT TITLE"
 sidebar: 
  nav: "prologue"
 ---
 
-*Introduction*
+##Introduction
 
-* We know from quantum physics that everything that happens in the universe is as a result of the interactions of particles, and that much of the movement of these particles boils down to randomness.
-* It is difficult for “macro”-oriented beings like ourselves to even acknowledge that every hope we have ever had, every decision we have ever made, is the result of firings of neurons and the exchange of ions deep within us.
-* So, although this is a course in biological modeling, much will revolve around our ability to make conclusions about large-scale things that we observe as a result of the complicated symphony of particles that are interacting randomly.
-* It shouldn’t be a surprise that randomness is useful for drawing big-picture conclusions to those who have a background with computer programming.
-* For example, whether we are forecasting an election from polling data, predicting the weather tomorrow, or simulating moves of stock prices to determine derivative prices – all of these require us to embrace the effects of randomness to determine average-case behavior.
+Quantum physics tells us that everything that happens in the universe ultimately depends on the interaction of tiny particles.  Yet it is difficult for beings like ourselves to acknowledge this fundamental truth of the universe when our experience of existence is guided by "macro" phenomena.
+
+Every one of our friends, however cherished, is just a skin-covered bag of trillions of cells acting largely independently --- sometimes even antagonistically. Every memory we have ever had, however powerful, can be encoded by a particular exchange of ions across neural synapses deep within our nervous system.  Even the behavior of an individual cell within us is driven almost chiefly by the action of molecules that sense their environment and cause chemical reactions within the cell to evince what we see as a cellular change.
+ 
+This cold perspective of our existence serves not to depress, but rather to point out that we are all already used to inferring high-level behavior from a symphony of much more low-level processes. Yet what makes the whole thing seem even crueler is that so often this symphony is based upon *randomness*; that not only is there not a conscious brain driving the molecular interactions every single one of our cells, but that these interactions rely upon random movements of particles.
+
+The power of randomness as a driver of emergent behavior may not be surprising to a reader who is familiar with programming. Whether we are forecasting an election from polling data, predicting tomorrow's weather, or simulating the moves of stock prices, we often use randomized algorithms to power our models and obtain big-picture conclusions. What we will see is that biology is no exception, and that in some sense life is the most amazing random algorithm of all.
 
 
 [Previous](#){: .btn .btn--primary .btn--x-large} [Next Page](turing){: .btn .btn--primary .btn--x-large}

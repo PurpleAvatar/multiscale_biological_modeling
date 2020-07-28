@@ -41,7 +41,7 @@ RMSD is a common method to quantitatively measure the difference between two pai
 where *n* is the number of pairs of equivalent atoms, *d* is the distance between the *i*th atom pair. For protein structure analysis, RMSD values are typically in the units of angstroms (Å). Proteins are made up of a chain of amino acids that is folded in a very specific way and the shape of the protein is vital to its function. Amino acids all have the same general structure: an amine group (-NH<sub>2</sub>), a carboxyl group (-COOH), a *R* group side-chain, and a central alpha-carbon (C⍺) that connects everything together. The amino acids are linked together by a peptide bond between the amine group of one amino acid and the carboxyl group of the other amino acid. By focusing on the positions of the alpha-carbons, the overall tertiary shape can be determined, although this leaves out the *R* groups, which is extremely important since they are responsible for the biochemical properties of the amino acids, and the folding and interactions of the protein. However, the alpha-carbons are usually sufficient in preliminary structure comparison assessments and for calculating RMSD.
 
 
-[Previous](home){: .btn .btn--primary .btn--x-large} [Next Page](rmsd_prody){: .btn .btn--primary .btn--x-large}
+[Previous](home){: .btn .btn--primary .btn--x-large} [Next Page](rmsd2){: .btn .btn--primary .btn--x-large}
 {: style="font-size: 100%; text-align: center;"}
 
 

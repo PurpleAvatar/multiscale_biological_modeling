@@ -1,6 +1,6 @@
 ---
-permalink: /adopt-the-course/
-title: "Adopt the Course"
+permalink: /contact/
+title: "Contact Us"
 ---
 
 Very boring markdown file

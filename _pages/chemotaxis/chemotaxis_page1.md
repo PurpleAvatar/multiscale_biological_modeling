@@ -1,125 +1,178 @@
 ---
-permalink: /chemotaxis/tutorial_lr
-title: "Module 1: Title"
+permalink: /chemotaxis/tutorial_phos
+title: "Phosphorylation"
 sidebar: 
  nav: "chemotaxis"
 ---
 
-It's actually not difficult to simulate chemotaxis behavior of *E. coli*. We will build a chemotaxis simulation with [BioNetGen](https://www.csb.pitt.edu/Faculty/Faeder/?page_id=409) at the molecular level from scratch!
+In this page, we will:
+ - Add phosphorylation mechanisms for chemotaxis
+ - Observe cellular behavior in response to stimuli
 
-### So, what is BioNetGen?
+### Adding Phosphorylation Mechanisms
 
-[BioNetGen](https://www.csb.pitt.edu/Faculty/Faeder/?page_id=409) (BNG) is a software for specification and simulation of rule-based modeling. The chemotaxis pathyway is essentially a set of rules that can specify a mathematical model, and we would like to translate it into a simulation. We can specify our rules in [BNG](https://www.csb.pitt.edu/Faculty/Faeder/?page_id=409), run the simulation, and visualize the results easily. 
+Ligand binding and dissociation should change the conformation of the ligand and therefore impact the downstream reactions. Now let's include more downstream reactions in our model.
 
-### Set-up
+Our first addition is phophorylation. Phosphorylation is a chemical reaction that attaches a phosphoryl group (PO<sub>3</sub><sup>-</sup>) to an organic molecule. The removal of the phosphoryl group is dephosphorylation. Such modifications can activate or deactivate certain enzymes like switches. For example, a cyclin dependent kinase (CDK) when activated by G1/S cyclin, can phosphorylate its target proteins to activate DNA replication and initiate S phase[^1].
 
-[RuleBender](https://github.com/RuleWorld/rulebender/releases/tag/RuleBender-2.3.2) is the graphical interface for BioNetGen. Please [download](https://github.com/RuleWorld/rulebender/releases/tag/RuleBender-2.3.2) the version corresponding to your operating system. Here is a step-by-step [installation guide](https://github.com/RuleWorld/rulebender/blob/master/docs/RuleBender-installation-guide.pdf).
+In chemotaxis, the flagellar proteins are also activated by phosphorylation. In fact, It starts from phosphorylation of CheA in the receptor complex, and then CheA phosphorylates CheB and CheY, and CheY then phosphorylates FliM. The sequence of phosphorylation event is called a phosphorylation cascade. We will model CheA and CheY phosphorylation in this page (and CheB in next page), specifically the reactions in the purple square.
 
-### Starting with Ligand-Receptor Dynamics
+![image-center](../assets/images/chemotaxispathwayphos.png){: .align-center}
 
-To begin with, let's build a model to simulate ligand-receptor binding dynamics. In our system, there are only two types of molecules: the ligand (L), and the receptor (R). The ligand can bind to the receptor, forming an intermediate, and they could also dissociate. We write this reaction as `L + R <-> L.R`.
+We have:
 
-First, open RuleBender. Select "New BioNetGen Project" under File. Since we are going to build from scratch, we can start with blank files. Feel free to start with any existing template too. Call it `chemotaxis_from_scratch`.
-![image-center](../assets/images/chemotaxis_tutorial1.png){: .align-center}
+- Ligand binding and dissociation: L + R <-> LR with rate *k1, k2*
+- Let's say the receptor is a complex of proteins, and one of the protein undergoes autophosphorylation, the rate of autophosphorylation depends on conformation of the receptor. When receptor is not bound with ligand, autophosphorylation is faster.
+	- LR + P -> LR-P rate *k3*
+	- R + P -> R-P   rate *k3 x 0.2*
+- Then the autophosphorylated receptor complex can phosphorylate a downstream protein, call it Y. The phosphorylated Y will be able to some observable cellular response, so we will use the level of Y-P to indicate the level of cellular response later.
+	- R-P + Y -> R + Y-P  *k4*
+- But if the Y stay phosphorylated forever, the cell will remain in the same actions. So we would also like to include a molecule Z to catalyze the removal the phosphoryl group from Y-P.
+	- Z + Y-P -> Z + Y + P *k5*
 
-Rename your `.bngl` file as `ligand_receptor.bngl`. Now you should be able to start coding at line 1!
+Now let's include these into our BNG model.
 
-![image-center](../assets/images/chemotaxis_tutorial2.png){: .align-center}
+First, we introduce `state` in our particles to mark whether it is phosphorylated or not. Change `R(l)` to `R(l,Phos~U~P)`. The `Phos~U~P` indicates we introduce phosphorylation states to `R`, and `U` indicates unphosphorylated, while `P` indicates phosphorylated. You can also use other letters. We also add molecule `Y(Phos~U~P)` and `Z()`. So our molecule definitions become the following.(*Note: be careful with the use of spaces; don't put spaces after the comma.*)
 
-We would like to tell BNG the rules for our model. To specify our model, specify the `begin model` and `end model`. We will add all model specification information between the two lines. We would also like to add our molecules to the model under the `molecule types` section. The `(r)` specifies that molecule `L` contains one component, same for `R` and we will use this component for L-R binding later. *Don't worry if you get lost, we will show the complete code.*
+	begin molecule types
+		L(r)           #ligand molecule
+		R(l,Phos~U~P)  #receptor molecule
+		Y(Phos~U~P)    #CheY
+		Z()            #CheZ
+	end molecule types
+
+And we update the reaction rules with the phosphorylation and dephosphorylation reactions above.
+
+	begin reaction rules
+		LigandReceptor: L(r) + R(l) <-> L(r!1).R(l!1) k1, k2
 	
-	begin model
-
-	begin molecule types
-		L(r)
-		R(l)
-	end molecule types
-
-	end model
-
-Now let's also add reaction rules within the model. At the left-hand-side (LHS), by specifying `L(r)`, we select only unbound `L` molecules; if we would like to select any molecule, we can simply write `L`. At the right-hand-side (RHS) of the reaction, `L(r!1).R(l!1)` indicates the formation of the intermediate. `!1` indicates formation of bond, we use numerical values to indicate bond types. Since the reaction is bidirectional, we need to specify rate of reaction for both. *Note: if you compile now, an error will occur because we haven't define k1 and k2 yet.*
-
-	begin reaction rules
-		LigandReceptor: L(r) + R(l) <-> L(r!1).R(l!1) k1, k2
+		#Free vs. ligand-bound receptor complexes
+		#They autophosphorylates at different rates
+		FreeReceptorPhos: R(l,Phos~U) -> R(l,Phos~P) k3
+		BoundReceptorPhos: L(r!1).R(l!1,Phos~U) -> L(r!1).R(l!1,Phos~P) k3*0.2
+	
+		YPhos: R(Phos~P) + Y(Phos~U) -> R(Phos~U) + Y(Phos~P) k4
+		YDephos: Z() + Y(Phos~P) -> Z() + Y(Phos~U) k5
 	end reaction rules
 
-We can specify how many molecules we would like to put at the beginning of the simulation within `seed species` section. We are putting L0 unbound L molecules, and R0 unbound R molecules at the beginning.
+Now let's indicate the number of molecules present at the beginning of the simulation. We will have half of the `R` and half of the `Y` being phosphorylated at the beginning.
 
 	begin seed species
 		L(r) L0
-		R(l) R0
+		R(l,Phos~U) R0*0.5
+		R(l,Phos~P) R0*0.5
+		Y(Phos~U) Y0*0.5
+		Y(Phos~P) Y0*0.5
+		Z() Z0
 	end seed species
 
-
-Now let's declare all the parameters we mentioned __before__ any usage of them (here, before the `reaction rules` section).
+Let's update all the parameters. For simplicity, we will use M for concentration, and second for time. 
 
 	begin parameters
 		L0 100
 		R0 50
-		k1 0.02
-		k2 0.1
+		Y0 20
+		Z0 5
+	
+		k1 0.02 #ligand-receptor binding
+		k2 0.1  #ligand-receptor dissociation
+		k3 0.5  #receptor complex autophosphorylation
+		k4 0.05 #receptor complex phosphorylates Y
+		k5 0.25 #Z dephosphoryaltes Y
 	end parameters
 
-If you save the file now, you should be able to see a Contact-Map indicating the potential bonding of L and R at the upper right corner of your graphical user interface!
-
-![image-center](../assets/images/chemotaxis_tutorial3.png){: .align-center}
-
-Before simulating our model, we would also like to define the observables under `observables` section within the model specification. 
+We would also be interested in the number of T-P and Y-P during the simulation.
 
 	begin observables
-		Molecules L_free L(r)
+		Molecules ActiveY Y(Phos~P)
+		Molecules ActiveR R(Phos~P)
 		Molecules L_bound L(r!1).R(l!1)
 	end observables
 
-And now we are ready to simulate! Add the `generate network` and `simulate` command outside of your model specification. `t_end` specify the simulation duration, and `n_steps` tells the program to break the simulation into how many time points to report the concentration.
-
-	generate_network({overwrite=>1})
-	simulate({method=>"ode", t_end=>5, n_steps=>100})
-
-The whole simulation code for ligand-receptor dynamics:
+Observe the simulation for longer. Change `t_end` at the bottom to 20. Now the whole simulation code is like this.
 
 	begin model
 
 	begin molecule types
 		L(r)
-		R(l)
+		R(l,Phos~U~P)
+		Y(Phos~U~P)
+		Z()
 	end molecule types
 
 	begin parameters
 		L0 100
 		R0 50
-		k1 0.02
-		k2 0.1
+		Y0 20
+		Z0 5
+		
+		k1 0.02 #ligand-receptor binding
+		k2 0.1 #ligand-receptor dissociation
+		k3 0.5 #receptor complex autophosphorylation
+		k4 0.05 #receptor complex phosphorylates Y
+		k5 0.25 #Z dephosphoryaltes Y
 	end parameters
 
 	begin reaction rules
 		LigandReceptor: L(r) + R(l) <-> L(r!1).R(l!1) k1, k2
+		
+		#Free vs. ligand-bound receptor complexes autophosphorylates at different rates
+		FreeReceptorPhos: R(l,Phos~U) -> R(l,Phos~P) k3
+		BoundReceptorPhos: L(r!1).R(l!1,Phos~U) -> L(r!1).R(l!1,Phos~P) k3*0.2
+		
+		YPhos: R(Phos~P) + Y(Phos~U) -> R(Phos~U) + Y(Phos~P) k4
+		YDephos: Z() + Y(Phos~P) -> Z() + Y(Phos~U) k5
 	end reaction rules
 
 	begin seed species
 		L(r) L0
-		R(l) R0
+		R(l,Phos~U) R0*0.5
+		R(l,Phos~P) R0*0.5
+		Y(Phos~U) Y0*0.5
+		Y(Phos~P) Y0*0.5
+		Z() Z0
 	end seed species
 
 	begin observables
-		Molecules L_free L(r)
+		Molecules ActiveY Y(Phos~P)
+		Molecules ActiveR R(Phos~P)
 		Molecules L_bound L(r!1).R(l!1)
 	end observables
 
 	end model
 
 	generate_network({overwrite=>1})
-	simulate({method=>"ode", t_end=>5, n_steps=>100})
+	simulate({method=>"ode", t_end=>20, n_steps=>100})
 
-Go to `Simulation` at the right side of the Contact Map button and click `Run`. You can visualize your `.gdat` data.
+### So What?
 
-![image-center](../assets/images/chemotaxis_tutorial4.png){: .align-center}
+Before running the simulation, let's think about what will happen. If we don't add any ligand molecule into the system, then R phosphorylation happens at rate *k3*, and R will phosphorylates Y, which will also be dephosphorylated by Z. The concentrations of phosphorylated R and Y will stay at an equilibrium - actually conveniently the 50% phosphorylated we defined in the `seed species` section. When we add ligand molecules into the system, as there are more bound R, there will be less R-P, and therefore less Y-P.
 
-In the next page, we will start adding phosphorylation in our model!
+Change `L0` in the `parameters` section to 0, and then click `Simulate` and `Run`. You could observe the constant level of R-P and Y-P.
 
-If you are interested, a more detailed tutorial on BNG modeling can be found [here](http://comet.lehman.cuny.edu/griffeth/BioNetGenTutorialFromBioNetWiki.pdf).
+![image-center](../assets/images/chemotaxis_tutorial5.png){: .align-center} 
 
-[Previous](home){: .btn .btn--primary .btn--x-large} [Next Page](tutorial_phos){: .btn .btn--primary .btn--x-large}
+Then change `L0` to 20.
+
+![image-center](../assets/images/chemotaxis_tutorial6.png){: .align-center} 
+
+Then change `L0` to 100.
+
+![image-center](../assets/images/chemotaxis_tutorial7.png){: .align-center} 
+
+Actually, that is similar to the action of chemotaxis! With the addition of attractants, more receptor dimers are bound to attractants, and therefore less CheA autophosphorylation happens (here we include the CheA as part of the receptor complex). As a result, less CheY can be phosphorylated by CheA, and therefore, CheY phosphorylates the flagellar proteins less frequently, reducing tumbling frequency. 
+
+But this is only half of the story. In the next section, we will code up the adaptation, including CheR, CheB , and methylation states for chemotaxis.
+
+If you would like to continue using this model for the next section, rename R to T (T stands for ternary complex, we want to avoid confusion with CheR). You could rename `Y` to `CheY`, `Z` to `CheZ` if you prefer.
+
+
+[^1]Bertoli C, Skotheim JM, de Bruin RAM. 2013. Control of cell cycle transcription during G1 and S phase. Nature Reviews Molecular Cell Biology 14:518-528. [Available online](https://www.nature.com/articles/nrm3629).
+
+
+[Previous](tutorial_lr){: .btn .btn--primary .btn--x-large} [Next Page](tutorial_adap){: .btn .btn--primary .btn--x-large}
 {: style="font-size: 100%; text-align: center;"}
+
+
 
 

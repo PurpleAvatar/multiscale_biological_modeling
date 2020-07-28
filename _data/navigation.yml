@@ -4,7 +4,7 @@ main:
   - title: "Take the Course"
     sublinks:
       - title: "Prologue"
-        url: /prologue/home
+        url: /prologue/
       - title: "Motifs"
         url: /motifs/home
       - title: "Chemotaxis"

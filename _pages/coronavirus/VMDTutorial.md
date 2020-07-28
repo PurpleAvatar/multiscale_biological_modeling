@@ -47,5 +47,5 @@ NMWiz is a plugin in VMD that is designed to be a GUI for ProDy. It uses ProDy f
 
 * ANM calculation will enable you to create animations of the molecule, displaying functional motions of the molecule. In addition, you can choose to see Crosscorrelation and Square-Fluctuation plots.
 
-[Previous](#){: .btn .btn--primary .btn--x-large} [Next Page](#){: .btn .btn--primary .btn--x-large}
+[Previous](rmsd_prody){: .btn .btn--primary .btn--x-large} [Next Page](#){: .btn .btn--primary .btn--x-large}
 {: style="font-size: 100%; text-align: center;"}

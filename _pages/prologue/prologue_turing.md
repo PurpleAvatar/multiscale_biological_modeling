@@ -17,7 +17,7 @@ Turing is typically known for two contributions. First, he was a genius code bre
 
 You may be shocked that any computer can ultimately be represented by such a simple machine, one that Joseph Weizenbaum famously called nothing more than "pebbles on toilet paper". If this topic interests you, we include an excellent introductory video on Turing machines below.
 
-<iframe width="640" height="360" src="https://www.youtube.com/watch?v=PLVCscCY4xI" frameborder="0" allowfullscreen></iframe>
+<iframe width="640" height="360" src="https://www.youtube-nocookie.com/watch?v=PLVCscCY4xI" frameborder="0" allowfullscreen></iframe>
 
 Why spend time mentioning Turing's foundational work on theoretical computer science because what Turing was ultimately doing was demonstrating that the very simple rules of a Turing machine could be extended to obtain emergent behavior that seems far more complex. This is inherently tied to the point that we made in the introduction about the universe being governed by simple interactions of particles, a point that we now return to in the context of biological modeling.
 

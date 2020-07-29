@@ -15,7 +15,7 @@ INSERT PHOTO OF TURING
 
 Turing is typically known for two contributions. First, he was a genius code breaker during WWII, helping to break several German ciphers. Second, his famous contribution to science came in a 1936 paper in which he introduced what has come to be known as a **Turing machine**. This hypothetical computer, which Turing introduced in 1935, reads numbers off of an infinitely long tape, moving up and down the tape, rewriting cells according to a finite collection of internal rules. What is remarkable about Turing machines is that nearly a century later, any task that a computer performs, from the device you are using to read this to the world's most powerful supercomputer, can still be implemented by a Turing machine.
 
-You may be shocked that any computer can ultimately be represented by such a simple machine, one that Joseph Weizenbaum famously called nothing more than "pebbles on toilet paper". If this topic interests you, we include an excellent introductory video on Turing machines below.
+You may be shocked that any computer can ultimately be represented by such a simple machine, one that Joseph Weizenbaum famously called nothing more than "pebbles on toilet paper". If this topic interests you, we include an excellent introductory video on Turing machines below, including a demonstration of how a Turing machine can be used to solve a simple problem.
 
 <iframe width="640" height="360" src="https://www.youtube-nocookie.com/embed/PLVCscCY4xI" frameborder="0" allowfullscreen></iframe>
 

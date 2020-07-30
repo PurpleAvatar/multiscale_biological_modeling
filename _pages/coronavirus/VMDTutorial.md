@@ -9,11 +9,17 @@ This is a short tutorial on how to use VMD to visualize molecules and perform so
 
 ### Visualization
 
+Here, we will recreate the VMD visualization of the ACE2-binding ridge of SARS-CoV-2 from the section <a href="https://purpleavatar.github.io/multiscale_biological_modeling/coronavirus/structural_diff" target="_blank">"Structural and ACE2 Interaction Differences"</a>
+
 #### Loading Molecules
 
-* The first step is to load the molecule into the protgram. In *VMD Main*, go to *File>New Molecule*. Click on *Browse*, select the molecule (.pdb) and click *Load*. The molecule should now be listed in *VMD Main* as well as the visualization in the *OpenGL Display*.
+The first step is to download the protein structure of <a href="https://www.rcsb.org/structure/6vw1" target="_blank">6vw1</a> from the protein data bank. 
 
-#### Moving Flied of View
+<img src="../_pages/coronavirus/files/Ridge%20Tutorial/Ridge0.png>
+
+load the molecule into the program. In *VMD Main*, go to *File>New Molecule*. Click on *Browse*, select the molecule (.pdb) and click *Load*. The molecule should now be listed in *VMD Main* as well as the visualization in the *OpenGL Display*.
+
+#### Moving Field of View
 
 * In the *OpenGL Display* window, you can click and drag the molecule to change the orientation. Pressing ‘r’ on the keyboard allows you to rotate the molecule, pressing ‘t’ on the keyboard allows you to translate the molecule, and finally pressing ‘s’ allows you to enlarge or shrink the molecule.
 

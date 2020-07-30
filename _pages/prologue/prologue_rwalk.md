@@ -47,8 +47,6 @@ Before we continue to the next lesson, we would point you to a beautiful animati
 
 <iframe width="640" height="360" src="https://www.youtube-nocookie.com/embed/KQgydF-fXvc#t=06m10s" frameborder="0" allowfullscreen></iframe>
 
-Embed this video: https://www.youtube.com/watch?v=KQgydF-fXvc#t=6m10s
-
 [Previous](home){: .btn .btn--primary .btn--x-large} [Next Page](animals){: .btn .btn--primary .btn--x-large}
 {: style="font-size: 100%; text-align: center;"}
 

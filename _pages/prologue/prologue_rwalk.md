@@ -41,14 +41,13 @@ We also point out that our experience of the world confirms the statement that r
 
 ## Big numbers in small spaces
 
-* A beautiful animation illustrating just how far a single particle can travel in a relatively small amount of time is shown in the following excellent instructional video from the Pittsburgh Supercomputing Center simulating the path taken by a glucose molecule as the result of Brownian motion.
+Before we continue to the next lesson, we would point you to a beautiful animation illustrating just how far a single randomly moving particle can travel in a relatively small amount of time. This animation is part of the following excellent instructional video produced by the late Joel Stiles simulating the path taken by a glucose molecule as the result of Brownian motion.
 
 {% include video id="KQgydF-fXvc&start=370" provider="youtube" %}
 
 <iframe width="640" height="360" src="https://www.youtube-nocookie.com/embed/KQgydF-fXvc&start=370" frameborder="0" allowfullscreen></iframe>
 
 Embed this video: https://www.youtube.com/watch?v=KQgydF-fXvc#t=6m10s
-
 
 [Previous](home){: .btn .btn--primary .btn--x-large} [Next Page](animals){: .btn .btn--primary .btn--x-large}
 {: style="font-size: 100%; text-align: center;"}

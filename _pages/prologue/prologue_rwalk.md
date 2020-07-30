@@ -43,7 +43,7 @@ We also point out that our experience of the world confirms the statement that r
 
 ## Big numbers in small spaces
 
-Before we continue to the next lesson, we would point you to a beautiful animation illustrating just how far a single randomly moving particle can travel in a relatively small amount of time. This animation is part of the following excellent instructional video produced by the late Joel Stiles simulating the path taken by a glucose molecule as the result of Brownian motion.
+Before we continue to the next lesson, we would point you to a beautiful animation illustrating just how far a single randomly moving particle can travel in a relatively small amount of time. This animation is part of the following excellent instructional video produced by the late Joel Stiles. It begins at around the 6:10 mark, which shows a simulation of the path taken by a glucose molecule as the result of Brownian motion.
 
 <iframe width="640" height="360" src="https://www.youtube-nocookie.com/embed/KQgydF-fXvc#t=06m10s" frameborder="0" allowfullscreen></iframe>
 

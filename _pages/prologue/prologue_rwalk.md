@@ -5,7 +5,7 @@ sidebar:
  nav: "prologue"
 ---
 
-## The wanderlust of a single randomly moving particle
+## The wanderlust of a single particle
 
 In the previous two sections, we have discussed a central theme of our work in this course: the appearance of high-level behavior from simple rules.
 
@@ -45,9 +45,7 @@ We also point out that our experience of the world confirms the statement that r
 
 Before we continue to the next lesson, we would point you to a beautiful animation illustrating just how far a single randomly moving particle can travel in a relatively small amount of time. This animation is part of the following excellent instructional video produced by the late Joel Stiles simulating the path taken by a glucose molecule as the result of Brownian motion.
 
-{% include video id="KQgydF-fXvc&start=370" provider="youtube" %}
-
-<iframe width="640" height="360" src="https://www.youtube-nocookie.com/embed/KQgydF-fXvc&start=370" frameborder="0" allowfullscreen></iframe>
+<iframe width="640" height="360" src="https://www.youtube-nocookie.com/embed/KQgydF-fXvc" frameborder="0" allowfullscreen></iframe>
 
 Embed this video: https://www.youtube.com/watch?v=KQgydF-fXvc#t=6m10s
 

@@ -29,7 +29,7 @@ To be more precise, Turing was not approaching this question from the perspectiv
 
 In what follows, we will introduce a simple particle model based on Turing's ideas, explore how it can be tweaked to explain not just the appearance of stripes on an animal's skin but also spots, and explore the model's extensions to additional biological phenomena. Read on to join us!
 
-[Previous](home){: .btn .btn--primary .btn--x-large} [Next Page](rwalk){: .btn .btn--primary .btn--x-large}
+[Previous](home){: .btn .btn--primary .btn--x-large} [Next Page](random-walk){: .btn .btn--primary .btn--x-large}
 {: style="font-size: 100%; text-align: center;"}
 
 Citations:

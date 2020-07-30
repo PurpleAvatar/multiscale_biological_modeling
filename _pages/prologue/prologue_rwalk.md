@@ -1,18 +1,22 @@
 ---
-permalink: /prologue/rwalk
+permalink: /prologue/random-walk
 title: "Random Walks"
-sidebar: 
+sidebar:
  nav: "prologue"
 ---
 
-* Let us take a step backward to consider a simple problem, which is observing the movement of a single particle walking randomly in a two-dimensional plane.
-* We will see later that such a model, though simple, is the basis for how bacteria like E. coli explore their environment looking for food.
-* But for now, let’s examine the path of the particle, which at each step is allowed to move a single unit in a random direction.
-* We now ask a question: after n time steps, how far has the particle traveled from its starting point (as the crow flies)?
-* To answer our question, et’s watch an animation of our single particle and see for ourselves. We will soon use the software used for building this animation in the context of biological modeling.
+In the previous two sections, we have discussed a central theme of our work in this course: the appearance of high-level behavior from simple rules.
+
+Before we continue with seeing how this concept can be used to understand how zebras get their stripes, we will consider a simpler phenomenon by observing the movement of a single particle walking randomly in a two-dimensional plane.  We will see later that this model, however simple, is a powerful implement that bacteria like *E. coli* use to explore their environment in a search for food.
+
+But for now, let's examine the path of our particle, which makes a number of steps. At each step, the particle moves a single unit in a randomly chosen direction. Before we show this animation, we ask a question.
+
+**STOP**: After *n* steps, how far do you think the particle will have traveled (as the crow flies) from its starting point?
+
+To answer this question, let's watch an animation of the particle and see for ourselves. If you're interested in building a simulation like this, sit tight --- we will soon see how to use the software used to generate this animation in the context of biological modeling.
 
 <div style="text-align:center">
-	<video width="320" height="240" controls>
+	<video width="640" height="480" controls>
 	  <source type="video/mp4" src="../assets/random_walk_1.mp4">
 	</video>
 </div>

@@ -1,11 +1,13 @@
 ---
 permalink: /prologue/animals
 title: "Back to Zebras"
-sidebar: 
+sidebar:
  nav: "prologue"
 toc: true
 toc_sticky: true
 ---
+
+NEED TO DEFINE TURING PATTERNS
 
 Now, returning to the question of zebras.
 
@@ -45,5 +47,5 @@ Now, returning to the question of zebras.
 
 (Phillip will insert Turing quote on the horse part being the hard part)
 
-[Previous](rwalk){: .btn .btn--primary .btn--x-large} [Next Page](blocks){: .btn .btn--primary .btn--x-large}
+[Previous](random-walk){: .btn .btn--primary .btn--x-large} [Next Page](blocks){: .btn .btn--primary .btn--x-large}
 {: style="font-size: 100%; text-align: center;"}

@@ -1,6 +1,6 @@
 main:
   - title: "About"
-    url: /about/ 
+    url: /about/
   - title: "Take the Course"
     sublinks:
       - title: "Prologue"
@@ -24,7 +24,7 @@ prologue:
       - title: "Alan Turing's Patterns"
         url: /prologue/turing
       - title: "Random Walks"
-        url: /prologue/rwalk
+        url: /prologue/random-walk
       - title: "Back to Zebras"
         url: /prologue/animals
       - title: "From Particles to Blocks"
@@ -55,7 +55,7 @@ motifs:
         url: /motifs/tutorial_feed
       - title: "Oscillators"
         url: /motifs/tutorial_oscillators
-     
+
 
 chemotaxis:
   - title: Title? Here?
@@ -73,7 +73,7 @@ coronavirus:
   - title: About This Module
     children:
       - title: "Introduction"
-        url: /coronavirus/home      
+        url: /coronavirus/home
   - title: Protein Structure
     children:
       - title: "Protein Structure Prediction"

@@ -5,6 +5,8 @@ sidebar:
  nav: "prologue"
 ---
 
+## The wanderlust of a single randomly moving particle
+
 In the previous two sections, we have discussed a central theme of our work in this course: the appearance of high-level behavior from simple rules.
 
 Before we continue with seeing how this concept can be used to understand how zebras get their stripes, we will consider a simpler phenomenon by observing the movement of a single particle walking randomly in a two-dimensional plane. At each step, the particle moves a single unit in a randomly chosen direction. Before we show this animation, we ask a question.

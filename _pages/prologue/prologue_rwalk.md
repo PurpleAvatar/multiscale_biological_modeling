@@ -32,7 +32,7 @@ This is not to say that after *n* steps our particle will be *exactly* distance 
 Yet the statement about the average behavior of a particle is powerful, and can be seen more clearly if we animate the action of many independent particles following random walks.
 
 <div style="text-align:center">
-	<video width="320" height="240" controls>
+	<video width="640" height="480" controls>
 	  <source type="video/mp4" src="../assets/random_walk_200.mp4">
 	</video>
 </div>

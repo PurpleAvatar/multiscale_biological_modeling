@@ -21,9 +21,11 @@ To answer this question, let's watch an animation of the particle and see for ou
 	</video>
 </div>
 
-* You may be surprised at how far the particle has wandered from its starting point. But this is just a single particle; perhaps its behavior is extremely nonstandard.  Perhaps the typical particle is much more of a homebody and continually returns to the origin.
-* It turns out that despite the fact that the particle’s movements are random, there is a mathematical theorem that provides a surprising amount of understanding over its movement.  Specifically, after n steps of unit length, the particle is, on average, a distance of sqrt(n) away from the origin.
-* This is not to say that the distance will be exactly sqrt(n) from the origin, any more than if we were to claim that flipping a coin 2,000 times would produce exactly 1,000 heads.  It is possible for the particle to move even farther out, or to wind up closer to the origin. But the typical particle will be about sqrt(n) away, as we can see when we animate the action of many particles following random walks independently.
+The distance that the particle wanders from its starting point may surprise you. And yet an astute scientist would point out that this is just a single particle; perhaps it has simply gone rogue, and a typical particle would be much more of a homebody.
+
+Despite the fact that the particle's movements are random, there is a mathematical theorem that is able to predict the average-case behavior of the particle. This theorem states that after *n* steps of unit length in a random walk, a particle will on average find itself a distance of $\sqrt{n}$ from its origin.
+
+This is not to say that the distance will be exactly sqrt(n) from the origin, any more than if we were to claim that flipping a coin 2,000 times would produce exactly 1,000 heads.  It is possible for the particle to move even farther out, or to wind up closer to the origin. But the typical particle will be about sqrt(n) away, as we can see when we animate the action of many particles following random walks independently.
 
 <div style="text-align:center">
 	<video width="320" height="240" controls>

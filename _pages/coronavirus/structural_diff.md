@@ -8,7 +8,7 @@ Jian Shang et. al. published a <a href="https://www.nature.com/articles/s41586-0
 
 #### Protein Structure Files
 
-For their analysis, the authors purified and crystallized two protein complexes: SARS-CoV RBD complexed with ACE2 and chimeric SARS-CoV-2 RBD complexed with ACE2. The corresponding protein data bank entries are <a href="https://www.rcsb.org/structure/2AJF">2ajf</a> and <a href="https://www.rcsb.org/structure/6vw1">6vw1</a>, respectively.
+For their analysis, the authors purified and crystallized two protein complexes: SARS-CoV RBD complexed with ACE2 and chimeric SARS-CoV-2 RBD complexed with ACE2. The corresponding protein data bank entries are <a href="https://www.rcsb.org/structure/2AJF" target="_blank">2ajf</a> and <a href="https://www.rcsb.org/structure/6vw1" target="_blank">6vw1</a>, respectively.
 
 
 #### Loop in ACE2-binding ridge

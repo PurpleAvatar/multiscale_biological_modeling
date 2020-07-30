@@ -15,7 +15,7 @@ Here, we will recreate the VMD visualization of the ACE2-binding ridge of SARS-C
 
 The first step is to download the protein structure of <a href="https://www.rcsb.org/structure/6vw1" target="_blank">6vw1</a> from the protein data bank. 
 
-<img src="../_pages/coronavirus/files/Ridge%20Tutorial/Ridge0.png>
+<img src="../_pages/coronavirus/files/Ridge%20Tutorial/Ridge0.png">
 
 load the molecule into the program. In *VMD Main*, go to *File>New Molecule*. Click on *Browse*, select the molecule (.pdb) and click *Load*. The molecule should now be listed in *VMD Main* as well as the visualization in the *OpenGL Display*.
 

@@ -9,7 +9,7 @@ This is a short tutorial on how to use VMD to visualize molecules and perform so
 
 ### Visualization
 
-Here, we will recreate the VMD visualization of the ACE2-binding ridge of SARS-CoV-2 from the section *<a href="https://purpleavatar.github.io/multiscale_biological_modeling/coronavirus/structural_diff" target="_blank">Structural and ACE2 Interaction Differences</a>*
+Here, we will recreate the VMD visualization of the ACE2-binding ridge of SARS-CoV-2 from the section *<a href="https://purpleavatar.github.io/multiscale_biological_modeling/coronavirus/structural_diff" target="_blank">Structural and ACE2 Interaction Differences</a>*.
 
 #### Loading Molecules
 

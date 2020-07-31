@@ -5,6 +5,8 @@ sidebar:
  nav: "prologue"
 ---
 
+### by Noah Lee, Mert Inan, and Phillip Compeau
+
 Quantum physics tells us that everything that happens in the universe ultimately depends on the interaction of tiny particles.  Yet it is difficult for beings like ourselves to acknowledge this fundamental truth of the universe when our experience of existence is guided by "macro" phenomena.
 
 Every one of our friends, however cherished, is just a skin-covered bag of trillions of cells acting largely independently --- sometimes even antagonistically. Every memory we have ever had, however powerful, can be encoded by a particular exchange of ions across neural synapses deep within our nervous system.  Even the behavior of an individual cell within us is driven almost chiefly by the action of molecules that sense their environment and cause chemical reactions within the cell to evince what we see as a cellular change.

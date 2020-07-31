@@ -2,6 +2,51 @@
 
 *Remember to use F5 as a hard refresh when previewing the GitHub Pages website, as your computer might otherwise save the page information and not display updates* 
 
+### Quick References: 
+
+Github Pages References: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
+
+Kramdown Markdown Reference: https://kramdown.gettalong.org/quickref.html
+
+Which page layout to use? https://mmistakes.github.io/minimal-mistakes/docs/layouts/
+
+Adding a footnote requires these symbols [^1]
+
+Wonderful $$\LaTeX$$ can be processed with Kramdown using double dollar signs, even for inline content like $$x=42$$. A centered function just requires its own newline. Note that this content will not be visible through the Github Preview, and must be built with Github pages.
+
+$$x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}$$
+
+**Notice** This LaTex will only process if the layout is specified as "layout: single" 
+
+**Notice** Text in a notice should start with a double asteriks for emphasis, and requires a special piece of code on the next line 
+{: .notice--primary}
+
+~~~~~~
+This is also a code block.
+~~~
+Ending lines must have at least as
+many tildes as the starting line.
+~~~~~~~~~~~~
+
+~~~ ruby
+# specify the language at the starting tilde
+def what?
+  42
+end
+~~~
+
+A [link](http://kramdown.gettalong.org "hp")
+to the homepage.
+
+Can also use a variable, delcared below, to [link][kramdown hp]
+to the homepage.
+
+[kramdown hp]: http://kramdown.gettalong.org "hp"
+
+An image: ![gras](assets/images/bio-photo.jpg)
+
+[^1]: The footnote can be clicked to return back to the original text as well
+
 **Notice:** The home page of the website is the file *index.md*
 
 ### Quick guide to add a new module
@@ -39,39 +84,4 @@ Only sometimes noticable- specific page build order: it seems certain elements d
   3. Edit text in file to say "Hi2"
   4. Wait a few minutes, refresh preview, see changed navigation and "Hi"
 
-### Quick References: 
 
-Github Pages References: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
-
-Kramdown Markdown Reference: https://kramdown.gettalong.org/quickref.html
-
-Which page layout to use? https://mmistakes.github.io/minimal-mistakes/docs/layouts/
-
-**Notice** Text in a notice should start with a double asteriks for emphasis, and requires a special piece of code on the next line 
-{: .notice--primary}
-
-
-~~~~~~
-This is also a code block.
-~~~
-Ending lines must have at least as
-many tildes as the starting line.
-~~~~~~~~~~~~
-
-~~~ ruby
-# specify the language at the starting tilde
-def what?
-  42
-end
-~~~
-
-
-A [link](http://kramdown.gettalong.org "hp")
-to the homepage.
-
-Can also use a variable, delcared below, to [link][kramdown hp]
-to the homepage.
-
-[kramdown hp]: http://kramdown.gettalong.org "hp"
-
-An image: ![gras](assets/images/bio-photo.jpg)

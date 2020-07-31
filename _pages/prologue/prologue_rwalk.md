@@ -5,6 +5,11 @@ sidebar:
  nav: "prologue"
 ---
 
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+
 ## The wanderlust of a single particle
 
 In the previous two sections, we have discussed a central theme of our work in this course: the appearance of high-level behavior from simple rules.
@@ -49,5 +54,15 @@ Before we continue to the next lesson, we would point you to a beautiful animati
 
 [Previous](home){: .btn .btn--primary .btn--x-large} [Next Page](animals){: .btn .btn--primary .btn--x-large}
 {: style="font-size: 100%; text-align: center;"}
+
+## A proof of the expected distance theorem for the mathematically inclined
+
+Above, we stated that the average distance that a random particle would find itself from its starting point after taking *n* steps of unit length is $\sqrt{n}$. Below, we provide a justification for why this is true.
+
+Let $\mathbf{x_i}$ denote the random variable corresponding to the vector of the particle's *i*-th step.  The distance *d* traveled by the particle can be represented by the sum of all these vectors,
+
+$d = \mathbf{x_1} + \mathbf{x_2} + \cdots + \mathbf{x_n}$
+
+The best way to visualize this is to
 
 NOTE: PROVIDE detour of sorts proving sqrt(n) theorem.

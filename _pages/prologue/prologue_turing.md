@@ -1,6 +1,6 @@
 ---
 permalink: /prologue/turing
-title: "Alan Turing's Patterns"
+title: "Alan Turing and How the Zebra Got Its Stripes"
 sidebar:
  nav: "prologue"
 toc: true

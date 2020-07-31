@@ -1,7 +1,7 @@
 ---
 permalink: /prologue/blocks
-title: "From Particles to Blocks"
-sidebar: 
+title: "A Coarse-Grained Turing Pattern Simulation"
+sidebar:
  nav: "prologue"
 toc: true
 toc_sticky: true

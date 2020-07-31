@@ -17,17 +17,17 @@ main:
     url: /contact/
 
 prologue:
-  - title: Why Model? Now?
+  - title: Prologue: Random Walks and Turing Patterns
     children:
-      - title: "Randomness"
+      - title: "Introduction: The Power of Randomness"
         url: /prologue/
-      - title: "Alan Turing's Patterns"
+      - title: "Alan Turing and How the Zebra Got Its Stripes"
         url: /prologue/turing
-      - title: "Random Walks"
+      - title: "An Introduction to Random Walks"
         url: /prologue/random-walk
-      - title: "Back to Zebras"
+      - title: "A Reaction-Diffusion Model and Turing Patterns"
         url: /prologue/animals
-      - title: "From Particles to Blocks"
+      - title: "A Coarse-Grained Turing Pattern Simulation"
         url: /prologue/blocks
 
 motifs:

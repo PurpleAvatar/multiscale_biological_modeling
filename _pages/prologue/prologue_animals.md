@@ -1,13 +1,13 @@
 ---
 permalink: /prologue/animals
-title: "Back to Zebras"
+title: "A Reaction-Diffusion Model and Turing Patterns"
 sidebar:
  nav: "prologue"
 toc: true
 toc_sticky: true
 ---
 
-## Turing patterns
+## From random walks to reaction-diffusion
 
 In the previous section, we introduced a random walk, which serves as a model of a particle diffusing through a medium as a result of Brownian motion. What exactly does this have to do with zebras?
 

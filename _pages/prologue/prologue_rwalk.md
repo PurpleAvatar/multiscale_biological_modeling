@@ -1,11 +1,9 @@
 ---
 permalink: /prologue/random-walk
-title: "A Brief Introduction to Random Walks"
+title: "An Introduction to Random Walks"
 sidebar:
  nav: "prologue"
 ---
-
-
 
 ## The wanderlust of a single particle
 

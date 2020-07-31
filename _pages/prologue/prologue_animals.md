@@ -55,24 +55,37 @@ On the other hand, if *f* is too high, then there will be an increase in the *A*
 
 (INSERT VIDEO, with parameters indicated)
 
-The interesting behavior in this system lies in a sweet spot, where we see interesting macro behavior of the system when
+The interesting behavior in this system lies in a sweet spot, where we see interesting macro behavior for a given collection of parameters.
 
-* The interesting behavior lies in a “sweet spot”: values of the four parameters that produce interesting macro behavior when we examine the system at a macro level.
+For example,
 
-(INSERT 3-4 MERT VIDEOS, WITH CLEAR EXPLANATION OF PARAMETERS EACH TIME)
+(INSERT MERT VIDEO WITH CLEAR EXPLANATION OF PARAMETERS)
 
-* This behavior is remarkable first and foremost because we can pick out so much organization from tens of thousands of tiny particles. But it also is amazing that the system is so fine-tuned, meaning that very slight changes in parameter values can lead to significant changes in the overall system, which in this case is a change between spots and stripes.
-* In fact, later in the course, we will see an example of a biological system that is not fine-tuned, but rather robust: variation in the system does not lead to substantive changes in the ultimate behavior of the system.
-* The emergence of patterns from such a simple model was Turing’s essential contribution in the 1950s, and one that has been borne out both by biological research, which has found a molecular basis for the two-particle model in the development of some organisms, as well as evidence that the system is fine-tuned.
-* For example, note the following photos of two giant pufferfish.
+And yet if we make a slight change to the parameters, we obtain very different macro behavior.
 
-(Phillip will insert picture.)
+(INSERT 2-3 MORE MERT VIDEOS, WITH CLEAR EXPLANATION OF PARAMETERS EACH TIME)
 
-* These two fish are genetically very similar, but one has stripes and the other spots. What seems like an enormous change in the appearance of an organism can actually be attributable to a small change of parameters in a fine-tuned system that is powered solely by randomness.
+## A reflection on Turing patterns
 
-(Phillip will insert Turing quote on the horse part being the hard part)
+The Turing patterns that emerge from our animations in the previous section are a testament to the human eye's ability to find organization within the net behavior of tens of thousands of particles.  The patterns are unquestionably there, but they are also quite noisy; this inference of large-scale patterns from small-scale phenomena is in some sense what our brains do best.
 
-WE WILL MAKE LEARNER WAIT UNTIL THEY CAN IMPLEMENT THIS AT A LATER TIME
+What is also remarkable is that the system is so **fine-tuned**, meaning that that very slight changes in parameter values can lead to significant changes in the overall system. In the case of our model, these changes could convert spots to stripes, or they could influence how clearly defined the boundaries of the Turing patterns are.
+
+Much later in this course, we will see an example of a biological system that is the opposite of fine-tuned. In such a **robust** system, variation in the parameters does not lead to substantive changes in the ultimate behavior of the system. Robust processes are vital for processes in which an organism needs to be very resilient to any small changes disturbing some process. We will say more about robustness later.
+
+It turns out that although Turing's work offers a compelling argument for how zebras might have gotten their stripes, the exact mechanism by which these stripes form is still an unresolved question. Although zebras are still up in the air, the pigmentation of *zebrafish* does follow a Turing pattern because two types of pigment cells follow a reaction-diffusion model much like the one we presented above.
+
+CITATION: https://www.pnas.org/content/106/21/8429.
+
+We also have qualitative evidence that the pigmentary patterns arising in fish are due to a fine-tuned system. For example, note that following two photos of giant pufferfish. These fish are genetically very similar, but their skin patterns are very different, with one having spots and the other exhibiting a complex pattern of stripes. What seems like a drastic change in the appearance of the fish can actually be attributable to a small change of parameters in a fine-tuned system that is driven only by random interactions.
+
+(INSERT PUFFERFISH PHOTOS -- https://www.123rf.com/photo_26775011_giant-puffer-fish.html and https://en.wikipedia.org/wiki/File:Giant_Puffer_fish_skin_pattern.JPG or equivalent quality)
+
+## Streamlining our simulations
+
+If you are interested in learning how to generate these simulations on your own computer, please stay tuned. In a future chapter, we will software that can be used to simulate reaction-diffusion interactions and show how it can be used for other forays into biological modeling.
+
+For now, we will point out that each of these simulations took several hours to render on a modern laptop. Visualizing the movement of tens of thousands of particles over thousands of generations of a reaction-diffusion interaction is computationally intensive. The question is whether we can obtain similar conclusions with a faster model that does not require us to keep track of so many particles. We will turn our attention to this question in the next section.
 
 [Previous](random-walk){: .btn .btn--primary .btn--x-large} [Next Page](blocks){: .btn .btn--primary .btn--x-large}
 {: style="font-size: 100%; text-align: center;"}

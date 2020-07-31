@@ -68,7 +68,7 @@ After expanding the right side of this equation, we obtain
 
 $$d^2 = \mathbf{x_1} \cdot (\mathbf{x_1} + \mathbf{x_2} + \cdots + \mathbf{x_n}) + \mathbf{x_2} \cdot (\mathbf{x_1} + \mathbf{x_2} + \cdots + \mathbf{x_n}) + \cdots + \mathbf{x_n}) \cdot (\mathbf{x_1} + \mathbf{x_2} + \cdots + \mathbf{x_n}) \,.$$
 
-Finally, we can see that
+Finally, we rearrange this equation so that the terms $\mathbf{x_1} \cdot \mathbf{x_1}$, $\mathbf{x_2} \cdot \mathbf{x_2}$, and so on occur first, and the remaining terms appear last. We can therefore write $d^2$ as follows.
 
 $$d^2 = \sum_{i=1}^n (\mathbf{x_i} \cdot \mathbf{x_i}) + \sum_{i \neq j} (\mathbf{x_i} \cdot \mathbf{x_j})\, .$$
 

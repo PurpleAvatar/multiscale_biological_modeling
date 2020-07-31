@@ -12,7 +12,7 @@ Which page layout to use? https://mmistakes.github.io/minimal-mistakes/docs/layo
 
 Adding a footnote requires these symbols [^1]
 
-Wonderful $$\LaTeX$$ can be processed with Kramdown using double dollar signs, even for inline content like $$x=42$$. A centered function just requires its own newline. 
+Wonderful $$\LaTeX$$ can be processed with Kramdown using double dollar signs, even for inline content like $$x=42$$. A centered function just requires its own newline. Note that this content will not be visible through the Github Preview, and must be built with Github pages.
 
 $$x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}$$
 

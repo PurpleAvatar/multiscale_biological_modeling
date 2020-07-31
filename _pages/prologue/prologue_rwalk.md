@@ -52,7 +52,7 @@ Before we continue to the next lesson, we would point you to a beautiful animati
 
 ## A proof of the expected distance theorem
 
-Above, we stated that the average distance that a random particle would find itself from its starting point after taking *n* steps of unit length is $$\sqrt{n}$. Below, we provide a justification for why this is true for interested learners who are familiar with probability.
+Above, we stated that the average distance that a random particle would find itself from its starting point after taking *n* steps of unit length is $$\sqrt{n}$$. Below, we provide a justification for why this is true for interested learners who are familiar with probability.
 
 Let $$\mathbf{x_i}$$ denote the random variable corresponding to the vector of the particle's *i*-th step.  The distance *d* traveled by the particle can be represented by the sum of all these vectors,
 
@@ -66,15 +66,15 @@ After expanding the right side of this equation, we obtain
 
 $$d^2 = \mathbf{x_1} \cdot (\mathbf{x_1} + \mathbf{x_2} + \cdots + \mathbf{x_n}) + \mathbf{x_2} \cdot (\mathbf{x_1} + \mathbf{x_2} + \cdots + \mathbf{x_n}) + \cdots + \mathbf{x_n}) \cdot (\mathbf{x_1} + \mathbf{x_2} + \cdots + \mathbf{x_n}) \,.$$
 
-Finally, we rearrange this equation so that the terms $$\mathbf{x_1} \cdot \mathbf{x_1}$, $$\mathbf{x_2} \cdot \mathbf{x_2}$, and so on occur first, and the remaining terms appear last. We can therefore write $$d^2$$ as follows.
+Finally, we rearrange this equation so that the terms $$\mathbf{x_1} \cdot \mathbf{x_1}$$, $$\mathbf{x_2} \cdot \mathbf{x_2}$$, and so on occur first, and the remaining terms appear last. We can therefore write $$d^2$$ as follows.
 
 $$d^2 = \sum_{i=1}^n (\mathbf{x_i} \cdot \mathbf{x_i}) + \sum_{i \neq j} (\mathbf{x_i} \cdot \mathbf{x_j})\, .$$
 
-The right side of this equation is the sum of $$n^2$$ dot products.  When we take the expectation of both sides, then we apply the fundamental result called the "linearity of expectation", which states that for any two random variables $$x$$ and $$y$, the expectation of their sum $$\mathbb{E}(x + y)$$ is equal to the sum of the corresponding expectations $$\mathbb{E}(x) + \mathbb{E}(y)$:
+The right side of this equation is the sum of $$n^2$$ dot products.  When we take the expectation of both sides, then we apply the fundamental result called the "linearity of expectation", which states that for any two random variables $$x$$ and $$y$$, the expectation of their sum $$\mathbb{E}(x + y)$$ is equal to the sum of the corresponding expectations $$\mathbb{E}(x) + \mathbb{E}(y)$$:
 
 $$\mathbb{E}(d^2) = \sum_{i=1}^n E(\mathbf{x_i} \cdot \mathbf{x_i}) + \sum_{i \neq j} E(\mathbf{x_i} \cdot \mathbf{x_j})\, .$$
 
-For any *i*, $$\mathbb{E}(\mathbf{x_i} \cdot \mathbf{x_i})$$ is just the length of the vector $$x_i$, which is equal to 1.  On the other hand, the expected value of the dot product of any two random unit vectors is zero.  Therefore, the right side of the above equation can be simplified to give the equation
+For any *i*, $$\mathbb{E}(\mathbf{x_i} \cdot \mathbf{x_i})$$ is just the length of the vector $$x_i$$, which is equal to 1.  On the other hand, the expected value of the dot product of any two random unit vectors is zero.  Therefore, the right side of the above equation can be simplified to give the equation
 
 $$\mathbb{E}(d^2) = \sum_{i=1}^n (1) + \sum_{i \neq j} (0) = n + 0 = n\, ,$$
 
@@ -82,4 +82,4 @@ which is what we set out to show.
 
 A couple of notes before we continue. First, we did not use anything about the random walk being two- dimensional in this proof; accordingly, it holds whether our particle is walking in two, three, or any number of dimensions.
 
-Second, we technically did not show that the expected value of $$d$$ is $$\sqrt{n}$, but rather that the expected value of $$d^2$$ is $$n$. It is not exactly true that $$\mathbb{E}(d)$$ is equal to $$\sqrt{n}$, but rather that as $$n$$ grows, $$\mathbb{E}(d)$$ grows like a constant factor of $$n$. It is beyond the scope of this course, but it can be shown that as $$n$$ goes off to infinity, $$\mathbb{E}(d)$$ tends toward $$\sqrt{\dfrac{2}{\pi} \cdot n}$. Who knew that random walks could get so complicated!
+Second, we technically did not show that the expected value of $$d$$ is $$\sqrt{n}$$, but rather that the expected value of $$d^2$$ is $$n$$. It is not exactly true that $$\mathbb{E}(d)$$ is equal to $$\sqrt{n}$$, but rather that as $$n$$ grows, $$\mathbb{E}(d)$$ grows like a constant factor of $$n$$. It is beyond the scope of this course, but it can be shown that as $$n$$ goes off to infinity, $$\mathbb{E}(d)$$ tends toward $$\sqrt{\dfrac{2}{\pi} \cdot n}$$. Who knew that random walks could get so complicated!

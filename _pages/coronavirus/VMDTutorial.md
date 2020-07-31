@@ -75,7 +75,7 @@ The final visualization should look like this:
 
 Here, we will recreate the structural alignment analysis using *Qres* of SARS and SARS-CoV-2 RBD.
 
-First, load <a href="https://www.rcsb.org/structure/6vw1" target="_blank">6vw1</a> and <a href="https://www.rcsb.org/structure/2ajf" target="_blank">6vw1</a> onto VMD. If you are unsure how to do this, follow the steps in the previous section titled "Loading Molecules". Then, start up *Multiseq* by going to *Extensions>Analysis>Multiseq*.
+First, load <a href="https://www.rcsb.org/structure/6vw1" target="_blank">6vw1</a> and <a href="https://www.rcsb.org/structure/2ajf" target="_blank">2ajf</a> onto VMD. If you are unsure how to do this, follow the steps in the previous section titled "Loading Molecules". Then, start up *Multiseq* by going to *Extensions>Analysis>Multiseq*.
 
 <img src="../_pages/coronavirus/files/QresTutorial/Qres1.png">
 

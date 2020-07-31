@@ -83,7 +83,7 @@ We also have qualitative evidence that the pigmentary patterns arising in fish a
 
 ## Streamlining our simulations
 
-If you are interested in learning how to generate these simulations on your own computer, please stay tuned. In a future chapter, we will software that can be used to simulate reaction-diffusion interactions and show how it can be used for other forays into biological modeling.
+If you are interested in learning how to generate these simulations on your own computer, please stay tuned. In the next chapter of the course, we will software that can be used to simulate reaction-diffusion interactions and show how it can be used for other forays into biological modeling.
 
 For now, we will point out that each of these simulations took several hours to render on a modern laptop. Visualizing the movement of tens of thousands of particles over thousands of generations of a reaction-diffusion interaction is computationally intensive. The question is whether we can obtain similar conclusions with a faster model that does not require us to keep track of so many particles. We will turn our attention to this question in the next section.
 

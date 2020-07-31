@@ -29,15 +29,15 @@ If you enjoy this course, we think that you would also love some of the other fr
 
 * <a href="https://bioinformaticsalgorithms.org" target="_blank">Bioinformatics Algorithms: An Active Learning Approach</a>: FILL IN
 
-* <a href="http://rosalind.info" target="_blank">Rosalind</a>: FILL IN 
+* <a href="http://rosalind.info" target="_blank">Rosalind</a>: FILL IN
 
 ## Other
 
 * Synergies with MMBioS projects so that users of one software resource can become familiar with other resources
 
-* Pointer to workshops that MMBioS offers
+* Pointer to workshops that MMBioS offers -- URL: https://mmbios.pitt.edu/outreach/workshops
 
-* Pointer to MMBioS in general with logo of MMBioS
+* Pointer to MMBioS in general with logo of MMBioS -- URL: https://mmbios.pitt.edu
 
 * Overview of what each software resource does.
 
@@ -45,7 +45,7 @@ If you enjoy this course, we think that you would also love some of the other fr
 
 
 
-* Need to explain how each of the user bas
+* Need to explain how each of the user groups below can explore the course.  Everything from reading only the written part to getting hands dirty with a collection of in-depth software tutorials that get you comfortable with learning how the software resources presented here can be used to model biological phenomena (preparing users to be ready to apply it in their own work).
 
 * Our target audience is broadly defined into three categories. We do not see these three user communities as non-contiguous.
 

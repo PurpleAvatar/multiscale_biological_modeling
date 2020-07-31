@@ -25,7 +25,7 @@ To answer this question, let's watch an animation of the particle and see for ou
 
 The distance that the particle wanders from its starting point may surprise you. And yet an astute scientist would point out that this is just a single particle; perhaps it has simply gone rogue, and a typical particle would be much more of a homebody.
 
-Despite the fact that the particle's movements are random, there is a mathematical theorem that is able to predict the average-case behavior of the particle. This theorem states that after *n* steps of unit length in a random walk, a particle will on average find itself a distance of $\sqrt{n}$ from its origin.
+Despite the fact that the particle's movements are random, there is a mathematical theorem that is able to predict the average-case behavior of the particle. This theorem states that after *n* steps of unit length in a random walk, a particle will on average find itself a distance of approximately $\sqrt{n}$ from its origin. (For the mathematically inclined, we explain why this is true in a bonus section at the bottom of this page.)
 
 ## From one particle to many
 
@@ -52,9 +52,9 @@ Before we continue to the next lesson, we would point you to a beautiful animati
 [Previous](home){: .btn .btn--primary .btn--x-large} [Next Page](animals){: .btn .btn--primary .btn--x-large}
 {: style="font-size: 100%; text-align: center;"}
 
-## A proof of the expected distance theorem for the mathematically inclined
+## A proof of the expected distance theorem
 
-Above, we stated that the average distance that a random particle would find itself from its starting point after taking *n* steps of unit length is $\sqrt{n}$. Below, we provide a justification for why this is true.
+Above, we stated that the average distance that a random particle would find itself from its starting point after taking *n* steps of unit length is $\sqrt{n}$. Below, we provide a justification for why this is true for interested learners who are familiar with probability.
 
 Let $\mathbf{x_i}$ denote the random variable corresponding to the vector of the particle's *i*-th step.  The distance *d* traveled by the particle can be represented by the sum of all these vectors,
 

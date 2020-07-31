@@ -69,17 +69,41 @@ The final visualization should look like this:
 
 * In the *OpenGL Display* window, you can click and drag the molecule to change the orientation. Pressing ‘r’ on the keyboard allows you to rotate the molecule, pressing ‘t’ on the keyboard allows you to translate the molecule, and finally pressing ‘s’ allows you to enlarge or shrink the molecule (or use scroll wheel). Note that left click and right click are different.
 
-### Analysis (WIP)
+### Analysis
 
-#### Sequence Analysis
+#### Multiseq
 
-* To see the sequence of the molecule, in *VMD Main* go to *Extensions>Analysis>Sequence Viewer*. This will display the residues of the molecule.
+Here, we will recreate the structural alignment analysis using *Qres* of SARS and SARS-CoV-2 RBD.
 
-* For sequence comparison, go to *Extensions>Analysis>MultiSeq*. Before comparing, delete any undesired molecules/chains. Next, go to *Tools>Sequence Alignment*, and click Ok. This will align the sequences. To see the differences using color, go to *View>Coloring>Sequence Identity*.
+First, load <a href="https://www.rcsb.org/structure/6vw1" target="_blank">6vw1</a> and <a href="https://www.rcsb.org/structure/2ajf" target="_blank">6vw1</a> onto VMD. If you are unsure how to do this, follow the steps in the previous section titled "Loading Molecules". Then, start up *Multiseq* by going to *Extensions>Analysis>Multiseq*.
 
-#### Structure Comparison
+<img src="../_pages/coronavirus/files/QresTutorial/Qres1.png">
 
-* To compare homologous structures, go to *Extensions>Analysis>MultiSeq* in *VMD Main*. Delete any undesired molecules/chains. Go to *Tools>Stamp Structural Alignment*. This will compare the structural differences between the selected molecules based on Qres. To see the differences using color, go to *View>Coloring>Qres*.
+You will see all the chains listed out per file. 
+
+<img src="../_pages/coronavirus/files/QresTutorial/Qres2.png">
+
+We only want to compare the RBD, so we will only keep chain F of each structure. To remove the other chains, click on the chain and go to *Edit>Cut*.
+
+<img src="../_pages/coronavirus/files/QresTutorial/Qres3.png">
+
+Go to *Tools>Stamp Structural Alignment* and a new window will open up. Keep all the values and click *OK*.
+
+<img src="../_pages/coronavirus/files/QresTutorial/Qres4.png">
+<img src="../_pages/coronavirus/files/QresTutorial/Qres5.png">
+
+The structures are now aligned. To see coloring based on *Qres*, go to *View>Coloring>Qres*.
+
+<img src="../_pages/coronavirus/files/QresTutorial/Qres6.png">
+
+ Blue indicates high *Qres* while blue indicates low *Qres*. *OpenGL Display* will now also reflect the color of *Qres* on the aligned structures. 
+
+<img src="../_pages/coronavirus/files/QresTutorial/Qres7.png">
+
+<img src="../_pages/coronavirus/files/QresTutorial/Qres8.png">
+
+
+
 
 #### Normal Mode Wizard (NMwiz)
 

@@ -1,6 +1,10 @@
 main:
   - title: "About"
     url: /about/
+  - title: "Meet the Team"
+    url: /meet-the-team/
+  - title: "Contact Us"
+    url: /contact/
   - title: "Take the Course"
     sublinks:
       - title: "Prologue"
@@ -11,10 +15,7 @@ main:
         url: /chemotaxis/home
       - title: "Coronavirus"
         url: /coronavirus/home
-  - title: "Meet the Team"
-    url: /meet-the-team/
-  - title: "Contact Us"
-    url: /contact/
+
 
 prologue:
   - title: "Prologue: Random Walks and Turing Patterns"

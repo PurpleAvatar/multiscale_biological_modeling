@@ -1,13 +1,16 @@
 ---
 permalink: /motifs/finding
 title: "Finding Motifs"
-sidebar: 
+sidebar:
  nav: "motifs"
 ---
 
-*What are motifs, and how often can we expect to see a motif?*
+## Loops in the TF network
 
-*Here's what it is*
+* In this section, we will examine this first question.
+
+
+
 
 *Let's look at a real gene regulatory network from e. coli*
 
@@ -21,18 +24,17 @@ sidebar:
 
 ## Jupyter Notebook Walkthrough
 
-Let's take another look at that E. coli network, file can be downloaded here: 
+Let's take another look at that E. coli network, file can be downloaded here:
 <a href="https://purpleavatar.github.io/multiscale_biological_modeling/downloads/network_tf_tf_clean.txt" download="network_tf_tf_clean.txt">E. coli Network</a>
 
-
-For the full Jupyter Notebook below, download here: 
+For the full Jupyter Notebook below, download here:
 <a href="https://purpleavatar.github.io/multiscale_biological_modeling/downloads/Network_Demo.ipynb" download="Network_Demo.ipynb">Jupyter Notebook</a>
 
 There are a few packages which need to be installed, here's list
 1. this
 2. this
 
-We can import the network and see how many nodes and edges there are, additionally can see number of self-loops are present. 
+We can import the network and see how many nodes and edges there are, additionally can see number of self-loops are present.
 
 ~~~ python
 from network_loader import *
@@ -52,7 +54,7 @@ print("Number of self-loops: ", sum(Graph.is_loop(network)))
 * Number of edges:  477
 * Number of self-loops:  130
 
-We can also create a visualization of the graph, shown here: 
+We can also create a visualization of the graph, shown here:
 
 ~~~ python
 plot(network, vertex_label=vertex_names, vertex_label_size=8,
@@ -84,11 +86,9 @@ print("Number of self-loops: ", sum(Graph.is_loop(g)))
 * Number of edges:  477
 * Number of self-loops:  5
 
-And ta-da, the number of self-loops is significantly lower. 
+And ta-da, the number of self-loops is significantly lower.
 
 *So what does this mean? We can discover these phenomenon and upon investigation, discover something useful. Let's investigate this self-loop motif in the form of NAR*
 
 [Previous](home){: .btn .btn--primary .btn--x-large} [Next Page](nar){: .btn .btn--primary .btn--x-large}
 {: style="font-size: 100%; text-align: center;"}
-
-

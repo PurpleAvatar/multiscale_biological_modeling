@@ -1,11 +1,17 @@
 ---
 permalink: /motifs/nar
 title: "NAR"
-sidebar: 
+sidebar:
  nav: "motifs"
 toc: true
 toc_sticky: true
 ---
+
+## A biological motivation for negative autoregulation
+
+Theodosius Dobzhansky once famously stated that "Nothing in biology makes sense except in the light of evolution." In the spirit of Dobzhansky's quotation, there must be some evolutionary justification for the presence of so many autoregulating transcription factors. Our goal is to find this justification through biological modeling.
+
+(CITE with link online:  Dobzhansky, Theodosius (March 1973), "Nothing in Biology Makes Sense Except in the Light of Evolution", American Biology Teacher, 35 (3): 125–129, JSTOR 4444260)
 
 *Once CellBlender is installed and set-up, we can take a look at how ...something about NAR, motivations for NAR.*
 
@@ -22,49 +28,49 @@ Go to CellBlender > Molecules and create the following molecules:
 Select CellBlender > Molecules
 Create a molecule by clicking the “+” button
 Optional: change the color
-Rename the molecule “Y” 
-Change molecule type to “Surface Molecule” 
+Rename the molecule “Y”
+Change molecule type to “Surface Molecule”
 Change the diffusion constant to “1e-6”
-Change the scale factor to “5.0” 
+Change the scale factor to “5.0”
 
 ![image-center](../assets/images/motifs_norm2.png){: .align-center}
 
 Create another  molecule named “Hidden”
 Set the molecule type to “Surface Molecule”  and the diffusion constant to “1e-6”
 
-Go to CellBlender > Molecule Placement to set the following options; 
+Go to CellBlender > Molecule Placement to set the following options;
 
 ![image-center](../assets/images/motifs_norm3.png){: .align-center}
 
 Select CellBlender > Molecule Placement
-Add a new release site by pressing the “+” button 
-Select the Molecule “Hidden” 
+Add a new release site by pressing the “+” button
+Select the Molecule “Hidden”
 Type in the name of the Model Object “Plane” (or custom name set in fig. S.1
-Set the Quantity to Release to 300 
+Set the Quantity to Release to 300
 
 Go to CellBlender > Reactions to create the following reactions:
 
 ![image-center](../assets/images/motifs_norm4.png){: .align-center}
 
 Select CellBlender > Reactions
-Add a new reaction by pressing the “+” button 
+Add a new reaction by pressing the “+” button
 Under Reactants, type “ Hidden’ “. Note: the apostrophe is required to indicate the directionality of a surface molecule.  
-Under Products, type “ Hidden’ + Y’ “. 
+Under Products, type “ Hidden’ + Y’ “.
 Set the Forward Rate to “2e2”
 
 ![image-center](../assets/images/motifs_norm5.png){: .align-center}
 
-Add a new reaction by pressing the “+” button 
-Under Reactants, type “ Y’ “. 
-Under Products, type “ NULL“. 
+Add a new reaction by pressing the “+” button
+Under Reactants, type “ Y’ “.
+Under Products, type “ NULL“.
 Set the Forward Rate to “3e2”
 
-Go to CellBlender > Plot Output Settings to set up a plot as follows: 
+Go to CellBlender > Plot Output Settings to set up a plot as follows:
 
 ![image-center](../assets/images/motifs_norm6.png){: .align-center}
 
 Select CellBlender > Plot Output Settings
-Add a new plot by pressing the “+” button 
+Add a new plot by pressing the “+” button
 Under molecule, select  “Y”
 If not already selected, choose “Java Plotter” for the plot method.
 Optional: select “Molecule Colors” to match the same colors in the plot as the molecules in the animation
@@ -77,7 +83,7 @@ Select CellBlender > Run Simulation
 Change the number of iterations to “12,000”
 Click “Export & Run”
 
-Press the CellBlender > Reload Visualization Data button 
+Press the CellBlender > Reload Visualization Data button
 
 ![image-center](../assets/images/motifs_norm6.png){: .align-center}
 
@@ -91,7 +97,7 @@ Go back to CellBlender > Plot Output Settings and click the plot button. NOTE: i
 
 Fig. NN.2 - The plot above should be displayed when completing the No-NAR tutorial
 
-Save your file as “CellBlender_Non_NAR_test.blend” 
+Save your file as “CellBlender_Non_NAR_test.blend”
 
 ### NAR (Negative Auto-Regulation)
 
@@ -99,7 +105,7 @@ Save your file as “CellBlender_Non_NAR_test.blend”
 
 See “Setting-up Simulations” before starting these steps
 
-Quick Tutorial: 
+Quick Tutorial:
 Load the file from Non-NAR tutorial
 Add the following reactions
 Change Hidden’ -> Hidden’ + Y’ to a forward rate of 1e3
@@ -111,6 +117,3 @@ Y’ + Y’ →  Y’   with a forward rate of 1e2
 
 [Previous](finding){: .btn .btn--primary .btn--x-large} [Next Page](feed){: .btn .btn--primary .btn--x-large}
 {: style="font-size: 100%; text-align: center;"}
-
-
-

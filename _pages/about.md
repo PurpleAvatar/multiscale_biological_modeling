@@ -17,9 +17,19 @@ toc: true
 
 ## For instructors
 
+* Offline dissemination. Point that it is part of the materials for PreCollege program in computational biology.
+
+* If you are an instructor who wants to use these materials in your course, you are 100% free to as long as you point students at this website.  We only ask that you please get in touch with us because we would like to start building a network of instructors adopting this material.
+
 ## You might also enjoy...
 
-* Pointers to P4L and BA
+If you enjoy this course, we think that you would also love some of the other free and open educational materials developed by the project founder (Phillip Compeau).  We list these below.
+
+* <a href="http://compeau.cbd.cmu.edu/programming-for-lovers/" target="_blank">Programming for Lovers</a>: FILL IN
+
+* <a href="https://bioinformaticsalgorithms.org" target="_blank">Bioinformatics Algorithms: An Active Learning Approach</a>: FILL IN
+
+* <a href="http://rosalind.info" target="_blank">Rosalind</a>: FILL IN 
 
 ## Other
 
@@ -44,7 +54,3 @@ toc: true
 3. The third category contains **dedicated users** who have a large toolset in biological modeling and can think independently within the field.
 
 * Plan to allow students to transition between these areas.
-
-* Offline dissemination. Point that it is part of the materials for PreCollege program in computational biology.
-
-* If you are an instructor who wants to use these materials in your course, you are 100% free to as long as you point students at this website.  We only ask that you please get in touch with us because we would like to start building a network of instructors adopting this material.

@@ -16,6 +16,8 @@ Wonderful $$\LaTeX$$ can be processed with Kramdown using double dollar signs, e
 
 $$x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}$$
 
+**Notice** This LaTex will only process if the layout is specified as "layout: single" 
+
 **Notice** Text in a notice should start with a double asteriks for emphasis, and requires a special piece of code on the next line 
 {: .notice--primary}
 

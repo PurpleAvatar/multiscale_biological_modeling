@@ -17,7 +17,7 @@ main:
     url: /contact/
 
 prologue:
-  - title: Prologue: Random Walks and Turing Patterns
+  - title: "Prologue: Random Walks and Turing Patterns"
     children:
       - title: "Introduction: The Power of Randomness"
         url: /prologue/

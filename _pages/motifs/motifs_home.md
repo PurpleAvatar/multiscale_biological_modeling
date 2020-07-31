@@ -5,6 +5,8 @@ sidebar:
  nav: "motifs"
 ---
 
+# (Something about scale of interest)
+
 * Discussion of the scale that we are interested in now -- a very fine-grained scale involving the interaction between proteins and genes.
 
 * Biological networks and extending our particle simulators to answer questions about "why" and "how" unintelligent systems can build nontrivial systems.
@@ -35,11 +37,11 @@ sidebar:
 
 * In the next section, we will begin our analysis with a discussion of the first question.
 
-## Introduction to
+## Separator
 
 [Click here to skip to the software tutorials](setup){: .btn .btn--primary}
 
-# Learning objectives -- MOVE THESE
+## Learning objectives -- MOVE THESE
 
 *Here are some learning motivators/outline of content*
 1. What are motifs?

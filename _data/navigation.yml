@@ -32,10 +32,10 @@ prologue:
         url: /prologue/blocks
 
 motifs:
-  - title: About This Module
-    url: /motifs/home
-  - title: Common Motifs
+  - title: "Finding Motifs in Transcription Factor Networks"
     children:
+      - title: "Introduction to Transcription Factors"
+        url: /motifs/home
       - title: "Finding Motifs"
         url: /motifs/finding
       - title: "Negative Autoregulation"

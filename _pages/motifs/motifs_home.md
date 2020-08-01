@@ -1,17 +1,17 @@
 ---
 permalink: /motifs/home
-title: "About this Module"
+title: "Introduction to Transcription Factors"
 sidebar:
  nav: "motifs"
 ---
 
-# (Something about scale of interest)
+## (Something about scale of interest)
 
 * Discussion of the scale that we are interested in now -- a very fine-grained scale involving the interaction between proteins and genes.
 
 * Biological networks and extending our particle simulators to answer questions about "why" and "how" unintelligent systems can build nontrivial systems.
 
-# Introduction to transcription
+## Introduction to transcription
 
 * Need to have an introduction to the biological process of transcription.  Disclaimer that learners with an in-depth knowledge of biology should skim it to the following section.
 
@@ -40,6 +40,8 @@ sidebar:
 ## Separator
 
 * Note to self: we don't have anything about the active form of a transcription factor. Technically it is this active form that we want to work with.
+
+* Note: need to define "motif" somewhere.
 
 [Click here to skip to the software tutorials](setup){: .btn .btn--primary}
 

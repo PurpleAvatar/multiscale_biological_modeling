@@ -39,6 +39,8 @@ sidebar:
 
 ## Separator
 
+* Note to self: we don't have anything about the active form of a transcription factor. Technically it is this active form that we want to work with.
+
 [Click here to skip to the software tutorials](setup){: .btn .btn--primary}
 
 ## Learning objectives -- MOVE THESE

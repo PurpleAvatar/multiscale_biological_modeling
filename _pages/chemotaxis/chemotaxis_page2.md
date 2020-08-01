@@ -17,7 +17,7 @@ Our first addition is phophorylation. Phosphorylation is a chemical reaction tha
 
 In chemotaxis, the flagellar proteins are also activated by phosphorylation. In fact, It starts from phosphorylation of CheA in the receptor complex, and then CheA phosphorylates CheB and CheY, and CheY then phosphorylates FliM. The sequence of phosphorylation event is called a phosphorylation cascade. We will model CheA and CheY phosphorylation in this page (and CheB in next page), specifically the reactions in the purple square.
 
-![image-center](../assets/images/chemotaxispathwayphos.png){: .align-center}
+![image-center](../assets/images/chemotaxispathwayphos.jpg){: .align-center}
 
 We have:
 

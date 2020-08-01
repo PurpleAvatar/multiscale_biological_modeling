@@ -1,6 +1,6 @@
 ---
 permalink: /motifs/nar
-title: "NAR"
+title: "The Negative Autoregulation Motif"
 sidebar:
  nav: "motifs"
 toc: true

@@ -36,9 +36,9 @@ motifs:
     children:
       - title: "Introduction to Transcription Factors"
         url: /motifs/home
-      - title: "Finding Motifs"
+      - title: "Finding Network Motifs"
         url: /motifs/finding
-      - title: "Negative Autoregulation"
+      - title: "The Negative Autoregulation Motif"
         url: /motifs/nar
       - title: "Feed-Forward Loops"
         url: /motifs/feed

@@ -1,6 +1,6 @@
 ---
 permalink: /motifs/finding
-title: "Finding Motifs"
+title: "Finding Network Motifs"
 sidebar:
  nav: "motifs"
 ---

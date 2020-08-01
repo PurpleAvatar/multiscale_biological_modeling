@@ -1,32 +1,22 @@
 ---
 permalink: /chemotaxis/home
-title: "Module 1: Title"
+title: "Introduction to Chemotaxis"
 sidebar: 
  nav: "chemotaxis"
 ---
 
-*Introduction*
+### Prologue
 
-See the Readme file for some other interesting "kramdown" markup rules
+**"Lost Immortals" in *What if*.**
 
-* Bullet 1
-* Bullet 2
 
-Some text
+### Introductino to Chemotaxis
 
-Inserting a picture below, notice in the code how the link is set up? Need to reference the assets folder:  
+*Escherichia coli* (also *E. coli*) is a rod-shaped bacterium commonly found in the lower intestine of endotherms. Being commensal at the most of the time, it is, paradoxically, one of the main pathogens responsible for intraintestinal and extraintestinal infections.[^1] It is also *the most* widely studied prokaryotic model organism. They are small, like other prokaryotes are, with a length about 2um, and a diameter 0.25-1um.[^2] **The small size of *E. coli* puts them into a similar situation like the lost explorers are: how to explore the space efficiently to find food?**
 
-![image-center](../assets/images/motifs_norm_graph.png){: .align-center}
+The behavior of cells moving towards/away from a stimulus is called **chemotaxis**. For *E. coli*, moving towards attractants (ex. glucose, electron acceptros), and moving away from repellents (ex. Ni2+, Co2+) are all considered chemotaxis behaviors.
 
-Insert a video below, notice in the code how the link is set up? Need to reference the assets folder: 
-
-<div style="text-align:center">
-	<video width="320" height="240" controls>
-	  <source type="video/mp4" src="../assets/random_walk_1.mp4">
-	</video>
-</div>
-
-[Previous](#){: .btn .btn--primary .btn--x-large} [Next Page](tutorial_lr){: .btn .btn--primary .btn--x-large}
-{: style="font-size: 100%; text-align: center;"}
+Here is a video of *E. coli* moving towards a sugar crystal.
+<iframe width="640" height="360" src="https://www.youtube.com/watch?v=F6QMU3KD7zw" frameborder="0" allowfullscreen></iframe>
 
 

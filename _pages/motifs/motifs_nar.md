@@ -27,7 +27,7 @@ Theodosius Dobzhansky once wrote that "Nothing in biology makes sense except in 
 
 * In the second simulation, in which we need to also consider negative autoregulation of *Y*, we should add a reaction that mimics this autoregulation.  The way in which we will do so is to add the reaction *2Y* → *Y*. In other words, when two *Y* particles collide, one of the particles serves to remove the other, which mimics the process of a transcription factor turning another copy of itself off as part of negative autoregulation. (Note: we will keep the reaction *X* → *Y* so that we do not see a decrease in the concentration of *Y*.
 
-* Pointer to the tutorial on NAR [here](motifs/tutorial_nar)
+* Pointer to the tutorial on NAR [here](tutorial_nar)
 
 ## Results
 

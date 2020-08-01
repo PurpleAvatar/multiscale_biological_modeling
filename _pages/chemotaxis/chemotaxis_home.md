@@ -54,7 +54,18 @@ A summary of the pathway:
 In this module, we will build a BioNetGen model to simulate this pathway. It might sounds a bit overwhelming now, but we will do it step by step. Have fun!
 
 
+Some interesting points:
+ - The MCPs form trimers of dimers, and the trimers of dimers, together with CheW and CheA form arrays. Ligand binding and methylation states impacts the array conformation, therefore impacting the autophosphorylation rate of CheA.[^4]
+ - There are five types of MCPs, Tsr, Tar, Tap, Trg, and Aer. Most studies focus on the two most abundant types: Tsr (serine receptor) and Tar (aspartate and maltose receptor).[^8] Each trimer of dimers can actually be formed with different types of MCPs. The methylation states and ligand-binding of each MCP dimer in the trimer contributes to the complex differently, depending on the position within the trimer.
+ - Each MCP has four methylation states, leading to combinatorial numbers of possible ligand binding and methylation states.
+ - We won't include these details in the model, but they all contribute to the precision in chemotaxis behaviors.
 
+Some resources/reads if you are interested in the chemotaxis biology:
+ - Amazing introduction to chemotaxis: Parkinson Lab [website](http://chemotaxis.biology.utah.edu/Parkinson_Lab/projects/ecolichemotaxis/ecolichemotaxis.html).
+ - A good overview: by Webre et al. published in 2003. [Available online](https://www.cell.com/current-biology/pdf/S0960-9822(02)01424-0.pdf)
+ - Details on chemotaxis pathway and MCPs: review article by Baker et al. published in 2005 [Available online](https://pubmed.ncbi.nlm.nih.gov/16369945/).
+ - Details on MCPs: more recent review by Parkinson et al. published in 2015. [Available online](https://www.sciencedirect.com/science/article/abs/pii/S0966842X15000578).
+ - Modeling robustness and integral feedback: lecture note by Berg in 2008. [Available online](https://www.weizmann.ac.il/mcb/UriAlon/sites/mcb.UriAlon/files/uploads/lecture_notes_-_robustness_in_bacterial_chemotaxis_.pdf).
 
 
 [^1] Tenaillon O, Skurnik D, Picard B, Denamur E. 2010. The population genetics of commensal *Escherichia coli*. Nature Reviews Microbiology 8:207-217. [Available online](https://www.nature.com/articles/nrmicro2298)

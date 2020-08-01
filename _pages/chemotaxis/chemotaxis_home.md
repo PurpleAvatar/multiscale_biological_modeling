@@ -37,7 +37,7 @@ In a uniform environment, *E. coli* tumbles once about every 1-1.5 seconds.[^5][
 ### The chemistry
 
 *E. coli* compares the current vs. past concentration of ligand and then controls the direction of flagellar rotation accordingly. This is achieved by a signaling pathway summarized in the figure.
-![image-center](../assets/images/chemotaxispathway.png){: .align-center}
+![image-center](../assets/images/chemotaxispathway.jpg){: .align-center}
 (Image from Parkinson Lab, University of Utah)
 
 A summary of the pathway:

@@ -25,6 +25,8 @@ sidebar:
 
 * Let's look at a subset of a TF network for *E. coli.*  This is just one example of a biological network.  (GIVE OTHERS: neural network, protein-protein interaction network)
 
+![image-center](../assets/images/motifs_finding_ecoli_1.jpeg){: .align-center}
+
 * (WHAT ARE THE STATISTICS FOR THIS NETWORK)
 
 * STOP: What do you see?

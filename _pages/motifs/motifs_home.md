@@ -8,13 +8,21 @@ sidebar:
 ### by Noah Lee and Phillip Compeau
 
 
-## (Something about scale of interest)
+## A new scale of interest
 
-* Discussion of the scale that we are interested in now -- a very fine-grained scale involving the interaction between proteins and genes.
+In the [Prologue](prologue), we worked with a particle-based model that could be thought of as simulating the interactions of cells in the skin of zebrafish. In this module, we will look at a much lower biological scale and model the interactions between proteins and DNA. This is in a sense the lowest level of biological study: the DNA double helix is only about 2.5 nm across, and proteins may be on the order of about 10nm in diameter. To be clear about how tiny this is, the smallest object that a light microscope can pick out is about 500 nm. For comparison, the width of a single human hair --- at the barrier of what can be seen with the naked eye --- is typically about 200 times larger.
 
-* Biological networks and extending our particle simulators to answer questions about "why" and "how" unintelligent systems can build nontrivial systems.
+This chapter will also introduce the concept of a **biological network**, which are ubiquitous in biological research. When studying interactions of proteins that may have similar function, biologists build a **protein-protein interaction network** in which nodes are proteins and two proteins are connected with an edge if they are known to interact. When examining the processes taking place within a cell, they form a **metabolic network** in which nodes correspond to substances in the cell's chemical reactions and an edge connects two nodes if there is some enzyme that catalyzes a reaction involving these two substances. Finally, neuroscientists study **neuronal networks** that link neurons together according to how they are linked in the nervous system --- these networks have been studied since the 1940s but have recently exploded as a model that can be used to solve problems in machine learning.
+
+NOAH: INSERT FIGURE WITH THREE EXAMPLES OF BIOLOGICAL NETWORKS
+
+In what follows, we will introduce yet another type of biological network involving the proteins that drive a cell's response to its environment. By analyzing this network, we will be able to draw insights into how biological systems that lack any underlying intelligence can nevertheless evolve into structures that are powerful, even beautiful.
+
+But before we get ahead of ourselves, let us introduce some of the molecular biology fundamentals we will need to complete our analysis. As in the Prologue, you may already have this biological background, in which case feel free to skim the next section.
 
 ## Introduction to transcription
+
+* NOAH -- fill in this section. Would be great to have pictures and YouTube videos where needed as we don't want to reinvent the wheel when discussing transcription.
 
 * Need to have an introduction to the biological process of transcription.  Disclaimer that learners with an in-depth knowledge of biology should skim it to the following section.
 

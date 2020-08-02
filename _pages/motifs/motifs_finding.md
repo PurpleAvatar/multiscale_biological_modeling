@@ -7,11 +7,15 @@ sidebar:
 
 ## Loops in the TF network
 
-* At the end of the previous section, we introduced transcription factor network and saw that this network for *E. coli* had what appeared to be a large number of loops (i.e., edges connecting a node *X* to itself).
+In the previous section, we introduced biological networks, in particular the transcription factor network, in which a protein *X* is connected to a protein *Y* if *X* is a transcription factor that regulates the production of *Y*. We also saw that in the *E. coli* transcription factor network, there seemed to be a large number of loops (i.e., edges connecting a node to itself).
 
-* The question, however, is whether seeing this many loops in the transcription factor network means that the loop is an important feature of this network.
+However, we need a more rigorous approach to arguing that there are many loops than simply observing the network. The question is how to justify quantitatively that the loop is a frequently used network motif.
 
-* Throughout computational biology, a fundamental paradigm when determining whether some structure is significant is to ask how likely this structure would be to appear as the result of *randomness* --- once again, using randomness to answer practical questions rears its head. The approach of quantifying the significance of an object by comparing its likelihood of appearing within randomly will not be foreign to anyone who is familiar with the search tool BLAST, which evaluates the matches that it finds of a query against a database by quantifying the likelihood that we would see this query within a random database.
+To answer this question, we will apply a paradigm that occurs throughout computational biology (and  science in general) for determining whether an observation is significant. This approach asks how likely this observation would have been made in a *random* environment --- once again we see the power of randomness for answering practical questions.
+
+For a classic example, many biologists are familiar with the search tool [BLAST](https://blast.ncbi.nlm.nih.gov/Blast.cgi){:target="_blank"}, which allows researchers to compare a query (say, the DNA sequence of a newly sequenced gene) against a database to find whether the query appears with slight modifications in the database. Once BLAST finds a "hit" of the query in the database, it asks "What are the chances we would find a hit of this quality in a random database?" If that probability is very low, then we can feel confident that the hit we found is significant.
+
+**STOP:** How can we apply this paradigm to determine whether a transcription factor network contains a significant number of loops?
 
 * In this case, we will determine whether loops in transcription factor networks are significant by comparing the number of loops in the *E. coli* network against the number of loops in a randomly generated transcription factor network. If the number of loops in the *E. coli* network is much higher than the expected number of loops in the randomly generated network, then we know that loops most likely have not appeared because of random chance (and must therefore appear frequently within the transcription factor network for a reason).
 

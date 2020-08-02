@@ -71,4 +71,5 @@ print("Number of self-loops: ", sum(Graph.is_loop(g)))
 
 And ta-da, the number of self-loops is significantly lower.
 
-[Return to main text](finding#negative-vs-positive-autoregulation){: .btn .btn--primary .btn--large}{: style="font-size: 100%; text-align: center;"}
+[Return to main text](finding#negative-vs-positive-autoregulation){: .btn .btn--primary .btn--large}
+{: style="font-size: 100%; text-align: center;"}

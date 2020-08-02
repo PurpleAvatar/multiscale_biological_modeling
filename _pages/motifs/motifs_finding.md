@@ -34,9 +34,12 @@ CITE:  Gilbert, E.N. (1959). "Random Graphs". Annals of Mathematical Statistics.
 In the spirit of making a fair comparison, we should therefore generate a random network with approximately the same number of nodes and edges. The *E. coli* transcription factor network has XXX total nodes and YYY edges, so we will take *n* = XXX. To ensure that the random network has approximately YYY edges, we first note that there are *n*<sup>2</sup> pairs of nodes that could have an edge connecting them (*n* choices for the starting node and *n* for the ending node). In order to ensure that we have approximately YYY edges in the random network, we set *p* equal to YYY/*n*<sup>2</sup>.  On average, YYY of the number of pairs of nodes that will be selected for an edge is *n*<sup>2</sup>·(YYY/*n*<sup>2</sup>) = YYY.
 
 
+
+
 If you are interested in
 
-[Visit tutorial](tutorial_loops){: .btn .btn--primary .btn--large}{: style="font-size: 100%; text-align: center;"}
+[Visit tutorial](tutorial_loops){: .btn .btn--primary .btn--large}
+{: style="font-size: 100%; text-align: center;"}
 
 
 

@@ -23,9 +23,9 @@ We will determine whether there are a significant number of loops in the transcr
 
 The next question is how to form a random network that offers a reasonable comparison against a real network.
 
-## Forming a random network
+## Forming a random network to compare against a transcription factor network
 
-There are multiple ways to generate a random network, but we will use an approach developed by Edgar Gilbert in 1959. In this approach, we have are given an integer *n* and a probability *p* (between 0 and 1). We first form *n* nodes; then, for every possible pair of nodes *x* and *y*, we have probability equal to *p* of connecting *x* to *y* with a directed edge *x* → *y*.
+There are multiple ways to generate a random network, but we will use an approach developed by Edgar Gilbert in 1959. In this approach, we have are given an integer *n* and a probability *p* (between 0 and 1). We first form *n* nodes; then, for every possible pair of nodes *X* and *Y*, we have probability equal to *p* of connecting *X* to *Y* with a directed edge *X* → *Y*.
 
 CITE:  Gilbert, E.N. (1959). "Random Graphs". Annals of Mathematical Statistics. 30 (4): 1141–1144. doi:10.1214/aoms/1177706098.
 
@@ -33,19 +33,26 @@ CITE:  Gilbert, E.N. (1959). "Random Graphs". Annals of Mathematical Statistics.
 
 In the spirit of making a fair comparison, we should therefore generate a random network with approximately the same number of nodes and edges. The *E. coli* transcription factor network has XXX total nodes and YYY edges, so we will take *n* = XXX. To ensure that the random network has approximately YYY edges, we first note that there are *n*<sup>2</sup> pairs of nodes that could have an edge connecting them (*n* choices for the starting node and *n* for the ending node). In order to ensure that we have approximately YYY edges in the random network, we set *p* equal to YYY/*n*<sup>2</sup>.  On average, YYY of the number of pairs of nodes that will be selected for an edge is *n*<sup>2</sup>·(YYY/*n*<sup>2</sup>) = YYY.
 
-
-
-
-If you are interested in
+We are now ready to build a random network and compare the number of loops in this network with the number of loops in the real transcription factor network. If you'd like, the link below will take you to a short tutorial that includes a Jupyter notebook running this comparison that you can play around with yourself. If you'd rather skip ahead to the next section, we will give away that there a
 
 [Visit tutorial](tutorial_loops){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 
 
-## Jupyter Notebook Walkthrough
+## Negative vs. positive autoregulation
 
-CITE
+* We can add more information to the TF network, labeling an edge *X* → *Y* with a "+" or "-" depending on whether the transcription factor *X* serves to increase or decrease the expression of *Y*.
+
+* In a random network, we would expect about half of the edges to be assigned a "+", and about half of the edges to be assigned a "-".
+
+* Re-examining the 130 total loops in the *E. coli* transcription factor network, we see that AAA of them are assigned a "+" and BBB of them are assigned a "-".
+
+* This enormous discrepancy is doubtfully due to random chance; imagine if we flipped a coin 130 times and obtained AAA "heads" and BBB "tails".
+
+* In other words, we have found that autoregulation is an important aspect of transcription factors, but we have also found that transcription factors that autoregulate tend to *negatively* autoregulate, meaning that they serve to *turn off* their own expression.
+
+* This seems to have taken an even stranger turn --- why in the world would negative autoregulation be such a common phenomenon in transcription factors? In the next section, we will begin to unravel the mystery.
 
 [Previous](home){: .btn .btn--primary .btn--x-large} [Next Page](nar){: .btn .btn--primary .btn--x-large}
 {: style="font-size: 100%; text-align: center;"}

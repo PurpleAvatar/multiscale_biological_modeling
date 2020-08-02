@@ -5,6 +5,9 @@ sidebar:
  nav: "motifs"
 ---
 
+### by Noah Lee and Phillip Compeau
+
+
 ## (Something about scale of interest)
 
 * Discussion of the scale that we are interested in now -- a very fine-grained scale involving the interaction between proteins and genes.
@@ -22,6 +25,8 @@ sidebar:
 # Determining if a given transcription factor regulates the expression of a given gene
 
 * Note: need to explain the experiment that can be used to determine whether or not *X* is a transcription factor for *Y*. (ChIP-seq). Also point toward <a href="https://www.bioinformaticsalgorithms.org/bioinformatics-chapter-2" target="_blank">Chapter 2</a> of *Bioinformatics Algorithms: An Active Learning Approach*, which can be read for free online, for a deep dive in terms of how we can infer genes that are regulated by the same transcription factor.
+
+CITE first big ChIP-seq paper: https://science.sciencemag.org/content/316/5830/1497
 
 # Transcription factor networks
 

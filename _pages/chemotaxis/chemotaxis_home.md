@@ -37,20 +37,18 @@ CITE WHAT IF with link to the book homepage
 
 * We will look at a related example of using random walks as an effective means of exploring one's environment: bacterial chemotaxis. (Transition to chemotaxis.)
 
-* Note: no need to reintroduce E. coli here. It is good but probably need to move this discussion to the motifs introduction.
+## Introduction to Chemotaxis
 
-### Introduction to Chemotaxis
+Like other prokaryotes, *E. coli* are small, with a length about 2µm, and a diameter 0.25-1µm.[^2]
 
-*Escherichia coli* (also *E. coli*) is a rod-shaped bacterium commonly found in the lower intestine of endotherms. Being commensal at the most of the time, it is, paradoxically, one of the main pathogens responsible for intraintestinal and extraintestinal infections.[^1] It is also *the most* widely studied prokaryotic model organism. They are small, like other prokaryotes are, with a length about 2um, and a diameter 0.25-1um.[^2] **The small size of *E. coli* puts them into a similar situation like the lost explorers are: how to explore the space efficiently to find food?**
-
-The behavior of cells moving towards/away from a stimulus is called **chemotaxis**. For *E. coli*, moving towards attractants (ex. glucose, electron acceptros), and moving away from repellents (ex. Ni2+, Co2+) are all considered chemotaxis behaviors.
+The behavior of cells moving towards or away from a substance is called **chemotaxis**. For *E. coli*, moving towards attractants (ex. glucose, electron acceptors), and moving away from repellents (ex. Ni2+, Co2+) are all considered chemotaxis behaviors.
 
 Here is a cute video of *E. coli* moving towards a sugar crystal.
 <iframe width="640" height="360" src="https://www.youtube.com/embed/F6QMU3KD7zw" frameborder="0" allowfullscreen></iframe>
 
 ### How does *E. coli* know where to go?
 
-*E. coli* has 5-12 flagelli randomly distributed in the surface.[^3] Each flagelum rotates clockwise (CW) or counter-clockwise (CCW). That leads to two states of movement: 1) when flagelli rotates in CCW, they form a bundle, and propells the cells to swiming smoothly at speeds of 20 um per second, called **run**; 2) when some flaggeli in the bundle rotates CW, the flagelli become uncoordinated and reorients with a much slower net movement speed in place, called **tumble**.[^4]
+*E. coli* has 5-12 flagelli randomly distributed in the surface.[^3] Each flagelum rotates clockwise (CW) or counter-clockwise (CCW). That leads to two states of movement: 1) when flagelli rotates in CCW, they form a bundle, and propells the cells to swiming smoothly at speeds of 20 µm per second, called **run**; 2) when some flaggeli in the bundle rotates CW, the flagelli become uncoordinated and reorients with a much slower net movement speed in place, called **tumble**.[^4]
 
 ![image-center](../assets/images/chemotaxis_intro_runtumble.png){: .align-center}
 (Image from Parkinson Lab, University of Utah)
@@ -99,9 +97,6 @@ Some resources/reads if you are interested in the chemotaxis biology:
  - Details on chemotaxis pathway and MCPs: review article by Baker et al. published in 2005 [Available online](https://pubmed.ncbi.nlm.nih.gov/16369945/).
  - Details on MCPs: more recent review by Parkinson et al. published in 2015. [Available online](https://www.sciencedirect.com/science/article/abs/pii/S0966842X15000578).
  - Modeling robustness and integral feedback: lecture note by Berg in 2008. [Available online](https://www.weizmann.ac.il/mcb/UriAlon/sites/mcb.UriAlon/files/uploads/lecture_notes_-_robustness_in_bacterial_chemotaxis_.pdf).
-
-
-[^1] Tenaillon O, Skurnik D, Picard B, Denamur E. 2010. The population genetics of commensal *Escherichia coli*. Nature Reviews Microbiology 8:207-217. [Available online](https://www.nature.com/articles/nrmicro2298)
 
 [^2] Pierucci O. 1978. Dimensions of *Escherichia coli* at various growth rates: Model of envelope growth. Journal of Bacteriology 135(2):559-574. [Available online](https://jb.asm.org/content/jb/135/2/559.full.pdf)
 

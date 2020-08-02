@@ -34,6 +34,10 @@ CITE first big ChIP-seq paper: https://science.sciencemag.org/content/316/5830/1
 
 * Let's look at a subset of a TF network for *E. coli.*  This is just one example of a biological network.  (GIVE OTHERS: neural network, protein-protein interaction network)
 
+* From Shuanger chapter: *Escherichia coli* (also *E. coli*) is a rod-shaped bacterium commonly found in the lower intestine of endotherms. Being commensal at the most of the time, it is, paradoxically, one of the main pathogens responsible for intraintestinal and extraintestinal infections.[^1] It is also the most widely studied prokaryotic model organism. (Need something about the fact that we share a lot with E. coli genetically.)
+
+[^1] Tenaillon O, Skurnik D, Picard B, Denamur E. 2010. The population genetics of commensal *Escherichia coli*. Nature Reviews Microbiology 8:207-217. [Available online](https://www.nature.com/articles/nrmicro2298)
+
 ![image-center](../assets/images/motifs_finding_ecoli_1.jpeg){: .align-center}
 
 * (WHAT ARE THE STATISTICS FOR THIS NETWORK)

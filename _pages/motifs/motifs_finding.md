@@ -54,5 +54,5 @@ We are now ready to build a random network and compare the number of loops in th
 
 * This seems to have taken an even stranger turn --- why in the world would negative autoregulation be such a common phenomenon in transcription factors? In the next section, we will begin to unravel the mystery.
 
-[Previous](home){: .btn .btn--primary .btn--x-large} [Next Page](nar){: .btn .btn--primary .btn--x-large}
+[Previous lesson](home){: .btn .btn--primary .btn--large} [Next lesson](nar){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}

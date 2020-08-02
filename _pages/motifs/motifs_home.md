@@ -59,5 +59,5 @@ sidebar:
 3. How can the motif "feed forward loop" change a cellular response?
 4. How can a cell achieve oscillatory behaviors and how robust is this process?
 
-[Previous](#){: .btn .btn--primary .btn--x-large} [Next Page](finding){: .btn .btn--primary .btn--x-large}
+[Next lesson](finding){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}

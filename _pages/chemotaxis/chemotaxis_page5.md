@@ -1,5 +1,5 @@
 ---
-permalink: /chemotaxis/tutorial_gradient
+permalink: /chemotaxis/tutorial_removal
 title: "Down gradient/Removal"
 sidebar: 
  nav: "chemotaxis"

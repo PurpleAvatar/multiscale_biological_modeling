@@ -46,6 +46,8 @@ motifs:
         url: /motifs/oscillators
   - title: Tutorials
     children:
+      - title: "Looking for Loops in Transcription Factor Networks"
+        url: /motifs/tutorial_loops
       - title: "Setting up CellBlender"
         url: /motifs/setup
       - title: "Navigating CellBlender"

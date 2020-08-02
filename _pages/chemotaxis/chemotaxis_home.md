@@ -1,14 +1,23 @@
 ---
 permalink: /chemotaxis/home
 title: "Introduction to Chemotaxis"
-sidebar: 
+sidebar:
  nav: "chemotaxis"
 ---
 
-### Prologue
+## Lost Immortals
 
-**"Lost Immortals" in *What if*.**
+> If two immortal people were placed on opposite sides of an uninhabited Earth-like planet, how long would it take them to find each other?
 
+**STOP:** What would you propose that the two immortals could do to find each other?
+
+* Solution from book is below.
+
+> If you have no information, walk at random, leaving a trail of stone markers, each one pointing to the next. For every day that you walk, rest for three. Periodically mark the date alongside the cairn. It doesn't matter how you do this, as long as it's consistent. You could chisel the number of days into a rock, or lay out rocks to plot the number.
+
+> If you come across a trail that's newer than any you've seen before, start following it as fast as you can. If you lose the trail and can't recover it, resume leaving your own trail.
+
+CITE WHAT IF with link to the book homepage
 
 ### Introductino to Chemotaxis
 
@@ -21,7 +30,7 @@ Here is a cute video of *E. coli* moving towards a sugar crystal.
 
 ### How does *E. coli* know where to go?
 
-*E. coli* has 5-12 flagelli randomly distributed in the surface.[^3] Each flagelum rotates clockwise (CW) or counter-clockwise (CCW). That leads to two states of movement: 1) when flagelli rotates in CCW, they form a bundle, and propells the cells to swiming smoothly at speeds of 20 um per second, called **run**; 2) when some flaggeli in the bundle rotates CW, the flagelli become uncoordinated and reorients with a much slower net movement speed in place, called **tumble**.[^4] 
+*E. coli* has 5-12 flagelli randomly distributed in the surface.[^3] Each flagelum rotates clockwise (CW) or counter-clockwise (CCW). That leads to two states of movement: 1) when flagelli rotates in CCW, they form a bundle, and propells the cells to swiming smoothly at speeds of 20 um per second, called **run**; 2) when some flaggeli in the bundle rotates CW, the flagelli become uncoordinated and reorients with a much slower net movement speed in place, called **tumble**.[^4]
 
 ![image-center](../assets/images/chemotaxis_intro_runtumble.png){: .align-center}
 (Image from Parkinson Lab, University of Utah)
@@ -88,5 +97,3 @@ Some resources/reads if you are interested in the chemotaxis biology:
 
 [Previous](#){: .btn .btn--primary .btn--x-large} [Next Page](tutorial_lr){: .btn .btn--primary .btn--x-large}
 {: style="font-size: 100%; text-align: center;"}
-
-

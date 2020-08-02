@@ -308,7 +308,7 @@ L0 = 1e7.
 L0 = 1e8.
 ![image-center](../assets/images/chemotaxis_tutorial_oneadd1e8.png){: .align-center}
 
-We can see that the higher the concentration, the lower the valley becomes. But this limited to a range of concentrations - going over a concentration where all receptors can already saturate instantly can't lead to more response; and a very low concentration won't initiate a response. Our results are also consistent with other simulations[^2] and experimental observations[^5]. 
+We can see that the higher the concentration, the lower the valley becomes. But this limited to a range of concentrations - going over a concentration where all receptors can already saturate instantly can't lead to more response; and a very low concentration won't initiate a response. Our results are also consistent with other simulations[^2] and experimental observations[^5][^6]. 
 
 We will be simulating exponential gradients in the next page!
 
@@ -322,8 +322,10 @@ We will be simulating exponential gradients in the next page!
 
 [^5] Shimizu TS, Delalez N, Pichler K, and Berg HC. 2005. Monitoring bacterial chemotaxis by using bioluminescence resonance energy transfer: absence of feedback from the flagellar motors. PNAS. [Available online](https://www.pnas.org/content/103/7/2093/)
 
+[^6] Krembel A., Colin R., Sourijik V. 2015. Importance of multiple methylation sites in *Escherichia coli* chemotaxis. [Available online](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0145582)
 
-[Previous](tutorial_phos){: .btn .btn--primary .btn--x-large} [Next Page](home){: .btn .btn--primary .btn--x-large}
+
+[Previous](tutorial_phos){: .btn .btn--primary .btn--x-large} [Next Page](tutorial_gradient){: .btn .btn--primary .btn--x-large}
 {: style="font-size: 100%; text-align: center;"}
 
 

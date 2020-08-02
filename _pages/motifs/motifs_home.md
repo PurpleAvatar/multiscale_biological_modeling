@@ -19,6 +19,10 @@ sidebar:
 
 * These transcription factors are critical because they can help the cell respond to an external stimulus in which the transcription factor is activated by a chemical reaction taking place on the surface of the cell.  We will say more about this type of signal transduction process in a future chapter.
 
+# Determining if a given transcription factor regulates the expression of a given gene
+
+* Note: need to explain the experiment that can be used to determine whether or not *X* is a transcription factor for *Y*. (ChIP-seq). Also point toward <a href="https://www.bioinformaticsalgorithms.org/bioinformatics-chapter-2" target="_blank">Chapter 2</a> of *Bioinformatics Algorithms: An Active Learning Approach*, which can be read for free online, for a deep dive in terms of how we can infer genes that are regulated by the same transcription factor.
+
 # Transcription factor networks
 
 * Production of a network from transcription factors and proteins.  This will help us visualize relationships as well as look for patterns.

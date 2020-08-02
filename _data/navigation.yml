@@ -61,16 +61,22 @@ motifs:
 
 
 chemotaxis:
-  - title: Title? Here?
+  - title: About Chemotaxis
     children:
-      - title: "Home"
+      - title: "Introduction to Chemotaxis"
         url: /chemotaxis/home
+  - title: Building BNG simulations
+    children:
       - title: "Starting BNG Simulation"
         url: /chemotaxis/tutorial_lr
       - title: "Adding Phosphorylation to BNG model"
         url: /chemotaxis/tutorial_phos
       - title: "Modeling Adaptation"
         url: /chemotaxis/tutorial_adap
+      - title: "Up gradient/Addition"
+        url: /chemotaxis/tutorial_gradient
+      - title: "Down gradient/Removal"
+        url: /chemotaxis/tutorial_removal
 
 coronavirus:
   - title: About This Module

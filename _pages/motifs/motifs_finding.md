@@ -5,7 +5,7 @@ sidebar:
  nav: "motifs"
 ---
 
-## Loops in the TF network
+## Using randomness to determine statistical significance
 
 In the previous section, we introduced biological networks, in particular the transcription factor network, in which a protein *X* is connected to a protein *Y* if *X* is a transcription factor that regulates the production of *Y*. We also saw that in the *E. coli* transcription factor network, there seemed to be a large number of loops (i.e., edges connecting a node to itself).
 
@@ -17,13 +17,20 @@ For a classic example, many biologists are familiar with the search tool [BLAST]
 
 **STOP:** How can we apply this paradigm to determine whether a transcription factor network contains a significant number of loops?
 
+
+##
+
+
+
 We will determine whether there are a significant number of loops in the transcription factor network of *E. coli* by comparing the number of loops that we find in the network against the expected number of loops we would find in a randomly generated network. If the number of loops in the real network is much higher than the number of loops in the random network, then we have strong evidence that there is some selective force causing a loop to be a network motif.
 
-The question is how to
+## Forming a random network
+
+The q
 
 If you are interested in
 
-[Visit tutorial](tutorial_loops){: .btn .btn--primary .btn--large}
+[Visit tutorial](tutorial_loops){: .btn .btn--primary .btn--large}{: style="font-size: 100%; text-align: center;"}
 
 
 

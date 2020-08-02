@@ -71,7 +71,7 @@ print("Number of self-loops: ", sum(Graph.is_loop(g)))
 
 And ta-da, the number of self-loops is significantly lower.
 
-*So what does this mean? We can discover these phenomenon and upon investigation, discover something useful. Let's investigate this self-loop motif in the form of NAR*
+[Return to main text](finding){: .btn .btn--primary .btn--large}{: style="font-size: 100%; text-align: center;"}
 
 [Next Page](setup){: .btn .btn--primary .btn--x-large}
 {: style="font-size: 100%; text-align: center;"}

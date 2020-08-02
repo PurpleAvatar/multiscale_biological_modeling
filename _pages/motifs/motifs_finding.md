@@ -13,7 +13,7 @@ However, we need a more rigorous approach to arguing that there are many loops t
 
 To answer this question, we will apply a paradigm that occurs throughout computational biology (and  science in general) for determining whether an observation is significant. This approach asks how likely this observation would have been made in a *random* environment --- once again we see the power of randomness for answering practical questions.
 
-For a classic example, many biologists are familiar with the search tool [BLAST](https://blast.ncbi.nlm.nih.gov/Blast.cgi){:target="_blank"}, which allows researchers to compare a query (say, the DNA sequence of a newly sequenced gene) against a database to find whether the query appears with slight modifications in the database. Once BLAST finds a "hit" of the query in the database, it asks "What are the chances we would find a hit of this quality in a random database?" If that probability is very low, then we can feel confident that the hit we found is significant.
+For a classic example, many biologists are familiar with the search tool [BLAST](https://blast.ncbi.nlm.nih.gov/Blast.cgi){:target="_blank"}, which allows researchers to compare a query (say, the DNA sequence of a newly sequenced gene) against a database to find whether the query appears with slight modifications in the database. Once BLAST finds a "hit" of the query in the database, it asks, "What are the chances we would find a hit of this quality in a random database?" If that probability is very low, then we can feel confident that the hit we found is significant.
 
 **STOP:** How can we apply this paradigm to determine whether a transcription factor network contains a significant number of loops?
 
@@ -22,6 +22,8 @@ We will determine whether there are a significant number of loops in the transcr
 The question is how to
 
 If you are interested in
+
+[Visit tutorial](tutorial_loops){: .btn .btn--primary .btn--large}
 
 
 

@@ -1,6 +1,6 @@
 ---
 permalink: /chemotaxis/tutorial_gradient
-title: "Adaptation"
+title: "Up gradient"
 sidebar: 
  nav: "chemotaxis"
 ---

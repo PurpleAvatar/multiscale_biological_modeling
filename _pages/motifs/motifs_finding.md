@@ -17,13 +17,13 @@ For a classic example, many biologists are familiar with the search tool [BLAST]
 
 **STOP:** How can we apply this paradigm to determine whether a transcription factor network contains a significant number of loops?
 
-* In this case, we will determine whether loops in transcription factor networks are significant by comparing the number of loops in the *E. coli* network against the number of loops in a randomly generated transcription factor network. If the number of loops in the *E. coli* network is much higher than the expected number of loops in the randomly generated network, then we know that loops most likely have not appeared because of random chance (and must therefore appear frequently within the transcription factor network for a reason).
+We will determine whether there are a significant number of loops in the transcription factor network of *E. coli* by comparing the number of loops that we find in the network against the expected number of loops we would find in a randomly generated network. If the number of loops in the real network is much higher than the number of loops in the random network, then we have strong evidence that there is some selective force causing a loop to be a network motif.
 
-* START HERE -- introduction to Jupyter notebook walkthrough.
+The question is how to
 
-*Each node (repr. gene) can be connected to other genes, and we can break down into these simple arrangements*
+If you are interested in
 
-*Picture of simplest patterns, A -> B, A -| B, A -| A, etc*
+
 
 ## Jupyter Notebook Walkthrough
 

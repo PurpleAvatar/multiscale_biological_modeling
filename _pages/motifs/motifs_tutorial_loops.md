@@ -72,6 +72,3 @@ print("Number of self-loops: ", sum(Graph.is_loop(g)))
 And ta-da, the number of self-loops is significantly lower.
 
 [Return to main text](finding){: .btn .btn--primary .btn--large}{: style="font-size: 100%; text-align: center;"}
-
-[Next Page](setup){: .btn .btn--primary .btn--x-large}
-{: style="font-size: 100%; text-align: center;"}

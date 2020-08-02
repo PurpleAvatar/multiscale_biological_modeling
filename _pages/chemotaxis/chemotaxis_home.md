@@ -5,13 +5,25 @@ sidebar:
  nav: "chemotaxis"
 ---
 
+### by Shuanger Li and Phillip Compeau
+
 ## Lost Immortals
 
-> If two immortal people were placed on opposite sides of an uninhabited Earth-like planet, how long would it take them to find each other?
+> If two immortal people were placed on opposite sides of an uninhabited Earth-like planet, how long would it take them to find each other? 100,000 years? 1,000,000 years?
 
 **STOP:** What would you propose that the two immortals could do to find each other?
 
-* Solution from book is below.
+* Solution from book is below. Need to discuss this solution in the context of what comes before (there are thoughts to go to the coastlines. You could also decide to meet each other at the North Pole if you could discuss in advance.) Munroe describes his approach as "be an ant". Ants also use this type of random walk strategy.
+
+Here’s the algorithm that I would follow (if you’re ever lost on a planet with me, keep this in mind!):
+
+If you have no information, walk at random, leaving a trail of stone markers, each one pointing to the next. For every day that you walk, rest for three. Periodically mark the date alongside the cairn. It doesn’t matter how you do this, as long as it’s consistent. You could chisel the number of days into a rock, or lay out rocks to plot the number.
+
+If you come across a trail that’s newer than any you’ve seen before, start following it as fast as you can. If you lose the trail and can’t recover it, resume leaving your own trail.
+
+You don’t have to come across the other player’s current location; you simply have to come across a location where they’ve been. You can still chase one another in circles, but as long as you move more quickly when you’re following a trail than when you’re leaving one, you’ll find each other in a matter of years or decades.
+
+And if your partner isn’t cooperating—perhaps they’re just sitting where they started and waiting for you—then you’ll get to see some neat stuff.
 
 > If you have no information, walk at random, leaving a trail of stone markers, each one pointing to the next. For every day that you walk, rest for three. Periodically mark the date alongside the cairn. It doesn't matter how you do this, as long as it's consistent. You could chisel the number of days into a rock, or lay out rocks to plot the number.
 >
@@ -19,7 +31,15 @@ sidebar:
 
 CITE WHAT IF with link to the book homepage
 
-### Introductino to Chemotaxis
+* What is the point of this introduction? Discuss the power of randomness that we have already repeatedly seen throughout the book. Then point out that although randomness is useful for running simulations, it is also useful as an algorithm for finding things.
+
+* The above algorithm for two people finding each other in a crazy hypothetical is in fact inspired by nature. It is described by Munroe as "be an ant" and is similar to the approach that ants take to explore their world.
+
+* We will look at a related example of using random walks as an effective means of exploring one's environment: bacterial chemotaxis. (Transition to chemotaxis.)
+
+* Note: no need to reintroduce E. coli here. It is good but probably need to move this discussion to the motifs introduction.
+
+### Introduction to Chemotaxis
 
 *Escherichia coli* (also *E. coli*) is a rod-shaped bacterium commonly found in the lower intestine of endotherms. Being commensal at the most of the time, it is, paradoxically, one of the main pathogens responsible for intraintestinal and extraintestinal infections.[^1] It is also *the most* widely studied prokaryotic model organism. They are small, like other prokaryotes are, with a length about 2um, and a diameter 0.25-1um.[^2] **The small size of *E. coli* puts them into a similar situation like the lost explorers are: how to explore the space efficiently to find food?**
 

@@ -28,7 +28,11 @@ Here is a cute video of *E. coli* moving towards a sugar crystal.
 
 In a uniform environment, *E. coli* tumbles once about every 1-1.5 seconds.[^5][^6] Such tumbling frequency is clever, because if the bacteria tumble too much, it won't be able to explore the space; but if tumble too little, it might go too far in the wrong direction.
 
-**Insert demonstration of different tumbling frequency?**
+We can demonstrate this with a simulation of *E. coli* movement trajectories in a uniform environment with different tumbling frequency. Each subplot here simulates trajectory of three cells with one tumbling frequency. The cells start at [0, 0], indicated by the red dot. Each cell is indicated by a different color (blue, green, and purple), with the darker dots reprensenting earlier time points, and brighter dots repensenting later time points. When expected tumbling fequency is 0.1s, the cells doesn;t move far away from origin; when it is 4.0s, cells go too far in one direction.
+
+**TODO: Insert the download-able notebook here**
+
+![image-center](../assets/images/chemotaxis_uniform_concentration.png){: .align-center}
 
 *E. coli* determines if it is in the right direction by comparing the concentration of ligand/receptor with the concentration *in the past*. If the cell senses a higher attractant concentration, it tumbles less; if it senses a lower attractant concentration, it tumbles more. Moreover, although it is still under active research, the cell tends to rotate at a smaller angle when traveling up the attractant gradient compared to traveling down the gradient.[^7] For repellent, it is the opposite. So the net effect is that the cell moves towards high concentration of attractants, and away from high concentration of repellents.
 

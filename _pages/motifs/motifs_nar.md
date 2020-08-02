@@ -9,6 +9,7 @@ toc_sticky: true
 
 ## A biological motivation for negative autoregulation
 
+
 Theodosius Dobzhansky once wrote that "Nothing in biology makes sense except in the light of evolution." In the spirit of Dobzhansky's quotation, there must be some evolutionary justification for the presence of so many negatively autoregulating transcription factors. Our goal is to find this justification through biological modeling.
 
 (CITE with link online:  Dobzhansky, Theodosius (March 1973), "Nothing in Biology Makes Sense Except in the Light of Evolution", American Biology Teacher, 35 (3): 125–129, JSTOR 4444260)

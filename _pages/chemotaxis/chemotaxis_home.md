@@ -14,7 +14,7 @@ sidebar:
 * Solution from book is below.
 
 > If you have no information, walk at random, leaving a trail of stone markers, each one pointing to the next. For every day that you walk, rest for three. Periodically mark the date alongside the cairn. It doesn't matter how you do this, as long as it's consistent. You could chisel the number of days into a rock, or lay out rocks to plot the number.
-
+>
 > If you come across a trail that's newer than any you've seen before, start following it as fast as you can. If you lose the trail and can't recover it, resume leaving your own trail.
 
 CITE WHAT IF with link to the book homepage

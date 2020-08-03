@@ -34,7 +34,7 @@ Three protein prediction software were chosen for template-based modeling of the
 <a href="/multiscale_biological_modeling/_pages/coronavirus/files/Robetta_Model.zip" download> Robetta Results </a>
 
 
-[Previous](home){: .btn .btn--primary .btn--x-large} [Next Page](RMSD_Results){: .btn .btn--primary .btn--x-large}
+[Previous](home){: .btn .btn--primary .btn--x-large} [Next Page](RMSD_results){: .btn .btn--primary .btn--x-large}
 {: style="font-size: 100%; text-align: center;"}
 
 

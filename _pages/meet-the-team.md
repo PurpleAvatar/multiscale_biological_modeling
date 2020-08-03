@@ -11,7 +11,7 @@ Content below is the team
   
   <div class="column">
     <div class="card">
-      <img src="assets/images/Phillip_Compeau.JPG" alt="Phillip Compeau" style="display:block; margin:auto; width:90%; border-radius:50%">
+      <img src="../assets/images/Phillip_Compeau.JPG" alt="Phillip Compeau" style="display:block; margin:auto; width:90%; border-radius:50%">
       <div class="container">
         <h2>Phillip Compeau</h2>
         <p class="title">CEO &amp; Founder</p>
@@ -26,7 +26,7 @@ Phillip is passionate about open online education, and his education projects ha
   
   <div class="column">
     <div class="card">
-      <img src="assets/images/blurred_sides_square.png" alt="Noah Lee" style="display:block; margin:auto; width:90%; border-radius:50%">
+      <img src="../assets/images/blurred_sides_square.png" alt="Noah Lee" style="display:block; margin:auto; width:90%; border-radius:50%">
       <div class="container">
         <h2>Noah Lee</h2>
         <p class="title">CEO &amp; Founder</p>
@@ -43,7 +43,7 @@ Phillip is passionate about open online education, and his education projects ha
   
   <div class="column">
     <div class="card">
-      <img src="assets/images/190820_Comp Bio_LEE_CHRIS_107.jpg" alt="Chris Lee" style="display:block; margin:auto; width:90%; border-radius:50%">
+      <img src="../assets/images/190820_Comp Bio_LEE_CHRIS_107.jpg" alt="Chris Lee" style="display:block; margin:auto; width:90%; border-radius:50%">
       <div class="container">
         <h2>Chris Lee</h2>
         <p class="title">CEO &amp; Founder</p>
@@ -54,4 +54,17 @@ Phillip is passionate about open online education, and his education projects ha
     </div>
   </div>
   
+  <div class="column">
+    <div class="card">
+      <img src="../assets/images/190820_Comp Bio_LEE_CHRIS_107.jpg" alt="Shuanger Li" style="display:block; margin:auto; width:90%; border-radius:50%">
+      <div class="container">
+        <h2>Shuanger Li</h2>
+        <p class="title">CEO &amp; Founder</p>
+        <p>Shuanger is an MSc student studying Computational Biology at CMU. She is interested in theories of evolution and ecology, and is currently working with Dr. Oana Carja on heritable phenotypic variability. She enjoys modeling and simulation as powerful and fun ways to understand biological systems. She double majored in Environmental Sciences and Microbial Biology at UC Berkeley, where she studied Hawaiian arthropod assemblages, spider behaviors, and remediation bioreactors.</p>
+        <p>example@example.com</p>
+        <p><button class="button">Contact</button></p>
+      </div>
+    </div>
+  </div>
+
 </div>

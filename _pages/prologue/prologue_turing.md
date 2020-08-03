@@ -41,5 +41,3 @@ Citations:
 * Turing, Alan (1952). "The Chemical Basis of Morphogenesis" (PDF). Philosophical Transactions of the Royal Society of London B. 237 (641): 37–72. Bibcode:1952RSPTB.237...37T. doi:10.1098/rstb.1952.0012. JSTOR 92463.
 
 * Zebra stripes and flies: https://www.nature.com/articles/ncomms4535
-
-MISSING CURRENTLY: spots on different organisms and pufferfish having very slight change between stripes and spots (later?)

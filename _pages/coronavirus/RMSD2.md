@@ -51,5 +51,5 @@ Finally, R can be calculated with the following matrix formula:
 
 
 
-[Previous](prediction){: .btn .btn--primary .btn--x-large} [Next Page](structural_diff){: .btn .btn--primary .btn--x-large}
+[Previous](RMSD_results){: .btn .btn--primary .btn--x-large} [Next Page](structural_diff){: .btn .btn--primary .btn--x-large}
 {: style="font-size: 100%; text-align: center;"}

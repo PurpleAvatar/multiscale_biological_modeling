@@ -56,7 +56,7 @@ Phillip is passionate about open online education, and his education projects ha
   
   <div class="column">
     <div class="card">
-      <img src="../assets/images/190820_Comp Bio_LEE_CHRIS_107.jpg" alt="Shuanger Li" style="display:block; margin:auto; width:90%; border-radius:50%">
+      <img src="../assets/images/shuanger_photo.png" alt="Shuanger Li" style="display:block; margin:auto; width:90%; border-radius:50%">
       <div class="container">
         <h2>Shuanger Li</h2>
         <p class="title">CEO &amp; Founder</p>

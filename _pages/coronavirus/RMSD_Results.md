@@ -18,16 +18,16 @@ For each of the three types of predicted models, the RMSD between each other, SA
 
 For whole Spike modeling, the RMSD between SARS-CoV-2 and SARS is 11.368. Looking at the SWISS models, the best performing model with SARS-CoV-2 is 5.8518, while the worst is 11.3432. In comparison, the best performing SSGCID model to 6vxx is 2.08537 and the worst being 4.9636.
 
-<img src="../_pages/coronavirus/files/RMSD_result/Swiss/">
-<img src="../_pages/coronavirus/files/RMSD_result/SSGCID/">
+<img src="../_pages/coronavirus/files/RMSD_result/Swiss.png">
+<img src="../_pages/coronavirus/files/RMSD_result/SSGCID.png">
 
 For RBD modeling, the RMSD between SARS-CoV-2 and SARS is 2.0072. The best performing GalaxyWEB model RMSD with SARS-CoV-2 is 0.1202 and the worst being 0.1526.
 
-<img src="../_pages/coronavirus/files/RMSD_result/Galaxy/">
+<img src="../_pages/coronavirus/files/RMSD_result/Galaxy.png">
 
 For single chain modeling, the RMSD between SARS-CoV-2 and SARS is 10.936. The best performing Robetta model RMSD with SARS-CoV-2 is 2.5852 and the worst being 12.0975.
 
-<img src="../_pages/coronavirus/files/RMSD_result/Robetta/">
+<img src="../_pages/coronavirus/files/RMSD_result/Robetta.png">
 
 Looking at the RMSD values, SSGCID models far outperformed the models produced by SWISS. Although this may be due to a number of factors (e.g. different algorithms), one main factor is that the SSGCID modesl took much more computational power and time, which supports a positive correlation between computational power and accuracy. The difference between the best and worst GalaxyWEB models and high RSMD values between predicted models (e.g. 29.7861 between SSGCID_1 and SSGCID_4), indicate the potential of large variability between produced models. Lastly, there appears to be a negative correlation between sequence length and prediction accuracy for protein predictions of similar compuational power, where RBD models performed the best, followed by single chain models, and whole Spike models (SWISS) performing the worst.
 

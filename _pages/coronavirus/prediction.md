@@ -33,15 +33,8 @@ Three protein prediction software were chosen for template-based modeling of the
 
 <a href="/multiscale_biological_modeling/_pages/coronavirus/files/Robetta_Model.zip" download> Robetta Results </a>
 
-### Structure Comparison with RMSD
-RMSD is a common method to quantitatively measure the difference between two paired sets of values, such as coordinates. A lower RMSD value indicates a higher similarity between the two sets and a RMSD value of 0 indicates a perfect fit. This is especially useful in preliminary structure comparisons between proteins since protein structures are often represented as atomic coordinates. By comparing the RMSD between the predicted model the published model, a quantitative measure of the model's accuracy can be obtained. The formula for calculating RMSD is as follows:
 
-<a href="https://www.codecogs.com/eqnedit.php?latex=\sqrt{\frac{1}{n}\sum_{n}^{i-1}d^{2}_{i}}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\sqrt{\frac{1}{n}\sum_{n}^{i-1}d^{2}_{i}}" title="\sqrt{\frac{1}{n}\sum_{n}^{i-1}d^{2}_{i}}" /></a>
-
-where *n* is the number of pairs of equivalent atoms, *d* is the distance between the *i*th atom pair. For protein structure analysis, RMSD values are typically in the units of angstroms (Å). Proteins are made up of a chain of amino acids that is folded in a very specific way and the shape of the protein is vital to its function. Amino acids all have the same general structure: an amine group (-NH<sub>2</sub>), a carboxyl group (-COOH), a *R* group side-chain, and a central alpha-carbon (C⍺) that connects everything together. The amino acids are linked together by a peptide bond between the amine group of one amino acid and the carboxyl group of the other amino acid. By focusing on the positions of the alpha-carbons, the overall tertiary shape can be determined, although this leaves out the *R* groups, which is extremely important since they are responsible for the biochemical properties of the amino acids, and the folding and interactions of the protein. However, the alpha-carbons are usually sufficient in preliminary structure comparison assessments and for calculating RMSD.
-
-
-[Previous](home){: .btn .btn--primary .btn--x-large} [Next Page](rmsd2){: .btn .btn--primary .btn--x-large}
+[Previous](home){: .btn .btn--primary .btn--x-large} [Next Page](RMSD_Results){: .btn .btn--primary .btn--x-large}
 {: style="font-size: 100%; text-align: center;"}
 
 

@@ -19,6 +19,7 @@ For each of the three types of predicted models, the RMSD between each other, SA
 For whole Spike modeling, the RMSD between SARS-CoV-2 and SARS is 11.368. Looking at the SWISS models, the best performing model with SARS-CoV-2 is 5.8518, while the worst is 11.3432. In comparison, the best performing SSGCID model to 6vxx is 2.08537 and the worst being 4.9636.
 
 <img src="../_pages/coronavirus/files/RMSD_result/Swiss.png">
+
 <img src="../_pages/coronavirus/files/RMSD_result/SSGCID.png">
 
 For RBD modeling, the RMSD between SARS-CoV-2 and SARS is 2.0072. The best performing GalaxyWEB model RMSD with SARS-CoV-2 is 0.1202 and the worst being 0.1526.

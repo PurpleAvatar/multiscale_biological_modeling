@@ -31,6 +31,7 @@ For single chain modeling, the RMSD between SARS-CoV-2 and SARS is 10.936. The b
 
 Looking at the RMSD values, SSGCID models far outperformed the models produced by SWISS. Although this may be due to a number of factors (e.g. different algorithms), one main factor is that the SSGCID modesl took much more computational power and time, which supports a positive correlation between computational power and accuracy. The difference between the best and worst GalaxyWEB models and high RSMD values between predicted models (e.g. 29.7861 between SSGCID_1 and SSGCID_4), indicate the potential of large variability between produced models. Lastly, there appears to be a negative correlation between sequence length and prediction accuracy for protein predictions of similar compuational power, where RBD models performed the best, followed by single chain models, and whole Spike models (SWISS) performing the worst.
 
+To see the full RMSD report with RMSD values between the predicted models, download the results <a href="/multiscale_biological_modeling/_pages/coronavirus/files/RMSD_result/RMSD_Results.csv" download>here</a>.
 
 [Previous](prediction){: .btn .btn--primary .btn--x-large} [Next Page](rmsd2){: .btn .btn--primary .btn--x-large}
 {: style="font-size: 100%; text-align: center;"}

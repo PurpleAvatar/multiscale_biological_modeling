@@ -20,6 +20,8 @@ For whole Spike modeling, the RMSD between SARS-CoV-2 and SARS is 11.368. Lookin
 
 <img src="../_pages/coronavirus/files/RMSD_result/Swiss.png">
 
+<hr>
+
 <img src="../_pages/coronavirus/files/RMSD_result/SSGCID.png">
 
 For RBD modeling, the RMSD between SARS-CoV-2 and SARS is 2.0072. The best performing GalaxyWEB model RMSD with SARS-CoV-2 is 0.1202 and the worst being 0.1526.

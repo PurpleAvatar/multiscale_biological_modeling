@@ -33,7 +33,7 @@ CITE:  Gilbert, E.N. (1959). "Random Graphs". Annals of Mathematical Statistics.
 
 **STOP:** What should *n* and *p* be if we are generating a random network to compare against the *E. coli* transcription factor network?
 
-In the spirit of making a fair comparison, we should therefore generate a random network with approximately the same number of nodes and edges. The *E. coli* transcription factor network has XXX total nodes and YYY edges, so we will take *n* = XXX. To ensure that the random network has approximately YYY edges, we first note that there are *n*<sup>2</sup> pairs of nodes that could have an edge connecting them (*n* choices for the starting node and *n* for the ending node). In order to ensure that we have approximately YYY edges in the random network, we set *p* equal to YYY/*n*<sup>2</sup>.  On average, YYY of the number of pairs of nodes that will be selected for an edge is *n*<sup>2</sup>·(YYY/*n*<sup>2</sup>) = YYY.
+In the spirit of making a fair comparison, we should therefore generate a random network with approximately the same number of nodes and edges. The *E. coli* transcription factor network has 197 nodes and 477 edges, so we will take *n* = 197. To ensure that the random network has approximately 477 edges, we first note that there are *n*<sup>2</sup> pairs of nodes that could have an edge connecting them (*n* choices for the starting node and *n* for the ending node). In order to ensure that we have approximately 477 edges in the random network, we set *p* equal to 477/*n*<sup>2</sup>.  On average, 477 of the number of pairs of nodes that will be selected for an edge is *n*<sup>2</sup>·(477/*n*<sup>2</sup>) = 477.
 
 We are now ready to build a random network and compare the number of loops in this network with the number of loops in the real transcription factor network. If you'd like, the link below will take you to a short tutorial that includes a Jupyter notebook running this comparison that you can play around with yourself. If you'd rather skip ahead to the next section, we will give away that there a
 
@@ -55,6 +55,8 @@ We are now ready to build a random network and compare the number of loops in th
 * In other words, we have found that autoregulation is an important aspect of transcription factors, but we have also found that transcription factors that autoregulate tend to *negatively* autoregulate, meaning that they serve to *turn off* their own expression.
 
 * This seems to have taken an even stranger turn --- why in the world would negative autoregulation be such a common phenomenon in transcription factors? In the next section, we will begin to unravel the mystery.
+
+* Define: negative autoregulation
 
 [Next lesson](nar){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}

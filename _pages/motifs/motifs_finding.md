@@ -7,8 +7,6 @@ sidebar:
 
 ## Using randomness to determine statistical significance
 
-* Need to define a network motif
-
 In the previous section, we introduced biological networks, in particular the transcription factor network, in which a protein *X* is connected to a protein *Y* if *X* is a transcription factor that regulates the production of *Y*. We also saw that in the *E. coli* transcription factor network, there seemed to be a large number of loops, in which a transcription factor regulates its own transcription.
 
 A structure occurring often throughout a biological network is called a **network motif**. In the remainder of this chapter, we focus on identifying motifs in transcription factor networks and then trying to find an evolutionary justification for why these motifs are so common.

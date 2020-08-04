@@ -13,7 +13,7 @@ Theodosius Dobzhansky once wrote that "Nothing in biology makes sense except in 
 
 (CITE with link online:  Dobzhansky, Theodosius (March 1973), "Nothing in Biology Makes Sense Except in the Light of Evolution", American Biology Teacher, 35 (3): 125–129, JSTOR 4444260)
 
-say that we have two transcription factors *X* and *Y* with *X* regulating the transcription of *Y*, and consider two cells. In one cell, *X* regulates the transcription of *Y*; in the other, we also have that *Y* negatively autoregulates.
+Say that we have two transcription factors *X* and *Y* with *X* regulating the transcription of *Y*, and consider two cells. In one cell, *X* regulates the transcription of *Y*; in the other, we also have that *Y* negatively autoregulates. [^test]
 
 We are going to build a model simulating these two cellular environments, isolated to the concentration of *Y*. In particular, we will simulate a "race" to the steady state concentration of *Y*. The cell that is able to reach this steady state faster is able to respond more quickly to its environment and therefore presumably more fit for survival.
 

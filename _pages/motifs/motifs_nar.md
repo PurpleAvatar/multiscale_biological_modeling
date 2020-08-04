@@ -9,14 +9,13 @@ toc_sticky: true
 
 ## A biological motivation for negative autoregulation
 
-
-Theodosius Dobzhansky once wrote that "Nothing in biology makes sense except in the light of evolution." In the spirit of Dobzhansky's quotation, there must be some evolutionary justification for the presence of so many negatively autoregulating transcription factors. Our goal is to find this justification through biological modeling.
+Theodosius Dobzhansky once wrote that "Nothing in biology makes sense except in the light of evolution." In the spirit of his quotation, there must be some evolutionary reason for the presence of so many negatively autoregulating transcription factors. Our goal is to use biological modeling to find this justification.
 
 (CITE with link online:  Dobzhansky, Theodosius (March 1973), "Nothing in Biology Makes Sense Except in the Light of Evolution", American Biology Teacher, 35 (3): 125–129, JSTOR 4444260)
 
-* Imagine that we have two cells.  In one cell, we have simple regulation of *Y* by a transcription factor *X*. In the other, *Y* is a transcription factor that negatively autoregulates.
+say that we have two transcription factors *X* and *Y* with *X* regulating the transcription of *Y*, and consider two cells. In one cell, *X* regulates the transcription of *Y*; in the other, we also have that *Y* negatively autoregulates.
 
-* Our plan is to build a model in which both of these two cell types are simulated. The idea is that we will simulate a "race" to steady state; which of the two systems can produce a steady state concentration of *Y* faster? Whichever particle is able to do so is able to respond more quickly to its environment and in a certain sense more fit.
+We are going to build a model simulating these two cellular environments, isolated to the concentration of *Y*. In particular, we will simulate a "race" to the steady state concentration of *Y*. The cell that is able to reach this steady state faster is able to respond more quickly to its environment and therefore presumably more fit for survival.
 
 * It is critical that as part of this simulation, we strive for the two systems to have the *same* steady-state concentration of *Y*. This way we keep as much as possible the same between the two simulations.
 
@@ -32,11 +31,9 @@ Theodosius Dobzhansky once wrote that "Nothing in biology makes sense except in 
 
 ## Results
 
-* The best way to
-
 * (Should we cite mathematically controlled simulation?)
 
-* (Cite Alon book?)
+* (Cite Alon book at what point?)
 
 
 

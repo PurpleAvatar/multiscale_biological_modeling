@@ -41,7 +41,6 @@ We are now ready to build a random network and compare the number of loops in th
 {: style="font-size: 100%; text-align: center;"}
 
 
-
 ## Negative vs. positive autoregulation
 
 * We can add more information to the TF network, labeling an edge *X* → *Y* with a "+" or "-" depending on whether the transcription factor *X* serves to increase or decrease the expression of *Y*.

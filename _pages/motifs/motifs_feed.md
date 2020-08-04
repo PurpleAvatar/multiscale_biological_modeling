@@ -1,19 +1,21 @@
 ---
 permalink: /motifs/feed
 title: "Feed-Forward Loop"
-sidebar: 
+sidebar:
  nav: "motifs"
 toc: true
 toc_sticky: true
 ---
 
-*So we saw how the motif of NAR is useful. Motivations for FeedForward Loop. What if we want even faster?* 
+* The previous section works if we have a transcription factor, but a normal gene is not a transcription factor and therefore is not able to negatively autoregulate.
+
+* The question is how we can mimic the feedback process that we saw in the previous section to facilitate a speedup over simple regulation of *X* by *Y* in the case that *Y* is not a transcription factor.
 
 ### Rules for Feedforward Loop
 
 See “Setting-up Simulations” before starting these steps
 
-Quick Tutorial: 
+Quick Tutorial:
 Load the file from Non-NAR tutorial
 Change the Y molecule to have a diffusion constant of 2e-6
 Add the following molecules

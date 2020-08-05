@@ -81,6 +81,8 @@ chemotaxis:
         url: /chemotaxis/tutorial_gradient
       - title: "Down gradient/Removal"
         url: /chemotaxis/tutorial_removal
+      - title: "Conclusion"
+        url: /chemotaxis/conclusion
 
 coronavirus:
   - title: About This Module

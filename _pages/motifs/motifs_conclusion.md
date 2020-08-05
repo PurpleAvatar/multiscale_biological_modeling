@@ -13,3 +13,6 @@ sidebar:
 4. How can a cell achieve oscillatory behaviors and how robust is this process?
 
 * We also need a note at end of chapter about the fact that the cell is growing so that in more robust models the concentration is constantly decreasing as a result of the cell growing since it needs to double its volume every cell cycle.
+
+[Next chapter](../chemotaxis/home){: .btn .btn--primary .btn--large}
+{: style="font-size: 100%; text-align: center;"}

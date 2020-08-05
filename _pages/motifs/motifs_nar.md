@@ -90,6 +90,4 @@ In this section, we have seen that particle-based simulations can be powerful fo
 
 * NOAH: Just curious... how many positive autoregulation loops are there in our network?
 
-* We also need a note at end of chapter about the fact that the cell is growing so that in more robust models the concentration is constantly decreasing as a result of the cell growing since it needs to double its volume every cell cycle.
-
 * (Cite Alon book at some point -- when motifs are introduced? The introduction?)

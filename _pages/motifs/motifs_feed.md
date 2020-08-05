@@ -7,21 +7,33 @@ toc: true
 toc_sticky: true
 ---
 
-* The previous section works if we have a transcription factor, but a normal gene is not a transcription factor and therefore is not able to negatively autoregulate.
+## Feedforward loops
 
-* The question is how a protein that is not a transcription factor could reach a steady-state concentration faster than with simple regulation, since it can't negatively autoregulate.
+In the previous section, we saw that negative autoregulation can be used to speed up response times of a protein to an external stimulus.  However, the catch is that negative autoregulation can only occur if the protein in question is itself a transcription factor. Only XXX out of YYY total *E. coli* proteins are transcription factors. So is there a simple way of speeding up a cell's ability to manufacture a protein if that protein is not a transcription factor?
 
-* Introduce the feedforward loop. In general, this is any loop in which *X* is connected to both *Y* and *Z*, and then there is an edge connecting *Y* to *Z* as well.
+* NOAH: Fill in XXX and YYY above.
 
-* Note that X and Y must be transcription factors but Z does not have to be (and in fact typically is not).
+The answer will lie in a small network motif called the **feedforward loop**, which we will call an **FFL**. Earlier in the chapter, we pointed out that negative autoregulation is an example of "feedback", since a transcription factor is involved in regulating its own production. The feedforward loop motif, shown in the figure below, is any loop in which *X* is connected to both *Y* and *Z*, and *Y* is connected to *Z*. In this sense, calling the FFL motif a "loop" is a misnomer. Rather, it is a small structure in which there are two "paths" from *X* to *Z*; one via direct regulation of *Z* by *X*, and another in which there is an intermediate transcription factor *Y*.
 
-* Feedforward loops are also a network motif -- we will leave the statistical verification of this as a challenge exercise at the end of the chapter.
+* INSERT FIGURE HERE SHOWING FEEDFORWARD LOOP
 
-* There are eight different types of feed-forward loops depending on the choices of signs on each of the three edges.
+Note that *X* and *Y* must be transcription factors, but *X* does not have to be (and in fact typically is not). There are XXX FFLs in the transcription factor network of *E. coli*, and we leave the verification that this is a significant number of FFLs compared to a random network as an exercise at the end of the chapter.
 
-* Introduce the type-1 incoherent feed-forward loop. This is a network in which X --> Y and X --> Z but at the same time Y --> (-) Z.
+* NOAH: Fill in this XXX above.
 
-* **STOP:** How could we simulate a feed-forward loop with chemical reactions akin to the simulation we introduced in the previous section?
+Furthermore, recall that every edge of a transcription factor network is assigned a "+" or a "-" sign based on whether the interaction corresponds to up-regulation or down-regulation. Accordingly, the figure below shows the eight different types of FFLs, depending on the signs labeling the three edges in the FFL.
+
+* FILL IN FIGURE WITH EIGHT DIFFERENT TYPES OF FFLs
+
+Among the XXX total FFLs in the *E. coli* transcription factor network, YYY of them have the structure below, in which the edges connecting *X* to *Y* and *X* to *Z* are assigned a "+" and the edge connecting *Y* to *Z* is assigned a "-". This specific form of the FFL motif is unfortunately named a **type-1 incoherent feedforward loop**. This form of the FFL will be our focus for the rest of the chapter.
+
+* NOAH: Fill in XXX and YYY here.
+
+* FILL IN FIGURE WITH TYPE-1 INCOHERENT FFL.
+
+**STOP:** How could we simulate a feed-forward loop with chemical reactions akin to the simulation that we used for negative autoregulation? What would we compare this simulation against?
+
+## Modeling a type-1 incoherent feedforward loop
 
 * Mimicking this FFL with a simulation: let's assume that *X* is at steady-state to begin with, so that we don't need to incorporate its feed/kill.
 
@@ -36,6 +48,8 @@ toc_sticky: true
 * Appeal to tutorial.
 
 [Visit tutorial](tutorial_feed){: .btn .btn--primary .btn--large}
+
+## Why feedforward loops speed up response times
 
 * Explanation as to why this might be faster than simple regulation of *Z* by *X*. When we start the simulation, *Z* gets upregulated by *X*, at a higher rate than it would under simple regulation.
 

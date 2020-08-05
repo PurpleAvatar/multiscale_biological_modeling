@@ -3,8 +3,7 @@ layout: splash
 title: Home Page
 ---
 
-
-# Welcome to the Course!
+## Welcome to the Course!
 
 This course is a free and open learning project in biological modeling at multiple scales.
 
@@ -16,7 +15,10 @@ Furthermore, we will perform modeling of molecular and cellular biological syste
 
 ## Getting started
 
-We hope that we have piqued your interest! If you are ready to jump in and get started, please join us in the [Prologue](prologue).
+We hope that we have piqued your interest! If you are ready to jump in and get started, please join us!
+
+[Get started!](prologue){: .btn .btn--primary .btn--large}
+{: style="font-size: 100%; text-align: center;"}
 
 ## About the project
 
@@ -24,34 +26,8 @@ If you're interested in finding out more about this open project, read our [Abou
 
 ## Meet the team
 
-This course was lovingly put together by a professor and a team of students in Carnegie Mellon University's <a href="http://cbd.cmu.edu" target="_blank">Computational Biology Department</a>.  You can meet us on our [Team](meet-the-team) page.
+This course was lovingly put together by a professor and a team of students in Carnegie Mellon University's [Computational Biology Department](http://cbd.cmu.edu).  You can meet us on our [Team](meet-the-team) page.
 
 ## Contact
 
 Whether you are a student who would like to provide us with a testimonial, or an instructor interested in adopting this material for your own courses, we would be happy to hear from you.  Please reach out to us on the [Contact](contact) page.
-
-## Sample stuff -- to remove later
-
-Right here? Video.
-
-<video width="320" height="240" controls>
-  <source type="video/mp4" src="../assets/gray_scott_test.mp4">
-</video>
-
-No backslash started
-
-<video width="320" height="240" controls>
-  <source type="video/mp4" src="assets/gray_scott_test.mp4">
-</video>
-
-<div style="text-align:center">
-	<video width="320" height="240" controls>
-	  <source type="video/mp4" src="assets/random_walk_1.mp4">
-	</video>
-</div>
-
-<div style="text-align:center">
-	<video width="320" height="240" controls>
-	  <source type="video/mp4" src="assets/random_walk_200.mp4">
-	</video>
-</div>

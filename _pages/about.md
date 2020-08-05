@@ -5,6 +5,8 @@ classes: wide
 toc: true
 ---
 
+<br>
+
 ## Current offline projects
 
 ## Course survey and testimonials

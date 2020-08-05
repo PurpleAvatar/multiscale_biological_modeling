@@ -1,19 +1,19 @@
 ---
 permalink: /motifs/tutorial_feed
 title: "Feed-Forward Loop"
-sidebar: 
+sidebar:
  nav: "motifs"
 toc: true
 toc_sticky: true
 ---
 
-*So we saw how the motif of NAR is useful. Motivations for FeedForward Loop. What if we want even faster?* 
+* NOAH: Please flesh out this tutorial.
 
-### Rules for Feedforward Loop
+## Rules for Feedforward Loop
 
 See “Setting-up Simulations” before starting these steps
 
-Quick Tutorial: 
+Quick Tutorial:
 Load the file from Non-NAR tutorial
 Change the Y molecule to have a diffusion constant of 2e-6
 Add the following molecules

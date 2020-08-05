@@ -44,6 +44,8 @@ motifs:
         url: /motifs/feed
       - title: "Resilient Oscillators"
         url: /motifs/oscillators
+      - title: "Conclusion"
+        url: /motifs/conclusion
   - title: Tutorials
     children:
       - title: "Looking for Loops in Transcription Factor Networks"
@@ -88,7 +90,7 @@ coronavirus:
       - title: "Protein Structure Prediction"
         url: /coronavirus/prediction
       - title: "Assessing Model Accuracy"
-        url: /coronavirus/RMSD_results  
+        url: /coronavirus/RMSD_results
       - title: "More on RMSD"
         url: /coronavirus/rmsd2
   - title: Visualizing and Analyzing Differences

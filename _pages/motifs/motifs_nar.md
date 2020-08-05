@@ -40,14 +40,9 @@ To recap, both of our simulations will include diffusion of *X* and *Y*, removal
 
 ## Ensuring the same steady-state concentration
 
-If you followed the tutorial linked above, you were likely confused and disappointed in our negative autoregulating transcription factor *Y*. It may not be surprising that by allowing *Y* to turn itself off, we wound up with a simulation in which the final concentration of *Y* than in the case of only simple regulation of *Y* by *X*. It seems like we are back at square one; why in the world, then, would negative autoregulation be so common?
+If you followed the tutorial, you were likely confused and disappointed in our negative autoregulating transcription factor *Y*. It may not be surprising that by allowing *Y* to turn itself off, we wound up with a simulation in which the final concentration of *Y* than in the case of only simple regulation of *Y* by *X*. It seems like we are back at square one; why in the world, then, would negative autoregulation be so common?
 
 * NOAH: reproduce figure here showing the plot of *Y* under the two different simulations.
-
-* (Should we cite mathematically controlled simulation?)
-
-
-## Reflecting on negative autoregulation
 
 The answer to the quandary posed in the previous section is that the model we have built was not controlled to ensure that a fair comparison between the two systems. In particular, it is critical that the two simulations that we build should be controlled so that they have approximately the *same* steady-state concentration of *Y*. Ensuring this equal footing for the two simulations is called a **mathematically controlled comparison.**
 
@@ -55,27 +50,43 @@ CITE SAVAGEAU 1976 https://ucdavis.pure.elsevier.com/en/publications/biochemical
 
 **STOP:** How can we change the parameters of our models to obtain a mathematically controlled comparison?
 
-There are a number of parameters that we should keep constant across the two models. First, the diffusion rates of *X* and *Y*, which we should keep constant across the two simulations. Second, the number of initial particles *X* and *Y*. And third, the degradation rate of *Y*.
+There are a number of parameters that we must keep constant across the two models. First, the diffusion rates of *X* and *Y*, which we should keep constant across the two simulations. Second, the number of initial particles *X* and *Y*. And third, the degradation rate of *Y*.
 
 The only way that we will be able to increase the steady-state concentration in the simulation involving autoregulation is if we increase the rate at which the reaction *X* → *X* + *Y* takes place. Finding the exact increase in this rate of reaction is an imperfect art form but can be obtained through trial and error.
 
 * NOAH: review -- I don't know how we justify changing the steady-state any differently without getting into differential equations. How much do we need to change the parameters by to justify it?
 
-* NOAH: We need an additional NAR tutorial linked from here in which we change the parameters by not enough, by too much, and finally getting a Goldilocks value. We should also be plotting the percentage of Y for the two simulations on the same plot.
+If you followed the tutorial on using CellBlender to visualize the two simulations, then you may want to try your hand at adjusting this parameter and seeing what happens. If you would like to follow along with our tutorial building a mathematically controlled comparison, then follow the link below.
+
+* NOAH: We need an additional NAR tutorial here in which we change the parameters by not enough, by too much, and finally getting a Goldilocks value. We should also be plotting the percentage of Y for the two simulations on the same plot.
 
 ## Results
 
-* Phillip will return here to discuss the results. Alon's brake analogy would be good. Is there a better analogy that we can use?
+The figure below shows a plot of the amount of *Y* for the two simulations on the same chart over time. Now that we are able to obtain the same steady-state concentration of *Y* in the two simulations, a justification for negative autoregulation appears.
 
 * NOAH: Need to reproduce the image with the two different simulations overlaid on the same plot from the tutorial.
+
+The simulation with negative autoregulation starts with a low concentration of *Y*. For this reason, because the rate of the reaction *X* → *X* + *Y* is higher in the negative autoregulation simulation, the number of *Y* particles in this simulation increases much faster.
+
+As the concentration of *Y* increases, the rate at which new *Y* are being added to the system remains constant because it depends only upon *Y*. However, the rate at which *Y* are being removed increases because we have not only the degradation reaction *Y* → *NULL* but also the negative autoregulation reaction 2*Y* → *Y*, both of which depend on the current number of *Y* particles present in the system. As a result, the curve flattens more quickly for the simulation involving negative autoregulation.
+
+More importantly, we now understand *why* negative autoregulation has evolved. Because the simulation involving negative autoregulation wins the "race" to steady-state concentration of *Y*, we can conclude that a cell in which a transcription factor is negatively autoregulated has higher evolutionary fitness than one that does not.
+
+An excellent analogy proposed by Uri Alon for negative autoregulation is that of a car with a powerful engine (the higher rate of the reaction *X* → *X* + *Y*) and sensitive brakes (the reaction 2*Y* → *Y* that causes *Y* to quickly reach a steady-state concentration). This is reinforced by the plot below, where we show that we can reach steady-state even more quickly if we increase the rate of both of these reactions while keeping the steady-state concentration constant.
+
+* NOAH: show plots for a couple of additional NAR simulations, where we keep increasing the two reaction rates. (May need multiple colors.)
+
+In this section, we have seen that particle-based simulations can be powerful for justifying why a network motif is prevalent. In the remainder of this chapter, we will simulate two more commonly occurring network motifs and analyze these simulations to determine why these motifs have evolved.
 
 [Next lesson](feed){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 ## Other
-* Should be positive autoregulation somewhere at end of chapter.
+* In Noah's second tutorial, Phillip will add have a question at the end of the tutorial asking the user to draw the conclusion on their own.
 
-* NOAH: How many positive autoregulation loops are there in our network?
+* Should be positive autoregulation somewhere -- how many positive autoregulation loops are there?
+
+* NOAH: Just curious... how many positive autoregulation loops are there in our network?
 
 * We also need a note at end of chapter about the fact that the cell is growing so that in more robust models the concentration is constantly decreasing as a result of the cell growing since it needs to double its volume every cell cycle.
 

@@ -84,6 +84,8 @@ In this section, we have seen that particle-based simulations can be powerful fo
 ## Other
 * In Noah's second tutorial, Phillip will add have a question at the end of the tutorial asking the user to draw the conclusion on their own.
 
+* In the results section, should say something about their being practical limitations to how much we can increase the reaction producing *Y*, which provides a trade-off hence why the reaction rate isn't higher.
+
 * Should be positive autoregulation somewhere -- how many positive autoregulation loops are there?
 
 * NOAH: Just curious... how many positive autoregulation loops are there in our network?

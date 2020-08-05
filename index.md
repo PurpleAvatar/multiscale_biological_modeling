@@ -6,7 +6,9 @@ toc: true
 
 ## Welcome to our course!
 
-Have you ever wondered how your cells can react to their environment and perform complex tasks without any intelligence guiding them? Have you ever wondered what process causes zebras to have stripes?  Have you wondered why  We will see how each of these questions can be answered by biological modeling.
+Have you ever wondered how your cells can react to their environment and perform complex tasks without any intelligence guiding them? Have you ever wondered what process causes zebras to have stripes?  Have you wondered why the original SARS coronavirus did not become a pandemic in 2003 but SARS-CoV-2 has spread like wildfire through the population?
+
+We will see how each of these questions can be answered by biological modeling.
 
 Welcome to our free and open course in multiscale biological modeling.
 

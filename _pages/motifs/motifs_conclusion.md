@@ -18,6 +18,8 @@ sidebar:
 
 * Perhaps define the term "response time"
 
+* Something is missing which is that we could increase the degradation rate as well instead of negative autoregulation. Why do you think that the cell doesn't simply have a higher degradation rate? Why might this be impractical?
+
 ## Exercises
 
 1. Modify the Jupyter notebook provided in the [tutorial on loops](tutorial_loops) to count the number of feed-forward loops in the transcription factor network for *E. coli.*

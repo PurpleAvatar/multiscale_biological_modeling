@@ -4,13 +4,13 @@ classes: wide
 toc: true
 ---
 
-## Welcome to the Course!
+## Welcome to our course!
 
-This course is a free and open learning project in biological modeling at multiple scales.
+Have you ever wondered how your cells can react to their environment and perform complex tasks without any intelligence guiding them? Have you ever wondered what process causes zebras to have stripes?  Have you wondered why  We will see how each of these questions can be answered by biological modeling.
 
-That may seem like a mouthful. By "biological modeling" we mean that we are going to build  models of biological systems that are simpler than the systems themselves but provide us with some insight into how those systems really work on a fundamental level.
+Welcome to our free and open course in multiscale biological modeling.
 
-For example, have you ever wondered how your cells can react to their environment and perform complex tasks without any intelligence guiding them.  Have you ever wondered why zebras have stripes, or leopards have spots?  Have you ever wondered how we can train a computer to "see" objects lurking within a larger picture? We will see how each of these questions touches on biological modeling.
+That may seem like a mouthful. By "biological modeling" we mean that we are going to build  models of biological systems that are relatively simple but nevertheless provide us with some deep insights into how those systems operate.
 
 Furthermore, we will perform modeling of molecular and cellular biological systems at multiple "scales" of resolution, from the study of a single protein molecule within a cell's cytoplasm, to observing the interaction of proteins molecules interacting with each other as a whole, to a much wider view that considers cells themselves interacting with each other.  There are fascinating insights lurking at all these levels of resolution, and the goal of this course is to help learners understand some approaches that lead us to these insights.
 

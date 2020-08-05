@@ -1,6 +1,8 @@
 ---
 layout: splash
-title: Home Page
+title: "Multiscale Biological Modeling"
+classes: wide
+toc: true
 ---
 
 ## Welcome to the Course!

@@ -1,5 +1,4 @@
 ---
-layout: splash
 title: "Multiscale Biological Modeling"
 classes: wide
 toc: true

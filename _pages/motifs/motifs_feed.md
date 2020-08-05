@@ -19,7 +19,7 @@ toc_sticky: true
 
 * There are eight different types of feed-forward loops depending on the choices of signs on each of the three edges.
 
-* Introduce the type-1 incoherent feed-forward loop. This is a network in which X --> Y and X --> Z but at the same time Y --| Z.
+* Introduce the type-1 incoherent feed-forward loop. This is a network in which X --> Y and X --> Z but at the same time Y --> (-) Z.
 
 * **STOP:** How could we simulate a feed-forward loop with chemical reactions akin to the simulation we introduced in the previous section?
 

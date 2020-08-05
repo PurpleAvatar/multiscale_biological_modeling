@@ -30,6 +30,8 @@ prologue:
         url: /prologue/animals
       - title: "A Coarse-Grained Turing Pattern Simulation"
         url: /prologue/blocks
+      - title: "Conclusion"
+        url: /prologue/conclusion
 
 motifs:
   - title: "Finding Motifs in Transcription Factor Networks"

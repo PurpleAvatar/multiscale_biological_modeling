@@ -5,7 +5,7 @@ sidebar:
  nav: "chemotaxis"
 ---
 
-It's actually not difficult to simulate chemotaxis behavior of *E. coli*. We will build a chemotaxis simulation with [BioNetGen](https://www.csb.pitt.edu/Faculty/Faeder/?page_id=409) at the molecular level from scratch!
+This set of tutorials will gradually build a chemotaxis simulation with [BioNetGen](https://www.csb.pitt.edu/Faculty/Faeder/?page_id=409) at the molecular level from scratch!
 
 In this page, we will:
  - Set up BioNetGen
@@ -13,15 +13,15 @@ In this page, we will:
  - Explore several key aspects of BNG modeling: rules, species, simulation method, and parameters
  - Model the steady state of ligand-receptor dynamics
 
-### So, what is BioNetGen?
+## So, what is BioNetGen?
 
 [BioNetGen](https://www.csb.pitt.edu/Faculty/Faeder/?page_id=409) (BNG) is a software for specification and simulation of rule-based modeling. The chemotaxis pathyway is essentially a set of rules that can specify a mathematical model, and we would like to translate it into a simulation. We can specify our rules in [BNG](https://www.csb.pitt.edu/Faculty/Faeder/?page_id=409), run the simulation, and visualize the results easily. 
 
-### Set-up
+## Set-up
 
 [RuleBender](https://github.com/RuleWorld/rulebender/releases/tag/RuleBender-2.3.2) is the graphical interface for BioNetGen. Please [download](https://github.com/RuleWorld/rulebender/releases/tag/RuleBender-2.3.2) the version corresponding to your operating system. Here is a step-by-step [installation guide](https://github.com/RuleWorld/rulebender/blob/master/docs/RuleBender-installation-guide.pdf).
 
-### Starting with Ligand-Receptor Dynamics
+## Starting with Ligand-Receptor Dynamics
 
 To begin with, let's build a model to simulate ligand-receptor binding dynamics. In our system, there are only two types of molecules: the ligand (L), and the receptor (R). The ligand can bind to the receptor, forming an intermediate, and they could also dissociate. We write this reaction as `L + R <-> L.R`.
 
@@ -131,6 +131,8 @@ The whole simulation code for ligand-receptor dynamics:
 	generate_network({overwrite=>1})
 	simulate({method=>"ode", t_end=>5, n_steps=>100})
 
+**STOP:** How would the concentration of free ligand and bound ligand change through the 5 seconds?
+
 Go to `Simulation` at the right side of the Contact Map button and click `Run`. You can visualize your `.gdat` data.
 
 ![image-center](../assets/images/chemotaxis_tutorial4.png){: .align-center}
@@ -143,18 +145,11 @@ In the next page, we will start adding phosphorylation in our model!
 
 If you are interested, a more detailed tutorial on BNG modeling can be found [here](http://comet.lehman.cuny.edu/griffeth/BioNetGenTutorialFromBioNetWiki.pdf).
 
-[^1] Schwartz R. Biological Modeling and Simulaton: A Survey of Practical Models, Algorithms, and Numerical Methods. Chapter 14.1.
-
-[^2] Schwartz R. Biological Modeling and Simulaton: A Survey of Practical Models, Algorithms, and Numerical Methods. Chapter 17.2.
-
+[^1]: Schwartz R. Biological Modeling and Simulaton: A Survey of Practical Models, Algorithms, and Numerical Methods. Chapter 14.1. 
+[^2]: Schwartz R. Biological Modeling and Simulaton: A Survey of Practical Models, Algorithms, and Numerical Methods. Chapter 17.2.
 
 
-[Previous](home){: .btn .btn--primary .btn--x-large} [Next Page](tutorial_phos){: .btn .btn--primary .btn--x-large}
+[Back to Main Text](home){: .btn .btn--primary .btn--x-large}
 {: style="font-size: 100%; text-align: center;"}
-
-
-
-
-
 
 

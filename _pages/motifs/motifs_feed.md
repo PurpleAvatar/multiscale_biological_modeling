@@ -58,23 +58,21 @@ In the figure below, we show a plot visualizing the amount of *Z* across the two
 
 However, you will note a slightly different pattern to the growth of *Z* than we saw under negative autoregulation. In negative autoregulation, the concentration of the protein approached steady state from below. In the case of the FFL, the amount of *Z* grows so quickly that it passes its steady state and later returns to steady state from above.
 
-We can interpret from the model why the FFL allows for a fast growth to steady state as well as why it initially passes the steady state concentration.
+We can interpret from the model why the FFL allows for a fast growth to steady state as well as why it initially passes the steady state concentration. At the start of the simulation, *Z* is upregulated by *X* very quickly.
 
-* When we start the simulation, *Z* gets upregulated by *X*, at a higher rate than it would under simple regulation.
+*X* regulates the production of *Y* as well, but at a lower rate than the regulation of *Z* because *Y* only has its own degradation to slow this process. Therefore, more *Z* is initially produced than *Y*.
 
-* *X* regulates *Y* as well. As the concentration of *Y* builds up, it starts to downregulate *Z*. The more *Y* we have, and the more *Z* that we have, the more of the reaction *Y* + *Z* → *Y* we will see. Because *Y* and *Z* are increasing over time, this reaction serves as the "brakes" for the reaction increasing the quantity of *Z* present.
+As the concentration of *Y* builds up, it starts to downregulate *Z*. The more *Y* we have, and the more *Z* that we have, the more often the reaction *Y* + *Z* → *Y* will occur. Because the amounts of both *Y* and *Z* increase over time, this reaction serves as the "brakes" for the concentration of *Z*; these brakes need to be very powerful because the concentration of *Z* is growing faster than that of *Y*, the transcription factor downregulating it.
 
-* Returning from the tutorial, let us examine a plot of *Z* for the feed-forward loop compared against a simple regulation of *Z* by *X*.
+## Summary
 
-* Need to make sure that it's clear that the simulation causes the concentration of *Z* to actually pass the steady state before it returns back to the starting point.
+To conclude our work with FFLs, we note that the feedforward process must be vital to the cell. Unlike negative autoregulation, the FFL requires two separate transcription factors working together in order to increase the production of our target gene.
 
-* Important point to be made is that it is clear that this is an important motif to the cell because it requires two transcription factors in some sense working together in order to increase the production of *Z* faster.
+We only considered one of the eight types of FFL in this section. You might wonder whether there are other FFL structures that serve as network motifs.  For example, what purpose might it serve if *X* downregulates *Y* and *Y* upregulates *Z*? We will explore these additional FFL structures in the exercises at the end of the chapter.
 
-* Possible transition to the next lesson: in this simulation we saw that the concentration of the particle of interest passed its steady state and then was driven back down to the steady state. Contrast this with negative autoregulation, in which the concentration of the particle of interest simply approached the steady-state from below.
+Finally, we return to the figure above, in which we saw that the concentration of *Z* swung past its steady state before returning to the steady state. This figure offers a sort of **damped oscillation** process in which the concentration of a particle alternates between being above and below its steady state, while the amplitude of the oscillation gets smaller and smaller.
 
-* Need a connection to an oscillator -- would it be possible for the concentration of the particle of interest to swing back beneath steady state, then above steady state again, and so on, so that a steady state was not reached but in fact the system converged to oscillating behavior?
-
-* Point to next lesson, where we will discuss a model for oscillation, an ubiquitous aspect of biological systems.
+This process is very similar to a true oscillation, in which the concentration of the particle bounces back and forth around a steady state concentration, but these oscillations neither "dampen" over time nor grow out of control. The question is what kind of network motif might produce oscillatory behavior without needing outside influence to the system, and how such a motif might be useful. We will explore such a motif and its applications in the next section.
 
 [Next lesson](oscillators){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}

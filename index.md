@@ -29,7 +29,7 @@ If you're interested in finding out more about this open project, read our [Abou
 
 ## Meet the team
 
-This course was lovingly put together by a professor and a team of students in Carnegie Mellon University's [Computational Biology Department](http://cbd.cmu.edu).  You can meet us on our [Team](meet-the-team) page.
+This course was lovingly put together by a professor and a team of students in Carnegie Mellon University's [Computational Biology Department](http://cbd.cmu.edu).  You can meet us on our [Meet the Team](meet-the-team) page.
 
 ## Contact
 

@@ -46,6 +46,7 @@ Furthermore, in order to obtain a mathematically controlled comparison, we will 
 If you are feeling adventurous, you may like to adapt the [NAR tutorial](motifs_tutorial_nar) to run these two simulations and tweak the rate of the *X* → *X* + *Z* reaction to see if you can obtain the same steady state concentration of *Z* in the two simulations and observe the results. We also provide the following tutorial walking you through setting up the simulations.
 
 [Visit tutorial](tutorial_feed){: .btn .btn--primary .btn--large}
+{: style="font-size: 100%; text-align: center;"}
 
 ## Why feedforward loops speed up response times
 

@@ -13,7 +13,7 @@ In this page, we will:
 
 Ligand binding and dissociation should change the conformation of the ligand and therefore impact the downstream reactions. Now let's include more downstream reactions in our model.
 
-Our first addition is phophorylation. Phosphorylation is a chemical reaction that attaches a phosphoryl group (PO<sub>3</sub><sup>-</sup>) to an organic molecule. The removal of the phosphoryl group is dephosphorylation. Such modifications can activate or deactivate certain enzymes like switches. For example, a cyclin dependent kinase (CDK) when activated by G1/S cyclin, can phosphorylate its target proteins to activate DNA replication and initiate S phase[^1].
+Our first addition is phophorylation. **Phosphorylation** is a chemical reaction that attaches a phosphoryl group (PO<sub>3</sub><sup>-</sup>) to an organic molecule. The removal of the phosphoryl group is dephosphorylation. Such modifications can activate or deactivate certain enzymes like switches. For example, a cyclin dependent kinase (CDK) when activated by G1/S cyclin, can phosphorylate its target proteins to activate DNA replication and initiate S phase[^1].
 
 In chemotaxis, the flagellar proteins are also activated by phosphorylation. In fact, It starts from phosphorylation of CheA in the receptor complex, and then CheA phosphorylates CheB and CheY, and CheY then phosphorylates FliM. The sequence of phosphorylation event is called a phosphorylation cascade. We will model CheA and CheY phosphorylation in this page (and CheB in next page), specifically the reactions in the purple square.
 
@@ -167,12 +167,9 @@ But this is only half of the story. In the next section, we will code up the ada
 If you would like to continue using this model for the next section, rename R to T (T stands for ternary complex, we want to avoid confusion with CheR). You could rename `Y` to `CheY`, `Z` to `CheZ` if you prefer.
 
 
-[^1]Bertoli C, Skotheim JM, de Bruin RAM. 2013. Control of cell cycle transcription during G1 and S phase. Nature Reviews Molecular Cell Biology 14:518-528. [Available online](https://www.nature.com/articles/nrm3629).
+[^1]: Bertoli C, Skotheim JM, de Bruin RAM. 2013. Control of cell cycle transcription during G1 and S phase. Nature Reviews Molecular Cell Biology 14:518-528. [Available online](https://www.nature.com/articles/nrm3629).
 
 
-[Previous](tutorial_lr){: .btn .btn--primary .btn--x-large} [Next Page](tutorial_adap){: .btn .btn--primary .btn--x-large}
+[Back to Main Text](home){: .btn .btn--primary .btn--x-large}
 {: style="font-size: 100%; text-align: center;"}
-
-
-
 

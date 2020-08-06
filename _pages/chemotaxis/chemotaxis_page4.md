@@ -122,9 +122,6 @@ In the next page, we will simulate the case when the cell is moving down the att
 
 
 
-[Previous](tutorial_adap){: .btn .btn--primary .btn--x-large} [Next Page](tutorial_removal){: .btn .btn--primary .btn--x-large}
+[Back to Main Text](home){: .btn .btn--primary .btn--x-large}
 {: style="font-size: 100%; text-align: center;"}
-
-
-
 

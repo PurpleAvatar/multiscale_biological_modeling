@@ -68,16 +68,13 @@ We will see how the CheY-P changes through time for different rates of ligand de
 
 
 
-
-
-[^1] Krembel A., Colin R., Sourijik V. 2015. Importance of multiple methylation sites in *Escherichia coli* chemotaxis. [Available online](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0145582)
+[^1]: Krembel A., Colin R., Sourijik V. 2015. Importance of multiple methylation sites in *Escherichia coli* chemotaxis. [Available online](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0145582)
 
 
 
 
 [Previous](tutorial_gradient){: .btn .btn--primary .btn--x-large} [Next Page](home){: .btn .btn--primary .btn--x-large}
 {: style="font-size: 100%; text-align: center;"}
-
 
 
 

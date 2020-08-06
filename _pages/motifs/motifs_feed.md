@@ -69,7 +69,7 @@ We can interpret from the model why the FFL allows for a fast growth to steady s
 
 * Important point to be made is that it is clear that this is an important motif to the cell because it requires two transcription factors in some sense working together in order to increase the production of *Z* faster.
 
-* Possible transition to the next lesson: in this simulation we saw that the concentration of the particle of interest passed its steady state and then was driven back down to the steady state. Contrast this with negative autoregulation, in which the concentration of the particle of interest simply approached the steady-state from beneath.
+* Possible transition to the next lesson: in this simulation we saw that the concentration of the particle of interest passed its steady state and then was driven back down to the steady state. Contrast this with negative autoregulation, in which the concentration of the particle of interest simply approached the steady-state from below.
 
 * Need a connection to an oscillator -- would it be possible for the concentration of the particle of interest to swing back beneath steady state, then above steady state again, and so on, so that a steady state was not reached but in fact the system converged to oscillating behavior?
 

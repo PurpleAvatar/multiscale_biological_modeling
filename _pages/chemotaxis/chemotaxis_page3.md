@@ -13,7 +13,9 @@ In this page, we will:
 
 ### Adding Adaptation Mechanisms
 
-If one *E. coli* is in a well-mixed glucose solution with a concentration of *A*, and another is in a well-mixed glucose with a concentration of *10A*, should they have the same tumbling frequency? If the second one tumbles less, it will have a harder time to move towards a even higher concentration. So now let's add methylation states to model how *E. coli* can adapt to a higher attractant concentrations and bring back the tumbling frequency.
+Now let's add methylation states to model how *E. coli* can adapt to a higher attractant concentrations and bring back the tumbling frequency.
+
+**Methylation** is the chemical process of adding methyl group (-CH<sub>3</sub>) to an oraganic molecule. Such modification can change the activity of the molecules. The removal of a methyl group is called demethylation.
 
 Our model will be based on the [model](https://www.pnas.org/content/94/14/7263) by Spiro et al.[^1]
 
@@ -312,22 +314,18 @@ We can see that the higher the concentration, the lower the valley becomes. But 
 
 We will be simulating exponential gradients in the next page!
 
-[^1] Spiro PA, Parkinson JS, and Othmer H. 1997. A model of excitation and adaptation in bacterial chemotaxis. Biochemistry 94:7263-7268. [Available online](https://www.pnas.org/content/94/14/7263).
+[^1]: Spiro PA, Parkinson JS, and Othmer H. 1997. A model of excitation and adaptation in bacterial chemotaxis. Biochemistry 94:7263-7268. [Available online](https://www.pnas.org/content/94/14/7263).
 
-[^2] Bray D, Bourret RB, Simon MI. 1993. Computer simulation of phosphorylation cascade controlling bacterial chemotaxis. Molecular Biology of the Cell. [Available online](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC300951/)
+[^2]: Bray D, Bourret RB, Simon MI. 1993. Computer simulation of phosphorylation cascade controlling bacterial chemotaxis. Molecular Biology of the Cell. [Available online](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC300951/)
 
-[^3] Li M, Hazelbauer GL. 2004. Cellular stoichimetry of the components of the chemotaxis signaling complex. Journal of Bacteriology. [Available online](https://jb.asm.org/content/186/12/3687)
+[^3]: Li M, Hazelbauer GL. 2004. Cellular stoichimetry of the components of the chemotaxis signaling complex. Journal of Bacteriology. [Available online](https://jb.asm.org/content/186/12/3687)
 
-[^4] Stock J, Lukat GS. 1991. Intracellular signal transduction networks. Annual Review of Biophysics and Biophysical Chemistry. [Available online](https://www.annualreviews.org/doi/abs/10.1146/annurev.bb.20.060191.000545)
+[^4]: Stock J, Lukat GS. 1991. Intracellular signal transduction networks. Annual Review of Biophysics and Biophysical Chemistry. [Available online](https://www.annualreviews.org/doi/abs/10.1146/annurev.bb.20.060191.000545)
 
-[^5] Shimizu TS, Delalez N, Pichler K, and Berg HC. 2005. Monitoring bacterial chemotaxis by using bioluminescence resonance energy transfer: absence of feedback from the flagellar motors. PNAS. [Available online](https://www.pnas.org/content/103/7/2093/)
+[^5]: Shimizu TS, Delalez N, Pichler K, and Berg HC. 2005. Monitoring bacterial chemotaxis by using bioluminescence resonance energy transfer: absence of feedback from the flagellar motors. PNAS. [Available online](https://www.pnas.org/content/103/7/2093/)
 
-[^6] Krembel A., Colin R., Sourijik V. 2015. Importance of multiple methylation sites in *Escherichia coli* chemotaxis. [Available online](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0145582)
+[^6]: Krembel A., Colin R., Sourijik V. 2015. Importance of multiple methylation sites in *Escherichia coli* chemotaxis. [Available online](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0145582)
 
 
-[Previous](tutorial_phos){: .btn .btn--primary .btn--x-large} [Next Page](tutorial_gradient){: .btn .btn--primary .btn--x-large}
+[Back to Main Text](home){: .btn .btn--primary .btn--x-large}
 {: style="font-size: 100%; text-align: center;"}
-
-
-
-

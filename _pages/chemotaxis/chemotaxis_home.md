@@ -58,19 +58,18 @@ In a uniform environment, *E. coli* tumbles once about every 1-1.5 seconds.[^5][
 (Image from Parkinson Lab, University of Utah)
 
 Detailed explanation of the pathway:
- - **Receptor Complexes**. On the cell membranes, there are receptors called **methyl-acceptring chemotaxis proteins (MCPs)**. They form complexes with **CheW** and **CheA** (*Che* stands for chemotaxis). 
- 
- 	 - There are five types of MCPs, Tsr, Tar, Tap, Trg, and Aer, specific for different species of ligand molecules. Most studies focus on the two most abundant types: Tsr (serine receptor) and Tar (aspartate and maltose receptor).[^7] Each trimer of dimers can be formed with different types of MCPs. Binding with ligands changes the conformation of the receptor dimer. Each receptor dimer within the trimer impacts the activity differently because of sterics.
- 	 - MCPs, CheA (dimer with 5 subunits), and CheW forms receptor arrays. The receptor arrays generally have 2 states: 1) a ordered, dense state, in which CheA has higher activities; 2) a disordered, relaxed state, in which CheA activity is lower.[^4] A visualization of the arrays from [^8] is shown below (we will talk about methylatio later.).
- 	![image-center](../assets/images/chemotaxis_intro_tod.png){: .align-center}
- - **CheA**. CheA is composed of 5 domains, in which P3 holds CheA dimers together, P5 binds to MCPs and CheW, P4 is responsible to ATP-dependent autophosphorylation, P2 binds to downstream proteins CheY and CheB, and P1 phosphorylates **CheY** and **CheB** [^4].
- 	 - CheA + ATP -> CheA-P + ADP
- 	 - CheA-P + CheY -> CheY-P
- 	 - CheA-P + CheB -> CheB-P
- - **CheY**. CheY is phosphorylated by CheA. Upon interacting with FliM in the basal body of flagellum, phosphorylated CheY induces the direction change of flagellum rotation from CCW to CW. As we mentioned before, switching to CW rotations leads to tumbling. CheY dephosphorylation is cataylzed by **CheZ**.
- 	 - CheY-P + CheZ -> CheY + CheZ + P
- - **CheB**. CheB is phosphorylated by CheA. CheB is responsible for MCP methylation, which we will discuss later. CheB readily autodephosphorylates.
- 	 - CheB-P -> CheB + P
+**Receptor Complexes**. On the cell membranes, there are receptors called **methyl-acceptring chemotaxis proteins (MCPs)**. They form complexes with **CheW** and **CheA** (*Che* stands for chemotaxis). 
+ - There are five types of MCPs, Tsr, Tar, Tap, Trg, and Aer, specific for different species of ligand molecules. Most studies focus on the two most abundant types: Tsr (serine receptor) and Tar (aspartate and maltose receptor).[^7] Each trimer of dimers can be formed with different types of MCPs. Binding with ligands changes the conformation of the receptor dimer. Each receptor dimer within the trimer impacts the activity differently because of sterics.
+ - MCPs, CheA (dimer with 5 subunits), and CheW forms receptor arrays. The receptor arrays generally have 2 states: 1) a ordered, dense state, in which CheA has higher activities; 2) a disordered, relaxed state, in which CheA activity is lower.[^4] A visualization of the arrays from [^8] is shown below (we will talk about methylatio later.).
+ ![image-center](../assets/images/chemotaxis_intro_tod.png){: .align-center}
+**CheA**. CheA is composed of 5 domains, in which P3 holds CheA dimers together, P5 binds to MCPs and CheW, P4 is responsible to ATP-dependent autophosphorylation, P2 binds to downstream proteins CheY and CheB, and P1 phosphorylates **CheY** and **CheB** [^4].
+ - CheA + ATP -> CheA-P + ADP
+ - CheA-P + CheY -> CheY-P
+ - CheA-P + CheB -> CheB-P
+**CheY**. CheY is phosphorylated by CheA. Upon interacting with FliM in the basal body of flagellum, phosphorylated CheY induces the direction change of flagellum rotation from CCW to CW. As we mentioned before, switching to CW rotations leads to tumbling. CheY dephosphorylation is cataylzed by **CheZ**.
+ - CheY-P + CheZ -> CheY + CheZ + P
+**CheB**. CheB is phosphorylated by CheA. CheB is responsible for MCP methylation, which we will discuss later. CheB readily autodephosphorylates.
+ - CheB-P -> CheB + P
 
 ## Sensation
 
@@ -89,12 +88,14 @@ The rate of CheA autophosphorylation is dependent on **MCP-ligand binding**. Whe
 ## Adaptation
 
 We will then deal with the *past* part. Consider - 
- - If one *E. coli* is in a well-mixed glucose solution with a concentration of *A*, and another is in a well-mixed glucose with a concentration of *10A*, should they have the same tumbling frequency?
- 	 - Yes. If the second one tumbles less, it will have a harder time to move towards a even higher concentration. 
- 	 - The cell should go back to original tumbling frequency when no gradient presents despite what the concentration is.
- - If one *E. coli* in glucose solution swam from *A* concentration to *10A* concentration (assume it happened instantaneously), and another stays in a well-mixed glucose with a concentration of *10A*, should they have the same tumbling frequency?
- 	 - No. The first one sensed a *change* in concentration, which indicates that if it keeps swimming in this direction, it might enter an area with higher concentration, so it should decrease tumbling frequency.
- 	 - The cell should decide tumbling frequency based on the *change*, not the absolute concentration.
+
+If one *E. coli* is in a well-mixed glucose solution with a concentration of *A*, and another is in a well-mixed glucose with a concentration of *10A*, should they have the same tumbling frequency?
+ - Yes. If the second one tumbles less, it will have a harder time to move towards a even higher concentration. 
+ - The cell should go back to original tumbling frequency when no gradient presents despite what the concentration is.
+
+If one *E. coli* in glucose solution swam from *A* concentration to *10A* concentration (assume it happened instantaneously), and another stays in a well-mixed glucose with a concentration of *10A*, should they have the same tumbling frequency?
+ - No. The first one sensed a *change* in concentration, which indicates that if it keeps swimming in this direction, it might enter an area with higher concentration, so it should decrease tumbling frequency.
+ - The cell should decide tumbling frequency based on the *change*, not the absolute concentration.
 
 To achieve these, the cells should be able to record current concentration. This is achieved by **methylation states** (we will explain in more details in the tutorial). The rate of CheA autophosphorylation, besides MCP-ligand binding, is also dependent on **MCP methylation states**. Each MCP monomer has 4 methylation sites. Methylation reduces the negative charge on the receptors, making the receptor array packing more stable, thus increasing CheA autophosphorylation activities. When MCP has a higher methylation state, the rate of CheA autophosphorylation becomes higher.
 

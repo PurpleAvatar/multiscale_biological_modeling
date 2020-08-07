@@ -49,7 +49,7 @@ Once we know which transcription factors regulate which genes, we will form a **
 
 The figure below shows a subset of the transcription factor network for *Escherichia coli*, the workhorse model organism of bacterial studies. *E. coli* is a simple organism, but we will still be able to draw powerful conclusions from studying its transcription factor network.
 
-NOAH: this is a very small image on my browser that is difficult to read -- can we make it larger or take a smaller subset of the network?
+* NOAH: this is a very small image on my browser that is difficult to read -- can we make it larger or take a smaller subset of the network?
 
 ![image-center](../assets/images/motifs_finding_ecoli_1.jpeg){: .align-center}
 

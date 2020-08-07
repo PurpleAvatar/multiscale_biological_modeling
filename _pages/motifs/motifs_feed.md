@@ -34,10 +34,8 @@ Among the XXX total FFLs in the *E. coli* transcription factor network, YYY of t
 **STOP:** How could we simulate a feed-forward loop with chemical reactions akin to the simulation that we used for negative autoregulation? What would we compare this simulation against?
 
 <center>
-<figure>
 <img src="../assets/images/type-1_incoherent_feed-forward_loop.png" width="300">
 <figcaption>This is a test.</figcaption>
-</figure>
 </center>
 
 ## Modeling a type-1 incoherent feedforward loop

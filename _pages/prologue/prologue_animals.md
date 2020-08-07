@@ -21,19 +21,17 @@ Both types of particles diffuse randomly through the plane, but the *B* particle
 
 **STOP**: Say that we release one *A* particle and one *B* particle at the same location. On average, how much farther from the origin will *A* be than *B*?
 
-We now will add some reactions to our system. The *B* particles are "fed" into the system at some constant rate *f*. This means that in a unit of time, the concentration of *B* particles in the system will increase by *f*.
+We now will add some reactions to our system. The *B* particles are "fed" into the system at some constant rate *f*. This means that in a given unit of time, the concentration of *B* particles in the system will increase by *f*.
 
-Similarly, there is another constant rate *k* dictating a "death" rate of the *B* particles; in a unit of time, the concentration of *B* particles in the system will decrease by *k* due to a subset of the *B* particles being chosen for removal from the system.
-
-(Question for Noah: Is there a better explanation of these?)
+Similarly, there is another constant rate *k* dictating a "death" rate of the *B* particles; in a unit of time, each *B* particle in the system will have probability *k* of being chosen for removal from the system. As a result, the concentration of *B* particles in the system will decrease by approximately a factor of *k* in each time step.
 
 Finally, the system has a single reaction of the two particles with each other. If an *A* particle and two *B* particles encounter each other, then the *A* particle is replaced by a third *B* particle. This reaction can be summarized by the following chemical reaction.
 
-$$A + 2B \rightarrow 3B$$
+<center><em>A</em> + 2<em>B</em> → 3<em>B</em></center>
 
-This reaction is why we compared *A* to prey and *B* to predators, since we can imagine this reaction as two *B* particles consuming an *A* particle and conceiving an offspring *B* particle.
+This reaction is why we compared *A* to prey and *B* to predators, since we can imagine this reaction as two *B* particles consuming an *A* particle and conceiving an offspring *B* particle. This reaction may also have a rate *r* associated with it, meaning that when an *A* particle and two *B* particles encounter each other, the reaction takes place with probability equal to *r*.
 
-(Question for Noah: Is the rate of this reaction important?  What are its units in CellBlender?)
+* NOAH: is r equal to 1 in the simulation?  We should specify this.
 
 ## Changing parameters influence the macro behavior of the reaction-diffusion system
 
@@ -49,21 +47,21 @@ You can think of all these parameters as dials we can turn, observing how the sy
 
 For some parameter values, our system is not particularly interesting.  For example, the following animation shows that if *k* is too high, then the *B* particles will die out more quickly than they are replenished by the reaction with *A* particles, and so only *A* particles will be left. In this animation, *A* particles have been colored green and *B* particles have been colored red.
 
-(INSERT VIDEO SHOWING PREY THRIVING AND PREDATORS DYING OUT. Indicate parameters.)
+ * NOAH: INSERT VIDEO SHOWING PREY THRIVING AND PREDATORS DYING OUT. Indicate parameters.
 
 On the other hand, if *f* is too high, then there will be an increase in the *A* particles. However, there will also be more interactions between *A* particles and pairs of *B* particles, and so we will then see an explosion in the number of predators.
 
-(INSERT VIDEO, with parameters indicated)
+* NOAH: INSERT VIDEO, with parameters indicated)
 
 The interesting behavior in this system lies in a sweet spot, where we see interesting macro behavior for a given collection of parameters.
 
 For example,
 
-(INSERT MERT VIDEO WITH CLEAR EXPLANATION OF PARAMETERS)
+* NOAH: INSERT MERT VIDEO WITH CLEAR EXPLANATION OF PARAMETERS
 
 And yet if we make a slight change to the parameters, we obtain very different macro behavior.
 
-(INSERT 2-3 MORE MERT VIDEOS, WITH CLEAR EXPLANATION OF PARAMETERS EACH TIME)
+* NOAH: INSERT 2-3 MORE MERT VIDEOS, WITH CLEAR EXPLANATION OF PARAMETERS EACH TIME
 
 ## A reflection on Turing patterns
 

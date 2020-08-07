@@ -14,5 +14,5 @@ toc_sticky: true
 * The trick is how to use our particle-based model to build such a discretized block-based model, transitioning each of the rules that we have for how particles interact to describe a system of how blocks change based on their concentrations.
 * One famous such discretized model generalizing a reaction-diffusion reaction of two particles is called the Gray Scott model, which we will describe below.
 
-[Previous](animals){: .btn .btn--primary .btn--x-large} [Next Page](#){: .btn .btn--primary .btn--x-large}
+[Next lesson](#){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}

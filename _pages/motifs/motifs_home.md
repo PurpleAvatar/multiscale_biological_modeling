@@ -35,7 +35,7 @@ But before we get ahead of ourselves, let us introduce some of the molecular bio
 
 ## Determining if a given transcription factor regulates the expression of a given gene
 
-* Note: need to explain the experiment that can be used to determine whether or not *X* is a transcription factor for *Y*. (ChIP-seq). Also point toward <a href="https://www.bioinformaticsalgorithms.org/bioinformatics-chapter-2" target="_blank">Chapter 2</a> of *Bioinformatics Algorithms: An Active Learning Approach*, which can be read for free online, for a deep dive in terms of how we can infer genes that are regulated by the same transcription factor.
+* Note: need to explain the experiment that can be used to determine whether or not *X* is a transcription factor for *Y*. (ChIP-seq). Also point toward [Chapter 2](https://www.bioinformaticsalgorithms.org/bioinformatics-chapter-2) of *Bioinformatics Algorithms: An Active Learning Approach*, which can be read for free online, for a deep dive in terms of how we can infer genes that are regulated by the same transcription factor.
 
 * Also cite the following educational video produced by students in PreCollege 2020.
 

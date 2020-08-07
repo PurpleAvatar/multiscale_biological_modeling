@@ -9,13 +9,11 @@ sidebar:
 
 ## Lost Immortals
 
-The book *What If?* by Randall Munroe[^1] compiles a collection of crazy hypotheticals, along with enthusiastically scientific replies from the author. Below is one such quandary:
+The book *What If?*[^1] compiles a collection of crazy hypotheticals, along with enthusiastically scientific replies from the author. Below is one such quandary:
 
 > If two immortal people were placed on opposite sides of an uninhabited Earth-like planet, how long would it take them to find each other? 100,000 years? 1,000,000 years?
 
 **STOP:** What would you propose that the two immortals could do to find each other?
-
-
 
 * Solution from book is below. Need to discuss this solution in the context of what comes before (there are thoughts to go to the coastlines. You could also decide to meet each other at the North Pole if you could discuss in advance.) Munroe describes his approach as "be an ant". Ants also use this type of random walk strategy.
 
@@ -26,7 +24,6 @@ The book *What If?* by Randall Munroe[^1] compiles a collection of crazy hypothe
 > You don’t have to come across the other player’s current location; you simply have to come across a location where they’ve been. You can still chase one another in circles, but as long as you move more quickly when you’re following a trail than when you’re leaving one, you’ll find each other in a matter of years or decades.
 >
 > And if your partner isn’t cooperating—perhaps they’re just sitting where they started and waiting for you—then you’ll get to see some neat stuff.
-
 
 * What is the point of this introduction? Discuss the power of randomness that we have already repeatedly seen throughout the book. Then point out that although randomness is useful for running simulations, it is also useful as an algorithm for finding things.
 

@@ -1,6 +1,6 @@
 ---
 permalink: /motifs/feed
-title: "Feed-Forward Loop"
+title: "The Feedforward Loop Motif"
 sidebar:
  nav: "motifs"
 toc: true
@@ -16,9 +16,8 @@ In the previous section, we saw that negative autoregulation can be used to spee
 The answer will lie in a small network motif called the **feedforward loop**, which we will call an **FFL**. Earlier in the chapter, we pointed out that negative autoregulation is an example of "feedback", since a transcription factor is involved in regulating its own production. The feedforward loop motif, shown in the figure below, is any loop in which *X* is connected to both *Y* and *Z*, and *Y* is connected to *Z*. In this sense, calling the FFL motif a "loop" is a misnomer. Rather, it is a small structure in which there are two "paths" from *X* to *Z*; one via direct regulation of *Z* by *X*, and another in which there is an intermediate transcription factor *Y*.
 
 <center>
-<figure width="300">
-<img src="../assets/images/feed-forward_loop.png" style="width:300">
-</figure>
+<img src="../assets/images/feed-forward_loop.png" width="300">
+<figurecaption>The feed-forward loop.</figurecaption>
 </center>
 
 Note that *X* and *Y* must be transcription factors, but *X* does not have to be (and in fact typically is not). There are XXX FFLs in the transcription factor network of *E. coli*, and we leave the verification that this is a significant number of FFLs compared to a random network as an exercise at the end of the chapter.
@@ -31,7 +30,7 @@ Among the XXX total FFLs in the *E. coli* transcription factor network, YYY of t
 
 * NOAH: Fill in XXX and YYY here.
 
-**STOP:** How could we simulate a feed-forward loop with chemical reactions akin to the simulation that we used for negative autoregulation? What would we compare this simulation against?
+**STOP:** How could we simulate a feedforward loop with chemical reactions akin to the simulation that we used for negative autoregulation? What would we compare this simulation against?
 
 <center>
 <img src="../assets/images/type-1_incoherent_feed-forward_loop.png" width="300">

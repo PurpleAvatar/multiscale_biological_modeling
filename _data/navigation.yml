@@ -38,11 +38,11 @@ motifs:
     children:
       - title: "Introduction to Transcription Factors"
         url: /motifs/home
-      - title: "Finding Network Motifs"
+      - title: "How to Find Network Motifs"
         url: /motifs/finding
       - title: "The Negative Autoregulation Motif"
         url: /motifs/nar
-      - title: "Feed-Forward Loops"
+      - title: "The Feedforward Loop Motif"
         url: /motifs/feed
       - title: "Resilient Oscillators"
         url: /motifs/oscillators

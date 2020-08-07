@@ -35,7 +35,6 @@ Among the XXX total FFLs in the *E. coli* transcription factor network, YYY of t
 
 <center>
 <img src="../assets/images/type-1_incoherent_feed-forward_loop.png" width="300">
-<figcaption>This is a test.</figcaption>
 </center>
 
 ## Modeling a type-1 incoherent feedforward loop

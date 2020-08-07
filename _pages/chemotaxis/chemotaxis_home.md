@@ -33,7 +33,7 @@ The book *What If?*[^1] compiles a collection of crazy hypotheticals, along with
 
 ## Introduction to Chemotaxis
 
-Like other prokaryotes, *E. coli* are small, with a length about 2µm, and a diameter 0.25-1µm.[^2] This puts them into the same situation like the Lost Immortals or the ant exploring the world: the environment in which they need to find food is huge; food is sparsely distributed; and they are small. The answer is the chemotaxis behavior.
+Like other prokaryotes, *E. coli* are small, with a length about 2µm, and a diameter 0.25-1µm.[^2] This puts them into the same situation like the Lost Immortals or the ants exploring the world: the environment in which they need to find food is huge; food is sparsely distributed; and they are small. The answer is the chemotaxis behavior.
 
 The behavior of cells moving towards or away from a substance is called **chemotaxis**. For *E. coli*, moving towards attractants (ex. glucose, electron acceptors), and moving away from repellents (ex. Ni<sup>2+</sup>, Co<sup>2+</sup>) are all considered chemotaxis behaviors.
 

@@ -9,23 +9,24 @@ sidebar:
 
 ## Lost Immortals
 
+The book *What If?* by Randall Munroe[^1] compiles a collection of crazy hypotheticals, along with enthusiastically scientific replies from the author. Below is one such quandary:
+
 > If two immortal people were placed on opposite sides of an uninhabited Earth-like planet, how long would it take them to find each other? 100,000 years? 1,000,000 years?
 
 **STOP:** What would you propose that the two immortals could do to find each other?
 
+
+
 * Solution from book is below. Need to discuss this solution in the context of what comes before (there are thoughts to go to the coastlines. You could also decide to meet each other at the North Pole if you could discuss in advance.) Munroe describes his approach as "be an ant". Ants also use this type of random walk strategy.
 
-Here’s the algorithm that I would follow (if you’re ever lost on a planet with me, keep this in mind!):
+> If you have no information, walk at random, leaving a trail of stone markers, each one pointing to the next. For every day that you walk, rest for three. Periodically mark the date alongside the cairn. It doesn’t matter how you do this, as long as it’s consistent. You could chisel the number of days into a rock, or lay out rocks to plot the number.
+>
+> If you come across a trail that’s newer than any you’ve seen before, start following it as fast as you can. If you lose the trail and can’t recover it, resume leaving your own trail.
+>
+> You don’t have to come across the other player’s current location; you simply have to come across a location where they’ve been. You can still chase one another in circles, but as long as you move more quickly when you’re following a trail than when you’re leaving one, you’ll find each other in a matter of years or decades.
+>
+> And if your partner isn’t cooperating—perhaps they’re just sitting where they started and waiting for you—then you’ll get to see some neat stuff.
 
-If you have no information, walk at random, leaving a trail of stone markers, each one pointing to the next. For every day that you walk, rest for three. Periodically mark the date alongside the cairn. It doesn’t matter how you do this, as long as it’s consistent. You could chisel the number of days into a rock, or lay out rocks to plot the number.
-
-If you come across a trail that’s newer than any you’ve seen before, start following it as fast as you can. If you lose the trail and can’t recover it, resume leaving your own trail.
-
-You don’t have to come across the other player’s current location; you simply have to come across a location where they’ve been. You can still chase one another in circles, but as long as you move more quickly when you’re following a trail than when you’re leaving one, you’ll find each other in a matter of years or decades.
-
-And if your partner isn’t cooperating—perhaps they’re just sitting where they started and waiting for you—then you’ll get to see some neat stuff.
-
-This story is from *What If*.[^1]
 
 * What is the point of this introduction? Discuss the power of randomness that we have already repeatedly seen throughout the book. Then point out that although randomness is useful for running simulations, it is also useful as an algorithm for finding things.
 
@@ -49,7 +50,7 @@ Here is a cute video of *E. coli* moving towards a sugar crystal.
 ![image-center](../assets/images/chemotaxis_intro_runtumble.png){: .align-center}
 (Image from Parkinson Lab, University of Utah)
 
-In a uniform environment, *E. coli* tumbles once about every 1-1.5 seconds.[^5][^6] Such tumbling frequency is clever, because if the bacteria tumble too much, it won't be able to explore the space; but if tumble too little, it might go too far in the wrong direction. Other flagellated motile bacteria uses similar exploration mechanisms; for example, *Salmonella* bacteria tumbles about once per second[^7], *Bacillus subtilis* tumbles about every 2 seconds, *Enterococcus sacchrolyticus* tumbles about per 1.2 seconds.[^8] 
+In a uniform environment, *E. coli* tumbles once about every 1-1.5 seconds.[^5][^6] Such tumbling frequency is clever, because if the bacteria tumble too much, it won't be able to explore the space; but if tumble too little, it might go too far in the wrong direction. Other flagellated motile bacteria uses similar exploration mechanisms; for example, *Salmonella* bacteria tumbles about once per second[^7], *Bacillus subtilis* tumbles about every 2 seconds, *Enterococcus sacchrolyticus* tumbles about per 1.2 seconds.[^8]
 
 ## The chemistry
 
@@ -59,7 +60,7 @@ In a uniform environment, *E. coli* tumbles once about every 1-1.5 seconds.[^5][
 
 Detailed explanation of the pathway:
 
-**Receptor Complexes**. On the cell membranes, there are receptors called **methyl-acceptring chemotaxis proteins (MCPs)**. They form complexes with **CheW** and **CheA** (*Che* stands for chemotaxis). 
+**Receptor Complexes**. On the cell membranes, there are receptors called **methyl-acceptring chemotaxis proteins (MCPs)**. They form complexes with **CheW** and **CheA** (*Che* stands for chemotaxis).
  - There are five types of MCPs, Tsr, Tar, Tap, Trg, and Aer, specific for different species of ligand molecules. Most studies focus on the two most abundant types: Tsr (serine receptor) and Tar (aspartate and maltose receptor).[^7] Each trimer of dimers can be formed with different types of MCPs. Binding with ligands changes the conformation of the receptor dimer. Each receptor dimer within the trimer impacts the activity differently because of sterics.
  - MCPs, CheA (dimer with 5 subunits), and CheW forms receptor arrays. The receptor arrays generally have 2 states: 1) a ordered, dense state, in which CheA has higher activities; 2) a disordered, relaxed state, in which CheA activity is lower.[^4] A visualization of the arrays from [^8] is shown below (we will talk about methylation later.).
  ![image-center](../assets/images/chemotaxis_intro_tod.png){: .align-center}
@@ -79,7 +80,7 @@ Detailed explanation of the pathway:
 
 *E. coli* compares the **current vs. past** concentration of ligand and then controls the direction of flagellar rotation accordingly. We will deal with the *current* part first. To respond to the current concentration, the cells must be able to 1) sense the concentration; 2) respond accordingly.
 
-The concentration is perceived by the cells by how many receptors are bound by ligand molecules. 
+The concentration is perceived by the cells by how many receptors are bound by ligand molecules.
 
 [Visit Ligand-Receptor Dynamics Tutoiral](tutorial_lr){: .btn .btn--primary .btn--x-large}
 {: style="font-size: 100%; text-align: center;"}
@@ -91,10 +92,10 @@ The rate of CheA autophosphorylation is dependent on **MCP-ligand binding**. Whe
 
 ## Adaptation
 
-We will then deal with the *past* part. Consider - 
+We will then deal with the *past* part. Consider -
 
 *If one E. coli is in a well-mixed glucose solution with a concentration of A, and another is in a well-mixed glucose with a concentration of 10A, should they have the same tumbling frequency?*
- - Yes. If the second one tumbles less, it will have a harder time to move towards a even higher concentration. 
+ - Yes. If the second one tumbles less, it will have a harder time to move towards a even higher concentration.
  - The cell should go back to original tumbling frequency when no gradient presents despite what the concentration is.
 
 *If one E. coli in glucose solution swam from *A concentration to 10A concentration (assume it happened instantaneously), and another stays in a well-mixed glucose with a concentration of 10A, should they have the same tumbling frequency?*

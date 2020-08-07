@@ -17,7 +17,7 @@ The answer will lie in a small network motif called the **feedforward loop**, wh
 
 <center>
 <img src="../assets/images/feed-forward_loop.png" width="300">
-<figurecaption>The feedforward loop motif. *X* regulates both *Y* and *Z*, and *Y* regulates *Z*.</figurecaption>
+<figcaption>The feedforward loop motif. *X* regulates both *Y* and *Z*, and *Y* regulates *Z*.</figcaption>
 </center>
 
 Note that *X* and *Y* must be transcription factors, but *X* does not have to be (and in fact typically is not). There are XXX FFLs in the transcription factor network of *E. coli*, and we leave the verification that this is a significant number of FFLs compared to a random network as an exercise at the end of the chapter.

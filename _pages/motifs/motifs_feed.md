@@ -17,7 +17,7 @@ The answer will lie in a small network motif called the **feedforward loop**, wh
 
 <center>
 <figure width="300">
-<img src="../assets/images/feed-forward_loop.png" width="300">
+<img src="../assets/images/feed-forward_loop.png" style="width:300">
 </figure>
 </center>
 

@@ -21,9 +21,7 @@ Note that *X* and *Y* must be transcription factors, but *X* does not have to be
 
 * NOAH: Fill in this XXX above.
 
-Furthermore, recall that every edge of a transcription factor network is assigned a "+" or a "-" sign based on whether the interaction corresponds to up-regulation or down-regulation. Accordingly, the figure below shows the eight different types of FFLs, depending on the signs labeling the three edges in the FFL.
-
-* FILL IN FIGURE WITH EIGHT DIFFERENT TYPES OF FFLs
+Furthermore, recall that every edge of a transcription factor network is assigned a "+" or a "-" sign based on whether the interaction corresponds to up-regulation or down-regulation. Accordingly, there are eight different types of FFLs, depending on the labels of the three edges in this motif.
 
 Among the XXX total FFLs in the *E. coli* transcription factor network, YYY of them have the structure below, in which the edges connecting *X* to *Y* and *X* to *Z* are assigned a "+" and the edge connecting *Y* to *Z* is assigned a "-". This specific form of the FFL motif is unfortunately named a **type-1 incoherent feedforward loop**. This form of the FFL will be our focus for the rest of the chapter.
 

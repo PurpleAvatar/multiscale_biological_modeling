@@ -27,7 +27,7 @@ Similarly, there is another constant rate *k* dictating a "death" rate of the *B
 
 Finally, the system has a single reaction of the two particles with each other. If an *A* particle and two *B* particles encounter each other, then the *A* particle is replaced by a third *B* particle. This reaction can be summarized by the following chemical reaction.
 
-<center><em>A</em> + 2<em>B</em> → 3<em>B</em></center>
+<center><em>A</em> + 2<em>B</em> → 3<em>B</em><br></center>
 
 This reaction is why we compared *A* to prey and *B* to predators, since we can imagine this reaction as two *B* particles consuming an *A* particle and conceiving an offspring *B* particle. This reaction may also have a rate *r* associated with it, meaning that when an *A* particle and two *B* particles encounter each other, the reaction takes place with probability equal to *r*.
 

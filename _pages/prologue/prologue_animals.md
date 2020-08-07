@@ -85,5 +85,5 @@ If you are interested in learning how to generate these simulations on your own 
 
 For now, we will point out that each of these simulations took several hours to render on a modern laptop. Visualizing the movement of tens of thousands of particles over thousands of generations of a reaction-diffusion interaction is computationally intensive. The question is whether we can obtain similar conclusions with a faster model that does not require us to keep track of so many particles. We will turn our attention to this question in the next section.
 
-[Previous](random-walk){: .btn .btn--primary .btn--x-large} [Next Page](blocks){: .btn .btn--primary .btn--x-large}
+[Next lesson](blocks){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}

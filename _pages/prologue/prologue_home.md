@@ -15,6 +15,5 @@ This cold perspective of our existence serves not to depress, but rather to poin
 
 The power of randomness as a driver of emergent behavior may not be surprising to a reader who is familiar with programming. Whether we are forecasting an election from polling data, predicting tomorrow's weather, or simulating the moves of stock prices, we often use randomized algorithms to power our models and obtain big-picture conclusions. What we will see is that biology is no exception, and that in some sense life is the most amazing random algorithm of all.
 
-
-[Previous](#){: .btn .btn--primary .btn--x-large} [Next Page](turing){: .btn .btn--primary .btn--x-large}
+[Next lesson](turing){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}

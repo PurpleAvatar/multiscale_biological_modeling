@@ -11,7 +11,7 @@ toc_sticky: true
 
 Our story will begin with the unlikeliest of major characters: Alan Turing. You may have heard of Turing, in which case you might be surprised as to why he would appear in a course on biological modeling.
 
-INSERT PHOTO OF TURING
+* NOAH: Insert Turing photo with a figcaption tag showing citation.
 
 Turing is typically known for two contributions. First, he was a genius code breaker during WWII, helping to break several German ciphers. Second, his famous contribution to science came in a 1936 paper in which he introduced what has come to be known as a **Turing machine**. This hypothetical computer, which Turing introduced in 1935, reads numbers off of an infinitely long tape, moving up and down the tape, rewriting cells according to a finite collection of internal rules. What is remarkable about Turing machines is that nearly a century later, any task that a computer performs, from the device you are using to read this to the world's most powerful supercomputer, can still be implemented by a Turing machine.
 
@@ -29,7 +29,7 @@ To be more precise, Turing was not approaching this question from the perspectiv
 
 In what follows, we will introduce a simple particle model based on Turing's ideas, explore how it can be tweaked to explain not just the appearance of stripes on an animal's skin but also spots, and explore the model's extensions to additional biological phenomena. Read on to join us!
 
-[Previous](home){: .btn .btn--primary .btn--x-large} [Next Page](random-walk){: .btn .btn--primary .btn--x-large}
+[Next lesson](random-walk){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 Citations:

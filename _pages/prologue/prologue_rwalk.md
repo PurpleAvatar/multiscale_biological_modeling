@@ -47,7 +47,7 @@ Before we continue to the next lesson, we would point you to a beautiful animati
 
 <iframe width="640" height="360" src="https://www.youtube-nocookie.com/embed/KQgydF-fXvc?start=370" frameborder="0" allowfullscreen></iframe>
 
-[Previous](home){: .btn .btn--primary .btn--x-large} [Next Page](animals){: .btn .btn--primary .btn--x-large}
+[Next lesson](animals){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 ## A proof of the expected distance theorem

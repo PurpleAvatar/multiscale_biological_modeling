@@ -41,6 +41,7 @@ Now go to *CellBlender > Molecule Placement* to set the following sites:
 4. Set the Quantity to Release as “300” 
 
 Repeat the above steps to make sure the following molecules are entered
+
 | Molecule Name | Object/Region|Quantity to Release|
 |:--------|:-------:|--------:|
 | X1  | Plane | 300 |
@@ -77,6 +78,7 @@ Go to *CellBlender > Plot Output Settings* to set up a plot as follows:
 6. Ensure “Molecule Colors” is selected
 
 Repeat the above steps for the following molecules
+
 | Molecule Name|Selected Region|
 |:--------|:-------:|
 | Y1| World|
@@ -102,11 +104,12 @@ Now go back to *CellBlender > Plot Output Settings* and scroll to the bottom to 
 
 The following plot should appear: 
 
-![image-center](../assets/images/nar_unequal_graph.png){: .align-center}
+![image-center](../assets/images/nar_unequal_graph.PNG){: .align-center}
 
 Save this file
 
-(BUTTON TO RETURN TO CONTENT)
+[Return to main text](nar#Ensuring-the-same-steady-state-concentration){: .btn .btn--primary .btn--large}
+{: style="font-size: 100%; text-align: center;"}
 
 ### Matching Steady States
 
@@ -136,12 +139,9 @@ Now go back to *CellBlender > Plot Output Settings* and scroll to the bottom to 
 
 The following plot should appear: 
 
-![image-center](../assets/images/nar_equal_graph.png){: .align-center}
+![image-center](../assets/images/nar_equal_graph.PNG){: .align-center}
 
-(BUTTON TO RETURN TO CONTENT)
-
-[Previous](navigation){: .btn .btn--primary .btn--x-large} [Next Page](tutorial_feed){: .btn .btn--primary .btn--x-large}
+[Return to main text](nar#Results){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
-
 
 

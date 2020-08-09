@@ -54,6 +54,9 @@ There are a number of parameters that we must keep constant across the two model
 
 The only way that we will be able to increase the steady-state concentration in the simulation involving autoregulation is if we increase the rate at which the reaction *X* → *X* + *Y* takes place. Finding the exact increase in this rate of reaction is an imperfect art form but can be obtained through trial and error.
 
+[Visit tutorial](tutorial_nar#Matching-Steady-States){: .btn .btn--primary .btn--large}
+{: style="font-size: 100%; text-align: center;"}
+
 * NOAH: review -- I don't know how we justify changing the steady-state any differently without getting into differential equations. How much do we need to change the parameters by to justify it?
 
 If you followed the tutorial on using CellBlender to visualize the two simulations, then you may want to try your hand at adjusting this parameter and seeing what happens. If you would like to follow along with our tutorial building a mathematically controlled comparison, then follow the link below.

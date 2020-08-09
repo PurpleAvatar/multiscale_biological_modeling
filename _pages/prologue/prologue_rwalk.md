@@ -12,8 +12,15 @@ In the previous two sections, we have discussed a central theme of our work in t
 Before we continue with seeing how this concept can be used to understand how zebras get their stripes, we will consider a simpler phenomenon by observing the movement of a single particle walking randomly in a two-dimensional plane. At each step, the particle moves a single unit in a randomly chosen direction. Before we show this animation, we ask a question.
 
 **STOP**: After *n* steps, how far do you think the particle will have traveled (as the crow flies) from its starting point?
+{: .notice--primary}
 
 To answer this question, let's watch an animation of the particle and see for ourselves. If you're interested in building a simulation like this, sit tight --- we will soon see how to use the software used to generate this animation in the context of biological modeling.
+
+First test of movie using iframe
+
+<iframe width="640" height="360" src="../assets/random_walk_1.mp4" frameborder="0" allowfullscreen></iframe>
+
+Second test using html video
 
 <div style="text-align:center">
 	<video width="640" height="480" controls>

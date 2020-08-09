@@ -11,7 +11,6 @@ toc_sticky: true
 
 Our story will begin with the unlikeliest of major characters: Alan Turing. You may have heard of Turing, in which case you might be surprised as to why he would appear in a course on biological modeling.
 
-* NOAH: Insert Turing photo with a figcaption tag showing citation.
 ![Alan_Turing](../assets/images/alan_turing_npg_cc.png){: .align-center}
 © National Portrait Gallery, London
 {: .text-center}

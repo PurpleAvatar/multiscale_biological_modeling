@@ -16,17 +16,7 @@ Before we continue with seeing how this concept can be used to understand how ze
 
 To answer this question, let's watch an animation of the particle and see for ourselves. If you're interested in building a simulation like this, sit tight --- we will soon see how to use the software used to generate this animation in the context of biological modeling.
 
-First test of movie using iframe
-
 <iframe width="640" height="360" src="../assets/random_walk_1.mp4" frameborder="0" allowfullscreen></iframe>
-
-Second test using html video
-
-<div style="text-align:center">
-	<video width="640" height="480" controls>
-	  <source type="video/mp4" src="../assets/random_walk_1.mp4">
-	</video>
-</div>
 
 The distance that the particle wanders from its starting point may surprise you. And yet an astute scientist would point out that this is just a single particle; perhaps it has simply gone rogue, and a typical particle would be much more of a homebody.
 
@@ -38,11 +28,7 @@ This is not to say that after *n* steps our particle will be *exactly* distance 
 
 Yet the statement about the average behavior of a particle is powerful, and can be seen more clearly if we animate the action of many independent particles following random walks.
 
-<div style="text-align:center">
-	<video width="640" height="480" controls>
-	  <source type="video/mp4" src="../assets/random_walk_200.mp4">
-	</video>
-</div>
+<iframe width="640" height="360" src="../assets/random_walk_200.mp4" frameborder="0" allowfullscreen></iframe>
 
 Why should a scientist care about random walks? We will see later in this course that the model of the random walk, however simple, is nevertheless a powerful paradigm that bacteria like *E. coli* use to explore their environment in a search for food.
 

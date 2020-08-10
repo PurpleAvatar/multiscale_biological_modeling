@@ -1,5 +1,5 @@
 ---
-permalink: /coronavirus/ANM
+permalink: /coronavirus/NMA
 title: NMA Calculations
 sidebar: 
  nav: "coronavirus"

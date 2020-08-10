@@ -33,7 +33,7 @@ The book *What If?*[^1] compiles a collection of crazy hypotheticals, along with
 
 ## Introduction to Chemotaxis
 
-Like other prokaryotes, *E. coli* are small, with a length about 2µm, and a diameter 0.25-1µm.[^2] This puts them into the same situation like the Lost Immortals or the ant exploring the world: the environment in which they need to find food is huge; food is sparsely distributed; and they are small. The answer is the chemotaxis behavior.
+Like other prokaryotes, *E. coli* are small, with a length about 2µm, and a diameter 0.25-1µm.[^2] This puts them into the same situation like the Lost Immortals or the ants exploring the world: the environment in which they need to find food is huge; food is sparsely distributed; and they are small. The answer is the chemotaxis behavior.
 
 The behavior of cells moving towards or away from a substance is called **chemotaxis**. For *E. coli*, moving towards attractants (ex. glucose, electron acceptors), and moving away from repellents (ex. Ni<sup>2+</sup>, Co<sup>2+</sup>) are all considered chemotaxis behaviors.
 
@@ -47,7 +47,7 @@ Here is a cute video of *E. coli* moving towards a sugar crystal.
 ![image-center](../assets/images/chemotaxis_intro_runtumble.png){: .align-center}
 (Image from Parkinson Lab, University of Utah)
 
-In a uniform environment, *E. coli* tumbles once about every 1-1.5 seconds.[^5][^6] Such tumbling frequency is clever, because if the bacteria tumble too much, it won't be able to explore the space; but if tumble too little, it might go too far in the wrong direction. Other flagellated motile bacteria uses similar exploration mechanisms; for example, *Salmonella* bacteria tumbles about once per second[^7], *Bacillus subtilis* tumbles about every 2 seconds, *Enterococcus sacchrolyticus* tumbles about per 1.2 seconds.[^8]
+In a uniform environment, *E. coli* tumbles once about every 1-1.5 seconds.[^5][^6] Such tumbling frequency is clever, because if the bacteria tumble too much, it won't be able to explore the space; but if it tumbles too little, it might go too far in the wrong direction. Other flagellated motile bacteria uses similar exploration mechanisms; for example, *Salmonella* bacteria tumbles about once per second[^7], *Bacillus subtilis* tumbles about every 2 seconds, *Enterococcus sacchrolyticus* tumbles about per 1.2 seconds.[^8]
 
 ## The chemistry
 
@@ -57,9 +57,9 @@ In a uniform environment, *E. coli* tumbles once about every 1-1.5 seconds.[^5][
 
 Detailed explanation of the pathway:
 
-**Receptor Complexes**. On the cell membranes, there are receptors called **methyl-acceptring chemotaxis proteins (MCPs)**. They form complexes with **CheW** and **CheA** (*Che* stands for chemotaxis).
+**Receptor Complexes**. On the cell membrane, there are receptors called **methyl-acceptring chemotaxis proteins (MCPs)**. They form complexes with **CheW** and **CheA** (*Che* stands for chemotaxis).
  - There are five types of MCPs, Tsr, Tar, Tap, Trg, and Aer, specific for different species of ligand molecules. Most studies focus on the two most abundant types: Tsr (serine receptor) and Tar (aspartate and maltose receptor).[^7] Each trimer of dimers can be formed with different types of MCPs. Binding with ligands changes the conformation of the receptor dimer. Each receptor dimer within the trimer impacts the activity differently because of sterics.
- - MCPs, CheA (dimer with 5 subunits), and CheW forms receptor arrays. The receptor arrays generally have 2 states: 1) a ordered, dense state, in which CheA has higher activities; 2) a disordered, relaxed state, in which CheA activity is lower.[^4] A visualization of the arrays from [^8] is shown below (we will talk about methylation later.).
+ - MCPs, CheA (dimer with 5 subunits), and CheW forms receptor arrays. The receptor arrays generally have 2 states: 1) an ordered, dense state, in which CheA activity is higher; 2) a disordered, relaxed state, in which CheA activity is lower.[^4] A visualization of the arrays from [^8] is shown below (we will talk about methylation later.).
  ![image-center](../assets/images/chemotaxis_intro_tod.png){: .align-center}
 
 **CheA**. CheA is composed of 5 domains, in which P3 holds CheA dimers together, P5 binds to MCPs and CheW, P4 is responsible to ATP-dependent autophosphorylation, P2 binds to downstream proteins CheY and CheB, and P1 phosphorylates **CheY** and **CheB** [^4].
@@ -101,7 +101,7 @@ We will then deal with the *past* part. Consider -
 
 To achieve these, the cells should be able to record current concentration. This is achieved by **methylation states** (we will explain in more details in the tutorial). The rate of CheA autophosphorylation, besides MCP-ligand binding, is also dependent on **MCP methylation states**. Each MCP monomer has 4 methylation sites. Methylation reduces the negative charge on the receptors, making the receptor array packing more stable, thus increasing CheA autophosphorylation activities. When MCP has a higher methylation state, the rate of CheA autophosphorylation becomes higher.
 
-Recall that CheB is methylated by phosphorylated CheA and responsible for MCP methylation. When the cell first senses more ligand binding, the higher CheA phosphorylation would lead to more phosphorylated CheB, which then methylates MCPs. MCP records this sensed high concentration via high methylation state.
+Recall that CheB is methylated by phosphorylated CheA and is responsible for MCP methylation. When the cell first senses more ligand binding, the higher CheA phosphorylation would lead to more phosphorylated CheB, which then methylates MCPs. MCP records this sensed high concentration via high methylation state.
 
 Therefore, when a cell reaches a region with higher attranctant concentration, initially CW rotation drops by the sensation mechanism, but then the higher CheB phosphorylation makes MCP methylation states higher, thus compensating for the increased binding and restoring tumbling frequencies.
 

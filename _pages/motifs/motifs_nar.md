@@ -9,9 +9,7 @@ toc_sticky: true
 
 ## Hunting for a biological motivation for negative autoregulation
 
-Theodosius Dobzhansky once wrote that "Nothing in biology makes sense except in the light of evolution." In the spirit of his quotation, there must be some evolutionary reason for the presence of so many negatively autoregulating transcription factors. Our goal is to use biological modeling to find this justification.
-
-(CITE with link online:  Dobzhansky, Theodosius (March 1973), "Nothing in Biology Makes Sense Except in the Light of Evolution", American Biology Teacher, 35 (3): 125–129, JSTOR 4444260)
+Theodosius Dobzhansky once wrote that "Nothing in biology makes sense except in the light of evolution."[^Dob] In the spirit of his quotation, there must be some evolutionary reason for the presence of so many negatively autoregulating transcription factors. Our goal is to use biological modeling to find this justification.
 
 Say that we have two transcription factors *X* and *Y* with *X* regulating the transcription of *Y*, and consider two cells. In one cell, *X* regulates the transcription of *Y*; in the other, we have the additional fact that *Y* negatively autoregulates.
 
@@ -28,10 +26,12 @@ We also will allow both *X* and *Y* particles to diffuse through the system at t
 Finally, we should also take into account the fact that proteins are degraded by over time (by enzymes called **proteases**). Protein degradation offers a natural mechanism by which proteins at high concentrations can return to a steady-state. To this end, we will have a chemical reaction *Y* → *NULL* that removes *Y* particles in each unit of time according to some underlying probability. Because *X* is at steady-state, we assume that *X* is being produced at a rate that exactly balances its degradation rate, and we will therefore not need to add reactions to the model simulating the production or degradation of *X*.
 
 **STOP:** What chemical reaction could be used to simulate negative autoregulation?
+{: .notice--primary}
 
 Negative autoregulation of *Y* means that the transcription factor corresponding to *Y* is able to bond to the upstream regions of the gene encoding *Y*, therefore slowing its transcription and lowering the concentration of *Y*. We can model this process with the hypothetical reaction 2*Y* → *Y*. In other words, when two *Y* particles encounter each other, there is some probability that one of the particles serves to remove the other, which mimics the process of a transcription factor turning another copy of itself off during negative autoregulation.
 
 **STOP:** How many parameters do the two simulations have?
+{: .notice--primary}
 
 To recap, both of our simulations will include diffusion of *X* and *Y*, removal of *Y*, and the reaction *X* → *X* + *Y*. The simulation including negative autoregulation of *Y* will also include the reaction 2*Y* → *Y*. If you would like, you can run these simulations in the following tutorial. We will continue our discussion in the next section.
 
@@ -40,19 +40,21 @@ To recap, both of our simulations will include diffusion of *X* and *Y*, removal
 
 ## Ensuring the same steady-state concentration
 
-If you followed the tutorial, you were likely confused and disappointed in our negative autoregulating transcription factor *Y*. It may not be surprising that by allowing *Y* to turn itself off, we wound up with a simulation in which the final concentration of *Y* than in the case of only simple regulation of *Y* by *X*. It seems like we are back at square one; why in the world, then, would negative autoregulation be so common?
+If you followed the tutorial, you were likely confused and disappointed in our negative autoregulating transcription factor *Y*. It may not be surprising that by allowing *Y* to turn itself off, we wound up with a simulation in which the final concentration of *Y* is less than in the case of only simple regulation of *Y* by *X*. It seems like we are back at square one; why in the world, then, would negative autoregulation be so common?
 
-* NOAH: reproduce figure here showing the plot of *Y* under the two different simulations.
+![image-center](../assets/images/nar_unequal_graph.PNG){: .align-center}
 
-The answer to the quandary posed in the previous section is that the model we have built was not controlled to ensure that a fair comparison between the two systems. In particular, it is critical that the two simulations that we build should be controlled so that they have approximately the *same* steady-state concentration of *Y*. Ensuring this equal footing for the two simulations is called a **mathematically controlled comparison.**
-
-CITE SAVAGEAU 1976 https://ucdavis.pure.elsevier.com/en/publications/biochemical-systems-analysis-a-study-of-function-and-design-in-mo
+The answer to the quandary posed in the previous section is that the model we have built was not controlled to ensure that a fair comparison between the two systems. In particular, it is critical that the two simulations that we build should be controlled so that they have approximately the *same* steady-state concentration of *Y*. Ensuring this equal footing for the two simulations is called a **mathematically controlled comparison.**[^Savageau]
 
 **STOP:** How can we change the parameters of our models to obtain a mathematically controlled comparison?
+{: .notice--primary}
 
 There are a number of parameters that we must keep constant across the two models. First, the diffusion rates of *X* and *Y*, which we should keep constant across the two simulations. Second, the number of initial particles *X* and *Y*. And third, the degradation rate of *Y*.
 
 The only way that we will be able to increase the steady-state concentration in the simulation involving autoregulation is if we increase the rate at which the reaction *X* → *X* + *Y* takes place. Finding the exact increase in this rate of reaction is an imperfect art form but can be obtained through trial and error.
+
+[Visit tutorial](tutorial_nar#Matching-Steady-States){: .btn .btn--primary .btn--large}
+{: style="font-size: 100%; text-align: center;"}
 
 * NOAH: review -- I don't know how we justify changing the steady-state any differently without getting into differential equations. How much do we need to change the parameters by to justify it?
 
@@ -64,7 +66,7 @@ If you followed the tutorial on using CellBlender to visualize the two simulatio
 
 The figure below shows a plot of the amount of *Y* for the two simulations on the same chart over time. Now that we are able to obtain the same steady-state concentration of *Y* in the two simulations, a justification for negative autoregulation appears.
 
-* NOAH: Need to reproduce the image with the two different simulations overlaid on the same plot from the tutorial.
+![image-center](../assets/images/nar_equal_graph.PNG){: .align-center}
 
 The simulation with negative autoregulation starts with a low concentration of *Y*. For this reason, because the rate of the reaction *X* → *X* + *Y* is higher in the negative autoregulation simulation, the number of *Y* particles in this simulation increases much faster.
 
@@ -91,3 +93,7 @@ In this section, we have seen that particle-based simulations can be powerful fo
 * NOAH: Just curious... how many positive autoregulation loops are there in our network?
 
 * (Cite Alon book at some point -- when motifs are introduced? The introduction?)
+
+[^Dob]: Dobzhansky, Theodosius (March 1973), "Nothing in Biology Makes Sense Except in the Light of Evolution", American Biology Teacher, 35 (3): 125–129, JSTOR 4444260)
+
+[^Savageau]: Savageau, 1976 https://ucdavis.pure.elsevier.com/en/publications/biochemical-systems-analysis-a-study-of-function-and-design-in-mo

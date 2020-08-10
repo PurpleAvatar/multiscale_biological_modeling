@@ -20,6 +20,7 @@ Let us consider an example of a reaction-diffusion system. We will have two type
 Both types of particles diffuse randomly through the plane, but the *B* particles diffuse twice as quickly as the *A* particles.  In terms of a random walk, this means that in a single diffusion "step", an *A* particle moves twice as far.
 
 **STOP**: Say that we release one *A* particle and one *B* particle at the same location. On average, how much farther from the origin will *A* be than *B*?
+{: .notice--primary}
 
 We now will add some reactions to our system. The *B* particles are "fed" into the system at some constant rate *f*. This means that in a given unit of time, the concentration of *B* particles in the system will increase by *f*.
 
@@ -44,20 +45,30 @@ Note that there are three parameters relevant to our reaction-diffusion system. 
 You can think of all these parameters as dials we can turn, observing how the system changes on a macro level. For example, if we raise the diffusion rate, then the particles will be moving around more, which means that we will see more of the reaction *A* + 2*B* → 3*B*.
 
 **STOP:** What will happen as we increase or decrease the feed rate *f*? What about the kill rate *k*?
+{: .notice--primary}
 
 For some parameter values, our system is not particularly interesting.  For example, the following animation shows that if *k* is too high, then the *B* particles will die out more quickly than they are replenished by the reaction with *A* particles, and so only *A* particles will be left. In this animation, *A* particles have been colored green and *B* particles have been colored red.
 
  * NOAH: INSERT VIDEO SHOWING PREY THRIVING AND PREDATORS DYING OUT. Indicate parameters.
+<iframe width="640" height="360" src="../assets/mert_predator_dies_f1e1_r5e5.mp4" frameborder="0" allowfullscreen></iframe>
+*f* = 10 and *r* = 500,000
+{: .text-center}
 
 On the other hand, if *f* is too high, then there will be an increase in the *A* particles. However, there will also be more interactions between *A* particles and pairs of *B* particles, and so we will then see an explosion in the number of predators.
 
 * NOAH: INSERT VIDEO, with parameters indicated)
+<iframe width="640" height="360" src="../assets/mert_prey_dies_f1e1_r1e5.mp4" frameborder="0" allowfullscreen></iframe>
+*f* = 10 and *r* = 100,000
+{: .text-center}
 
 The interesting behavior in this system lies in a sweet spot, where we see interesting macro behavior for a given collection of parameters.
 
 For example,
 
 * NOAH: INSERT MERT VIDEO WITH CLEAR EXPLANATION OF PARAMETERS
+<iframe width="640" height="360" src="../assets/gray_scott_test.mp4" frameborder="0" allowfullscreen></iframe>
+Parameters unknown
+{: .text-center}
 
 And yet if we make a slight change to the parameters, we obtain very different macro behavior.
 

@@ -39,7 +39,7 @@ Go to the `Navigator` on the left side of the screen, and go to the results fold
 Let's try different values for k_add: 0.01, 0.03, 0.05, 0.1, 0.3, 0.5. We will get the `.gdat` file for each of the simulations. All simulation results are stored in the `RuleBender-workspace` folder in your computer. In my case, the results are in `RuleBender-workspace/chemotaxis_from_scratch/results/addition/`. I will rename each folder name with the `k_add` values for simplicity.
 
 We will write a short Python script to load and visualize the concentrations of CheY-P through the simulations. Download 
-<a href="https://purpleavatar.github.io/multiscale_biological_modeling/downloads/plotter.py" download="plotter.py">plotter.py</a>
+<a href="https://purpleavatar.github.io/multiscale_biological_modeling/downloads/downloadable/plotter.py" download="plotter.py">plotter.py</a>
 
 Please makes sure have dependencies installed:
  - [Python](https://www.python.org/downloads/), version 3.6+

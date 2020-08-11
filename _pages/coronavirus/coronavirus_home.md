@@ -41,12 +41,10 @@ The Spike protein is a trimer that is responsible for binding with human recepto
 {: style="font-size: 100%; text-align: center;"}
 
 ##### Sources
-[^1] https://www.who.int/ith/diseases/sars/en/
+[^1]: https://www.who.int/ith/diseases/sars/en/
 
-[^2] https://www.who.int/emergencies/diseases/novel-coronavirus-2019
+[^2]: https://www.who.int/emergencies/diseases/novel-coronavirus-2019
 
-[^3] Shang, J., Ye G., Shi, K., Wan, Y., Luo, C., Aihara, H., Geng, Q., Auerbach, A., Li, F. Structural basis of receptor recognition by 
- SARS-CoV-2. Nature 581, 221-224 (2020).
+[^3]: Shang, J., Ye G., Shi, K., Wan, Y., Luo, C., Aihara, H., Geng, Q., Auerbach, A., Li, F. Structural basis of receptor recognition by SARS-CoV-2. Nature 581, 221-224 (2020).
 
-[^4] Li, F., Li, W., Farzan, M., Harrison, S. C. Structure of SARS Coronavirus Spike Receptor-Binding Domain Complexed with 
- Receptor. Science 309, 1864-1868 (2005).
+[^4]: Li, F., Li, W., Farzan, M., Harrison, S. C. Structure of SARS Coronavirus Spike Receptor-Binding Domain Complexed with Receptor. Science 309, 1864-1868 (2005).

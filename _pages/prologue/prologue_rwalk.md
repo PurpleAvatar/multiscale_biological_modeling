@@ -65,7 +65,7 @@ $$
 d^2 = ~ & \mathbf{x_1} \cdot (\mathbf{x_1} + \mathbf{x_2} + \cdots + \mathbf{x_n})\\
 + & \mathbf{x_2} \cdot (\mathbf{x_1} + \mathbf{x_2} + \cdots + \mathbf{x_n})\\
 + & \cdots\\
-+ & \mathbf{x_n}) \cdot (\mathbf{x_1} + \mathbf{x_2} + \cdots + \mathbf{x_n}) \,.
++ & \mathbf{x_n} \cdot (\mathbf{x_1} + \mathbf{x_2} + \cdots + \mathbf{x_n}) \,.
 \end{align*}
 $$
 
@@ -77,7 +77,7 @@ The right side of this equation is the sum of <i>n</i><sup>2</sup> dot products.
 
 $$\mathbb{E}(d^2) = \sum_{i=1}^n \mathbb{E}(\mathbf{x_i} \cdot \mathbf{x_i}) + \sum_{i \neq j} \mathbb{E}(\mathbf{x_i} \cdot \mathbf{x_j})\, .$$
 
-For any *i*, \mathbf{x_i} \cdot \mathbf{x_i} is just the length of the vector $$x_i$$, which is equal to 1.  On the other hand, the expected value of the dot product of any two random unit vectors is zero.  Therefore, the right side of the above equation can be simplified to give the equation
+For any *i*, $$\mathbf{x_i} \cdot \mathbf{x_i}$$ is just the length of the vector $$x_i$$, which is equal to 1.  On the other hand, the expected value of the dot product of any two random unit vectors is zero.  Therefore, the right side of the above equation can be simplified to give the equation
 
 $$\mathbb{E}(d^2) = \sum_{i=1}^n 1 + \sum_{i \neq j} 0 = n + 0 = n\, ,$$
 
@@ -85,4 +85,4 @@ which is what we set out to show.
 
 A couple of notes before we continue. First, we did not use anything about the random walk being two-dimensional in this proof; therefore, it holds whether our particle is walking in two, three, or any number of dimensions.
 
-Second, we technically did not show that the expected value of $$d$$ is $$\sqrt{n}$$, but rather that the expected value of $$d^2$$ is $$n$$. It is not exactly true that $$\mathbb{E}(d)$$ is equal to $$\sqrt{n}$$, but rather that as $$n$$ grows, $$\mathbb{E}(d)$$ grows like a constant factor of $$\sqrt{n}$$. A proof is beyond the scope of this course, but it can be shown that as $$n$$ goes off to infinity, $$\mathbb{E}(d)$$ tends toward $$\sqrt{(2/\pi)} \cdot \sqrt{n}$$. Who knew that random walks could get so complicated!
+Second, we technically did not show that the expected value of $$d$$ is $$\sqrt{n}$$, but rather that the expected value of $$d^2$$ is $$n$$. It is not exactly true that $$\mathbb{E}(d)$$ is equal to $$\sqrt{n}$$, but rather that as $$n$$ grows, $$\mathbb{E}(d)$$ grows like a constant factor of $$\sqrt{n}$$. A proof is beyond the scope of this course, but it can be shown that as $$n$$ goes off to infinity, $$\mathbb{E}(d)$$ tends toward $$\sqrt{(2/\pi)} \cdot \sqrt{n}$$. Who knew that random walks could be so complicated!

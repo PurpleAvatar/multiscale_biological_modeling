@@ -20,7 +20,7 @@ https://www.google.com/imgres?imgurl=https%3A%2F%2Fwww.researchgate.net%2Fprofil
 
 In what follows, we will introduce yet another type of biological network involving the proteins that drive a cell's response to its environment. By analyzing this network, we will be able to draw insights into how biological systems that lack any underlying intelligence can nevertheless evolve into structures that are powerful, even beautiful.
 
-But before we get ahead of ourselves, let us introduce some of the molecular biology fundamentals we will need to complete our analysis. As in the prologue, you may already have this biological background, in which case feel free to skim the next section.
+But before we get ahead of ourselves, let us introduce some of the molecular biology fundamentals we will need to complete our analysis. As in the prologue, you may already have this biological background, in which case feel free to skim the next lesson.
 
 [Next lesson](transcription){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}

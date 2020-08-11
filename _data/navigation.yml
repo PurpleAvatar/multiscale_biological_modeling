@@ -22,7 +22,7 @@ prologue:
     children:
       - title: "Introduction: The Power of Randomness"
         url: /prologue/
-      - title: "Alan Turing and How the Zebra Got Its Stripes"
+      - title: "Alan Turing and the Zebra's Stripes"
         url: /prologue/turing
       - title: "An Introduction to Random Walks"
         url: /prologue/random-walk

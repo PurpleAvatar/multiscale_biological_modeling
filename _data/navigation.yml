@@ -36,8 +36,10 @@ prologue:
 motifs:
   - title: "Finding Motifs in Transcription Factor Networks"
     children:
-      - title: "Introduction to Transcription Factors"
+      - title: "Introduction: A Submicroscopic Scale of Interest"
         url: /motifs/home
+      - title: "Transcription and Identifying DNA-Protein Binding"
+        url: /motifs/transcription
       - title: "How to Find Network Motifs"
         url: /motifs/finding
       - title: "The Negative Autoregulation Motif"

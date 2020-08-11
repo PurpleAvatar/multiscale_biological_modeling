@@ -62,8 +62,10 @@ After expansion, we obtain
 
 $$
 \begin{align*}
-x & = 3\\
-  & = 4
+d^2 = & \mathbf{x_1} \cdot (\mathbf{x_1} + \mathbf{x_2} + \cdots + \mathbf{x_n})\\
+& + \mathbf{x_2} \cdot (\mathbf{x_1} + \mathbf{x_2} + \cdots + \mathbf{x_n})\\
+& + \cdots\\
+& + \mathbf{x_n}) \cdot (\mathbf{x_1} + \mathbf{x_2} + \cdots + \mathbf{x_n}) \,.
 \end{align*}
 $$
 

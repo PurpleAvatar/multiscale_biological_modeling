@@ -13,12 +13,8 @@ Our story will begin with the unlikeliest of major characters: Alan Turing. You 
 
 <center>
 <img src = "../assets/images/alan_turing_npg_cc.png" width="250">
-<figcaption>© National Portrait Gallery, London</figcaption>
+<figcaption>Alan Turing in 1951. © National Portrait Gallery, London</figcaption>
 </center>
-
-![Alan_Turing](../assets/images/alan_turing_npg_cc.png){: .align-center}
-© National Portrait Gallery, London
-{: .text-center}
 
 Turing is typically known for two contributions. First, he was a genius code breaker during WWII, helping to break several German ciphers. Second, his famous contribution to science came in a 1936 paper in which he introduced what has come to be known as a **Turing machine**. This hypothetical computer, which Turing introduced in 1935, reads numbers off of an infinitely long tape, moving up and down the tape, rewriting cells according to a finite collection of internal rules. What is remarkable about Turing machines is that nearly a century later, any task that a computer performs, from the device you are using to read this to the world's most powerful supercomputer, can still be implemented by a Turing machine.
 

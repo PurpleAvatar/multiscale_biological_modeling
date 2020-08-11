@@ -3,6 +3,8 @@ permalink: /prologue/random-walk
 title: "An Introduction to Random Walks"
 sidebar:
  nav: "prologue"
+ toc: true
+ toc_sticky: true
 ---
 
 ## The wanderlust of a single particle

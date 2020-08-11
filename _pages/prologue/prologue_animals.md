@@ -26,35 +26,37 @@ We now will add some reactions to our system. The *A* particles are added into t
 
 There is also a **death rate** constant *k* dictating the rate of removal of the *B* particles. As a result of removal, the concentration of *B* particles in the system will decrease by approximately a constant factor in a given time step.
 
-Note that there is a slight difference between the two reactions. In the first reaction, the *number* of *A* particles increases by a constant factor at every step. In the second reaction, the *concentration* of *B* particles decreases by a constant factor at every step. This means that we can write
+Note that there is a slight difference between the two reactions. In the first reaction, the *number* of *A* particles increases by a constant factor at every step. In the second reaction, the *concentration* of *B* particles decreases by a constant factor at every step. This means that if *A* and *B* denote the number of particles of each type in the system, then
 
 <center>
-*dA*/*dt* = *c_1* · *A*
+<em>dA</em>/<em>dt</em> = <em>c</em><sub>1</sub> · <em>A</em>
 </center>
 
 and
 
 <center>
-*dB*/*dt* = *c_1* · *B*
+<em>dB</em>/<em>dt</em> = <em>c</em><sub>1</sub> · <em>B</em> .
 </center>
 
-Finally, the system has a single reaction of the two particles with each other. If an *A* particle and two *B* particles encounter each other, then the *A* particle is replaced by a third *B* particle. This reaction can be summarized by the following chemical reaction.
+Finally, this reaction-diffusion system has a single reaction of the two particles with each other. If an *A* particle and two *B* particles encounter each other, then the *A* particle is replaced by a third *B* particle at a certain rate *r*. This reaction can be summarized by the following chemical reaction.
 
 <center><em>A</em> + 2<em>B</em> → 3<em>B</em><br></center>
 
-This reaction is why we compared *A* to prey and *B* to predators, since we can imagine this reaction as two *B* particles consuming an *A* particle and conceiving an offspring *B* particle. This reaction may also have a rate *r* associated with it, meaning that when an *A* particle and two *B* particles encounter each other, the reaction takes place with probability equal to *r*.
+This reaction is why we compared *A* to prey and *B* to predators, since we can imagine this reaction as two *B* particles consuming an *A* particle and conceiving an offspring *B* particle. Another way of viewing this reaction is that when an *A* particle and two *B* particles encounter each other, the reaction takes place with probability proportional to *r*.
 
-* NOAH: is r equal to 1 in the simulation?  We should specify this.
+* NOAH: we need to better understand the correspondence between reaction rates and probabilities in MCell.
+
+* NOAH: this is where the intro to MCell/CellBlender tutorial link should go I think.
 
 ## Changing parameters influence the macro behavior of the reaction-diffusion system
 
-Our plan is to initiate the system with a uniform concentration of *A* particles spread across the grid, then add a mass of *B* particles to the center of the grid.  But before we do this, we point out that the end result of this animation will vary depending upon a few things.
+Our plan is to initiate the system with a uniform concentration of *A* particles spread across the grid, and then add a collection of *B* particles to the center of the grid.  But before we do this, we first point out that the results of this simulation may vary depending upon a few things.
 
 A **parameter** is a variable quantity used as input to a model. Parameters are inevitable in biological modeling (and data science in general), and as we will see, changing parameters can cause major changes in the behavior of a system.
 
-Note that there are three parameters relevant to our reaction-diffusion system. Two of these parameters are the feed rate (*f*) of *A* particles and the kill rate of the *B* particles (*k*). The third parameter of interest corresponds to the diffusion rates of the two types of particle. We report this as a single parameter because the diffusion rates are completely dependent on each other; once the diffusion rate of the *B* particles is set, the diffusion rate of *A* particles will be twice that of the *B* particles.
+Note that there are four parameters relevant to our reaction-diffusion system. Three of these parameters are the feed rate (*f*) of *A* particles, the kill rate of the *B* particles (*k*), and the rate of the predator-prey reaction (*r*). The final parameter of interest corresponds to the diffusion rates of the two types of particle. We report this as a single parameter because the diffusion rates are completely dependent on each other; once the diffusion rate of the *B* particles is set, the diffusion rate of *A* particles will be twice that of the *B* particles.
 
-You can think of all these parameters as dials we can turn, observing how the system changes on a macro level. For example, if we raise the diffusion rate, then the particles will be moving around more, which means that we will see more of the reaction *A* + 2*B* → 3*B*.
+You can think of all these parameters as dials we can turn, observing how the system changes on the macro level. For example, if we raise the diffusion rate, then the particles will be moving around and bouncing into each other more, which means that we will see more of the reaction *A* + 2*B* → 3*B*.
 
 **STOP:** What will happen as we increase or decrease the feed rate *f*? What about the kill rate *k*?
 {: .notice--primary}

@@ -104,8 +104,8 @@ Before simulating our model, we would also like to define the observables under 
 And now we are ready to simulate! Add the `generate network` and `simulate` command outside of your model specification. We will specify three arguments:
 
 **Method**. BNG supports simulation with Ordinary Differential Equation (ODE) and with Stochastic Simulation Algorithm (SSA, also called Gillespie algorithm). The method is passed in as argument `method=>"ode"` or `method=>"ssa"`. 
- - ODE: When simulating a system, we need to define how the system evolve through time. In *continuous* simulation of chemical reactions, the state of the system can be reported given any point in time. The reactions rules specifies the rate of change for concentration of the involved species, and they are differential equations. For example, d[L]/dt=k2[L.R] - k1[L][R].[^Schwartz14.1]
- - SSA: When simulate the change of the system through time, we define states of the system. Transition can happen between states that differ by one reaction event. We track the *discrete* amount of each reactants and simulate the system via transition of the states[^Schwartz17.2]. For example, the state can transit from [#L=100, #T=50, #L.T=0] to [#L=99, #T=49, #L.R=1], with probability determined both by reaction rate k_lr_bind and the the number of ways to choose the L and R molecules.[^Schwartz17.2] For using SSA, the measurement of abundance of molecules should actually be number of molecule instead of concentration.
+ - ODE: When simulating a system, we need to define how the system evolve through time. In *continuous* simulation of chemical reactions, the state of the system can be reported given any point in time. The reactions rules specifies the rate of change for concentration of the involved species, and they are differential equations. For example, d[L]/dt=k2[L.R] - k1[L][R].[^Schwartz14]
+ - SSA: When simulate the change of the system through time, we define states of the system. Transition can happen between states that differ by one reaction event. We track the *discrete* amount of each reactants and simulate the system via transition of the states[^Schwartz17]. For example, the state can transit from [#L=100, #T=50, #L.T=0] to [#L=99, #T=49, #L.R=1], with probability determined both by reaction rate k_lr_bind and the the number of ways to choose the L and R molecules.[^Schwartz17.2] For using SSA, the measurement of abundance of molecules should actually be number of molecule instead of concentration.
  
  We will use `method=>"ode"` in all the tutorials, but you could also try `method=>"ssa"`! Note that `method=>"ssa"` will be slower for models that are more complex.
 
@@ -173,13 +173,10 @@ If you are interested, a more detailed tutorial on BNG modeling can be found [he
 
 [^Spiro1997]: Spiro PA, Parkinson JS, and Othmer H. 1997. A model of excitation and adaptation in bacterial chemotaxis. Biochemistry 94:7263-7268. [Available online](https://www.pnas.org/content/94/14/7263).
 
-[^Schwartz14.1]: Schwartz R. Biological Modeling and Simulaton: A Survey of Practical Models, Algorithms, and Numerical Methods. Chapter 14.1. 
+[^Schwartz14]: Schwartz R. Biological Modeling and Simulaton: A Survey of Practical Models, Algorithms, and Numerical Methods. Chapter 14.1. 
 
-[^Schwartz17.2]: Schwartz R. Biological Modeling and Simulaton: A Survey of Practical Models, Algorithms, and Numerical Methods. Chapter 17.2.
+[^Schwartz17]: Schwartz R. Biological Modeling and Simulaton: A Survey of Practical Models, Algorithms, and Numerical Methods. Chapter 17.2.
 
 
 [Back to Main Text](home){: .btn .btn--primary .btn--x-large}
 {: style="font-size: 100%; text-align: center;"}
-
-
-

@@ -139,7 +139,7 @@ In[#]: slowMode.getEigval()
 In[#]: slowMode.getEigvec()
 ~~~~
 
-We have now successfully created the GNM calculations. Now we can generate the plots. Make sure to close the plot before creating another.
+We have now successfully created the GNM calculations and can generate the plots. Make sure to close the plot before creating another.
 Contact Map:
 ~~~ python
 In[#]: showContactMap(gnm);

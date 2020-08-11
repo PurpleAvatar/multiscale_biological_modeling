@@ -62,16 +62,14 @@ After expansion, we obtain
 
 $$
 \begin{align*}
-d^2 = & \mathbf{x_1} \cdot (\mathbf{x_1} + \mathbf{x_2} + \cdots + \mathbf{x_n})\\
-& + \mathbf{x_2} \cdot (\mathbf{x_1} + \mathbf{x_2} + \cdots + \mathbf{x_n})\\
-& + \cdots\\
-& + \mathbf{x_n}) \cdot (\mathbf{x_1} + \mathbf{x_2} + \cdots + \mathbf{x_n}) \,.
+d^2 = ~ & \mathbf{x_1} \cdot (\mathbf{x_1} + \mathbf{x_2} + \cdots + \mathbf{x_n})\\
++ & \mathbf{x_2} \cdot (\mathbf{x_1} + \mathbf{x_2} + \cdots + \mathbf{x_n})\\
++ & \cdots\\
++ & \mathbf{x_n}) \cdot (\mathbf{x_1} + \mathbf{x_2} + \cdots + \mathbf{x_n}) \,.
 \end{align*}
 $$
 
-$$d^2 = \mathbf{x_1} \cdot (\mathbf{x_1} + \mathbf{x_2} + \cdots + \mathbf{x_n}) + \mathbf{x_2} \cdot (\mathbf{x_1} + \mathbf{x_2} + \cdots + \mathbf{x_n}) + \cdots + \mathbf{x_n}) \cdot (\mathbf{x_1} + \mathbf{x_2} + \cdots + \mathbf{x_n}) \,.$$
-
-Finally, we rearrange this equation so that the terms $$\mathbf{x_1} \cdot \mathbf{x_1}$$, $$\mathbf{x_2} \cdot \mathbf{x_2}$$, and so on occur first, and the remaining terms appear last. We can therefore write <i>d</i><sup>2</sup> as follows.
+Finally, we rearrange this equation so that the terms $$\mathbf{x_1} \cdot \mathbf{x_1}$$, $$\mathbf{x_2} \cdot \mathbf{x_2}$$, and so on occur first, and the remaining terms appear last. This allows us to write <i>d</i><sup>2</sup> as follows.
 
 $$d^2 = \sum_{i=1}^n (\mathbf{x_i} \cdot \mathbf{x_i}) + \sum_{i \neq j} (\mathbf{x_i} \cdot \mathbf{x_j})\, .$$
 
@@ -79,7 +77,7 @@ The right side of this equation is the sum of <i>n</i><sup>2</sup> dot products.
 
 $$\mathbb{E}(d^2) = \sum_{i=1}^n E(\mathbf{x_i} \cdot \mathbf{x_i}) + \sum_{i \neq j} E(\mathbf{x_i} \cdot \mathbf{x_j})\, .$$
 
-For any *i*, $$\mathbb{E}(\mathbf{x_i} \cdot \mathbf{x_i})$$ is just the length of the vector $$x_i$$, which is equal to 1.  On the other hand, the expected value of the dot product of any two random unit vectors is zero.  Therefore, the right side of the above equation can be simplified to give the equation
+For any *i*, \mathbf{x_i} \cdot \mathbf{x_i} is just the length of the vector $$x_i$$, which is equal to 1.  On the other hand, the expected value of the dot product of any two random unit vectors is zero.  Therefore, the right side of the above equation can be simplified to give the equation
 
 $$\mathbb{E}(d^2) = \sum_{i=1}^n 1 + \sum_{i \neq j} 0 = n + 0 = n\, ,$$
 

@@ -75,7 +75,7 @@ $$d^2 = \sum_{i=1}^n (\mathbf{x_i} \cdot \mathbf{x_i}) + \sum_{i \neq j} (\mathb
 
 The right side of this equation is the sum of <i>n</i><sup>2</sup> dot products.  When we take the expectation of both sides, then we apply the fundamental result called the "linearity of expectation", which states that for any two random variables $$x$$ and $$y$$, the expectation of their sum $$\mathbb{E}(x + y)$$ is equal to the sum of the corresponding expectations $$\mathbb{E}(x) + \mathbb{E}(y)$$:
 
-$$\mathbb{E}(d^2) = \sum_{i=1}^n E(\mathbf{x_i} \cdot \mathbf{x_i}) + \sum_{i \neq j} E(\mathbf{x_i} \cdot \mathbf{x_j})\, .$$
+$$\mathbb{E}(d^2) = \sum_{i=1}^n \mathbb{E}(\mathbf{x_i} \cdot \mathbf{x_i}) + \sum_{i \neq j} \mathbb{E}(\mathbf{x_i} \cdot \mathbf{x_j})\, .$$
 
 For any *i*, \mathbf{x_i} \cdot \mathbf{x_i} is just the length of the vector $$x_i$$, which is equal to 1.  On the other hand, the expected value of the dot product of any two random unit vectors is zero.  Therefore, the right side of the above equation can be simplified to give the equation
 

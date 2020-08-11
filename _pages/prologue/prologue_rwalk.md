@@ -4,8 +4,8 @@ title: "An Introduction to Random Walks"
 sidebar:
  nav: "prologue"
  nav: "prologue"
- toc: true
- toc_sticky: true
+toc: true
+toc_sticky: true
 ---
 
 ## The wanderlust of a single particle

@@ -3,6 +3,8 @@ permalink: /prologue/conclusion
 title: "Conclusion"
 sidebar:
  nav: "prologue"
+ toc: true
+ toc_sticky: true
 ---
 
 * Fill in

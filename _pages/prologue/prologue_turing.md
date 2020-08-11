@@ -9,7 +9,7 @@ toc_sticky: true
 
 ## Turing and his machines
 
-Our story will begin with the unlikeliest of major characters: Alan Turing. If you have heard of Turing, then you might be surprised as to why he would appear in a course on biological modeling.
+Our story begins with the unlikeliest of major characters: Alan Turing. If you have heard of Turing, then you might be surprised as to why he would appear in a course on biological modeling.
 
 <center>
 <img src = "../assets/images/alan_turing_npg_cc.png" width="250">

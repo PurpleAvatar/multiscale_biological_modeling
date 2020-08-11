@@ -122,37 +122,38 @@ The whole simulation code for ligand-receptor dynamics (you can also download he
 	begin model
 
 	begin molecule types
-		L(r)
-		R(l)
+		L(t)
+		T(l)
 	end molecule types
 
 	begin parameters
-		L0 100
-		R0 50
-		k1 0.02
-		k2 0.1
+		NaV2 6.02e8   #Unit conversion to cellular concentration M/L -> #/um^3
+		L0 1e4        #number of ligand molecules
+		T0 7000       #number of receptor complexes
+		k_lr_bind 8.8e6/NaV2   #ligand-receptor binding
+		k_lr_dis 35            #ligand-receptor dissociation
 	end parameters
 
 	begin reaction rules
-		LigandReceptor: L(r) + R(l) <-> L(r!1).R(l!1) k1, k2
+		LigandReceptor: L(t) + T(l) <-> L(t!1).T(l!1) k_lr_bind, k_lr_dis
 	end reaction rules
 
 	begin seed species
-		L(r) L0
-		R(l) R0
+		L(t) L0
+		T(l) T0
 	end seed species
 
 	begin observables
-		Molecules L_free L(r)
-		Molecules L_bound L(r!1).R(l!1)
+		Molecules L_free L(t)
+		Molecules L_bound L(t!l).T(l!l)
 	end observables
 
 	end model
 
 	generate_network({overwrite=>1})
-	simulate({method=>"ode", t_end=>5, n_steps=>100})
+	simulate({method=>"ssa", t_end=>1, n_steps=>100})
 
-**STOP:** How would the concentration of free ligand and bound ligand change through the 5 seconds?
+*How would the concentration of free ligand and bound ligand change through 1 seconds?*
 
 Go to `Simulation` at the right side of the Contact Map button and click `Run`. You can visualize your `.gdat` data.
 

@@ -46,7 +46,7 @@ This reaction is why we compared *A* to prey and *B* to predators, since we can 
 
 * NOAH: we need to better understand the correspondence between reaction rates and probabilities in MCell.
 
-* NOAH: this is where the intro to MCell/CellBlender tutorial link should go I think.
+* NOAH: this is where the link to the reaction-diffusion tutorial should go I think.
 
 ## Changing parameters influence the macro behavior of the reaction-diffusion system
 
@@ -61,16 +61,18 @@ You can think of all these parameters as dials we can turn, observing how the sy
 **STOP:** What will happen as we increase or decrease the feed rate *f*? What about the kill rate *k*?
 {: .notice--primary}
 
-For some parameter values, the system is not particularly interesting.  For example, the following animation shows that if *k* is too high, then the *B* particles will die out more quickly than they are replenished by the reaction with *A* particles, and so only *A* particles will be left. In this animation, *A* particles have been colored green and *B* particles have been colored red.
+For some parameter values, the system is not particularly interesting.  For example, the following animation is produced for *k* = 500,000 and *f* = 10. It shows that if *k* is too high, then the *B* particles will die out more quickly than they are replenished by the reaction with *A* particles, and so only *A* particles will be left. In this animation, *A* particles have been colored green, and *B* particles have been colored red.
 
- * NOAH: INSERT VIDEO SHOWING PREY THRIVING AND PREDATORS DYING OUT. Indicate parameters.
+* NOAH: what is the reaction rate *r* for the predator-prey reaction? What is the diffusion rate?  Units? Width of grid?
+
 <iframe width="640" height="360" src="../assets/mert_predator_dies_f1e1_r5e5.mp4" frameborder="0" allowfullscreen></iframe>
-*f* = 10 and *r* = 500,000
+*f* = 10 and *k* = 500,000
 {: .text-center}
 
 On the other hand, if *f* is too high, then there will be an increase in the *A* particles. However, there will also be more interactions between *A* particles and pairs of *B* particles, and so we will then see an explosion in the number of predators.
 
-* NOAH: INSERT VIDEO, with parameters indicated)
+* NOAH: This video is fascinating!  I think you are in the sweet spot though -- the whole point was to jack up the value of *f* which appears not to have been done. What happens at say *f* = 100?
+
 <iframe width="640" height="360" src="../assets/mert_prey_dies_f1e1_r1e5.mp4" frameborder="0" allowfullscreen></iframe>
 *f* = 10 and *r* = 100,000
 {: .text-center}
@@ -88,27 +90,9 @@ And yet if we make a slight change to the parameters, we obtain very different m
 
 * NOAH: INSERT 2-3 MORE MERT VIDEOS, WITH CLEAR EXPLANATION OF PARAMETERS EACH TIME
 
-## A reflection on Turing patterns
-
-The Turing patterns that emerge from our animations in the previous section are a testament to the human eye's ability to find organization within the net behavior of tens of thousands of particles.  The patterns are unquestionably there, but they are also quite noisy; this inference of large-scale patterns from small-scale phenomena is in some sense what our brains do best.
-
-What is also remarkable is that the system is so **fine-tuned**, meaning that that very slight changes in parameter values can lead to significant changes in the overall system. In the case of our model, these changes could convert spots to stripes, or they could influence how clearly defined the boundaries of the Turing patterns are.
-
-Much later in this course, we will see an example of a biological system that is the opposite of fine-tuned. In such a **robust** system, variation in the parameters does not lead to substantive changes in the ultimate behavior of the system. Robust processes are vital for processes in which an organism needs to be very resilient to any small changes disturbing some process. We will say more about robustness later.
-
-It turns out that although Turing's work offers a compelling argument for how zebras might have gotten their stripes, the exact mechanism by which these stripes form is still an unresolved question. Although zebras are still up in the air, the pigmentation of *zebrafish* does follow a Turing pattern because two types of pigment cells follow a reaction-diffusion model much like the one we presented above.
-
-CITATION: https://www.pnas.org/content/106/21/8429.
-
-We also have qualitative evidence that the pigmentary patterns arising in fish are due to a fine-tuned system. For example, note that following two photos of giant pufferfish. These fish are genetically very similar, but their skin patterns are very different, with one having spots and the other exhibiting a complex pattern of stripes. What seems like a drastic change in the appearance of the fish can actually be attributable to a small change of parameters in a fine-tuned system that is driven only by random interactions.
-
-(INSERT PUFFERFISH PHOTOS -- https://www.123rf.com/photo_26775011_giant-puffer-fish.html and https://en.wikipedia.org/wiki/File:Giant_Puffer_fish_skin_pattern.JPG or equivalent quality)
-
 ## Streamlining our simulations
 
-If you are interested in learning how to generate these simulations on your own computer, please stay tuned. In the next chapter of the course, we will software that can be used to simulate reaction-diffusion interactions and show how it can be used for other forays into biological modeling.
-
-For now, we will point out that each of these simulations took several hours to render on a modern laptop. Visualizing the movement of tens of thousands of particles over thousands of generations of a reaction-diffusion interaction is computationally intensive. The question is whether we can obtain similar conclusions with a faster model that does not require us to keep track of so many particles. We will turn our attention to this question in the next section.
+Each of the above simulations took several hours to render because simulating and visualizing the movement of tens of thousands of particles over thousands of generations of a reaction-diffusion interaction is computationally intensive. The question is whether we can obtain similar conclusions with a faster model that does not require us to keep track of so many particles. We will turn our attention to this question in the next section.
 
 [Next lesson](blocks){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}

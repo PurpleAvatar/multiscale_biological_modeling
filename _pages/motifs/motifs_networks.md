@@ -1,5 +1,5 @@
 ---
-permalink: /motifs/finding
+permalink: /motifs/networks
 title: "Transcription Factor Networks"
 sidebar:
  nav: "motifs"

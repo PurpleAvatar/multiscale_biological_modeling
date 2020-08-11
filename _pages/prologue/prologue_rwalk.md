@@ -35,6 +35,10 @@ This theorem does not say that after *n* steps our particle will be *exactly* di
 
 * NOAH: Please add overlay here of radius.
 
+* NOAH: I think this would be a great place to link to the intro to CellBlender/MCell tutorial where we explain how it works and get them to build the above random walk videos. We can recall this tutorial later in both the prologue and the motifs chapter, where we can say "If you didn't follow the intro tutorial in the prologue ...".
+
+## Diffusion: big numbers in small spaces
+
 We also point out that our experience of the world confirms the statement that the **diffusion** of particles via Brownian motion will cause those particles to spread out rapidly from their starting point. We understand, for example, that an infected COVID-19 patient can infect many others in an enclosed space in a short time frame. To take a less macabre example, we also know that when a cake is baking in the oven at home, we will not need to wait long for wonderful smells to waft outward from the kitchen.
 
 Why should a scientist care about random walks? Later in this course, we will see that the random walk model is at the core of a simple but powerful approach that bacteria like *E. coli* use to explore their environment in a search for sustenance.

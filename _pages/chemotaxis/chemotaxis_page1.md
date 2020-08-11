@@ -77,7 +77,7 @@ Now let's declare all the parameters we mentioned __before__ any usage of them (
 
 Because of the molecules/cell and the M/s units, we need to do some unit conversion here. The volume of *E. coli* is approximately 1um^3, so our molecule counts are of unit num_molecule/um^3. One mole of molecule is approximately 6.02 * 10^23 molecules (Avogadro's number), so the unit M is approximately 6.02 * 10^23 molecules/L, which is about 6.02 * 10^8 molecules/um^3. We record this as NaV2. For bimolecular reactions, the rate constant should have unit (M^-1)(s^-1), and we devide NaV2 to convert to ((molecules/um^3)^-1)(s^-1). For monomolecular reactions, the rate constant have unit (s^-1), so no unit conversion is required.
 
-Although the specific numbers of cellular components vary between each bacterium, the components in chemotaxis pathway follows a relatively constant stoichiometry. For all the simulations in this set of tutorials, we assign the initial number for each molecule and reaction rates by first deciding a reasonable range based on *in vivo* stoichiometry [^1][^2][^3] and then tuning to fit the model.
+Although the specific numbers of cellular components vary between each bacterium, the components in chemotaxis pathway follows a relatively constant stoichiometry. For all the simulations in this set of tutorials, we assign the initial number for each molecule and reaction rates by first deciding a reasonable range based on *in vivo* stoichiometry [^Li2004][^Spiro1997][^Stock1991] and then tuning to fit the model.
 
 	begin parameters
 		NaV2 6.02e8   #Unit conversion to cellular concentration M/L -> #/um^3
@@ -104,8 +104,8 @@ Before simulating our model, we would also like to define the observables under 
 And now we are ready to simulate! Add the `generate network` and `simulate` command outside of your model specification. We will specify three arguments:
 
 **Method**. BNG supports simulation with Ordinary Differential Equation (ODE) and with Stochastic Simulation Algorithm (SSA, also called Gillespie algorithm). The method is passed in as argument `method=>"ode"` or `method=>"ssa"`. 
- - ODE: When simulating a system, we need to define how the system evolve through time. In *continuous* simulation of chemical reactions, the state of the system can be reported given any point in time. The reactions rules specifies the rate of change for concentration of the involved species, and they are differential equations. For example, d[L]/dt=k2[L.R] - k1[L][R].[^4]
- - SSA: When simulate the change of the system through time, we define states of the system. Transition can happen between states that differ by one reaction event. We track the *discrete* amount of each reactants and simulate the system via transition of the states[^5]. For example, the state can transit from [#L=100, #T=50, #L.T=0] to [#L=99, #T=49, #L.R=1], with probability determined both by reaction rate k_lr_bind and the the number of ways to choose the L and R molecules.[^5] For using SSA, the measurement of abundance of molecules should actually be number of molecule instead of concentration.
+ - ODE: When simulating a system, we need to define how the system evolve through time. In *continuous* simulation of chemical reactions, the state of the system can be reported given any point in time. The reactions rules specifies the rate of change for concentration of the involved species, and they are differential equations. For example, d[L]/dt=k2[L.R] - k1[L][R].[^Schwartz14]
+ - SSA: When simulate the change of the system through time, we define states of the system. Transition can happen between states that differ by one reaction event. We track the *discrete* amount of each reactants and simulate the system via transition of the states[^Schwartz17]. For example, the state can transit from [#L=100, #T=50, #L.T=0] to [#L=99, #T=49, #L.R=1], with probability determined both by reaction rate k_lr_bind and the the number of ways to choose the L and R molecules.[^Schwartz17] For using SSA, the measurement of abundance of molecules should actually be number of molecule instead of concentration.
  
  We will use `method=>"ode"` in all the tutorials, but you could also try `method=>"ssa"`! Note that `method=>"ssa"` will be slower for models that are more complex.
 
@@ -167,15 +167,15 @@ In the next section, we will start adding phosphorylation in our model!
 
 If you are interested, a more detailed tutorial on BNG modeling can be found [here](http://comet.lehman.cuny.edu/griffeth/BioNetGenTutorialFromBioNetWiki.pdf).
 
-[^1]: Li M, Hazelbauer GL. 2004. Cellular stoichimetry of the components of the chemotaxis signaling complex. Journal of Bacteriology. [Available online](https://jb.asm.org/content/186/12/3687)
+[^Li2004]: Li M, Hazelbauer GL. 2004. Cellular stoichimetry of the components of the chemotaxis signaling complex. Journal of Bacteriology. [Available online](https://jb.asm.org/content/186/12/3687)
 
-[^2]: Stock J, Lukat GS. 1991. Intracellular signal transduction networks. Annual Review of Biophysics and Biophysical Chemistry. [Available online](https://www.annualreviews.org/doi/abs/10.1146/annurev.bb.20.060191.000545)
+[^Stock1991]: Stock J, Lukat GS. 1991. Intracellular signal transduction networks. Annual Review of Biophysics and Biophysical Chemistry. [Available online](https://www.annualreviews.org/doi/abs/10.1146/annurev.bb.20.060191.000545)
 
-[^3]: Spiro PA, Parkinson JS, and Othmer H. 1997. A model of excitation and adaptation in bacterial chemotaxis. Biochemistry 94:7263-7268. [Available online](https://www.pnas.org/content/94/14/7263).
+[^Spiro1997]: Spiro PA, Parkinson JS, and Othmer H. 1997. A model of excitation and adaptation in bacterial chemotaxis. Biochemistry 94:7263-7268. [Available online](https://www.pnas.org/content/94/14/7263).
 
-[^4]: Schwartz R. Biological Modeling and Simulaton: A Survey of Practical Models, Algorithms, and Numerical Methods. Chapter 14.1. 
+[^Schwartz14]: Schwartz R. Biological Modeling and Simulaton: A Survey of Practical Models, Algorithms, and Numerical Methods. Chapter 14.1. 
 
-[^5]: Schwartz R. Biological Modeling and Simulaton: A Survey of Practical Models, Algorithms, and Numerical Methods. Chapter 17.2.
+[^Schwartz17]: Schwartz R. Biological Modeling and Simulaton: A Survey of Practical Models, Algorithms, and Numerical Methods. Chapter 17.2.
 
 
 [Back to Main Text](home){: .btn .btn--primary .btn--x-large}

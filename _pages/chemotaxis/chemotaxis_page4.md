@@ -8,9 +8,11 @@ sidebar:
 In this page, we will:
  - Simulate cellular response when traveling up the gradient.
 
-### Traveling up the gradient
+## Traveling up the gradient
 
 We've built a model simulating the response of *E. coli* in response to a one-time addition of attractant. However, in real life, the bacterium doesn't suddenly drop into an environment with more attractants; instead, it searches the space to find the gradient. To mimic this phenomenon, we will gradually increase the ligand concentration in the environment, simulating the bacteria moving up the attractant gradient.
+
+The simulation can be downloaded here: <a href="https://purpleavatar.github.io/multiscale_biological_modeling/downloads/downloadable/addition.bngl" download="addition.bngl">addition.bngl</a>
 
 First create a copy of the adaptation model `adaptation.bngl`, name it `addition.bngl`.
 
@@ -23,6 +25,8 @@ In `parameters` section, we define the rate of ligand increase. We will try a ra
 
 	k_add 0.1
 	L0 1e4
+
+The simulation can be also downloaded here: <a href="https://purpleavatar.github.io/multiscale_biological_modeling/downloads/downloadable/addition.bngl" download="addition.bngl">addition.bngl</a>
 
 Go to `simulation` and click `Run`. 
 
@@ -67,7 +71,3 @@ In the next tutorial, we will simulate the case when the cell is moving down the
 
 [Back to Main Text](home){: .btn .btn--primary .btn--x-large}
 {: style="font-size: 100%; text-align: center;"}
-
-
-
-

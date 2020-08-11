@@ -75,5 +75,9 @@ We will see how the CheY-P changes through time for different rates of ligand de
 
 
 
-[Previous](tutorial_gradient){: .btn .btn--primary .btn--x-large} [Next Page](home){: .btn .btn--primary .btn--x-large}
+[Back to Main Text](home){: .btn .btn--primary .btn--x-large}
 {: style="font-size: 100%; text-align: center;"}
+
+
+
+

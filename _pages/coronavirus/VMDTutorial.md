@@ -69,13 +69,15 @@ The final visualization should look like this:
 
 * In the *OpenGL Display* window, you can click and drag the molecule to change the orientation. Pressing ‘r’ on the keyboard allows you to rotate the molecule, pressing ‘t’ on the keyboard allows you to translate the molecule, and finally pressing ‘s’ allows you to enlarge or shrink the molecule (or use scroll wheel). Note that left click and right click are different.
 
+<hr>
+
 ### Analysis
 
 #### Multiseq
 
 Here, we will recreate the structural alignment analysis using *Qres* of SARS and SARS-CoV-2 RBD.
 
-First, load <a href="https://www.rcsb.org/structure/6vw1" target="_blank">6vw1</a> and <a href="https://www.rcsb.org/structure/2ajf" target="_blank">2ajf</a> onto VMD. If you are unsure how to do this, follow the steps in the previous section titled "Loading Molecules". Then, start up *Multiseq* by going to *Extensions>Analysis>Multiseq*.
+First, load <a href="https://www.rcsb.org/structure/6vw1" target="_blank">6vw1</a> and <a href="https://www.rcsb.org/structure/2ajf" target="_blank">2ajf</a> onto VMD. If you are unsure how to do this, follow the steps in the previous section titled *Loading Molecules*. Then, start up *Multiseq* by going to *Extensions>Analysis>Multiseq*.
 
 <img src="../_pages/coronavirus/files/QresTutorial/Qres1.png">
 
@@ -103,15 +105,55 @@ The structures are now aligned. To see coloring based on *Qres*, go to *View>Col
 <img src="../_pages/coronavirus/files/QresTutorial/Qres8.png">
 
 
+#### NMWiz and ANM Animation
+
+Normal Mode Wizard (NMWiz) is a plugin in VMD that is designed to be a GUI for ProDy. It uses ProDy for normal mode analysis, including GNM and ANM calculations. In this section, we will perform ANM calculation and produce ANM animations of the SARS-CoV-2 Spike RBD.
+
+First, load <a href="https://www.rcsb.org/structure/6vw1" target="_blank">6vw1</a> into VMD by following the steps in the previous section *Loading Molecules*. Then, start up NMWiz by going to *Extensions>Analysis>Normal Mode Wizard*.
+
+<img src="../_pages/coronavirus/files/ANMTutorial/Image1.png">
+
+A small window will open. Select *ProDy Interface*
+
+<img src="../_pages/coronavirus/files/ANMTutorial/Image2.png">
+
+We want to focus only on the RBD of SARS-CoV-2, so we need to choose a new selection. In the *ProDy Interface*, change *Selection* to "protein and chain F" and click *Select*. Next, make sure that *ANM calculation* is selected for *ProDy job:*. Check the box for *write and load cross-correlations heatmap*. Finally click *Submit Job*.
+
+<img src="../_pages/coronavirus/files/ANMTutorial/Image3.png">
+
+*IMPORTANT*: Let the program run and do not click on any of the VMD windows as clicking on windows may cause the program to crash or become unresponsive. The job can take from a few seconds to a couple minutes. When the job is completed, you will see a new window *NMWiz - 6vw1_anm ...* and the cross=correlation heatmap appear.
+
+<img src="../_pages/coronavirus/files/ANMTutorial/Image4.png">
+
+<img src="../_pages/coronavirus/files/ANMTutorial/Image5.png">
+
+Now that the ANM calculations are completed, you will see the visualization displayed in *VMD Main*. Disable the visualization of the original visualization of *6vw1* by double-clicking on the letter 'D'. The color red will represent that it is disabled.
+
+<img src="../_pages/coronavirus/files/ANMTutorial/Image6.png">
+
+In *OpenGL Display*, you will be able to see the protein with numerous arrows that represents the calculated fluctuations.
+
+<img src="../_pages/coronavirus/files/ANMTutorial/Image7.png">
+
+To actually see the protein move as described by the arrows, we have to create the animation. Go back to the *NMWiz - 6vw1_anm...* window and click *Make* next to *Animations*.
+
+<img src="../_pages/coronavirus/files/ANMTutorial/Image8.png">
+
+*VMD Main* should now display a new row for the animation.
+
+<img src="../_pages/coronavirus/files/ANMTutorial/Image9.png">
+
+The animation should also be visible in *OpenGL Display*. However, the previous visualizations are somewhat in the way. We can disable them in the same way as before by double-clicking on the letter 'D'.
+
+<img src="../_pages/coronavirus/files/ANMTutorial/Image10.png">
+
+Now, you should be able to clearly see the animation of the ANM fluctuations of 6vw1.
+
+<video width="640" height="480" controls>
+<source type="video/mp4" src="../_pages/coronavirus/files/ANMTutorial/6vw1_chainF.mp4">
+</video>
 
 
-#### Normal Mode Wizard (NMwiz)
 
-NMWiz is a plugin in VMD that is designed to be a GUI for ProDy. It uses ProDy for GNM, ANM, and PCA/EDA calculations, and then allows you to visualize the analysis within VMD.
-
-* In *VMD Main*, go to *Extensions>Analysis>Normal Mode Wizard*. Then, choose *ProDy Interface*. This will allow you to choose which molecule and select which part of the molecule for analysis.
-
-* ANM calculation will enable you to create animations of the molecule, displaying functional motions of the molecule. In addition, you can choose to see Crosscorrelation and Square-Fluctuation plots.
-
-[Previous](rmsd_prody){: .btn .btn--primary .btn--x-large} [Next Page](#){: .btn .btn--primary .btn--x-large}
+[Previous](#){: .btn .btn--primary .btn--x-large} [Next Page](#){: .btn .btn--primary .btn--x-large}
 {: style="font-size: 100%; text-align: center;"}

@@ -38,71 +38,14 @@ Go to the `Navigator` on the left side of the screen, and go to the results fold
 
 Let's try different values for k_add: 0.01, 0.03, 0.05, 0.1, 0.3, 0.5. We will get the `.gdat` file for each of the simulations. All simulation results are stored in the `RuleBender-workspace` folder in your computer. In my case, the results are in `RuleBender-workspace/chemotaxis_from_scratch/results/addition/`. I will rename each folder name with the `k_add` values for simplicity.
 
-We will write a short Python script to load and visualize the concentrations of CheY-P through the simulations.
-**TODO: put the downloadable here**
+We will write a short Python script to load and visualize the concentrations of CheY-P through the simulations. Download 
+<a href="https://purpleavatar.github.io/multiscale_biological_modeling/downloads/downloadable/plotter.py" download="plotter.py">plotter.py</a>
 
-~~~Python
-import numpy as np
-import sys
-import os
-import matplotlib.pyplot as plt
-import colorspace
-
-model_path = sys.argv[1] #name of the .bngl model
-model_name = sys.argv[2]
-target = sys.argv[3]     #The name of the molecule to plot
-vals = sys.argv[4:]      #Rates, also name of the folders
-
-#Define the colors to use
-colors = colorspace.qualitative_hcl(h=[0, 300.], c = 60, l = 70, pallete = "dynamic")(len(vals))
-
-
-def load_data(val):
-	file_path = os.path.join(model_path, val, model_name + ".gdat")
-	with open(file_path) as f:
-		first_line = f.readline() #Read the first line
-	cols = first_line.split()[1:] #Get the col names (species names)
-
-	ind = 0
-	while cols[ind] != target:
-		ind += 1                  #Get col number of target molecule
-
-	data = np.loadtxt(file_path)  #Load the file
-	time = data[:, 0]             #Time points
-	concentration = data[:, ind]  #Concentrations
-
-	return time, concentration
-
-
-def plot(val, time, concentration, ax, i):
-	legend = "rate: " + str(val)
-	ax.plot(time, concentration, label = legend, color = colors[i])
-	ax.legend()
-
-	return
-
-
-def main():
-	fig, ax = plt.subplots(1, 1)
-	for i in range(len(vals)):
-		val = vals[i]
-		time, concentration = load_data(val)
-		plot(val, time, concentration, ax, i)
-
-	plt.xlabel("time")
-	plt.ylabel("concentration (#molecules)")
-	plt.title("Active CheY vs time")
-	ax.minorticks_on()
-	ax.grid(b = True, which = 'minor', axis = 'both', color = 'lightgrey', linewidth = 0.5, linestyle = ':')
-	ax.grid(b = True, which = 'major', axis = 'both', color = 'grey', linewidth = 0.8 , linestyle = ':')
-
-	plt.show()
-
-
-
-if __name__=='__main__':
-	main()
-~~~
+Please makes sure have dependencies installed:
+ - [Python](https://www.python.org/downloads/), version 3.6+
+ - [Numpy](https://numpy.org/install/)
+ - [Matplotlib](https://matplotlib.org/users/installing.html)
+ - [Colorspace](https://python-colorspace.readthedocs.io/en/latest/installation.html) (simply [install with pip](https://pypi.org/project/colorspace/) works too)
 
 Run 
 
@@ -118,10 +61,13 @@ We will see how the CheY-P changes through time for different rates of ligand in
 
 The slower the rate of ligand increasing, the slower receptor binding increases, and the more moderate CheY-P drop becomes. In the end, the high abundances of ligand make all receptors satruate, so that the cells no longer see any gradient, and they adapt to the higher concentration by restoring CheY-P to the original concentration. 
 
-In the next page, we will simulate the case when the cell is moving down the attractant gradient!
+In the next tutorial, we will simulate the case when the cell is moving down the attractant gradient!
 
 
 
 [Back to Main Text](home){: .btn .btn--primary .btn--x-large}
 {: style="font-size: 100%; text-align: center;"}
+
+
+
 

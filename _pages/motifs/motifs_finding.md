@@ -3,6 +3,8 @@ permalink: /motifs/finding
 title: "How to Find Network Motifs"
 sidebar:
  nav: "motifs"
+toc: true
+toc_sticky: true
 ---
 
 ## Using randomness to determine statistical significance
@@ -41,23 +43,6 @@ We are now ready to build a random network and compare the number of loops in th
 
 [Visit tutorial](tutorial_loops){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
-
-
-## Negative vs. positive autoregulation
-
-* We can add more information to the TF network, labeling an edge *X* → *Y* with a "+" or "-" depending on whether the transcription factor *X* serves to increase or decrease the expression of *Y*.
-
-* In a random network, we would expect about half of the edges to be assigned a "+", and about half of the edges to be assigned a "-".
-
-* Re-examining the 130 total loops in the *E. coli* transcription factor network, we see that AAA of them are assigned a "+" and BBB of them are assigned a "-".
-
-* This enormous discrepancy is doubtfully due to random chance; imagine if we flipped a coin 130 times and obtained AAA "heads" and BBB "tails".
-
-* In other words, we have found that autoregulation is an important aspect of transcription factors, but we have also found that transcription factors that autoregulate tend to *negatively* autoregulate, meaning that they serve to *turn off* their own expression.
-
-* This seems to have taken an even stranger turn --- why in the world would negative autoregulation be such a common phenomenon in transcription factors? In the next section, we will begin to unravel the mystery.
-
-* Define: negative autoregulation
 
 [Next lesson](nar){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}

@@ -37,14 +37,14 @@ We will model the negative autoregulation of *Y* using the reaction 2*Y* → *Y*
 **STOP:** How many parameters do the two simulations have?
 {: .notice--primary}
 
-To recap, the simulations of both cells will include diffusion of *X* and *Y*, removal of *Y*, and the reaction *X* → *X* + *Y*. The second simulation, which includes negative autoregulation of *Y* will add the reaction 2*Y* → *Y*. You can explore these simulations in the following tutorial, and we will reflect on these simulations in the next section.
+To recap, the simulations of both cells will include diffusion of *X* and *Y*, removal of *Y*, and the reaction *X* → *X* + *Y*. The second simulation, which includes negative autoregulation of *Y* will add the reaction 2*Y* → *Y*. All of these reactions will take place according to certain rate parameters. You can explore these simulations in the following tutorial, and we will reflect on these simulations in the next section.
 
 [Visit tutorial](tutorial_nar){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 ## Ensuring a mathematically controlled comparison
 
-If you followed the tutorial, you were likely confused and disappointed in our negative autoregulating transcription factor *Y*. The figure below shows a plot of *Y* particles for the two simulations. The first simulation, in which we only have upregulation of *Y* by *X*, is shown in red, and the second simulation, which includes negative autoregulation of *Y*, is shown in yellow.
+If you followed the tutorial, then you were likely confused and disappointed in our negative autoregulating transcription factor *Y*. The figure below shows a plot of *Y* particles for the two simulations. The first simulation, in which we only have upregulation of *Y* by *X*, is shown in red, and the second simulation, which includes negative autoregulation of *Y*, is shown in yellow.
 
 ![image-center](../assets/images/nar_unequal_graph.PNG){: .align-center}
 
@@ -57,16 +57,12 @@ The answer to our quandary is that the model we built was not controlled to ensu
 
 There are a number of parameters that we must keep constant across the two models. First, the diffusion rates of *X* and *Y*, which we should keep constant across the two simulations. Second, the number of initial particles *X* and *Y*. And third, the degradation rate of *Y*.
 
-The only way that we will be able to increase the steady-state concentration in the simulation involving autoregulation is if we increase the rate at which the reaction *X* → *X* + *Y* takes place. Finding the exact increase in this rate of reaction is an imperfect art form but can be obtained through trial and error.
+The only way that we will be able to increase the steady-state concentration in the simulation involving autoregulation is if we increase the rate at which the reaction *X* → *X* + *Y* takes place. Finding the exact increase in this rate of reaction is an imperfect art but can be obtained through trial and error. If you followed the previous tutorial, then you may like to try your hand at adjusting the rate of the *X* → *X* + *Y* reaction on your own. The following tutorial adjusts this parameter to build a mathematically controlled comparison.
 
 [Visit tutorial](tutorial_nar#Matching-Steady-States){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
-* NOAH: review -- I don't know how we justify changing the steady-state any differently without getting into differential equations. How much do we need to change the parameters by to justify it?
-
-If you followed the tutorial on using CellBlender to visualize the two simulations, then you may want to try your hand at adjusting this parameter and seeing what happens. If you would like to follow along with our tutorial building a mathematically controlled comparison, then follow the link below.
-
-* NOAH: We need an additional NAR tutorial here in which we change the parameters by not enough, by too much, and finally getting a Goldilocks value. We should also be plotting the percentage of Y for the two simulations on the same plot.
+* NOAH: This additional NAR tutorial should change the parameters by not enough, by too much, and finally getting a Goldilocks value. We should also be plotting the percentage of Y for the two simulations on the same plot.
 
 ## Results
 

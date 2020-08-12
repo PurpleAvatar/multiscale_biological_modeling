@@ -44,9 +44,10 @@ To recap, the simulations of both cells will include diffusion of *X* and *Y*, r
 
 ## Ensuring a mathematically controlled comparison
 
-If you followed the tutorial, then you were likely confused and disappointed in our negative autoregulating transcription factor *Y*. The figure below shows a plot of *Y* particles for the two simulations. The first simulation, in which we only have upregulation of *Y* by *X*, is shown in red, and the second simulation, which includes negative autoregulation of *Y*, is shown in yellow.
+If you followed the tutorial, then you were likely confused and disappointed in our negative autoregulating transcription factor *Y*. The figure below shows a plot of *Y* particles for the two simulations.
 
 ![image-center](../assets/images/nar_unequal_graph.PNG){: .align-center}
+<figcaption>A comparison of the number of *Y* particles across two simulations. In the first (shown in red), we only have upregulation of *Y* by *X*, whereas in the second (shown in yellow), we keep all parameters fixed but add a reaction simulating negative autoregulation of *Y*.</figcaption>
 
 By allowing *Y* to slow its own transcription, we wound up with a simulation in which the final concentration of *Y* was lower than when we only had upregulation of *Y* by *X*. It seems like we are back at square one; why in the world would negative autoregulation be so common?
 
@@ -64,37 +65,29 @@ The only way that we will be able to increase the steady-state concentration in 
 
 * NOAH: This additional NAR tutorial should change the parameters by not enough, by too much, and finally getting a Goldilocks value. We should also be plotting the percentage of Y for the two simulations on the same plot.
 
-## Results
+## Interpreting why negative autoregulation may have evolved
 
-The figure below shows a plot of the amount of *Y* for the two simulations on the same chart over time. Now that we are able to obtain the same steady-state concentration of *Y* in the two simulations, a justification for negative autoregulation appears.
+The figure below plots the number of *Y* particles for the two simulations on the same chart over time, with the rate of the *X* → *X* + *Y* reaction increased in the simulation involving negative autoregulation. The two simulations now have approximately the same steady-state concentration of *Y*, and a justification for negative autoregulation appears.
 
 ![image-center](../assets/images/nar_equal_graph.PNG){: .align-center}
+<figcaption>A comparison of the number of *Y* particles across the same two simulations from the previous figure, with the change that in the second simulation (shown in yellow), we increase the rate of the reaction simulating upregulation of *Y* by *X*.  As a result, the two simulations have approximately the same steady state of *Y*, and the simulation involving negative autoregulation reaches this steady state more quickly.</figcaption>
 
-The simulation with negative autoregulation starts with a low concentration of *Y*. For this reason, because the rate of the reaction *X* → *X* + *Y* is higher in the negative autoregulation simulation, the number of *Y* particles in this simulation increases much faster.
+Because the rate of the reaction *X* → *X* + *Y* is higher in the simulation involving negative autoregulation, the number of *Y* particles in this simulation increases at a much faster rate.
 
-As the concentration of *Y* increases, the rate at which new *Y* are being added to the system remains constant because it depends only upon *Y*. However, the rate at which *Y* are being removed increases because we have not only the degradation reaction *Y* → *NULL* but also the negative autoregulation reaction 2*Y* → *Y*, both of which depend on the current number of *Y* particles present in the system. As a result, the curve flattens more quickly for the simulation involving negative autoregulation.
+As the concentration of *Y* increases, the rate at which new *Y* particles are added to the system remains constant because this reaction only depends on the number of *X* particles, which is constant. However, the rate at which *Y* particles are removed *increases* in the simulation involving negative autoregulation because in addition to the degradation reaction *Y* → *NULL*, we have the negative autoregulation reaction 2*Y* → *Y* serving to remove *Y* particles. As a result, the plot of *Y* particles over time flattens more quickly (i.e., its derivative decreases faster) for the simulation involving negative autoregulation.
 
-More importantly, we now understand *why* negative autoregulation has evolved. Because the simulation involving negative autoregulation wins the "race" to steady-state concentration of *Y*, we can conclude that a cell in which a transcription factor is negatively autoregulated has higher evolutionary fitness than one that does not.
+More importantly, this plot helps explain *why* negative autoregulation has evolved. The simulation involving negative autoregulation wins the "race" to a steady-state concentration of *Y*, and so we can conclude that a cell in which this transcription factor is negatively autoregulated is more fit for survival than one that does not.
 
-An excellent analogy proposed by Uri Alon for negative autoregulation is that of a car with a powerful engine (the higher rate of the reaction *X* → *X* + *Y*) and sensitive brakes (the reaction 2*Y* → *Y* that causes *Y* to quickly reach a steady-state concentration). This is reinforced by the plot below, where we show that we can reach steady-state even more quickly if we increase the rate of both of these reactions while keeping the steady-state concentration constant.
+Uri Alon proposed an excellent analogy of a negatively autoregulating transcription factor as a sportscar that has a powerful engine (corresponding to the higher rate of the reaction producing *Y*) and sensitive brakes (corresponding to the negative autoregulation reaction slowing the production of *Y*). This conclusion is reinforced by the plot below, where we show that we can reach steady-state even more quickly if we increase the rates of both of these reactions.
 
-* NOAH: show plots for a couple of additional NAR simulations, where we keep increasing the two reaction rates. (May need multiple colors.)
+* NOAH: show plots for a couple of additional NAR simulations, where we keep increasing the two reaction rates. (May need multiple colors. May also need to decrease it in one.)
 
-In this section, we have seen that particle-based simulations can be powerful for justifying why a network motif is prevalent. In the remainder of this chapter, we will simulate two more commonly occurring network motifs and analyze these simulations to determine why these motifs have evolved.
+In this lesson, we have seen that particle-based simulations can be powerful for justifying why a network motif is prevalent. In the remainder of this module, we will simulate two more commonly occurring network motifs and analyze these simulations to determine why these motifs have evolved.
 
 [Next lesson](feed){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
-## Other
-* In Noah's second tutorial, Phillip will have a question at the end of the tutorial asking the user to draw the conclusion on their own.
-
-* In the results section, should say something about their being practical limitations to how much we can increase the reaction producing *Y*, which provides a trade-off hence why the reaction rate isn't higher.
-
-* Should be positive autoregulation somewhere -- how many positive autoregulation loops are there?
-
-* NOAH: Just curious... how many positive autoregulation loops are there in our network?
-
-* (Cite Alon book at some point -- when motifs are introduced? The introduction?)
+## Citations
 
 [^Dob]: Dobzhansky, Theodosius (March 1973), "Nothing in Biology Makes Sense Except in the Light of Evolution", American Biology Teacher, 35 (3): 125–129, JSTOR 4444260)
 

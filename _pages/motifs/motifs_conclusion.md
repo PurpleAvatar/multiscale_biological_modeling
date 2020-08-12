@@ -12,6 +12,8 @@ sidebar:
 3. How can the motif "feed forward loop" change a cellular response?
 4. How can a cell achieve oscillatory behaviors and how robust is this process?
 
+## Notes
+
 * We also need a note at end of chapter about the fact that the cell is growing so that in more robust models the concentration is constantly decreasing as a result of the cell growing since it needs to double its volume every cell cycle.
 
 * What about a link to TF networks of other species? Human? Are these datasets readily available?
@@ -19,6 +21,12 @@ sidebar:
 * Perhaps define the term "response time"
 
 * Something is missing which is that we could increase the degradation rate as well instead of negative autoregulation. Why do you think that the cell doesn't simply have a higher degradation rate? Why might this be impractical?
+
+* In Noah's second tutorial, Phillip needs to have a question at the end of the tutorial asking the user to draw the conclusion on their own.
+
+* In the results section, should say something about there being practical limitations to how much we can increase the reaction producing *Y*, which provides a trade-off hence why the reaction rate isn't higher.
+
+* (Cite Alon book at some point -- when motifs are introduced? The introduction?)
 
 ## Exercises
 

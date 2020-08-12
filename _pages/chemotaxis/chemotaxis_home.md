@@ -49,7 +49,7 @@ Here is a cute video of *E. coli* moving towards a sugar crystal.
 
 In a uniform environment, *E. coli* tumbles once about every 1-1.5 seconds.[^5][^6] Such tumbling frequency is clever, because if the bacteria tumble too much, it won't be able to explore the space; but if it tumbles too little, it might go too far in the wrong direction. Other flagellated motile bacteria uses similar exploration mechanisms; for example, *Salmonella* bacteria tumbles about once per second[^7], *Bacillus subtilis* tumbles about every 2 seconds, *Enterococcus sacchrolyticus* tumbles about per 1.2 seconds.[^8]
 
-## The chemistry
+## Biochemistry
 
 *E. coli* run and tumble is controlled by a series of chemotaxis proteins. This figure summarizes the signaling pathway.
 ![image-center](../assets/images/chemotaxispathway.jpg){: .align-center}

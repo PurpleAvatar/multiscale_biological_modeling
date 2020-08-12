@@ -43,24 +43,20 @@ Instead, we will focus on the network comprising only *E. coli* transcription fa
 
 We then want to select *p* to ensure that our random network will on average have 477 edges. To do so, we note that there are *n*<sup>2</sup> pairs of nodes that could have an edge connecting them (*n* choices for the starting node and *n* for the ending node). If we were to set *p* equal to 1/*n*<sup>2</sup>, then we would expect on average only to see a single edge in the random network. We therefore scale this value by 477 and set *p* equal to 477/*n*<sup>2</sup>.
 
-We are now ready to build a random network and compare the number of loops in this network with the number of loops in the real transcription factor network. If you'd like, the link below will take you to a short tutorial that includes a Jupyter notebook running this comparison that you can play around with yourself. Otherwise, feel free to skip ahead to the next section.
+We are now ready to build a random network and compare the number of loops in this network with the number of loops in the real transcription factor network. If you'd like, the link below will take you to a short tutorial that includes a Jupyter notebook running this comparison and demonstrating that the number of loops in the *E. coli* transcription factor network is significant. Otherwise, feel free to skip ahead to the next section below.
 
 [Visit tutorial](tutorial_loops){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 ## Negative and positive autoregulation
 
-* In a random network, we would expect about half of the edges to be assigned a "+", and about half of the edges to be assigned a "-".
+In the absence of any reason otherwise, we would expect about half of the edges to correspond to upregulation, and the other half to correspond to downregulation.
 
-* Re-examining the 130 total loops in the *E. coli* transcription factor network, we see that AAA of them are assigned a "+" and BBB of them are assigned a "-".
+If you followed the tutorial linked in the previous section, then you will have found that there are 130 loops in the *E. coli* network, a number far more than what we would expect in a random network. Of these loops, XXX of them correspond to upregulation and YYY of them correspond to downregulation.
 
-* This enormous discrepancy is doubtfully due to random chance; imagine if we flipped a coin 130 times and obtained AAA "heads" and BBB "tails".
+* NOAH: please fill in XXX and YYY above. What does the hypothesis test for this give as a p-value?
 
-* In other words, we have found that autoregulation is an important aspect of transcription factors, but we have also found that transcription factors that autoregulate tend to *negatively* autoregulate, meaning that they serve to *turn off* their own expression.
-
-* This seems to have taken an even stranger turn --- why in the world would negative autoregulation be such a common phenomenon in transcription factors? In the next section, we will begin to unravel the mystery.
-
-* Define: negative autoregulation
+Therefore, not only is autoregulation an important feature of transcription factors, but these transcription factors tend to *negatively* autoregulate, serving to *slow* their own transcription. Why in the world would we see feedback in a transcription factor network, and why would organisms have evolved negative autoregulation? In the next section, we will begin to unravel the mystery.
 
 [Next lesson](nar){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}

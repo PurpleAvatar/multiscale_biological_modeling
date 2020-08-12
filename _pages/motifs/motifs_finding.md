@@ -48,7 +48,7 @@ We are now ready to build a random network and compare the number of loops in th
 [Visit tutorial](tutorial_loops){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
-## Negative vs. positive autoregulation
+## Negative and positive autoregulation
 
 * In a random network, we would expect about half of the edges to be assigned a "+", and about half of the edges to be assigned a "-".
 

@@ -12,8 +12,6 @@ In this page, we will:
 
 We have simulated how CheY-P changes when the cell is moving up the attractant gradient. At the higher concentration the cell adapted to, methylation states are changed so that they can compensate for the more ligand-receptor binding to restore the CheY-P value. What if the ligands are removed? Along with increased CheY-P because the cell need to tumble more to "escape" from the wrong direction, we should see methylation states restore to the states before the addition of ligands.
 
-The simulation can be downloaded here: <a href="https://purpleavatar.github.io/multiscale_biological_modeling/downloads/downloadable/removal.bngl" download="removal.bngl">removal.bngl</a>
-
 First create a copy of the adaptation model `adaptation.bngl`, name it `removal.bngl`.
 
 To simulate the removal of ligand, or the traveling down the gradient, we will add a "fake reaction" that the ligand disappear with a certain rate. Add this rule within the `reaction rules` section.
@@ -27,6 +25,8 @@ In `parameters` section, we define the `k_gone` to be 0.3 first and thus d[L]/dt
 		L0 1e7
 
 We will set the initial concentrations of all `seed species` to be the final concentrations of the simulation result for our `adaptation.bngl` model, and see if our simulation can restore them to the inital concentrations of the `adaptation.bngl` model. 
+
+First run the `adaptation.bngl` model with `L0` set as `1e7` and all the `seed species` we need also as `observables`. 
 
 First go to the `adaptation.bngl` model, and set `L0` as `1e7`. Also include concentration of each combination of methylation state and ligand binding state of the receptor complex as `observables`. (Concentration of other sepcies are already restored to original state, like CheY-P). Run the simulation. Go to `RuleBender-workspace/chemotaxis_from_scratch/results/adaptation/` and find the simulation result at the final time point. 
 
@@ -48,9 +48,7 @@ Input those concentrations to the `seed species` section of our `removal.bngl` m
 		@CP:CheR(t) CheR0
 	end seed species
 
-The simulation can also be downloaded here: <a href="https://purpleavatar.github.io/multiscale_biological_modeling/downloads/downloadable/removal.bngl" download="removal.bngl">removal.bngl</a>
-
-We should observe the increase in CheY-P followed by restoration of CheY-P. This is consitent with experimental observations[^Krembel2015] We should also observe the `TA, TB, TC` restores to the original state of `adaptation.bngl`.
+We should observe the increase in CheY-P followed by restoration of CheY-P. This is consitent with experimental observations[^1] We should also observe the `TA, TB, TC` restores to the original state of `adaptation.bngl`.
 
 ![image-center](../assets/images/chemotaxis_tutorial_removal01.png){: .align-center}
 
@@ -70,10 +68,10 @@ We will see how the CheY-P changes through time for different rates of ligand de
 
 
 
-[^Krembel2015]: Krembel A., Colin R., Sourijik V. 2015. Importance of multiple methylation sites in *Escherichia coli* chemotaxis. [Available online](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0145582)
+[^1]: Krembel A., Colin R., Sourijik V. 2015. Importance of multiple methylation sites in *Escherichia coli* chemotaxis. [Available online](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0145582)
 
 
 
 
-[Back to Main Text](home){: .btn .btn--primary .btn--x-large}
+[Previous](tutorial_gradient){: .btn .btn--primary .btn--x-large} [Next Page](home){: .btn .btn--primary .btn--x-large}
 {: style="font-size: 100%; text-align: center;"}

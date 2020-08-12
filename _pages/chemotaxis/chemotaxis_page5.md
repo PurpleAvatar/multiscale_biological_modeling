@@ -5,10 +5,11 @@ sidebar:
  nav: "chemotaxis"
 ---
 
+
 In this page, we will:
  - Simulate cellular response when traveling down the gradient.
 
-### Traveling down the gradient
+## Traveling down the gradient
 
 We have simulated how CheY-P changes when the cell is moving up the attractant gradient. At the higher concentration the cell adapted to, methylation states are changed so that they can compensate for the more ligand-receptor binding to restore the CheY-P value. What if the ligands are removed? Along with increased CheY-P because the cell need to tumble more to "escape" from the wrong direction, we should see methylation states restore to the states before the addition of ligands.
 
@@ -50,7 +51,7 @@ Input those concentrations to the `seed species` section of our `removal.bngl` m
 
 The simulation can also be downloaded here: <a href="https://purpleavatar.github.io/multiscale_biological_modeling/downloads/downloadable/removal.bngl" download="removal.bngl">removal.bngl</a>
 
-We should observe the increase in CheY-P followed by restoration of CheY-P. This is consitent with experimental observations[^Krembel2015] We should also observe the `TA, TB, TC` restores to the original state of `adaptation.bngl`.
+We should observe the increase in CheY-P followed by restoration of CheY-P. This is consitent with experimental observations[^Krembel2015]. We should also observe the `TA, TB, TC` restores to the original state of `adaptation.bngl`.
 
 ![image-center](../assets/images/chemotaxis_tutorial_removal01.png){: .align-center}
 
@@ -77,7 +78,3 @@ We will see how the CheY-P changes through time for different rates of ligand de
 
 [Back to Main Text](home){: .btn .btn--primary .btn--x-large}
 {: style="font-size: 100%; text-align: center;"}
-
-
-
-

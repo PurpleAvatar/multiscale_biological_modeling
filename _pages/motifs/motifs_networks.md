@@ -13,7 +13,7 @@ Once we know which transcription factors regulate which genes, we will consolida
 
 The figure below shows a subset of the transcription factor network for *Escherichia coli*, the workhorse model organism of bacterial studies. *E. coli* is a simple organism, but we will still be able to draw powerful conclusions from studying its transcription factor network.
 
-* NOAH: this is a very small image on my browser that is difficult to read -- can we make it larger or take a smaller subset of the network?
+* NOAH: I have rotated this image so it would show up but the text is sideways. Also, this is hardly a fix ... we need a network that is easier to view. And is this a subset of the network with only nodes that are TFs?
 
 ![image-center](../assets/images/e_coli_tf_network_rotated.jpeg){: .align-center}
 
@@ -22,13 +22,13 @@ The figure below shows a subset of the transcription factor network for *Escheri
 
 ## Autoregulation
 
-Because of the size and complexity of the *E. coli* transcription factor network, we will need to analyze it computationally in order to draw rigorous conclusions about the structure of the network. However, the network does seem to have a large number of **loops**, or edges that connect a node to itself.
+Because of the size and complexity of the *E. coli* transcription factor network, we will need to analyze it computationally to draw rigorous conclusions about the network's structure. However, we do note that the network does seem to have a large number of **loops**, or edges that connect a node to itself.
 
-It is worth pausing for a moment to consider the implications of a loop in a transcription factor network. How can a transcription factor regulate itself?
+It is worth pausing for a moment to consider the implications of a loop in a transcription factor network. What does it even mean for a transcription factor regulate itself?
 
-A transcription factor is a protein, which means that by the Central Dogma, it is produced via transcription and translation of a gene appearing in an organism's DNA. It is therefore possible for a transcription factor to bind to the DNA upstream of the gene encoding the transcription factor, in a process called **autoregulation**. This type of  **feedback** is a beautiful feature of the biological system.
+A transcription factor is a protein, which means that by the Central Dogma of Molecular Biology, the transcription factor is produced as the result of transcription and then translation of a gene appearing in an organism's DNA. In a process called **autoregulation**, the transcription factor protein then binds to the DNA in the upstream region of the gene encoding the *same* transcription factor. This type of **feedback** is a beautiful feature built into this biological system.
 
-Yet we have two pressing questions. First, how can we argue rigorously that the number of loops in the transcription factor network for *E. coli* is significantly large? And second, if this is the case, then why is this feedback so common? In other words, why would a transcription factor have evolved to regulate its *own* transcription?
+Yet we have two pressing questions. First, how can we show that the number of loops in the transcription factor network for *E. coli* is significantly large? And second, if this is the case, then why is autoregulation common? Put another way, why would a transcription factor have evolved to regulate its *own* transcription?
 
 ## Negative vs. positive autoregulation
 

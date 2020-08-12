@@ -9,16 +9,18 @@ toc_sticky: true
 
 ## Transcription factor networks
 
-Once we know which transcription factors regulate which genes, we will form a **transcription factor network** whose nodes are proteins and for which we connect *X* to *Y* with a directed edge if *X* is a transcription factor that regulates the expression of *Y*.  Note that according to this definition, any node can have an edge leading into it, but the only nodes with edges leaving them correspond to transcription factors.
+Once we know which transcription factors regulate which genes, we will consolidate this information into a bilogical network called a **transcription factor network**. The nodes in the network are an organism's proteins, and we connect *X* to *Y* with a directed edge if *X* is a transcription factor that regulates the expression of *Y*.  Note that any node can have an edge leading into it, but the only nodes with edges leaving them are transcription factors.
 
 The figure below shows a subset of the transcription factor network for *Escherichia coli*, the workhorse model organism of bacterial studies. *E. coli* is a simple organism, but we will still be able to draw powerful conclusions from studying its transcription factor network.
 
 * NOAH: this is a very small image on my browser that is difficult to read -- can we make it larger or take a smaller subset of the network?
 
-![image-center](../assets/images/motifs_finding_ecoli_1.jpeg){: .align-center}
+![image-center](../assets/images/e_coli_tf_network_rotated.jpeg){: .align-center}
 
 **STOP:** Do you notice anything interesting about the *E. coli* transcription factor network?
 {: .notice--primary}
+
+## Autoregulation
 
 Because of the size and complexity of the *E. coli* transcription factor network, we will need to analyze it computationally in order to draw rigorous conclusions about the structure of the network. However, the network does seem to have a large number of **loops**, or edges that connect a node to itself.
 

@@ -7,13 +7,15 @@ toc: true
 toc_sticky: true
 ---
 
+## Loops: the simplest network motif
+
+In the previous lesson, we introduced the transcription factor network, in which a protein *X* is connected to a protein *Y* if *X* is a transcription factor that regulates the production of *Y*. We also saw that in the *E. coli* transcription factor network, there seemed to be a large number of loops, corresponding to transcription factor autoregulation.
+
+In the introduction, we briefly mentioned the notion of a network motif, or a structure occurring often throughout a biological network. In the remainder of this chapter, we discuss how to identify network motifs as well as explain why they occur so often in the network. And we will start our work by studying the loop.
+
 ## Using randomness to determine statistical significance
 
-In the previous section, we introduced biological networks, in particular the transcription factor network, in which a protein *X* is connected to a protein *Y* if *X* is a transcription factor that regulates the production of *Y*. We also saw that in the *E. coli* transcription factor network, there seemed to be a large number of loops, in which a transcription factor regulates its own transcription.
-
-A structure occurring often throughout a biological network is called a **network motif**. In the remainder of this chapter, we focus on identifying motifs in transcription factor networks and then trying to find an evolutionary justification for why these motifs are so common.
-
-We first need to be able to argue rigorously that a given structure within a network occurs significantly often to be called a motif. That is, we will need to place our argument on firm statistical footing.
+We first need to be able to argue rigorously that a given structure within a network occurs significantly often to be called a motif.
 
 To quantify the significance of a candidate motif, we will apply a paradigm that occurs throughout computational biology (and science in general) for determining whether an observation is significant. This approach asks how likely this observation would have been made in a *random* environment --- once again we see the power of randomness for answering practical questions.
 

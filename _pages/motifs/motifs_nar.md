@@ -44,11 +44,13 @@ To recap, the simulations of both cells will include diffusion of *X* and *Y*, r
 
 ## Ensuring a mathematically controlled comparison
 
-If you followed the tutorial, you were likely confused and disappointed in our negative autoregulating transcription factor *Y*. It may not be surprising that by allowing *Y* to turn itself off, we wound up with a simulation in which the final concentration of *Y* is less than in the case of only simple regulation of *Y* by *X*. It seems like we are back at square one; why in the world, then, would negative autoregulation be so common?
+If you followed the tutorial, you were likely confused and disappointed in our negative autoregulating transcription factor *Y*. The figure below shows a plot of *Y* particles for the two simulations. The first simulation, in which we only have upregulation of *Y* by *X*, is shown in red, and the second simulation, which includes negative autoregulation of *Y*, is shown in yellow.
 
 ![image-center](../assets/images/nar_unequal_graph.PNG){: .align-center}
 
-The answer to the quandary posed in the previous section is that the model we have built was not controlled to ensure that a fair comparison between the two systems. In particular, it is critical that the two simulations that we build should be controlled so that they have approximately the *same* steady-state concentration of *Y*. Ensuring this equal footing for the two simulations is called a **mathematically controlled comparison.**[^Savageau]
+By allowing *Y* to slow its own transcription, we wound up with a simulation in which the final concentration of *Y* was lower than when we only had upregulation of *Y* by *X*. It seems like we are back at square one; why in the world would negative autoregulation be so common?
+
+The answer to our quandary is that the model we built was not controlled to ensure a fair comparison between the two systems. In particular, the two simulations that we build must be controlled so that they have approximately the *same* steady-state concentration of *Y*. Ensuring this equal footing for the two simulations is called a **mathematically controlled comparison.**[^Savageau]
 
 **STOP:** How can we change the parameters of our models to obtain a mathematically controlled comparison?
 {: .notice--primary}

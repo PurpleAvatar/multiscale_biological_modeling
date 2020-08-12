@@ -18,6 +18,7 @@ The figure below shows a subset of the transcription factor network for *Escheri
 ![image-center](../assets/images/motifs_finding_ecoli_1.jpeg){: .align-center}
 
 **STOP:** Do you notice anything interesting about the *E. coli* transcription factor network?
+{: .notice--primary}
 
 Because of the size and complexity of the *E. coli* transcription factor network, we will need to analyze it computationally in order to draw rigorous conclusions about the structure of the network. However, the network does seem to have a large number of **loops**, or edges that connect a node to itself.
 

@@ -83,6 +83,20 @@ In this section, we have seen that particle-based simulations can be powerful fo
 [Next lesson](feed){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
+## Negative vs. positive autoregulation
+
+* In a random network, we would expect about half of the edges to be assigned a "+", and about half of the edges to be assigned a "-".
+
+* Re-examining the 130 total loops in the *E. coli* transcription factor network, we see that AAA of them are assigned a "+" and BBB of them are assigned a "-".
+
+* This enormous discrepancy is doubtfully due to random chance; imagine if we flipped a coin 130 times and obtained AAA "heads" and BBB "tails".
+
+* In other words, we have found that autoregulation is an important aspect of transcription factors, but we have also found that transcription factors that autoregulate tend to *negatively* autoregulate, meaning that they serve to *turn off* their own expression.
+
+* This seems to have taken an even stranger turn --- why in the world would negative autoregulation be such a common phenomenon in transcription factors? In the next section, we will begin to unravel the mystery.
+
+* Define: negative autoregulation
+
 ## Other
 * In Noah's second tutorial, Phillip will have a question at the end of the tutorial asking the user to draw the conclusion on their own.
 

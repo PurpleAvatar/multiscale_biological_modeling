@@ -15,7 +15,7 @@ Say that a transcription factor *X* regulates another transcription factor *Y*, 
 
 In this lesson, we will simulate a "race" to the steady state concentration of *Y* in these two cells. The cell that is able to reach this steady state faster is able to respond more quickly to its environment and may therefore be more fit for survival.
 
-## Modeling transcriptional regulation with chemical reactions
+## Simulating transcriptional regulation with a reaction-diffusion model
 
 In the [prologue](prologue), we simulated chemical reactions to run a randomized particle-based model. In this lesson, we will apply the same model, in which the particles correspond to our transcription factors *X* and *Y*.
 
@@ -28,7 +28,7 @@ Diffusion of the *X* and *Y* particles is not necessary because there is no reac
 **STOP:** What chemical reaction could be used to simulate negative autoregulation of *Y*?
 {: .notice--primary}
 
-## Adding negative autoregulation
+## Adding negative autoregulation to the reaction-diffusion simulation
 
 In our second simulated cell, we will inherit the same reactions from the previous section, while also adding negative autoregulation of *Y*. To do so, recall that negative autoregulation of *Y* means that the transcription factor corresponding to *Y* bonds to the upstream regions of the gene encoding *Y*, therefore slowing its transcription and lowering the concentration of *Y*.
 
@@ -42,7 +42,7 @@ To recap, the simulations of both cells will include diffusion of *X* and *Y*, r
 [Visit tutorial](tutorial_nar){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
-## Ensuring the same steady-state concentration
+## Ensuring a mathematically controlled comparison
 
 If you followed the tutorial, you were likely confused and disappointed in our negative autoregulating transcription factor *Y*. It may not be surprising that by allowing *Y* to turn itself off, we wound up with a simulation in which the final concentration of *Y* is less than in the case of only simple regulation of *Y* by *X*. It seems like we are back at square one; why in the world, then, would negative autoregulation be so common?
 

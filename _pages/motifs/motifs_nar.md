@@ -82,7 +82,7 @@ Uri Alon proposed an excellent analogy of a negatively autoregulating transcript
 
 * NOAH: show plots for a couple of additional NAR simulations, where we keep increasing the two reaction rates. (May need multiple colors. May also need to decrease it in one.)
 
-In this lesson, we have seen that particle-based simulations can be powerful for justifying why a network motif is prevalent. In the remainder of this module, we will simulate two more commonly occurring network motifs and analyze these simulations to determine why these motifs have evolved.
+In this lesson, we have seen that particle-based simulations can be powerful for justifying why a network motif is prevalent. What are some other commonly occurring network motifs in transcription factor networks? And what evolutionary purposes might they serve? We will discuss these questions in the remainder of this module.
 
 [Next lesson](feed){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}

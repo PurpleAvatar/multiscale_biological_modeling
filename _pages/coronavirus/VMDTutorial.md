@@ -3,15 +3,15 @@ permalink: /coronavirus/VMDTutorial
 title: "VMD Tutorial"
 sidebar: 
  nav: "coronavirus"
+toc: true
+toc_sticky: true
 ---
 
 This is a short tutorial on how to use VMD to visualize molecules and perform some basic analysis. Before you start, make sure to have downloaded and installed <a href="https://www.ks.uiuc.edu/Development/Download/download.cgi?PackageName=VMD" target="_blank">VMD</a>.
 
-### Visualization
+### Loading Molecules
 
-Here, we will recreate the VMD visualization of the ACE2-binding ridge of SARS-CoV-2 from the section *<a href="https://purpleavatar.github.io/multiscale_biological_modeling/coronavirus/structural_diff" target="_blank">Structural and ACE2 Interaction Differences</a>*.
-
-#### Loading Molecules
+These steps will be on how to load molecules into VMD. We will use the example of 6vw1.
 
 Download the protein structure of <a href="https://www.rcsb.org/structure/6vw1" target="_blank">6vw1</a> from the protein data bank. 
 
@@ -26,8 +26,13 @@ The molecule should now be listed in *VMD Main* as well as the visualization in 
 
 <img src="../_pages/coronavirus/files/Ridge%20Tutorial/Ridge3.png">
 
+<hr>
 
-#### Changing Graphical Representation: Atom/Residue Selection, Drawing Method, and Coloring
+### Visualization: Changing Graphical Representations
+
+Here, we will recreate the VMD visualization of the ACE2-binding ridge of SARS-CoV-2 from the section *<a href="https://purpleavatar.github.io/multiscale_biological_modeling/coronavirus/structural_diff" target="_blank">Structural and ACE2 Interaction Differences</a>*.
+
+First, load 6vw1 into VMD be following the steps in *Loading Molecules*. In the *OpenGL Display* window, you can click and drag the molecule to change the orientation. Pressing ‘r’ on the keyboard allows you to rotate the molecule, pressing ‘t’ on the keyboard allows you to translate the molecule, and finally pressing ‘s’ allows you to enlarge or shrink the molecule (or use scroll wheel). Note that left click and right click are different.
 
 To change the visualization of the molecule or parts of the molecule, go to *Graphics>Representation*. 
 
@@ -65,19 +70,70 @@ The final visualization should look like this:
 
 <img src="../_pages/coronavirus/files/Ridge%20Tutorial/Ridge10.png">
 
-#### Moving Field of View
+**Excercise**: Try to recreate the visualization of Hotspot31.
 
-* In the *OpenGL Display* window, you can click and drag the molecule to change the orientation. Pressing ‘r’ on the keyboard allows you to rotate the molecule, pressing ‘t’ on the keyboard allows you to translate the molecule, and finally pressing ‘s’ allows you to enlarge or shrink the molecule (or use scroll wheel). Note that left click and right click are different.
+<img src="../_pages/coronavirus/files/Hotspot31.png">
+
+{: .notice--primary}
+
 
 <hr>
 
-### Analysis
+### NAMD Energy
 
-#### Multiseq
+This section will be on how to use NAMD Energy to calculate the interaction energy between SARS-CoV-2 RBD and ACE2. In addition to VMD, make sure to download <a href="https://www.ks.uiuc.edu/Development/Download/download.cgi?PackageName=NAMD" target="_blank">NAMD</a>. One of the steps will require you to provide the path to *NAMD*.
+
+First, load <a href="https://www.rcsb.org/structure/6vw1" target="_blank">6vw1</a> into VMD by following the steps in the previous section *Loading Molecules*. Afterwards, we will need to create a protein structure file (<a href="https://www.ks.uiuc.edu/Training/Tutorials/namd/namd-tutorial-unix-html/node23.html" target="_blank">PSF</a>) of 6vw1 in order to simulate the molecule. We will be using the VMD plugin *Atomatic PSF Builder* to create the file. From *VMD Main*, go to *Extensions>Modeling>Automatic PSF Builder*.
+
+<img src="../_pages/coronavirus/files/NAMDTutorial/Image1.png">
+
+In the *AutoPSF* window, make sure that the selected molecule is *6vw1.pdb* and the output to be *6vw1_autopsf*. Next click *Load input files*. In step 2, click *Protein* and then *Guess and split chains using current selections*. Afterwards, click *Create chains* and then *Apply patches and finish PSF/PDB*. 
+
+<img src="../_pages/coronavirus/files/NAMDTutorial/Image2.png">
+
+During this process, it is possible to see an error message stating "MOLECULE DESTROYED". If you see this message, click "Reset Autopsf" and repeat the steps again. The selected molecule will change, so make sure that the molecule is *6vw1.pdb* when you start over. Failed molecules remain in VMD, so deleting the failed molecule from *VMD Main* is recommended before each attempt.
+
+<img src="../_pages/coronavirus/files/NAMDTutorial/Image3.png">
+
+If the PSF file is successfully created, you will see a message stating "Structure complete." *VMD Main* also have an additional line.
+
+<img src="../_pages/coronavirus/files/NAMDTutorial/Image4.png">
+
+<img src="../_pages/coronavirus/files/NAMDTutorial/Image5.png">
+
+Now that we have the PSF file, we can proceed to NAMD Energy. In *VMD Main*, go to *Extensions>Analysis>NAMD Energy*.
+
+<img src="../_pages/coronavirus/files/NAMDTutorial/Image6.png">
+
+The *NAMDEnergy* window will show up. First, change the molecule to be the PSF file. We want to calculate the interaction energy between the RBD and ACE2. Recall that the corresponding chain pairs are chain A (ACE2)/chain E (RBD) and chain B (ACE2)/chain F (RBD). Here we will use the chain B/F pair. Put "protein and chain B" and "protein and chain F" for *Selection 1* and *Selection 2*, respectively. Next, we want to calculate the main protein-protein interaction energies, electrostatic and van der Waals. Under *Output File*, enter in the desired name for the results. Next, we need to give NAMDEnergy the parameter file *par_all36_prot.prm*. This should be located at *VMD>plugins>noarch>tcl>readcharmmpar1.3>par_all36_prot.prm*. Finally, click *Run NAMDEnergy*.
+
+<img src="../_pages/coronavirus/files/NAMDTutorial/Image7.png">
+
+The output file will be created in your current working directory, and can be opened with a simple text-editor. The values of the results may vary very slightly upon repetitive calculations.
+
+<img src="../_pages/coronavirus/files/NAMDTutorial/Image8.png">
+
+**Excercise1**: Try to find the interaction energy between SARS-CoV-2 RBD loop site (residues 482 to 486) and ACE2. Use the chain pair B/F. Try to see if you can get the correct selection by yourself first. *Hint* the selection language is the very similar to that of VMD.
+<details>
+ <summary>Selection Answer</summary>
+ 
+ Selection 1: protein and chain B
+ Selection 2: protein and chainF and (resid 482 to 486)
+</details>
+
+You should obtain values close to: Elect = -7.1162; vdW = -5.2101.
+{: .notice--primary}
+
+**Excercise2**: Try to find the interaction energy between SARS RBD and ACE2. Use the pdb file of <a href="https://www.rcsb.org/structure/2ajf" target="_blank">2ajf</a> and chain pair B/F for the selection step. You should obtain values close to: Elec = -130.517; vdW = -59.6941.
+{: .notice--primary}
+
+<hr>
+
+### Multiseq
 
 Here, we will recreate the structural alignment analysis using *Qres* of SARS and SARS-CoV-2 RBD.
 
-First, load <a href="https://www.rcsb.org/structure/6vw1" target="_blank">6vw1</a> and <a href="https://www.rcsb.org/structure/2ajf" target="_blank">2ajf</a> onto VMD. If you are unsure how to do this, follow the steps in the previous section titled *Loading Molecules*. Then, start up *Multiseq* by going to *Extensions>Analysis>Multiseq*.
+First, load <a href="https://www.rcsb.org/structure/6vw1" target="_blank">6vw1</a> and <a href="https://www.rcsb.org/structure/2ajf" target="_blank">2ajf</a> into VMD. If you are unsure how to do this, follow the steps in the previous section titled *Loading Molecules*. Then, start up *Multiseq* by going to *Extensions>Analysis>Multiseq*.
 
 <img src="../_pages/coronavirus/files/QresTutorial/Qres1.png">
 
@@ -104,8 +160,12 @@ The structures are now aligned. To see coloring based on *Qres*, go to *View>Col
 
 <img src="../_pages/coronavirus/files/QresTutorial/Qres8.png">
 
+**Excercise**: Try to perform structural alignment on SARS-CoV-2 Spike Chain A and SARS Spike Chain A. Use <a href="https://www.rcsb.org/structure/6vxx" target="_blank">6vxx</a> for SARS-CoV-2 and <a href="https://www.rcsb.org/structure/5xlr" target="_blank">5xlr</a> for SARS.
+{: .notice--primary}
 
-#### NMWiz and ANM Animation
+<hr>
+
+### NMWiz and ANM Animation
 
 Normal Mode Wizard (NMWiz) is a plugin in VMD that is designed to be a GUI for ProDy. It uses ProDy for normal mode analysis, including GNM and ANM calculations. In this section, we will perform ANM calculation and produce ANM animations of the SARS-CoV-2 Spike RBD.
 
@@ -153,7 +213,23 @@ Now, you should be able to clearly see the animation of the ANM fluctuations of 
 <source type="video/mp4" src="../_pages/coronavirus/files/ANMTutorial/6vw1_chainF.mp4">
 </video>
 
+**Excercise**: Keeping the animation of the RBD, try to create the ANM animation of ACE2 (chain B). *This may take up to several minutes.* Once you finished, disable all visualizations except for the animations in *VMD Main*. Go to *VMD>Representation* and make the following changes to the animations:
+<details>
+ <summary>RBD Animation Representation</summary>
+ <img src="../_pages/coronavirus/files/ANMTutorial/ANMExercise1.png">
+</details>
+
+<details>
+ <summary>ACE2 Animation Representation</summary>
+ <img src="../_pages/coronavirus/files/ANMTutorial/ANMExercise2.png">
+</details>
+
+Now, you should have fully recreated the animation from the *Normal Mode Analysis* page, showing the important residues from the identified three sites of differences between SARS-CoV-2 RBD and SARS RBD.
+
+<video width="640" height="480" controls><source type="video/mp4" src="../_pages/coronavirus/files/ANMImages/6vw1_B&F.mp4"></video>
+
+{: .notice--primary}
 
 
-[Previous](#){: .btn .btn--primary .btn--x-large} [Next Page](#){: .btn .btn--primary .btn--x-large}
+[Previous](prody){: .btn .btn--primary .btn--x-large}
 {: style="font-size: 100%; text-align: center;"}

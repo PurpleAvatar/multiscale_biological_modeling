@@ -48,8 +48,8 @@ motifs:
         url: /motifs/nar
       - title: "The Feedforward Loop Motif"
         url: /motifs/feed
-      - title: "Building a Biological Oscillators"
-        url: /motifs/Oscillators
+      - title: "Building a Biological Oscillator"
+        url: /motifs/oscillators
       - title: "Modeling Robustness of Oscillators"
         url: /motifs/robust
       - title: "Conclusion"

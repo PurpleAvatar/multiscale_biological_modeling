@@ -3,6 +3,8 @@ permalink: /coronavirus/rmsd2
 title: "More on RMSD"
 sidebar: 
  nav: "coronavirus"
+toc: true
+toc_sticky: true
 ---
 To use RMSD as a quantitative measure for comparing protein structures, the structures must first be superposed in such a way that the RMSD is minimized.
 

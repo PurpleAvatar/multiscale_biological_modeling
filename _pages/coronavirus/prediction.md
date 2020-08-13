@@ -3,30 +3,31 @@ permalink: /coronavirus/prediction
 title: "Protein Structure Prediction"
 sidebar: 
  nav: "coronavirus"
+toc: true
+toc_sticky: true
 ---
-
 
 
 ### How it Works
 Currently, there are numerous software and publicly available servers that allow users to predict the protein structure of a given amino acid sequence. There are two main methods of structure prediction: template-based and *ab initio*. Template-based modeling can be further broken down to homology modeling and threading methods (fold-recognition). Homology modeling is based on the observation that proteins from the same evolutionary family with similar sequences typically adopt similar structures. By using homologous structures as a template, homology modeling often produces the most accurate results. While homology modeling usually requires the template and target to have notable sequence identity, threading does not have this limitation. This method creates structure predictions by placing or “threading” each amino acid in the target sequence to template structures from a constructed non-redundant template database, and then assessing how well it fits. Then, the best-fit templates are used to build the predicted model. Finally, *ab initio* prediction does not use templates, but rather Monte Carlo simulations based on an atomic-level force field. Due to the computational intensity and complexity of simulating folding, most software and servers limit the input sequence to be less than 200 residues with the high risk of producing low accuracy results.
 
-### Predicting the Structure of Sars-CoV-2 Spike Protein
 Three protein prediction software were chosen for template-based modeling of the spike protein.
-#### SWISS-MODEL
+
+### SWISS-MODEL
 <a href="https://swissmodel.expasy.org/" target="_blank">SWISS-MODEL</a> is a well-known structural bioinformatics web-server that specializes in homology modeling. The pipeline is comprised for four steps. 1) Using BLAST and HHblits, templates are identified and stored in the SWISS-MODEL Template Library. 2) The target sequence and template structure(s) are aligned. 3) Building the predicted models through a rigid fragment assembly approach. 4) Qualitiative Model Energy Analysis (QMEAN), a composite scoring function for model quality assessment. SWISS-MODEL was chosen to model the entire SARS-CoV-2 Spike protein and produced three models.
 
 <a href="/multiscale_biological_modeling/_pages/coronavirus/files/CoV2SpikeProteinSeq.txt" download>CoV-2 Spike Sequence </a>
 
 <a href="/multiscale_biological_modeling/_pages/coronavirus/files/SWISS_Model.zip" download> SWISS-MODEL Results </a>
 
-#### GalaxyWEB
+### GalaxyWEB
 <a href="http://galaxy.seoklab.org/" target="_blank">GalaxyWEB</a> is a web-server with many available services including protein structure prediction, structure refinement, protein interaction prediction, and GPCR applications. GalaxyTBM (the template-based modeling service) uses HHsearch to identify up to 20 templates, then aligns the core sequence with the templates using PROMALS3D. Next, models are generated using MODELLERCSA. GalaxyWEB was chosen to model the receptor binding domain (RBD) of the SARS-CoV-2 Spike protein and produced five models.
 
 <a href="/multiscale_biological_modeling/_pages/coronavirus/files/CoV2SpikeRBDSeq.txt" download>CoV-2 RBD Sequence </a>
 
 <a href="/multiscale_biological_modeling/_pages/coronavirus/files/GalaxyWEB_Models.zip" download> GalaxyWEB Results </a>
 
-#### Robetta
+### Robetta
 <a href="https://robetta.bakerlab.org/" target="_blank">Robetta</a> is a web-server that provides comparative and *ab initio* modeling of protein domains by utilizing the Rosetta fragment insertion method and de novo protocols. It allows for custom sequence alignments and can model multi-chain complexes. Robetta was chosen to model a single chain of the SARS-CoV-2 Spike protein and produced five models.
 
 <a href="/multiscale_biological_modeling/_pages/coronavirus/files/CoV2SpikeASeq.txt" download>CoV-2 Spike Chain A Sequence </a>

@@ -3,6 +3,8 @@ permalink: /coronavirus/RMSD_results
 title: "Assessing Accuracy of Models"
 sidebar: 
  nav: "coronavirus"
+toc: true
+toc_sticky: true
 ---
 Now that we have the predicted models of the full Spike protein (SWISS), RBD (GalaxyWEB), and single chain (Robetta), we need a way to assess their accuracy.
 

@@ -88,5 +88,5 @@ Because ANM also takes direction into consideration, it is possible to create an
 
 
 
-[Previous](page1){: .btn .btn--primary .btn--x-large} [Next Page](#){: .btn .btn--primary .btn--x-large}
+[Previous](structural_diff){: .btn .btn--primary .btn--x-large} [Next Page](conclusion){: .btn .btn--primary .btn--x-large}
 {: style="font-size: 100%; text-align: center;"}

@@ -74,6 +74,6 @@ The result showed four regions of structural differences, the main one being bet
 <img src="../_pages/coronavirus/files/QresVMD.png">
 
 
-[Previous](rmsd2){: .btn .btn--primary .btn--x-large} [Next Page](#){: .btn .btn--primary .btn--x-large}
+[Previous](rmsd2){: .btn .btn--primary .btn--x-large} [Next Page](NMA){: .btn .btn--primary .btn--x-large}
 {: style="font-size: 100%; text-align: center;"}
 

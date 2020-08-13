@@ -109,6 +109,8 @@ coronavirus:
         url: /coronavirus/structural_diff
       - title: "Normal Mode Analysis"
         url: /coronavirus/NMA
+  - title: Conclusion
+    url: /coronavirus/conclusion
   - title: Tutorials
     children:
       - title: "ProDy Tutorial"

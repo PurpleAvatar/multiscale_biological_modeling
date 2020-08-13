@@ -11,16 +11,13 @@ Proteins are not static, but rather dynamic structures. These fluctuations in th
 
 One of the approaches for modeling a molecule is to represent atoms as nodes that are interconnected with springs, otherwise known as an elastic network model (ENM). Gaussian network model (GNM) is the ENM for isotropic fluctions where only the fluctuation magnitudes are analyzed. The anisotropic counterpart is called anisotropic network model (ANM), where the direction of the fluctuations are also considered. GNM and ANM are both popular methods for performing NMA.
 
+One of the main strengths of ProDy is its capabilities for protein dynamics analysis. This includes performing both GNM and ANM analysis, allowing users to generate contact maps, cross-correlations, slow mode shape, and square fluctuations plot. VMD contains a plugin called Normal Mode Wizard (NMWiz), which is designed as a GUI for ProDy and allows users to perform ProDy's NMA directly in VMD. In addition, ANM calculations can also be visualized to produce animations of the protein.
+
 For more information on NMA, GNM, and ANM, visit the following research articles:
 * *<a href="https://www.sciencedirect.com/science/article/pii/S0166128008005435" target="_blank">Normal mode analysis for proteins</a>* by Lars Skjaerven et. al. (institutional access required)
 * *<a href="https://www.pnas.org/content/106/30/12347" target="_blank">Protein elastic network models and the ranges of cooperativity</a>* by Lei Yang et. al.
 
-### Using ProDy and VMD(NMWiz) for NMA
-
-One of the main strengths of ProDy is its capabilities for protein dynamics analysis. This includes performing both GNM and ANM analysis, allowing users to generate contact maps, cross-correlations, slow mode shape, and square fluctuations plot. VMD contains a plugin called Normal Mode Wizard (NMWiz), which is designed as a GUI for ProDy and allows users to perform ProDy's NMA directly in VMD. In addition, ANM calculations can also be visualized to produce animations of the protein.
-
 #### GNM Calculation of the Spike Protein
-{: .no_toc}
 
 GNM Calculations were performed on SARS-CoV-2 Spike protein (<a href="http://www.rcsb.org/structure/6VXX" target="_blank">6vxx</a>) and SARS Spike protein (<a href="http://www.rcsb.org/structure/5xlr" target="_blank">5xlr</a>). Below are plots generated from the calculations. Perhaps unsurprisingly, the plots show very small differences between SARS-CoV-2 Spike and SARS spike proteins given that they are highly similar proteins in shape and function.
 
@@ -52,7 +49,7 @@ This is another representation of the slowest mode with the same interpretation.
 
 <img src="../_pages/coronavirus/files/GNM/SqFlucts.png">
 
-#### ANM Analysis and Animations Using NMWiz
+### ANM Analysis and Animations Using NMWiz
 
 NMWiz was designed as a GUI for ProDy and is available as a plugin for VMD. ANM calculations were performed using NMWiz on the SARS-CoV-2 Spike RBD (<a href="http://www.rcsb.org/structure/6vw1" target="_blank">6vw1</a>) and SARS Spike RBD (<a href="http://www.rcsb.org/structure/2ajf" target="_blank">2ajf</a>). NMWiz is also able to generate cross-correlation and square fluctuation plots.
 

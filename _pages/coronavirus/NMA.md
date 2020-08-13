@@ -50,6 +50,7 @@ This is another representation of the slowest mode with the same interpretation.
 <img src="../_pages/coronavirus/files/GNM/SqFlucts.png">
 
 ### ANM Analysis and Animations Using NMWiz
+{:toc}
 
 NMWiz was designed as a GUI for ProDy and is available as a plugin for VMD. ANM calculations were performed using NMWiz on the SARS-CoV-2 Spike RBD (<a href="http://www.rcsb.org/structure/6vw1" target="_blank">6vw1</a>) and SARS Spike RBD (<a href="http://www.rcsb.org/structure/2ajf" target="_blank">2ajf</a>). NMWiz is also able to generate cross-correlation and square fluctuation plots.
 

@@ -70,14 +70,14 @@ The final visualization should look like this:
 
 <img src="../_pages/coronavirus/files/Ridge%20Tutorial/Ridge10.png">
 
+<hr>
+
 <details>
- <summary>Exercise</summary>
+ <summary>Visualization Exercise</summary>
  Try to recreate the visualization of Hotspot31.
 
  <img src="../_pages/coronavirus/files/Hotspot31.png">
 </details>
-
-
 
 <hr>
 
@@ -115,9 +115,10 @@ The output file will be created in your current working directory, and can be op
 
 <img src="../_pages/coronavirus/files/NAMDTutorial/Image8.png">
 
-{:: .notice--primary}
+<hr>
+
 <details>
- <summary>Exercise 1</summary>
+ <summary>NAMD Energy Exercise 1</summary>
  Try to find the interaction energy between SARS-CoV-2 RBD loop site (residues 482 to 486) and ACE2. Use the chain pair B/F. Try to see if you can get the correct selection by yourself first. *Hint* the selection language is the very similar to that of VMD.
  <details>
   <summary>Selection Answer</summary>
@@ -130,10 +131,9 @@ The output file will be created in your current working directory, and can be op
 </details>
 
 <details>
- <summary>Exercise 2</summary>
+ <summary>NAMD Energy Exercise 2</summary>
  Try to find the interaction energy between SARS RBD and ACE2. Use the pdb file of <a href="https://www.rcsb.org/structure/2ajf" target="_blank">2ajf</a> and chain pair B/F for the selection step. You should obtain values close to: Elec = -130.517; vdW = -59.6941.
 </details>
-<:/ .notice--primary}
 
 <hr>
 
@@ -168,8 +168,10 @@ The structures are now aligned. To see coloring based on *Qres*, go to *View>Col
 
 <img src="../_pages/coronavirus/files/QresTutorial/Qres8.png">
 
+<hr>
+
 <details>
- <summary>Exercise</summary>
+ <summary>Multiseq Exercise</summary>
  Try to perform structural alignment on SARS-CoV-2 Spike Chain A and SARS Spike Chain A. Use <a href="https://www.rcsb.org/structure/6vxx" target="_blank">6vxx</a> for SARS-CoV-2 and <a href="https://www.rcsb.org/structure/5xlr" target="_blank">5xlr</a> for SARS.
 </details>
 
@@ -223,8 +225,10 @@ Now, you should be able to clearly see the animation of the ANM fluctuations of 
 <source type="video/mp4" src="../_pages/coronavirus/files/ANMTutorial/6vw1_chainF.mp4">
 </video>
 
+<hr>
+
 <details>
- <summary>Exercise</summary>
+ <summary>ANM Animation Exercise</summary>
  Keeping the animation of the RBD, try to create the ANM animation of ACE2 (chain B). *This may take up to several minutes.* Once you finished, disable all visualizations except  for the animations in *VMD Main*. Go to *VMD>Representation* and make the following changes to the animations:
 
  <details>

@@ -3,6 +3,8 @@ permalink: /coronavirus/prody
 title: "ProDy Tutorial"
 sidebar: 
  nav: "coronavirus"
+toc: true
+toc_sticky: true
 ---
 
 This is a short tutorial on how to use ProDy to calculate RMSD between two structures and perform GNM calculations. Please be sure to have the following installed:
@@ -49,6 +51,8 @@ This section will be on getting RMSD values for structure comparisons. We will b
 ~~~~~
 
 #### Parsing Protein Structures
+{: .no_toc}
+
 Next, we will parse the protein structures from PDB or from the current directory. *Note:* The protein structures need to be in *.pdb* format.
 ~~~ python
 In[#]: struct1 = parsePDB(‘6crx’)
@@ -61,6 +65,8 @@ In[#]: struct2 = parsePDB(‘6vxx.pdb’)
 Including the .pdb tag will prompt the console to search for the file '6vxx.pdb' in the current directory and parse it. You can download .pdb files directly from PDB. If you do not have 6vxx.pdb, follow the format of the previous command.
 
 #### Matching Chains
+{: .no_toc}
+
 With the protein structures parsed, we can now match chains. The default threshold for sequence identity and sequence overlap are 90%. This can be changed by specifying the desired thresholds. Here, a sequence identity threshold of 75% and an overlap threshold of 80% is specified.
 ~~~ python
 In[#]: matches = matchChains(struct1, struct2, seqid = 75, overlap = 80)
@@ -100,7 +106,18 @@ The result should be an RMSD score of around 11.
 
 <hr>
 
+<details>
+ <summary>RMSD Exercise</summary>
+ Try to find the RMSD score between all chain matchings in 6vxx and 6crx (i.e. A to A, A to B, A to C, B to A, etc.). Your results should look similar to this:
+ 
+ <img src="../_pages/coronavirus/files/RMSDExercise1.png">
+ 
+</details>
+
+<hr>
+
 ### GNM Calculations
+
 This section will be on performing GNM calculations and creating contact map, cross-correlation, slow mode shape, and square fluctuation plots. As the example, we will be replicating the "SARS-CoV-2 Spike Chain A" GNM results from the *Normal Mode Analysis* page of the module. Please be sure to have <a href="http://www.rcsb.org/structure/6VXX" target="_blank">6vxx.pdb</a> downloaded in the current working directory. (You can also download it directly while parsing as explained in the previous section).
 
 First, follow the steps in the *Getting Started* section to start up IPython and import the neccessary functions.
@@ -164,6 +181,16 @@ Square Fluctuations
 In[#]: showSqFlucts(gnm[0], hinges=True);
 ~~~~
 <img src="../_pages/coronavirus/files/GNMTutorial/SARS-CoV-2_ChainA_SqFlucts_20A.png">
+
+<hr>
+
+<details>
+ <summary>GNM Exercise</summary>
+ Try to produce the GNM plots of SARS Spike Chain A. Use the pdb file <a href="https://www.rcsb.org/structure/5XLR" target="_blank">5xlr</a> and 20 Å cutoff. Your results should look similar to this:
+ 
+ <img src="../_pages/coronavirus/files/GNMTutorial/GNMExercise1.png">
+ 
+</details>
 
 
 [Previous](#){: .btn .btn--primary .btn--x-large} [Next Page](VMDTutorial){: .btn .btn--primary .btn--x-large}

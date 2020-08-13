@@ -1,6 +1,6 @@
 ---
-permalink: /motifs/oscillators
-title: "Building a Biological Oscillator"
+permalink: /motifs/robust
+title: "Modeling Robustness of Oscillators"
 sidebar:
  nav: "motifs"
 toc: true
@@ -13,5 +13,5 @@ toc_sticky: true
 
 *Here's an explanation and motivation for the repressilator model. If you're more interested, see the expanded section under "Extras"*
 
-[Next lesson](robust){: .btn .btn--primary .btn-large}
+[Next lesson](conclusion){: .btn .btn--primary .btn-large}
 {: style="font-size: 100%; text-align: center;"}

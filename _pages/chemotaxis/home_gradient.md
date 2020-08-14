@@ -22,5 +22,5 @@ But what will happen if the ligands are then removed?
 {: style="font-size: 100%; text-align: center;"}
 
 
-[Previous](#){: .btn .btn--primary .btn--x-large} [Next Page](tutorial_lr){: .btn .btn--primary .btn--x-large}
+[Back to home](home){: .btn .btn--primary .btn--x-large} [To all model](tutorial_lr){: .btn .btn--primary .btn--x-large}
 {: style="font-size: 100%; text-align: center;"}

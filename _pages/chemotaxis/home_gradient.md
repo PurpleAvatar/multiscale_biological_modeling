@@ -1,6 +1,6 @@
 ---
 permalink: /chemotaxis/home_gradient
-title: "Introduction to Chemotaxis"
+title: "Modeling the gradient"
 sidebar:
  nav: "chemotaxis"
 ---

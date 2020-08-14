@@ -1,6 +1,6 @@
 ---
 permalink: /chemotaxis/home_biochem
-title: "Introduction to Chemotaxis"
+title: "Biochemistry and Introduction to Rule-Based Modeling"
 sidebar:
  nav: "chemotaxis"
 ---

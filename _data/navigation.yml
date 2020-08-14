@@ -75,6 +75,12 @@ chemotaxis:
     children:
       - title: "Introduction to Chemotaxis"
         url: /chemotaxis/home
+      - title: "Biochemistry and modeling"
+        url: /chemotaxis/home_biochem
+      - title: "Sensation & adaptation"
+        url: /chemotaxis/home_senseadap
+      - title: "Gradient"
+        url: /chemotaxis/home_gradient
   - title: Building BNG simulations
     children:
       - title: "Starting BNG Simulation"

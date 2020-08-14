@@ -1,6 +1,6 @@
 ---
 permalink: /chemotaxis/home_senseadap
-title: "Introduction to Chemotaxis"
+title: "Sensation and Adaptation"
 sidebar:
  nav: "chemotaxis"
 ---

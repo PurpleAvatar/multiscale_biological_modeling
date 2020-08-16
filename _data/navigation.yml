@@ -32,6 +32,8 @@ prologue:
         url: /prologue/blocks
       - title: "Conclusion"
         url: /prologue/conclusion
+      - title: "Tutorial RW"
+        url: /prologue/tutorial-random-walk
 
 motifs:
   - title: "Finding Motifs in Transcription Factor Networks"

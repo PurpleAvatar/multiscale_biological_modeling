@@ -44,5 +44,7 @@ Figure S.1 - From CellBlender > Model Objects, click on the “(+)” symbol to 
 
 Figure S.2 - Resizing the render preview window (where the objects are visible in the center of the screen) is recommended. From the View menu, select “Top” to align the view directly overhead. With the plane object selected, follow the arrow over to the object parameters menu (the orange cube) and scale the plane by setting the first two values to “1.5”. Then, hover the mouse over the object and either use the ctrl + “+” 6 times or the scroll wheel on the mouse to zoom in. 
 
+Save this file as "CellBlender_Tutorial_Template.blend"
+
 [Previous](oscillators){: .btn .btn--primary .btn--x-large} [Next Page](navigation){: .btn .btn--primary .btn--x-large}
 {: style="font-size: 100%; text-align: center;"}

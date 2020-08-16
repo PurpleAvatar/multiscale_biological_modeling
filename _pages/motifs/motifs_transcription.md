@@ -9,17 +9,17 @@ toc_sticky: true
 
 ## Introduction to Transcription
 
-If you would like a refresher on transcription, the following video from the YouTube channel “*Professor Dave Explains*” will give an overview of the process at 1:09. For those more familiar with transcription, skip to 2:50, where Dave gives a great overview of why gene regulation is necessary. 
+If you would like a refresher on transcription, the following video from the YouTube channel "*Professor Dave Explains*" will give an overview of the process at 1:09. For those more familiar with transcription, skip to 2:50, where Dave gives a great overview of why gene regulation is necessary. 
 
-<iframe width="640" height="360" src=“https://www.youtube-nocookie.com/embed/J9jhg90A7Lw?start=69” frameborder="0" allowfullscreen></iframe>
+<iframe width="640" height="360" src="https://www.youtube-nocookie.com/embed/J9jhg90A7Lw?start=69" frameborder="0" allowfullscreen></iframe>
 
-As we saw in the video, we can regulate either the DNA encoding a particular protein or the protein itself, both of which we will refer to as a “gene” in gene regulation. The molecules responsible for this regulation, the control elements and transcription factors, are crucial for allowing a cell to respond to external stimuli. 
+As we saw in the video, we can regulate either the DNA encoding a particular protein or the protein itself, both of which we will refer to as a "gene" in gene regulation. The molecules responsible for this regulation, the control elements and transcription factors, are crucial for allowing a cell to respond to external stimuli. 
 
 ![image-center](../assets/images/signal_pathway.jpg){: .align-center}
 CC License checked, to be cited: https://www.open.edu/openlearn/science-maths-technology/general-principles-cellular-communication/content-section-1
 {: text-align: center;"}
 
-If a cell receives a signal from the environment, transcription factors are a crucial part of how the cell responds and acts on that signal. As we will later see in simple models, like Negative Autoregulation, the use of transcription factors not only enables a cell to respond to stimuli, but adjust the speed of the reaction as necessary. In more complicated models, like the Repressilator, proteins like transcription factors can have “on” or “off” states which are important for a cell to achieve just the right behavior. 
+If a cell receives a signal from the environment, transcription factors are a crucial part of how the cell responds and acts on that signal. As we will later see in simple models, like Negative Autoregulation, the use of transcription factors not only enables a cell to respond to stimuli, but adjust the speed of the reaction as necessary. In more complicated models, like the Repressilator, proteins like transcription factors can have "on" or "off" states which are important for a cell to achieve just the right behavior. 
 
 
 ## Determining if a given transcription factor regulates the expression of a given gene

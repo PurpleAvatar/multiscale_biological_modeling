@@ -14,6 +14,7 @@ The book *What If?*[^Munroe] compiles a collection of crazy hypotheticals, along
 > If two immortal people were placed on opposite sides of an uninhabited Earth-like planet, how long would it take them to find each other? 100,000 years? 1,000,000 years?
 
 **STOP:** What would you propose that the two immortals could do to find each other?
+{: .notice--primary}
 
 * Solution from book is below. Need to discuss this solution in the context of what comes before (there are thoughts to go to the coastlines. You could also decide to meet each other at the North Pole if you could discuss in advance.) Munroe describes his approach as "be an ant". Ants also use this type of random walk strategy.
 

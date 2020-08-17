@@ -34,6 +34,10 @@ prologue:
         url: /prologue/conclusion
       - title: "Tutorial RW"
         url: /prologue/tutorial-random-walk
+      - title: "Gray-Scott Jupyter Notebook"
+        url: /prologue/gs-jupyter
+      - title: "Gray-Scott CellBlender"
+        url: /prologue/gs-cellblender
 
 motifs:
   - title: "Finding Motifs in Transcription Factor Networks"

@@ -143,11 +143,11 @@ You can also save and export this movie with the following steps:
 
 ![image-center](../assets/images/cellblender_render.png){: .align-center}
 
-Click on the movie tab
-Scroll down to the file name
-Select a suitable location for the file 
-Select the FFmpeg_video file format or whatever type works best for you
-Click on *Render > OpenGL Render Animation*
+1. Click on the movie tab
+2. Scroll down to the file name
+3. Select a suitable location for the file 
+4. Select the FFmpeg_video file format or whatever type works best for you
+5. Click on *Render > OpenGL Render Animation*
 
 The movie will begin playing through, and when the animation is complete the movie file should be in the folder location you selected. 
 

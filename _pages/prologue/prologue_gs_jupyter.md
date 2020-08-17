@@ -99,9 +99,12 @@ Now we can run the program and view the simulations.
 simulate(numIter, A, B, f, k, dt, dA, dB, lapl, plot_iter)
 ~~~
 
-You should get images similar to the ones below. If you would like to see more images, you can adjust the *plot_iter* variable or *numIter* variable which controls how often the graph is plotted and how many iterations are in the simulation. A great follow up would be to use a gif library package for python, such as Pillow or ImageIO. https://stackoverflow.com/questions/753190/programmatically-generate-video-or-animated-gif-in-python 
+You should get images similar to the ones below. If you would like to see more images, you can adjust the *plot_iter* variable or *numIter* variable which controls how often the graph is plotted and how many iterations are in the simulation. 
 
 ![image-center](../assets/images/gray_scott_jupyter_1.png)
 ![image-center](../assets/images/gray_scott_jupyter_2.png)
 ![image-center](../assets/images/gray_scott_jupyter_3.png){: .align-center}
 
+A great follow up would be to use a gif library package for python, such as Pillow or ImageIO. https://stackoverflow.com/questions/753190/programmatically-generate-video-or-animated-gif-in-python 
+
+<iframe width="640" height="360" src="../assets/gs_movie.gif" frameborder="0" allowfullscreen></iframe>

@@ -37,7 +37,7 @@ The Spike protein is a trimer that is responsible for binding with human recepto
 <img src="../_pages/coronavirus/files/SpikeRBDTop.png">
 
 
-[Next Page](prediction){: .btn .btn--primary .btn--x-large}
+[Protein Structure Prediction](prediction){: .btn .btn--primary .btn--x-large}
 {: style="font-size: 100%; text-align: center;"}
 
 ##### Sources

@@ -11,7 +11,7 @@ sidebar:
 
 For more information on SARS-CoV-2, check out this free online course: *<a href="https://sites.google.com/view/sarswars/home" target="_blank">SARS Wars: A New Hope</a>* by <a href="https://www.cs.cmu.edu/~cjl/" target="_blank">Christopher James Langmead.
 
-[Previous](NMA){: .btn .btn--primary .btn--x-large} [Tutorials](prody){: .btn .btn--primary .btn--x-large}
+[Glycans](glycans){: .btn .btn--primary .btn--x-large} [Tutorials](prody){: .btn .btn--primary .btn--x-large}
 {: style="font-size: 100%; text-align: center;"}
 
 

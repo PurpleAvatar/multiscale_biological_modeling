@@ -70,11 +70,21 @@ The final visualization should look like this:
 
 <img src="../_pages/coronavirus/files/Ridge%20Tutorial/Ridge10.png">
 
+#### Glycans
+
+For VMD, there is no specific keyword to select glycans. A workaround is to use the keywords: "not protein and not water". To recreate the basic VMD visualizations from the module of the open-state (<a href="https://www.rcsb.org/structure/6VYB" target="_blank">6vyb</a>) of SARS-CoV-2 Spike, use the following representations. (For the protein chains, use *Glass3* for *Material*).
+
+<img src="../_pages/coronavirus/files/GlycanImage1.png">
+
+The end result should look like this:
+
+<img src="../_pages/coronavirus/files/GlycanImage2.png">
+
 <hr>
 
 <details>
  <summary>Visualization Exercise</summary>
- Try to recreate the visualization of Hotspot31.
+ Try to recreate the visualization of Hotspot31 for SARS-CoV-2 (same molecule as the tutorial). The important residues and their corresponding colors are listed on the left.
 
  <img src="../_pages/coronavirus/files/Hotspot31.png">
 </details>
@@ -248,5 +258,5 @@ Now, you should be able to clearly see the animation of the ANM fluctuations of 
 </details>
 
 
-[Previous](prody){: .btn .btn--primary .btn--x-large}
+[ProDy Tutorial](prody){: .btn .btn--primary .btn--x-large}
 {: style="font-size: 100%; text-align: center;"}

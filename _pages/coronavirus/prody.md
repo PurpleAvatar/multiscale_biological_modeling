@@ -193,5 +193,5 @@ In[#]: showSqFlucts(gnm[0], hinges=True);
 </details>
 
 
-[Previous](#){: .btn .btn--primary .btn--x-large} [Next Page](VMDTutorial){: .btn .btn--primary .btn--x-large}
+[Conclusion](conclusion){: .btn .btn--primary .btn--x-large} [VMD Tutorial](VMDTutorial){: .btn .btn--primary .btn--x-large}
 {: style="font-size: 100%; text-align: center;"}

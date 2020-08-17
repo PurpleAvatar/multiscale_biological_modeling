@@ -66,15 +66,13 @@ For some parameter values, the system is not particularly interesting.  For exam
 * NOAH: what is the reaction rate *r* for the predator-prey reaction? What is the diffusion rate?  Units? Width of grid?
 
 <iframe width="640" height="360" src="../assets/mert_predator_dies_f1e1_r5e5.mp4" frameborder="0" allowfullscreen></iframe>
-*f* = 10 and *k* = 500,000
+*f* = 10 and *d* = 500,000
 {: .text-center}
 
 On the other hand, if *f* is too high, then there will be an increase in the *A* particles. However, there will also be more interactions between *A* particles and pairs of *B* particles, and so we will then see an explosion in the number of predators.
 
-* NOAH: This video is fascinating!  I think you are in the sweet spot though -- the whole point was to jack up the value of *f* which appears not to have been done. What happens at say *f* = 100?
-
-<iframe width="640" height="360" src="../assets/mert_prey_dies_f1e1_r1e5.mp4" frameborder="0" allowfullscreen></iframe>
-*f* = 10 and *r* = 100,000
+<iframe width="640" height="360" src="../assets/mert_f1e6_d1e5.mp4" frameborder="0" allowfullscreen></iframe>
+*f* = 10,0000 and *d* = 100,000
 {: .text-center}
 
 The interesting behavior in this system lies in a sweet spot, where we see interesting macro behavior for a given collection of parameters.
@@ -82,13 +80,20 @@ The interesting behavior in this system lies in a sweet spot, where we see inter
 For example,
 
 * NOAH: INSERT MERT VIDEO WITH CLEAR EXPLANATION OF PARAMETERS
-<iframe width="640" height="360" src="../assets/gray_scott_test.mp4" frameborder="0" allowfullscreen></iframe>
-Parameters unknown
+<iframe width="640" height="360" src="../assets/mert_f1e5_d2e5.mp4" frameborder="0" allowfullscreen></iframe>
+*f* = 10,000 and *d* = 20,000
 {: .text-center}
 
 And yet if we make a slight change to the parameters, we obtain very different macro behavior.
 
 * NOAH: INSERT 2-3 MORE MERT VIDEOS, WITH CLEAR EXPLANATION OF PARAMETERS EACH TIME
+<iframe width="640" height="360" src="../assets/mert_f1e5_d1e5.mp4" frameborder="0" allowfullscreen></iframe>
+*f* = 10,000 and *d* = 10,000
+{: .text-center}
+
+<iframe width="640" height="360" src="../assets/mert_f1_5e5_d1e5.mp4" frameborder="0" allowfullscreen></iframe>
+*f* = 15,000 and *d* = 10,000
+{: .text-center}
 
 ## Streamlining our simulations
 

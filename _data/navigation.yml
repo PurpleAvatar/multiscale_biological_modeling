@@ -111,12 +111,14 @@ coronavirus:
         url: /coronavirus/RMSD_results
       - title: "More on RMSD"
         url: /coronavirus/rmsd2
-  - title: Visualizing and Analyzing Differences
+  - title: Visualizations and Analyzing Differences
     children:
       - title: "Structural and ACE2 Interaction Differences"
         url: /coronavirus/structural_diff
       - title: "Normal Mode Analysis"
         url: /coronavirus/NMA
+      - title: "Glycans"
+        url: /coronavirus/glycans
   - title: Conclusion
     url: /coronavirus/conclusion
   - title: Tutorials

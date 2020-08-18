@@ -1,6 +1,6 @@
 ---
 permalink: /chemotaxis/home
-title: "Introduction to Chemotaxis"
+title: "Lost Immortals"
 sidebar:
  nav: "chemotaxis"
 ---
@@ -34,23 +34,15 @@ The book *What If?*[^Munroe] compiles a collection of crazy hypotheticals, along
 
 ## Introduction to Chemotaxis
 
-Like other prokaryotes, *E. coli* are small, with a length about 2µm, and a diameter 0.25-1µm.[^Pierucci1978] This puts them into the same situation like the Lost Immortals or the ants exploring the world: the environment in which they need to find food is huge; food is sparsely distributed; and they are small. The answer is the chemotaxis behavior.
-
-The behavior of cells moving towards or away from a substance is called **chemotaxis**. For *E. coli*, moving towards attractants (ex. glucose, electron acceptors), and moving away from repellents (ex. Ni<sup>2+</sup>, Co<sup>2+</sup>) are all considered chemotaxis behaviors.
+Like other prokaryotes, *E. coli* are small, with a length about 2µm, and a diameter 0.25-1µm.[^Pierucci1978] This puts them into the same situation like the Lost Immortals or the ants exploring the world: the "target"-food is sparsely distributed, and the environment in which they need to find food is huge compared to themselves. The answer is the chemotaxis behavior.
 
 Here is a cute video of *E. coli* moving towards a sugar crystal.
 <iframe width="640" height="360" src="https://www.youtube.com/embed/F6QMU3KD7zw" frameborder="0" allowfullscreen></iframe>
 
-## How does *E. coli* explore the world?
+The behavior of cells moving towards or away from a substance is called **chemotaxis**. For *E. coli*, moving towards attractants (ex. glucose, electron acceptors), and moving away from repellents (ex. Ni<sup>2+</sup>, Co<sup>2+</sup>) are all considered chemotaxis behaviors.
 
-*E. coli* has 5-12 flagelli randomly distributed in the surface.[^Sim2017] Each flagelum rotates clockwise (CW) or counter-clockwise (CCW). That leads to two states of movement: 1) when flagelli rotates in CCW, they form a bundle, and propel the cells to swiming smoothly at speeds of 20 µm per second, called **run**; 2) when some flaggeli in the bundle rotates CW, the flagelli become uncoordinated and reorients with a much slower net movement speed in place, called **tumble**.[^Baker2005]
 
-![image-center](../assets/images/chemotaxis_intro_runtumble.png){: .align-center}
-<figcaption>Run and tumble. Image from Parkinson Lab, University of Utah.</figcaption>
-
-In a uniform environment, *E. coli* tumbles once about every 1-1.5 seconds.[^Weis1990][^Berg2000] Such tumbling frequency is clever, because if the bacteria tumble too much, it won't be able to explore the space; but if it tumbles too little, it might go too far in the wrong direction. Other flagellated motile bacteria uses similar exploration mechanisms; for example, *Salmonella* bacteria tumbles about once per second[^Achouri2015], *Bacillus subtilis* tumbles about every 2 seconds, *Enterococcus sacchrolyticus* tumbles about per 1.2 seconds.[^Turner2016]
-
-[Next Lesson: Biochemistry](home_intro){: .btn .btn--primary .btn--large}
+[Next Lesson: E. coli Walk](home_intro){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 [^Munroe]: Randall Munroe. What If? [Available online](https://what-if.xkcd.com/)

@@ -42,24 +42,6 @@ Even though the S proteins of the two viruses have the same general function, th
 There are two main objectives for this module. First, we will explore publicly available structure prediction software to model the SARS-CoV-2 S protein and then assess their accuracy. Second, we will visualize and perform comparative analysis on the SARS-CoV-2 S protein and SARS-CoV S protein. All the analysis will be done using two software: ProDy and VMD. By the end of this module, you will be able to understand more about protein structure prediction and differences in the S proteins that attribute to the higher infectivity of COVID-19.
 
 
-<hr>
-### Quick Preview!
-
-The Spike protein is a homotrimer that is responsible for binding with human receptor ACE2. The RBD lies between residues 331 and 524 of the SARS-CoV-2 Spike protein, and is located at the "top" of the protein where it is highlighted in red in the second animation and the bottom image. 
-
-<video width="320" height="240" controls>
-<source type="video/mp4" src="../_pages/coronavirus/files/6vxxQSurf.mp4">
-</video>
-
-
-<video width="320" height="240" controls>
-<source type="video/mp4" src="../_pages/coronavirus/files/6vxx.mp4">
-</video>
-
-
-<img src="../_pages/coronavirus/files/SpikeRBDTop.png">
-
-
 [Protein Structure Prediction](prediction){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 

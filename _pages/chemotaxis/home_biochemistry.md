@@ -7,9 +7,11 @@ sidebar:
 
 ## Signaling Pathway
 
-A key characteristic of living organisms is the ability to respond to stimuli in the environment. Chemotaxis is one of those behaviors. It relies on the ability to perceive a change (ligand concentration), and react accordingly (adjust direction of movement).
+A key characteristic of living organisms is the ability to respond to stimuli in the environment. Chemotaxis is one of those behaviors. It relies on the ability to perceive a change (ligand concentration), and react accordingly (adjust direction of movement). This is an example of *signal transduction pathway*, which includes 1) an external stimuli, 2) a series of molecular events, 3) a resulted cellular response. 
 
-Recall the discussion on gene expression regulation in the Motif Module. An external signal can lead to change in gene expression through transcription factors. This is an example of *signal transduction pathway*, which includes 1) an external stimuli, 2) a series of molecular events, 3) a resulted cellular response. In the case of chemotaxis, the stimuli is ligand binding; the cell perceives this change, and propagates this information through a series of molecules, which leads to the cellular response of changed flagellar movement.
+Why are we interested in signaling pathways? Recall the discussion on gene expression regulation in the Motif Module. An external signal can lead to change in gene expression through transcription factors. We didn't include cellular details there. But in this module, we will get into cellular details to understand chemotaxis behaviors.
+
+In the case of chemotaxis, the stimuli is ligand binding; the cell perceives this change, and propagates this information through a series of molecules, which leads to the cellular response of changed flagellar movement.
 
 This pathway includes a receptor complex MCP, a series of chemotaxis proteins - CheW, CheA, CheY, CheZ (*Che* stands for chemotaxis), and the basal body of flagelli. The figure provides a visualization.
 ![image-center](../assets/images/chemotaxisphosnew.jpg){: .align-center}

@@ -83,7 +83,9 @@ chemotaxis:
         url: /chemotaxis/home
       - title: "Introduction to chemotaxis"
         url: /chemotaxis/home_walk
-      - title: "Biochemistry and modeling"
+      - title: "Signaling & ligand-receptor dynamics"
+        url: /chemotaxis/home_signal
+      - title: "Pathway biochemistry"
         url: /chemotaxis/home_biochem
       - title: "Sensation & adaptation"
         url: /chemotaxis/home_senseadap

@@ -103,7 +103,7 @@ Before simulating our model, we would also like to define the observables under 
 	end observables
 
 
-# Simulation methods
+## Simulation methods
 
 BNG supports simulation with Ordinary Differential Equation (ODE) and with Stochastic Simulation Algorithm (SSA, also called Gillespie algorithm). The method is passed in as argument `method=>"ode"` or `method=>"ssa"`. 
  - ODE: When simulating a system, we need to define how the system evolve through time. In *continuous* simulation of chemical reactions, the state of the system can be reported given any point in time. The reactions rules specifies the rate of change for concentration of the involved species, and they are differential equations. For example, d[L]/dt=k2[L.T] - k1[L][T].[^Schwartz14]

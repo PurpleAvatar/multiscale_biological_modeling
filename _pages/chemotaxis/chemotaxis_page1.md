@@ -160,7 +160,8 @@ The whole simulation code for ligand-receptor dynamics (you can also download he
 	generate_network({overwrite=>1})
 	simulate({method=>"ssa", t_end=>1, n_steps=>100})
 
-*How would the concentration of free ligand and bound ligand change through 1 seconds?*
+**STOP** How would the concentration of free ligand and bound ligand change through 1 seconds?
+{: .notice--primary}
 
 Go to `Simulation` at the right side of the Contact Map button and click `Run`. You can visualize your `.gdat` data.
 
@@ -185,5 +186,5 @@ If you are interested, a more detailed tutorial on BNG modeling can be found [he
 [^Schwartz17]: Schwartz R. Biological Modeling and Simulaton: A Survey of Practical Models, Algorithms, and Numerical Methods. Chapter 17.2.
 
 
-[Back to Main Text](home_biochem){: .btn .btn--primary .btn--x-large}
+[Back to Main Text](home_biochem){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}

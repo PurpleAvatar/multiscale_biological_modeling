@@ -1,26 +1,25 @@
 ---
 permalink: /chemotaxis/home_biochem
-title: "Biochemistry and Introduction to Rule-Based Modeling"
+title: "Biochemistry and Modeling"
 sidebar:
  nav: "chemotaxis"
 ---
 
-## Biochemistry
+## Signaling Pathway
 
-*E. coli* run and tumble is controlled by a series of chemotaxis proteins. This figure summarizes the signaling pathway.
-![image-center](../assets/images/chemotaxispathway.jpg){: .align-center}
-<figcaption>Summary of E. coli chemotaxis pathway. Image from Parkinson Lab, University of Utah.</figcaption>
+A key characteristic of living organisms is the ability to respond to stimuli in the environment. Chemotaxis is one of those behaviors. It relies on the ability to perceive a change (ligand concentration), and react accordingly (adjust direction of movement).
 
-Detailed explanation of the pathway:
+Recall the discussion on gene expression regulation in the Motif Module. An external signal can lead to change in gene expression through transcription factors. This is an example of *signal transduction pathway*, which includes 1) an external stimuli, 2) a series of molecular events, 3) a resulted cellular response. In the case of chemotaxis, the stimuli is ligand binding; the cell perceives this change, and propagates this information through a series of molecules, which leads to the cellular response of changed flagellar movement.
 
-**Receptor Complexes**. On the cell membrane, there are receptors called **methyl-acceptring chemotaxis proteins (MCPs)**. They form complexes with **CheW** and **CheA** (*Che* stands for chemotaxis).
- - There are five types of MCPs, Tsr, Tar, Tap, Trg, and Aer, specific for different species of ligand molecules. Most studies focus on the two most abundant types: Tsr (serine receptor) and Tar (aspartate and maltose receptor), and Aer (oxygen receptor) is less well understood.[^Parkinson2015] The MCPs form trimer of dimer structure. A trimer can be a mix of Tsr, Tar, Tap, Trg dimers. Binding with ligands changes the conformation of the receptor dimer. Each receptor dimer within the trimer impacts the activity differently because of sterics.
- - MCPs, CheA (dimer with 5 subunits), and CheW forms receptor arrays. The receptor arrays generally have 2 states: 1) an ordered, dense state, in which CheA activity is higher; 2) a disordered, relaxed state, in which CheA activity is lower.[^Baker2005] A visualization of the arrays from[^Yang2019] is shown below (as in the figure, each MCP has 4 methylation states, but we will talk about methylation later).
+This pathway includes a receptor complex MCP, a series of chemotaxis proteins - CheW, CheA, CheY, CheZ (*Che* stands for chemotaxis), and the basal body of flagelli. The figure provides a visualization.
+![image-center](../assets/images/chemotaxisphosnew.jpg){: .align-center}
+<figcaption>A summary of chemotaxis pathway. Signal is ligand binding, and the signal is propagated through CheA and CheY phosphorylation, which leads to the response of CW flagllar rotation.</figcaption>
 
- ![image-center](../assets/images/chemotaxis_intro_tod.png){: .align-center}
- <figcaption>MCP array structures. From Yang et al.[^Yang2019]</figcaption>
+Introduction to the pathway:
 
-**CheA**. CheA is composed of 5 domains, in which P3 holds CheA dimers together, P5 binds to MCPs and CheW, P4 is responsible to ATP-dependent autophosphorylation, P2 binds to downstream proteins CheY and CheB, and P1 phosphorylates **CheY** and **CheB** [^Baker2005].
+**MCPs**. On the cell membrane, there are receptors called **methyl-acceptring chemotaxis proteins (MCPs)**. They form complexes with **CheW** and **CheA**.
+
+**CheA**. CheA undergoes autophosphorylation. It can then phosphorylates CheY.
  - CheA + ATP -> CheA-P + ADP
  - CheA-P + CheY -> CheY-P
  - CheA-P + CheB -> CheB-P
@@ -28,48 +27,27 @@ Detailed explanation of the pathway:
 **CheY**. CheY is phosphorylated by CheA. Upon interacting with FliM in the basal body of flagellum, phosphorylated CheY induces the direction change of flagellum rotation from CCW to CW. As we mentioned before, switching to CW rotations leads to tumbling. CheY dephosphorylation is cataylzed by **CheZ**.
  - CheY-P + CheZ -> CheY + CheZ + P
 
-**CheB**. CheB is phosphorylated by CheA. CheB is responsible for MCP methylation, which we will discuss later. CheB readily autodephosphorylates.
- - CheB-P -> CheB + P
+**CheZ**. CheZ dephosphorylates CheY, as introduced above.
+
 
 When the cell is in an environment with no ligand, CheA autophosphorylation occurs at a background frequency, leading to a CheY phosphorylation rate that would maintain the background tumbling frequency of every 1-1.5s.
 
 When the receptors bind to attractant molecules, CheA autophosphorylation lowers, decreasing tumbling frequency. When the receptors bind to repellent molecules, CheA autophosphorylation increasess, increasing tumbling frequency.
 
 
-## Combinatorial explosion and Rule-based modeling
+## Modeling Ligand-Receptor dynamics
 
-Consider we want to program a simplified version of part of the pathway above-
- - Serine receptor complex (Tsr), can be bound to not bound to a ligand
- - CheA associated with Tsr, can be phosphorylated or not
- - The state of Tsr binding and CheA phosphorylation will impact downstream reactions, so we would like to specify each of the states
+We just discussed that ligand-receptor binding is the stimulus. But how is this stimulus generated? How does the envrionmental concentration of the ligands impact ligand-receptor binding?
 
-If we have 1 complex, and 1 CheA, we could have the following states:
- - Tsr-bound, CheA-phosphorylated
- - Tsr-bound, CheA-unphosphorylated
- - Tsr-free, CheA-phosphorylated
- - Tsr-free, CheA-unphosphorylated
+We can explore this question with a model of reversible bimolecular reaction. In our system, we have 2 types of molecules, MCPs(T) and ligands(L). T and L can bind to form an intermediate TL, and TL can dissociate. If we give the system an infinite time to react, what will happen?
 
-If we have 2 complexes, and 2 CheA molecules associated, assuming the two are interchangable, we could have the following states:
- - Tsr1-bound, CheA1-phosphorylated, Tsr2-bound, CheA2-phosphorylated
- - Tsr1-bound, CheA1-phosphorylated, Tsr2-bound, CheA2-unphosphorylated
- - Tsr1-bound, CheA1-phosphorylated, Tsr2-free, CheA2-phosphorylated
- - Tsr1-bound, CheA1-phosphorylated, Tsr2-free, CheA2-unphosphorylated
- - Tsr1-bound, CheA1-unphosphorylated, Tsr2-bound, CheA2-unphosphorylated
- - Tsr1-bound, CheA1-unphosphorylated, Tsr2-free, CheA2-phosphorylated
- - Tsr1-bound, CheA1-unphosphorylated, Tsr2-free, CheA2-unphosphorylated
- - Tsr1-free, CheA1-phosphorylated, Tsr2-free, CheA2-unphosphorylated
- - Tsr1-free, CheA1-phosphorylated, Tsr2-free, CheA2-phosphorylated
- - Tsr1-free, CheA1-unphosphorylated, Tsr2-free, CheA2-unphosphorylated
+At the begining of the reaction, TL will be formed quickly at the expense of free T and L. After a while, there will be more TL ready to dissociate, but fewer T and L to form TL. At some point, the rate of TL formation will equal to the rate of TL dissociation. This is call an *equilibrium*.
 
-And that number grows quickly when we have more molecules, more reactions, and more states. Similar to modeling other biological systems, this is a classical problem of combinatorial explosion[^Hlavacek2003].
+In this Module, we will use [BioNetGen](https://www.csb.pitt.edu/Faculty/Faeder/?page_id=409) to build a set of models to simulate chemotaxis activities. We will start from building a simulation for equilbrium of bimolecular reversible reaction between ligand and receptors.
 
-The combinatorial complexity poses two challenges in programming: 1) how to specify those states, 2) how to simulate such a system. 
 
-As we just tried, it's hard to *explicitly* specify the states. However, if we were to model the a downstream reaction between a CheY molecule and (Tsr1+CheA1), the CheY molecule only cares about whether Tsr1 is bound or free and whether CheA1 is phosphorylated or not; Tsr2 and CheA2 doesn't matter. We can specify a rule for reaction between CheY and (Tsr+CheA) regardless the state of the whole system except the molecules we are interested in. Such **rule based modeling** can simplify model construction and computation [^Hlavacek2006].
-
-When computing with rule based modeling, the program starts with an initial condition, and evaluates the rules to modify the state. Two commonly used algorithms are differential equations and stochastic Gillespie algorithm, which we will introduce in the tutorials.
-
-In the later pages, we will build a molecular level simulation of *E. coli* chemotaxis behavior with rule based modeling using [BioNetGen](https://www.csb.pitt.edu/Faculty/Faeder/?page_id=409).
+[Visit Ligand-Receptor Dynamics Tutoiral](tutorial_lr){: .btn .btn--primary .btn--large}
+{: style="font-size: 100%; text-align: center;"}
 
 
 
@@ -98,6 +76,8 @@ In the later pages, we will build a molecular level simulation of *E. coli* chem
 [^Hlavacek2003]: Hlavacek WS, Faeder JR, Blinov ML, Perelson AS, Goldsten B. 2003. The complexity of complexes in signal transduction. Biotechnology and Bioengineering 84(7):783-94. [Available online](https://onlinelibrary.wiley.com/doi/abs/10.1002/bit.10842)
 
 [^Hlavacek2006]: Hlavacek WS, Faeder JR, Blinov ML, Posner RG, Hucka M, Fontana W. 2006. Rules for modeling signal-transduction systems. Science Signaling 344:re6. [Available online](https://stke.sciencemag.org/content/2006/344/re6.long)
+
+[^ParkinsonLab]: Parkinson Lab website. [website](http://chemotaxis.biology.utah.edu/Parkinson_Lab/projects/ecolichemotaxis/ecolichemotaxis.html)
 
 [Next Page: Sensation and Adaptation](home_senseadap){: .btn .btn--primary .btn--x-large}
 {: style="font-size: 100%; text-align: center;"}

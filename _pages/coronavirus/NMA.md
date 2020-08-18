@@ -85,5 +85,5 @@ Because ANM also takes direction into consideration, it is possible to create an
 
 
 
-[Previous](structural_diff){: .btn .btn--primary .btn--x-large} [Next Page](conclusion){: .btn .btn--primary .btn--x-large}
+[Structural and ACE2 Interaction Differences](structural_diff){: .btn .btn--primary .btn--x-large} [Glycans](glycans){: .btn .btn--primary .btn--x-large}
 {: style="font-size: 100%; text-align: center;"}

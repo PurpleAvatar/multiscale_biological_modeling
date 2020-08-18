@@ -5,15 +5,19 @@ sidebar:
  nav: "chemotaxis"
 ---
 
-## Signaling Pathway
+## More on Signal transduction pathway - phosphorylation
 
-A key characteristic of living organisms is the ability to respond to stimuli in the environment. Chemotaxis is one of those behaviors. It relies on the ability to perceive a change (ligand concentration), and react accordingly (adjust direction of movement). This is an example of *signal transduction pathway*, which includes 1) an external stimuli, 2) a series of molecular events, 3) a resulted cellular response. 
+Let's get back to our signal transduction pathway which includes 1) an external stimuli, 2) a series of molecular events, 3) a resulted cellular response. We got how the stimuli is generated. We will get into more cellular details into the molecular events and response.
 
-Why are we interested in signaling pathways? Recall the discussion on gene expression regulation in the Motif Module. An external signal can lead to change in gene expression through transcription factors. We didn't include cellular details there. But in this module, we will get into cellular details to understand chemotaxis behaviors.
+The series of molecular events are a series of phosphorylation events.
 
-In the case of chemotaxis, the stimuli is ligand binding; the cell perceives this change, and propagates this information through a series of molecules, which leads to the cellular response of changed flagellar movement.
+What's phosphorylation and why so many phosphorylation reactions? **Phosphorylation** is a chemical reaction that attaches a phosphoryl group (PO<sub>3</sub><sup>-</sup>) to an organic molecule. The removal of the phosphoryl group is dephosphorylation. Such modifications can activate or deactivate certain enzymes like switches. For example, a cyclin dependent kinase, when activated by G1/S cyclin, can phosphorylate its target proteins to activate DNA replication and initiate S phase[^Bertoli2013].
 
-This pathway includes a receptor complex MCP, a series of chemotaxis proteins - CheW, CheA, CheY, CheZ (*Che* stands for chemotaxis), and the basal body of flagelli. The figure provides a visualization[^ParkinsonLab].
+In chemotaxis, the direction of flagellar rotation is also controlled by phosphorylation pathways. After ligand-receptor binding, the phosphorylation events transduce the signal to the flagelli. The sequence of phosphorylation event is called a phosphorylation cascade. 
+
+## Chemotaxis pathway
+
+This pathway includes the receptor we've discussed - receptor complex MCP, a series of chemotaxis proteins - CheW, CheA, CheY, CheZ (*Che* stands for chemotaxis), and the basal body of flagelli. The figure provides a visualization[^ParkinsonLab].
 ![image-center](../assets/images/chemotaxisphosnew.png){: .align-center}
 <figcaption>A summary of chemotaxis pathway. Signal is ligand binding, and the signal is propagated through CheA and CheY phosphorylation, which leads to the response of CW flagllar rotation.</figcaption>
 
@@ -24,7 +28,6 @@ Introduction to the pathway:
 **CheA**. CheA undergoes autophosphorylation. It can then phosphorylates CheY.
  - CheA + ATP -> CheA-P + ADP
  - CheA-P + CheY -> CheY-P
- - CheA-P + CheB -> CheB-P
 
 **CheY**. CheY is phosphorylated by CheA. Upon interacting with FliM in the basal body of flagellum, phosphorylated CheY induces the direction change of flagellum rotation from CCW to CW. As we mentioned before, switching to CW rotations leads to tumbling. CheY dephosphorylation is cataylzed by **CheZ**.
  - CheY-P + CheZ -> CheY + CheZ + P
@@ -36,19 +39,11 @@ When the cell is in an environment with no ligand, CheA autophosphorylation occu
 
 When the receptors bind to attractant molecules, CheA autophosphorylation lowers, decreasing tumbling frequency. When the receptors bind to repellent molecules, CheA autophosphorylation increasess, increasing tumbling frequency.
 
-
-## Modeling Ligand-Receptor dynamics
-
-We just discussed that ligand-receptor binding is the stimulus. But how is this stimulus generated? How does the envrionmental concentration of the ligands impact ligand-receptor binding?
-
-We can explore this question with a model of reversible bimolecular reaction. In our system, we have 2 types of molecules, MCPs(T) and ligands(L). T and L can bind to form an intermediate TL, and TL can dissociate. If we give the system an infinite time to react, what will happen?
-
-At the begining of the reaction, TL will be formed quickly at the expense of free T and L. After a while, there will be more TL ready to dissociate, but fewer T and L to form TL. At some point, the rate of TL formation will equal to the rate of TL dissociation. This is call an *equilibrium*.
-
-In this Module, we will use [BioNetGen](https://www.csb.pitt.edu/Faculty/Faeder/?page_id=409) to build a set of models to simulate chemotaxis activities. We will start from building a simulation for equilbrium of bimolecular reversible reaction between ligand and receptors.
+## Modeling phosphorylation events
 
 
-[Visit Ligand-Receptor Dynamics Tutoiral](tutorial_lr){: .btn .btn--primary .btn--large}
+
+[Visit Ligand-Receptor Dynamics Tutoiral](tutorial_phos){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 
@@ -80,6 +75,14 @@ In this Module, we will use [BioNetGen](https://www.csb.pitt.edu/Faculty/Faeder/
 [^Hlavacek2006]: Hlavacek WS, Faeder JR, Blinov ML, Posner RG, Hucka M, Fontana W. 2006. Rules for modeling signal-transduction systems. Science Signaling 344:re6. [Available online](https://stke.sciencemag.org/content/2006/344/re6.long)
 
 [^ParkinsonLab]: Parkinson Lab website. [website](http://chemotaxis.biology.utah.edu/Parkinson_Lab/projects/ecolichemotaxis/ecolichemotaxis.html)
+
+[^Bertoli2013]: Bertoli C, Skotheim JM, de Bruin RAM. 2013. Control of cell cycle transcription during G1 and S phase. Nature Reviews Molecular Cell Biology 14:518-528. [Available online](https://www.nature.com/articles/nrm3629).
+
+[^Li2004]: Li M, Hazelbauer GL. 2004. Cellular stoichimetry of the components of the chemotaxis signaling complex. Journal of Bacteriology. [Available online](https://jb.asm.org/content/186/12/3687)
+
+[^Stock1991]: Stock J, Lukat GS. 1991. Intracellular signal transduction networks. Annual Review of Biophysics and Biophysical Chemistry. [Available online](https://www.annualreviews.org/doi/abs/10.1146/annurev.bb.20.060191.000545)
+
+[^Spiro1997]: Spiro PA, Parkinson JS, and Othmer H. 1997. A model of excitation and adaptation in bacterial chemotaxis. Biochemistry 94:7263-7268. [Available online](https://www.pnas.org/content/94/14/7263).
 
 [Next Page: Sensation and Adaptation](home_senseadap){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}

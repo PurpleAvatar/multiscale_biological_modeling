@@ -52,14 +52,18 @@ If you have followed our previous tutorials, then you may feel comfortable takin
 
 ## The oscillations of the repressilator
 
-* In the figure below, we show the results of running our simulation by plotting the number of *X*, *Y*, and *Z* particles.
+The figure below shows the results of our simulation by plotting the number of *X*, *Y*, and *Z* particles over time. As we can see, the system shows clear oscillatory behavior, with the concentrations of *X*, *Y*, and *Z* taking turns being at high concentration.
+
+**STOP:** Why do you think that the repressilator motif leads to this pattern of oscillations?
+{: .notice--primary}
 
 ![image-center](../assets/images/repress_graph.PNG){: .align-center}
 
-* As we can see, the system oscillates, with a high concentration of *X*, *Y*, and *Z* taking turns before repeating.
+* NOAH: please provide a caption with colors of particles indicated.
 
-**STOP:** Why do you think that the repressilator leads to the pattern of oscillations in the figure above?
-{: .notice--primary}
+* NOAH: A natural question is what the period of this oscillation is and how this connects to real examples from the original repressilator paper.  Don't get in the weeds on this (max 10 minutes, but lmk what you think.)
+
+* START HERE
 
 * A natural question is why the structure of the repressilator would cause the three particles to take turns at high concentrations, so let us consider each particle one at a time.
 

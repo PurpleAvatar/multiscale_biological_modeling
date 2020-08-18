@@ -42,7 +42,7 @@ Here is a cute video of *E. coli* moving towards a sugar crystal.
 The behavior of cells moving towards or away from a substance is called **chemotaxis**. For *E. coli*, moving towards attractants (ex. glucose, electron acceptors), and moving away from repellents (ex. Ni<sup>2+</sup>, Co<sup>2+</sup>) are all considered chemotaxis behaviors.
 
 
-[Next Lesson: E. coli Walk](home_intro){: .btn .btn--primary .btn--large}
+[Next Lesson: E. coli Walk](home_walk){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 [^Munroe]: Randall Munroe. What If? [Available online](https://what-if.xkcd.com/)

@@ -11,13 +11,17 @@ toc_sticky: true
 
 Even if placed in a bunker, humans will maintain a roughly 24-hour cycle of sleep and wakefulness. However, such a **circadian rhythm** is not unique to humans or even animals but rather is present throughout living things, including plants and even cyanobacteria.
 
-* Need to cite the cyanobacteria point.
+* NOAH: cite the bunker experiment: Aschoff, J. (1965). Circadian rhythms in man. Science 148, 1427–1432.
+
+* NOAH: also cite the first paper that found circadian rhythm in cyanobacteria: Grobbelaar N, Huang TC, Lin HY, Chow TJ. 1986. Dinitrogen-fixing endogenous rhythm in Synechococcus RF-1. FEMS Microbiol Lett 37:173–177. doi:10.1111/j.1574-6968.1986.tb01788.x.CrossRefWeb of Science.
 
 Life processes like the circadian rhythm that **oscillate** between different states are not confined to circadian rhythms. You may feel like you have some control over when you go to bed, but your heart and respiratory system both follow cyclical rhythms without you even thinking about it. On a much lower level, eukaryotic cells are governed by a strict cell cycle as the cells grows and divide.
 
-We know that there is no intelligence that drives all these cyclic processes, and we might guess from what we have learned in this module that they must be built upon simple rules. However, we can also confirm that these rhythms also must be *robust*; that is, they should be resilient to small changes in order to be executed correctly many times over an organism's life.
+We know that there is no intelligence that drives all these cyclic processes, and we might guess from what we have learned in this module that they must be built upon simple rules serving as a **pacemaker** controlling the oscillations. However, the question remains as to what these pacemakers are.
 
-## The repressilator
+We also suspect that these rhythms also must be *robust*. That is, they should be resilient to small changes in order to be executed correctly many times over an organism's life. But how is this robustness achieved?
+
+## The repressilator: a synthetic biological oscillator
 
 Researchers have identified many network motifs that facilitate oscillation, some of which are very complicated and include many components. In this lesson, we will focus on a simple three-component oscillator motif called a **repressilator**. We will implement the repressilator with a particle simulator but also then analyze the robustness of this system in response to small changes in concentrations of particles.
 
@@ -35,7 +39,7 @@ The repressilator motif is shown in the figure below. In this motif, all three p
 
 ## Modeling a repressilator with a reaction-diffusion particle simulation
 
-* START HERE
+* START HERE -- need to use term "pacemaker" at some point.
 
 * Building a model for the repressilator.
 

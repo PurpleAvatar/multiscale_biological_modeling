@@ -126,5 +126,5 @@ Now go back to *CellBlender > Plot Output Settings* and scroll to the bottom to 
 
 * NOAH: please continue to flesh this out and provide a final probing question asking students to interpret the plot that they produced.
 
-[Return to main text](oscillators#Ensuring-the-same-steady-state-concentration){: .btn .btn--primary .btn--large}
+[Return to main text](oscillators#the-oscillations-of-the-repressilator){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}

@@ -81,5 +81,5 @@ In this Module, we will use [BioNetGen](https://www.csb.pitt.edu/Faculty/Faeder/
 
 [^ParkinsonLab]: Parkinson Lab website. [website](http://chemotaxis.biology.utah.edu/Parkinson_Lab/projects/ecolichemotaxis/ecolichemotaxis.html)
 
-[Next Page: Sensation and Adaptation](home_senseadap){: .btn .btn--primary .btn--x-large}
+[Next Page: Sensation and Adaptation](home_senseadap){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}

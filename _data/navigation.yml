@@ -79,8 +79,10 @@ motifs:
 chemotaxis:
   - title: About Chemotaxis
     children:
-      - title: "Introduction to Chemotaxis"
+      - title: "Prologue"
         url: /chemotaxis/home
+      - title: "Introduction to chemotaxis"
+        url: /chemotaxis/home_walk
       - title: "Biochemistry and modeling"
         url: /chemotaxis/home_biochem
       - title: "Sensation & adaptation"

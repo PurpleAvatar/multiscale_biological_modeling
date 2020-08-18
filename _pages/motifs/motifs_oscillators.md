@@ -31,7 +31,7 @@ The repressilator motif is shown in the figure below. In this motif, all three p
 
 <center>
 <img src="../assets/images/repressilator.png" width="250">
-<figcaption>The repressilator motif for three particles *X*, *Y*, and *Z*. *X* represses *Y*, which represses *Z*, which in turn represses *X*, forming a feedback loop.</figcaption>
+<figcaption>The repressilator motif for three particles <em>X</em>, <em>Y</em>, and <em>Z</em>. <em>X</em> represses <em>Y</em>, which represses <em>Z</em>, which in turn represses <em>X</em>, forming a feedback loop.</figcaption>
 </center>
 
 **STOP:** Try building a reaction-diffusion model for the repressilator, assuming that we start with an initial concentration of *X* and no *Y* or *Z* particles.
@@ -39,31 +39,22 @@ The repressilator motif is shown in the figure below. In this motif, all three p
 
 ## Modeling a repressilator with a reaction-diffusion particle simulation
 
-* START HERE -- need to use term "pacemaker" at some point.
+To build a reaction-diffusion model accompanying the repressilator, we start with a quantity of *X* particles, and no *Y* or *Z* particles. We then assume that all three particles diffuse at the same rate and degrade at the same rate.
 
-* Building a model for the repressilator.
+Furthermore, we assume that all three particles are produced as the result of an activation process by some other transcription factor(s), which we assume happens at the same rate. We will use a single type of particle *I* that will be hidden and serves to activate the three visible particles by the reactions *I* → *I* + *X*, *I* → *I* + *Y*, and *I* → *I* + *Z*.
 
-* We begin with a quantity of *X* particles, and no *Y* or *Z* particles.
+In the previous lesson on the feed-forward loop, we saw that to model a repression of *Y* by *X*, we can use the reaction *X* + *Y* → *X*. We combine this reaction with the additional two reactions *Y* + *Z* → *Y*, and *Z* + *X* → *Z* to complete the repressilator model.
 
-* NOAH: is this right that we start with no *Y* or *Z*, or is it just a low concentration?
+If you have followed our previous tutorials, then you may feel comfortable taking off the training wheels and trying out implementing the repressilator on your own. We also are more than happy to provide a tutorial if you find it useful.
 
-* *X*, *Y*, and *Z* all diffuse at the same rate.
-
-* These particles are all produced as the result of activation by some other transcription factor(s), which we will assume happens at same rate. We will model this by having hidden particles *I* that all serve to active our three particles by the reactions *I* → *I* + *X*, *I* → *I* + *Y*, and *I* → *I* + *Z*, all taking place at the same rate.
-
-* Furthermore, *X*, *Y*, and *Z* all have a degradation rate, which is the same for all three particles.
-
-* This leaves us the repression reactions, which are represented by *X* + *Y* → *X*, *Y* + *Z* → *Y*, and *Z* + *X* → *Z*.
-
-* You probably know enough to model the reaction-diffusion reaction modeling the repressilator yourself, but we will provide a tutorial if you find it helpful.
-
-* NOAH: please link to repressilator tutorial 1 here.
+[Visit tutorial](tutorial_oscillators){: .btn .btn--primary .btn--large}
+{: style="font-size: 100%; text-align: center;"}
 
 ## The oscillations of the repressilator
 
 * In the figure below, we show the results of running our simulation by plotting the number of *X*, *Y*, and *Z* particles.
 
-* NOAH: provide figure with the oscillations.
+![image-center](../assets/images/repress_graph.PNG){: .align-center}
 
 * As we can see, the system oscillates, with a high concentration of *X*, *Y*, and *Z* taking turns before repeating.
 

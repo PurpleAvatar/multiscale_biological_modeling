@@ -14,7 +14,7 @@ Why are we interested in signaling pathways? Recall the discussion on gene expre
 In the case of chemotaxis, the stimuli is ligand binding; the cell perceives this change, and propagates this information through a series of molecules, which leads to the cellular response of changed flagellar movement.
 
 This pathway includes a receptor complex MCP, a series of chemotaxis proteins - CheW, CheA, CheY, CheZ (*Che* stands for chemotaxis), and the basal body of flagelli. The figure provides a visualization.
-![image-center](../assets/images/chemotaxisphosnew.jpg){: .align-center}
+![image-center](../assets/images/chemotaxisphosnew.png){: .align-center}
 <figcaption>A summary of chemotaxis pathway. Signal is ligand binding, and the signal is propagated through CheA and CheY phosphorylation, which leads to the response of CW flagllar rotation.</figcaption>
 
 Introduction to the pathway:

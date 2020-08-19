@@ -14,7 +14,7 @@ Why are we interested in signaling pathways? Recall the discussion on gene expre
 In the case of chemotaxis, the stimuli is ligand binding; the cell perceives this change, and propagates this information through a series of molecules, which leads to the cellular response of changed flagellar movement.
 
 ![image-center](../assets/images/chemotaxis_signal.png){: .align-center}
-<figcaption>Signaling pathway for *E. coli* chemotaxis.</figcaption>
+<figcaption>Overview of signaling pathway for chemotaxis.</figcaption>
 
 We will walk through the details of the pathway, and build a model step by step.
 

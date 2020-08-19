@@ -123,7 +123,7 @@ Exercise: Try several different `L0` values (ex. 1e3, 1e7, 1e9). Are you seeing 
 [^Spiro1997]: Spiro PA, Parkinson JS, and Othmer H. 1997. A model of excitation and adaptation in bacterial chemotaxis. Biochemistry 94:7263-7268. [Available online](https://www.pnas.org/content/94/14/7263).
 
 
-[Back to Main Text](home_biochem){: .btn .btn--primary .btn--x-large}
+[Back to Main Text](home_biochem){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 

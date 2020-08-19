@@ -45,7 +45,7 @@ If a bacterium wants to sense a gradient, it should be able to distinguish diffe
 
 Will higher attractant concentration lead to less tumbling? Let's confirm it by incorporating the phosphorylation pathway into our BNG simulation.
 
-[Visit Ligand-Receptor Dynamics Tutoiral](tutorial_phos){: .btn .btn--primary .btn--large}
+[Visit Phosphorylation Tutorial](tutorial_phos){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 When no ligand is added, we see the concentrations remain at steady state. CheY activity remains at the background level, resulting in background tumbling frequency.

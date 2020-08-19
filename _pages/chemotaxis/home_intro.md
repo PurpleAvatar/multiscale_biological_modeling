@@ -7,7 +7,7 @@ sidebar:
 
 ## How does *E. coli* explore the world?
 
-*E. coli* has 5-12 flagelli randomly distributed in the surface.[^Sim2017] Each flagelum rotates clockwise (CW) or counter-clockwise (CCW). That leads to two states of movement: 1) when flagelli rotates in CCW, they form a bundle, and propel the cells to swiming smoothly at speeds of 20 µm per second, called **run**; 2) when some flaggeli in the bundle rotates CW, the flagelli become uncoordinated and reorients with a much slower net movement speed in place, called **tumble**.[^Baker2005]
+*E. coli* has 5-12 flagella randomly distributed in the surface.[^Sim2017] Each flagellum rotates clockwise (CW) or counter-clockwise (CCW). That leads to two states of movement: 1) when flagella rotates in CCW, they form a bundle, and propel the cells to swiming smoothly at speeds of 20 µm per second, called **run**; 2) when some flagella in the bundle rotates CW, the flagella become uncoordinated and reorients with a much slower net movement speed in place, called **tumble**.[^Baker2005]
 
 ![image-center](../assets/images/chemotaxis_intro_runtumble.png){: .align-center}
 <figcaption>Run and tumble. Left: relationship between flagellar rotation and run vs. tumble. Right: a run-and-tumble trajectory towards right. Image from Parkinson Lab, University of Utah.</figcaption>
@@ -23,7 +23,7 @@ Despite the differences, the variations in tumbling frequency isn't large. There
 
 [^Pierucci1978]: Pierucci O. 1978. Dimensions of *Escherichia coli* at various growth rates: Model of envelope growth. Journal of Bacteriology 135(2):559-574. [Available online](https://jb.asm.org/content/jb/135/2/559.full.pdf)
 
-[^Sim2017]: Sim M, Koirala S, Picton D, Strahl H, Hoskisson PA, Rao CV, Gillespie CS, Aldridge PD. 2017. Growth rate control of flaggelar assembly in *Escherichia coli* strain RP437. Scientific Reports 7:41189. [Available online](https://www.nature.com/articles/srep41189#:~:text=Escherichia%20coli%20is%20a%20prominent,distributed%20across%20the%20cell%20surface.)
+[^Sim2017]: Sim M, Koirala S, Picton D, Strahl H, Hoskisson PA, Rao CV, Gillespie CS, Aldridge PD. 2017. Growth rate control of flagellar assembly in *Escherichia coli* strain RP437. Scientific Reports 7:41189. [Available online](https://www.nature.com/articles/srep41189#:~:text=Escherichia%20coli%20is%20a%20prominent,distributed%20across%20the%20cell%20surface.)
 
 [^Baker2005]: Baker MD, Wolanin PM, Stock JB. 2005. Signal transduction in bacterial chemotaxis. BioEssays 28:9-22. [Available online](https://pubmed.ncbi.nlm.nih.gov/16369945/)
 

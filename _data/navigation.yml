@@ -15,6 +15,8 @@ main:
         url: /chemotaxis/home
       - title: "Coronavirus"
         url: /coronavirus/home
+      - title: "White Blood Cells"
+        url: /wbcells/tutorial
 
 
 prologue:
@@ -74,6 +76,8 @@ motifs:
         url: /motifs/tutorial_feed
       - title: "Oscillators"
         url: /motifs/tutorial_oscillators
+      - title: "Perturbing Oscillations"
+        url: /motifs/tutorial_perturb
 
 
 chemotaxis:
@@ -137,3 +141,9 @@ coronavirus:
         url: /coronavirus/prody
       - title: "VMD Tutorial"
         url: /coronavirus/VMDTutorial
+
+wbcells:
+  - title: Tutorial
+    children:
+      - title: "Tutorial"
+        url: /wbcells/tutorial

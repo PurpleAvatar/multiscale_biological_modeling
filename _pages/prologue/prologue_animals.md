@@ -91,7 +91,7 @@ And yet if we make a slight change to the parameters, we obtain very different m
 *f* = 10,000 and *d* = 10,000
 {: .text-center}
 
-<iframe width="640" height="360" src="../assets/mert_f1_5e5_d1e5.mp4" frameborder="0" allowfullscreen></iframe>
+<iframe width="640" height="360" src="../assets/mert_f1_5e5_d2e5.mp4" frameborder="0" allowfullscreen></iframe>
 *f* = 15,000 and *d* = 10,000
 {: .text-center}
 

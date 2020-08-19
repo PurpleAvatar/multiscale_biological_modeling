@@ -42,9 +42,10 @@ Even though the S proteins of the two viruses have the same general function, th
 There are two main objectives for this module. First, we will explore publicly available structure prediction software to model the SARS-CoV-2 S protein and then assess their accuracy. Second, we will visualize and perform comparative analysis on the SARS-CoV-2 S protein and SARS-CoV S protein. All the analysis will be done using two software: ProDy and VMD. By the end of this module, you will be able to understand more about protein structure prediction and differences in the S proteins that attribute to the higher infectivity of COVID-19.
 
 
-[Protein Structure Prediction](prediction){: .btn .btn--primary .btn--large}
+[Next Lesson](structure_intro){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
+## Citations
 
 [^1]: CDC SARS Response Timeline. (2013, April 26). Retrieved August 17, 2020, from https://www.cdc.gov/about/history/sars/timeline.htm
 

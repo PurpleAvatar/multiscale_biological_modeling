@@ -58,6 +58,7 @@ What if the forward reaction becomes faster? For example, *k<sub>bind</sub> = 2*
 What if there are more ligands? For example, *L<sub>0</sub> = 100* M. More L.T should be formed. Similarly, we can change eq.5 to *1 (100 - x)(50 - x) = 5 x*, and we will get steady state concentration for L.T is 45.779 M, for L and T is 4.221 M.
 
 **STOP**: What if backward reaction becomes faster? For example, *k<sub>dissociate</sub> = 10* s<sup>-1</sup>? Confirm your hypothesis by calculation.
+{: .notice--primary}
 
 Let's get back to the ligand-receptor dynamics for *E. coli*. Change the parameters to *L<sub>0</sub> = 1e4*,  *T<sub>0</sub> = 7000*, *k<sub>b</sub> = 8.8e8/6.02e8, k<sub>d</sub> = 35*. (Excersice for you: what are the units?) We can calculate that the steady state concentration for L.T is about 4794 (Excersice for you: what unit?).
 

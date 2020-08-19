@@ -31,6 +31,5 @@ toc_sticky: true
 
 * Yet before we get ahead of ourselves, there is one more point to be made about the models we have built in this module, which we will make in the module's conclusion.
 
-
-[Next lesson](conclusion){: .btn .btn--primary .btn-large}
+[Next lesson](conclusion){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}

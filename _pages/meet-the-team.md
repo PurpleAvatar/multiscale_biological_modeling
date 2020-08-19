@@ -11,7 +11,7 @@ Content below is the team
   
   <div class="column">
     <div class="card">
-      <img src="../assets/images/Phillip_Compeau.JPG" alt="Phillip Compeau" style="display:block; margin:auto; width:90%; border-radius:50%">
+      <img src="../assets/images/Phillip_Compeau.JPG" alt="Phillip Compeau" style="display:block; margin:auto; width:512px; height:512px; border-radius:50%">
       <div class="container">
         <h2>Phillip Compeau</h2>
         <p class="title">CEO &amp; Founder</p>
@@ -26,11 +26,11 @@ Phillip is passionate about open online education, and his education projects ha
   
   <div class="column">
     <div class="card">
-      <img src="../assets/images/blurred_sides_square.png" alt="Noah Lee" style="display:block; margin:auto; width:90%; border-radius:50%">
+      <img src="../assets/images/blurred_sides_square.png" alt="Noah Lee" style="display:block; margin:auto; width:512px; height:512px; border-radius:50%">
       <div class="container">
-        <h2>Noah Lee</h2>
+        <h2>Noah Yann Lee</h2>
         <p class="title">CEO &amp; Founder</p>
-        <p>Noah Lee is a current PhD student at Yale University under the Computational Biology and Bioinfornatics program. Noah completed his undergraduate at Carnegie Mellon University, graduating in 2020 with a B.S. in Computational Biology with a minor in Design for Learning.</p>
+        <p>Noah Yann Lee is a PhD student at Yale University under the Computational Biology and Bioinfornatics program. Noah completed his undergraduate at Carnegie Mellon University, graduating in 2020 with a B.S. in Computational Biology with a minor in Design for Learning. From running early-childhood educational tests with the Children's School at Carnegie Mellon for the Global Learning XPRIZE, to cultivating and sequencing phage genomes with the PhageHunters program, Noah has an appreciation for science from the micro to the macro, physical to the digital. Noah is always interested to connect with projects and organizations working with STEM, education, and science outreach</p>
         <p>example@example.com</p>
         <p><button class="button">Contact</button></p>
       </div>
@@ -43,7 +43,7 @@ Phillip is passionate about open online education, and his education projects ha
   
   <div class="column">
     <div class="card">
-      <img src="../assets/images/190820_Comp Bio_LEE_CHRIS_107.jpg" alt="Chris Lee" style="display:block; margin:auto; width:90%; border-radius:50%">
+      <img src="../assets/images/190820_Comp Bio_LEE_CHRIS_107.jpg" alt="Chris Lee" style="display:block; margin:auto; width:512px; height:512px; border-radius:50%">
       <div class="container">
         <h2>Chris Lee</h2>
         <p class="title">CEO &amp; Founder</p>
@@ -56,7 +56,7 @@ Phillip is passionate about open online education, and his education projects ha
   
   <div class="column">
     <div class="card">
-      <img src="../assets/images/shuanger_photo.png" alt="Shuanger Li" style="display:block; margin:auto; width:90%; border-radius:50%">
+      <img src="../assets/images/shuanger_photo.png" alt="Shuanger Li" style="display:block; margin:auto; width:512px; height:512px; border-radius:50%">
       <div class="container">
         <h2>Shuanger Li</h2>
         <p class="title">CEO &amp; Founder</p>
@@ -67,4 +67,23 @@ Phillip is passionate about open online education, and his education projects ha
     </div>
   </div>
 
+</div>
+
+
+<div class="row">
+  
+  <div class="column">
+    <div class="card">
+      <img src="../assets/images/Comp Bio_Inan_M_2018_0024_small.jpg" alt="Mert Inan" style="display:block; margin:auto; width:512px; height:512px; border-radius:50%">
+      <div class="container">
+        <h2>Mert Inan</h2>
+        <p class="title">CEO &amp; Founder</p>
+        <p markdown="1"> Mert is currently a computer science Ph.D. student at the University of Pittsburgh. Mert is an alumni of the master’s of computational biology program at the Carnegie Mellon University. He loves interdisciplinary fields and have been working at the intersection of computation, biology, neuroscience, and machine intelligence. Unlocking the secrets of biology is a pleasure that Mert truly enjoys even under quarantine conditions.</p>
+        <p>example@example.com</p>
+        <p><button class="button">Contact</button></p>
+      </div>
+    </div>
+  </div>
+  
+  
 </div>

@@ -11,7 +11,7 @@ Content below is the team
   
   <div class="column">
     <div class="card">
-      <img src="../assets/images/Phillip_Compeau.JPG" alt="Phillip Compeau" style="display:block; margin:auto; width:512px; height:512px; border-radius:50%">
+      <img src="../assets/images/Phillip_Compeau.JPG" alt="Phillip Compeau" style="display:block; margin:auto; width:512px; border-radius:50%">
       <div class="container">
         <h2>Phillip Compeau</h2>
         <p class="title">CEO &amp; Founder</p>
@@ -26,7 +26,7 @@ Phillip is passionate about open online education, and his education projects ha
   
   <div class="column">
     <div class="card">
-      <img src="../assets/images/blurred_sides_square.png" alt="Noah Lee" style="display:block; margin:auto; width:512px; height:512px; border-radius:50%">
+      <img src="../assets/images/blurred_sides_square.png" alt="Noah Lee" style="display:block; margin:auto; width:512px; border-radius:50%">
       <div class="container">
         <h2>Noah Yann Lee</h2>
         <p class="title">CEO &amp; Founder</p>
@@ -43,7 +43,7 @@ Phillip is passionate about open online education, and his education projects ha
   
   <div class="column">
     <div class="card">
-      <img src="../assets/images/190820_Comp Bio_LEE_CHRIS_107.jpg" alt="Chris Lee" style="display:block; margin:auto; width:512px; height:512px; border-radius:50%">
+      <img src="../assets/images/190820_Comp Bio_LEE_CHRIS_107.jpg" alt="Chris Lee" style="display:block; margin:auto; width:512px; border-radius:50%">
       <div class="container">
         <h2>Chris Lee</h2>
         <p class="title">CEO &amp; Founder</p>
@@ -56,7 +56,7 @@ Phillip is passionate about open online education, and his education projects ha
   
   <div class="column">
     <div class="card">
-      <img src="../assets/images/shuanger_photo.png" alt="Shuanger Li" style="display:block; margin:auto; width:512px; height:512px; border-radius:50%">
+      <img src="../assets/images/shuanger_photo.png" alt="Shuanger Li" style="display:block; margin:auto; width:512px; border-radius:50%">
       <div class="container">
         <h2>Shuanger Li</h2>
         <p class="title">CEO &amp; Founder</p>
@@ -74,7 +74,7 @@ Phillip is passionate about open online education, and his education projects ha
   
   <div class="column">
     <div class="card">
-      <img src="../assets/images/Comp Bio_Inan_M_2018_0024_small.jpg" alt="Mert Inan" style="display:block; margin:auto; width:512px; height:512px; border-radius:50%">
+      <img src="../assets/images/Comp Bio_Inan_M_2018_0024_small.jpg" alt="Mert Inan" style="display:block; margin:auto; width:512px; border-radius:50%">
       <div class="container">
         <h2>Mert Inan</h2>
         <p class="title">CEO &amp; Founder</p>

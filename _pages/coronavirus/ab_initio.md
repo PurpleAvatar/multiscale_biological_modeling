@@ -1,7 +1,7 @@
 ---
 permalink: /coronavirus/ab_initio
-title: *Ab initio* Protein Structure Prediction
-sidebar: 
+title: Ab initio Protein Structure Prediction
+sidebar:
  nav: "coronavirus"
 toc: true
 toc_sticky: true

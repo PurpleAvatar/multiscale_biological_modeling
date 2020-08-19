@@ -129,6 +129,8 @@ coronavirus:
     children:
       - title: "Structural and ACE2 Interaction Differences"
         url: /coronavirus/structural_diff
+      - title: "Ab initio Protein Structure Prediction"
+        url: /coronavirus/ab_initio
       - title: "Normal Mode Analysis"
         url: /coronavirus/NMA
       - title: "Glycans"

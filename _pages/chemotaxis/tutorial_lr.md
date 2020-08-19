@@ -102,19 +102,11 @@ Before simulating our model, we would also like to define the observables under 
 		Molecules L_bound L(t!1).T(l!1)
 	end observables
 
-
-## Simulation methods
-
-BNG supports simulation with Ordinary Differential Equation (ODE) and with Stochastic Simulation Algorithm (SSA, also called Gillespie algorithm). The method is passed in as argument `method=>"ode"` or `method=>"ssa"`. 
- - ODE: When simulating a system, we need to define how the system evolve through time. In *continuous* simulation of chemical reactions, the state of the system can be reported given any point in time. The reactions rules specifies the rate of change for concentration of the involved species, and they are differential equations. For example, d[L]/dt=k2[L.T] - k1[L][T].[^Schwartz14]
- - SSA: When simulate the change of the system through time, we define states of the system. Transition can happen between states that differ by one reaction event. We track the *discrete* amount of each reactants and simulate the system via transition of the states[^Schwartz17]. For example, the state can transit from [#L=100, #T=50, #L.T=0] to [#L=99, #T=49, #L.T=1], with probability determined both by reaction rate k_lr_bind and the the number of ways to choose the L and T molecules.[^Schwartz17] For using SSA, the measurement of abundance of molecules should actually be number of molecule instead of concentration.
-
-
 ## Specifying simulation commands
 
 And now we are ready to simulate. Add the `generate network` and `simulate` command outside of your model specification. We will specify three arguments:
 
-**Method**. We will use `method=>"ode"` in all the tutorials, but you could also try `method=>"ssa"`. Note that `method=>"ssa"` will be slower for models that are more complex, because it simulates every reaction event while ode only cares about concentrations at each time step.
+**Method**. We will use `method=>"ode"` in all the tutorials, but you could also try `method=>"ssa"`. We will expand on that later. Note that `method=>"ssa"` will be slower for models that are more complex, because it simulates every reaction event while ode only cares about concentrations at each time step.
 
 **Time span**.`t_end`, the simulation duration. BNG simulation time is unitless; for simplicity we define all time units to be second.
 

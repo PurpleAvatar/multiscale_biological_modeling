@@ -65,3 +65,5 @@ sidebar:
 * In the results section, should say something about there being practical limitations to how much we can increase the reaction producing *Y*, which provides a trade-off hence why the reaction rate isn't higher.
 
 * (Cite Alon book at some point -- when motifs are introduced? The introduction?)
+
+* NOAH: we need to have an overview of the repressilator experiment from 2000, which apparently was refined in 2000.  Could you give a short overview of how it works here?  I'm not sure where the best place for it would be would be; it could be called something like "engineering a repressilator".

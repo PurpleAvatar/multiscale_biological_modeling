@@ -50,7 +50,7 @@ If you have followed our previous tutorials, then you may feel comfortable takin
 [Visit tutorial](tutorial_oscillators){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
-## The oscillations of the repressilator
+## Interpreting the repressilator's oscillations
 
 The figure below shows the results of our simulation by plotting the number of *X*, *Y*, and *Z* particles over time. As we can see, the system shows clear oscillatory behavior, with the concentrations of *X*, *Y*, and *Z* taking turns being at high concentration.
 
@@ -63,27 +63,31 @@ The figure below shows the results of our simulation by plotting the number of *
 
 * NOAH: A natural question is what the period of this oscillation is and how this connects to real examples from the original repressilator paper.  Don't get in the weeds on this (max 10 minutes, but lmk what you think.)
 
-* START HERE
+Why would the repressilator's three-component feedback loop cause the concentrations of the three particles to oscillate? We will attempt to provide a high-level explanation.
 
-* A natural question is why the structure of the repressilator would cause the three particles to take turns at high concentrations, so let us consider each particle one at a time.
+Because the concentration of *X* starts out high, with no *Y* or *Z*, the concentration of *X* briefly increases because its rate of production exceeds its rate of degradation. Because there are no *Y* or *Z* particles present, they start increasing as well.
 
-* Because *X* starts out high, as soon as there are some *Z* particles the repressing reaction *Z* + *X* → *Z* starts to decrease the amount of *X*.
+As soon as there are some *Z* particles present, the concentration of *X* peaks, and the reaction *Z* + *X* → *Z* occurs often enough for the rate of removal of *X* to exceed its rate of production, accounting for the first peak in the figure above.
 
-* Furthermore, because there are a lot of *X* particles, the reaction *X* + *Y* → *X* prevents the number of *Y* particles from growing.
+Furthermore, because the concentration of *X* particles begins high, the reaction *X* + *Y* → *X* prevents the number of *Y* particles from growing quickly initially.
 
-* However, there are very few *Y* or *Z* particles at the start, and so the third repression reaction *Y* + *Z* → *Y* has very little effect on the concentration of *Z*, and so the number of *Z* particles grows.
+However, the remaining repression reaction (*Y* + *Z* → *Y*) has very little effect initially because the concentrations of *Y* and *Z* are both low. As a result, the rate of production of *Z* is higher than its rate of removal, and so its concentration increases.
 
-* The end result is that the concentration of *X* plummets, with the concentration of *Z* rising up to replace it, accounting for the second peak in the figure.
+In summary, after an initial rise, the concentration of *X* plummets, with the concentration of *Z* rising up to replace it, while the concentration of *Y* increases but at a slower rate than that of *Z*. This reflects the second peak in the figure above.
 
-* As a result, *Z* and *X* in effect switch roles.  Now the reaction *Y* + *Z* → *Y* will decrease the amount of *Z*, and because there are not many *X* or *Y* particles, the reaction *X* + *Y* → *X* does not occur often, meaning that the concentration of *Y* will rise, accounting for the third peak in the figure.
+As a result, *Z* and *X* in effect have switched roles. Because there is a high concentration of *Z*, the reaction *Y* + *Z* → *Y* will suppress *Z* quickly, and it will decrease. Furthermore, because the concentration of *X* has decreased, the reaction *X* + *Y* → *X* will occur less often, allowing the concentration of *Y* to rise more quickly. Eventually, *Y* will be at high concentration while *Z* has reached a low concentration, accounting for the third peak in the figure above.
 
-* Finally, because *Y* is at high concentration, the reaction *X* + *Y* → *X* will occur much more often than the reaction *Z* + *X* → *Z*. Therefore, the concentration of *Y* will decrease while the concentration of *X* increases.  This accounts for the fourth peak in the figure and returns the simulation to its original situation, at which point the cycle will start again.
+At this point, the reaction *X* + *Y* → *X* will suppress the concentration of *Y*. Because the concentration of *X* and *Z* are both lower, the reaction *Z* + *X* → *Z* will not greatly influence the concentration of *X*, which will rise to meet the following concentration of *Y*, and we have returned to our original situation, at which point the cycle will begin again.
 
-## Engineering a repressilator
+## The power of noise
 
-* NOAH: we need to have an overview of the repressilator experiment from 2000, which apparently was refined in 2000.  Could you give a short overview of how it works here?
+Take another look at the figure showing the oscillations of the repressilator. You will notice that the concentrations zigzag as they travel up or down, and that they peak at slightly different levels each time.
 
-* It is amazing that such a simple motif can produce oscillations and be integrated synthetically into a living cell, but there is an even more fascinating aspect of biological oscillators that we will discuss in the next section.
+This noise in the repressilator's oscillations is due to variance as the particles travel around. Specifically, the repression reactions require two particles to collide in order for the reaction to take place. Due to random chance, these collisions may occur more or less often than they would be expected in a given time period because of random chance.
+
+The noise that appears in the repressilator's oscillations is a feature, not a bug. As we have discussed previously, the cell's molecular interactions are inherently random. So if we see oscillations in a simulation that includes noise arising from random chance, we can be confident that this simulation is *robust* to a certain amount of noise.
+
+In the next lesson, we will explore the concept of robustness further. The noise in the oscillations appears to be relatively minor, but what happens if our simulation experiences a much greater disturbance to the concentration of one of the particles?  Will it still be able to recover and return to the same oscillatory pattern?
 
 [Next lesson](robust){: .btn .btn--primary .btn-large}
 {: style="font-size: 100%; text-align: center;"}

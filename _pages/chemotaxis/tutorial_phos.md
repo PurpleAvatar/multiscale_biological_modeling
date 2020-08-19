@@ -16,11 +16,11 @@ In this page, we will:
 
 We have:
 
-**Ligand binding and dissociation**. L + T <-> LT with rate $k_lr_bind, k_lr_dis$.
+**Ligand binding and dissociation**. L + T <-> LT with rate *k_lr_bind, k_lr_dis*.
 
 **Receptor complex autophosphorylation**. The receptor complex is composed of MCPs, CheW, and CheA. CheA undergoes autophosphorylation, and the rate of autophosphorylation depends on conformation of the receptor complex. Faster autophosphorylation for free MCPs. Note that the phosphoryl group is from an ATP->ADP reaction, but we will just code as phosphorylation states in modeling for simplicity. 
  - T -> T-P    rate *k_T_phos*
- - LT -> LT-P  rate $k_T_phos \cdot 0.2$
+ - LT -> LT-P  rate *0.2 k_T_phos*
 
 **CheY phosphorylation and dephosphorylation**. CheA-P phosphorylates CheY. Phosphorylated CheY will be responsible for the cellular response (CW rotataion), so we will use the level of CheY-P to indicate the level of cellular response. 
  - T-P + CheY -> T + CheY-P  *k_Y_phos*

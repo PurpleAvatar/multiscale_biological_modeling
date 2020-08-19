@@ -56,7 +56,7 @@ motifs:
         url: /motifs/feed
       - title: "Building a Biological Oscillator"
         url: /motifs/oscillators
-      - title: "Modeling Robustness of Oscillators"
+      - title: "Modeling Oscillator Robustness"
         url: /motifs/robust
       - title: "Conclusion"
         url: /motifs/conclusion

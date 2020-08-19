@@ -1,6 +1,6 @@
 ---
 permalink: /motifs/robust
-title: "Modeling Robustness of Oscillators"
+title: "Modeling Oscillator Robustness"
 sidebar:
  nav: "motifs"
 toc: true

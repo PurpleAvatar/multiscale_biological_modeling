@@ -89,5 +89,5 @@ The noise that appears in the repressilator's oscillations is a feature, not a b
 
 In the next lesson, we will explore the concept of robustness further. The noise in the oscillations appears to be relatively minor, but what happens if our simulation experiences a much greater disturbance to the concentration of one of the particles?  Will it still be able to recover and return to the same oscillatory pattern?
 
-[Next lesson](robust){: .btn .btn--primary .btn-large}
+[Next lesson](robust){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}

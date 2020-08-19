@@ -113,6 +113,8 @@ coronavirus:
         url: /coronavirus/home
   - title: Protein Structure
     children:
+      - title: "Introduction to Protein Structure Prediction"
+        url: /coronavirus/structure_intro
       - title: "Protein Structure Prediction"
         url: /coronavirus/prediction
       - title: "Assessing Model Accuracy"

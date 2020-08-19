@@ -18,11 +18,11 @@ We have:
 
 **Ligand binding and dissociation**. L + T <-> LT with rate *k_lr_bind, k_lr_dis*.
 
-**Receptor complex autophosphorylation**. The receptor complex is composed of MCPs, CheW, and CheA. CheA undergoes autophosphorylation, and the rate of autophosphorylation depends on conformation of the receptor complex. When receptor is not bound with ligand, autophosphorylation is faster. Note that the phosphoryl group is from an ATP->ADP reaction, but we will just code as phosphorylation states in modeling for simplicity. 
+**Receptor complex autophosphorylation**. The receptor complex is composed of MCPs, CheW, and CheA. CheA undergoes autophosphorylation, and the rate of autophosphorylation depends on conformation of the receptor complex. Faster autophosphorylation for free MCPs. Note that the phosphoryl group is from an ATP->ADP reaction, but we will just code as phosphorylation states in modeling for simplicity. 
  - T -> T-P    rate *k_T_phos*
  - LT -> LT-P  rate *k_T_phos x 0.2*
 
-**CheY phosphorylation and dephosphorylation**. CheA-P phosphorylates a downstream protein, CheY. Phosphorylated CheY will be responsible for the cellular response (CW rotataion), so we will use the level of CheY-P to indicate the level of cellular response. But if CheY stay phosphorylated forever, the cell will remain in the same actions. So we would also like to include CheZ to catalyze the removal the phosphoryl group from Y-P.
+**CheY phosphorylation and dephosphorylation**. CheA-P phosphorylates CheY. Phosphorylated CheY will be responsible for the cellular response (CW rotataion), so we will use the level of CheY-P to indicate the level of cellular response. 
  - T-P + CheY -> T + CheY-P  *k_Y_phos*
  - Z + Y-P -> Z + Y + P *k_Y_dephos*
 
@@ -45,9 +45,9 @@ And we update the reaction rules with the phosphorylation and dephosphorylation 
 	begin reaction rules
 		LigandReceptor: L(t) + T(l) <-> L(t!1).T(l!1) k_lr_bind, k_lr_dis
 		
-		#Free vs. ligand-bound receptor complexes autophosphorylates at different rates
-		FreeReceptorPhos: T(l,Phos~U) -> T(l,Phos~P) k_T_phos
-		BoundReceptorPhos: L(t!1).T(l!1,Phos~U) -> L(t!1).T(l!1,Phos~P) k_T_phos*0.2
+		#Free vs. ligand-bound complexes autophosphorylates at different rates
+		FreeMCPPhos: T(l,Phos~U) -> T(l,Phos~P) k_T_phos
+		BoundMCPPhos: L(t!1).T(l!1,Phos~U) -> L(t!1).T(l!1,Phos~P) k_T_phos*0.2
 		
 		CheYPhos: T(Phos~P) + CheY(Phos~U) -> T(Phos~U) + CheY(Phos~P) k_Y_phos
 		CheYDephos: CheZ() + CheY(Phos~P) -> CheZ() + CheY(Phos~U) k_Y_dephos
@@ -64,23 +64,23 @@ We need to indicate the number of molecules at each states present at the beginn
 		CheZ() CheZ0
 	end seed species
 
-Let's update all the parameters based on *in vivo* stoichiometry [^Li2004][^Spiro1997][^Stock1991]. 
+Let's update all the parameters based on *in vivo* quantities [^Li2004][^Spiro1997][^Stock1991]. Specifically, we include the number of CheY, CheZ, and the rate of receptor complex autophosphorylation, CheY phosphorylation, and CheZ dephosphorylation.
 
 	begin parameters
-		NaV2 6.02e8   #Unit conversion to cellular concentration M/L -> #/um^3
+		NaV 6.02e8   #Unit conversion to cellular concentration M/L -> #/um^3
 		L0 0        #number of ligand molecules
 		T0 7000       #number of receptor complexes
 		CheY0 20000
 		CheZ0 6000
 		
-		k_lr_bind 8.8e6/NaV2   #ligand-receptor binding
-		k_lr_dis 35            #ligand-receptor dissociation
+		k_lr_bind 8.8e6/NaV   #ligand-receptor binding
+		k_lr_dis 35           #ligand-receptor dissociation
 		k_T_phos 15           #receptor complex autophosphorylation
-		k_Y_phos 3.8e6/NaV2    #receptor complex phosphorylates Y
-		k_Y_dephos 8.6e5/NaV2  #Z dephosphoryaltes Y
+		k_Y_phos 3.8e6/NaV    #receptor complex phosphorylates CheY
+		k_Y_dephos 8.6e5/NaV  #Z dephosphoryaltes CheY
 	end parameters
 
-We would also be interested in the number of T-P and Y-P during the simulation.
+We would also be interested in the number of T-P and CheY-P during the simulation.
 
 	begin observables
 		Molecules ActiveY CheY(Phos~P)
@@ -96,25 +96,21 @@ Observe the simulation for longer. Change `t_end` at the bottom to 3.
 You can also download the simulation file here: 
 <a href="https://purpleavatar.github.io/multiscale_biological_modeling/downloads/downloadable/phosphorylation.bngl" download="phosphorylation.bngl">phosphorylation.bngl</a>
 
-## Results: cellular responses
+## Simulating cellular responses
 
-Before running the simulation, let's think about what will happen. If we don't add any ligand molecule into the system, then T phosphorylation happens at rate *k_T_phos*, and T will phosphorylates CheY, which will also be dephosphorylated by CheZ. The concentrations of phosphorylated T and CheY will stay at an equilibrium. That's the initial concentrations of molecules at each state we defined earlier. When we add ligand molecules into the system, as there are more bound T, there will be less T-P, and therefore less CheY-P.
+Before running the simulation, let's think about what will happen. If we don't add any ligand molecule into the system, then T phosphorylation happens at rate *k_T_phos*, and T will phosphorylates CheY, which will also be dephosphorylated by CheZ. The concentrations of phosphorylated T and CheY will stay at a steady state. That's the initial concentrations of molecules at each state we defined earlier. 
 
-Set `L0` in the `parameters` section to 0, and then click `Simulate` and `Run`. You could observe the constant level of R-P and Y-P.
+**STOP:** Run simulation with no ligand molecule present by setting `L0` in the `parameters` section to 0, and click `Run` under `Simulate`. What do you observe?
+{: .notice--primary}
 
-![image-center](../assets/images/chemotaxis_tutorial5.png){: .align-center} 
+When we add ligand molecules into the system, as there are more bound T, there will be less T-P, and therefore less CheY-P. What will happen to steady state concentrations? Does the amount of ligand molecule matter?
 
-Then change `L0` to 1e4.
+**STOP:** Run simulation with `L0 = 1e4` and `L0 = 1e5`. What do you observe?
+{: .notice--primary}
 
-![image-center](../assets/images/chemotaxis_tutorial6.png){: .align-center} 
+In the plots, you will see number of bound ligand increases and then reach a steady state. As a result, number of active receptor decreases, and that leads to decreased CheY activity. For different `L0`, how do the steady state for bound ligand, active receptor, and active CheY differ and why?
 
-Then change `L0` to 1e5.
-
-![image-center](../assets/images/chemotaxis_tutorial7.png){: .align-center} 
-
-With the addition of attractants, more receptor dimers are bound to attractants, and therefore less CheA autophosphorylation happens (here we include the CheA as part of the receptor complex). As a result, less CheY can be phosphorylated by CheA, and therefore, CheY phosphorylates the flagellar proteins less frequently, reducing tumbling frequency. 
-
-But this is only half of the story. In the next section, we will code up the adaptation, including CheR, CheB, and methylation states for chemotaxis.
+Exercise: Try several different `L0` values (ex. 1e3, 1e7, 1e9). Are you seeing what you expected? If at some point the result doesn't change anymore, why? What does it implicate about limitation in chemotaxis?
 
 
 
@@ -127,7 +123,7 @@ But this is only half of the story. In the next section, we will code up the ada
 [^Spiro1997]: Spiro PA, Parkinson JS, and Othmer H. 1997. A model of excitation and adaptation in bacterial chemotaxis. Biochemistry 94:7263-7268. [Available online](https://www.pnas.org/content/94/14/7263).
 
 
-[Back to Main Text](home){: .btn .btn--primary .btn--x-large}
+[Back to Main Text](home_biochem){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 

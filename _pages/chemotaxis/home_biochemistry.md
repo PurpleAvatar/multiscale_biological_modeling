@@ -25,11 +25,11 @@ Introduction to the pathway:
 
 **MCPs**. On the cell membrane, there are receptors called **methyl-acceptring chemotaxis proteins (MCPs)**. They form complexes with **CheW** and **CheA**.
 
-**CheA**. CheA undergoes autophosphorylation. It can then phosphorylates CheY.
+**CheA**. CheA undergoes autophosphorylation. The rate of phosphorylation depends on the conformation of MCPs. When receptor is not bound with ligand, autophosphorylation is faster. It can then phosphorylates CheY.
  - CheA + ATP -> CheA-P + ADP
  - CheA-P + CheY -> CheY-P
 
-**CheY**. CheY is phosphorylated by CheA. Upon interacting with FliM in the basal body of flagellum, phosphorylated CheY induces the direction change of flagellum rotation from CCW to CW. As we mentioned before, switching to CW rotations leads to tumbling. CheY dephosphorylation is cataylzed by **CheZ**.
+**CheY**. CheY is phosphorylated by CheA. Upon interacting with FliM in the basal body of flagellum, phosphorylated CheY induces the direction change of flagellum rotation from CCW to CW. As we mentioned before, switching to CW rotations leads to tumbling. But if CheY stay phosphorylated forever, the cell will tumble forever. So the CheY also need to be dephosphorylated, which is catalyzed by **CheZ**.
  - CheY-P + CheZ -> CheY + CheZ + P
 
 **CheZ**. CheZ dephosphorylates CheY, as introduced above.
@@ -37,14 +37,32 @@ Introduction to the pathway:
 
 When the cell is in an environment with no ligand, CheA autophosphorylation occurs at a background frequency, leading to a CheY phosphorylation rate that would maintain the background tumbling frequency of every 1-1.5s.
 
-When the receptors bind to attractant molecules, CheA autophosphorylation lowers, decreasing tumbling frequency. When the receptors bind to repellent molecules, CheA autophosphorylation increasess, increasing tumbling frequency.
+When the receptors bind to attractant molecules, CheA autophosphorylation lowers, decreasing tumbling frequency. When the receptors bind to repellent molecules, CheA autophosphorylation increases, increasing tumbling frequency.
 
 ## Modeling phosphorylation events
 
+If a bacterium wants to sense a gradient, it should be able to distinguish different ligand concentrations. In the sense of signaling, a higher ligand concentration should be a stronger signal, which generates a stronger response.
 
+Will higher attractant concentration lead to less tumbling? Let's confirm it by incorporating the phosphorylation pathway into our BNG simulation.
 
-[Visit Ligand-Receptor Dynamics Tutoiral](tutorial_phos){: .btn .btn--primary .btn--large}
+[Visit Phosphorylation Tutorial](tutorial_phos){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
+
+When no ligand is added, we see the concentrations remain at steady state. CheY activity remains at the background level, resulting in background tumbling frequency.
+
+![image-center](../assets/images/chemotaxis_tutorial5.png){: .align-center} 
+
+If we have 1e4 attractant molecules.
+
+![image-center](../assets/images/chemotaxis_tutorial6.png){: .align-center} 
+
+If we have 1e5 attractant molecules.
+
+![image-center](../assets/images/chemotaxis_tutorial7.png){: .align-center} 
+
+With the addition of attractants, more receptor complexes are bound to attractants, and therefore less CheA autophosphorylation happens (here we include the CheA as part of the receptor complex). As a result, less CheY can be phosphorylated by CheA, and therefore, CheY phosphorylates the flagellar proteins less frequently, reducing tumbling frequency. And a higher attractant concentration leads to more decrease in tumbling frequency (before receptors are saturated and can no longer have higher bound receptor concentration).
+
+But this is only half of the story. In the next section, we will code up the adaptation, including CheR, CheB, and methylation states for chemotaxis.
 
 
 

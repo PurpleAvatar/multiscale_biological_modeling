@@ -5,25 +5,13 @@ sidebar:
  nav: "motifs"
 ---
 
-## A coarse-grained model for reaction-diffusion
+## Engineering a repressilator
 
-* The reaction-diffusion models that we have built in this chapter have noise built into them because they are based on the random movements of particles. In some sense, this is a positive feature of particle-based models, because the consistency of the model's output despite an inherently noisy environment reinforces the robustness of the model.
-
-* However, a downside of the particle model is that it is slow and does not scale well for larger simulations.
-
-* Note that even though the system is ultimately reliant on the interactions of molecules, we are not ultimately interested in the individual particles themselves.  Throughout this module, we have focused only on how the *concentration* of each type of particle changes over time. As in the [prologue](prologue), we could imagine developing a faster, coarser-grained version of the models presented here on network motifs.
-
-* For example, say that we wish to model a degradation reaction. If we start with 10,000 *X* particles, then after a single time step, we can simply subtract some percentage of these particles from the total number; there is no need to generate and keep track of 10,000 particles diffusing.
-
-* Similarly, if we have a removal reaction like *X* + *Y* → *X*, and the diffusion rates of *X* and *Y* are the same, then we may like to assume that the concentrations of *X* and *Y* are uniform; this allows us to subtract some percentage from the concentration of *Y* based on the current concentrations of *X* and *Y*.
-
-* The details of how to build such a coarser-grained model are beyond the scope of our work here, but if you would like to see a tutorial showing how to build particle-free reaction-diffusion simulations corresponding to the models we built throughout this module, check out the tutorial below.
-
-* NOAH: Insert link to NFSim tutorial here.
+* NOAH: we need to have an overview of the repressilator experiment from 2000, which apparently was refined in 2016.  Could you give a short overview of how this works here and the extent to which they were able to replicate what we have *in vivo*?
 
 ## Looking ahead
 
-* In fact, in the next module, we will see that a coarse-grained approach will be vital as we start to build more complicated cellular simulations with many moving parts.
+* In the next module, we will see that a coarse-grained approach like the one considered in the previous lesson will be vital as we start to build more complicated cellular simulations with many moving parts.
 
 * In fact, we will have so many cellular components and reactions that we will need to completely rethink how we set up our reactions. We hope that you will join us!
 
@@ -64,6 +52,6 @@ sidebar:
 
 * In the results section, should say something about there being practical limitations to how much we can increase the reaction producing *Y*, which provides a trade-off hence why the reaction rate isn't higher.
 
-* (Cite Alon book at some point -- when motifs are introduced? The introduction?)
+* NOAH: should we have an exercise asking students to use NFSim to replicate the other network motifs studied in this module?
 
-* NOAH: we need to have an overview of the repressilator experiment from 2000, which apparently was refined in 2000.  Could you give a short overview of how it works here?  I'm not sure where the best place for it would be would be; it could be called something like "engineering a repressilator".
+* (Cite Alon book at some point -- when motifs are introduced? The introduction?)

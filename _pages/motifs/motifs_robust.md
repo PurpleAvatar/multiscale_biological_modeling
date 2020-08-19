@@ -9,13 +9,25 @@ toc_sticky: true
 
 ## The need for robustness in biological oscillators
 
-* Nothing offers a better example of the need for *robustness* more than biological oscillators. For example, if something disrupts your heart rhythm, whether it be a lightning strike or a palpitation, there should be some process that allows it to return to oscillating as it did before.
+Nothing exemplifies the need for robustness in biological systems better than oscillators. If a palpitation causes your heart to skip a beat, it should be able to return quickly to its natural rhythm. If you hold your breath to dive underwater on a snorkeling tip, you shouldn't hyperventilate when you return to the surface. And regardless of what functions your cells perform or what disturbances they find in their environment, they should be able to maintain a normal cell cycle.
 
-* We see this in your circadian clock with jet lag. There is no clear reason why a human should have become evolved to fly halfway around the world and be so resilient to this that they can return to a normal daily cycle within a few days.
+An excellent illustration of the robustness of the circadian clock is the body's ability to handle jet lag. There is no apparent reason why you would have evolved to fly halfway around the world and be able to return to a normal daily cycle after just a few days of fatigue.
 
-* The question, then, is whether the repressilator is robust; in other words, if we disturb this oscillator by suddently changing the concentrations of particles, will the system be able to eventually return to its oscillations?  And how long will it take to respond?  We will explore
+In the previous lesson, we saw that the repressilator will produce oscillations even in a noisy environment. This leads us to wonder about the extent to which our repressilator is robust, and how quickly it can respond to a disturbance.
 
-* NOAH: please link to a second oscillator tutorial that walks the user through the disturbances that we apply.
+## A coarse-grained model for reaction-diffusion
+
+We have noted that a benefit of using a reaction-diffusion particle model to study network motifs is the inclusion of built-in noise to ensure a measure of robustness. However, a downside of such a model is that simulating the movements of so many particles leads to a slow simulation that does not scale well to many particles or reactions.
+
+Although our model is ultimately interested in the interactions of molecules, the conclusions we have made throughout this chapter are only based on the *concentrations* of these particles. Therefore, as we did in the [prologue](prologue), we might imagine developing a coarser-grained version of our model that allows us to make faster conclusions about particle concentrations without keeping track of the diffusion of individual particles.
+
+For example, say that we are modeling a degradation reaction. If we start with 10,000 *X* particles, then after a single time step, we can simply multiply the number of *X* particles by (1-*r*) where *r* is a parameter related to the rate of the degradation reaction.
+
+As for a repression reaction like *X* + *Y* → *X*, say that the concentrations of *X* and *Y* are uniform throughout the object and the diffusion rates of *X* and *Y* are the same. We can update the concentration of *Y* particles by subtracting some factor times the current concentration of *Y* particles. This factor should be directly related to the current concentrations of both *X* and *Y*.
+
+The technical details behind such a coarse-grained model are beyond the scope of our work in this lesson, but we will return to these technical details in the next module. In the meantime, we provide a tutorial below showing how to build a particle-free simulation replicating the repressilator motif. As part of this tutorial, we will make a major disturbance to the concentration of one of the particles and see how long the disturbance lasts and whether the particle concentrations can resume their oscillations.
+
+* NOAH: Insert link to NFSim tutorial here walking the user through the disturbances that we apply.
 
 ## The repressilator is robust to disturbance
 
@@ -28,8 +40,6 @@ toc_sticky: true
 * There is a bigger picture moral at hand, which is that if a biological system is robust, then we should be wary of trusting a fragile model of that system.
 
 * In the next chapter, we will transition to a model of a bacterial cell's response to its environment that will involve more than three particles and require us to take into account many different reactions than we have in this section. A critical aspect of this model will be that it is robust.
-
-* Yet before we get ahead of ourselves, there is one more point to be made about the models we have built in this module, which we will make in the module's conclusion.
 
 [Next lesson](conclusion){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}

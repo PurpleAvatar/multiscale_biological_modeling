@@ -192,6 +192,7 @@ You will observe CheY acitvity drops immediately, and returns to the original st
 {: .notice--primary}
 
 **STOP:** Also try only simulate the first 10 seconds to zoom in to what happens to the system there. When does CheY activities reach minimum?
+{: .notice--primary}
 
 That suggests ligand binding can lead to a very quick response (within 1s), and the cell slowly adapts and returns to the background tumbling frequency in several minutes.
 

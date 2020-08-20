@@ -178,7 +178,7 @@ If you are interested, a more detailed tutorial on BNG modeling can be found [he
 [^Schwartz17]: Schwartz R. Biological Modeling and Simulaton: A Survey of Practical Models, Algorithms, and Numerical Methods. Chapter 17.2.
 
 
-[Back to Main Text](home_biochem){: .btn .btn--primary .btn--large}
+[Back to Main Text](home_signal){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 

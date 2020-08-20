@@ -19,7 +19,7 @@ In chemotaxis, the direction of flagellar rotation is also controlled by phospho
 
 This pathway includes the receptor we've discussed - receptor complex MCP, a series of chemotaxis proteins - CheW, CheA, CheY, CheZ (*Che* stands for chemotaxis), and the basal body of flagelli. The figure provides a visualization[^ParkinsonLab].
 ![image-center](../assets/images/chemotaxisphosnew.png){: .align-center}
-<figcaption>A summary of chemotaxis pathway. Signal is ligand binding, and the signal is propagated through CheA and CheY phosphorylation, which leads to the response of CW flagellar rotation.</figcaption>
+<figcaption>A summary of chemotaxis pathway. Signal is ligand binding, and the signal is propagated through CheA and CheY phosphorylation, which leads to the response of CW flagellar rotation. Blue curved arrow: phosphorylation; grey curved arrow: dephosphorylation; blue dotted arrow: interaction.</figcaption>
 
 Introduction to the pathway:
 

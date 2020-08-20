@@ -27,10 +27,10 @@ To do this, the cell records the past concentration. This is achieved by **methy
 
 Our pathway will be based on the pathway explained on Parkinson Lab website.[^ParkinsonLab]
 
-The rate of CheA autophosphorylation, besides MCP-ligand binding, is also dependent on MCP methylation states. Each MCP monomer has 4 methylation sites. When more methylation sites on MCP are methylated, CheA autophosphorylation actvity becomes higher. There are two other proteins, **CheB**, which is phosphorylated by CheA and demethylates MCPs, and **CheR**, which methylates MCPs. 
+The rate of CheA autophosphorylation, besides MCP-ligand binding, is also dependent on MCP methylation states. Each MCP monomer has 4 methylation sites. When more methylation sites on MCP are methylated, CheA autophosphorylation actvity becomes higher. There are two other proteins, **CheB**, which is phosphorylated by CheA and demethylates MCPs, and **CheR**, which methylates MCPs. Visualization below.[^ParkinsonLab]
 
  ![image-center](../assets/images/chemotaxis_methylation.png){: .align-center}
- <figcaption>A summary of the methylation pathway[^ParkinsonLab]. CheA phosphorylates CheB. CheB methylates while CheR demethylates MCP. Blue curve: phosphorylation; grey curve: dephosphorylation; green arrow: methylation.</figcaption>
+ <figcaption>A summary of the methylation pathway. CheA phosphorylates CheB. CheB methylates while CheR demethylates MCP. Blue curve: phosphorylation; grey curve: dephosphorylation; green arrow: methylation.</figcaption>
 
 **CheB**. CheB is phosphorylated by CheA. CheB methylates MCPs and readily autodephosphorylates. The rate of demethylation is dependent on MCP methylation states - faster to enter intermediate methylation levels[^Spiro1997].
  - CheA-P + CheB -> CheA + CheB-P
@@ -135,5 +135,5 @@ Some resources/reads if you are interested in the chemotaxis biology:
 
 [^Krembel2015]: Krembel A., Colin R., Sourijik V. 2015. Importance of multiple methylation sites in *Escherichia coli* chemotaxis. [Available online](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0145582)
 
-[Next Page: Gradient](home_gradient){: .btn .btn--primary .btn--x-large}
+[Next Page: Gradient](home_gradient){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}

@@ -8,6 +8,27 @@ toc: true
 toc_sticky: true
 ---
 
+## Setting Up
+
+The following tutorial will walk through a Jupyter Notebook, which can be downloaded <a href="https://purpleavatar.github.io/multiscale_biological_modeling/downloads/Gray-Scott_Reaction_Diffusion_Model.ipynb" download="Gray-Scott_Reaction_Diffusion_Model.ipynb">here</a>.
+
+**NOTE**: You will need to place this file on the same level as another folder named "/gs_images". ImageIO will not always create this folder automatically, so it may need to be created manually.
+{: .notice--primary}
+
+The following software and packages will need to be installed:
+
+| Installation Link | Version* | Check Install | 
+|:------|:-----:|:------:|------:|
+| [Python3](https://www.python.org/downloads/)  |3.7 |*python --version* | 
+| [Jupyter Notebook](https://jupyter.org/index.html) | 4.4.0 | *jupyter --version* |
+| [matplotlib](https://matplotlib.org/users/installing.html) | 2.2.3 | *conda list* or *pip list* |
+| [numpy](https://numpy.org/install/) | 1.15.1 | *conda list* or *pip list* |
+| [scipy](https://www.scipy.org/install.html) |  1.1.0 | *conda list* or *pip list* |
+| [imageio](https://imageio.readthedocs.io/en/stable/installation.html) | 2.4.1 | *conda list* or *pip list* |
+*other versions may be compatible with this code, but those listed are known to work for this tutorial
+
+You can read more about various installation options [here](https://realpython.com/installing-python/) or [here](https://docs.conda.io/en/latest/). 
+
 ## Gray-Scott Jupyter Notebook Tutorial
 
 In this Jupyter notebook, we will be simulating a Turing pattern generator, called the Gray-Scott Reaction-Diffusion model. Gray-Scott model is a model that has only two variables: a prey and a predator. Predator eats the prey to multiply and prey is present in the environment constantly.
@@ -17,6 +38,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import time
 from scipy import signal
+import imageio
 
 %matplotlib inline
 
@@ -43,6 +65,8 @@ Outputs:
 The next step takes in the parameters for the simulation in order to iterate through each grid which will be printed down below.
 
 ~~~ python
+images = [] 
+
 def simulate(numIter, A, B, f, k, dt, dA, dB, lapl, plot_iter):
     print("Running Simulation")
     start = time.time()
@@ -58,9 +82,12 @@ def simulate(numIter, A, B, f, k, dt, dA, dB, lapl, plot_iter):
             plt.imshow((B / (A+B)),cmap='Spectral')
             plt.axis('off')
             now = time.time()
-            print("Seconds since start =", now-start)
-            plt.show()
-
+            # print("Seconds since epoch =", now-start)
+            # plt.show()
+            filename = 'gs_images/gs_'+str(iter)+'.png'
+            plt.savefig(filename)
+            images.append(imageio.imread(filename))
+    
     return A, B
 ~~~ 
 
@@ -97,6 +124,7 @@ Now we can run the program and view the simulations.
 
 ~~~ python
 simulate(numIter, A, B, f, k, dt, dA, dB, lapl, plot_iter)
+imageio.mimsave('gs_images/gs_movie.gif', images)
 ~~~
 
 You should get images similar to the ones below. If you would like to see more images, you can adjust the *plot_iter* variable or *numIter* variable which controls how often the graph is plotted and how many iterations are in the simulation. 

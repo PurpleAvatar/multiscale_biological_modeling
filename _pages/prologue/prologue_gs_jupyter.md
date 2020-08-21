@@ -14,7 +14,7 @@ In this Jupyter notebook, we will be simulating a Turing pattern generator, call
 
 ~~~ python
 import matplotlib.pyplot as plt
-Import numpy as np
+import numpy as np
 import time
 from scipy import signal
 

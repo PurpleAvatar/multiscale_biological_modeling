@@ -18,7 +18,7 @@ The following tutorial will walk through a Jupyter Notebook, which can be downlo
 The following software and packages will need to be installed:
 
 | Installation Link | Version* | Check Install | 
-|:------|:-----:|:------:|------:|
+|:------|:-----:|------:|
 | [Python3](https://www.python.org/downloads/)  |3.7 |*python --version* | 
 | [Jupyter Notebook](https://jupyter.org/index.html) | 4.4.0 | *jupyter --version* |
 | [matplotlib](https://matplotlib.org/users/installing.html) | 2.2.3 | *conda list* or *pip list* |

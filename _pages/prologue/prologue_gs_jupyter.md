@@ -17,7 +17,7 @@ The following tutorial will walk through a Jupyter Notebook, which can be downlo
 
 The following software and packages will need to be installed:
 
-| Installation Link | Version* | Check Install | 
+| Installation Link | Version[^version] | Check Install | 
 |:------|:-----:|------:|
 | [Python3](https://www.python.org/downloads/)  |3.7 |*python --version* | 
 | [Jupyter Notebook](https://jupyter.org/index.html) | 4.4.0 | *jupyter --version* |
@@ -25,7 +25,8 @@ The following software and packages will need to be installed:
 | [numpy](https://numpy.org/install/) | 1.15.1 | *conda list* or *pip list* |
 | [scipy](https://www.scipy.org/install.html) |  1.1.0 | *conda list* or *pip list* |
 | [imageio](https://imageio.readthedocs.io/en/stable/installation.html) | 2.4.1 | *conda list* or *pip list* |
-*other versions may be compatible with this code, but those listed are known to work for this tutorial
+
+[^version]: Other versions may be compatible with this code, but those listed are known to work for this tutorial
 
 You can read more about various installation options [here](https://realpython.com/installing-python/) or [here](https://docs.conda.io/en/latest/). 
 

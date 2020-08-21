@@ -121,7 +121,9 @@ coronavirus:
         url: /coronavirus/structure_intro
       - title: "Ab initio Protein Structure Prediction"
         url: /coronavirus/ab_initio
-      - title: "Protein Structure Prediction"
+      - title: "Homology Modeling for Protein Structure Prediction"
+        url: /coronavirus/homology
+      - title: "(To be removed) Protein Structure Prediction"
         url: /coronavirus/prediction
       - title: "Assessing Model Accuracy"
         url: /coronavirus/RMSD_results

@@ -1,7 +1,7 @@
 ---
 permalink: /meet-the-team/
 title: "Meet the Team"
-layout: single
+layout: splash
 ---
 
 Content below is the team
@@ -11,7 +11,7 @@ Content below is the team
   
   <div class="column">
     <div class="card">
-      <img src="../assets/images/Phillip_Compeau.JPG" alt="Phillip Compeau" style="display:block; margin:auto; width:512px; border-radius:50%">
+      <img src="../assets/images/Phillip_Compeau.JPG" alt="Phillip Compeau" style="display:block; margin:auto; width:256px; border-radius:50%">
       <div class="container">
         <h2>Phillip Compeau</h2>
         <p class="title">CEO &amp; Founder</p>
@@ -26,11 +26,11 @@ Phillip is passionate about open online education, and his education projects ha
   
   <div class="column">
     <div class="card">
-      <img src="../assets/images/blurred_sides_square.png" alt="Noah Lee" style="display:block; margin:auto; width:512px; border-radius:50%">
+      <img src="../assets/images/blurred_sides_square.png" alt="Noah Lee" style="display:block; margin:auto; width:256px; border-radius:50%">
       <div class="container">
         <h2>Noah Yann Lee</h2>
         <p class="title">CEO &amp; Founder</p>
-        <p>Noah Yann Lee is a PhD student at Yale University under the Computational Biology and Bioinfornatics program. Noah completed his undergraduate at Carnegie Mellon University, graduating in 2020 with a B.S. in Computational Biology with a minor in Design for Learning. From running early-childhood educational tests with the Children's School at Carnegie Mellon for the Global Learning XPRIZE, to cultivating and sequencing phage genomes with the PhageHunters program, Noah has an appreciation for science from the micro to the macro, physical to the digital. Noah is always interested to connect with projects and organizations working with STEM, education, and science outreach</p>
+        <p>Noah Yann Lee is a PhD student at Yale University under the Computational Biology and Bioinfornatics program. Noah completed his undergraduate at Carnegie Mellon University, graduating in 2020 with a B.S. in Computational Biology with a minor in [Design for Learning](https://ideate.cmu.edu/undergraduate-programs/learning-media/index.html). From running early-childhood educational tests with the Children's School at Carnegie Mellon for the [Global Learning XPRIZE](https://www.cmu.edu/scs/robotutor/), to cultivating and sequencing phage genomes with the PhageHunters program, Noah has an appreciation for science from the micro to the macro, physical to the digital. Noah is always interested to connect with projects and organizations working with STEM, education, and science outreach</p>
         <p>example@example.com</p>
         <p><button class="button">Contact</button></p>
       </div>
@@ -43,7 +43,7 @@ Phillip is passionate about open online education, and his education projects ha
   
   <div class="column">
     <div class="card">
-      <img src="../assets/images/190820_Comp Bio_LEE_CHRIS_107.jpg" alt="Chris Lee" style="display:block; margin:auto; width:512px; border-radius:50%">
+      <img src="../assets/images/190820_Comp Bio_LEE_CHRIS_107.jpg" alt="Chris Lee" style="display:block; margin:auto; width:256px; border-radius:50%">
       <div class="container">
         <h2>Chris Lee</h2>
         <p class="title">CEO &amp; Founder</p>
@@ -56,7 +56,7 @@ Phillip is passionate about open online education, and his education projects ha
   
   <div class="column">
     <div class="card">
-      <img src="../assets/images/shuanger_photo.png" alt="Shuanger Li" style="display:block; margin:auto; width:512px; border-radius:50%">
+      <img src="../assets/images/shuanger_photo.png" alt="Shuanger Li" style="display:block; margin:auto; width:256px; border-radius:50%">
       <div class="container">
         <h2>Shuanger Li</h2>
         <p class="title">CEO &amp; Founder</p>
@@ -74,7 +74,7 @@ Phillip is passionate about open online education, and his education projects ha
   
   <div class="column">
     <div class="card">
-      <img src="../assets/images/Comp Bio_Inan_M_2018_0024_small.jpg" alt="Mert Inan" style="display:block; margin:auto; width:512px; border-radius:50%">
+      <img src="../assets/images/Comp Bio_Inan_M_2018_0024_small.jpg" alt="Mert Inan" style="display:block; margin:auto; width:256px; border-radius:50%">
       <div class="container">
         <h2>Mert Inan</h2>
         <p class="title">CEO &amp; Founder</p>

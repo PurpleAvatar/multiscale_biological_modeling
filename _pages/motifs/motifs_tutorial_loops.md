@@ -13,13 +13,21 @@ Let's take another look at that *E. coli* network, file can be downloaded here:
 For the full Jupyter Notebook below, download here:
 <a href="https://purpleavatar.github.io/multiscale_biological_modeling/downloads/Network_Demo.ipynb" download="Network_Demo.ipynb">Jupyter Notebook</a>
 
-There are a few packages which need to be installed, here's list
-1. this
-2. this
+The following software and packages will need to be installed:
+
+| Installation Link | Version[^version] | Check Install | 
+|:------|:-----:|------:|
+| [Python3](https://www.python.org/downloads/)  |3.7 |*python --version* | 
+| [Jupyter Notebook](https://jupyter.org/index.html) | 4.4.0 | *jupyter --version* |
+| [python-igraph](https://igraph.org/python/doc/tutorial/install.html) | 0.8.0 | *conda list* or *pip list* |
+
+[^version]: Other versions may be compatible with this code, but those listed are known to work for this tutorial
 
 We can import the network and see how many nodes and edges there are, additionally can see number of self-loops are present.
 
 ~~~ python
+# NOTE: when installing via pip or conda, install python-igraph
+from igraph import *
 from network_loader import *
 import random
 

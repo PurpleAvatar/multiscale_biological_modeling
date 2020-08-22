@@ -67,6 +67,8 @@ L0 = 1e8.
 
 We can see that the higher the concentration, the lower the valley becomes. But this limited to a range of concentrations - going over a concentration where all receptors can already saturate instantly can't lead to more response; and a very low concentration won't initiate a response. Our results are also consistent with other simulations[^Bray1993] and experimental observations[^Shimizu2005][^Krembel2015]. 
 
+In the Gradient section, we will see how the ability to respond to the change and adapt to the liigand concentration enable the cells to actually move up the gradient.
+
 ## Methylation states and Combinatorial Explosion
 
 Why the methylation states can change CheA autophosphorylation actvities? Let's look at more MCP biochemistry.

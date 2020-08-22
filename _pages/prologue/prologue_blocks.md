@@ -39,7 +39,10 @@ Finally, the central square receives 20% of the particles from each of its four 
 
 As a result, the central nine squares after two time steps are as shown in the following figure.
 
-* INSERT FIGURE -- should have ? cells for the cells around the perimeter.
+<center>
+<img src = "../assets/images/A_concentration_two_time_steps_partial.png" width="300">
+<figcaption>A grid showing an update to the central nine squares of the diffusion system in the previous figure after an additional time step. The cells labeled "?" are left as an exercise to the reader.</figcaption>
+</center>
 
 **STOP**: What should the values of the "?" cells be in the above figure? Note that these cells are neighbors of cells with positive concentrations after one time step, so their concentrations should be positive.
 {: .notice--primary}

@@ -1,6 +1,6 @@
 ---
 permalink: /chemotaxis/home_senseadap
-title: "Sensation and Adaptation"
+title: "Adaptation via Methylation"
 sidebar:
  nav: "chemotaxis"
 ---
@@ -19,20 +19,20 @@ We will look at the other part of the story. Consider (think about optimal strat
 
 To make decisions based on the *change* in concentration, the cells need to compare the **current vs. past** concentrations. In the last lesson, we've showed how ligand-receptor binding allow the cell to sense the current concentration, and we will deal about the past part here. The challenge is, since the presence of ligand means consistent stimulus, doesn't the cell need to respond consistently?
 
-This is achieved via **adaptation** to the concentration (stimulus). When the stimulus persists at a constant level, the cell returns to background tumbling frequency, so that it can still the next change in concentration. Recall the biological oscillators model in the Motif Module, chemotaxis system's ability to return to the original state dispite perturbation of the environment is another example of **robustness**. 
+This is achieved via **adaptation** to the concentration (stimulus). When the stimulus persists at a constant level, the cell returns to background tumbling frequency, so that it can still detect the next change in concentration. Recall the biological oscillators model in the Motif Module, chemotaxis system's ability to return to the original state despite perturbation of the environment is another example of **robustness**. 
 
 ## Record past concentration through methylation
 
 To do this, the cell records the past concentration. This is achieved by **methylation states**. **Methylation** is the chemical process of adding methyl group (-CH<sub>3</sub>) to an oraganic molecule. Such modification can change the activity of the molecules. The removal of a methyl group is called demethylation.
 
-Our pathway will be based on the pathway explained on Parkinson Lab website.[^ParkinsonLab]
+Our pathway will be based on the pathway explained on Parkinson Lab website. Illustration modified from Parkinson Lab illustration.[^ParkinsonLab]
 
 The rate of CheA autophosphorylation, besides MCP-ligand binding, is also dependent on MCP methylation states. Each MCP monomer has 4 methylation sites. When more methylation sites on MCP are methylated, CheA autophosphorylation actvity becomes higher. There are two other proteins, **CheB**, which is phosphorylated by CheA and demethylates MCPs, and **CheR**, which methylates MCPs. Visualization below.[^ParkinsonLab]
 
  ![image-center](../assets/images/chemotaxis_methylation.png){: .align-center}
  <figcaption>A summary of the methylation pathway. CheA phosphorylates CheB. CheB methylates while CheR demethylates MCP. Blue curve: phosphorylation; grey curve: dephosphorylation; green arrow: methylation.</figcaption>
 
-**CheB**. CheB is phosphorylated by CheA. CheB methylates MCPs and readily autodephosphorylates. The rate of demethylation is dependent on MCP methylation states - faster to enter intermediate methylation levels[^Spiro1997].
+**CheB**. CheB is phosphorylated by CheA. CheB demethylates MCPs and readily autodephosphorylates. The rate of demethylation is dependent on MCP methylation states - faster to enter intermediate methylation levels[^Spiro1997].
  - CheA-P + CheB -> CheA + CheB-P
  - CheB-P -> CheB + P
  - MCP-Met + CheB-P -> MCP + CheB-P
@@ -40,14 +40,12 @@ The rate of CheA autophosphorylation, besides MCP-ligand binding, is also depend
 **CheR**. CheR methylates MCPs. The rate of methylation is higher for ligand-bound receptors, and is higher for entering intermediate methylation levels[^Spiro1997].
  - MCP + CheR -> MCP-Met + CheR
 
-When the cell first senses more ligand binding, the higher CheA phosphorylation would lead to more phosphorylated CheB, which then methylates MCPs. MCP records this sensed high concentration via high methylation state.
+Therefore, when a cell reaches a region with higher attranctant concentration, initially CW rotation drops via the phosphorylation cascade, but then the faster CheR-dependent methylation makes MCP methylation states higher. The higher methylation states make CheA autophosphorylation faster, compensating for more ligand-binding.
 
-Therefore, when a cell reaches a region with higher attranctant concentration, initially CW rotation drops via the phosphorylation cascade, but then the faster CheR-dependent methylation makes MCP methylation states higher. The higher methylation states make CheA autophosphorylation faster, compensatiing for more ligand-binding.
-
-We will incorporate methylation in our pathway and have the whole story here.
+We will incorporate methylation in our pathway and have the whole story here. Illustration modified from Parkinson Lab illustration.[^ParkinsonLab]
 
  ![image-center](../assets/images/chemotaxis_wholestory.png){: .align-center}
- <figcaption>A summary of the whole story of chemotaxis pathways.[^ParkinsonLab].Blue curve: phosphorylation; grey curve: dephosphorylation; green arrow: methylation.</figcaption>
+ <figcaption>A summary of the whole story of chemotaxis pathways.Blue curve: phosphorylation; grey curve: dephosphorylation; green arrow: methylation.</figcaption>
 
 [Visit Adaptation Tutoiral](tutorial_adap){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
@@ -65,7 +63,7 @@ L0 = 1e7.
 L0 = 1e8.
 ![image-center](../assets/images/chemotaxis_tutorial_oneadd1e8.png){: .align-center}
 
-We can see that the higher the concentration, the lower the valley becomes. But this limited to a range of concentrations - going over a concentration where all receptors can already saturate instantly can't lead to more response; and a very low concentration won't initiate a response. Our results are also consistent with other simulations[^Bray1993] and experimental observations[^Shimizu2005][^Krembel2015]. 
+We can see that the higher the concentration, the lower the valley becomes. But this is limited to a range of concentrations - going over a concentration where all receptors can already saturated instantly can't lead to more response; and a very low concentration won't initiate a response. Our results are also consistent with other simulations[^Bray1993] and experimental observations[^Shimizu2005][^Krembel2015]. 
 
 In the Gradient section, we will see how the ability to respond to the change and adapt to the liigand concentration enable the cells to actually move up the gradient.
 
@@ -73,15 +71,15 @@ In the Gradient section, we will see how the ability to respond to the change an
 
 Why the methylation states can change CheA autophosphorylation actvities? Let's look at more MCP biochemistry.
 
- - There are five types of MCPs, Tsr, Tar, Tap, Trg, and Aer, specific for different species of ligand molecules. Most studies focus on the two most abundant types: Tsr (serine receptor) and Tar (aspartate and maltose receptor), and Aer (oxygen receptor) is less well understood.[^Parkinson2015] The MCPs form trimer of dimer structure. A trimer can be a mix of Tsr, Tar, Tap, Trg dimers. Binding with ligands changes the conformation of the receptor dimer. Each receptor dimer within the trimer impacts the activity differently because of sterics.
+ - There are five types of MCPs, Tsr, Tar, Tap, Trg, and Aer, specific for different species of ligand molecules. Most studies focus on the two most abundant types: Tsr (serine receptor) and Tar (aspartate and maltose receptor), and Aer (oxygen receptor) is less well understood.[^Parkinson2015] The MCPs form trimer of dimer structure. A trimer can be a mix of Tsr, Tar, Tap, Trg dimers. Binding with ligands changes the conformation of the receptor dimer. Each receptor dimer within the trimer impacts the activity differently because of asymmetricity in conformation.
  - MCPs, CheA (dimer with 5 subunits), and CheW forms receptor arrays. The receptor arrays generally have 2 states: 1) an ordered, dense state, in which CheA activity is higher; 2) a disordered, relaxed state, in which CheA activity is lower.[^Baker2005] The control of the 4 methylation sites and ligand-receptor binding impact array conformation are important to the precise adaptation mechanism[^Saragosti2001]. A visualization of the arrays from[^Yang2019] is shown below.
 
  ![image-center](../assets/images/chemotaxis_intro_tod.png){: .align-center}
- <figcaption>MCP array structures. From Yang et al.[^Yang2019] A)The trimer of dimer structure and changes of CheA autophosphorylation actvities depends on ligand binding and methylation states; P1...P5 are subunits of CheA. B)How MCPs, CheA, and CheW form receptor arrays.</figcaption>
+ <figcaption>MCP array structures. From Yang et al.A)The trimer of dimer structure and changes of CheA autophosphorylation actvities depends on ligand binding and methylation states; P1...P5 are subunits of CheA. B)How MCPs, CheA, and CheW form receptor arrays.</figcaption>
 
  - Methylation reduces the negative charge on the receptors, making the receptor array packing more stable, thus increasing CheA autophosphorylation activities. When MCP has a higher methylation state, the rate of CheA autophosphorylation becomes higher.
 
-That means our model is a very simplified version of the actual story. But can be actually build a more complete model?
+That means our model is a very simplified version of the actual story. But can we actually build a more complete model?
 
 We can add more receptor species and ligand species to account for the different attractants/repellents and their specific receptors easily. For each trimer of dimer, we will have more binding states and more methylation states, and include dependency of CheA autophosphorylation based on the newly added states. We will modify CheB and CheR reactions to account for 4 methylation sites. The rest can stay unchanged. Adding such complexity will require some coding, but is certainly doable.
 

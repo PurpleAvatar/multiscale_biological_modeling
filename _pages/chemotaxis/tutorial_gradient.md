@@ -34,12 +34,6 @@ The simulation can be also downloaded here: <a href="https://purpleavatar.github
 You will observe that CheY phosphorylation drops gradually first, instead of the instantaneous sharp drop as we add lots of ligand at once. That means, with the ligand concentration increases, the cell is able to continuously lower the tumbling frequency. 
 
 Although our ligand concentration keeps increasing (reaching 1e49 at 1000s), once the receptors are saturated, no more response can be observed, so the cell perceives concentrations higher than saturation concentration as a constant concentration. And the cell is still able to adapt to the constant concentration.
-<!---
-To compare the results for different increase rate easier, let's get the simulated trajectories for CheY-P. 
-Go to the `Navigator` on the left side of the screen, and go to the results folder of your model. Your results for each simulation are stored in the folder named by the time you run, under folder with the same name as your model. In my case, it is in `chemotaxis_from_scratch/results/addition/2020-08-01_18-53-07`. The `.gdat` file stores values at each time point for each of your observable, and `.cdat` stores that of all species.
-
-![image-center](../assets/images/chemotaxis_tutorial_addition02.png){: .align-center}
--->
 
 **STOP:** Try different values for `k_add`: 0.01, 0.03, 0.05, 0.1, 0.3, 0.5. What do different `k_add` values imply? How does the system respond to the different values - what are some common trends and some differences?
 {: .notice--primary}

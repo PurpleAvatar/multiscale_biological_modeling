@@ -50,7 +50,7 @@ As a result, the central nine squares after two time steps are as shown in the f
 * Have a "click here for answer" with a linked image. Figure is below.
 
 <center>
-<img src = "../assets/images/A_concentration_two_time_steps_partial.png" width="300">
+<img src = "../assets/images/A_concentration_two_time_steps_complete.png" width="300">
 </center>
 
 ## Slowing down diffusion

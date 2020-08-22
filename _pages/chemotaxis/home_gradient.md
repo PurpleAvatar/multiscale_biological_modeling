@@ -44,7 +44,7 @@ Like in the up-graident model, similar trend should be observed for different gr
 ![image-center](../assets/images/chemotaxis_tutorial_removal02.png){: .align-center}
 
 
-[Conclusion](chemotaxis_conclusion){: .btn .btn--primary .btn--large}
+[Conclusion](home_conclusion){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 [^Krembel2015]: Krembel A., Colin R., Sourijik V. 2015. Importance of multiple methylation sites in *Escherichia coli* chemotaxis. [Available online](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0145582)

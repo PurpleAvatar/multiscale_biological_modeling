@@ -23,5 +23,24 @@ We also have qualitative evidence that the pigmentary patterns arising in fish a
 
 * NOAH: Insert table of pufferfish photos and cite -- https://www.123rf.com/photo_26775011_giant-puffer-fish.html and https://en.wikipedia.org/wiki/File:Giant_Puffer_fish_skin_pattern.JPG or equivalent quality
 
+
+## Exercises
+
+## Notes to selves
+
+* Make a cell update an exercise at end.
+
+* In later iteration of this, we need to probably update the figures to show how things update.
+
+* Note to add link to cellular automata and P4L.
+
+* Good questions below. May need to be exercises.
+
+**STOP**: Is it ever possible for a square to have a concentration greater than 1? Why or why not?
+{: .notice--primary}
+
+**STOP**: Note that the concentrations of all of the particles add up to 1 in each step.
+{: .notice--primary}
+
 [Next chapter](../motifs/home){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}

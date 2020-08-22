@@ -48,42 +48,71 @@ There is just one problem. This model of diffusion is too fast! If our model is 
 
 The solution is to add a parameter <em>d</em><sub><em>A</em></sub> representing the *rate* of diffusion of *A*. Instead of moving a cell's entire concentration of particles to its neighbors in a single time step, we move only the fraction <em>d</em><sub><em>A</em></sub> of them.
 
-So, to revisit our original example, say that <em>d</em><sub><em>A</em></sub> is equal to 0.1. Then after the first time step, only 10% of the central cell's particles will be spread to its neighbors. This means that the central square is updated to 0.9, its adjacent neighbors are updated to 0.1(0.2) = 0.02, and its diagonal neighbors are updated to 0.1(0.05) = 0.005. These values after a single time step are summarized in the figure below.
+So, to revisit our original example, say that <em>d</em><sub><em>A</em></sub> is equal to 0.2. Then after the first time step, only 10% of the central cell's particles will be spread to its neighbors. This means that the central square is updated to 0.9, its adjacent neighbors are updated to 0.2(0.2) = 0.04, and its diagonal neighbors are updated to 0.2(0.05) = 0.01. These values after a single time step are summarized in the figure below.
 
 * INSERT FIGURE
 
 ## Adding a second particle
 
-We can adjust the speed of diffusion by adjusting this rate parameter. For example, say that we add a particle *B* to the simulation, which also starts with 100% concentration in the central square. If the diffusion rate <em>d</em><sub><em>B</em></sub> is equal to 0.2, then our cells after a time step will be shown in the figure below. This figure represents the concentration of the two particles in each cell as an ordered pair.
+We can adjust the speed of diffusion by adjusting this rate parameter. For example, say that we wish to add particle *B* to the simulation, which also starts with 100% concentration in the central square. Recall that *B*, our "predator" molecule, diffuses half as fast as *A*, the "prey" molecule. If the diffusion rate <em>d</em><sub><em>B</em></sub> is equal to 0.1, then our cells after a time step will be updated as shown in the figure below. This figure represents the concentration of the two particles in each cell as an ordered pair (*a*, *b*), where *a* is the concentration of *A* and *b* is the concentration of *B*.
 
 * INSERT FIGURE
 
-**STOP**: Update the cells in the above figure for the diffusion rates <em>d</em><sub><em>A</em></sub> = 0.1 and <em>d</em><sub><em>B</em></sub> = 0.2.
+**STOP**: Update the cells in the above figure for the diffusion rates <em>d</em><sub><em>A</em></sub> = 0.2 and <em>d</em><sub><em>B</em></sub> = 0.1.
 {: .notice--primary}
 
-We are now ready to implement our model of diffusion and add a visualization to see if this model does a good job of approximating the diffusion process.
+We are now ready to implement our model of diffusion and add a visualization to see if our model does a good job of approximating the diffusion process.
 
 * NOAH: link to tutorial on just the diffusion aspect of this.
 
 ## New subsection
 
-Now that we can keep track of concentrations of two particles as they spread around their environment, we will add a reaction to the simulation.
+Now that we have established a coarse-grained model for tracking the concentrations of two types of particles as they diffuse in their environment, we will add reactions to the simulation.
 
-* Recall the reaction from the Turing pattern simulation.
+Recall that we our reaction-diffusion simulation has three reactions.
 
-* At some point should formally define **Gray-Scott** model.
+1. A "feed" reaction by which new *A* particles are fed into the system at a constant rate.
+2. A "death" reaction by which *B* particles are removed from the system at a rate proportional to their current concentration.
+3. A "reproduction" reaction *A* + 2*B* → 3*B*.
 
-* Good questions below. May need to be exercises.
-
-**STOP**: Is it ever possible for a square to have a concentration greater than 1? Why or why not?
+**STOP**: How might we incorporate these reactions into our coarse-grained model?
 {: .notice--primary}
 
-**STOP**: Note that the concentrations of all of the particles add up to 1 in each step.
-{: .notice--primary}
+Let us address these reactions one at a time. First, we have the feed rate reaction, which takes place at a **feed rate**. It is tempting to simply add some constant value *f* to the concentration of each cell, but this will cause problems if the concentration is close to 1; we want to avoid a situation in which the feed rate causes the concentration of *A* particles to exceed 1.
 
-* In this case, we have what is called a fine-grained model of Turing patterns because we are modeling them at the level of individual particles. A “coarser” study of Turing patterns would grid off two-dimensional space into blocks; each block may contain thousands of particles of each type, but we will know quite a lot about this block if we only know the concentration of particles within the block.
-* The trick is how to use our particle-based model to build such a discretized block-based model, transitioning each of the rules that we have for how particles interact to describe a system of how blocks change based on their concentrations.
-* One famous such discretized model generalizing a reaction-diffusion reaction of two particles is called the Gray Scott model, which we will describe below.
+Instead, if a given cell has concentration *a*, then we will add *f*(1-*a*) to the concentration of the cell.  For example, if *a* is 0.01, then we will add 0.99*f* to the cell because the current concentration is low. If *a* is 0.8, then we will only add 0.2*f* to the concentration.
+
+* NOAH: thoughts on email in which feed rate isn't quite constant?
+
+Second, we consider the death reaction of *B* particles, which takes place at a **kill rate**. Recall that the death reaction takes place at a rate proportional to the current concentration of *B* particles. As a result, if a cell has concentration *b*, then we will subtract *k* · *b* from its concentration in each step for some constant *k* that is between 0 and 1.
+
+Third, we have the reproduction reaction *A* + 2*B* → 3*B*. The higher the concentration of *A* and *B*, the more this reaction should affect the current concentrations of the two particles. Furthermore, because we need *two* *B* particles in order for the collision to occur, a low concentration of *B* should mean that the reaction is even more rare than if we have a low concentration of *A*. Therefore, if a given cell is represented by the concentrations (*a*, *b*), then we will subtract *a* · *b*<sup>2</sup> from the concentration of *A* and add *a* · *b*<sup>2</sup> to the concentration of *B* in the next time step.
+
+Let us consider an example of how a single cell might update its concentration of both particle types as a result of reaction and diffusion.  Say that we have the following purely hypothetical parameter values:
+
+* <em>d</em><sub><em>A</em></sub> = 0.2
+* <em>d</em><sub><em>B</em></sub> = 0.1
+* *f* = 0.3
+* *k* = 0.4
+
+Furthermore, say that our cell has the concentrations (*a*, *b*) = (0.7, 0.5). Then as a result of diffusion, the cell's concentration of *A* will decrease by 0.7 · <em>d</em><sub><em>A</em></sub> = 0.14, and its concentration of *B* will decrease by 0.5 · 0.1 = 0.05. It will also receive particles from neighboring cells; for example, say that it receives an increase to its concentration of *A* by 0.08 and an increase to its concentration of *B* by 0.06 as the result of diffusion from neighbors.
+
+Now let us consider the three reactions. The feed reaction will cause the cell's concentration of *A* to increase by (1 - 0.7) · *f* = 0.09. The death reaction will cause its concentration of *B* to decrease by 0.5 · *k* = 0.2. And the reproduction reaction will mean that the concentration of *A* decreases by *a* · *b*<sup>2</sup> = 0.175, with the concentration of *B* increasing by the same amount.
+
+As the result of all these processes, we update the concentrations of *A* and *B* to the following values (*a*', *b*') in the next time step.
+
+*a*' = 0.7 - 0.14 + 0.08 + 0.09 - 0.175 = 0.555
+*b*' = 0.5 - 0.05 + 0.06 - 0.2 + 0.175 = 0.485
+
+Applying these cell-based reaction-diffusion computations over all cells in parallel and over many generations forms the **Gray-Scott** model. We should now feel confident expanding our previous diffusion tutorial into a model that includes all Gray-Scott reactions. The question is, however, will we still see Turing patterns?
+
+* NOAH: CITE Gray-Scott model original paper.
+
+* NOAH: link to tutorial here
+
+## Subsection
+
+* This is where we will return from the tutorial and reflect on the different Turing patterns that we can produce at the end of Gray-Scott, perhaps with some embedded GIFs.
 
 [Next lesson](#){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}

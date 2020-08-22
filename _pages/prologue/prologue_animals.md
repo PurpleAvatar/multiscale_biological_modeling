@@ -15,7 +15,7 @@ Turing's insight was that remarkable patterns would emerge if we combine a simul
 
 ## An example reaction-diffusion system
 
-We will consider a reaction-diffusion system having two types of particles, *A* and *B*. The system is not representing a predator-prey relationship, but you may think of *A* as a predator and *B* as a prey for reasons that will become clear soon.
+We will consider a reaction-diffusion system having two types of particles, *A* and *B*. The system is not representing a predator-prey relationship, but you may think of *A* as a prey and *B* as a predator for reasons that will become clear soon.
 
 Both types of particles diffuse randomly through the plane, but the *B* particles diffuse twice as quickly as the *A* particles.  In terms of the random walk, this faster diffusion means that in a single "step", an *A* particle moves twice as far as a *B* particle.
 
@@ -26,17 +26,19 @@ We now will add some reactions to our system. The *A* particles are added into t
 
 There is also a **death rate** constant *k* dictating the rate of removal of the *B* particles. As a result of removal, the concentration of *B* particles in the system will decrease by approximately a constant factor in a given time step.
 
-Note that there is a slight difference between the two reactions. In the first reaction, the *number* of *A* particles increases by a constant factor at every step. In the second reaction, the *concentration* of *B* particles decreases by a constant factor at every step. This means that if *A* and *B* denote the number of particles of each type in the system, then
+Note that there is a slight difference between the two reactions. In the first reaction, the *number* of *A* particles increases by a constant factor at every step. In the second reaction, the *concentration* of *B* particles decreases by a constant factor at every step. This means that if *A* and *B* denote the number of particles of each type in the system, then in the absence of other reactions,
 
 <center>
-<em>dA</em>/<em>dt</em> = <em>c</em><sub>1</sub> · <em>A</em>
+<em>dA</em>/<em>dt</em> = <em>c</em><sub>1</sub>
 </center>
 
 and
 
 <center>
-<em>dB</em>/<em>dt</em> = <em>c</em><sub>1</sub> · <em>B</em> .
+<em>dB</em>/<em>dt</em> = -<em>c</em><sub>2</sub> · <em>B</em>
 </center>
+
+for some parameters <em>c</em><sub>1</sub> and <em>c</em><sub>2</sub>.
 
 Finally, this reaction-diffusion system has a single reaction of the two particles with each other. If an *A* particle and two *B* particles encounter each other, then the *A* particle is replaced by a third *B* particle at a certain rate *r*. This reaction can be summarized by the following chemical reaction.
 

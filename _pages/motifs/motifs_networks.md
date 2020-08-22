@@ -11,11 +11,18 @@ toc_sticky: true
 
 Once we know which transcription factors regulate which genes, we will consolidate this information into a bilogical network called a **transcription factor network**. The nodes in the network are an organism's proteins, and we connect *X* to *Y* with an edge if *X* is a transcription factor that regulates the expression of *Y*.  Note that any node can have an edge leading into it, but the only nodes with edges leaving them are transcription factors.
 
+![image-center](../assets/images/s_cerevisiae_tf_network.jpg){: .align-center}
+Picture of S. Cerevisiae Network
+https://science.sciencemag.org/content/298/5594/799/tab-figures-data
+
+To explore more full e. coli network, see here (INSERT DOWNLOAD LINK)
+https://bmcsystbiol.biomedcentral.com/articles/10.1186/1752-0509-2-21
+
 The figure below shows a subset of the transcription factor network for *Escherichia coli*, the workhorse model organism of bacterial studies. *E. coli* is a simple organism, but we will still be able to draw powerful conclusions by studying its transcription factor network.
 
 * NOAH: I have rotated this image so it would show up but the text is sideways. Also, this is hardly a fix ... we need a network that is easier to view. And is this a subset of the network with only nodes that are TFs? Second, if we have controls over color, red/green aren't best choice due to color-blindness.
-
-![image-center](../assets/images/e_coli_tf_network_rotated.jpeg){: .align-center}
+(Unable to edit colors nicely using photo editing software)
+![image-center](../assets/images/e_coli_tf_network.jpeg){: .align-center}
 
 **STOP:** Do you notice anything interesting about the *E. coli* transcription factor network?
 {: .notice--primary}

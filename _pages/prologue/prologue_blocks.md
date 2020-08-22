@@ -26,7 +26,10 @@ Let us begin with a simple example of the diffusion of a single particle (we can
 
 We will then update this grid after a single time step. We will spread out the concentration in each square to its eight neighbors. One way of doing this is to assume that 20% of the current cell's concentration goes to each of its four adjacent neighbors, and that 5% of the cell's concentration goes to its four diagonal neighbors. Because the central square in our ongoing example is the only cell with any particles, after a single time step, the updated concentrations are as shown in the following figure.
 
-* INSERT FIGURE
+<center>
+<img src = "../assets/images/A_concentration_one_time_step" width="300">
+<figcaption>A grid showing an update to the system in the previous figure after diffusion of *A* particles after a single time step.</figcaption>
+</center>
 
 After an additional time step, we see the particles continue to diffuse to farther neighbors. For example, each diagonal neighbor of the central cell in the above figure, which has a concentration of 0.05, will lose all of its *A* particles in the next step. It will, however, gain 20% of the particles from two of its adjacent neighbors, along with 5% of the particles from the central square. This makes the updated concentration of this cell equal to 0.2(0.2) + 0.2(0.2) = 0.04 + 0.04 = 0.08.
 

@@ -34,6 +34,8 @@ We also have qualitative evidence that the pigmentary patterns arising in fish a
 
 * Note to add link to cellular automata and P4L. Should we explicitly call this an automaton? I think yes.
 
+* Good exercise on changing the diffusion rates outside of what is specified by Gray-Scott.
+
 * Good questions below. May need to be exercises.
 
 **STOP**: Is it ever possible for a square to have a concentration greater than 1? Why or why not?

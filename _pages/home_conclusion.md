@@ -2,7 +2,7 @@
 permalink: /chemotaxis/home_conclusion
 title: "Conclusion"
 sidebar:
- nav: "coronavirus"
+ nav: "chemotaxis"
 ---
 
 ## Background tumbling frequency

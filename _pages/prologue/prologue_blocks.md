@@ -1,13 +1,13 @@
 ---
 permalink: /prologue/blocks
-title: "A Coarse-Grained Turing Pattern Simulation"
+title: "The Gray-Scott Model: A Coarse-Grained Turing Pattern Simulation"
 sidebar:
  nav: "prologue"
 toc: true
 toc_sticky: true
 ---
 
-## Subsection
+## The case for a coarse-grained reaction-diffusion model
 
 Although this is an introductory module, there is another maxim of biological modeling that we can convey. To produce and render the animations shown in the previous sections required several hours to run on a powerful laptop using state-of-the-art optimized software that has undergone many revisions over a period of years.
 
@@ -15,7 +15,7 @@ Part of any modeler's work is to see if a simpler model can be found that contai
 
 In other words, we have a very "fine-grained" reaction-diffusion model illustrating Turing patterns, and we will present a coarser model that allows us to make the same conclusions. To do so, we will stop keeping track of individual particles and instead grid off two-dimensional space into blocks and store only the *concentration* of particles within this block. That is, each block may contain thousands of particles of a given type, but we think of it only as its concentration, represented as a decimal between 0 and 1.
 
-## Example diffusion of single particle
+## A cellular model showing diffusion of a single particle
 
 Let us begin with a simple example of the diffusion of a single particle (we can add reactions to this model later). Say that we are only considering *A* particles, which are all contained in the central square of our grid. The figure below illustrates the grid, where each square is labeled by its concentration.
 
@@ -42,7 +42,7 @@ As a result, the central nine squares after two time steps are as shown in the f
 
 * Have a "click here for answer" with a linked image.
 
-## Subsection
+## Slowing down diffusion
 
 There is just one problem. This model of diffusion is too fast! If our model is representing diffusion, then all of the particles would not rush out of the central square in a single time step, only for some of these particles to return in the following time step. Our model is currently too volatile to be reliable as a representation of diffusion.
 
@@ -52,7 +52,7 @@ So, to revisit our original example, say that <em>d</em><sub><em>A</em></sub> is
 
 * INSERT FIGURE
 
-## Adding a second particle
+## Adding a second particle to our diffusion simulation
 
 We can adjust the speed of diffusion by adjusting this rate parameter. For example, say that we wish to add particle *B* to the simulation, which also starts with 100% concentration in the central square. Recall that *B*, our "predator" molecule, diffuses half as fast as *A*, the "prey" molecule. If the diffusion rate <em>d</em><sub><em>B</em></sub> is equal to 0.1, then our cells after a time step will be updated as shown in the figure below. This figure represents the concentration of the two particles in each cell as an ordered pair (*a*, *b*), where *a* is the concentration of *A* and *b* is the concentration of *B*.
 
@@ -65,7 +65,7 @@ We are now ready to implement our model of diffusion and add a visualization to 
 
 * NOAH: link to tutorial on just the diffusion aspect of this.
 
-## New subsection
+## Adding reactions and completing the Gray-Scott model
 
 Now that we have established a coarse-grained model for tracking the concentrations of two types of particles as they diffuse in their environment, we will add reactions to the simulation.
 
@@ -110,7 +110,7 @@ Applying these cell-based reaction-diffusion computations over all cells in para
 
 * NOAH: link to tutorial here
 
-## Subsection
+## Reflection on the Gray-Scott model
 
 * This is where we will return from the tutorial and reflect on the different Turing patterns that we can produce at the end of Gray-Scott, perhaps with some embedded GIFs.
 

@@ -32,7 +32,7 @@ We also have qualitative evidence that the pigmentary patterns arising in fish a
 
 * In later iteration of this, we need to probably update the figures to show how things update.
 
-* Note to add link to cellular automata and P4L.
+* Note to add link to cellular automata and P4L. Should we explicitly call this an automaton? I think yes.
 
 * Good questions below. May need to be exercises.
 

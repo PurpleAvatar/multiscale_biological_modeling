@@ -112,7 +112,7 @@ Now let us consider the three reactions. The feed reaction will cause the cell's
 
 As the result of all these processes, we update the concentrations of *A* and *B* to the following values (*a*', *b*') in the next time step.
 
-*a*' = 0.7 - 0.14 + 0.08 + 0.09 - 0.175 = 0.555
+*a*' = 0.7 - 0.14 + 0.08 + 0.09 - 0.175 = 0.555<br>
 *b*' = 0.5 - 0.05 + 0.06 - 0.2 + 0.175 = 0.485
 
 Applying these cell-based reaction-diffusion computations over all cells in parallel and over many generations forms the **Gray-Scott** model. We should now feel confident expanding our previous diffusion tutorial into a model that includes all Gray-Scott reactions. The question is, however, will we still see Turing patterns?

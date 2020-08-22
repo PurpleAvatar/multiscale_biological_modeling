@@ -27,7 +27,7 @@ To do this, the cell records the past concentration. This is achieved by **methy
 
 Our pathway will be based on the pathway explained on Parkinson Lab website. Illustration modified from Parkinson Lab illustration.[^ParkinsonLab]
 
-The rate of CheA autophosphorylation, besides MCP-ligand binding, is also dependent on MCP methylation states. Each MCP monomer has 4 methylation sites. When more methylation sites on MCP are methylated, CheA autophosphorylation actvity becomes higher. There are two other proteins, **CheB**, which is phosphorylated by CheA and demethylates MCPs, and **CheR**, which methylates MCPs. Visualization below.[^ParkinsonLab]
+The rate of CheA autophosphorylation, besides MCP-ligand binding, is also dependent on MCP methylation states. Each MCP monomer has 4 methylation sites. When more methylation sites on MCP are methylated, CheA autophosphorylation actvity becomes higher. There are two other proteins, **CheB**, which is phosphorylated by CheA and demethylates MCPs, and **CheR**, which methylates MCPs. Visualization below is modified from Parkinson Lab illustrations.[^ParkinsonLab]
 
  ![image-center](../assets/images/chemotaxis_methylation.png){: .align-center}
  <figcaption>A summary of the methylation pathway. CheA phosphorylates CheB. CheB methylates while CheR demethylates MCP. Blue curve: phosphorylation; grey curve: dephosphorylation; green arrow: methylation.</figcaption>

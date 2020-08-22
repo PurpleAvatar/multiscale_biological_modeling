@@ -95,6 +95,8 @@ chemotaxis:
         url: /chemotaxis/home_senseadap
       - title: "Gradient"
         url: /chemotaxis/home_gradient
+      - title: "Conclusion"
+        url: /chemotaxis/home_conclusion
   - title: Building BNG simulations
     children:
       - title: "Starting BNG Simulation"
@@ -107,8 +109,6 @@ chemotaxis:
         url: /chemotaxis/tutorial_gradient
       - title: "Down gradient/Removal"
         url: /chemotaxis/tutorial_removal
-      - title: "Conclusion"
-        url: /chemotaxis/conclusion
 
 coronavirus:
   - title: About This Module

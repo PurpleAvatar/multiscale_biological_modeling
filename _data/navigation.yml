@@ -91,7 +91,7 @@ chemotaxis:
         url: /chemotaxis/home_signal
       - title: "Pathway biochemistry"
         url: /chemotaxis/home_biochem
-      - title: "Sensation & adaptation"
+      - title: "Adaptation"
         url: /chemotaxis/home_senseadap
       - title: "Gradient"
         url: /chemotaxis/home_gradient

@@ -58,7 +58,7 @@ Please makes sure have dependencies installed:
 
 First specify the directories, model name, species of interest, and rates. Put the `RuleBender-workspace/PROJECT_NAME/results/MODEL_NAME/` folder inside the same directory as the Jupyter notebook or change the `model_path`.
 
-~~~ Python
+~~~ python
 	model_path = "addition"  #The folder containing the model
 	model_name = "addition"  #Name of the model
 	target = "ActiveCheY"    #Target molecule

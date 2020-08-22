@@ -20,11 +20,9 @@ In other words, we have a very "fine-grained" reaction-diffusion model illustrat
 Let us begin with a simple example of the diffusion of a single particle (we can add reactions to this model later). Say that we are only considering *A* particles, which are all contained in the central square of our grid. The figure below illustrates the grid, where each square is labeled by its concentration.
 
 <center>
-<img src = "../assets/images/initial_A_concentration.png">
+<img src = "../assets/images/initial_A_concentration.png" width="300">
 <figcaption>A 5 x 5 grid showing hypothetical initial concentrations of <em>A</em> particles. Cells are labeled by numbers between 0 and 1 representing their concentration of <em>A</em>. In this example, the central cell has maximum concentration, and no particles are contained in any other cell.</figcaption>
 </center>
-
-* IN A LATER ITERATION OF THESE FIGURES, WE NEED TO COLOR THIS IMAGE AND EXPLAIN IT
 
 We will then update this grid after a single time step. We will spread out the concentration in each square to its eight neighbors. One way of doing this is to assume that 20% of the current cell's concentration goes to each of its four adjacent neighbors, and that 5% of the cell's concentration goes to its four diagonal neighbors. Because the central square in our ongoing example is the only cell with any particles, after a single time step, the updated concentrations are as shown in the following figure.
 

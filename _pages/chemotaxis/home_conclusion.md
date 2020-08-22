@@ -30,7 +30,7 @@ With the visualization of trajectories, we can see that the cells all move away 
 
 What will a good trajectory look like? It should move fast towards the target; after reaching the target, it should tumble immediately when moving to somewhere with lower concentration and thus stay there. If we plot average distance to the target through time, a good `time_exp` should be characterized by a fast decrease in distance to the target, followed by flattening as close to the target as possible.
 
-![image-center](../assets/images/chemotaxis_performances.png){: .align-center}
+![image-center](../assets/images/chemotaxis_performance.png){: .align-center}
 <figcaption>Average distances through time. Each colored line indicates a `time_exp`, plotting average distances for the 500 cells; the shaded area is standard deviation; grey dashed line is where concentration reaches 1e8.</figcaption>
 
 There is a tradeoff between moving towards the target fast and staying there. For large `time_exp` values (10.0, 5.0, 2.0), distances to center decreases very quickly at the beginning of the simulation, but the cells don't stay perfectly around the radius of saturation; the larger the `time_exp`, the further the distance becomes. For small `time_exp` values (0.1, 0.25, 0.5), the cells failed to move to the ligand efficiently. Note that for `time_exp = 0.5` and `time_exp = 1.0`, although both stay around the radius of saturation, `time_exp = 0.5` takes about 200s more. If you tried to allow 0.1 and 0.25 to flatten, they will take even longer.

@@ -14,16 +14,19 @@ When we look at the bacterium's movement, it alternates between periods of "runn
 ![image-center](../assets/images/chemotaxis_intro_runtumble.png){: .align-center}
 <figcaption>Run and tumble. Left: relationship between flagellar rotation and run vs. tumble. Right: a run-and-tumble trajectory towards right. Image from Parkinson Lab, University of Utah.</figcaption>
 
-* Need to trim this figure to avoid the part on the left.
+* Need to trim this figure to avoid the part on the left. Adjust caption.
 
 ## Tumbling frequency is constant across species
 
-The movement patterns of bacteria are dependent on the cell size, the gradient they experience, and the fluid dynamics of the environment. In a uniform environment, *E. coli* tumbles once about every 1-1.5 seconds.[^Weis1990][^Berg2000] Similar run-and-tumble movement is often observed in enteric and soil bacteria. For example, *Salmonella* bacteria (enteric) tumbles about once per second[^Achouri2015], *Enterococcus sacchrolyticus* (enteric) tumbles about once per 1.2 seconds, *Bacillus subtilis*（soil and enteric) tumbles about every 2 seconds[^Turner2016], and *Rhizobia* (soil) tumbles about every 1-2 seconds[^Gotz1987]. There is not a definite model for the differences on tumbling frequency between different species or among individuals in the same species yet. It is an interplay of some factors including but not limited to: cell size, speed, and obstacles in the environment[^Rashid2019][^Mitchell2005]. For example, more frequent tumbling for a large and fast cell; less frequent tumbling when more obstacles (reason not understood yet). Additionally, variation among individuals in the same species allows the cells to adapt to different gradient steepness better collectively[^Lim2019].
+In the absence of an attractant or repellent, *E. coli* stops to tumble once about every 1 to 1.5 seconds.[^Weis1990][^Berg2000] And it is not alone in this behavior; *Salmonella* bacteria (enteric) tumbles about once per second[^Achouri2015], *Enterococcus sacchrolyticus* (enteric) tumbles about once per 1.2 seconds, *Bacillus subtilis*（soil and enteric) tumbles about every 2 seconds[^Turner2016], and *Rhizobia* (soil) tumbles about every 1-2 seconds[^Gotz1987]. Researchers have investigated why different bacteria have different tumbling frequencies,[^Rashid2019][^Mitchell2005] but a definitive explanation for the variation in these frequencies has not been proposed.
 
-Despite the differences, the variations in tumbling frequencies aren't large. There must be some reason why tumbling frequencies tend to average at about 1 tumble per second. We will return to this question at the close of the chapter. In the meantime, we will explore the biological basis of chemotaxis and try to explain why it has evolved the way it has. We will see that despite bacteria not being intelligent beings, the reality of how they achieve chemotaxis is far more complicated and sophisticated than we would imagine.
+Bacteria are amazingly diverse. They have evolved for over three billion years to thrive in practically every environment on the planet, including hazardous human-made environments. They can produce compounds like antibiotics that larger organisms cannot produce. Some eukaryotes are even completely dependent upon bacteria to perform some critical task for them, from digesting their food, to camouflaging them from predators, to helping them develop organs.
 
+* Shuanger: please cite *I Contain Multitudes* by Ed Yong at end of previous paragraph.
 
-[^Munroe]: Randall Munroe. What If? [Available online](https://what-if.xkcd.com/)
+And yet despite the diversity present within the bacterial kingdom, the variations in known bacterial tumbling frequencies are not very large. Is there some reason why, regardless of the species, a bacterium's tumbling frequency tends to hover at around 1 tumble per second?
+
+We will return to this question at the close of the module; in the meantime, we will explore the biochemical basis of chemotaxis and see how a bacterium is able to sense an attractant and then adjusts its run and tumble behavior in response. More importantly, we will see that despite bacteria being simple organisms, the reality of how they implement chemotaxis is far more sophisticated than we might ever imagine.
 
 [^Pierucci1978]: Pierucci O. 1978. Dimensions of *Escherichia coli* at various growth rates: Model of envelope growth. Journal of Bacteriology 135(2):559-574. [Available online](https://jb.asm.org/content/jb/135/2/559.full.pdf)
 

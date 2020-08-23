@@ -64,7 +64,10 @@ So, to revisit our original example, say that <em>d</em><sub><em>A</em></sub> is
 
 We can adjust the speed of diffusion by adjusting this rate parameter. For example, say that we wish to add particle *B* to the simulation, which also starts with 100% concentration in the central square. Recall that *B*, our "predator" molecule, diffuses half as fast as *A*, the "prey" molecule. If the diffusion rate <em>d</em><sub><em>B</em></sub> is equal to 0.1, then our cells after a time step will be updated as shown in the figure below. This figure represents the concentration of the two particles in each cell as an ordered pair (*a*, *b*), where *a* is the concentration of *A* and *b* is the concentration of *B*.
 
-* INSERT FIGURE
+<center>
+<img src = "../assets/images/two_particle_concentration_diffusion.png" width="300">
+<figcaption>A figure showing cellular concentrations after one time step for two particles <em>A</em> and <em>B</em> diffusing at rates <em>d</em><sub><em>B</em></sub> = 0.2 and <em>d</em><sub><em>B</em></sub> = 0.1. Each cell is labeled by an ordered pair (<em>a</em>, <em>b</em>), where <em>a</em> is the concentration of <em>A</em> and <em>b</em> is the concentration of <em>B</em>.</figcaption>
+</center>
 
 **STOP**: Update the cells in the above figure for the diffusion rates <em>d</em><sub><em>A</em></sub> = 0.2 and <em>d</em><sub><em>B</em></sub> = 0.1.
 {: .notice--primary}

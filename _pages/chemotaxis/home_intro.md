@@ -56,5 +56,5 @@ We will return to this question at the close of the module; in the meantime, we 
 
 [^Mitchell2005]: Mitchell JG, Kogure K. 2005. Bacterial motility: links to the environment and a driving force for microbial physics. FEMS Microbiol Ecol 55(2006):3–16. [Available online](https://academic.oup.com/femsec/article/55/1/3/554107)
 
-[Next Lesson: Signaling and Ligand-Receptor Dynamics](home_signal){: .btn .btn--primary .btn--large}
+[Next lesson](home_signal){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}

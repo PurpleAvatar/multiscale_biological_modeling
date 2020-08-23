@@ -205,7 +205,7 @@ Although the cells with same `time_exp` are under the same mechanisms for random
 
 For 500 cells, visualizing the trajectories will be messy. We will quantitatively measure the performances by the ability to reach the target at the end of the simulation. We will also calculate the average distance to the center at each time step for each of the `time_exp` values.
 
-~~~python3
+~~~ python
 #Run simulation for 500 cells with different background tumbling frequencies, Plot average distance to highest concentration point
 duration = 800   #seconds, duration of the simulation
 num_steps = duration * step_per_sec

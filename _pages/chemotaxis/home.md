@@ -7,13 +7,11 @@ sidebar:
 
 ### by Shuanger Li and Phillip Compeau
 
-## Lost Immortals
-
 The book *What If?*[^Munroe], by Randall Munroe, compiles a collection of crazy scientific hypotheticals, paired with thorough discussions of what might happen if these hypotheticals came to pass. The following is one of these hypotheticals, called "Lost Immortals".
 
 > If two immortal people were placed on opposite sides of an uninhabited Earth-like planet, how long would it take them to find each other? 100,000 years? 1,000,000 years?
 
-One could imagine many ideas for how the immortals could find each other. For example, they could avoid the interiors of continents by moving to the coastlines. If they are allowed to discuss how to find each other in advance, then they could just agree to meet at the planet's North Pole --- although this would be dangerous.
+One could imagine many ideas for how the immortals could find each other. For example, they could avoid the interiors of continents by moving to the coastlines. If they are allowed to discuss how to find each other in advance, then they could just agree to meet at the planet's North Pole --- although this would certainly be dangerous.
 
 But Munroe provides a solution to the Lost Immortals hypothetical that is both sophisticated and elegant. His proposed approach is quoted below.
 
@@ -27,21 +25,16 @@ But Munroe provides a solution to the Lost Immortals hypothetical that is both s
 
 You may be wondering what Lost Immortals has to do with biological modeling. In the previous two modules, we have already seen the power of randomness throughout this course for providing answers to practical questions. Lost Immortals offers an example of a **randomized algorithm** that is useful for solving a problem.
 
-In fact, Munroe's randomized algorithm for Lost Immortals is inspired by nature. He calls this approach "be an ant" because it mimics how ants explore their environment for resources.
+In fact, Munroe's randomized algorithm for Lost Immortals is inspired by nature; he calls the above approach "be an ant" because it mimics how ants explore their environment for resources. However, in this module, we will be interested in how this algorithm compares to the exploration undertaken by a much smaller organism: our old friend *E. coli*.
 
-In this module, we will examine a 
+Like other prokaryotes, *E. coli* is tiny, with a rod-shaped body that is 2µm long and 0.25 to 1µm across.[^Pierucci1978] In exploring a world with sparse resources, *E. coli* finds itself in a situation comparable to the Lost Immortals or ants exploring their environment.
 
-* We will look at a related example of using random walks as an effective means of exploring one's environment: bacterial chemotaxis. (Transition to chemotaxis.)
-
-## Introduction to Chemotaxis
-
-Like other prokaryotes, *E. coli* are small, with a length about 2µm, and a diameter 0.25-1µm.[^Pierucci1978] This puts them into the same situation like the Lost Immortals or the ants exploring the world: the "target"-food is sparsely distributed, and the environment in which they need to find food is huge compared to themselves. The answer is the chemotaxis behavior.
-
-Here is a cute video of *E. coli* moving towards a sugar crystal.
+The video below shows a collection of *E. coli* surrounding a sugar crystal. Think of this video the next time you leave a slice of cake out on the kitchen counter!
 <iframe width="640" height="360" src="https://www.youtube.com/embed/F6QMU3KD7zw" frameborder="0" allowfullscreen></iframe>
 
-The behavior of cells moving towards or away from a substance is called **chemotaxis**. For *E. coli*, moving towards attractants (ex. glucose, electron acceptors), and moving away from repellents (ex. Ni<sup>2+</sup>, Co<sup>2+</sup>) are all considered chemotaxis behaviors.
+The movement of organisms towards or away from a substance is called **chemotaxis**. *E. coli* and other bacteria have evolved to move toward **attractants** (e.g., glucose, electron acceptors) and away from **repellents** (e.g., Ni<sup>2+</sup>, Co<sup>2+</sup>). But how?
 
+In this chapter
 
 [Next Lesson: E. coli Walk](home_walk){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}

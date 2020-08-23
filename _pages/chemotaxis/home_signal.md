@@ -78,28 +78,24 @@ Let us use the solution to this equation to see how the steady-state concentrati
 
 * SHUANGER: Please provide a few different results and point to me when done.  Insert your changing parameters here and interpret how they influence the steady state.
 
-## Verifying the steady-state concentration via simulation
+## Verifying a theoretical steady-state concentration via simulation
 
-Here we've shown that using BNG and calculating by hand reach the same conclusion for bimolecular reactions.
+In the previous module, we applied a particle-free model for simulating interactions of molecules, assuming that these molecules are uniformly distributed in their environment. The bacterium is so small that we will freely assume that the concentration of any particle in its immediate surroundings is uniform. Therefore, let us see if a particle-free simulation will replicate the steady-state concentrations that we found above.
 
-But if we can calculate this by hand, why do we still need BNG? The benefit of BNG is that, when we have more reactions involved in the system, calculating (or even setting up all the equations) by hand is no longer possible. We will introduce more complexity in the pathway through the module.
+Even though we can calculate steady-state concentrations by hand, we will find a simulation useful for two reasons. First, a particle-free simulation will give us snapshots of the system over multiple time points and allow us to see how quickly the concentrations reach equilibrium. Second, we will soon expand our model of chemotaxis to have many more particles and reactions, and direct interpretation of the system will quickly become impossible.
 
-Instead of just calculating the steady state concentrations (which is already hard when we add more complexity to our model), we are interested in concentration of all species at each time point when simulating a biological system. Why all time points? Because the response to a stimulus is often transient, and it depends on many time-critical reactions. We will miss these if only have steady state concentrations.
-
-Why BNG instead of CellBlender? We don't care about the spacial distribution of receptor and ligands here - an *E. coli* is small compared to gradients it encounters in real life (no ligand concentration difference across its body - but there are some bacteria that experience different concentration across its body), and we only care about a region the receptors are located at, so we can assume the ligand concentration is uniform everywhere within that region.
-
-In this Module, we will use [BioNetGen](https://www.csb.pitt.edu/Faculty/Faeder/?page_id=409) to build a set of models to simulate chemotaxis activities. We will start from building a simulation for equilbrium of a bimolecular reversible reaction between ligands and receptors.
+The following tutorial uses [BioNetGen](https://www.csb.pitt.edu/Faculty/Faeder/?page_id=409), which we will use throughout this module to build particle-free simulations of chemotaxis. We start by building a model to determine the equilibrium of a reversible reaction involving ligands and receptors.
 
 [Visit tutorial](tutorial_lr){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
-## Subsection
+## Subsection to be named later
 
-* SHUANGER: This is where we should return from the tutorial and interpret the results of the tutorial.
+Here we've shown that using BNG and calculating by hand reach the same conclusion for bimolecular reactions.
 
+* SHUANGER: This is where we should return from the tutorial and interpret the results that we found, comparing against the examples that we had before.
 
-
-
+* Phillip will then need to point the reader to the next section by saying this is just the beginning of the model we will build to study chemotaxis. (And computing steady-state concentration is just a toy example compared to questions we will ask soon.)
 
 [^Munroe]: Randall Munroe. What If? [Available online](https://what-if.xkcd.com/)
 

@@ -129,7 +129,7 @@ Here we've shown that using BNG and calculating by hand reach the same conclusio
 
 [^Schwartz17]: Schwartz R. Biological Modeling and Simulaton: A Survey of Practical Models, Algorithms, and Numerical Methods. Chapter 17.2.
 
-[Next Page: Chemotaxis pathway](home_biochem){: .btn .btn--primary .btn--large}
+[Next lesson](home_biochem){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 

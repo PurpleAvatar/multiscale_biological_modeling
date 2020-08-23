@@ -33,7 +33,6 @@ In this Module, we will use [BioNetGen](https://www.csb.pitt.edu/Faculty/Faeder/
 
 Why BNG instead of CellBlender? We don't care about the spacial distribution of receptor and ligands here - an *E. coli* is small compared to gradients it encounters in real life (no ligand concentration difference across its body - but there are some bacteria that experience different concentration across its body), and we only care about a region the receptors are located at, so we can assume the ligand concentration is uniform everywhere within that region.
 
-
 ## Reversible reactions and steady state of a system
 
 Why do we care that the reaction is reversible? For ligand-receptor dynamics, the receptors are generally complex molecules produced by the organism, so it would be very costly if not reusable. The only way that the receptor can binds to ligands repetitively is to release the ligand.

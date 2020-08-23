@@ -28,7 +28,7 @@ You can download the simulation file here:
 
 To begin with, let's build a model to simulate ligand-receptor binding dynamics. In our system, there are only two types of molecules: the ligand (L), and the receptor (a receptor complex in our chemotaxis system, and often abbreviated as T). The ligand can bind to the receptor, forming an intermediate, and they could also dissociate. We write this reaction as `L + T <-> L.T`, where the formation of intermediate is **forward reaction**, and its dissociation is **reverse reaction**.
 
-In our system, the number of free ligand and free receptor will drop quickly at the beginning of the simulation, because free ligands and free receptors are readily to meet each other. After a while, there will be more `L.T` in the system and there for more dissociation; at the same time, because free `L` and `T` are less abundant, less binding happens. Therefore, the system will gradually reach an equilibrium where rate of `L` and `T` binding equilibrate with `L.T` dissociation.
+In our system, the number of free ligands and free receptors will drop quickly at the beginning of the simulation, because free ligands and free receptors are readily to meet each other. After a while, there will be more `L.T` in the system and there for more dissociation; at the same time, because free `L` and `T` are less abundant, less binding happens. Therefore, the system will gradually reach an equilibrium where rate of `L` and `T` binding equilibrate with `L.T` dissociation.
 - We can write the rate of forward reaction as *k_lr_bind[L][T]*, where *k_lr_bind* is a constant.
 - We can write the rate of reverse reaction as *k_lr_dis[L.T]*, where *k_lr_dis* is a constant.
 - Equilibrium is reached when *k_lr_bind[L][T] = k_lr_dis[L.T]*.
@@ -44,7 +44,7 @@ Rename your `.bngl` file as `ligand_receptor.bngl`. Now you should be able to st
 
 ## Specifying molecule types
 
-We will walk through all code, but for your reference, BNG documentation can be found [here](http://comet.lehman.cuny.edu/griffeth/BioNetGenTutorialFromBioNetWiki.pdf).
+We will walk through all codes, but for your reference, BNG documentation can be found [here](http://comet.lehman.cuny.edu/griffeth/BioNetGenTutorialFromBioNetWiki.pdf).
 
 We would like to tell BNG the rules for our model. To specify our model, specify the `begin model` and `end model`. We will add all model specification information between the two lines. We would also like to add our molecules to the model under the `molecule types` section. The `(t)` specifies that molecule `L` contains one component: the binding site with `T`. Same for `T`, the `(l)` specifies the component binding to `L`. We will use this component for L-R binding later.
 	

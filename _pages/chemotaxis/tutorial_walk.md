@@ -223,7 +223,7 @@ for freq_i in range(len(time_exp)):
         for t in range(duration):
             pos = paths[freq_i, c, t]
             dist = euclidean_distance(ligand_center, pos)
-            all_distance[[freq_i], c, t] = dist
+            all_distance[freq_i, c, t] = dist
 
 all_dist_avg = np.mean(all_distance, axis = 1)
 all_dist_std = np.std(all_distance, axis = 1)

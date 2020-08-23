@@ -7,17 +7,16 @@ sidebar:
 
 ## Signaling Pathway
 
-A key characteristic of living organisms is the ability to respond to stimuli in the environment. Chemotaxis is one of those behaviors. It relies on the ability to perceive a change (ligand concentration), and react accordingly (adjust direction of movement). This is an example of *signal transduction pathway*, which includes 1) an external stimuli, 2) a series of molecular events, 3) a resulted cellular response. 
+Chemotaxis is one example of many ways in which an organism must be able to perceive a change in its environment and react accordingly. This response is governed by a process called **signal transduction**, in which the organism identifies an external molecular stimulus and then transmits this stimulus to the interior of the cell in order to effect a response.
 
-Why are we interested in signaling pathways? Recall the discussion on gene expression regulation in the Motif Module. An external signal can lead to change in gene expression (response). Such mechanisms provide stability to biological systems when there is perturbation in the enviornment. Internal temperature and ion concentrations, etc. of organisms need to be maintained when there is a signal of temperature/concentration change to keep enzymes functional. Besides fitness of an individual, singaling also enables a group of organisms to have higher fitness, for example, biofilm formation and mate-finding. We didn't include cellular details for gene expression regulation, but to understand chemotaxis, we will need to include cellular details.
+Although we did not delve into the details at that time, we have already seen an example of signal transduction when we discussed transcription in the [previous module](motifs/transcription). **Receptor proteins** on the outside of the cell bond with molecules and are able to detect changes in molecular concentration. This "signal" is then "transduced" via a series of internal chemical processes that changes a transcription factor into an active state.
 
-In the case of chemotaxis, the stimulus is ligand binding; the cell perceives this change, and propagates this information through a series of molecules, which leads to the cellular response of changed flagellar movement.
+In the case of chemotaxis, *E. coli* has receptor proteins that are able to detect attractants such as glucose by binding to and forming a complex with these **ligands**. In the next two lessons, we will walk through how the cell is able to transduce this molecular signal internally into a sequence of reactions that lead to jkfd
 
 ![image-center](../assets/images/chemotaxis_signal.png){: .align-center}
 <figcaption>Overview of signaling pathway for chemotaxis.</figcaption>
 
-We will walk through the details of the pathway, and build a model step by step.
-
+* Please flesh this figure out a bit more.
 
 ## Modeling Ligand-Receptor dynamics
 
@@ -71,7 +70,7 @@ But if we can calculate this by hand, why do we still need BNG? The benefit of B
 
 Instead of just calculating the steady state concentrations (which is already hard when we add more complexity to our model), we are interested in concentration of all species at each time point when simulating a biological system. Why all time points? Because the response to a stimulus is often transient, and it depends on many time-critical reactions. We will miss these if only have steady state concentrations.
 
-BNG supports simulation with Ordinary Differential Equation (ODE) and with Stochastic Simulation Algorithm (SSA, also called Gillespie algorithm). The method is passed in as argument `method=>"ode"` or `method=>"ssa"`. 
+BNG supports simulation with Ordinary Differential Equation (ODE) and with Stochastic Simulation Algorithm (SSA, also called Gillespie algorithm). The method is passed in as argument `method=>"ode"` or `method=>"ssa"`.
  - ODE: When simulating a system, we need to define how the system evolves through time. In *continuous* simulation of chemical reactions, the state of the system can be reported given any point in time. The reactions rules specify the rate of change for concentration of the involved species, and they are differential equations. For example, *d[L]/dt=k<sub>dissociate</sub>[L.T] - k<sub>bind</sub>[L][T]*.[^Schwartz14]
  - SSA: When simulating the change of the system through time, we define states of the system. Transition can happen between states that differ by one reaction event. We track the *discrete* amount of each reactants and simulate the system via transition of the states[^Schwartz17]. For example, the state can transit from [#L=100, #T=50, #L.T=0] to [#L=99, #T=49, #L.T=1], with probability determined both by reaction rate *k<sub>bind</sub>* and the the number of ways to choose the L and T molecules.[^Schwartz17] For using SSA, the measurement of abundance of molecules should actually be number of molecule instead of concentration.
 
@@ -104,7 +103,7 @@ BNG supports simulation with Ordinary Differential Equation (ODE) and with Stoch
 
 [^ParkinsonLab]: Parkinson Lab website. [website](http://chemotaxis.biology.utah.edu/Parkinson_Lab/projects/ecolichemotaxis/ecolichemotaxis.html)
 
-[^Schwartz14]: Schwartz R. Biological Modeling and Simulaton: A Survey of Practical Models, Algorithms, and Numerical Methods. Chapter 14.1. 
+[^Schwartz14]: Schwartz R. Biological Modeling and Simulaton: A Survey of Practical Models, Algorithms, and Numerical Methods. Chapter 14.1.
 
 [^Schwartz17]: Schwartz R. Biological Modeling and Simulaton: A Survey of Practical Models, Algorithms, and Numerical Methods. Chapter 17.2.
 

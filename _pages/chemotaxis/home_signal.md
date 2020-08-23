@@ -16,7 +16,7 @@ In the case of chemotaxis, *E. coli* has receptor proteins that are able to dete
 ![image-center](../assets/images/chemotaxis_signal.png){: .align-center}
 <figcaption>Overview of signaling pathway for chemotaxis.</figcaption>
 
-* Please flesh this figure out a bit more.
+* Shuanger: what is the source for this? It looks really good but please share the original file you used to draw. Please flesh out the caption a bit better as well.  I would have more ligands and label them also.  And I like optima font for figures.
 
 ## Modeling Ligand-Receptor dynamics
 

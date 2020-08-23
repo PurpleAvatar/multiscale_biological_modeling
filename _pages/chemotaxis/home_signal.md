@@ -37,32 +37,32 @@ Why BNG instead of CellBlender? We don't care about the spacial distribution of 
 
 ## Reversible reactions and steady state of a system
 
-Why do we care that the reaction is reversible? Because for ligand-receptor dynamics, the receptors are generally complex molecules produced by the organism, so should be reusable. The only way that the receptor can binds to ligands repetitively is to release the ligand.
+Why do we care that the reaction is reversible? For ligand-receptor dynamics, the receptors are generally complex molecules produced by the organism, so it would be very costly if not reusable. The only way that the receptor can binds to ligands repetitively is to release the ligand.
 
-For reversible reactions, the system will reach the steady state we've showed. We can calculate it by hand.
+For reversible reactions, the system will reach the steady state we got. We can calculate it by hand.
 
-To simply the calculations, assume we have a system with nicer numbers. Our system has 50M free ligand molecules (L, denote with *L<sub>0</sub> = 50*) and 50M free receptor molecules (T, denote with *T<sub>0</sub> = 50*), and the reaction proceeds as following:
+To simplify the calculations, assume we have a system with nicer numbers. Our system has free ligand molecules of a concentration 50M (L, denote with *L<sub>0</sub> = 50*) and free receptor molecules of a concentration 50M (T, denote with *T<sub>0</sub> = 50*), and the reaction proceeds as following:
 - L + T <-> L.T, where *k<sub>bind</sub> = 1* M<sup>-1</sup>s<sup>-1</sup>, *k<sub>dissociate</sub> = 5* s<sup>-1</sup>.(shortened as *k<sub>b</sub>, k<sub>d</sub>*)
 
 Calculation:
 - The rate of forward reaction is *k<sub>b</sub>[L][T]*, and the rate of reverse reaction is *k<sub>d</sub>[L.T]*.
-- At steady state, rate of forward reaction is equal to the rate of reverse reaction. So *k<sub>b</sub>[L][T] = k<sub>d</sub>[L.T]*. (eq.1)
-- Because of conservation of mass, all L.T in our system must formed by L and T. Therefore, at anytime, we have *[L] = L<sub>0</sub> - [L.T]* and *[T] = T<sub>0</sub> - [L.T]*. (eq.2 & 3)
+- At the steady state, rate of forward reaction is equal to the rate of reverse reaction. So *k<sub>b</sub>[L][T] = k<sub>d</sub>[L.T]*. (eq.1)
+- Because of conservation of mass, all L.T in our system must be formed by L and T. Therefore, at anytime, we have *[L] = L<sub>0</sub> - [L.T]* and *[T] = T<sub>0</sub> - [L.T]*. (eq.2 & 3)
 - Substitute eq.2 & 3 into eq.1, we can get *k<sub>b</sub>(L<sub>0</sub> - [L.T])([T] = T<sub>0</sub> - [L.T]) = k<sub>d</sub>[L.T]*. (eq.4)
-- Assign *x = [L.T]*. Substitute *L<sub>0</sub> = 50*, *T<sub>0</sub> = 50*, *k<sub>bind</sub> = 1*, and *k<sub>dissociate</sub> = 5* into eq.4, we get *1 (50 - x)(50 - x) = 5 x*. (eq.5)
+- Assign *x = [L.T]*. Substitute *L<sub>0</sub> = 50*, *T<sub>0</sub> = 50*, *k<sub>bind</sub> = 1*, and *k<sub>dissociate</sub> = 5* into eq.4, we get *1 (50 - x)(50 - x) = 5x*. (eq.5)
 - So *[L.T] = x = 36.492*.
 - Therefore the steady-state concentration of L.T is 36.492 M. Accordingly, the steady-state concentration of L and T is 13.508 M.
 
-What if the forward reaction becomes faster? For example, *k<sub>bind</sub> = 2* M<sup>-1</sup>s<sup>-1</sup>? More L.T should be formed. Let's confirm this by simply change eq.5 to *2 (50 - x)(50 - x) = 5 x*. Solve it, we get *x = 40*. So the steady state concentration for L.T is 40 M, for L and T is 10 M.
+What if the forward reaction becomes faster? For example, *k<sub>bind</sub> = 2* M<sup>-1</sup>s<sup>-1</sup>? More L.T should be formed. Let's confirm this by simply change eq.5 to *2 (50 - x)(50 - x) = 5x*. Solve it, we get *x = 40*. So the steady state concentration for L.T is 40 M, for L and T is 10 M.
 
-What if there are more ligands? For example, *L<sub>0</sub> = 100* M. More L.T should be formed. Similarly, we can change eq.5 to *1 (100 - x)(50 - x) = 5 x*, and we will get steady state concentration for L.T is 45.779 M, for L and T is 4.221 M.
+What if there are more ligands? For example, *L<sub>0</sub> = 100* M. More L.T should be formed. Similarly, we can change eq.5 to *1 (100 - x)(50 - x) = 5x*, and we will get steady state concentration for L.T is 45.779 M, for L and T is 4.221 M.
 
 **STOP**: What if backward reaction becomes faster? For example, *k<sub>dissociate</sub> = 10* s<sup>-1</sup>? Confirm your hypothesis by calculation.
 {: .notice--primary}
 
 Let's get back to the ligand-receptor dynamics for *E. coli*. Change the parameters to *L<sub>0</sub> = 1e4*,  *T<sub>0</sub> = 7000*, *k<sub>b</sub> = 8.8e8/6.02e8, k<sub>d</sub> = 35*. (Excersice for you: what are the units?) We can calculate that the steady state concentration for L.T is about 4794 (Excersice for you: what unit?).
 
-Here we've showed that using BNG and calculating by hand reach the same conclusion for bimolecular reactions.
+Here we've shown that using BNG and calculating by hand reach the same conclusion for bimolecular reactions.
 
 But if we can calculate this by hand, why do we still need BNG? The benefit of BNG is that, when we have more reactions involved in the system, calculating (or even setting up all the equations) by hand is no longer possible. We will introduce more complexity in the pathway through the module.
 

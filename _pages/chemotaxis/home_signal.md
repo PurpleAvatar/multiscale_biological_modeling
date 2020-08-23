@@ -26,60 +26,79 @@ The chemical reactions that we considered in the previous two modules were **irr
 
 In this chapter, we will encounter **reversible** reactions that proceed continuously in both directions at different rates. If a ligand collides with a receptor, then there is some probability that this will lead to the two molecules bonding into a complex. But at the same time, in any unit of time, there is also a probability that a bound receptor-ligand complex will **dissociate** into two separate molecules. We will discuss what makes two molecules more likely to bond in a future module, but for now, we will assert that the more suited a receptor is to a ligand, the higher the probability of  bonding and the lower the probability of dissociation.
 
-Let us represent the receptor molecule by *T*, the ligand molecule by *L*, and the bound complex as *TL*. We have the **forward reaction** *T* + *L* → *TL*, which takes place at some rate *k*<sub>bind</sub>, and the **reverse reaction** *TL* → *T* + *L*, which takes place at some rate *k*<sub>dissociate</sub>. If we start with a free floating supply of *T* and *L* molecules, what will happen?
+Why should this reaction be reversible? First, surface receptors are typically complicated molecules, and it would be costly to the organism if it needed to keep reproducing these molecules. Second, if complexes dissociate, then a brief signal will not be detected by an organism indefinitely; we will say more about how the cell responds to a changing concentration of ligand over time soon.
 
-*TL* will initially be formed quickly at the expense of the free-floating *T* and *L* molecules; the reverse reaction will not occur because of the lack of *TL* complexes. As the concentration of *TL* grows and the concentrations of  *T* and *L* decrease, the rate of increase in *TL* will slow. Eventually, the number of *TL* complexes being formed by the forward reaction will balance the number of *TL* complexes being split apart by the reverse reaction. At this point, called a **steady state**, the concentration of all particles will become constant.
+For now, we will start building a model of ligand-receptor dynamics. We will represent the receptor molecule by *T*, the ligand molecule by *L*, and the bound complex as *TL*. We have the **forward reaction** *T* + *L* → *TL*, which takes place at some rate *k*<sub>bind</sub>, and the **reverse reaction** *TL* → *T* + *L*, which takes place at some rate *k*<sub>dissociate</sub>. If we start with a free floating supply of *T* and *L* molecules, what will happen?
+
+*TL* will initially be formed quickly at the expense of the free-floating *T* and *L* molecules; the reverse reaction will not occur because of the lack of *TL* complexes. As the concentration of *TL* grows and the concentrations of  *T* and *L* decrease, the rate of increase in *TL* will slow. Eventually, the number of *TL* complexes being formed by the forward reaction will balance the number of *TL* complexes being split apart by the reverse reaction. At this point, called a **steady state** or **equilibrium**, the concentration of all particles will become constant.
 
 ## Calculation of steady state concentration in a reversible reaction
 
-## Break
+In fact, we can calculate the steady state concentrations of *T* and *L* for our reversible reaction.  Suppose that we begin with initial concentrations of *T* and *L* that are represented by *t*<sub>0</sub> and *l*<sub>0</sub>, respectively. Let [*L*], [*T*], and [*LT*] denote the concentrations of the three molecule types. And assume that the reaction rates *k*<sub>bind</sub> and *k*<sub>dissociate</sub> are fixed.
 
-In this Module, we will use [BioNetGen](https://www.csb.pitt.edu/Faculty/Faeder/?page_id=409) to build a set of models to simulate chemotaxis activities. We will start from building a simulation for equilbrium of a bimolecular reversible reaction between ligands and receptors.
+Our goal is to find the steady-state concentration of *LT*. When this occurs, we know that the rate of production of *LT* is equal to the rate of its dissociation; in other words, we know that
 
-[Visit Ligand-Receptor Dynamics Tutorial](tutorial_lr){: .btn .btn--primary .btn--large}
-{: style="font-size: 100%; text-align: center;"}
+*k*<sub>bind</sub> · [*L*] · [*T*] = *k*<sub>dissociate</sub> · [*LT*].
 
-Why BNG instead of CellBlender? We don't care about the spacial distribution of receptor and ligands here - an *E. coli* is small compared to gradients it encounters in real life (no ligand concentration difference across its body - but there are some bacteria that experience different concentration across its body), and we only care about a region the receptors are located at, so we can assume the ligand concentration is uniform everywhere within that region.
+We also know that by the law of conservation of mass, the total number of *L* and *T* molecules is always constant across the system. In particular, the number of these particles is equal to their initial concentrations. That is, at any time point, we have that
 
-## Reversible reactions and steady state of a system
+[*L*] + [*LT*] = *l*<sub>0</sub>
 
-Why do we care that the reaction is reversible? For ligand-receptor dynamics, the receptors are generally complex molecules produced by the organism, so it would be very costly if not reusable. The only way that the receptor can binds to ligands repetitively is to release the ligand.
+and that
 
-For reversible reactions, the system will reach the steady state we got. We can calculate it by hand.
+[*T*] + [*LT*] = *t*<sub>0</sub>.
 
-To simplify the calculations, assume we have a system with nicer numbers. Our system has free ligand molecules of a concentration 50M (L, denote with *L<sub>0</sub> = 50*) and free receptor molecules of a concentration 50M (T, denote with *T<sub>0</sub> = 50*), and the reaction proceeds as following:
-- L + T <-> L.T, where *k<sub>bind</sub> = 1* M<sup>-1</sup>s<sup>-1</sup>, *k<sub>dissociate</sub> = 5* s<sup>-1</sup>.(shortened as *k<sub>b</sub>, k<sub>d</sub>*)
+Solving these equations for [*L*] and [*T*] yields the following two equations:
 
-Calculation:
-- The rate of forward reaction is *k<sub>b</sub>[L][T]*, and the rate of reverse reaction is *k<sub>d</sub>[L.T]*.
-- At the steady state, rate of forward reaction is equal to the rate of reverse reaction. So *k<sub>b</sub>[L][T] = k<sub>d</sub>[L.T]*. (eq.1)
-- Because of conservation of mass, all L.T in our system must be formed by L and T. Therefore, at anytime, we have *[L] = L<sub>0</sub> - [L.T]* and *[T] = T<sub>0</sub> - [L.T]*. (eq.2 & 3)
-- Substitute eq.2 & 3 into eq.1, we can get *k<sub>b</sub>(L<sub>0</sub> - [L.T])([T] = T<sub>0</sub> - [L.T]) = k<sub>d</sub>[L.T]*. (eq.4)
-- Assign *x = [L.T]*. Substitute *L<sub>0</sub> = 50*, *T<sub>0</sub> = 50*, *k<sub>bind</sub> = 1*, and *k<sub>dissociate</sub> = 5* into eq.4, we get *1 (50 - x)(50 - x) = 5x*. (eq.5)
-- So *[L.T] = x = 36.492*.
-- Therefore the steady-state concentration of L.T is 36.492 M. Accordingly, the steady-state concentration of L and T is 13.508 M.
+[*L*] = *l*<sub>0</sub> - [*LT*]<br>
+[*T*] = *t*<sub>0</sub> - [*LT*]
 
-What if the forward reaction becomes faster? For example, *k<sub>bind</sub> = 2* M<sup>-1</sup>s<sup>-1</sup>? More L.T should be formed. Let's confirm this by simply change eq.5 to *2 (50 - x)(50 - x) = 5x*. Solve it, we get *x = 40*. So the steady state concentration for L.T is 40 M, for L and T is 10 M.
+We will now substitute the expressions on the right for [*L*] and [*T*] into our original steady-state equation:
 
-What if there are more ligands? For example, *L<sub>0</sub> = 100* M. More L.T should be formed. Similarly, we can change eq.5 to *1 (100 - x)(50 - x) = 5x*, and we will get steady state concentration for L.T is 45.779 M, for L and T is 4.221 M.
+*k*<sub>bind</sub> · (*l*<sub>0</sub> - [*LT*]) · (*t*<sub>0</sub> - [*LT*]) = *k*<sub>dissociate</sub> · [*LT*]
 
-**STOP**: What if backward reaction becomes faster? For example, *k<sub>dissociate</sub> = 10* s<sup>-1</sup>? Confirm your hypothesis by calculation.
+Expanding the left side of this equation gives us the following updated equation:
+
+*k*<sub>bind</sub> · *l*<sub>0</sub> · *t*<sub>0</sub> - (*k*<sub>bind</sub> · *l*<sub>0</sub> + *k*<sub>bind</sub> · *t*<sub>0</sub>) · [*LT*] + *k*<sub>bind</sub> · [*LT*]<sup>2</sup> = *k*<sub>dissociate</sub> · [*LT*]
+
+Finally, we subtract the right side of this equation from both sides:
+
+*k*<sub>bind</sub> · *l*<sub>0</sub> · *t*<sub>0</sub> - (*k*<sub>bind</sub> · *l*<sub>0</sub> + *k*<sub>bind</sub> · *t*<sub>0</sub> + *k*<sub>dissociate</sub>) · [*LT*] + *k*<sub>bind</sub> · [*LT*]<sup>2</sup> = 0
+
+This equation may look daunting, but most of its components are constants. In fact, the only unknown is [*LT*], which makes this a quadratic equation, or an equation of the form *a* · *x*<sup>2</sup> + *b* · *x* + *c* = 0 for constants *a*, *b*, and *c* and a single unknown *x*. The quadratic formula tells us that this equation has two solutions given by the following equation --- and you thought you'd never use this formula again!
+
+$$x = \dfrac{-b \pm \sqrt{b^2 - 4 \cdot a \cdot c}}{2 \cdot a}$$
+
+* SHUANGER: Please double-check me on all this and work out the solution that can be given to students. Does it match what you have?
+
+**STOP**: Use the quadratic equation to solve for [*LT*] and find the steady-state concentration of *LT*. How can we use it to find the steady-state concentrations of *L* and *T*?
 {: .notice--primary}
 
-Let's get back to the ligand-receptor dynamics for *E. coli*. Change the parameters to *L<sub>0</sub> = 1e4*,  *T<sub>0</sub> = 7000*, *k<sub>b</sub> = 8.8e8/6.02e8, k<sub>d</sub> = 35*. (Excersice for you: what are the units?) We can calculate that the steady state concentration for L.T is about 4794 (Excersice for you: what unit?).
+Let us use the solution to this equation to see how the steady-state concentration changes for a few different parameter values.
+
+* SHUANGER: Please provide a few different results and point to me when done.  Insert your changing parameters here and interpret how they influence the steady state.
+
+## Verifying the steady-state concentration via simulation
 
 Here we've shown that using BNG and calculating by hand reach the same conclusion for bimolecular reactions.
 
 But if we can calculate this by hand, why do we still need BNG? The benefit of BNG is that, when we have more reactions involved in the system, calculating (or even setting up all the equations) by hand is no longer possible. We will introduce more complexity in the pathway through the module.
 
-
-## Simulating with BNG
-
 Instead of just calculating the steady state concentrations (which is already hard when we add more complexity to our model), we are interested in concentration of all species at each time point when simulating a biological system. Why all time points? Because the response to a stimulus is often transient, and it depends on many time-critical reactions. We will miss these if only have steady state concentrations.
 
-BNG supports simulation with Ordinary Differential Equation (ODE) and with Stochastic Simulation Algorithm (SSA, also called Gillespie algorithm). The method is passed in as argument `method=>"ode"` or `method=>"ssa"`.
- - ODE: When simulating a system, we need to define how the system evolves through time. In *continuous* simulation of chemical reactions, the state of the system can be reported given any point in time. The reactions rules specify the rate of change for concentration of the involved species, and they are differential equations. For example, *d[L]/dt=k<sub>dissociate</sub>[L.T] - k<sub>bind</sub>[L][T]*.[^Schwartz14]
- - SSA: When simulating the change of the system through time, we define states of the system. Transition can happen between states that differ by one reaction event. We track the *discrete* amount of each reactants and simulate the system via transition of the states[^Schwartz17]. For example, the state can transit from [#L=100, #T=50, #L.T=0] to [#L=99, #T=49, #L.T=1], with probability determined both by reaction rate *k<sub>bind</sub>* and the the number of ways to choose the L and T molecules.[^Schwartz17] For using SSA, the measurement of abundance of molecules should actually be number of molecule instead of concentration.
+Why BNG instead of CellBlender? We don't care about the spacial distribution of receptor and ligands here - an *E. coli* is small compared to gradients it encounters in real life (no ligand concentration difference across its body - but there are some bacteria that experience different concentration across its body), and we only care about a region the receptors are located at, so we can assume the ligand concentration is uniform everywhere within that region.
+
+In this Module, we will use [BioNetGen](https://www.csb.pitt.edu/Faculty/Faeder/?page_id=409) to build a set of models to simulate chemotaxis activities. We will start from building a simulation for equilbrium of a bimolecular reversible reaction between ligands and receptors.
+
+[Visit tutorial](tutorial_lr){: .btn .btn--primary .btn--large}
+{: style="font-size: 100%; text-align: center;"}
+
+## Subsection
+
+* SHUANGER: This is where we should return from the tutorial and interpret the results of the tutorial.
+
+
+
 
 
 [^Munroe]: Randall Munroe. What If? [Available online](https://what-if.xkcd.com/)
@@ -116,3 +135,37 @@ BNG supports simulation with Ordinary Differential Equation (ODE) and with Stoch
 
 [Next Page: Chemotaxis pathway](home_biochem){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
+
+
+## Extra -- to be deleted later
+
+* Everything below is extra stuff to be sampled from above
+
+To simplify the calculations, assume we have a system with nicer numbers. Our system has free ligand molecules of a concentration 50M (L, denote with *L<sub>0</sub> = 50*) and free receptor molecules of a concentration 50M (T, denote with *T<sub>0</sub> = 50*), and the reaction proceeds as following:
+- L + T <-> L.T, where *k<sub>bind</sub> = 1* M<sup>-1</sup>s<sup>-1</sup>, *k<sub>dissociate</sub> = 5* s<sup>-1</sup>.(shortened as *k<sub>b</sub>, k<sub>d</sub>*)
+
+Calculation:
+- The rate of forward reaction is *k<sub>b</sub>[L][T]*, and the rate of reverse reaction is *k<sub>d</sub>[L.T]*.
+- At the steady state, rate of forward reaction is equal to the rate of reverse reaction. So *k<sub>b</sub>[L][T] = k<sub>d</sub>[L.T]*. (eq.1)
+- Because of conservation of mass, all L.T in our system must be formed by L and T. Therefore, at anytime, we have *[L] = L<sub>0</sub> - [L.T]* and *[T] = T<sub>0</sub> - [L.T]*. (eq.2 & 3)
+- Substitute eq.2 & 3 into eq.1, we can get *k<sub>b</sub>(L<sub>0</sub> - [L.T])([T] = T<sub>0</sub> - [L.T]) = k<sub>d</sub>[L.T]*. (eq.4)
+- Assign *x = [L.T]*. Substitute *L<sub>0</sub> = 50*, *T<sub>0</sub> = 50*, *k<sub>bind</sub> = 1*, and *k<sub>dissociate</sub> = 5* into eq.4, we get *1 (50 - x)(50 - x) = 5x*. (eq.5)
+- So *[L.T] = x = 36.492*.
+- Therefore the steady-state concentration of L.T is 36.492 M. Accordingly, the steady-state concentration of L and T is 13.508 M.
+
+What if the forward reaction becomes faster? For example, *k<sub>bind</sub> = 2* M<sup>-1</sup>s<sup>-1</sup>? More L.T should be formed. Let's confirm this by simply change eq.5 to *2 (50 - x)(50 - x) = 5x*. Solve it, we get *x = 40*. So the steady state concentration for L.T is 40 M, for L and T is 10 M.
+
+What if there are more ligands? For example, *L<sub>0</sub> = 100* M. More L.T should be formed. Similarly, we can change eq.5 to *1 (100 - x)(50 - x) = 5x*, and we will get steady state concentration for L.T is 45.779 M, for L and T is 4.221 M.
+
+**STOP**: What if backward reaction becomes faster? For example, *k<sub>dissociate</sub> = 10* s<sup>-1</sup>? Confirm your hypothesis by calculation.
+{: .notice--primary}
+
+Let's get back to the ligand-receptor dynamics for *E. coli*. Change the parameters to *L<sub>0</sub> = 1e4*,  *T<sub>0</sub> = 7000*, *k<sub>b</sub> = 8.8e8/6.02e8, k<sub>d</sub> = 35*. (Excersice for you: what are the units?) We can calculate that the steady state concentration for L.T is about 4794 (Excersice for you: what unit?).
+
+## Extra extra
+
+* The points about SSA, ODE, NFSim need to be fleshed out better. Not sure where they go but I don't think it's in this section. Perhaps in the tutorial unless it is captivating.
+
+BNG supports simulation with Ordinary Differential Equation (ODE) and with Stochastic Simulation Algorithm (SSA, also called Gillespie algorithm). The method is passed in as argument `method=>"ode"` or `method=>"ssa"`.
+ - ODE: When simulating a system, we need to define how the system evolves through time. In *continuous* simulation of chemical reactions, the state of the system can be reported given any point in time. The reactions rules specify the rate of change for concentration of the involved species, and they are differential equations. For example, *d[L]/dt=k<sub>dissociate</sub>[L.T] - k<sub>bind</sub>[L][T]*.[^Schwartz14]
+ - SSA: When simulating the change of the system through time, we define states of the system. Transition can happen between states that differ by one reaction event. We track the *discrete* amount of each reactants and simulate the system via transition of the states[^Schwartz17]. For example, the state can transit from [#L=100, #T=50, #L.T=0] to [#L=99, #T=49, #L.T=1], with probability determined both by reaction rate *k<sub>bind</sub>* and the the number of ways to choose the L and T molecules.[^Schwartz17] For using SSA, the measurement of abundance of molecules should actually be number of molecule instead of concentration.

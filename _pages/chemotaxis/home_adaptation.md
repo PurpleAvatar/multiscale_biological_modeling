@@ -12,8 +12,9 @@ We will look at the other part of the story. Consider (think about optimal strat
 *If one E. coli is in a well-mixed glucose solution with a concentration of A, and another is in a well-mixed glucose solution with a concentration of 10A, should they have the same tumbling frequency?*
 <details>
 <summary>Unlock the strategy.</summary>
- - Yes. If the second one tumbles less, it will have a harder time to move towards a even higher concentration.
+Yes. 
 
+ - If the second one tumbles less, it will have a harder time to move towards a even higher concentration.
  - The cell should go back to original tumbling frequency when no gradient presents despite what the concentration is.
 
 </details>
@@ -21,7 +22,9 @@ We will look at the other part of the story. Consider (think about optimal strat
 *If one E. coli in glucose solution swam from A concentration to 10A concentration (assume it happened instantaneously), and another stays in a well-mixed glucose with a concentration of 10A, should they have the same tumbling frequency?*
 <details>
 <summary>Unlock the strategy.</summary>
- - No. The first one sensed a *change* in concentration, which indicates that if it keeps swimming in this direction, it might enter an area with higher concentration, so it should decrease tumbling frequency.
+No. 
+
+ - The first one sensed a *change* in concentration, which indicates that if it keeps swimming in this direction, it might enter an area with higher concentration, so it should decrease tumbling frequency.
 
  - The cell should decide tumbling frequency based on the *change*, not the absolute concentration.
 
@@ -57,7 +60,7 @@ We will incorporate methylation in our pathway and have the whole story here. Il
  ![image-center](../assets/images/chemotaxis_wholestory.png){: .align-center}
  <figcaption>A summary of the whole story of chemotaxis pathways.Blue curve: phosphorylation; grey curve: dephosphorylation; green arrow: methylation.</figcaption>
 
-[Visit Adaptation Tutoiral](tutorial_adap){: .btn .btn--primary .btn--large}
+[Visit Adaptation Tutorial](tutorial_adap){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 From the BNG simulation, we can observe a fast response of CheY activity, and a slower adaptation that returns tumbling frequency to the background level. We can also observe that higher ligand concentration leads to stronger response, and higher level of steady state methylation.

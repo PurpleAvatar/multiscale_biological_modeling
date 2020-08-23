@@ -83,7 +83,7 @@ motifs:
 chemotaxis:
   - title: About Chemotaxis
     children:
-      - title: "Prologue"
+      - title: "Introduction: Lost Immortals and Chemotaxis"
         url: /chemotaxis/home
       - title: "Introduction to chemotaxis"
         url: /chemotaxis/home_walk

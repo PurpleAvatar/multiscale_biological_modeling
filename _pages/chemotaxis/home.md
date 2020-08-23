@@ -1,6 +1,6 @@
 ---
 permalink: /chemotaxis/home
-title: "Lost Immortals"
+title: "Introduction: Lost Immortals and Chemotaxis"
 sidebar:
  nav: "chemotaxis"
 ---
@@ -9,14 +9,13 @@ sidebar:
 
 ## Lost Immortals
 
-The book *What If?*[^Munroe] compiles a collection of crazy hypotheticals, along with enthusiastically scientific replies from the author. Below is one such quandary:
+The book *What If?*[^Munroe], by Randall Munroe, compiles a collection of crazy scientific hypotheticals, paired with thorough discussions of what might happen if these hypotheticals came to pass. The following is one of these hypotheticals, called "Lost Immortals".
 
 > If two immortal people were placed on opposite sides of an uninhabited Earth-like planet, how long would it take them to find each other? 100,000 years? 1,000,000 years?
 
-**STOP:** What would you propose that the two immortals could do to find each other?
-{: .notice--primary}
+One could imagine many ideas for how the immortals could find each other. For example, they could avoid the interiors of continents by moving to the coastlines. If they are allowed to discuss how to find each other in advance, then they could just agree to meet at the planet's North Pole --- although this would be dangerous.
 
-* Solution from book is below. Need to discuss this solution in the context of what comes before (there are thoughts to go to the coastlines. You could also decide to meet each other at the North Pole if you could discuss in advance.) Munroe describes his approach as "be an ant". Ants also use this type of random walk strategy.
+But Munroe provides a solution to the Lost Immortals hypothetical that is both sophisticated and elegant. His proposed approach is quoted below.
 
 > If you have no information, walk at random, leaving a trail of stone markers, each one pointing to the next. For every day that you walk, rest for three. Periodically mark the date alongside the cairn. It doesn’t matter how you do this, as long as it’s consistent. You could chisel the number of days into a rock, or lay out rocks to plot the number.
 >
@@ -66,4 +65,3 @@ The behavior of cells moving towards or away from a substance is called **chemot
 [^Yang2019]: Yang W, Cassidy CK, Ames P, Diebolder CA, Schulten K, Luthey-Schulten Z, Parkinson JS, Briegel A. 2019. *In situ* confomraitonal changes of the *Escherichia coli* serine chemoreceptor in different signaling states. mBio. [Available online](https://mbio.asm.org/content/10/4/e00973-19/article-info)
 
 [^Saragosti2001]: Saragosti J, Calvez V, Bournaveas, N, Perthame B, Buguin A, Silberzan P. 2001. Directional persistence of chemotactic bacteria in a traveling concentration wave. PNAS. [Available online](https://www.pnas.org/content/pnas/108/39/16235.full.pdf)
-

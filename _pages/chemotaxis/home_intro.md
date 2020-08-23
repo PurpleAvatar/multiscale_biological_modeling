@@ -1,16 +1,20 @@
 ---
 permalink: /chemotaxis/home_walk
-title: "Introduction to Chemotaxis"
+title: "Runs and Tumbles"
 sidebar:
  nav: "chemotaxis"
 ---
 
 ## How does *E. coli* explore the world?
 
-*E. coli* has 5-12 flagella distributed on the surface.[^Sim2017] Each flagellum rotates clockwise (CW) or counter-clockwise (CCW). This leads to two states of movement: 1) when flagella rotate in CCW, they form a bundle and propel the cells to swim smoothly at a speed of 20 µm per second, called **run**; 2) when some flagella in the bundle rotate CW, the flagella become uncoordinated and reorient with a much slower net movement speed in place, called **tumble**.[^Baker2005]
+An *E. coli* cell has between five and twelve flagella distributed on its surface.[^Sim2017] Each flagellum can rotate both clockwise and counter-clockwise. When all of the flagella are rotating counter-clockwise, they form a bundle and propel the cell forward at an impressive speed of about 20 µm per second (i.e., about ten times the length of the cell per second). When any flagellum rotates clockwise, the flagella become uncoordinated, and the bacterium winds up rotating in place.[^Baker2005]
+
+When we look at the bacterium's movement, it alternates between periods of "running" in a straight line and then "tumbling" in place (see figure below). When we examine the cell's movement over time, what we see is a *random walk* through its environment. Note that this **run and tumble** view of *E. coli* movement is not dissimilar from the exploration approach taken by our Lost Immortals in the introduction. Recall also from the [prologue](prologue) that an object moving via a random walk will typically travel surprisingly far from its starting point.
 
 ![image-center](../assets/images/chemotaxis_intro_runtumble.png){: .align-center}
 <figcaption>Run and tumble. Left: relationship between flagellar rotation and run vs. tumble. Right: a run-and-tumble trajectory towards right. Image from Parkinson Lab, University of Utah.</figcaption>
+
+* Need to trim this figure to avoid the part on the left.
 
 The movement patterns of bacteria are dependent on the cell size, the gradient they experience, and the fluid dynamics of the environment. In a uniform environment, *E. coli* tumbles once about every 1-1.5 seconds.[^Weis1990][^Berg2000] Similar run-and-tumble movement is often observed in enteric and soil bacteria. For example, *Salmonella* bacteria (enteric) tumbles about once per second[^Achouri2015], *Enterococcus sacchrolyticus* (enteric) tumbles about once per 1.2 seconds, *Bacillus subtilis*（soil and enteric) tumbles about every 2 seconds[^Turner2016], and *Rhizobia* (soil) tumbles about every 1-2 seconds[^Gotz1987]. There is not a definite model for the differences on tumbling frequency between different species or among individuals in the same species yet. It is an interplay of some factors including but not limited to: cell size, speed, and obstacles in the environment[^Rashid2019][^Mitchell2005]. For example, more frequent tumbling for a large and fast cell; less frequent tumbling when more obstacles (reason not understood yet). Additionally, variation among individuals in the same species allows the cells to adapt to different gradient steepness better collectively[^Lim2019].
 
@@ -49,4 +53,3 @@ Despite the differences, the variations in tumbling frequencies aren't large. Th
 
 [Next Lesson: Signaling and Ligand-Receptor Dynamics](home_signal){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
-

@@ -34,9 +34,9 @@ The video below shows a collection of *E. coli* surrounding a sugar crystal. Thi
 
 The movement of organisms towards or away from a substance is called **chemotaxis**. *E. coli* and other bacteria have evolved to move toward **attractants** (e.g., glucose, electron acceptors) and away from **repellents** (e.g., Ni<sup>2+</sup>, Co<sup>2+</sup>). But how?
 
-In this chapter
+In this module, we will dive into the chemotaxis process by addressing a number of questions. How does a simple organism like *E. coli* sense an attractant or repellent in its environment? How does the bacterium then change its internal state in response to this environment? And how does this internal response to a stimulus translate into an explainable "algorithm" that describes how the wandering *E. coli* explores its environment?
 
-[Next Lesson: E. coli Walk](home_walk){: .btn .btn--primary .btn--large}
+[Next lesson](home_walk){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 [^Munroe]: Randall Munroe. What If? [Available online](https://what-if.xkcd.com/)

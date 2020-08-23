@@ -97,7 +97,7 @@ chemotaxis:
         url: /chemotaxis/home_gradient
       - title: "Conclusion"
         url: /chemotaxis/home_conclusion
-  - title: Building BNG simulations
+  - title: Tutorials
     children:
       - title: "Starting BNG Simulation"
         url: /chemotaxis/tutorial_lr
@@ -109,6 +109,8 @@ chemotaxis:
         url: /chemotaxis/tutorial_gradient
       - title: "Down gradient/Removal"
         url: /chemotaxis/tutorial_removal
+      - title: "chemotaxictic random walk"
+        url: /chemotaxis/tutorial_walk
 
 coronavirus:
   - title: About This Module

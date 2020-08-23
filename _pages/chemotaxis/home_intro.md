@@ -12,9 +12,9 @@ An *E. coli* cell has between five and twelve flagella distributed on its surfac
 When we look at the bacterium's movement, it alternates between periods of "running" in a straight line and then "tumbling" in place (see figure below). When we examine the cell's movement over time, what we see is a *random walk* through its environment. Note that this **run and tumble** view of *E. coli* movement is not dissimilar from the exploration approach taken by our Lost Immortals in the introduction. Recall also from the [prologue](prologue) that an object moving via a random walk will typically travel surprisingly far from its starting point.
 
 ![image-center](../assets/images/chemotaxis_intro_runtumble.png){: .align-center}
-<figcaption>Run and tumble. Left: relationship between flagellar rotation and run vs. tumble. Right: a run-and-tumble trajectory towards right. Image from Parkinson Lab, University of Utah.</figcaption>
+<figcaption>The run and tumble mechanism of bacterial movement produces a random walk. Image from Parkinson Lab, University of Utah.</figcaption>
 
-* Need to trim this figure to avoid the part on the left. Adjust caption.
+* Shuanger: Please crop this figure to avoid the part on the right, which isn't important. I have adjusted the caption. Provide hyperlink in Parkinson lab.
 
 ## Tumbling frequency is constant across species
 

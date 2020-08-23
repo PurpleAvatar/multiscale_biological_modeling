@@ -35,7 +35,7 @@ We also have qualitative evidence that the pigmentary patterns arising in fish a
 **STOP**: Is it ever possible for a square to have a concentration greater than 1? Why or why not?
 {: .notice--primary}
 
-**STOP**: Note that the concentrations of all of the particles add up to 1 in each step.
+**STOP**: Note that the concentrations of all of the particles add up to 1 in each step. Do you think that this must always be true?
 {: .notice--primary}
 
 ## Notes to selves

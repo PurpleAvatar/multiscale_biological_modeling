@@ -44,7 +44,7 @@ As a result, the central nine squares after two time steps are as shown in the f
 <figcaption>A grid showing an update to the central nine squares of the diffusion system in the previous figure after an additional time step. The cells labeled "?" are left as an exercise to the reader.</figcaption>
 </center>
 
-**STOP**: What should the values of the "?" cells be in the above figure? Note that these cells are neighbors of cells with positive concentrations after one time step, so their concentrations should be positive.
+**STOP**: What should the values of the "?" cells be in the above figure? Note that these cells are neighbors of cells with positive concentrations after one time step, so their concentrations should be positive. Click <a href="../assets/images/A_concentration_two_time_steps_complete.png">here</a> to see the answer.
 {: .notice--primary}
 
 * Have a "click here for answer" with a linked image. Figure is below.
@@ -124,6 +124,8 @@ Applying these cell-based reaction-diffusion computations over all cells in para
 ## Reflection on the Gray-Scott model
 
 * This is where we will return from the tutorial and reflect on the different Turing patterns that we can produce at the end of Gray-Scott, perhaps with some embedded GIFs.
+
+* NOAH: please propose a few different GIFs that we can use here that show how slight changes in pattern values lead to very different end behavior.
 
 [Next lesson](#){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}

@@ -56,7 +56,7 @@ The solution is to add a parameter <em>d</em><sub><em>A</em></sub> representing 
 So, to revisit our original example, say that <em>d</em><sub><em>A</em></sub> is equal to 0.2. Then after the first time step, only 10% of the central cell's particles will be spread to its neighbors. This means that the central square is updated to 0.9, its adjacent neighbors are updated to 0.2(0.2) = 0.04, and its diagonal neighbors are updated to 0.2(0.05) = 0.01. These values after a single time step are summarized in the figure below.
 
 <center>
-<img src = "../assets/images/A_concentration_two_time_steps_complete.png" width="300">
+<img src = "../assets/images/A_concentration_slower_diffusion.png" width="300">
 <figcaption>An updated grid of cells showing the concentration of *A* particles from our example after one time step if <em>d</em><sub><em>A</em></sub> = 0.2.</figcaption>
 </center>
 

@@ -5,7 +5,7 @@ sidebar:
  nav: "chemotaxis"
 ---
 
-## How does *E. coli* explore the world?
+## *E. coli* explores its world via a random walk
 
 An *E. coli* cell has between five and twelve flagella distributed on its surface.[^Sim2017] Each flagellum can rotate both clockwise and counter-clockwise. When all of the flagella are rotating counter-clockwise, they form a bundle and propel the cell forward at an impressive speed of about 20 µm per second (i.e., about ten times the length of the cell per second). When any flagellum rotates clockwise, the flagella become uncoordinated, and the bacterium winds up rotating in place.[^Baker2005]
 
@@ -15,6 +15,8 @@ When we look at the bacterium's movement, it alternates between periods of "runn
 <figcaption>Run and tumble. Left: relationship between flagellar rotation and run vs. tumble. Right: a run-and-tumble trajectory towards right. Image from Parkinson Lab, University of Utah.</figcaption>
 
 * Need to trim this figure to avoid the part on the left.
+
+## Tumbling frequency is constant across species
 
 The movement patterns of bacteria are dependent on the cell size, the gradient they experience, and the fluid dynamics of the environment. In a uniform environment, *E. coli* tumbles once about every 1-1.5 seconds.[^Weis1990][^Berg2000] Similar run-and-tumble movement is often observed in enteric and soil bacteria. For example, *Salmonella* bacteria (enteric) tumbles about once per second[^Achouri2015], *Enterococcus sacchrolyticus* (enteric) tumbles about once per 1.2 seconds, *Bacillus subtilis*（soil and enteric) tumbles about every 2 seconds[^Turner2016], and *Rhizobia* (soil) tumbles about every 1-2 seconds[^Gotz1987]. There is not a definite model for the differences on tumbling frequency between different species or among individuals in the same species yet. It is an interplay of some factors including but not limited to: cell size, speed, and obstacles in the environment[^Rashid2019][^Mitchell2005]. For example, more frequent tumbling for a large and fast cell; less frequent tumbling when more obstacles (reason not understood yet). Additionally, variation among individuals in the same species allows the cells to adapt to different gradient steepness better collectively[^Lim2019].
 

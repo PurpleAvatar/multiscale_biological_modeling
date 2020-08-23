@@ -9,9 +9,9 @@ sidebar:
 
 A key characteristic of living organisms is the ability to respond to stimuli in the environment. Chemotaxis is one of those behaviors. It relies on the ability to perceive a change (ligand concentration), and react accordingly (adjust direction of movement). This is an example of *signal transduction pathway*, which includes 1) an external stimuli, 2) a series of molecular events, 3) a resulted cellular response. 
 
-Why are we interested in signaling pathways? Recall the discussion on gene expression regulation in the Motif Module. An external signal can lead to change in gene expression (response). Such mechanisms provides stability to biological systems when there is perturbation in the enviornment. Internal temperature and ion concentrations, etc. of organisms need to be maintained when there is a signal of temperature/concentration change to keep enzymes functional. Besides fitness of an individual, singaling also enables a group of organisms to have higher fitness, for example, biofilm formation and mate-finding. We didn't include cellular details for gene expression regulation, but to understand chemotaxis, we will need to include cellular details.
+Why are we interested in signaling pathways? Recall the discussion on gene expression regulation in the Motif Module. An external signal can lead to change in gene expression (response). Such mechanisms provide stability to biological systems when there is perturbation in the enviornment. Internal temperature and ion concentrations, etc. of organisms need to be maintained when there is a signal of temperature/concentration change to keep enzymes functional. Besides fitness of an individual, singaling also enables a group of organisms to have higher fitness, for example, biofilm formation and mate-finding. We didn't include cellular details for gene expression regulation, but to understand chemotaxis, we will need to include cellular details.
 
-In the case of chemotaxis, the stimuli is ligand binding; the cell perceives this change, and propagates this information through a series of molecules, which leads to the cellular response of changed flagellar movement.
+In the case of chemotaxis, the stimulus is ligand binding; the cell perceives this change, and propagates this information through a series of molecules, which leads to the cellular response of changed flagellar movement.
 
 ![image-center](../assets/images/chemotaxis_signal.png){: .align-center}
 <figcaption>Overview of signaling pathway for chemotaxis.</figcaption>
@@ -21,13 +21,13 @@ We will walk through the details of the pathway, and build a model step by step.
 
 ## Modeling Ligand-Receptor dynamics
 
-We just discussed that ligand-receptor binding is the stimulus. But how is this stimulus generated? How does the envrionmental concentration of the ligands impact ligand-receptor binding?
+We just discussed that ligand-receptor binding is the stimulus. But how is this stimulus generated? How does the environmental concentration of the ligands impact ligand-receptor binding?
 
 We can explore this question with a model of reversible bimolecular reaction. In our system, we have 2 types of molecules, MCPs(T) and ligands(L). T and L can bind to form an intermediate TL, and TL can dissociate. If we give the system an infinite time to react, what will happen?
 
 At the begining of the reaction, TL will be formed quickly at the expense of free T and L. After a while, there will be more TL ready to dissociate, but fewer T and L to form TL. At some point, the rate of TL formation will equal to the rate of TL dissociation. As time progresses, the concentrations will remain constant, so it is called a *steady state*.
 
-In this Module, we will use [BioNetGen](https://www.csb.pitt.edu/Faculty/Faeder/?page_id=409) to build a set of models to simulate chemotaxis activities. We will start from building a simulation for equilbrium of bimolecular reversible reaction between ligand and receptors.
+In this Module, we will use [BioNetGen](https://www.csb.pitt.edu/Faculty/Faeder/?page_id=409) to build a set of models to simulate chemotaxis activities. We will start from building a simulation for equilbrium of a bimolecular reversible reaction between ligands and receptors.
 
 [Visit Ligand-Receptor Dynamics Tutoiral](tutorial_lr){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}

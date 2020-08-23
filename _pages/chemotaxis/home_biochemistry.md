@@ -7,29 +7,29 @@ sidebar:
 
 ## More on Signal transduction pathway - phosphorylation
 
-Let's get back to our signal transduction pathway which includes 1) an external stimuli, 2) a series of molecular events, 3) a resulted cellular response. We got how the stimuli is generated. We will get into more cellular details into the molecular events and response.
+Let's get back to our signal transduction pathway which includes 1) an external stimulus, 2) a series of molecular events, 3) the corresponding cellular response. We got how the stimulus is generated. We will get into more cellular details about the molecular events and response.
 
-The series of molecular events are a series of phosphorylation events.
+The series of molecular events is a series of phosphorylation events.
 
-What's phosphorylation and why so many phosphorylation reactions? **Phosphorylation** is a chemical reaction that attaches a phosphoryl group (PO<sub>3</sub><sup>-</sup>) to an organic molecule. The removal of the phosphoryl group is dephosphorylation. Such modifications can activate or deactivate certain enzymes like switches. For example, a cyclin dependent kinase, when activated by G1/S cyclin, can phosphorylate its target proteins to activate DNA replication and initiate S phase[^Bertoli2013].
+What's phosphorylation and why so many phosphorylation reactions? **Phosphorylation** is a chemical reaction that attaches a phosphoryl group (PO<sub>3</sub><sup>-</sup>) to an organic molecule. The removal of the phosphoryl group is **dephosphorylation**. Such modifications can activate or deactivate certain enzymes. For example, a cyclin dependent kinase, when activated by G1/S cyclin, can phosphorylate its target proteins to activate DNA replication and initiate S phase[^Bertoli2013].
 
 In chemotaxis, the direction of flagellar rotation is also controlled by phosphorylation pathways. After ligand-receptor binding, the phosphorylation events transduce the signal to the flagella. The sequence of phosphorylation event is called a phosphorylation cascade. 
 
 ## Chemotaxis pathway
 
-This pathway includes the receptor we've discussed - receptor complex MCP, a series of chemotaxis proteins - CheW, CheA, CheY, CheZ (*Che* stands for chemotaxis), and the basal body of flagelli. The figure provides a visualization modified from Parkinson Lab illustrations[^ParkinsonLab].
+This pathway includes the receptor we've discussed - receptor complex MCP, a series of chemotaxis proteins - CheW, CheA, CheY, CheZ (*Che* stands for chemotaxis), and the basal body of flagella. The figure provides a visualization modified from Parkinson Lab illustrations[^ParkinsonLab].
 ![image-center](../assets/images/chemotaxisphosnew.png){: .align-center}
 <figcaption>A summary of chemotaxis pathway. Signal is ligand binding, and the signal is propagated through CheA and CheY phosphorylation, which leads to the response of CW flagellar rotation. Blue curved arrow: phosphorylation; grey curved arrow: dephosphorylation; blue dotted arrow: interaction.</figcaption>
 
 Introduction to the pathway:
 
-**MCPs**. On the cell membrane, there are receptors called **methyl-acceptring chemotaxis proteins (MCPs)**. They form complexes with **CheW** and **CheA**.
+**MCPs**. On the cell membrane, there are receptors called **methyl-acceptring chemotaxis proteins (MCPs)**. The ligands can be attractants or repellents. We will mostly model attractants in this Module. They form complexes with **CheW** and **CheA**.
 
-**CheA**. CheA undergoes autophosphorylation. The rate of phosphorylation depends on the conformation of MCPs. When receptor is not bound with ligand, autophosphorylation is faster. It can then phosphorylates CheY.
+**CheA**. CheA undergoes autophosphorylation. The rate of phosphorylation depends on the conformation of MCPs. When the receptor is not bound with ligands, autophosphorylation is faster. It can then phosphorylates CheY.
  - CheA + ATP -> CheA-P + ADP
  - CheA-P + CheY -> CheY-P
 
-**CheY**. CheY is phosphorylated by CheA. Upon interacting with FliM in the basal body of flagellum, phosphorylated CheY induces the direction change of flagellum rotation from CCW to CW. As we mentioned before, switching to CW rotations leads to tumbling. But if CheY stay phosphorylated forever, the cell will tumble forever. So the CheY also need to be dephosphorylated, which is catalyzed by **CheZ**.
+**CheY**. CheY is phosphorylated by CheA. Upon interacting with FliM in the basal body of flagella, phosphorylated CheY induces the direction change of flagellar rotation from CCW to CW. As we mentioned before, switching to CW rotations leads to tumbling. If CheY stays phosphorylated forever, the cell will tumble forever. So the CheY also needs to be dephosphorylated, which is catalyzed by **CheZ**.
  - CheY-P + CheZ -> CheY + CheZ + P
 
 **CheZ**. CheZ dephosphorylates CheY, as introduced above.
@@ -41,7 +41,7 @@ When the receptors bind to attractant molecules, CheA autophosphorylation lowers
 
 ## Modeling phosphorylation events
 
-If a bacterium wants to sense a gradient, it should be able to distinguish different ligand concentrations. In the sense of signaling, a higher ligand concentration should be a stronger signal, which generates a stronger response.
+If a bacterium wants to sense a gradient, it should be able to distinguish among different ligand concentrations. In the sense of signaling, a higher ligand concentration should be a stronger signal, which generates a stronger response.
 
 Will higher attractant concentration lead to less tumbling? Let's confirm it by incorporating the phosphorylation pathway into our BNG simulation.
 

@@ -2,7 +2,7 @@
 permalink: /chemotaxis/home_conclusion
 title: "Conclusion"
 sidebar:
- nav: "coronavirus"
+ nav: "chemotaxis"
 ---
 
 ## Background tumbling frequency
@@ -54,11 +54,12 @@ With more experimental evidences, the model of *E. coli* chemotaxis has been con
 
 ## Excercise
 
-1. 
+1. What if repellent
+2. What if mixed species of attractants/repellents
 
 
 
-[^Saragosti2011] Saragosti J, Calvez V, Bournaveas, N, Perthame B, Buguin A, Silberzan P. 2011. Directional persistence of chemotactic bacteria in a traveling concentration wave. PNAS. [Available online](https://www.pnas.org/content/pnas/108/39/16235.full.pdf)
+[^Saragosti2011]: Saragosti J, Calvez V, Bournaveas, N, Perthame B, Buguin A, Silberzan P. 2011. Directional persistence of chemotactic bacteria in a traveling concentration wave. PNAS. [Available online](https://www.pnas.org/content/pnas/108/39/16235.full.pdf)
 
 
 [Next chapter](../coronavirus/home){: .btn .btn--primary .btn--large}

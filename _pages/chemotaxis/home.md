@@ -25,9 +25,11 @@ But Munroe provides a solution to the Lost Immortals hypothetical that is both s
 >
 > And if your partner isn’t cooperating—perhaps they’re just sitting where they started and waiting for you—then you’ll get to see some neat stuff.
 
-* What is the point of this introduction? Discuss the power of randomness that we have already repeatedly seen throughout the book. Then point out that although randomness is useful for running simulations, it is also useful as an algorithm for finding things.
+You may be wondering what Lost Immortals has to do with biological modeling. In the previous two modules, we have already seen the power of randomness throughout this course for providing answers to practical questions. Lost Immortals offers an example of a **randomized algorithm** that is useful for solving a problem.
 
-* The above algorithm for two people finding each other in a crazy hypothetical is in fact inspired by nature. It is described by Munroe as "be an ant" and is similar to the approach that ants take to explore their world.
+In fact, Munroe's randomized algorithm for Lost Immortals is inspired by nature. He calls this approach "be an ant" because it mimics how ants explore their environment for resources.
+
+In this module, we will examine a 
 
 * We will look at a related example of using random walks as an effective means of exploring one's environment: bacterial chemotaxis. (Transition to chemotaxis.)
 

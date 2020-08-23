@@ -11,24 +11,32 @@ Chemotaxis is one example of many ways in which an organism must be able to perc
 
 Although we did not delve into the details at that time, we have already seen an example of signal transduction when we discussed transcription in the [previous module](motifs/transcription). **Receptor proteins** on the outside of the cell bond with molecules and are able to detect changes in molecular concentration. This "signal" is then "transduced" via a series of internal chemical processes that changes a transcription factor into an active state.
 
-In the case of chemotaxis, *E. coli* has receptor proteins that are able to detect attractants such as glucose by binding to and forming a complex with these **ligands**. In the next two lessons, we will walk through how the cell is able to transduce this molecular signal internally into a sequence of reactions that lead to jkfd
+In the case of chemotaxis, *E. coli* has receptor proteins that are able to detect attractants such as glucose by binding to and forming a complex with these **ligands**. In the next two lessons, we will walk through how the cell is able to detect this molecular signal and transduce it internally into a sequence of reactions that lead to a change in the bacterium's movement.
 
 ![image-center](../assets/images/chemotaxis_signal.png){: .align-center}
 <figcaption>Overview of signaling pathway for chemotaxis.</figcaption>
 
 * Shuanger: what is the source for this? It looks really good but please share the original file you used to draw. Please flesh out the caption a bit better as well.  I would have more ligands and label them also.  And I like optima font for figures.
 
-## Modeling Ligand-Receptor dynamics
+## Modeling ligand-receptor dynamics
 
-We just discussed that ligand-receptor binding is the stimulus. But how is this stimulus generated? How does the environmental concentration of the ligands impact ligand-receptor binding?
+We will first focus our attention on the process by which a signal is detected and how the environmental concentration of ligands and the number of receptors impacts ligand-receptor binding. Although *E. coli* will have different types of surface receptors that can sense a variety of different attractant/repellent ligands in its environment, we will focus on how to model the binding of a single type of receptor to a single type of ligand.
 
-We can explore this question with a model of reversible bimolecular reaction. In our system, we have 2 types of molecules, MCPs(T) and ligands(L). T and L can bind to form an intermediate TL, and TL can dissociate. If we give the system an infinite time to react, what will happen?
+The chemical reactions that we considered in the previous two modules were **irreversible** (i.e., one-directional). For example, in the prologue, we had a reaction whose reactants were two predator molecules and a prey molecule, and whose reactants were three predator molecules. But we did not have the reverse reaction in which the three predator molecules split into two predator molecules and a prey.
 
-At the begining of the reaction, TL will be formed quickly at the expense of free T and L. After a while, there will be more TL ready to dissociate, but fewer T and L to form TL. At some point, the rate of TL formation will equal to the rate of TL dissociation. As time progresses, the concentrations will remain constant, so it is called a *steady state*.
+In this chapter, we will encounter **reversible** reactions that proceed continuously in both directions at different rates. If a ligand collides with a receptor, then there is some probability that this will lead to the two molecules bonding into a complex. But at the same time, in any unit of time, there is also a probability that a bound receptor-ligand complex will **dissociate** into two separate molecules. We will discuss what makes two molecules more likely to bond in a future module, but for now, we will assert that the more suited a receptor is to a ligand, the higher the probability of  bonding and the lower the probability of dissociation.
+
+Let us represent the receptor molecule by *T*, the ligand molecule by *L*, and the bound complex as *TL*. We have the **forward reaction** *T* + *L* → *TL*, which takes place at some rate *k*<sub>bind</sub>, and the **reverse reaction** *TL* → *T* + *L*, which takes place at some rate *k*<sub>dissociate</sub>. If we start with a free floating supply of *T* and *L* molecules, what will happen?
+
+*TL* will initially be formed quickly at the expense of the free-floating *T* and *L* molecules; the reverse reaction will not occur because of the lack of *TL* complexes. As the concentration of *TL* grows and the concentrations of  *T* and *L* decrease, the rate of increase in *TL* will slow. Eventually, the number of *TL* complexes being formed by the forward reaction will balance the number of *TL* complexes being split apart by the reverse reaction. At this point, called a **steady state**, the concentration of all particles will become constant.
+
+## Calculation of steady state concentration in a reversible reaction
+
+## Break
 
 In this Module, we will use [BioNetGen](https://www.csb.pitt.edu/Faculty/Faeder/?page_id=409) to build a set of models to simulate chemotaxis activities. We will start from building a simulation for equilbrium of a bimolecular reversible reaction between ligands and receptors.
 
-[Visit Ligand-Receptor Dynamics Tutoiral](tutorial_lr){: .btn .btn--primary .btn--large}
+[Visit Ligand-Receptor Dynamics Tutorial](tutorial_lr){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 Why BNG instead of CellBlender? We don't care about the spacial distribution of receptor and ligands here - an *E. coli* is small compared to gradients it encounters in real life (no ligand concentration difference across its body - but there are some bacteria that experience different concentration across its body), and we only care about a region the receptors are located at, so we can assume the ligand concentration is uniform everywhere within that region.

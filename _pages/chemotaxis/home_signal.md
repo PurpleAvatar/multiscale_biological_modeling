@@ -135,7 +135,7 @@ Here we've shown that using BNG and calculating by hand reach the same conclusio
 
 ## Extra -- to be deleted later
 
-* Everything below is extra stuff to be sampled from above
+* SHUANGER: everything below is extra stuff that I thought you might want to sample when using examples above. Please be careful with formatting -- I like mine a bit better.
 
 To simplify the calculations, assume we have a system with nicer numbers. Our system has free ligand molecules of a concentration 50M (L, denote with *L<sub>0</sub> = 50*) and free receptor molecules of a concentration 50M (T, denote with *T<sub>0</sub> = 50*), and the reaction proceeds as following:
 - L + T <-> L.T, where *k<sub>bind</sub> = 1* M<sup>-1</sup>s<sup>-1</sup>, *k<sub>dissociate</sub> = 5* s<sup>-1</sup>.(shortened as *k<sub>b</sub>, k<sub>d</sub>*)

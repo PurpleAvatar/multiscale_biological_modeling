@@ -14,15 +14,12 @@ When we look at the bacterium's movement, it alternates between periods of "runn
 ![image-center](../assets/images/chemotaxis_intro_runtumble.png){: .align-center}
 <figcaption>The run and tumble mechanism of bacterial movement produces a random walk. Image from <a href="http://chemotaxis.biology.utah.edu/Parkinson_Lab/projects/ecolichemotaxis/ecolichemotaxis.html">Parkinson Lab</a>.</figcaption>
 
-* Shuanger: Please crop this figure to avoid the part on the right, which isn't important. I have adjusted the caption. Provide hyperlink in Parkinson lab.
 
 ## Tumbling frequency is constant across species
 
 In the absence of an attractant or repellent, *E. coli* stops to tumble once about every 1 to 1.5 seconds.[^Weis1990][^Berg2000] And it is not alone in this behavior; *Salmonella* bacteria (enteric) tumbles about once per second[^Achouri2015], *Enterococcus sacchrolyticus* (enteric) tumbles about once per 1.2 seconds, *Bacillus subtilis*（soil and enteric) tumbles about every 2 seconds[^Turner2016], and *Rhizobia* (soil) tumbles about every 1-2 seconds[^Gotz1987]. Researchers have investigated why different bacteria have different tumbling frequencies,[^Rashid2019][^Mitchell2005] but a definitive explanation for the variation in these frequencies has not been proposed.
 
-Bacteria are amazingly diverse. They have evolved for over three billion years to thrive in practically every environment on the planet, including hazardous human-made environments. They can produce compounds like antibiotics that larger organisms cannot produce. Some eukaryotes are even completely dependent upon bacteria to perform some critical task for them, from digesting their food, to camouflaging them from predators, to helping them develop organs.
-
-* Shuanger: please cite *I Contain Multitudes* by Ed Yong at end of previous paragraph.
+Bacteria are amazingly diverse. They have evolved for over three billion years to thrive in practically every environment on the planet, including hazardous human-made environments. They can produce compounds like antibiotics that larger organisms cannot produce. Some eukaryotes are even completely dependent upon bacteria to perform some critical task for them, from digesting their food, to camouflaging them from predators, to helping them develop organs[^Yong2016].
 
 And yet despite the diversity present within the bacterial kingdom, the variations in known bacterial tumbling frequencies are not very large. Is there some reason why, regardless of the species, a bacterium's tumbling frequency tends to hover at around 1 tumble per second?
 
@@ -55,6 +52,8 @@ We will return to this question at the close of the module; in the meantime, we 
 [^Rashid2019]: Rashid S, Long Z, Singh S, Kohram M, Vashistha H, Navlakha S, Salman H, Oltvai ZH, Bar-Joseph Z. 2019. Adjustment in tumbling rates improves bacterial chemotaxis on obstacle-laden terrains. PNAS 116(24):11770-11775. [Available online](https://www.pnas.org/content/116/24/11770)
 
 [^Mitchell2005]: Mitchell JG, Kogure K. 2005. Bacterial motility: links to the environment and a driving force for microbial physics. FEMS Microbiol Ecol 55(2006):3–16. [Available online](https://academic.oup.com/femsec/article/55/1/3/554107)
+
+[^Yong2016]: Ed Yong. *I Contain Multitudes: The Microbes Within Us and a Grander View of Life*.
 
 [Next lesson](home_signal){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}

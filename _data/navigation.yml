@@ -125,12 +125,8 @@ coronavirus:
         url: /coronavirus/ab_initio
       - title: "Homology Modeling for Protein Structure Prediction"
         url: /coronavirus/homology
-      - title: "(To be removed) Protein Structure Prediction"
-        url: /coronavirus/prediction
       - title: "Assessing Model Accuracy"
-        url: /coronavirus/RMSD_results
-      - title: "More on RMSD"
-        url: /coronavirus/rmsd2
+        url: /coronavirus/accuracy
   - title: Visualizations and Analyzing Differences
     children:
       - title: "Structural and ACE2 Interaction Differences"
@@ -143,10 +139,14 @@ coronavirus:
     url: /coronavirus/conclusion
   - title: Tutorials
     children:
-      - title: "ProDy Tutorial"
+      - title: "ProDy"
         url: /coronavirus/prody
-      - title: "VMD Tutorial"
+      - title: "VMD"
         url: /coronavirus/VMDTutorial
+      - title: "Structure Prediction"
+        url: /coronavirus/modeling_tutorial
+      - title: "RMSD"
+        url: /coronavirus/rmsd2
 
 wbcells:
   - title: Tutorial

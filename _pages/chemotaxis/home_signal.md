@@ -68,14 +68,44 @@ This equation may look daunting, but most of its components are constants. In fa
 
 $$x = \dfrac{-b \pm \sqrt{b^2 - 4 \cdot a \cdot c}}{2 \cdot a}$$
 
-* SHUANGER: Please double-check me on all this and work out the solution that can be given to students. Does it match what you have?
-
 **STOP**: Use the quadratic equation to solve for [*LT*] and find the steady-state concentration of *LT*. How can we use it to find the steady-state concentrations of *L* and *T*?
 {: .notice--primary}
 
 Let us use the solution to this equation to see how the steady-state concentration changes for a few different parameter values.
 
-* SHUANGER: Please provide a few different results and point to me when done.  Insert your changing parameters here and interpret how they influence the steady state.
+Let us try a system with *k*<sub>bind</sub> = 2, *k*<sub>dissociate</sub> = 5, *l*<sub>0</sub> = 50, *t*<sub>0</sub> = 50.
+
+Plugging these values into the seemingly daunting quadratic equation, we will get:
+
+$a$ = *k*<sub>bind</sub> = 2
+
+$b$ = - (*k*<sub>bind</sub> · *l*<sub>0</sub> + *k*<sub>bind</sub> · *t*<sub>0</sub> + *k*<sub>dissociate</sub>) = -205
+
+$c$ = *k*<sub>bind</sub> · *l*<sub>0</sub> · *t*<sub>0</sub> = 5000
+
+Solve for x:
+
+$$x = \dfrac{205 \pm \sqrt{205^2 - 4 \cdot 2 \cdot 5000}}{2 \cdot 2} = 51.25 \pm 11.25$$
+
+We know that [*LT*] < *l*<sub>0</sub> and [*LT*] < *t*<sub>0</sub>, so [*LT*] = 51.25 - 11.25 = 40
+
+And we can recover the values of [*L*] and [*T*]:
+
+[*L*] = *l*<sub>0</sub> - [*LT*] = 10<br>
+[*T*] = *t*<sub>0</sub> - [*LT*] = 10
+
+What if the forward reaction becomes slower? For example, *k*<sub>bind</sub> = 1? We will get less *LT* at the steady state. Our new quadratic equation have:
+
+$a$ = *k*<sub>bind</sub> = 1
+
+$b$ = - (*k*<sub>bind</sub> · *l*<sub>0</sub> + *k*<sub>bind</sub> · *t*<sub>0</sub> + *k*<sub>dissociate</sub>) = -105
+
+$c$ = *k*<sub>bind</sub> · *l*<sub>0</sub> · *t*<sub>0</sub> = 2500
+
+Solve for x, and we will obtain [*LT*] = 36.492
+
+**STOP**: Can you predict what will happen to the steady state concentration of *LT* if we have 1) higher *l*<sub>0</sub> or *t*<sub>0</sub>; 2) lower *l*<sub>0</sub> or *t*<sub>0</sub>; 3) higher *k*<sub>dissociate</sub>; 4) lower *k*<sub>dissociate</sub>? Confirm your prediction by calculation.
+{: .notice--primary}
 
 ## Verifying a theoretical steady-state concentration via simulation
 
@@ -93,6 +123,14 @@ The following tutorial uses [BioNetGen](https://www.csb.pitt.edu/Faculty/Faeder/
 Here we've shown that using BNG and calculating by hand reach the same conclusion for bimolecular reactions.
 
 * SHUANGER: This is where we should return from the tutorial and interpret the results that we found, comparing against the examples that we had before.
+
+From the BNG simulation, we can observe that *L* and *T* drop quickly while *LT* increases quickly at the begining of the simulation, and then reach steady state concentrations. Plug in the model parameters into our quadratic equation, can you calculate the steady state concentrations and obtain the same results? 
+
+![image-center](../assets/images/chemotaxis_tutorial4.png){: .align-center}
+<figcaption>Concentration plot for ligand-receptor dynamics with ODE simulation. The concentrations reach a steady state at the end of the simulation. Steady state [*LT*] = 4794 M.</figcaption>
+
+![image-center](../assets/images/chemotaxis_tutorial4_ssa.png){: .align-center}
+<figcaption>Concentration plot for ligand-receptor dynamics with SSA simulation.</figcaption>
 
 * Phillip will then need to point the reader to the next section by saying this is just the beginning of the model we will build to study chemotaxis. (And computing steady-state concentration is just a toy example compared to questions we will ask soon.)
 

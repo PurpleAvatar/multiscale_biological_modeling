@@ -13,7 +13,7 @@ In this page, we will:
  - Explore several key aspects of BNG modeling: rules, species, simulation method, and parameters
  - Model the steady state of ligand-receptor dynamics
 
-## So, what is BioNetGen?
+## What is BioNetGen?
 
 [BioNetGen](https://www.csb.pitt.edu/Faculty/Faeder/?page_id=409) (BNG) is a software for specification and simulation of rule-based modeling. The chemotaxis pathyway is essentially a set of rules that can specify a set of mathematical equations of concentration of molecules, and we would like to translate it into a simulation. We can specify our rules in [BNG](https://www.csb.pitt.edu/Faculty/Faeder/?page_id=409), run the simulation, and visualize the results easily. 
 
@@ -152,18 +152,14 @@ The whole simulation code for ligand-receptor dynamics (you can also download he
 	generate_network({overwrite=>1})
 	simulate({method=>"ssa", t_end=>1, n_steps=>100})
 
-**STOP** How would the concentration of free ligand and bound ligand change through 1 seconds?
+**STOP** How would the concentration of free ligand and bound ligand change through 1 second?
 {: .notice--primary}
 
 Go to `Simulation` at the right side of the Contact Map button and click `Run`. You can visualize your `.gdat` data.
 
-![image-center](../assets/images/chemotaxis_tutorial4.png){: .align-center}
+Also try `method=>"ssa"`. Do you observe any differences between the simulation results of the two methods?
 
-Also try `method=>"ssa"`.
-
-![image-center](../assets/images/chemotaxis_tutorial4_ssa.png){: .align-center}
-
-Observe that, after a period of fast reaction, the concentrations reach to a steady state.
+What do you predict to be the concentration of `L(t!l).T(l!l)` after 1 hour?
 
 If you are interested, a more detailed tutorial on BNG modeling can be found [here](http://comet.lehman.cuny.edu/griffeth/BioNetGenTutorialFromBioNetWiki.pdf).
 

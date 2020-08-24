@@ -75,7 +75,7 @@ Let us use the solution to this equation to see how the steady-state concentrati
 
 Let us try a system with *k*<sub>bind</sub> = 2, *k*<sub>dissociate</sub> = 5, *l*<sub>0</sub> = 50, *t*<sub>0</sub> = 50.
 
-Plugging these values into the seemingly daunting quadratic equation, we will get:
+Plug these values into the seemingly daunting quadratic equation, we get:
 
 $$a$$ = *k*<sub>bind</sub> = 2
 
@@ -94,7 +94,7 @@ And we can recover the values of [*L*] and [*T*]:
 [*L*] = *l*<sub>0</sub> - [*LT*] = 10<br>
 [*T*] = *t*<sub>0</sub> - [*LT*] = 10
 
-What if the forward reaction becomes slower? For example, *k*<sub>bind</sub> = 1? We will get less *LT* at the steady state. Our new quadratic equation have:
+What if the forward reaction is slower? For example, *k*<sub>bind</sub> = 1? We will get less *LT* at the steady state. Our new quadratic equation:
 
 $$a$$ = *k*<sub>bind</sub> = 1
 

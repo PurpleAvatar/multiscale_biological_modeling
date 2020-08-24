@@ -77,7 +77,7 @@ The point of this question is that we can compare our algorithm for structure pr
 
 Unfortunately, protein structure prediction from sequence is a *extremely difficult* problem. In fact, we would need a very good understanding of all the small interactions that occur between atoms during protein folding, including bonding energy, electrostatic interactions, van der Waals interactions, thermodynamics; all which are subject to alterations depending on the environment. Regardless of its difficulty, protein structure prediction is a very important problem to solve given its potential for many, many applications. Perhaps one of the most important applications is in structure-based drug design. When developing a drug, knowing its 3D structure not only helps us understand how the drug will interact with the target or potential off-targets, it will also help us test more potential drug candidates, refine and create better drugs, and ultimately speed the process up. The Soviets founded a research institute to solve this problem once and for all in the 1960s. The Soviet Union ended 3 decades ago but the research institute lives on (<a href="http://www.ibch.ru/en/about" target="_blank">here</a>). The difficult of biology forever endures.
 
-[Next Lesson](ab_initio){: .btn .btn--primary .btn--large}
+[Next lesson](ab_initio){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 ## Citations

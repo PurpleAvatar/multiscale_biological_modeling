@@ -79,9 +79,9 @@ Plugging these values into the seemingly daunting quadratic equation, we will ge
 
 $$a$$ = *k*<sub>bind</sub> = 2
 
-$b$ = - (*k*<sub>bind</sub> · *l*<sub>0</sub> + *k*<sub>bind</sub> · *t*<sub>0</sub> + *k*<sub>dissociate</sub>) = -205
+$$b$$ = - (*k*<sub>bind</sub> · *l*<sub>0</sub> + *k*<sub>bind</sub> · *t*<sub>0</sub> + *k*<sub>dissociate</sub>) = -205
 
-$c$ = *k*<sub>bind</sub> · *l*<sub>0</sub> · *t*<sub>0</sub> = 5000
+$$c$$ = *k*<sub>bind</sub> · *l*<sub>0</sub> · *t*<sub>0</sub> = 5000
 
 Solve for x:
 
@@ -96,11 +96,11 @@ And we can recover the values of [*L*] and [*T*]:
 
 What if the forward reaction becomes slower? For example, *k*<sub>bind</sub> = 1? We will get less *LT* at the steady state. Our new quadratic equation have:
 
-$a$ = *k*<sub>bind</sub> = 1
+$$a$$ = *k*<sub>bind</sub> = 1
 
-$b$ = - (*k*<sub>bind</sub> · *l*<sub>0</sub> + *k*<sub>bind</sub> · *t*<sub>0</sub> + *k*<sub>dissociate</sub>) = -105
+$$b$$ = - (*k*<sub>bind</sub> · *l*<sub>0</sub> + *k*<sub>bind</sub> · *t*<sub>0</sub> + *k*<sub>dissociate</sub>) = -105
 
-$c$ = *k*<sub>bind</sub> · *l*<sub>0</sub> · *t*<sub>0</sub> = 2500
+$$c$$ = *k*<sub>bind</sub> · *l*<sub>0</sub> · *t*<sub>0</sub> = 2500
 
 Solve for x, and we will obtain [*LT*] = 36.492
 
@@ -127,7 +127,7 @@ Here we've shown that using BNG and calculating by hand reach the same conclusio
 From the BNG simulation, we can observe that *L* and *T* drop quickly while *LT* increases quickly at the begining of the simulation, and then reach steady state concentrations. Plug in the model parameters into our quadratic equation, can you calculate the steady state concentrations and obtain the same results? 
 
 ![image-center](../assets/images/chemotaxis_tutorial4.png){: .align-center}
-<figcaption>Concentration plot for ligand-receptor dynamics with ODE simulation. The concentrations reach a steady state at the end of the simulation. Steady state [*LT*] = 4794 M.</figcaption>
+<figcaption>Concentration plot for ligand-receptor dynamics with ODE simulation. The concentrations reach a steady state at the end of the simulation. </figcaption>
 
 ![image-center](../assets/images/chemotaxis_tutorial4_ssa.png){: .align-center}
 <figcaption>Concentration plot for ligand-receptor dynamics with SSA simulation.</figcaption>

@@ -14,9 +14,8 @@ Although we did not delve into the details at that time, we have already seen an
 In the case of chemotaxis, *E. coli* has receptor proteins that are able to detect attractants such as glucose by binding to and forming a complex with these **ligands**. In the next two lessons, we will walk through how the cell is able to detect this molecular signal and transduce it internally into a sequence of reactions that lead to a change in the bacterium's movement.
 
 ![image-center](../assets/images/chemotaxis_signal.png){: .align-center}
-<figcaption>Overview of signaling pathway for chemotaxis.</figcaption>
+<figcaption>Overview of the signaling pathway of chemotaxis. The red circles represent ligands(L). When ligands bind to receptor, the signal is transduced via a series of enzymes, and finally influences the rotation direction of a flagellum.</figcaption>
 
-* SHUANGER: what is the source for this? It looks really good but please share the original file you used to draw. Please flesh out the caption a bit better as well.  I would have more ligands and label them also.  And I like optima font for figures.
 
 ## Modeling ligand-receptor dynamics
 

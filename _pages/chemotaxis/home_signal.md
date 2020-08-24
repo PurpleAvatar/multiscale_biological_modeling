@@ -77,7 +77,7 @@ Let us try a system with *k*<sub>bind</sub> = 2, *k*<sub>dissociate</sub> = 5, *
 
 Plugging these values into the seemingly daunting quadratic equation, we will get:
 
-$a$ = *k*<sub>bind</sub> = 2
+$$a$$ = *k*<sub>bind</sub> = 2
 
 $b$ = - (*k*<sub>bind</sub> · *l*<sub>0</sub> + *k*<sub>bind</sub> · *t*<sub>0</sub> + *k*<sub>dissociate</sub>) = -205
 

@@ -52,7 +52,7 @@ toc_sticky: true
 
 Randomness appears once again!
 
-[Next lesson](nar){: .btn .btn--primary .btn--large}
+[Next lesson](homology){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 ## Citations

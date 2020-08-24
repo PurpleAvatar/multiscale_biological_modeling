@@ -37,7 +37,7 @@ If you would like to learn more about protein structure prediction, click here t
 
 <hr>
 
-[Next lesson](RMSD_results){: .btn .btn--primary .btn--large}
+[Next lesson](accuracy){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 

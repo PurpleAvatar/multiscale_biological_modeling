@@ -55,10 +55,11 @@ With more experimental evidences, the model of *E. coli* chemotaxis has been con
 ## Exercise
 
 1. Based on what we've learned about chemotaxis towards higher attractant concentrations, at a molecular level, how will the cell respond to a repellent gradient?
-2. Modify the BNG model provided in [tutorial on moving up gradient](tutorial_gradient) to simulate with `k_add = 0.1` and initial concentrations `L0 = 1e3` and `L0 = 1e5`. Compare to what we've simulated (`L0 = 1e4`), what differences do you observe?
-3. As we discussed in the [adaptation section](tutorial_home_senseadap), there are different types of MCPs specific for different types of ligands. All the simulation we've built so far only used one type of ligand molecule. How will you change our BNG model to simulate the cell responds to two types of attractant molecules?
-4. For the cellular level simulation provided in [tutorial on chemotactic random walk](tutorial_walk), how would you build gradients of two types of attractants with the highest concentration at different spots? What do you expect the trajectories look like? Run some simulations to confirm. (hint: modify the global parameters and modify the `calc_concentration` function).
-5. For the cellular level simulation provided in [tutorial on chemotactic random walk](tutorial_walk), what will happen if the degree of reorientation when tumbling follows a uniform random distribution from 0° to 360°? Run some simulations to explore. (hint: modify the `tumble_move` function).
+2. Modify the BNG model for [ligand receptor dynamics tutorial](tutorial_lr) to simulate one of the ligand-receptor system examples on [calculating steady state](home_signal). Does your simulation result match your calculation result?
+3. Modify the BNG model provided in [tutorial on moving up gradient](tutorial_gradient) to simulate with `k_add = 0.1` and initial concentrations `L0 = 1e3` and `L0 = 1e5`. Compare to what we've simulated (`L0 = 1e4`), what differences do you observe?
+4. As we discussed in the [adaptation section](tutorial_home_senseadap), there are different types of MCPs specific for different types of ligands. All the simulation we've built so far only used one type of ligand molecule. How will you change our BNG model to simulate the cell responds to two types of attractant molecules?
+5. For the cellular level simulation provided in [tutorial on chemotactic random walk](tutorial_walk), how would you build gradients of two types of attractants with the highest concentration at different spots? What do you expect the trajectories look like? Run some simulations to confirm. (hint: modify the global parameters and modify the `calc_concentration` function).
+6. For the cellular level simulation provided in [tutorial on chemotactic random walk](tutorial_walk), what will happen if the degree of reorientation when tumbling follows a uniform random distribution from 0° to 360°? Run some simulations to explore. (hint: modify the `tumble_move` function).
 
 
 

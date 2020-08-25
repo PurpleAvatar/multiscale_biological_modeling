@@ -85,7 +85,7 @@ Plugging these values into the seemingly daunting quadratic equation, we obtain 
 
 * *a* = *k*<sub>bind</sub> = 2
 * *b* = - (*k*<sub>bind</sub> · *l*<sub>0</sub> + *k*<sub>bind</sub> · *t*<sub>0</sub> + *k*<sub>dissociate</sub>) = -205
-*c* = *k*<sub>bind</sub> · *l*<sub>0</sub> · *t*<sub>0</sub> = 5000
+* *c* = *k*<sub>bind</sub> · *l*<sub>0</sub> · *t*<sub>0</sub> = 5000
 
 That is, we are solving the equation 2 · [*LT*]<sup>2</sup> - 205 · [*LT*] + 5000 = 0. Using the quadratic formula to solve for [*LT*] gives
 
@@ -111,6 +111,20 @@ In this case, if we solve for [*LT*], we obtain [*LT*] = 36.492; the steady-stat
 **STOP**: What do you think will happen to the steady-state concentration of *LT* if the initial concentration (*l*<sub>0</sub>) increases or decreases? What if the dissociation rate (*k*<sub>dissociate</sub>) increases or decreases?  Confirm your prediction by changing the parameters above and solving the quadratic formula for [*LT*].
 {: .notice--primary}
 
+Now we are ready to calculate the steady-state concentrations of receptors located on the *E. coli* cellular membrane and the ligands in the environment. Let's model an *E. coli* with 7000 receptor molecules in an environment with 10000 ligand molecules. The rate for ligand-receptor binding is 0.0146 ((molecules/µm<sup>3</sub>)<sup>-1</sub>)s<sup>-1</sub>, and rate for ligand-receptor dissociation is 35s<sup>-1</sub>.[^Li2004][^Spiro1997][^Stock1991]
+
+Our new parameters: *l*<sub>0</sub> = 10000, *t*<sub>0</sub> = 70000, *k*<sub>bind</sub> = 0.0146, *k*<sub>dissociate</sub> = 35
+
+* *a* = *k*<sub>bind</sub> = 0.0146
+* *b* = - (*k*<sub>bind</sub> · *l*<sub>0</sub> + *k*<sub>bind</sub> · *t*<sub>0</sub> + *k*<sub>dissociate</sub>) = -283.2
+* *c* = *k*<sub>bind</sub> · *l*<sub>0</sub> · *t*<sub>0</sub> = 1022000
+
+If we solve for [*LT*], we obtain [*LT*] = 4793. Calculate for [*L*] and [*T*]:
+
+[*L*] = *l*<sub>0</sub> - [*LT*] = 2207<br>
+[*T*] = *t*<sub>0</sub> - [*LT*] = 5207
+
+
 ## Verifying a theoretical steady-state concentration via simulation
 
 In the [previous module](motifs), we saw how to avoid keeping track of the diffusion of individual particles if simulating molecules that are uniformly distributed throughout their environment. The *E. coli* cell is so small that we will assume that the concentration of any particle in its immediate surroundings is uniform. Therefore, let us see if the same type of simulation can replicate the steady-state concentrations that we found above.
@@ -128,7 +142,7 @@ Here we've shown that using BNG and calculating by hand reach the same conclusio
 
 * SHUANGER: This is where we should return from the tutorial and interpret the results that we found, comparing against the examples that we had before.
 
-From the BNG simulation, we can observe that *L* and *T* drop quickly while *LT* increases quickly at the begining of the simulation, and then reach steady state concentrations. Plug in the model parameters into our quadratic equation, can you calculate the steady state concentrations and obtain the same results?
+From the BNG simulation, we can observe that *L* and *T* drop quickly while *LT* increases quickly at the begining of the simulation, and then reach steady state concentrations. The steady state concentrations match our calculations by hand.
 
 ![image-center](../assets/images/chemotaxis_tutorial4.png){: .align-center}
 <figcaption>Concentration plot for ligand-receptor dynamics with ODE simulation. The concentrations reach a steady state at the end of the simulation. </figcaption>
@@ -169,6 +183,12 @@ From the BNG simulation, we can observe that *L* and *T* drop quickly while *LT*
 [^Schwartz14]: Schwartz R. Biological Modeling and Simulaton: A Survey of Practical Models, Algorithms, and Numerical Methods. Chapter 14.1.
 
 [^Schwartz17]: Schwartz R. Biological Modeling and Simulaton: A Survey of Practical Models, Algorithms, and Numerical Methods. Chapter 17.2.
+
+[^Li2004]: Li M, Hazelbauer GL. 2004. Cellular stoichimetry of the components of the chemotaxis signaling complex. Journal of Bacteriology. [Available online](https://jb.asm.org/content/186/12/3687)
+
+[^Stock1991]: Stock J, Lukat GS. 1991. Intracellular signal transduction networks. Annual Review of Biophysics and Biophysical Chemistry. [Available online](https://www.annualreviews.org/doi/abs/10.1146/annurev.bb.20.060191.000545)
+
+[^Spiro1997]: Spiro PA, Parkinson JS, and Othmer H. 1997. A model of excitation and adaptation in bacterial chemotaxis. Biochemistry 94:7263-7268. [Available online](https://www.pnas.org/content/94/14/7263).
 
 [Next lesson](home_biochem){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}

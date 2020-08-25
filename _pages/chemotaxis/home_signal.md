@@ -122,7 +122,7 @@ The following tutorial uses [BioNetGen](https://www.csb.pitt.edu/Faculty/Faeder/
 [Visit tutorial](tutorial_lr){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
-## Subsection to be named later
+## Does a simulation confirm our steady-state calculations?
 
 Here we've shown that using BNG and calculating by hand reach the same conclusion for bimolecular reactions.
 

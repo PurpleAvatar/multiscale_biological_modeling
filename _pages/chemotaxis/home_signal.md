@@ -111,7 +111,7 @@ In this case, if we solve for [*LT*], we obtain [*LT*] = 36.492; the steady-stat
 **STOP**: What do you think will happen to the steady-state concentration of *LT* if the initial concentration (*l*<sub>0</sub>) increases or decreases? What if the dissociation rate (*k*<sub>dissociate</sub>) increases or decreases?  Confirm your prediction by changing the parameters above and solving the quadratic formula for [*LT*].
 {: .notice--primary}
 
-Now we are ready to calculate the steady-state concentrations of receptors located on the *E. coli* cellular membrane and the ligands in the environment. Let's model an *E. coli* with 7000 receptor molecules in an environment with 10000 ligand molecules. The rate for ligand-receptor binding is 0.0146((molecules/µm<sup>3</sup>)<sup>-1</sup>)s<sup>-1</sup>,, and rate for ligand-receptor dissociation is 35s<sup>-1</sup>.[^Li2004][^Spiro1997][^Stock1991]
+Now we are ready to calculate the steady-state concentrations of receptors located on the *E. coli* cellular membrane and the ligands in the environment. Let's model an *E. coli* with 7000 receptor molecules in an environment with 10000 ligand molecules. The rate for ligand-receptor binding is 0.0146((molecules/µm<sup>3</sup>)<sup>-1</sup>)s<sup>-1</sup>, and rate for ligand-receptor dissociation is 35s<sup>-1</sup>.[^Li2004][^Spiro1997][^Stock1991]
 
 Our new parameters: *l*<sub>0</sub> = 10000, *t*<sub>0</sub> = 70000, *k*<sub>bind</sub> = 0.0146, *k*<sub>dissociate</sub> = 35
 

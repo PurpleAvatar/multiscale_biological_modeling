@@ -5,15 +5,15 @@ sidebar:
  nav: "chemotaxis"
 ---
 
-## More on Signal transduction pathway - phosphorylation
+## Transducing a signal to a cell's interior
 
-Let's get back to our signal transduction pathway which includes 1) an external stimulus, 2) a series of molecular events, 3) the corresponding cellular response. We got how the stimulus is generated. We will get into more cellular details about the molecular events and response.
+In the last lesson, we discussed how a cell recognizes an extracellular signal by receptor proteins on the cell's surface bonding to ligands. Our question now is how the cell conveys this signal to the cell's interior to produce an action via "signal transduction". For example, if *E. coli* senses an increase in the concentration of glucose, meaning that more ligand-receptor bonding is taking place at the receptor that recognizes glucose, how is *E. coli* able to process this information into a change in its behavior?
 
-The series of molecular events is a series of phosphorylation events.
+The engine of signal transduction is a series of **phosphorylation** events. Phosphorylation is a chemical reaction that attaches a phosphoryl group (PO<sub>3</sub><sup>-</sup>) to an organic molecule. (The removal of a phosphoryl group is called **dephosphorylation**.) Phosphoryl modifications serve as an information exchange of sorts because they activate or deactivate certain enzymes. For example, a cyclin dependent kinase, when activated by G1/S cyclin, can phosphorylate its target proteins to activate DNA replication and initiate S phase[^Bertoli2013].
 
-What's phosphorylation and why so many phosphorylation reactions? **Phosphorylation** is a chemical reaction that attaches a phosphoryl group (PO<sub>3</sub><sup>-</sup>) to an organic molecule. The removal of the phosphoryl group is **dephosphorylation**. Such modifications can activate or deactivate certain enzymes. For example, a cyclin dependent kinase, when activated by G1/S cyclin, can phosphorylate its target proteins to activate DNA replication and initiate S phase[^Bertoli2013].
+* SHUANGER: Do you feel strongly about keeping cyclin? IMO it is clear without it and doesn't add much.
 
-In chemotaxis, the direction of flagellar rotation is also controlled by phosphorylation pathways. After ligand-receptor binding, the phosphorylation events transduce the signal to the flagella. The sequence of phosphorylation event is called a phosphorylation cascade. 
+In the case of chemotaxis, after ligand-receptor binding has been detected, a sequence of phosphorylation events inside *E. coli* called a **phosphorylation cascade** serves to convey the extracellular signal to the flagella. The next section gets into the details of how this cascade of chemical reactions leads to a change in bacterial movement.
 
 ## Chemotaxis pathway
 
@@ -50,15 +50,15 @@ Will higher attractant concentration lead to less tumbling? Let's confirm it by 
 
 When no ligand is added, we see the concentrations remain at steady state. CheY activity remains at the background level, resulting in background tumbling frequency.
 
-![image-center](../assets/images/chemotaxis_tutorial5.png){: .align-center} 
+![image-center](../assets/images/chemotaxis_tutorial5.png){: .align-center}
 
 If we have 1e4 attractant molecules.
 
-![image-center](../assets/images/chemotaxis_tutorial6.png){: .align-center} 
+![image-center](../assets/images/chemotaxis_tutorial6.png){: .align-center}
 
 If we have 1e5 attractant molecules.
 
-![image-center](../assets/images/chemotaxis_tutorial7.png){: .align-center} 
+![image-center](../assets/images/chemotaxis_tutorial7.png){: .align-center}
 
 With the addition of attractants, more receptor complexes are bound to attractants, and therefore less CheA autophosphorylation happens (here we include the CheA as part of the receptor complex). As a result, less CheY can be phosphorylated by CheA, and therefore, CheY phosphorylates the flagellar proteins less frequently, reducing tumbling frequency. And a higher attractant concentration leads to more decrease in tumbling frequency (before receptors are saturated and can no longer have higher bound receptor concentration).
 

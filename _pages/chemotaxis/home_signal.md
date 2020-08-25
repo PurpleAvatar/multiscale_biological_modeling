@@ -58,58 +58,62 @@ We will now substitute the expressions on the right for [*L*] and [*T*] into our
 
 Expanding the left side of this equation gives us the following updated equation:
 
-*k*<sub>bind</sub> · *l*<sub>0</sub> · *t*<sub>0</sub> - (*k*<sub>bind</sub> · *l*<sub>0</sub> + *k*<sub>bind</sub> · *t*<sub>0</sub>) · [*LT*] + *k*<sub>bind</sub> · [*LT*]<sup>2</sup> = *k*<sub>dissociate</sub> · [*LT*]
+*k*<sub>bind</sub> · [*LT*]<sup>2</sup> - (*k*<sub>bind</sub> · *l*<sub>0</sub> + *k*<sub>bind</sub> · *t*<sub>0</sub>) · [*LT*] +  = *k*<sub>dissociate</sub> · [*LT*] + *k*<sub>bind</sub> · *l*<sub>0</sub> · *t*<sub>0</sub>
 
 Finally, we subtract the right side of this equation from both sides:
 
-*k*<sub>bind</sub> · *l*<sub>0</sub> · *t*<sub>0</sub> - (*k*<sub>bind</sub> · *l*<sub>0</sub> + *k*<sub>bind</sub> · *t*<sub>0</sub> + *k*<sub>dissociate</sub>) · [*LT*] + *k*<sub>bind</sub> · [*LT*]<sup>2</sup> = 0
+*k*<sub>bind</sub> · [*LT*]<sup>2</sup> - (*k*<sub>bind</sub> · *l*<sub>0</sub> + *k*<sub>bind</sub> · *t*<sub>0</sub> + *k*<sub>dissociate</sub>) · [*LT*] + *k*<sub>bind</sub> · *l*<sub>0</sub> · *t*<sub>0</sub> = 0
 
-This equation may look daunting, but most of its components are constants. In fact, the only unknown is [*LT*], which makes this a quadratic equation, or an equation of the form *a* · *x*<sup>2</sup> + *b* · *x* + *c* = 0 for constants *a*, *b*, and *c* and a single unknown *x*. The quadratic formula tells us that this equation has two solutions given by the following equation --- and you thought you'd never use this formula again!
+This equation may look daunting, but most of its components are constants. In fact, the only unknown is [*LT*], which makes this a quadratic equation, or an equation of the form *a* · *x*<sup>2</sup> + *b* · *x* + *c* = 0 for constants *a*, *b*, and *c* and a single unknown *x*. Specifically, for the quadratic equation in terms of [*LT*], we have the constants *a* = *k*<sub>bind</sub>, *b* = - (*k*<sub>bind</sub> · *l*<sub>0</sub> + *k*<sub>bind</sub> · *t*<sub>0</sub> + *k*<sub>dissociate</sub>), and *c* = *k*<sub>bind</sub> · *l*<sub>0</sub> · *t*<sub>0</sub>.
+
+The quadratic formula tells us that the equation *a* · *x*<sup>2</sup> + *b* · *x* + *c* = 0  has solutions given by the following equation --- and you thought you'd never use this formula again!
 
 $$x = \dfrac{-b \pm \sqrt{b^2 - 4 \cdot a \cdot c}}{2 \cdot a}$$
 
 **STOP**: Use the quadratic equation to solve for [*LT*] and find the steady-state concentration of *LT*. How can we use it to find the steady-state concentrations of *L* and *T*?
 {: .notice--primary}
 
-Let us use the solution to this equation to see how the steady-state concentration changes for a few different parameter values.
+Now that we have reduced the computation of the steady-state concentration of *LT* to the solution of a quadratic equation, let's compute this steady-state concentration for a sample collection of parameters. We will then change the parameters and see how the steady-state concentration changes.
 
-Let us try a system with *k*<sub>bind</sub> = 2, *k*<sub>dissociate</sub> = 5, *l*<sub>0</sub> = 50, *t*<sub>0</sub> = 50.
+Say that we are given the following parameter values (the units are not important for this toy example):
+* *k*<sub>bind</sub> = 2;
+* *k*<sub>dissociate</sub> = 5;
+* *l*<sub>0</sub> = 50;
+* *t*<sub>0</sub> = 50.
 
-Plug these values into the seemingly daunting quadratic equation, we get:
+Plugging these values into the seemingly daunting quadratic equation, we obtain the following:
 
-$$a$$ = *k*<sub>bind</sub> = 2
+* *a* = *k*<sub>bind</sub> = 2
+* *b* = - (*k*<sub>bind</sub> · *l*<sub>0</sub> + *k*<sub>bind</sub> · *t*<sub>0</sub> + *k*<sub>dissociate</sub>) = -205
+*c* = *k*<sub>bind</sub> · *l*<sub>0</sub> · *t*<sub>0</sub> = 5000
 
-$$b$$ = - (*k*<sub>bind</sub> · *l*<sub>0</sub> + *k*<sub>bind</sub> · *t*<sub>0</sub> + *k*<sub>dissociate</sub>) = -205
+That is, we are solving the equation 2 · [*LT*]<sup>2</sup> - 205 · [*LT*] + 5000 = 0. Using the quadratic formula to solve for [*LT*] gives
 
-$$c$$ = *k*<sub>bind</sub> · *l*<sub>0</sub> · *t*<sub>0</sub> = 5000
+$$[LT] = \dfrac{205 \pm \sqrt{205^2 - 4 \cdot 2 \cdot 5000}}{2 \cdot 2} = 51.25 \pm 11.25$$.
 
-Solve for x:
+It would seem that there are *two* solutions: 51.25 + 11.25 = 62.5 and 51.25 - 11.25 = 40. However, because *l*<sub>0</sub> and *t*<sub>0</sub>, the respective initial concentrations of *L* and *T*, are both equal to 50, we cannot have that the steady-state concentration of *LT* is 62.5; as a result, it must be 40.
 
-$$x = \dfrac{205 \pm \sqrt{205^2 - 4 \cdot 2 \cdot 5000}}{2 \cdot 2} = 51.25 \pm 11.25$$
-
-We know that [*LT*] < *l*<sub>0</sub> and [*LT*] < *t*<sub>0</sub>, so [*LT*] = 51.25 - 11.25 = 40
-
-And we can recover the values of [*L*] and [*T*]:
+Now that we know the steady-state concentration of *LT*, we can recover the values of [*L*] and [*T*]:
 
 [*L*] = *l*<sub>0</sub> - [*LT*] = 10<br>
 [*T*] = *t*<sub>0</sub> - [*LT*] = 10
 
-What if the forward reaction is slower? For example, *k*<sub>bind</sub> = 1? We will get less *LT* at the steady state. Our new quadratic equation:
+What if the forward reaction is slower? We would imagine that the equilibrium concentration of *LT* would decrease since the reverse reaction will occur faster than the forward reaction. For example, if we change *k* to 1, then we obtain the following adjusted parameter values:
 
-$$a$$ = *k*<sub>bind</sub> = 1
+* *a* = *k*<sub>bind</sub> = 1
 
-$$b$$ = - (*k*<sub>bind</sub> · *l*<sub>0</sub> + *k*<sub>bind</sub> · *t*<sub>0</sub> + *k*<sub>dissociate</sub>) = -105
+* *b* = - (*k*<sub>bind</sub> · *l*<sub>0</sub> + *k*<sub>bind</sub> · *t*<sub>0</sub> + *k*<sub>dissociate</sub>) = -105
 
-$$c$$ = *k*<sub>bind</sub> · *l*<sub>0</sub> · *t*<sub>0</sub> = 2500
+* *c* = *k*<sub>bind</sub> · *l*<sub>0</sub> · *t*<sub>0</sub> = 2500
 
-Solve for x, and we will obtain [*LT*] = 36.492
+In this case, if we solve for [*LT*], we obtain [*LT*] = 36.492; the steady-state concentration has decreased as anticipated.
 
-**STOP**: Can you predict what will happen to the steady state concentration of *LT* if we have 1) higher *l*<sub>0</sub> or *t*<sub>0</sub>; 2) lower *l*<sub>0</sub> or *t*<sub>0</sub>; 3) higher *k*<sub>dissociate</sub>; 4) lower *k*<sub>dissociate</sub>? Confirm your prediction by calculation.
+**STOP**: What do you think will happen to the steady-state concentration of *LT* if the initial concentration (*l*<sub>0</sub>) increases or decreases? What if the dissociation rate (*k*<sub>dissociate</sub>) increases or decreases?  Confirm your prediction by changing the parameters above and solving the quadratic formula for [*LT*].
 {: .notice--primary}
 
 ## Verifying a theoretical steady-state concentration via simulation
 
-In the previous module, we applied a particle-free model for simulating interactions of molecules, assuming that these molecules are uniformly distributed in their environment. The bacterium is so small that we will freely assume that the concentration of any particle in its immediate surroundings is uniform. Therefore, let us see if a particle-free simulation will replicate the steady-state concentrations that we found above.
+In the [previous module](motifs), we saw how to avoid keeping track of the diffusion of individual particles if simulating molecules that are uniformly distributed throughout their environment. The *E. coli* cell is so small that we will assume that the concentration of any particle in its immediate surroundings is uniform. Therefore, let us see if the same type of simulation can replicate the steady-state concentrations that we found above.
 
 Even though we can calculate steady-state concentrations by hand, we will find a simulation useful for two reasons. First, a particle-free simulation will give us snapshots of the system over multiple time points and allow us to see how quickly the concentrations reach equilibrium. Second, we will soon expand our model of chemotaxis to have many more particles and reactions, and direct interpretation of the system will quickly become impossible.
 
@@ -124,7 +128,7 @@ Here we've shown that using BNG and calculating by hand reach the same conclusio
 
 * SHUANGER: This is where we should return from the tutorial and interpret the results that we found, comparing against the examples that we had before.
 
-From the BNG simulation, we can observe that *L* and *T* drop quickly while *LT* increases quickly at the begining of the simulation, and then reach steady state concentrations. Plug in the model parameters into our quadratic equation, can you calculate the steady state concentrations and obtain the same results? 
+From the BNG simulation, we can observe that *L* and *T* drop quickly while *LT* increases quickly at the begining of the simulation, and then reach steady state concentrations. Plug in the model parameters into our quadratic equation, can you calculate the steady state concentrations and obtain the same results?
 
 ![image-center](../assets/images/chemotaxis_tutorial4.png){: .align-center}
 <figcaption>Concentration plot for ligand-receptor dynamics with ODE simulation. The concentrations reach a steady state at the end of the simulation. </figcaption>

@@ -12,17 +12,19 @@ We will look at the other part of the story. Consider (think about optimal strat
 *If one E. coli is in a well-mixed glucose solution with a concentration of A, and another is in a well-mixed glucose solution with a concentration of 10A, should they have the same tumbling frequency?*
 <details>
 <summary>Unlock the strategy.</summary>
-Yes. 
+Yes.
 
  - If the second one tumbles less, it will have a harder time to move towards a even higher concentration.
  - The cell should go back to original tumbling frequency when no gradient presents despite what the concentration is.
 
 </details>
+<br>
+<br>
 
 *If one E. coli in glucose solution swam from A concentration to 10A concentration (assume it happened instantaneously), and another stays in a well-mixed glucose with a concentration of 10A, should they have the same tumbling frequency?*
 <details>
 <summary>Unlock the strategy.</summary>
-No. 
+No.
 
  - The first one sensed a *change* in concentration, which indicates that if it keeps swimming in this direction, it might enter an area with higher concentration, so it should decrease tumbling frequency.
 
@@ -32,7 +34,7 @@ No.
 
 To make decisions based on the *change* in concentration, the cells need to compare the **current vs. past** concentrations. In the last lesson, we've showed how ligand-receptor binding allow the cell to sense the current concentration, and we will deal about the past part here. The challenge is, since the presence of ligand means consistent stimulus, doesn't the cell need to respond consistently?
 
-This is achieved via **adaptation** to the concentration (stimulus). When the stimulus persists at a constant level, the cell returns to background tumbling frequency, so that it can still detect the next change in concentration. Recall the biological oscillators model in the Motif Module, chemotaxis system's ability to return to the original state despite perturbation of the environment is another example of **robustness**. 
+This is achieved via **adaptation** to the concentration (stimulus). When the stimulus persists at a constant level, the cell returns to background tumbling frequency, so that it can still detect the next change in concentration. Recall the biological oscillators model in the Motif Module, chemotaxis system's ability to return to the original state despite perturbation of the environment is another example of **robustness**.
 
 ## Record past concentration through methylation
 
@@ -76,7 +78,7 @@ L0 = 1e7.
 L0 = 1e8.
 ![image-center](../assets/images/chemotaxis_tutorial_oneadd1e8.png){: .align-center}
 
-We can see that the higher the concentration, the lower the valley becomes. But this is limited to a range of concentrations - going over a concentration where all receptors can already saturated instantly can't lead to more response; and a very low concentration won't initiate a response. Our results are also consistent with other simulations[^Bray1993] and experimental observations[^Shimizu2005][^Krembel2015]. 
+We can see that the higher the concentration, the lower the valley becomes. But this is limited to a range of concentrations - going over a concentration where all receptors can already saturated instantly can't lead to more response; and a very low concentration won't initiate a response. Our results are also consistent with other simulations[^Bray1993] and experimental observations[^Shimizu2005][^Krembel2015].
 
 In the Gradient section, we will see how the ability to respond to the change and adapt to the liigand concentration enable the cells to actually move up the gradient.
 

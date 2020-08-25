@@ -19,7 +19,6 @@ Yes.
 
 </details>
 <br>
-<br>
 
 *If one E. coli in glucose solution swam from A concentration to 10A concentration (assume it happened instantaneously), and another stays in a well-mixed glucose with a concentration of 10A, should they have the same tumbling frequency?*
 <details>

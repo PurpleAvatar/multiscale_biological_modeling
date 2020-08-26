@@ -33,7 +33,7 @@ For now, we will start building a model of ligand-receptor dynamics. We will rep
 
 ## Calculation of steady state concentration in a reversible reaction
 
-In fact, we can calculate the steady state concentrations of *T* and *L* for our reversible reaction.  Suppose that we begin with initial concentrations of *T* and *L* that are represented by *t*<sub>0</sub> and *l*<sub>0</sub>, respectively. Let [*L*], [*T*], and [*LT*] denote the concentrations of the three molecule types. And assume that the reaction rates *k*<sub>bind</sub> and *k*<sub>dissociate</sub> are fixed.
+In fact, we can calculate the steady state concentrations of *T* and *L* for our reversible reaction.  Suppose that we begin with initial concentrations of *T* and *L* that are represented by *t*<sub>0</sub> and *l*<sub>0</sub>, respectively. Let [*L*], [*T*], and [*LT*] denote the concentrations of the three molecule types. And assume that the reaction rate constants *k*<sub>bind</sub> and *k*<sub>dissociate</sub> are fixed.
 
 Our goal is to find the steady-state concentration of *LT*. When this occurs, we know that the rate of production of *LT* is equal to the rate of its dissociation; in other words, we know that
 
@@ -133,9 +133,9 @@ Even though we can calculate steady-state concentrations by hand, we will find a
 
 In this module, we will use Gillespie's Stochastic Simulation Algorithm (often referred as SSA or Gillespie algorithm). We define the states of the system as the discrete amount of reactants, and a transition between one state and another is one molecular event. How likely is a transition to happen is proportional to the rate of that reaction [^Schwartz17].
 
-In our case of ligand-receptor dynamics, we have free ligands *L*, free receptors *T*, which can bind with a rate *k*<sub>bind</sub>, and *LT* can dissociate with a rate *k*<sub>dissociate</sub>. 
+In our case of ligand-receptor dynamics, we have free ligands *L*, free receptors *T*, which can bind with the rate constant *k*<sub>bind</sub>, and *LT* can dissociate with the rate constant *k*<sub>dissociate</sub>. 
 
-At time *t*, there are two reactions that can happen next: *L* + *T* -> *LT* with rate *k*<sub>bind</sub> · [*L*] · [*T*], and *LT* -> *L* + *T* with rate *k*<sub>dissociate</sub> · [*LT*]. We define the sum of the two reactions as *R*<sub>tot</sub>. Now we are interested in two questions: when does the next reaction happen, and which reaction is that?
+At time *t*, there are two reactions that can happen next: *L* + *T* -> *LT* with a rate *k*<sub>bind</sub> · [*L*] · [*T*], and *LT* -> *L* + *T* with a rate *k*<sub>dissociate</sub> · [*LT*]. We define the sum of the two reactions as *R*<sub>tot</sub>. Now we are interested in two questions: when does the next reaction happen, and which reaction is that?
 
 The wait time, *δt*, before the next reaction to happen follows an exponential distribution with mean of *R*<sub>tot</sub>. Thus, the time of the system becomes *t* + *δt* after this step.
 

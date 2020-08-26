@@ -10,7 +10,7 @@ toc_sticky: true
 
 Proteins are one of the most important groups of macromolecules in living organisms, contributing to essentially all functions within them. Recall that in the *Introduction to Transcription* section of the Motifs module, we were introduced to the central dogma of molecular biology: DNA to RNA to protein. We saw that after the translation step of mRNA to a polypeptide that will typically undergo folding to obtain a 3D structure.
 
-Protein structure can be separated into four different levels of description. The most basic description, the primary structure, refers the specific amino acid sequence of the polypeptide chain. Amino acids have the same general shape: a central alpha-Carbon, a carboxyl group, an amino group, and finally one of 20 side-groups that differentiate the amino acids. Each amino acid is linked to the next by a peptide bond, and it is this connection and alpha-Carbon that make up the protein backbone. The side groups are responsible for giving the amino acid its chemical properties.
+Protein structure can be separated into four different levels of description. The most basic description, the primary structure, refers the specific amino acid sequence of the polypeptide chain. In the first figure below, the general shape of the amino acid is shown: a central alpha-Carbon, a carboxyl group, an amino group, and finally one of 20 side-groups that differentiate the amino acids. Each amino acid is linked to the next by a peptide bond, and it is this connection and alpha-Carbon that make up the protein backbone, as shown in the second figure. The side groups are responsible for giving the amino acid its chemical properties.
 
 <img src="../_pages/coronavirus/files/AminoAcid.png">
 
@@ -20,13 +20,11 @@ The secondary structure describes the highly regular substructures in the protei
 
 <img src="../_pages/coronavirus/files/SecondaryStructure.png">
 
-The tertiary structure describes the overall 3D shape of the protein that results from folding. The interactions between the side groups are what dictates how the protein folds (e.g. H-bonds, disulfide bridges, hydrophobic/hydrophilic interactions, electrostatic interactions, and van der Waals interactions). Finally, quaternary structures describe the protein’s interaction with other copies of itself to form a single functional unit, or a multimer. 
+The tertiary structure describes the overall 3D shape of the protein that results from how the peptide chain folds together. The interactions between the side groups are what dictates how the protein folds (e.g. H-bonds, disulfide bridges, hydrophobic/hydrophilic interactions, electrostatic interactions, and van der Waals interactions).
+
+Finally, quaternary structures describe the protein’s interaction with other copies of itself to form a single functional unit, or a multimer. 
 
 Now that we know what we mean by protein structure, but why is the 3D structure so important?
-
-The 3D structure of a protein is critical to its function. For example, the cell requires the movement of specific molecules in or out of the cell. However, sometimes the molecules are unable to passively diffuse through the membrane whether it be because of its size or chemical property. Thus, the cell membrane contains many different transmembrane proteins that function as channels. These channel proteins typically have long, tube-like structures to shuttle molecules through the cell membrane.
-
-<img src="../_pages/coronavirus/files/ChannelProtein.png">
 
 ## Protein Shape is Key
 
@@ -38,13 +36,11 @@ The world is ruled by probability again!
 
 ## The Shape is Not Unique
 
-Remember back to the four levels of protein structure. We stated that the overall 3D structure (tertiary structure) of the protein is dictated by the interactions of the side chains. Even when we unfold (denature) a protein, it will eventually fold back into essentially the same shape because of these interactions. Small perturbations in the sequence may have dramatic effects on the overall structure and even render the protein useless. You may think that every structure has its own specific sequence of amino acids (primary structure), but this is far from the truth. Although there are twenty amino acids, they are often grouped together by having similar chemical properties (i.e. polarity and charge). As a result, two very different sequences can have the exact same function and with extremely similar structure.
+Remember back to the four levels of protein structure. We stated that the overall 3D structure (tertiary structure) of the protein is dictated by the interactions of the side chains. Even when we unfold, or denature, a protein, it will eventually fold back into essentially the same shape because of these interactions. Small perturbations in the sequence may have dramatic effects on the overall structure and even render the protein useless. You may think that every structure has its own specific sequence of amino acids (primary structure), but this is far from the truth. Although there are twenty amino acids, they are often grouped together by having similar chemical properties (i.e. polarity and charge). As a result, two very different sequences can have the exact same function and extremely similar structures.
 
-Let’s compare the sequence identity and structure of hemoglobin from Isurus oxyrinchus (Shortfin Mako Shark; PDB: 3MKB) and Dromaius novaehollandia (Emu; PDB: 3WTG). Sequence alignment reveals low sequence identity for both hemoglobin subunit alpha and beta. On the other hand, structural alignment shows that the two protein structures are extremely similar. In the second figure, the two overall hemoglobin are imposed onto each other with the same coloring. (Blue = match/aligned; Red = mismatch/misaligned).
+As an example, let’s compare the sequences and structures of hemoglobin subunit alpha from Humans (*Homo sapiens*; PDB: <a href="https://www.rcsb.org/structure/1SI4" target=_blank">1si4</a>) Shortfin Mako Sharks (*Isurus oxyrinchus* ; PDB: <a href="https://www.rcsb.org/structure/3mkb" target=_blank">3mkb</a>) and emus (*Dromaius novaehollandia*; PDB: <a href="https://www.rcsb.org/structure/3wtg" target=_blank">3wtg</a>). From the figures below, we can see that the proteins are markedly different in terms of primary structure. Nonetheless, the 3D structures are essentially the same. (Sequence identity is the measurement of how similar two different sequences are by calculating the number of positions that share the same character.)
 
-<img src="../_pages/coronavirus/files/SharkEmuAlignment.png">
-
-<img src="../_pages/coronavirus/files/SharkEmuStructure.png">
+<img src="../_pages/coronavirus/files/SequenceStructureExample.png">
 
 ## Methods of Finding Protein Structure
 
@@ -55,6 +51,16 @@ X-ray crystallography (sometimes referred to as macromolecular crystallography, 
 For NMR spectroscopy, proteins are placed in a magnetic field and probed with radio waves. The set of resonance can then be analyzed to produce a list of atomic nuclei that are in close proximity and to characterize the local conformation of the atoms. One of the benefits of this method is that the protein can be studied in solution, offering information of the protein in a more realistic environment. NMR spectroscopy can cost up to $500 dollars and are limited to small or medium proteins. 
 
 Electron microscopy (3DEM) directly images the molecule by using a system of electron lenses. Producing 3D images requires imaging thousands of different particles that are preserved in non-crystalline ice (cryo-EM). Improvements in 3DEM have allowed resolution of the images to improve drastically and in some cases, reaching the resolution levels of NMR spectroscopy. However, because electron microscopes are extremely complicated machinery, purchasing one may cost anywhere between $100,000 to the most expensive $27 million (located in Lawrence Berkeley National Lab).
+
+## Storing Protein Structure
+
+* After experimentally determining the 3D protein structure, the structure is typically uploaded into the PDB as a .pdb file. This file is extremely dense as it holds all the details about the protein, from the very basic primary structure of the protein all the way to the position of every single atom. The simplest way to think about how the entire protein is stored is to first represent atoms as points on a 3D plane with each atom having its 3D orthogonal coordinates (X,Y,Z) in the unit of angstroms. This is the atomic coordinates of the protein. A simplified view of the atomic coordinates section is shown in the first figure below. 
+
+*Because the structure of the 20 amino acids are well studied, we know which atoms are connected within each residue. The atomic bonds that link amino acids in sequence are easy to deduce from the primary structure of the protein. However, the angles of these connections also need to be explicit to describe the 3D structures. These angles are referred to as peptide torsion angles, shown in the second figure below. The two bonds connecting the alpha carbon of an amino acid are able rotate, allowing a peptide chain to be able to fold into many different possible conformations. Phi (φ) refers to the bond angle connecting to the amino group and psi (ψ) refers to the bond angle connecting to the carboxyl group. The specific set of phi and psi angles of the protein helps describe the structure of the protein. Omega (ω) describes the bond angle of the peptide bond between two amino acids, but is almost always locked at 180°. There exists connections between residues that cannot be infered from the primary structure (e.g. disulfide bonds) which are also described within the file. This is just scratching the tip of the iceberg of the information required to represent a protein structure. For more information, check out the <a href="http://www.wwpdb.org/documentation/file-format" target="_blank">official PDB documentation</a>.
+
+<img src="../_pages/coronavirus/files/simplifiedPDB.png">
+
+<img src="../_pages/coronavirus/files/psiphi.png">
 
 ## The Problem with the Common Methods
 
@@ -68,8 +74,8 @@ Let’s take a look at the human proteome. In a human proteome study published i
   * Local residues form stable interactions an act as nucleation points (protein folding intermediates and partial-folded transition states), facilitation folding speed.
   * Proposed funnel-like energy landscapes (not really the case, the energy landscape is more like a caldera).
   * Main point: need A LOT of computing 
+  * Nature has a magic algorithm for protein folding. Can we find it?
   
-
 ## Protein Structure Prediction
 
 The first whole genome sequence of SARS-CoV-2 isolate *Wuhan-Hu-1* was released on 10 January 2020 by Wu, F. et. al., and is available in GenBank along with the genome annotations [^2][^3]. Perhaps due to the SARS 2003 outbreak, many different types of coronaviruses have been sequenced and studied. Upon sequence comparison, SARS-CoV-2 was found to be related to several coronaviruses isolated from bats and distantly related to SARS-CoV-1. In fact, SARS-CoV-2 has a sequence identity of around 96% with bat coronavirus RaTG13, leading to the hypothesis that the virus originated from bats, which is further supported by the fact that bats are natural reservoir hosts of SARS-related coronaviruses.

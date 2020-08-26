@@ -9,7 +9,7 @@ sidebar:
 
 In the last lesson, we discussed how a cell recognizes an extracellular signal by receptor proteins on the cell's surface bonding to ligands. Our question now is how the cell conveys this signal to the cell's interior to produce an action via "signal transduction". For example, if *E. coli* senses an increase in the concentration of glucose, meaning that more ligand-receptor bonding is taking place at the receptor that recognizes glucose, how is *E. coli* able to process this information into a change in its behavior?
 
-The engine of signal transduction is a series of **phosphorylation** events. Phosphorylation is a chemical reaction that attaches a phosphoryl group (PO<sub>3</sub><sup>-</sup>) to an organic molecule. (The removal of a phosphoryl group is called **dephosphorylation**.) Phosphoryl modifications serve as an information exchange of sorts because they activate or deactivate certain enzymes. 
+The engine of signal transduction is a series of **phosphorylation** events. Phosphorylation is a chemical reaction that attaches a phosphoryl group (PO<sub>3</sub><sup>-</sup>) to an organic molecule. (The removal of a phosphoryl group is called **dephosphorylation**.) Phosphoryl modifications serve as an information exchange of sorts because they activate or deactivate certain enzymes.
 
 In the case of chemotaxis, after ligand-receptor binding has been detected, a sequence of phosphorylation events inside *E. coli* called a **phosphorylation cascade** serves to convey the extracellular signal to the flagella. In what follows, we discuss the details of how this cascade of chemical reactions leads to a change in bacterial movement.
 
@@ -54,7 +54,9 @@ But does higher attractant concentration lead to a lower concentration of CheY? 
 [Visit Phosphorylation Tutorial](tutorial_phos){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
-## *E. coli* can detect changing ligand concentrations
+## Tumbling frequency and changing ligand concentrations
+
+* SHUANGER: can you please make the legend in the figures more clear? E.g., why not use "bound_ligand", "CheA", etc.?
 
 When no ligand is added, we see the concentrations remain at steady state. CheY activity remains at the background level, resulting in background tumbling frequency.
 

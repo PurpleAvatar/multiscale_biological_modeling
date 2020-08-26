@@ -13,15 +13,15 @@ DNA offers the lowest level of biological study: the DNA double helix is only ab
 
 This module will also introduce the concept of a **biological network**, a ubiquitous object in biological research that is highlighted in the figure below. When studying the functions and binding of proteins, biologists may build a **protein-protein interaction network** in which nodes are proteins and two proteins are connected with an edge if they are known to interact. When examining the more complex interactions and processes taking place within a cell, they form a **metabolic network**. Here, nodes correspond to any substances in a chemical reactions and an edge connects two nodes if there is some enzyme that catalyzes a reaction involving these substances. Finally, neuroscientists study **neuronal networks** that link neurons together according to how they are linked in the nervous system --- these networks have been studied since the 1940s but have recently exploded as a model for solving applied problems in machine learning.
 
-![image-center](../assets/images/A-Complete-HCV-Host-Protein-Protein-Interaction-Network-in-Hepatoma-Cells-A-Network.png)
+![image-center](../assets/images/A-Complete-HCV-Host-Protein-Protein-Interaction-Network-in-Hepatoma-Cells-A-Network.png){: .align-center}
 A Complete HCV-Host Protein-Protein Interaction Network in Hepatoma Cells[^PPInetwork] 
 {: .align-center} 
 
-![image-center](../assets/images/The-metabolic-network-of-tomato-cells-The-system-is-a-cell-with-symbolic-subcellular.png)
+![image-center](../assets/images/The-metabolic-network-of-tomato-cells-The-system-is-a-cell-with-symbolic-subcellular.png){: .align-center}
 The metabolic network of tomato cells[^metabolicNetwork] 
 {: .align-center}
 
-![image-center](../assets/images/Neuron-networks-a-brain-b-neural-network-c-neuron-connecting-structure-d-neuron.png)
+![image-center](../assets/images/Neuron-networks-a-brain-b-neural-network-c-neuron-connecting-structure-d-neuron.png){: .align-center}
 Mapping and models of neurons[^neuralNetwork] 
 {: .align-center}
 

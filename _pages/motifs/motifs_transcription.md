@@ -34,7 +34,7 @@ A natural biological research question is to determine, for a given transcriptio
 
 For example, genes that are regulated by the same transcription factor often share the same "sequence motif", or a region of similarity that precedes the genes. Computational biologists have developed algorithms to scan through the genome, looking for regions of similarity that precede genes, and cluster genes based on these regions of similarity. If you are interested in learning more about these algorithms, we encourage you to check out [Chapter 2](https://www.bioinformaticsalgorithms.org/bioinformatics-chapter-2) of *Bioinformatics Algorithms: An Active Learning Approach*, which can be read for free online.
 
-The current widespread practice for determining whether a protein bonds to a given region of DNA is called **ChIP-seq**, which stands for **chromatin immunoprecipitation sequencing**. This approach, which is illustrated in a figure below, combines an organism's DNA with a collection of proteins that bond to DNA (which in this case would be transcription factors). After allowing for the proteins to bond naturally to the DNA, the DNA (with proteins attached) is cleaved into much smaller fragments of a few hundred base pairs. As a result, we obtain a collection of DNA fragments, some of which are attached to a protein.
+The current widespread practice for determining whether a protein bonds to a given region of DNA is called **ChIP-seq**[^chip], which stands for **chromatin immunoprecipitation sequencing**. This approach, which is illustrated in a figure below, combines an organism's DNA with a collection of proteins that bond to DNA (which in this case would be transcription factors). After allowing for the proteins to bond naturally to the DNA, the DNA (with proteins attached) is cleaved into much smaller fragments of a few hundred base pairs. As a result, we obtain a collection of DNA fragments, some of which are attached to a protein.
 
 The question is how to isolate the fragments of DNA bonded to a single protein of interest. If we can do this for a transcription factor, then we will be able to infer the fragments of DNA to which that transcription factor binds.
 
@@ -49,8 +49,6 @@ If you are interested in a short lecture with a discussion of sequence motif fin
 
 <iframe width="640" height="360" src="https://www.youtube-nocookie.com/embed/voEDurUgz_4" frameborder="0" allowfullscreen></iframe>
 
-* NOAH: Please cite first big ChIP-seq paper when I introduce ChIP-seq: https://science.sciencemag.org/content/316/5830/1497
-
 ## Organizing data
 
 * Transition from experiments to huge amount of data containing the relationship between transcription factors and the genes that they represent.
@@ -61,3 +59,5 @@ If you are interested in a short lecture with a discussion of sequence motif fin
 
 [Next lesson](networks){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
+
+[^chip]: Johnson, D. S., Mortazavi, A., Myers, R. M., & Wold, B. (2007). Genome-wide mapping of in vivo protein-DNA interactions. Science, 316(5830), 1497–1502. https://doi.org/10.1126/science.1141319

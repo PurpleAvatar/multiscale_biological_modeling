@@ -131,6 +131,25 @@ In the [previous module](motifs), we saw how to avoid keeping track of the diffu
 
 Even though we can calculate steady-state concentrations by hand, we will find a simulation useful for two reasons. First, a particle-free simulation will give us snapshots of the system over multiple time points and allow us to see how quickly the concentrations reach equilibrium. Second, we will soon expand our model of chemotaxis to have many more particles and reactions, and direct interpretation of the system will quickly become impossible.
 
+In this module, we will use Gillespie's Stochastic Simulation Algorithm (often referred as SSA or Gillespie algorithm). We define the states of the system as the discrete amount of reactants, and a transition between one state and another is one molecular event. How likely is a transition to happen is proportional to the rate of that reaction [^Schwartz17].
+
+In our case of ligand-receptor dynamics, we have free ligands *L*, free receptors *T*, which can bind with a rate *k*<sub>bind</sub>, and *LT* can dissociate with a rate *k*<sub>dissociate</sub>. 
+
+At time *t*, there are two reactions that can happen next: *L* + *T* -> *LT* with rate *k*<sub>bind</sub> · [*L*] · [*T*], and *LT* -> *L* + *T* with rate *k*<sub>dissociate</sub> · [*LT*]. We define the sum of the two reactions as *R*<sub>tot</sub>. Now we are interested in two questions: when does the next reaction happen, and which reaction is that?
+
+The wait time, *δt*, before the next reaction to happen follows an exponential distribution with mean of *R*<sub>tot</sub>. Thus, the time of the system becomes *t* + *δt* after this step.
+
+The probability of each reaction to happen is *P(reaction)* = *R*<sub>reaction</sub> / *R*<sub>tot</sub>
+
+Therefore, *P(L + T -> LT)* = *k*<sub>bind</sub> · [*L*] · [*T*] / *R*<sub>tot</sub>
+
+*P(LT -> L + T)* = *k*<sub>dissociate</sub> · [*LT*] / *R*<sub>tot</sub>
+
+This process is visualized below.
+
+![image-center](../assets/images/chemotaxis_visualizessa.png){: .align-center}
+<figcaption>Visualization of one transition for SSA. Red circles represent ligands(L). Orange Pac-man shape represent receptors. The wait time for a reaction to happen at time <i>t</i>, <i>δt</i> is drawn from an exponential distribution with mean 1/<i>R</i><sub>tot</sub>. The probability of dissociation (upper) or binding (lower) is determined by the rate of the reaction.</figcaption>
+
 The following tutorial uses [BioNetGen](http://bionetgen.org/), which we will use throughout this module to build particle-free simulations of chemotaxis. We start by building a model to determine the equilibrium of a reversible reaction involving ligands and receptors.
 
 [Visit tutorial](tutorial_lr){: .btn .btn--primary .btn--large}

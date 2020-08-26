@@ -16,13 +16,13 @@ If you would like a refresher on transcription, the following video from the You
 As we saw in the video, we can regulate either the DNA encoding a particular protein or the protein itself, both of which we will refer to as a "gene" in gene regulation. The molecules responsible for this regulation, the control elements and transcription factors, are crucial for allowing a cell to respond to external stimuli. 
 
 ![image-center](../assets/images/Central_Dogma_of_Molecular_Biochemistry_with_Enzymes.jpg){: .align-center}
-[CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)
+The "Central Dogma" of biology where DNA is transcribed into RNA which is translated into proteins[^dogma]
 {: text-align: center;"}
 
 Some of you might have heard about the [Central Dogma](https://www.youtube.com/watch?v=9kOGOY7vthk) and its power to convert genetic information in DNA (with base pairs A's, C's, T's, and G's) into useful proteins for the cell. Now we have an additional motivator for this process: controlling production of proteins to mediate a cell's behavior and response to external stimuli. 
 
 ![image-center](../assets/images/signal_pathway.jpg){: .align-center}
-CC License checked, to be cited: https://www.open.edu/openlearn/science-maths-technology/general-principles-cellular-communication/content-section-1
+A cell receiving a signal which triggers a response, resulting in transcription[^signalResponse]
 {: text-align: center;"}
 
 If a cell receives a signal from the environment, transcription factors are a crucial part of how the cell responds and acts on that signal. As we will later see in simple models, like Negative Autoregulation, the use of transcription factors not only enables a cell to respond to stimuli, but adjust the speed of the reaction as necessary. In more complicated models, like the Repressilator, proteins like transcription factors may rely on "*on*" or "*off*" states which are important for a cell to achieve just the right behavior. 
@@ -59,5 +59,9 @@ If you are interested in a short lecture with a discussion of sequence motif fin
 
 [Next lesson](networks){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
+
+[^dogma]: CC BY-SA 3.0 https://creativecommons.org/licenses/by-sa/3.0/
+
+[^signalResponse]: CC https://www.open.edu/openlearn/science-maths-technology/general-principles-cellular-communication/content-section-1
 
 [^chip]: Johnson, D. S., Mortazavi, A., Myers, R. M., & Wold, B. (2007). Genome-wide mapping of in vivo protein-DNA interactions. Science, 316(5830), 1497–1502. https://doi.org/10.1126/science.1141319

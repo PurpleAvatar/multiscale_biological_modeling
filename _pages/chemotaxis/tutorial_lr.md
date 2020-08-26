@@ -15,7 +15,7 @@ In this page, we will:
 
 ## What is BioNetGen?
 
-[BioNetGen](https://www.csb.pitt.edu/Faculty/Faeder/?page_id=409) (BNG) is a software for specification and simulation of rule-based modeling. The chemotaxis pathyway is essentially a set of rules that can specify a set of mathematical equations of concentration of molecules, and we would like to translate it into a simulation. We can specify our rules in [BNG](https://www.csb.pitt.edu/Faculty/Faeder/?page_id=409), run the simulation, and visualize the results easily. 
+[BioNetGen](http://bionetgen.org/) (BNG) is a software for specification and simulation of rule-based modeling. The chemotaxis pathyway is essentially a set of rules that can specify a set of mathematical equations of concentration of molecules, and we would like to translate it into a simulation. We can specify our rules in [BNG](https://www.csb.pitt.edu/Faculty/Faeder/?page_id=409), run the simulation, and visualize the results easily. 
 
 ## Set-up
 
@@ -77,9 +77,9 @@ We can specify how many molecules we would like to put at the beginning of the s
 
 ## Specifying parameters
 
-Now let's declare all the parameters we mentioned __before__ any usage of them (here, before the `reaction rules` section). BNG is unitless. For simplicity, we will use the number of molecule per cell for all cellular components. The reaction rates are conventionally in the unit of M/s.
+Now let's declare all the parameters we mentioned __before__ any usage of them (here, before the `reaction rules` section). BNG is unitless. For simplicity, we will use the number of molecule per cell for all cellular components. The reaction rates are conventionally in the unit of M/s. 
 
-Because of the molecules/cell and the M/s units, we need to do some unit conversion here. The volume of *E. coli* is approximately 1µm^3, so our molecule counts are of unit num_molecule/µm^3. One mole of molecule is approximately 6.02 * 10^23 molecules (Avogadro's number), so the unit M is approximately 6.02 * 10^23 molecules/L, which is about 6.02 * 10^8 molecules/µm^3. We record this as NaV. For bimolecular reactions, the rate constant should have unit (M^-1)(s^-1), and we devide NaV to convert to ((molecules/µm^3)^-1)(s^-1). For monomolecular reactions, the rate constant have unit (s^-1), so no unit conversion is required.
+Because of the molecules/cell and the M/s units, we need to do some unit conversion here (when calculating the ligand-receptor binding by hand in the main text, we already did unit conversion for you). The volume of *E. coli* is approximately 1µm^3, so our molecule counts are of unit num_molecule/µm^3. One mole of molecule is approximately 6.02 * 10^23 molecules (Avogadro's number), so the unit M is approximately 6.02 * 10^23 molecules/L, which is about 6.02 * 10^8 molecules/µm^3. We record this as NaV. For bimolecular reactions, the rate constant should have unit (M^-1)(s^-1), and we devide NaV to convert to ((molecules/µm^3)^-1)(s^-1). For monomolecular reactions, the rate constant have unit (s^-1), so no unit conversion is required.
 
 Although the specific numbers of cellular components vary between each bacterium, the components in chemotaxis pathway follows a relatively constant ratio. For all the simulations in this set of tutorials, we assign the initial number for each molecule and reaction rates by first deciding a reasonable range based on *in vivo* quantities [^Li2004][^Spiro1997][^Stock1991] and then tuning to fit the model.
 

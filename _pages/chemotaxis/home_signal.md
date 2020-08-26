@@ -113,7 +113,7 @@ In this case, if we solve for [*LT*], we obtain [*LT*] = 36.492; the steady-stat
 
 Now we are ready to calculate the steady-state concentrations of receptors located on the *E. coli* cellular membrane and the ligands in the environment. Let's model an *E. coli* with 7000 receptor molecules in an environment with 10000 ligand molecules. The rate for ligand-receptor binding is 0.0146((molecules/µm<sup>3</sup>)<sup>-1</sup>)s<sup>-1</sup>, and rate for ligand-receptor dissociation is 35s<sup>-1</sup>.[^Li2004][^Spiro1997][^Stock1991]
 
-Our new parameters: *l*<sub>0</sub> = 10000, *t*<sub>0</sub> = 70000, *k*<sub>bind</sub> = 0.0146, *k*<sub>dissociate</sub> = 35
+Our new parameters: *l*<sub>0</sub> = 10000, *t*<sub>0</sub> = 7000, *k*<sub>bind</sub> = 0.0146, *k*<sub>dissociate</sub> = 35
 
 * *a* = *k*<sub>bind</sub> = 0.0146
 * *b* = - (*k*<sub>bind</sub> · *l*<sub>0</sub> + *k*<sub>bind</sub> · *t*<sub>0</sub> + *k*<sub>dissociate</sub>) = -283.2
@@ -121,8 +121,8 @@ Our new parameters: *l*<sub>0</sub> = 10000, *t*<sub>0</sub> = 70000, *k*<sub>bi
 
 If we solve for [*LT*], we obtain [*LT*] = 4793. Calculate for [*L*] and [*T*]:
 
-[*L*] = *l*<sub>0</sub> - [*LT*] = 2207<br>
-[*T*] = *t*<sub>0</sub> - [*LT*] = 5207
+[*L*] = *l*<sub>0</sub> - [*LT*] = 5207<br>
+[*T*] = *t*<sub>0</sub> - [*LT*] = 2207
 
 
 ## Verifying a theoretical steady-state concentration via simulation
@@ -216,6 +216,6 @@ BNG supports simulation with Ordinary Differential Equation (ODE) and with Stoch
  - ODE: When simulating a system, we need to define how the system evolves through time. In *continuous* simulation of chemical reactions, the state of the system can be reported given any point in time. The reactions rules specify the rate of change for concentration of the involved species, and they are differential equations. For example, *d[L]/dt=k<sub>dissociate</sub>[L.T] - k<sub>bind</sub>[L][T]*.[^Schwartz14]
  - SSA: When simulating the change of the system through time, we define states of the system. Transition can happen between states that differ by one reaction event. We track the *discrete* amount of each reactants and simulate the system via transition of the states[^Schwartz17]. For example, the state can transit from [#L=100, #T=50, #L.T=0] to [#L=99, #T=49, #L.T=1], with probability determined both by reaction rate *k<sub>bind</sub>* and the the number of ways to choose the L and T molecules.[^Schwartz17] For using SSA, the measurement of abundance of molecules should actually be number of molecule instead of concentration.
 
-Remove the ODE results
+Removew the ODE results
 ![image-center](../assets/images/chemotaxis_tutorial4.png){: .align-center}
 <figcaption>Concentration plot for ligand-receptor dynamics with ODE simulation. The concentrations reach a steady state at the end of the simulation. </figcaption>

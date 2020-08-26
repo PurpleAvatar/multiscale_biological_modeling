@@ -106,7 +106,7 @@ Before simulating our model, we would also like to define the observables under 
 
 And now we are ready to simulate. Add the `generate network` and `simulate` command outside of your model specification. We will specify three arguments:
 
-**Method**. We will use `method=>"ode"` in all the tutorials, but you could also try `method=>"ssa"`. We will expand on that later. Note that `method=>"ssa"` will be slower for models that are more complex, because it simulates every reaction event while ode only cares about concentrations at each time step.
+**Method**. We will use `method=>"ssa"` in all the tutorials, but there are also `method=>"nf"` (network-free) and `method=>"ode"`(ordinary differential equations) that you can try. 
 
 **Time span**.`t_end`, the simulation duration. BNG simulation time is unitless; for simplicity we define all time units to be second.
 
@@ -156,8 +156,6 @@ The whole simulation code for ligand-receptor dynamics (you can also download he
 {: .notice--primary}
 
 Go to `Simulation` at the right side of the Contact Map button and click `Run`. You can visualize your `.gdat` data.
-
-Also try `method=>"ssa"`. Do you observe any differences between the simulation results of the two methods?
 
 What do you predict to be the concentration of `L(t!l).T(l!l)` after 1 hour?
 

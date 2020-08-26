@@ -58,6 +58,8 @@ But does higher attractant concentration lead to a lower concentration of CheY? 
 
 * SHUANGER: can you please make the legend in the figures more clear? E.g., why not use "bound_ligand", "CheA", etc.?
 
+* SHUANGER: How did you determine the steady-state concentrations here? Trial and error?
+
 When no ligand is added, we see the concentrations remain at steady state. CheY activity remains at the background level, resulting in background tumbling frequency.
 
 ![image-center](../assets/images/chemotaxis_tutorial5.png){: .align-center}

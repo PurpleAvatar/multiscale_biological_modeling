@@ -131,7 +131,7 @@ In the [previous module](motifs), we saw how to avoid keeping track of the diffu
 
 Even though we can calculate steady-state concentrations by hand, we will find a simulation useful for two reasons. First, a particle-free simulation will give us snapshots of the system over multiple time points and allow us to see how quickly the concentrations reach equilibrium. Second, we will soon expand our model of chemotaxis to have many more particles and reactions, and direct interpretation of the system will quickly become impossible.
 
-The following tutorial uses [BioNetGen](https://www.csb.pitt.edu/Faculty/Faeder/?page_id=409), which we will use throughout this module to build particle-free simulations of chemotaxis. We start by building a model to determine the equilibrium of a reversible reaction involving ligands and receptors.
+The following tutorial uses [BioNetGen](http://bionetgen.org/), which we will use throughout this module to build particle-free simulations of chemotaxis. We start by building a model to determine the equilibrium of a reversible reaction involving ligands and receptors.
 
 [Visit tutorial](tutorial_lr){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}

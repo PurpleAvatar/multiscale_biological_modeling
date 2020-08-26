@@ -159,15 +159,10 @@ The following tutorial uses [BioNetGen](http://bionetgen.org/), which we will us
 
 Here we've shown that using BNG and calculating by hand reach the same conclusion for bimolecular reactions.
 
-* SHUANGER: This is where we should return from the tutorial and interpret the results that we found, comparing against the examples that we had before.
-
 From the BNG simulation, we can observe that *L* and *T* drop quickly while *LT* increases quickly at the begining of the simulation, and then reach steady state concentrations. The steady state concentrations match our calculations by hand.
 
-![image-center](../assets/images/chemotaxis_tutorial4.png){: .align-center}
-<figcaption>Concentration plot for ligand-receptor dynamics with ODE simulation. The concentrations reach a steady state at the end of the simulation. </figcaption>
-
 ![image-center](../assets/images/chemotaxis_tutorial4_ssa.png){: .align-center}
-<figcaption>Concentration plot for ligand-receptor dynamics with SSA simulation.</figcaption>
+<figcaption>Concentration plot for ligand-receptor dynamics with SSA simulation. The concentrations reach a steady state at the end of the simulation.</figcaption>
 
 * Phillip will then need to point the reader to the next section by saying this is just the beginning of the model we will build to study chemotaxis. (And computing steady-state concentration is just a toy example compared to questions we will ask soon.)
 
@@ -220,3 +215,7 @@ From the BNG simulation, we can observe that *L* and *T* drop quickly while *LT*
 BNG supports simulation with Ordinary Differential Equation (ODE) and with Stochastic Simulation Algorithm (SSA, also called Gillespie algorithm). The method is passed in as argument `method=>"ode"` or `method=>"ssa"`.
  - ODE: When simulating a system, we need to define how the system evolves through time. In *continuous* simulation of chemical reactions, the state of the system can be reported given any point in time. The reactions rules specify the rate of change for concentration of the involved species, and they are differential equations. For example, *d[L]/dt=k<sub>dissociate</sub>[L.T] - k<sub>bind</sub>[L][T]*.[^Schwartz14]
  - SSA: When simulating the change of the system through time, we define states of the system. Transition can happen between states that differ by one reaction event. We track the *discrete* amount of each reactants and simulate the system via transition of the states[^Schwartz17]. For example, the state can transit from [#L=100, #T=50, #L.T=0] to [#L=99, #T=49, #L.T=1], with probability determined both by reaction rate *k<sub>bind</sub>* and the the number of ways to choose the L and T molecules.[^Schwartz17] For using SSA, the measurement of abundance of molecules should actually be number of molecule instead of concentration.
+
+Remove the ODE results
+![image-center](../assets/images/chemotaxis_tutorial4.png){: .align-center}
+<figcaption>Concentration plot for ligand-receptor dynamics with ODE simulation. The concentrations reach a steady state at the end of the simulation. </figcaption>

@@ -74,9 +74,9 @@ If we have 1e5 attractant molecules, the higher concentration of ligands further
 
 With the addition of attractants, more receptor complexes are bound to attractants, and therefore less CheA autophosphorylation happens (here we include the CheA as part of the receptor complex). As a result, less CheY can be phosphorylated by CheA, and therefore, CheY phosphorylates the flagellar proteins less frequently, reducing tumbling frequency. And a higher attractant concentration leads to more decrease in tumbling frequency (before receptors are saturated and can no longer have higher bound receptor concentration).
 
-But this is only half of the story. In the next section, we will code up the adaptation, including CheR, CheB, and methylation states for chemotaxis.
+* SHUANGER: Why not do these simulations w/r/t a repellent also?
 
-
+The ability to detect different ligand concentrations over many different types of ligands and change behavior in a response that is commensurate with the concentration of the ligand is a remarkable feature of bacteria like *E. coli*. But what we have shown in this lesson is just half of the story. In the next lesson, we will see that the biochemical realities of chemotaxis are even more complicated, and for good reason -- this complexity will allow *E. coli* to react surprisingly "intelligently" to an ever-changing environment.
 
 [^Munroe]: Randall Munroe. What If? [Available online](https://what-if.xkcd.com/)
 

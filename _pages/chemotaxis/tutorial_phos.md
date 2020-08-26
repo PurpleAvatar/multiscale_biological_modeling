@@ -103,12 +103,12 @@ Before running the simulation, let's think about what will happen. If we don't a
 **STOP:** Run simulation with no ligand molecule present by setting `L0` in the `parameters` section to 0, and click `Run` under `Simulate`. What do you observe?
 {: .notice--primary}
 
-When we add ligand molecules into the system, as there are more bound T, there will be less T-P, and therefore less CheY-P. What will happen to steady state concentrations? Does the amount of ligand molecule matter?
+When we add ligand molecules into the system, as we did in the tutorial for [ligand-receptor dynamics](tutorial_lr), concentration of bound T increases. What will happen to the concentration of active T, and active CheY? What will happen to steady state concentrations?
 
 **STOP:** Run simulation with `L0 = 1e4` and `L0 = 1e5`. What do you observe?
 {: .notice--primary}
 
-In the plots, you will see number of bound ligand increases and then reach a steady state. As a result, number of active receptor decreases, and that leads to decreased CheY activity. For different `L0`, how do the steady state for bound ligand, active receptor, and active CheY differ and why?
+For different `L0`'s, how do the steady state for bound ligand, active receptor, and active CheY differ and why?
 
 Exercise: Try several different `L0` values (ex. 1e3, 1e7, 1e9). Are you seeing what you expected? If at some point the result doesn't change anymore, why? What does it implicate about limitation in chemotaxis?
 

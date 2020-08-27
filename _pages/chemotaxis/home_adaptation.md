@@ -7,9 +7,9 @@ sidebar:
 
 ## Adaptation and Robustness
 
-We will look at the other part of the story. Consider (think about optimal strategies) -
+Imagine that you are an all-knowing being and are designing *E. coli* to be able to respond as cleverly to its environment as possible. Consider the following two hypothetical situations.
 
-*If one E. coli is in a well-mixed glucose solution with a concentration of A, and another is in a well-mixed glucose solution with a concentration of 10A, should they have the same tumbling frequency?*
+> If one E. coli cell is in a well-mixed glucose solution with a concentration of *x*, and another is in a well-mixed glucose solution with a concentration of 10*x*, should the two cells' tumbling frequencies differ?
 <details>
 <summary>Unlock the strategy.</summary>
 Yes.

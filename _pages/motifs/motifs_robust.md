@@ -32,13 +32,33 @@ The technical details behind such a coarse-grained model are beyond the scope of
 
 ## The repressilator is robust to disturbance
 
-* The figure below illustrates that even with significant attempts to disrupt the number of particles in a system, the system returns to its oscillations within just a few cycles.
+In the figure below, we show a plot of concentrations of each particle in our coarse-gained simulation of the repressilator, with one caveat.  Midway through the simulation, we incorporate a disturbance that causes a spike in the concentration of *Y*.
 
 ![image-center](../assets/images/nf_sim_interrupted.PNG){: .align-center}
+<figcaption>Adding a significant number of *Y* particles to our simulation produces little ultimate disturbance to the concentrations of the three particles, which return to normal oscillations within a single cycle.</figcaption>
 
-* Robustness is a vital component of testing models of biological systems that need to be resilient to noise in order to ensure the stability of an organism's life processes.
+Because of the spike in the concentration of *Y*, the reaction *Y* + *Z* → *Y* suppresses the concentration of *Z* for longer than usual, and so the concentration of *X* is free to increase for longer than normal. As a result, the next peak in the concentration of *X* is higher than normal.
 
-* There is a bigger picture moral at hand, which is that if a biological system is robust, then we should be wary of trusting a fragile model of that system.
+We might hypothesize that this process would continue, with a tall peak in the concentration of *Z*. However, the peak in the concentration of *Z* is no taller than normal, and the next peak shows a normal concentration of *X*. In other words, the system has very quickly absorbed the blow of an increase in concentration of *Y* and returned to normal within one cycle.
+
+* NOAH: do we have a good high-level explanation for what causes the oscillations to return to normal?
+
+In fact, even with a much larger jolt to the repressilator, we observe the concentrations of the three particles return to normal oscillations very quickly.
+
+* NOAH: can you show one more figure that shows an even bigger shock to the system?
+
+The repressilator is not the only network motif that leads to oscillations in particle concentrations, but robustness to disturbances in these concentrations is a shared feature of all these motifs.
+
+* NOAH: Cite? Example?
+
+The robustness of our repressilator model also implies a bigger picture moral in biological modeling. If an underlying biological system demonstrates robustness to change, then any model of that system should also be able to withstand this change. Conversely, we should be wary of any model of a robust system that is overly sensitive to changes in the system.
+
+In this module, we have seen that even very simple network motifs can have a powerful effect on a cell's ability to implement elegant systems of behavior. In the next module, we will encounter a much more involved biochemical process, with far more molecules and reactions, that is used by bacteria to cleverly (and robustly) explore their environment. In fact, we will have so many reactions that we will need to rethink how we set up our model. We hope that you will join us!
+
+In the meantime, check out the exercises below to continue developing your understanding of how transcription factor network motifs have evolved.
+
+[Next module](../chemotaxis/home){: .btn .btn--primary .btn--large}
+{: style="font-size: 100%; text-align: center;"}
 
 * In the next chapter, we will transition to a model of a bacterial cell's response to its environment that will involve more than three particles and require us to take into account many different reactions than we have in this section. A critical aspect of this model will be that it is robust.
 

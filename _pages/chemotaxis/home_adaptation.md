@@ -7,37 +7,17 @@ sidebar:
 
 ## Adaptation and Robustness
 
-Imagine that you are an all-knowing being and are designing *E. coli* to be able to respond as cleverly to its environment as possible. Consider the following two hypothetical situations.
+In the previous lesson, we explored the signal transduction pathway by which *E. coli* can change its tumbling frequency in response to a change in the concentration of an attractant. But the reality of cellular environments is that the concentration of a substance in these environments can vary across several orders of magnitude. Because of this, it is important not that the cell detects *absolute* concentrations of attractant or repellent but rather *relative* changes in its environment so that it can move in the direction of an attractant (or away from a repellent).
 
-> If one E. coli cell is in a well-mixed glucose solution with a concentration of *x*, and another is in a well-mixed glucose solution with a concentration of 10*x*, should the two cells' tumbling frequencies differ?
-<details>
-<summary>Unlock the strategy.</summary>
-Yes.
+For example, consider two bacterial cells, both of which are in well-mixed environments with fixed glucose concentrations. The first cell's environment has a glucose concentration of *x*, and the second cell's environment has a glucose concentration of 10*x*. Should the tumbling frequency of the second cell be lower?  What if we drop a sugar cube into both environments?  Shouldn't both cells be able to respond in the same way?
 
- - If the second one tumbles less, it will have a harder time to move towards a even higher concentration.
- - The cell should go back to original tumbling frequency when no gradient presents despite what the concentration is.
+The challenge is that the ability to react to relative changes in its environment is not currently apparent in our model of chemotaxis. According to our current model, if a cell is in an environment with high background concentration of an attractant, then the cell will detect a signal and lower its tumbling frequency. If the concentration continues to increase, it may not be able to lower this frequency any further.
 
-</details>
-<br>
-
-*If one E. coli in glucose solution swam from A concentration to 10A concentration (assume it happened instantaneously), and another stays in a well-mixed glucose with a concentration of 10A, should they have the same tumbling frequency?*
-<details>
-<summary>Unlock the strategy.</summary>
-No.
-
- - The first one sensed a *change* in concentration, which indicates that if it keeps swimming in this direction, it might enter an area with higher concentration, so it should decrease tumbling frequency.
-
- - The cell should decide tumbling frequency based on the *change*, not the absolute concentration.
-
-</details>
-
-To make decisions based on the *change* in concentration, the cells need to compare the **current vs. past** concentrations. In the last lesson, we've showed how ligand-receptor binding allow the cell to sense the current concentration, and we will deal about the past part here. The challenge is, since the presence of ligand means consistent stimulus, doesn't the cell need to respond consistently?
-
-This is achieved via **adaptation** to the concentration (stimulus). When the stimulus persists at a constant level, the cell returns to background tumbling frequency, so that it can still detect the next change in concentration. Recall the biological oscillators model in the Motif Module, chemotaxis system's ability to return to the original state despite perturbation of the environment is another example of **robustness**.
+*E. coli* is able to detect relative changes in its concentration via **adaptation** to the signal concentration. When this stimulus remains constant for a period of time, the cell is able to return to a background tumbling frequency. Adaptation to have the same stable behavior despite different background concentrations is another example of the principle of *robustness* that we introduced in the previous module. The question is what mechanism *E. coli* uses to achieve such a robust response to variable environments.
 
 ## Record past concentration through methylation
 
-To do this, the cell records the past concentration. This is achieved by **methylation states**. **Methylation** is the chemical process of adding methyl group (-CH<sub>3</sub>) to an oraganic molecule. Such modification can change the activity of the molecules. The removal of a methyl group is called demethylation.
+*E. coli* is able to have a *memory* of past concentrations through a process called **methylation**, which is the chemical process of adding a **methyl group** (-CH<sub>3</sub>) to an organic molecule. The removal of a methyl group is called **demethylation**.
 
 Our pathway will be based on the pathway explained on Parkinson Lab website. Illustration modified from Parkinson Lab illustration.[^ParkinsonLab]
 

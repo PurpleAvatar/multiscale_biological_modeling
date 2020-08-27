@@ -49,12 +49,16 @@ The figure below shows a complete picture of the core pathways influencing chemo
  ![image-center](../assets/images/chemotaxis_wholestory.png){: .align-center}
  <figcaption>A summary of the whole story of chemotaxis pathways.Blue curve: phosphorylation; grey curve: dephosphorylation; green arrow: methylation. Figure inspired by Parkinson Lab illustrations.[^ParkinsonLab]</figcaption>
 
-[Visit Adaptation Tutorial](tutorial_adap){: .btn .btn--primary .btn--large}
+[Visit tutorial](tutorial_adap){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
+
+* SHUANGER: I wonder if we should have a section here before pointing to the tutorial that would walk through how we would add reactions to our current model that would implement what we have seen above.  For example, what if we didn't use rule-based modeling and instead just wanted to add reactions within the current model?  How many reactions would we need?  I think this is as good of a teachable moment for combinatorial explosion here as we will ever have. 
 
 ## New subsection
 
-From the BNG simulation, we can observe a fast response of CheY activity, and a slower adaptation that returns tumbling frequency to the background level. We can also observe that higher ligand concentration leads to stronger response, and higher level of steady state methylation.
+In the figures below, we show plots of the concentration of each molecule in the system under a few different circumstances. In each case, we suddenly change the concentration of an attractant ligand and examine how this affects the concentration of phosphorylated CheY (the molecule that influences the tumbling frequency). Will the model reflect our biochemical hypothesis that *E. coli* can return to approximately the same steady-state concentration of phosphorylated CheY regardless of the concentration of the ligand?
+
+* SHUANGER: It should be clear exactly what we are doing in each case.  You have L0, so presumably this is the initial concentration of the ligand.  What are we simulating here ... a sudden shock to the system after it is already at steady-state?  What is the default amount of ligand at that steady state, 1e4?
 
 L0 = 1e4.
 ![image-center](../assets/images/chemotaxis_tutorial_oneadd1e4.png){: .align-center}
@@ -67,7 +71,11 @@ L0 = 1e7.
 L0 = 1e8.
 ![image-center](../assets/images/chemotaxis_tutorial_oneadd1e8.png){: .align-center}
 
-We can see that the higher the concentration, the lower the valley becomes. But this is limited to a range of concentrations - going over a concentration where all receptors can already saturated instantly can't lead to more response; and a very low concentration won't initiate a response. Our results are also consistent with other simulations[^Bray1993] and experimental observations[^Shimizu2005][^Krembel2015].
+We can see that the higher the concentration, the lower the valley becomes.
+
+* SHUANGER: What does the above statement mean? Valley of what?
+
+But this is limited to a range of concentrations - going over a concentration where all receptors can already saturated instantly can't lead to more response; and a very low concentration won't initiate a response. Our results are also consistent with other simulations[^Bray1993] and experimental observations[^Shimizu2005][^Krembel2015].
 
 In the Gradient section, we will see how the ability to respond to the change and adapt to the liigand concentration enable the cells to actually move up the gradient.
 
@@ -139,5 +147,5 @@ Some resources/reads if you are interested in the chemotaxis biology:
 
 [^Krembel2015]: Krembel A., Colin R., Sourijik V. 2015. Importance of multiple methylation sites in *Escherichia coli* chemotaxis. [Available online](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0145582)
 
-[Next Page: Gradient](home_gradient){: .btn .btn--primary .btn--large}
+[Next lesson](home_gradient){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}

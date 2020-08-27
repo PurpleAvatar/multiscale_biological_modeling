@@ -32,7 +32,7 @@ sidebar:
 
 ![image-center](../assets/images/ffl_types.png){: .align-center}
 Types of Feed Forward Loops[^ffl]
-{: .align-center}
+{: style="text-align: center;"}
 
 ## Internal notes -- resolve before publication
 

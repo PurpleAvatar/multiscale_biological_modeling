@@ -19,15 +19,11 @@ The answer will lie in a small network motif called the **feedforward loop**, wh
 </center>
 
 <br>
-Note that *X* and *Y* must be transcription factors, but *X* does not have to be (and in fact typically is not). There are XXX FFLs in the transcription factor network of *E. coli*, and we leave the verification that this is a significant number of FFLs compared to a random network as an exercise at the end of the chapter.
-
-* NOAH: Fill in this XXX above.
+Note that *X* and *Y* must be transcription factors, but *X* does not have to be (and in fact typically is not). There are about 42 FFLs in the transcription factor network of *E. coli*, and we leave the verification that this is a significant number of FFLs compared to a random network as an exercise at the end of the chapter[^ffl].
 
 Furthermore, recall that every edge of a transcription factor network is assigned a "+" or a "-" sign based on whether the interaction corresponds to up-regulation or down-regulation. Accordingly, there are eight different types of FFLs, depending on the labels of the three edges in this motif.
 
-Among the XXX total FFLs in the *E. coli* transcription factor network, YYY of them have the structure below, in which the edges connecting *X* to *Y* and *X* to *Z* are assigned a "+" and the edge connecting *Y* to *Z* is assigned a "-". This specific form of the FFL motif is unfortunately named a **type-1 incoherent feedforward loop**. This form of the FFL will be our focus for the rest of the chapter.
-
-* NOAH: Fill in XXX and YYY here.
+Among the 42 total FFLs in the *E. coli* transcription factor network, 5 of them have the structure below, in which the edges connecting *X* to *Y* and *X* to *Z* are assigned a "+" and the edge connecting *Y* to *Z* is assigned a "-". This specific form of the FFL motif is unfortunately named a **type-1 incoherent feedforward loop**. This form of the FFL will be our focus for the rest of the chapter.
 
 **STOP:** How could we simulate a feedforward loop with chemical reactions akin to the simulation that we used for negative autoregulation? What would we compare this simulation against?
 {: .notice--primary}
@@ -57,7 +53,8 @@ If you are feeling adventurous, you may like to adapt the [NAR tutorial](motifs_
 In the figure below, we show a plot visualizing the amount of *Z* across the two simulations. As with negative autoregulation, we see that the type-1 incoherent FFL allows the cell to ramp up production of a gene *Z* to steady state much faster than it would under simple regulation.
 
 ![image-center](../assets/images/ffl_graph.PNG){: .align-center}
-In dark purple we see the results of a FFL compared with light blue showing a normal steady state reaction {: .align-center}
+In dark purple we see the results of a FFL compared with light blue showing a normal steady state reaction 
+{: style="text-align: center;"}
 
 However, you will note a slightly different pattern to the growth of *Z* than we saw under negative autoregulation. In negative autoregulation, the concentration of the protein approached steady state from below. In the case of the FFL, the amount of *Z* grows so quickly that it passes its steady state and later returns to steady state from above.
 
@@ -82,3 +79,5 @@ This process is very similar to a true oscillation, in which the concentration o
 
 [^tfNumber]: According to the Gene ontology (biological process) 
 "search for trasncription" https://www.uniprot.org/
+
+[^ffl]: Mangan, S., & Alon, U. (2003). Structure and function of the feed-forward loop network motif. Proceedings of the National Academy of Sciences of the United States of America, 100(21), 11980–11985. https://doi.org/10.1073/pnas.2133841100

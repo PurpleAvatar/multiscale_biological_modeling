@@ -17,13 +17,13 @@ As we saw in the video, we can regulate either the DNA encoding a particular pro
 
 ![image-center](../assets/images/Central_Dogma_of_Molecular_Biochemistry_with_Enzymes.jpg){: .align-center}
 The "Central Dogma" of biology where DNA is transcribed into RNA which is translated into proteins[^dogma]
-{: text-align: center;"}
+{: style="text-align: center;"}
 
 Some of you might have heard about the [Central Dogma](https://www.youtube.com/watch?v=9kOGOY7vthk) and its power to convert genetic information in DNA (with base pairs A's, C's, T's, and G's) into useful proteins for the cell. Now we have an additional motivator for this process: controlling production of proteins to mediate a cell's behavior and response to external stimuli. 
 
 ![image-center](../assets/images/signal_pathway.jpg){: .align-center}
 A cell receiving a signal which triggers a response, resulting in transcription[^signalResponse]
-{: text-align: center;"}
+{: style="text-align: center;"}
 
 If a cell receives a signal from the environment, transcription factors are a crucial part of how the cell responds and acts on that signal. As we will later see in simple models, like Negative Autoregulation, the use of transcription factors not only enables a cell to respond to stimuli, but adjust the speed of the reaction as necessary. In more complicated models, like the Repressilator, proteins like transcription factors may rely on "*on*" or "*off*" states which are important for a cell to achieve just the right behavior. 
 

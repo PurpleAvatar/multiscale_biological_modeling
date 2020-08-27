@@ -12,7 +12,8 @@ toc_sticky: true
 Once we know which transcription factors regulate which genes, we will consolidate this information into a bilogical network called a **transcription factor network**. The nodes in the network are an organism's proteins, and we connect *X* to *Y* with an edge if *X* is a transcription factor that regulates the expression of *Y*.  Note that any node can have an edge leading into it, but the only nodes with edges leaving them are transcription factors.
 
 ![image-center](../assets/images/s_cerevisiae_tf_network.jpg){: .align-center}
-Example of different motifs within the *S. Cerevisiae* network[^scNetwork]{: .align-center}
+Example of different motifs within the *S. Cerevisiae* network[^scNetwork]
+{: style="text-align: center;"}
 
 The figure below shows a subset of the transcription factor network for *Escherichia coli*, the workhorse model organism of bacterial studies. *E. coli* is a simple organism, but we will still be able to draw powerful conclusions by studying its transcription factor network.
 
@@ -36,7 +37,8 @@ It is worth pausing for a moment to consider the implications of a loop in a tra
 A transcription factor is a protein, which means that by the Central Dogma of Molecular Biology, the transcription factor is produced as the result of transcription and then translation of a gene appearing in an organism's DNA. In a process called **autoregulation**, the transcription factor protein then binds to the DNA in the upstream region of the gene encoding the *same* transcription factor. This type of **feedback** is a beautiful feature of this biological system.
 
 ![image-center](../assets/images/autoregulation_example.png){: .align-center}
-The autoregulation process[^auto]{: .align-center}
+The autoregulation process[^auto]
+{: style="text-align: center;"}
 
 The presence of transcription factor autoregulation leads us to ask two questions. First, how can we show that the number of loops in the transcription factor network for *E. coli* is significantly large? And second, if this is the case, then why is autoregulation common? Put another way, why would a transcription factor have evolved to regulate its *own* transcription?
 

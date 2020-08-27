@@ -9,11 +9,7 @@ toc_sticky: true
 
 ## Oscillators are everywhere in nature
 
-Even if placed in a bunker, humans will maintain a roughly 24-hour cycle of sleep and wakefulness. However, such a **circadian rhythm** is not unique to humans or even animals but rather is present throughout living things, including plants and even cyanobacteria.
-
-* NOAH: cite the bunker experiment: Aschoff, J. (1965). Circadian rhythms in man. Science 148, 1427–1432.
-
-* NOAH: also cite the first paper that found circadian rhythm in cyanobacteria: Grobbelaar N, Huang TC, Lin HY, Chow TJ. 1986. Dinitrogen-fixing endogenous rhythm in Synechococcus RF-1. FEMS Microbiol Lett 37:173–177. doi:10.1111/j.1574-6968.1986.tb01788.x.CrossRefWeb of Science.
+Even if placed in a bunker, humans will maintain a roughly 24-hour cycle of sleep and wakefulness[^bunker]. However, such a **circadian rhythm** is not unique to humans or even animals but rather is present throughout living things, including plants and even cyanobacteria[^bacteria].
 
 Life processes like the circadian rhythm that **oscillate** between different states are not confined to circadian rhythms. You may feel like you have some control over when you go to bed, but your heart and respiratory system both follow cyclical rhythms without you even thinking about it. On a much lower level, eukaryotic cells are governed by a strict cell cycle as the cells grows and divide.
 
@@ -23,9 +19,7 @@ We also suspect that these rhythms also must be *robust*. That is, they should b
 
 ## The repressilator: a synthetic biological oscillator
 
-Researchers have identified many network motifs that facilitate oscillation, some of which are very complicated and include many components. In this lesson, we will focus on a simple three-component oscillator motif called a **repressilator**. We will implement the repressilator with a particle simulator but also then analyze the robustness of this system in response to small changes in concentrations of particles.
-
-* NOAH: cite repressilator.
+Researchers have identified many network motifs that facilitate oscillation, some of which are very complicated and include many components. In this lesson, we will focus on a simple three-component oscillator motif called a **repressilator**[^repress]. We will implement the repressilator with a particle simulator but also then analyze the robustness of this system in response to small changes in concentrations of particles.
 
 The repressilator motif is shown in the figure below. In this motif, all three proteins are transcription factors, and they form a cycle in which *X* represses *Y*, *Y* represses *Z*, and *Z* represses *X* (hence the name). The repressilator clearly forms a feedback loop, but nothing *a priori* about this motif would indicate that it would lead to oscillation; after all, we have already seen feedback processes in this module that did not lead to oscillation.
 
@@ -58,10 +52,7 @@ The figure below shows the results of our simulation by plotting the number of *
 {: .notice--primary}
 
 ![image-center](../assets/images/repress_graph.PNG){: .align-center}
-
-* NOAH: please provide a caption with colors of particles indicated.
-
-* NOAH: A natural question is what the period of this oscillation is and how this connects to real examples from the original repressilator paper.  Don't get in the weeds on this (max 10 minutes, but lmk what you think.)
+Here we see X in yellow, y in red, and Z in blue {: .align-center}
 
 Why would the repressilator's three-component feedback loop cause the concentrations of the three particles to oscillate? We will attempt to provide a high-level explanation.
 
@@ -83,7 +74,7 @@ At this point, the reaction *X* + *Y* → *X* will suppress the concentration of
 
 Take another look at the figure showing the oscillations of the repressilator. You will notice that the concentrations zigzag as they travel up or down, and that they peak at slightly different levels each time.
 
-This noise in the repressilator's oscillations is due to variance as the particles travel around. Specifically, the repression reactions require two particles to collide in order for the reaction to take place. Due to random chance, these collisions may occur more or less often than they would be expected in a given time period because of random chance.
+This noise in the repressilator's oscillations is due to variance as the particles travel around. Specifically, the repression reactions require two particles to collide in order for the reaction to take place. Due to random chance, these collisions may occur more or less often than they would be expected in a given time period because of random chance. Some of this noise is also due to the number of proteins represented in our simulation. While we have around 150 molecules at each peak, there are typically on order of 1,000 to 10,000 of each protein within a single cell.[^noise]
 
 The noise that appears in the repressilator's oscillations is a feature, not a bug. As we have discussed previously, the cell's molecular interactions are inherently random. So if we see oscillations in a simulation that includes noise arising from random chance, we can be confident that this simulation is *robust* to a certain amount of noise.
 
@@ -91,3 +82,12 @@ In the next lesson, we will explore the concept of robustness further. The noise
 
 [Next lesson](robust){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
+
+
+[^bunker]: Aschoff, J. (1965). Circadian rhythms in man. Science 148, 1427–1432.
+
+[^bacteria]: Grobbelaar N, Huang TC, Lin HY, Chow TJ. 1986. Dinitrogen-fixing endogenous rhythm in Synechococcus RF-1. FEMS Microbiol Lett 37:173–177. doi:10.1111/j.1574-6968.1986.tb01788.x.CrossRefWeb of Science.
+
+[^repress]: Elowitz MB, Leibler S. A synthetic oscillatory network of transcriptional regulators. Nature. 2000;403(6767):335-338. doi:10.1038/35002125 
+
+[^noise]: Brandon Ho, Anastasia Baryshnikova, Grant W. Brown. Unification of Protein Abundance Datasets Yields a Quantitative Saccharomyces cerevisiae Proteome. Cell Systems, 2018; DOI: 10.1016/j.cels.2017.12.004 

@@ -9,9 +9,7 @@ toc_sticky: true
 
 ## Feedforward loops
 
-In the previous section, we saw that negative autoregulation can be used to speed up response times of a protein to an external stimulus.  However, the catch is that negative autoregulation can only occur if the protein in question is itself a transcription factor. Only XXX out of YYY total *E. coli* proteins are transcription factors. So is there a simple way of speeding up a cell's ability to manufacture a protein if that protein is not a transcription factor?
-
-* NOAH: Fill in XXX and YYY above.
+In the previous section, we saw that negative autoregulation can be used to speed up response times of a protein to an external stimulus.  However, the catch is that negative autoregulation can only occur if the protein in question is itself a transcription factor. Only about 300 out of 4,400 total *E. coli* proteins are transcription factors[^tfNumber]. So is there a simple way of speeding up a cell's ability to manufacture a protein if that protein is not a transcription factor?
 
 The answer will lie in a small network motif called the **feedforward loop**, which we will call an **FFL**. Earlier in the chapter, we pointed out that negative autoregulation is an example of "feedback", since a transcription factor is involved in regulating its own production. The feedforward loop motif, shown in the figure below, is any loop in which *X* is connected to both *Y* and *Z*, and *Y* is connected to *Z*. In this sense, calling the FFL motif a "loop" is a misnomer. Rather, it is a small structure in which there are two "paths" from *X* to *Z*; one via direct regulation of *Z* by *X*, and another in which there is an intermediate transcription factor *Y*.
 
@@ -58,9 +56,8 @@ If you are feeling adventurous, you may like to adapt the [NAR tutorial](motifs_
 
 In the figure below, we show a plot visualizing the amount of *Z* across the two simulations. As with negative autoregulation, we see that the type-1 incoherent FFL allows the cell to ramp up production of a gene *Z* to steady state much faster than it would under simple regulation.
 
-* NOAH: Insert figure here
-
-* NOAH: Even better we would show the amount of *Y* as well -- the growth of *Y* is predictable but it would be more descriptive.
+![image-center](../assets/images/ffl_graph.PNG){: .align-center}
+In dark purple we see the results of a FFL compared with light blue showing a normal steady state reaction {: .align-center}
 
 However, you will note a slightly different pattern to the growth of *Z* than we saw under negative autoregulation. In negative autoregulation, the concentration of the protein approached steady state from below. In the case of the FFL, the amount of *Z* grows so quickly that it passes its steady state and later returns to steady state from above.
 
@@ -82,3 +79,6 @@ This process is very similar to a true oscillation, in which the concentration o
 
 [Next lesson](oscillators){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
+
+[^tfNumber]: According to the Gene ontology (biological process) 
+"search for trasncription" https://www.uniprot.org/

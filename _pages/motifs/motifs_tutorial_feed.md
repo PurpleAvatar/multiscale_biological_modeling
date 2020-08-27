@@ -105,10 +105,6 @@ Now go back to *CellBlender > Plot Output Settings* and scroll to the bottom to 
 
 ![image-center](../assets/images/motifs_norm9.png){: .align-center}
 
-The following plot should appear: 
-
-![image-center](../assets/images/ffl_graph.PNG){: .align-center}
-
 Save this file
 
 [Return to main text](ffl#Ensuring-the-same-steady-state-concentration){: .btn .btn--primary .btn--large}

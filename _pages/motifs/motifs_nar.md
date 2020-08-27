@@ -63,8 +63,6 @@ The only way that we will be able to increase the steady-state concentration in 
 [Visit tutorial](tutorial_nar#Matching-Steady-States){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
-* NOAH: This additional NAR tutorial should change the parameters by not enough, by too much, and finally getting a Goldilocks value. We should also be plotting the percentage of Y for the two simulations on the same plot.
-
 ## Interpreting why negative autoregulation may have evolved
 
 The figure below plots the number of *Y* particles for the two simulations on the same chart over time, with the rate of the *X* → *X* + *Y* reaction increased in the simulation involving negative autoregulation. The two simulations now have approximately the same steady-state concentration of *Y*, and a justification for negative autoregulation appears.
@@ -79,8 +77,6 @@ As the concentration of *Y* increases, the rate at which new *Y* particles are a
 More importantly, this plot helps explain *why* negative autoregulation has evolved. The simulation involving negative autoregulation wins the "race" to a steady-state concentration of *Y*, and so we can conclude that a cell in which this transcription factor is negatively autoregulated is more fit for survival than one that does not.
 
 Uri Alon proposed an excellent analogy of a negatively autoregulating transcription factor as a sportscar that has a powerful engine (corresponding to the higher rate of the reaction producing *Y*) and sensitive brakes (corresponding to the negative autoregulation reaction slowing the production of *Y*). This conclusion is reinforced by the plot below, where we show that we can reach steady-state even more quickly if we increase the rates of both of these reactions.
-
-* NOAH: show plots for a couple of additional NAR simulations, where we keep increasing the two reaction rates. (May need multiple colors. May also need to decrease it in one.)
 
 In this lesson, we have seen that particle-based simulations can be powerful for justifying why a network motif is prevalent. What are some other commonly occurring network motifs in transcription factor networks? And what evolutionary purposes might they serve? We will spend the remainder of this module delving into these questions.
 

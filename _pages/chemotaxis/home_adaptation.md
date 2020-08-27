@@ -17,32 +17,42 @@ The challenge is that the ability to react to relative changes in its environmen
 
 ## Record past concentration through methylation
 
-*E. coli* is able to have a *memory* of past concentrations through a process called **methylation**, which is the chemical process of adding a **methyl group** (-CH<sub>3</sub>) to an organic molecule. The removal of a methyl group is called **demethylation**.
+Recall from the last section that in the absence of an attractant, CheW and CheA bind to the MCP on the interior of the cell, leading to greater autophosphorylation of CheA, which in turn phosphorylates CheY. The greater the concentration of phosphorylated CheY, the more frequently the bacterium tumbles.
 
-Our pathway will be based on the pathway explained on Parkinson Lab website. Illustration modified from Parkinson Lab illustration.[^ParkinsonLab]
+*E. coli* maintains a *memory* of past environmental concentrations through a process called **methylation**. In this chemical process, a **methyl group** (-CH<sub>3</sub>) is added to an organic molecule; the removal of a methyl group is called **demethylation**.
 
-The rate of CheA autophosphorylation, besides MCP-ligand binding, is also dependent on MCP methylation states. Each MCP monomer has 4 methylation sites. When more methylation sites on MCP are methylated, CheA autophosphorylation actvity becomes higher. There are two other proteins, **CheB**, which is phosphorylated by CheA and demethylates MCPs, and **CheR**, which methylates MCPs. Visualization below is modified from Parkinson Lab illustrations.[^ParkinsonLab]
+Every MCP cellular receptor contains four methylation sites, meaning that between zero and four methyl groups can be added to the receptor. The more  sites that are methylated, the higher the autophosphorylation rate of CheA, which means that CheY has a higher phosphorylation rate, and tumbling frequency increases.
 
- ![image-center](../assets/images/chemotaxis_methylation.png){: .align-center}
- <figcaption>A summary of the methylation pathway. CheA phosphorylates CheB. CheB methylates while CheR demethylates MCP. Blue curve: phosphorylation; grey curve: dephosphorylation; green arrow: methylation.</figcaption>
+* SHUANGER: the actual process by which methylation of MCPs boosts autophosphorylation of CheA is unclear currently.
 
-**CheB**. CheB is phosphorylated by CheA. CheB demethylates MCPs and readily autodephosphorylates. The rate of demethylation is dependent on MCP methylation states - faster to enter intermediate methylation levels[^Spiro1997].
+As a result, we have two different ways that tumbling frequency can be elevated. If the concentration of an attractant is low, then CheW and CheA freely form a complex with the MCP, and the phosphorylation cascade passes phosphoryl groups to CheY, which interacts with the flagella and keeps tumbling frequency high. On the other hand, tumbling frequency can also increase as a result of methylation of the MCP.
+
+As illustrated in the figure below, methylation of MCPs is achieved by an additional protein called **CheR**. The rate of MCP methylation by CheR is higher if the MCP receptor is bound to a ligand.[^Spiro1997]. Therefore, say that *E. coli* encounters an increase in attractant concentration. Then the lack of a phosphorylation cascade will mean that there is less phosphorylated CheY, and so the tumbling frequency will decrease. However, if the attractant concentration levels off, then the tumbling frequency will flatten, while CheR starts methylating the MCP. Over time, the rising methylation will increase CheA autophosphorylation, bringing back the phosphorylation cascade and raising tumbling frequency back to normal levels.
+
+![image-center](../assets/images/chemotaxis_methylation.png){: .align-center}
+<figcaption>A summary of the methylation pathway. CheA phosphorylates CheB. CheB methylates while CheR demethylates MCP. Blue curve: phosphorylation; grey curve: dephosphorylation; green arrow: methylation. Figure inspired by Parkinson Lab illustrations.[^ParkinsonLab]</figcaption>
+
+* SHUANGER: Why is MCP methylation reaction rate higher if MCP receptor is bound to ligand?
+
+* SHUANGER: I like this reaction but feel like we probably should provide all reactions as a bulleted summary all at once.
+ - MCP + CheR -> MCP-CH<sub>3</sub> + CheR
  - CheA-P + CheB -> CheA + CheB-P
  - CheB-P -> CheB + P
  - MCP-Met + CheB-P -> MCP + CheB-P
 
-**CheR**. CheR methylates MCPs. The rate of methylation is higher for ligand-bound receptors, and is higher for entering intermediate methylation levels[^Spiro1997].
- - MCP + CheR -> MCP-Met + CheR
+Just as the phosphorylation of CheY can be undone, the methylation of MCPs can be undone as well. In particular, an enzyme called **CheB**, which like CheY is phosphorylated by CheA, demethylates MCPs and autodephosphorylates. The rate of CheB's demethylation of MCPs is dependent on MCP methylation states - faster to enter intermediate methylation levels[^Spiro1997].
 
-Therefore, when a cell reaches a region with higher attranctant concentration, initially CW rotation drops via the phosphorylation cascade, but then the faster CheR-dependent methylation makes MCP methylation states higher. The higher methylation states make CheA autophosphorylation faster, compensating for more ligand-binding.
+* SHUANGER: What does this last phrase mean?
 
-We will incorporate methylation in our pathway and have the whole story here. Illustration modified from Parkinson Lab illustration.[^ParkinsonLab]
+The figure below shows a complete picture of the core pathways influencing chemotaxis. In order to model these pathways, we will need to add quite a few molecules and reactions to our current model. In the tutorial linked below, we will expand the BioNetGen model that we built in the previous lesson, and then see if this model can replicate the adaptation behavior of *E. coli* within a changing attractant concentration.
 
  ![image-center](../assets/images/chemotaxis_wholestory.png){: .align-center}
- <figcaption>A summary of the whole story of chemotaxis pathways.Blue curve: phosphorylation; grey curve: dephosphorylation; green arrow: methylation.</figcaption>
+ <figcaption>A summary of the whole story of chemotaxis pathways.Blue curve: phosphorylation; grey curve: dephosphorylation; green arrow: methylation. Figure inspired by Parkinson Lab illustrations.[^ParkinsonLab]</figcaption>
 
 [Visit Adaptation Tutorial](tutorial_adap){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
+
+## New subsection
 
 From the BNG simulation, we can observe a fast response of CheY activity, and a slower adaptation that returns tumbling frequency to the background level. We can also observe that higher ligand concentration leads to stronger response, and higher level of steady state methylation.
 

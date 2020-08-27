@@ -7,7 +7,8 @@ sidebar:
 
 In this page, we will:
  - Add phosphorylation mechanisms for chemotaxis
- - Observe cellular behavior in response to stimuli
+ - Observe cellular behavior in response to attractants
+ - Observe cellular behavior in response to repellents
 
 ## Phosphorylation Mechanisms
 
@@ -91,27 +92,48 @@ We would also be interested in the number of T-P and CheY-P during the simulatio
 Observe the simulation for longer. Change `t_end` at the bottom to 3. 
 
 	generate_network({overwrite=>1})
-	simulate({method=>"ode", t_end=>3, n_steps=>100})
+	simulate({method=>"ssa", t_end=>3, n_steps=>100})
 
 You can also download the simulation file here: 
 <a href="https://purpleavatar.github.io/multiscale_biological_modeling/downloads/downloadable/phosphorylation.bngl" download="phosphorylation.bngl">phosphorylation.bngl</a>
 
-## Simulating cellular responses
+## Simulating responses to attractants
 
 Before running the simulation, let's think about what will happen. If we don't add any ligand molecule into the system, then T phosphorylation happens at rate *k_T_phos*, and T will phosphorylates CheY, which will also be dephosphorylated by CheZ. The concentrations of phosphorylated T and CheY will stay at a steady state. That's the initial concentrations of molecules at each state we defined earlier. 
 
 **STOP:** Run simulation with no ligand molecule present by setting `L0` in the `parameters` section to 0, and click `Run` under `Simulate`. What do you observe?
 {: .notice--primary}
 
-When we add ligand molecules into the system, as we did in the tutorial for [ligand-receptor dynamics](tutorial_lr), concentration of bound T increases. What will happen to the concentration of active T, and active CheY? What will happen to steady state concentrations?
+When we add ligand molecules into the system, as we did in the tutorial for [ligand-receptor dynamics](tutorial_lr), concentration of bound T increases. What will happen to the concentration of active CheA, and active CheY? What will happen to steady state concentrations?
 
-**STOP:** Run simulation with `L0 = 1e4` and `L0 = 1e5`. What do you observe?
+**STOP:** Run simulation with `L0 = 5000` and `L0 = 1e5`. What do you observe?
 {: .notice--primary}
 
 For different `L0`'s, how do the steady state for bound ligand, active receptor, and active CheY differ and why?
 
 Exercise: Try several different `L0` values (ex. 1e3, 1e7, 1e9). Are you seeing what you expected? If at some point the result doesn't change anymore, why? What does it implicate about limitation in chemotaxis?
 
+## Simulating responses to repellents
+
+You can download the simulation file here: 
+<a href="https://purpleavatar.github.io/multiscale_biological_modeling/downloads/downloadable/phosphorylation.bngl" download="phosphorylation_repel.bngl">phosphorylation_repel.bngl</a>
+
+Recall that CheA autophosphorylation is faster when the receptor is bound to repellents. We modify the rate of receptor complex autophosphorylation when ligand is bound.
+ - T -> T-P    rate *k_T_phos*
+ - LT -> LT-P  rate *5 k_T_phos*
+
+In reaction rules, update
+
+	BoundMCPPhos: L(t!1).T(l!1,Phos~U) -> L(t!1).T(l!1,Phos~P) k_T_phos*0.2
+
+with 
+
+	BoundMCPPhos: L(t!1).T(l!1,Phos~U) -> L(t!1).T(l!1,Phos~P) k_T_phos*5
+
+When we add repellent ligand molecules into the system, concentration of bound T increases. What will happen to the concentration of active CheA, and active CheY? What will happen to steady state concentrations?
+
+**STOP:** Run simulation with `L0 = 5000` and `L0 = 1e5`. What do you observe?
+{: .notice--primary}
 
 
 [^Bertoli2013]: Bertoli C, Skotheim JM, de Bruin RAM. 2013. Control of cell cycle transcription during G1 and S phase. Nature Reviews Molecular Cell Biology 14:518-528. [Available online](https://www.nature.com/articles/nrm3629).

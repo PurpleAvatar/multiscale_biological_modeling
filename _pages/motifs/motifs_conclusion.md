@@ -30,7 +30,9 @@ sidebar:
 
 4. There are eight types of feedforward loops based on the eight different ways in which we can label the edges in the network with a "+" or a "-" based on upregulation or downregulation. Modify the Jupyter notebook to count the number of loops of each type present in the *E. coli* transcription factor network.
 
-* NEED FIGURE HERE showing eight types of network.
+![image-center](../assets/images/ffl_types.png){: .align-center}
+Types of Feed Forward Loops[^ffl]
+{: .align-center}
 
 ## Internal notes -- resolve before publication
 
@@ -54,4 +56,13 @@ sidebar:
 
 * NOAH: should we have an exercise asking students to use NFSim to replicate the other network motifs studied in this module?
 
+![image-center](../assets/images/nf_sim_interrupted_break.PNG){: .align-center}
+
+![image-center](../assets/images/nf_sim_interrupted_long.PNG){: .align-center}
+
+![image-center](../assets/images/nf_sim_interrupted_spike.PNG){: .align-center}
+
+
 * (Cite Alon book at some point -- when motifs are introduced? The introduction?)
+
+[^ffl]: Image adapted from Mangan, S., & Alon, U. (2003). Structure and function of the feed-forward loop network motif. Proceedings of the National Academy of Sciences of the United States of America, 100(21), 11980–11985. https://doi.org/10.1073/pnas.2133841100

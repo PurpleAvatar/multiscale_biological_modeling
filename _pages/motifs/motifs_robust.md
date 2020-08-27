@@ -27,13 +27,14 @@ As for a repression reaction like *X* + *Y* → *X*, say that the concentrations
 
 The technical details behind such a coarse-grained model are beyond the scope of our work in this lesson, but we will return to these technical details in the next module. In the meantime, we provide a tutorial below showing how to build a particle-free simulation replicating the repressilator motif. As part of this tutorial, we will make a major disturbance to the concentration of one of the particles and see how long the disturbance lasts and whether the particle concentrations can resume their oscillations.
 
-* NOAH: Insert link to NFSim tutorial here walking the user through the disturbances that we apply.
+[Visit tutorial](tutorial_perturb){: .btn .btn--primary .btn--large}
+{: style="font-size: 100%; text-align: center;"}
 
 ## The repressilator is robust to disturbance
 
 * The figure below illustrates that even with significant attempts to disrupt the number of particles in a system, the system returns to its oscillations within just a few cycles.
 
-* NOAH: insert figure here.
+![image-center](../assets/images/nf_sim_interrupted.PNG){: .align-center}
 
 * Robustness is a vital component of testing models of biological systems that need to be resilient to noise in order to ensure the stability of an organism's life processes.
 

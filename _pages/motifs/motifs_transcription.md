@@ -9,23 +9,23 @@ toc_sticky: true
 
 ## Introduction to Transcription
 
-If you would like a refresher on transcription, the following video from the YouTube channel "*Professor Dave Explains*" will give an overview of the process at 1:09. For those more familiar with transcription, skip to 2:50, where Dave gives a great overview of why gene regulation is necessary. 
+If you would like a refresher on transcription, the following video from the YouTube channel "*Professor Dave Explains*" will give an overview of the process at 1:09. For those more familiar with transcription, skip to 2:50, where Dave gives a great overview of why gene regulation is necessary.
 
 <iframe width="640" height="360" src="https://www.youtube-nocookie.com/embed/J9jhg90A7Lw?start=69" frameborder="0" allowfullscreen></iframe>
 
-As we saw in the video, we can regulate either the DNA encoding a particular protein or the protein itself, both of which we will refer to as a "gene" in gene regulation. The molecules responsible for this regulation, the control elements and transcription factors, are crucial for allowing a cell to respond to external stimuli. 
+As we saw in the video, we can regulate either the DNA encoding a particular protein or the protein itself, both of which we will refer to as a "gene" in gene regulation. The molecules responsible for this regulation, the control elements and transcription factors, are crucial for allowing a cell to respond to external stimuli.
 
 ![image-center](../assets/images/Central_Dogma_of_Molecular_Biochemistry_with_Enzymes.jpg){: .align-center}
 The "Central Dogma" of biology where DNA is transcribed into RNA which is translated into proteins[^dogma]
 {: style="text-align: center;"}
 
-Some of you might have heard about the [Central Dogma](https://www.youtube.com/watch?v=9kOGOY7vthk) and its power to convert genetic information in DNA (with base pairs A's, C's, T's, and G's) into useful proteins for the cell. Now we have an additional motivator for this process: controlling production of proteins to mediate a cell's behavior and response to external stimuli. 
+Some of you might have heard about the [Central Dogma](https://www.youtube.com/watch?v=9kOGOY7vthk) and its power to convert genetic information in DNA (with base pairs A's, C's, T's, and G's) into useful proteins for the cell. Now we have an additional motivator for this process: controlling production of proteins to mediate a cell's behavior and response to external stimuli.
 
 ![image-center](../assets/images/signal_pathway.jpg){: .align-center}
 A cell receiving a signal which triggers a response, resulting in transcription[^signalResponse]
 {: style="text-align: center;"}
 
-If a cell receives a signal from the environment, transcription factors are a crucial part of how the cell responds and acts on that signal. As we will later see in simple models, like Negative Autoregulation, the use of transcription factors not only enables a cell to respond to stimuli, but adjust the speed of the reaction as necessary. In more complicated models, like the Repressilator, proteins like transcription factors may rely on "*on*" or "*off*" states which are important for a cell to achieve just the right behavior. 
+If a cell receives a signal from the environment, transcription factors are a crucial part of how the cell responds and acts on that signal. As we will later see in simple models, like Negative Autoregulation, the use of transcription factors not only enables a cell to respond to stimuli, but adjust the speed of the reaction as necessary. In more complicated models, like the Repressilator, proteins like transcription factors may rely on "*on*" or "*off*" states which are important for a cell to achieve just the right behavior.
 
 
 ## Determining if a given transcription factor regulates the expression of a given gene
@@ -49,13 +49,11 @@ If you are interested in a short lecture with a discussion of sequence motif fin
 
 <iframe width="640" height="360" src="https://www.youtube-nocookie.com/embed/voEDurUgz_4" frameborder="0" allowfullscreen></iframe>
 
-## Organizing data
+## Organizing transcription factor information
 
-* Transition from experiments to huge amount of data containing the relationship between transcription factors and the genes that they represent.
+Researchers from around the world have contributed to determine which transcription factors regulate which genes for a variety of species, a task that is very much still ongoing. Our question is what we do with the huge amount of data that we obtain as a result of this research.
 
-* Question is how to represent it.
-
-* Transition to the next section.
+A natural question is how to organize the relationships between transcription factors and genes in a way that will help us identify patterns in these relationships. In the next section, we will borrow an idea introduced in the start of this module and see that a biological *network* will consolidate transcription factor information into a form that allows us to start to unlock the secrets of how cells have evolved to change the expression of genes quickly in response to a changing environment.
 
 [Next lesson](networks){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}

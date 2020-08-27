@@ -60,7 +60,5 @@ In the meantime, check out the exercises below to continue developing your under
 [Next module](../chemotaxis/home){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
-* In the next chapter, we will transition to a model of a bacterial cell's response to its environment that will involve more than three particles and require us to take into account many different reactions than we have in this section. A critical aspect of this model will be that it is robust.
-
 [Next lesson](conclusion){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}

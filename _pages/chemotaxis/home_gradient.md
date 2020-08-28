@@ -5,18 +5,24 @@ sidebar:
  nav: "chemotaxis"
 ---
 
-## Up Gradient
+## Traveling up an attractant gradient
 
-In the Adaptation section, we modeled that 1) tumbling frequency decreases more when more ligand are added; 2) the cell can adapt to the current concentration. We only had an instantaneous change in concentration there. What we do not know yet is whether this instantaneous response can allow the cell to move along a continuous  **gradient**.
+In the previous lesson, we saw that *E. coli* is able to adapt its default tumbling frequency to the current background concentration of attractant. To replicate this behavior using BioNetGen, we simulated an instantaneous increase in concentration from one stable concentration level to another.
 
-Our questions are, 1) Does the fast response allow the cell to constantly decrease its tumbling frequency when moving up a gradient? If the decrease in tumbling frequency only occurs once instead of happening continuously, then the cell won't be able to travel along the gradient, recall the cells are tiny. 2) Once the cell reaches a nutrient-rich region, can it still restore its tumbling frequency like it did when concentration was changed instantaneously? In another word, is the system still robust? If not, then the cell can't find its next meal.
+Yet imagine a glucose cube in an aqueous solution. As the cube dissolves, there will be a **gradient** of decreasing glucose concentration that radiates outward from the cube, where this concentration is highest. How will the tumbling frequency of *E. coli* change if the bacterium is moving along a continuous gradient of attractant concentration?  Will the tumbling frequency decrease continuously as well, or will the methylation pathways mentioned in the previous lesson cause more complicated behavior?
 
-In the adaptation model, we showed that the cells can respond and are robust to one perturbation in the environment. In this section, we would like to show the cells can respond and are robust to a series of perturbation.
+Furthermore, once the cell reaches a region of high attractant concentration, will its default tumbling frequency stabilize to the same steady-state?  And how much does this steady-state tumbling frequency change as we alter the "steepness" of the attractant gradient (i.e., how quickly the attractant concentration increases)?
 
-[Visit Traveling Up Gradient Tutoiral](tutorial_gradient){: .btn .btn--primary .btn--large}
+In the following tutorial, we will modify our model from the previous lesson by increasing the concentration of the attractant ligand at an exponential rate and seeing how the concentration of CheY changes. Moreover, we will examine how the concentration of CheY responds to a change in the rate at which attractant ligand is added.
+
+[Visit tutorial](tutorial_gradient){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
-When traveling up the gradient with `k_add = 0.1`(d[L]/dt = 0.1[L] = 1000e<sup>0.1t</sup>, the cells demonstrated a continuous decrease in tumbling frequency until all receptors are saturated. Then the tumbling frequency is restored to the original, by a balance of increased ligand-receptor binding, and increased methylation states. 
+## Steady-state tumbling frequency is robust when traveling up an attractant gradient
+
+* SHUANGER: in the below, you have a parameter k_add. This parameter should be defined in the main text and it should be precisely defined as to what it is.  You passed this to parentheses but we should say exactly how the concentration of L, [*L*], is changing over time.
+
+When traveling up the gradient with `k_add = 0.1`(d[L]/dt = 0.1[L] = 1000e<sup>0.1t</sup>, the cells demonstrated a continuous decrease in tumbling frequency until all receptors are saturated. Then the tumbling frequency is restored to the original, by a balance of increased ligand-receptor binding, and increased methylation states.
 
 ![image-center](../assets/images/chemotaxis_tutorial_addition01.png){: .align-center}
 
@@ -26,7 +32,7 @@ And a similar trend is observed with other gradients we've tried (gradients refl
 
 In the end, the high abundances of ligands make all receptors satruate, so that the cells no longer see any gradient, and they adapt to the higher concentration by restoring CheY-P to the original concentration. Despite the differences in the steepness of the gradient and the final concentration of the system, the model demonstrated robustness.
 
-## Down Gradient
+## Reversing the attractant gradient
 
 Does the same robustness apply for the opposite direction - when the cell moves down the gradient? We care about down the gradient because cells aren't always in luck. When they are traveling in a direction with decreasing concentration, the cells should 1) be able to keep increasing tumbling frequency when moving along the wrong direction; 2) restore the background tumbling frequency when all ligands are removed - which also implies that methylation states should be restored (question for you: why?).
 
@@ -34,6 +40,8 @@ To simulate that, we will start from the steady state conditions for a cell in a
 
 [Visit Ligand Removal Tutoiral](tutorial_removal){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
+
+## Steady-state tumbling frequency remains robust
 
 We should observe the increase in CheY-P followed by restoration of CheY-P. This is consistent with experimental observations[^Krembel2015]. We should also observe that `TA, TB, TC` restore to the original state of `adaptation.bngl`.
 

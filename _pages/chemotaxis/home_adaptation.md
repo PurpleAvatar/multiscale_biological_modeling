@@ -21,59 +21,78 @@ Recall from the last section that in the absence of an attractant, CheW and CheA
 
 *E. coli* maintains a *memory* of past environmental concentrations through a process called **methylation**. In this chemical process, a **methyl group** (-CH<sub>3</sub>) is added to an organic molecule; the removal of a methyl group is called **demethylation**.
 
-Every MCP cellular receptor contains four methylation sites, meaning that between zero and four methyl groups can be added to the receptor. The more  sites that are methylated, the higher the autophosphorylation rate of CheA, which means that CheY has a higher phosphorylation rate, and tumbling frequency increases.
-
-* SHUANGER: the actual process by which methylation of MCPs boosts autophosphorylation of CheA is unclear currently.
+Every MCP cellular receptor contains four methylation sites, meaning that between zero and four methyl groups can be added to the receptor. On the plasma membrane, many MCPs, CheW, and CheA molecules form an array structure. Methylation reduces the negative charge on the receptors, stabilizing the array and making CheA autophosphorylation faster. The more sites that are methylated, the higher the autophosphorylation rate of CheA, which means that CheY has a higher phosphorylation rate, and tumbling frequency increases.
 
 As a result, we have two different ways that tumbling frequency can be elevated. If the concentration of an attractant is low, then CheW and CheA freely form a complex with the MCP, and the phosphorylation cascade passes phosphoryl groups to CheY, which interacts with the flagella and keeps tumbling frequency high. On the other hand, tumbling frequency can also increase as a result of methylation of the MCP.
 
-As illustrated in the figure below, methylation of MCPs is achieved by an additional protein called **CheR**. The rate of MCP methylation by CheR is higher if the MCP receptor is bound to a ligand.[^Spiro1997]. Therefore, say that *E. coli* encounters an increase in attractant concentration. Then the lack of a phosphorylation cascade will mean that there is less phosphorylated CheY, and so the tumbling frequency will decrease. However, if the attractant concentration levels off, then the tumbling frequency will flatten, while CheR starts methylating the MCP. Over time, the rising methylation will increase CheA autophosphorylation, bringing back the phosphorylation cascade and raising tumbling frequency back to normal levels.
+As illustrated in the figure below, methylation of MCPs is achieved by an additional protein called **CheR**. It is experimentally shown that CheR, when binds to MCPs, preferably methylates ligand-bound MCPs[^Amin2010][^Terwilliger1986], so the rate of MCP methylation by CheR is higher if the MCP is bound to a ligand.[^Spiro1997]. Therefore, say that *E. coli* encounters an increase in attractant concentration. Then the lack of a phosphorylation cascade will mean that there is less phosphorylated CheY, and so the tumbling frequency will decrease. However, if the attractant concentration levels off, then the tumbling frequency will flatten, while CheR starts methylating the MCP. Over time, the rising methylation will increase CheA autophosphorylation, bringing back the phosphorylation cascade and raising tumbling frequency back to normal levels.
 
 ![image-center](../assets/images/chemotaxis_methylation.png){: .align-center}
 <figcaption>A summary of the methylation pathway. CheA phosphorylates CheB. CheB methylates while CheR demethylates MCP. Blue curve: phosphorylation; grey curve: dephosphorylation; green arrow: methylation. Figure inspired by Parkinson Lab illustrations.[^ParkinsonLab]</figcaption>
 
 * SHUANGER: Why is MCP methylation reaction rate higher if MCP receptor is bound to ligand?
 
-* SHUANGER: I like this reaction but feel like we probably should provide all reactions as a bulleted summary all at once.
  - MCP + CheR -> MCP-CH<sub>3</sub> + CheR
  - CheA-P + CheB -> CheA + CheB-P
  - CheB-P -> CheB + P
- - MCP-Met + CheB-P -> MCP + CheB-P
+ - MCP-CH<sub>3</sub> + CheB-P -> MCP + CheB-P
 
-Just as the phosphorylation of CheY can be undone, the methylation of MCPs can be undone as well. In particular, an enzyme called **CheB**, which like CheY is phosphorylated by CheA, demethylates MCPs and autodephosphorylates. The rate of CheB's demethylation of MCPs is dependent on MCP methylation states - faster to enter intermediate methylation levels[^Spiro1997].
-
-* SHUANGER: What does this last phrase mean?
+Just as the phosphorylation of CheY can be undone, the methylation of MCPs can be undone as well. In particular, an enzyme called **CheB**, which like CheY is phosphorylated by CheA, demethylates MCPs and autodephosphorylates. The rate of CheB's demethylation of MCPs is dependent on MCP methylation states. MCP methylation is faster when at a low methlylation state, and demethylation is faster when at a high methylation state.[^Spiro1997] 
 
 The figure below shows a complete picture of the core pathways influencing chemotaxis. In order to model these pathways, we will need to add quite a few molecules and reactions to our current model. In the tutorial linked below, we will expand the BioNetGen model that we built in the previous lesson, and then see if this model can replicate the adaptation behavior of *E. coli* within a changing attractant concentration.
 
  ![image-center](../assets/images/chemotaxis_wholestory.png){: .align-center}
  <figcaption>A summary of the whole story of chemotaxis pathways.Blue curve: phosphorylation; grey curve: dephosphorylation; green arrow: methylation. Figure inspired by Parkinson Lab illustrations.[^ParkinsonLab]</figcaption>
 
-[Visit tutorial](tutorial_adap){: .btn .btn--primary .btn--large}
-{: style="font-size: 100%; text-align: center;"}
+## New subsection on adding reactions vs rule-based modeling
 
 * SHUANGER: I wonder if we should have a section here before pointing to the tutorial that would walk through how we would add reactions to our current model that would implement what we have seen above.  For example, what if we didn't use rule-based modeling and instead just wanted to add reactions within the current model?  How many reactions would we need?  I think this is as good of a teachable moment for combinatorial explosion here as we will ever have. 
+
+Before incorporating the adaptation mechanisms in our BNG model, let's write out the reactions first.
+
+Start with MCP complexes. In the [phosphorylation tutorial](tutorial_phos), we identified two components relevant for reactions involving MCPs: a ligand-binding component `l` and a phosphorylation component `Phos`. The adaptation mechanism introduces two new additional reactions: binding with CheR, and methylation/demethylation by CheR and CheB. Thus we can introduce two additional components, `r` for CheR-binding, and `Meth` for methylation states. Note that to simplify our simulation, we will use 3 methylation levels, low, medium, and high.
+
+For each MCP complex, the state of the molecule can be specified as `(l, Phos, r, Meth)`, where `l` can take 2 values, bound/unbound (U, B); `Phos` can take 2 values, unphosphorylated/phosphorylated (U, P); `r` can take 2 values, bound/unbound (U, B); and `Meth` can take 3 values, low/medium/high methylation states (A, B, C).
+
+When writing the code for a reaction, we need to specify each species involved. To specify an MCP here, we will need to tell the program the exact state it is at. That means, for the reaction of a ligand molecule bind to an MCP, we need to write:
+ - L(t-U) + MCP(l-U, Phos-U, r-U, Meth-A) -> L(t-B).MCP(l-B, Phos-U, r-U, Meth-A)
+ - L(t-U) + MCP(l-U, Phos-U, r-U, Meth-B) -> L(t-B).MCP(l-B, Phos-U, r-U, Meth-B)
+ - L(t-U) + MCP(l-U, Phos-U, r-U, Meth-C) -> L(t-B).MCP(l-B, Phos-U, r-U, Meth-C)
+ - L(t-U) + MCP(l-U, Phos-U, r-B, Meth-A) -> L(t-B).MCP(l-B, Phos-U, r-B, Meth-A)
+ - L(t-U) + MCP(l-U, Phos-U, r-B, Meth-B) -> L(t-B).MCP(l-B, Phos-U, r-B, Meth-B)
+ - L(t-U) + MCP(l-U, Phos-U, r-B, Meth-C) -> L(t-B).MCP(l-B, Phos-U, r-B, Meth-C)
+ - L(t-U) + MCP(l-U, Phos-P, r-U, Meth-A) -> L(t-B).MCP(l-B, Phos-P, r-U, Meth-A)
+ - L(t-U) + MCP(l-U, Phos-P, r-U, Meth-B) -> L(t-B).MCP(l-B, Phos-P, r-U, Meth-B)
+ - L(t-U) + MCP(l-U, Phos-P, r-U, Meth-C) -> L(t-B).MCP(l-B, Phos-P, r-U, Meth-C)
+ - L(t-U) + MCP(l-U, Phos-P, r-B, Meth-A) -> L(t-B).MCP(l-B, Phos-P, r-B, Meth-A)
+ - L(t-U) + MCP(l-U, Phos-P, r-B, Meth-B) -> L(t-B).MCP(l-B, Phos-P, r-B, Meth-B)
+ - L(t-U) + MCP(l-U, Phos-P, r-B, Meth-C) -> L(t-B).MCP(l-B, Phos-P, r-B, Meth-C)
+It takes 12 reactions to just specify the ligand-receptor binding.
+
+However, when we simulate for ligand-receptor binding, we don't care about whether the MCP complex is phosphorylated or not, bound to CheR or not, or which methylation state is at. When only care about the reactive part - it is not bound to a ligand molecule yet. The problem of specifying the states can be circumvented by representing reactions in local rules.[^Chylek2015]
+- L(t-U) + MCP(l-U) -> L(t-B).MCP(l-B)
+
+As you might have realized, BNG takes advantage of such **rule-based modeling**. In our simulations, we will only worry about the components that are involved in a particular reactions, or influence the rate constant of that reaction.
+
+[Visit tutorial](tutorial_adap){: .btn .btn--primary .btn--large}
+{: style="font-size: 100%; text-align: center;"}
 
 ## New subsection
 
 In the figures below, we show plots of the concentration of each molecule in the system under a few different circumstances. In each case, we suddenly change the concentration of an attractant ligand and examine how this affects the concentration of phosphorylated CheY (the molecule that influences the tumbling frequency). Will the model reflect our biochemical hypothesis that *E. coli* can return to approximately the same steady-state concentration of phosphorylated CheY regardless of the concentration of the ligand?
 
-* SHUANGER: It should be clear exactly what we are doing in each case.  You have L0, so presumably this is the initial concentration of the ligand.  What are we simulating here ... a sudden shock to the system after it is already at steady-state?  What is the default amount of ligand at that steady state, 1e4?
-
-L0 = 1e4.
+Here we show simulation results for some different amounts of ligand molecules suddenly added at the beginning of the simulation. First a relatively small amount, by setting `L0 = 1e4`.
 ![image-center](../assets/images/chemotaxis_tutorial_oneadd1e4.png){: .align-center}
-L0 = 1e5.
+We gradually increase the amount of ligand molecules added. With `L0 = 1e5`.
 ![image-center](../assets/images/chemotaxis_tutorial_oneadd1e5.png){: .align-center}
-L0 = 1e6.
+With `L0 = 1e6`.
 ![image-center](../assets/images/chemotaxis_tutorial_oneadd1e6.png){: .align-center}
-L0 = 1e7.
+With `L0 = 1e7`.
 ![image-center](../assets/images/chemotaxis_tutorial_oneadd1e7.png){: .align-center}
-L0 = 1e8.
+With `L0 = 1e8`.
 ![image-center](../assets/images/chemotaxis_tutorial_oneadd1e8.png){: .align-center}
 
-We can see that the higher the concentration, the lower the valley becomes.
-
-* SHUANGER: What does the above statement mean? Valley of what?
+We can see that the higher the concentration, the deeper the drop of phosphorylated CheY can be observed.
 
 But this is limited to a range of concentrations - going over a concentration where all receptors can already saturated instantly can't lead to more response; and a very low concentration won't initiate a response. Our results are also consistent with other simulations[^Bray1993] and experimental observations[^Shimizu2005][^Krembel2015].
 
@@ -146,6 +165,12 @@ Some resources/reads if you are interested in the chemotaxis biology:
 [^Shimizu2005]: Shimizu TS, Delalez N, Pichler K, and Berg HC. 2005. Monitoring bacterial chemotaxis by using bioluminescence resonance energy transfer: absence of feedback from the flagellar motors. PNAS. [Available online](https://www.pnas.org/content/103/7/2093/)
 
 [^Krembel2015]: Krembel A., Colin R., Sourijik V. 2015. Importance of multiple methylation sites in *Escherichia coli* chemotaxis. [Available online](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0145582)
+
+[^Amin2010]: Amin DN, Hazelbauer GL. 2010. Chemoreceptors in signaling complexes: shifted conformation and asymmetric coupling. [Available online](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3010867/)
+
+[^Terwilliger1986]: Terwilliger TC, Wang JY, Koshland DE. 1986. Kinetics of Receptor Modification - the multiply methlated aspartate receptors involved in bacterial chemotaxis. The Journal of Biolobical Chemistry. [Available online](https://www.jbc.org/content/261/23/10814.full.pdf)
+
+[^Chylek2015]: Chylek LA, Harris LA, Tung CS, Faeder JR, Lopez CF, Hlavacek WS. 2015. Rule-based modeling: a computational approach for studying biomolecular site dynamics in cell signaling systems. Wiley Interdiscip Rev Syst Biol Med 6(1):13-36. [Available online](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3947470/)
 
 [Next lesson](home_gradient){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}

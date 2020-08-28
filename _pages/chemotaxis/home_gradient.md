@@ -20,9 +20,9 @@ In the following tutorial, we will modify our model from the previous lesson by 
 
 ## Steady-state tumbling frequency is robust when traveling up an attractant gradient
 
-* SHUANGER: in the below, you have a parameter k_add. This parameter should be defined in the main text and it should be precisely defined as to what it is.  You passed this to parentheses but we should say exactly how the concentration of L, [*L*], is changing over time.
+Recall that we used the expression [*L*] to denote the concentration of our ligand *L* and *l*<sub>0</sub> to denote the ligand's initial concentration. To represent exponential growth in the concentration of the ligand, we will have that [*L*] = *l*<sub>0</sub> · *e*<sup>*k* · t</sup>, where *t* is the time and *k* is a parameter dictating exponential growth; the higher the value of *k*, the faster the growth in the ligand concentration.
 
-When traveling up the gradient with `k_add = 0.1`(d[L]/dt = 0.1[L] = 1000e<sup>0.1t</sup>, the cells demonstrated a continuous decrease in tumbling frequency until all receptors are saturated. Then the tumbling frequency is restored to the original, by a balance of increased ligand-receptor binding, and increased methylation states.
+For example, the following figure depicts the concentration of phosphorylated CheY (highlighted in blue) over time when *l*<sub>0</sub> = 1000 and *k* = 0.1. The concentration of phosphorylated CheY (and therefore the tumbling frequency) initially decreases sharply as the ligand concentration increases, but after all ligands become bound to receptors (shown by the plateau in the red curve), the methylation of receptors causes the concentration of CheY to return to its equilibrium.
 
 ![image-center](../assets/images/chemotaxis_tutorial_addition01.png){: .align-center}
 
@@ -52,7 +52,7 @@ Like in the up-graident model, similar trend should be observed for different gr
 ![image-center](../assets/images/chemotaxis_tutorial_removal02.png){: .align-center}
 
 
-[Conclusion](home_conclusion){: .btn .btn--primary .btn--large}
+[Next lesson](home_conclusion){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 [^Krembel2015]: Krembel A., Colin R., Sourijik V. 2015. Importance of multiple methylation sites in *Escherichia coli* chemotaxis. [Available online](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0145582)

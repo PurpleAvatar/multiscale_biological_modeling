@@ -47,6 +47,8 @@ We will tweak the default tumbling frequency (represented as expected duration o
 [Visit random walk tutorial](tutorial_walk){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
+## New subsection -- interpreting the results of differing frequencies
+
 With the visualization of trajectories, we see that the cells all move away from the starting point towards the target. However, how efficiently they get to the target is different for different expected run time. For example, after 500 seconds, the cells with `time_exp = 0.1` and `time_exp = 0.25` are still very far from the target; while those with `time_exp = 10` reach the target but don't stay there.
 
 ![image-center](../assets/images/chemotaxis_trajectories.png){: .align-center}

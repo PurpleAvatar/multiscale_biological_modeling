@@ -139,14 +139,16 @@ coronavirus:
     url: /coronavirus/conclusion
   - title: Tutorials
     children:
-      - title: "ProDy"
+      - title: "Setting up ProDy"
         url: /coronavirus/prody
-      - title: "VMD"
+      - title: "Setting up VMD"
         url: /coronavirus/VMDTutorial
       - title: "Structure Prediction"
         url: /coronavirus/modeling_tutorial
       - title: "RMSD"
         url: /coronavirus/rmsd2
+      - title: "GNM Calculation"
+        url: /coronavirus/tutorial_GNM
 
 wbcells:
   - title: Tutorial

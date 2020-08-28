@@ -26,9 +26,11 @@ For example, the following figure depicts the concentration of phosphorylated Ch
 
 ![image-center](../assets/images/chemotaxis_tutorial_addition01.png){: .align-center}
 
-And a similar trend is observed with other gradients we've tried (gradients reflected by the rate of the fake ligand addition reaction). The slower the rate of ligand increases, the slower receptor binding increases, and the more moderate CheY-P drop becomes. Then the CheY-P is restored.
+Our next question is what happens if we were to change *k*, the growth rate of the ligand concentration. The following figure plots only the concentration of CheY over time for multiple simulations in which we vary the growth parameter *k*. The faster the rate at which the concentration of the ligand increases, the faster the increase in receptor binding, and the steeper the drop in the concentration of phosphorylated CheY.
 
 ![image-center](../assets/images/chemotaxis_tutorial_addition03.png){: .align-center}
+
+More importantly, note that regardless of the rate of increase in ligand concentration, the system is always able to return to the same equilibrium concentration of phosphorylated CheY.
 
 In the end, the high abundances of ligands make all receptors satruate, so that the cells no longer see any gradient, and they adapt to the higher concentration by restoring CheY-P to the original concentration. Despite the differences in the steepness of the gradient and the final concentration of the system, the model demonstrated robustness.
 

@@ -43,21 +43,32 @@ To simulate this situation, we will model a cell starting with steady-state cond
 
 You may like to go it alone and modify the previous tutorial yourself to account for traveling down an attractant gradient. Otherwise, we will provide a separate tutorial for this case.
 
-[Visit Ligand Removal Tutoiral](tutorial_removal){: .btn .btn--primary .btn--large}
+[Visit tutorial](tutorial_removal){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 ## Steady-state tumbling frequency remains robust
 
-If the system still demonstrate robustness, we should be able to see 1) CheY activities keep increasing until reaching a peak; 2) restoration of tumbling frequency and methylation states to background levels.
+The following figure shows the plot of different molecules in our model as the concentration of attractant ligand decreases exponentially for *k* equal to XXX. As we expected, the concentration of phosphorylated CheY spikes as bound ligands break free and there are not enough free ligands to replace them. After this spike, methylation of receptors causes the concentration of phosphorylated CheY to steadily return back to its equilibrium.
 
-We should observe the increase in CheY-P followed by restoration of CheY-P. This is consistent with experimental observations[^Krembel2015]. We should also observe that `TA, TB, TC` restore to the original state of `adaptation.bngl`.
+* SHUANGER: What is *k* in this figure?
+
+* SHUANGER: are you changing the concentration of ligand or bound ligand?  The former seems like it would be stronger.
 
 ![image-center](../assets/images/chemotaxis_tutorial_removal01.png){: .align-center}
 
-Like in the up-graident model, similar trend should be observed for different gradient shapes (reflected by the rate of the fake ligand removal reaction). The faster the ligands are removed, the faster CheY activities increase and the higher the peaks reach. Then all the tumbling frequencies are restored to the background level.
+In the interest of due diligence, we will also test the robustness of the model to ascertain whether the CheY concentration will return to the same steady-state for a variety of values of *k*. As in the case of an increasing gradient, we see that the more sudden the change in the concentration of attractant, the sharper the spike, but that in each case, methylation does its work to bring the concentration back to the same steady-state. More importantly, these figures are consistent with experimental observations.[^Krembel2015]
+
+We should also observe that `TA, TB, TC` restore to the original state of `adaptation.bngl`.
+
+* SHUANGER: What does this mean?
 
 ![image-center](../assets/images/chemotaxis_tutorial_removal02.png){: .align-center}
 
+* SHUANGER: the parameters in this figure seem to be positive.  I think it may make sense to show them as negative ...
+
+## Connection to next section
+
+* Note to self: need compelling connection to next section, which is that we have been operating under the assumption that if a bacterium senses a higher attractant gradient, then it should be able to decrease its tumbling frequency.  But its movements are *random* ... why is a decrease in tumbling frequency helpful to find the attractant?  There is no immediate intuitive answer to this question, but we will show in the next section how to provide a compelling explanation for why E. coli has evolved the way it has through the power of modeling.
 
 [Next lesson](home_conclusion){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}

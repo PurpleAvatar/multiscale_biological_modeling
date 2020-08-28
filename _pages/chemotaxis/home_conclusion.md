@@ -7,16 +7,40 @@ sidebar:
 
 ## Background tumbling frequency
 
-We showed on a molecular level, how the chemotaxis pathway in *E. coli* adjusts the tumbling frequency in response to ligand concentration changes and thus guiding the cell to move up the gradient. The question we left unanswered is: why there is a background tumbling frequency of one tumble every second?
+In this module, we have built a model that replicates the chemotaxis pathway in *E. coli*, and we have seen how *E. coli* can adjust the tumbling frequency in response to ligand concentration changes. What we have not answered is *why* it is a good strategy for *E. coli* to tumble less frequently in the presence of increasing attractant. Put more simply, does decreasing this tumbling frequency allow the bacterium to find food more quickly?
 
-To address this question, we will use what we've learned about chemotaxis and our BNG model results to build a random walk simulation. The model will be much more advanced than the one in the prologue because it will change the particle's response to the current amount of attractant present based on our knowledge on a bacterium's response to its environment.
+To address this question, we will use what we have learned about chemotaxis and our BNG model results to build a random walk simulation emulating the behavior of *E. coli*. We will then compare this model against a simple random walk model comparable to the one we introduced in the prologue in which the bacterium has a fixed tumbling frequency regardless of the concentration of attractant. Which "algorithm" will allow the bacterium to locate the attractant more readily?
 
-In this simulation, each particle represents one bacterium. They are allowed to walk in a 2D space with a ligand concentration gradient. The distance unit is 1µm (ex. moving from [0, 0] to [0, 20] is 20µm, which takes 1 second for the speed of *E. coli*). All cells start at [0, 0], which has a ligand concentration 100 molecules/µm<sup>3</sup>. The highest concentration of 1e8.5 molecules/µm<sup>3</sup> is located at [1200, 1200], far away from the origin. There is an exponential gradient centered at [1200, 1200] in the space (the exponent is linearly dependent on the distance to [1200, 1200]). We say the region where all receptor are saturated is the target. 
+In this simulation, a bacterium is represented by a point in two-dimensional space. At any point (*x*, *y*) in the space, there is some concentration *L*(*x*, *y*) of ligand; furthermore, we simulate an attractant by ensuring that there is a point (called the **goal**) at which *L*(*x*, *y*) is maximized, with the concentration of attractant diminishing as the distance from this point increases.
 
-**STOP:** How can we determine quantitatively how well a randomly walking bacterium has done at finding the attractant?
+Units in this space are in µm, so that moving from (0, 0) to (0, 20) is 20µm, a distance that we know from the introduction can be covered by the bacterium in 1 second if it does not stop to tumble. The bacterium will start at (0, 0), which we will establish to have a ligand concentration of 100 molecules/µm<sup>3</sup>. The maximum concentration of 1e8.5 molecules/µm<sup>3</sup> is located at the goal (1200, 1200), requiring the bacterium to travel a fair distance to locate the attractant.
+
+* SHUANGER: Why 1e8.5?  Why not an integer exponent?  Or just saying, for example, 10 million?  And why 1200?  This too is a weird number that would make it seem like we are trying to force the model.
+
+* SHUANGER: need a rewritten paragraph here explaining what an exponential gradient is, and how we can compute it based on the distance from 1200, 1200.
+
+**STOP:** How can we quantify how well a single bacterium has done at finding the attractant?
 {: .notice--primary}
 
-Answer: run the simulation many times for many simulated particles, and then examine the average distance from the “food source”. Also keep in mind that if two mechanisms can get to the "food source" equally well, we will definitely want to get there faster. 
+We will then implement two bacterial strategies. The first strategy is a standard random walk in which the bacterium reorients itself after a fixed rate of time. The second is based on what we have learned about chemotaxis.
+
+* SHUANGER: insert a *very precisely* defined model of how the bacterium responds to its environment based on concentration.
+
+We will then run our random walk simulations many times for each strategy, where each simulation runs for some fixed time *t* in seconds. (This parameter should be large enough to allow the bacterium to have time to reach the goal.) For each simulated bacterium, we then measure how far it is from the goal. To compare the two strategies, we will compare the average distance to the goal for the simple random walk against the average distance to the goal for the realistic random walk.
+
+Also keep in mind that if two mechanisms can get to the "food source" equally well, we will definitely want to get there faster.
+
+* SHUANGER: this is a good point but does it appear in our simulations?
+
+* SHUANGER: we should have a separate tutorial that focuses *only* on verifying that the random walk is indeed a good strategy.  Let's just use a tumbling frequency of 1 per second for now.  I'd like to verify that
+
+## New section
+
+* SHUANGER: Here is where we should have a comparison of the pure random walk against the empirical strategy.  We should then reflect on why the empirical strategy is better.  It is almost as if the attractant detection serves as a "rubber band" -- if it's far from the bacterium, it is not allowed to go very far from the attractant.  As it nears it the tumbling frequency decreases which helps it travel farther. Once it hits the attractant anywhere that it goes, the tumbling frequency *increases*, preventing it from running far away.  This may be where we insert the original chemotaxis video but let's see what you come up with first.
+
+## New section
+
+* SHUANGER: Now is where we get into the details of the fact that 1 tumble per second appears to be an evolutionarily stable strategy.
 
 We will tweak the default tumbling frequency (represented as expected duration of run before each tumble, `time_exp`) for each simulation and see if some tumbling frequencies are better than others for bacteria to find the food.
 
@@ -35,16 +59,18 @@ What should a good trajectory look like? A cell should move fast towards the tar
 
 There is a tradeoff between moving towards the target fast and staying there. For large `time_exp` values (10.0, 5.0, 2.0), distances to center decrease very quickly at the beginning of the simulation, but the cells don't stay perfectly around the radius of saturation; the larger the `time_exp`, the further the distance becomes. For small `time_exp` values (0.1, 0.25, 0.5), the cells fail to move to the ligand efficiently. Note that for `time_exp = 0.5` and `time_exp = 1.0`, although both stay around the radius of saturation, `time_exp = 0.5` takes about 200s more. If you tried to allow 0.1 and 0.25 to flatten, they will take even longer.
 
+Later we should focus on: why there is a background tumbling frequency of one tumble every second?
+
 Now we can answer the question of why 1 tumble per second. The goal of chemotaxis is to find the high concentration region and stay there; and the faster the cell can achieve this goal the better. If cells tumble too much, the goal can be achieved, but not efficiently; if tumble too little, they run by the attractant because they don't stop to sniff for food often enough.
 
 Recall the video of *E. coli* moving towards to the sugar crystal.
-<iframe width="640" height="360" src="https://www.youtube.com/embed/F6QMU3KD7zw" frameborder="0" allowfullscreen></iframe> 
+<iframe width="640" height="360" src="https://www.youtube.com/embed/F6QMU3KD7zw" frameborder="0" allowfullscreen></iframe>
 
 Our simulated *E. coli* do behave like those in the video. They generally move towards the crystal and stay close to it. Some run by the crystal, but then turn around to move toward the crystal again.
 
 ## Smarter than we thought
 
-However, like most things in biology, the reality turns out to be even more complex than we might imagine. 
+However, like most things in biology, the reality turns out to be even more complex than we might imagine.
 
 One aspect of chemotaxis that is more advanced than we thought is the degree of reorientation. Consider - if a bacterium tumbles while moving up the gradient vs. moving down the gradient, how would the adjustment of degree of reorientation enable the cell to find food better?
 

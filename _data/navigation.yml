@@ -147,6 +147,10 @@ coronavirus:
         url: /coronavirus/modeling_tutorial
       - title: "RMSD"
         url: /coronavirus/rmsd2
+      - title: "Visualizing Molecules"
+        url: /coronavirus/tutorial_visualization
+      - title: "NAMD Energy"
+        url: /coronavirus/tutorial_NAMD
       - title: "GNM Calculation"
         url: /coronavirus/tutorial_GNM
 

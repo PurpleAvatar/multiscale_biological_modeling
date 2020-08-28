@@ -24,6 +24,6 @@ To see how to use NAMD Energy and replicate these results, go to the following t
 
 <hr>
 
-[Next Lesson](multiseq){: .btn .btn--primary .btn--large}
+[Next lesson](multiseq){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 

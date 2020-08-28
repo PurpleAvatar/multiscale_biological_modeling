@@ -32,18 +32,23 @@ Our next question is what happens if we were to change *k*, the growth rate of t
 
 More importantly, note that regardless of the rate of increase in ligand concentration, the system is always able to return to the same equilibrium concentration of phosphorylated CheY.
 
-In the end, the high abundances of ligands make all receptors satruate, so that the cells no longer see any gradient, and they adapt to the higher concentration by restoring CheY-P to the original concentration. Despite the differences in the steepness of the gradient and the final concentration of the system, the model demonstrated robustness.
-
 ## Reversing the attractant gradient
 
-Does the same robustness apply for the opposite direction - when the cell moves down the gradient? We care about down the gradient because cells aren't always in luck. When they are traveling in a direction with decreasing concentration, the cells should 1) be able to keep increasing tumbling frequency when moving along the wrong direction; 2) restore the background tumbling frequency when all ligands are removed - which also implies that methylation states should be restored (question for you: why?).
+And what if a cell is moving away from an attractant, down a concentration gradient? We would hope that the cell would be able to *increase* its tumbling frequency in this case (i.e., increase the concentration of phosphorylated CheY), and then restore the background tumbling frequency after all ligands have become unbound by removing methylation.
 
-To simulate that, we will start from the steady state conditions for a cell in an area with high concentration (the cell has returned to background tumbling frequency, has high ligand binding and high methylation states), and allows the cell to experience decreasing concentration. If the system still demonstrate robustness, we should be able to see 1) CheY activities keep increasing until reaching a peak; 2) restoration of tumbling frequency and methylation states to background levels.
+To simulate this situation, we will model a cell starting with steady-state conditions in an area of high ligand concentration (i.e., the cell has high ligand binding and high methylation states). In this case, we want exponential *decay*, meaning that the ligand concentration is still given by the equation [*L*] = *l*<sub>0</sub> · *e*<sup>*k* · t</sup>, but *k* is negative.
+
+**STOP:** What happens to the plot of [*L*] = *l*<sub>0</sub> · *e*<sup>*k* · t</sup> as *k* decreases if *k* is negative? How do you think the value of *k* will affect the concentration of phosphorylated CheY over time?
+{: .notice--primary}
+
+You may like to go it alone and modify the previous tutorial yourself to account for traveling down an attractant gradient. Otherwise, we will provide a separate tutorial for this case.
 
 [Visit Ligand Removal Tutoiral](tutorial_removal){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 ## Steady-state tumbling frequency remains robust
+
+If the system still demonstrate robustness, we should be able to see 1) CheY activities keep increasing until reaching a peak; 2) restoration of tumbling frequency and methylation states to background levels.
 
 We should observe the increase in CheY-P followed by restoration of CheY-P. This is consistent with experimental observations[^Krembel2015]. We should also observe that `TA, TB, TC` restore to the original state of `adaptation.bngl`.
 

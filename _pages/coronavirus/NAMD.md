@@ -1,5 +1,5 @@
 ---
-permalink: /coronavirus/tutorial_visualization
+permalink: /coronavirus/NAMD
 title: "Interaction Energy with ACE2"
 sidebar: 
  nav: "coronavirus"

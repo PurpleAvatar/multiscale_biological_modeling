@@ -38,7 +38,7 @@ begin parameters
 	k_Tb_demeth 5e4/NaV2   #CheB demethylates receptor complex
 	k_Tc_demeth 2e4/NaV2 #CheB demethylates receptor complex
 	
-	k_gone 0.01
+	k_gone 0.3
 end parameters
 
 begin compartments
@@ -102,16 +102,17 @@ begin seed species
 	@CP:CheR(t) CheR0
 end seed species
 
+
 begin observables
-	Molecules BoundLigand L(t!1).T(l!1)
-	Molecules ActiveCheY CheY(Phos~P)
-	Molecules TA T(Meth~A)
-	Molecules TB T(Meth~B)
-	Molecules TC T(Meth~C)
-	Molecules ActiveCheB CheB(Phos~P)
+	Molecules bound_ligand L(t!1).T(l!1)
+	Molecules phosphorylated_CheY CheY(Phos~P)
+	Molecules low_methyl_receptor T(Meth~A)
+	Molecules medium_methyl_receptor T(Meth~B)
+	Molecules high_methyl_receptor T(Meth~C)
+	Molecules phosphorylated_CheB CheB(Phos~P)
 end observables
 
 end model
 
 generate_network({overwrite=>1})
-simulate({method=>"ode", t_end=>1000, n_steps=>1000})
+simulate({method=>"ssa", t_end=>1800, n_steps=>1800})

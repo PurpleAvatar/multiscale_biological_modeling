@@ -23,8 +23,9 @@ begin seed species
 end seed species
 
 begin observables
-	Molecules L_free L(t)
-	Molecules L_bound L(t!l).T(l!l)
+	Molecules free_ligand L(t)
+	Molecules bound_ligand L(t!l).T(l!l)
+	Molecules free_receptor T(l)
 end observables
 
 end model

@@ -1,5 +1,11 @@
 begin model
 
+begin compartments
+  EC  3  100       #um^3
+  PM  2  1   EC    #um^2
+  CP  3  1   PM    #um^3
+end compartments
+
 begin molecule types
 	L(t)
 	T(l,r,Meth~A~B~C,Phos~U~P)
@@ -13,7 +19,7 @@ begin parameters
 	NaV2 6.02e8   #Unit conversion to cellular concentration M/L -> #/um^3
 	miu 1e-6
 	
-	L0 0
+	L0 1e7
 	T0 7000
 	CheY0 20000
 	CheZ0 6000
@@ -38,12 +44,6 @@ begin parameters
 	k_Tb_demeth 5e4/NaV2   #CheB demethylates receptor complex
 	k_Tc_demeth 2e4/NaV2   #CheB demethylates receptor complex
 end parameters
-
-begin compartments
-  EC  3  100       #um^3
-  PM  2  1   EC    #um^2
-  CP  3  1   PM    #um^3
-end compartments
 
 begin reaction rules
 	LigandReceptor: L(t) + T(l) <-> L(t!1).T(l!1) k_lr_bind, k_lr_dis
@@ -98,15 +98,15 @@ begin seed species
 end seed species
 
 begin observables
-	Molecules BoundLigand L(t!1).T(l!1)
-	Molecules ActiveCheY CheY(Phos~P)
-	Molecules TA T(Meth~A)
-	Molecules TB T(Meth~B)
-	Molecules TC T(Meth~C)
-	Molecules ActiveCheB CheB(Phos~P)
+	Molecules bound_ligand L(t!1).T(l!1)
+	Molecules phosphorylated_CheY CheY(Phos~P)
+	Molecules low_methyl_receptor T(Meth~A)
+	Molecules medium_methyl_receptor T(Meth~B)
+	Molecules high_methyl_receptor T(Meth~C)
+	Molecules phosphorylated_CheB CheB(Phos~P)
 end observables
 
 end model
 
 generate_network({overwrite=>1})
-simulate({method=>"ode", t_end=>1000, n_steps=>5000})
+simulate({method=>"ssa", t_end=>800, n_steps=>800})

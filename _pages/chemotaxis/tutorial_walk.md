@@ -57,13 +57,13 @@ step_size, step_per_sec = speed * sec_per_step, 1.0 / sec_per_step
 
 #Model constants
 start = [0, 0]  #All cells start at [0, 0]
-ligand_center = [1200, 1200] #Position of highest concentration
-center_exponent, start_exponent = 8.5, 2
+ligand_center = [1500, 1500] #Position of highest concentration
+center_exponent, start_exponent = 8, 2
 origin_to_center = 0 #will be actually calculated later
 saturation_conc = 10 ** 8 #From BNG model
 ~~~
 
-For each point on our 2D plane, the concentration can be calculated with an exponential distribution centered at `ligand_center = [1200, 1200]` with concentration = 1e8.5; origin `start = [0, 0]` has concentration 1e2. The exponent has a linear relationship with the distance to the center.
+For each point on our 2D plane, the concentration can be calculated with an exponential distribution centered at `ligand_center = [1500, 1500]` with concentration = 1e8; origin `start = [0, 0]` has concentration 1e2. The exponent has a linear relationship with the distance to the center.
 
 ~~~ python
 # Calculates Euclidean distance between point a and b
@@ -177,12 +177,33 @@ def simulate(num_cells, duration, time_exp):
     return terminals, path
 ~~~
 
-## Visualizing trajectories
+## Compare performance of the two strategies
 
-Before assessing the performances of different default tumbling frequencies, let's run simulation for 3 cells for 500 seconds for the different tumbling frequencies to get a rough idea of what their trajectories look like. We will use a range of 10x shorter expected run time (0.1s) to 10x longer expected run time (10s).
+Please download the simulation and visualization here: <a href="https://purpleavatar.github.io/multiscale_biological_modeling/downloads/downloadable/chemotaxis_compare.ipynb" download="chemotaxis_compare.ipynb">chemotaxis_compre.ipynb</a>. 
+
+To compare the performance of the two strategies, we visualize the trajectories of simulation with 3 cells and quantitative compare the performance using simulation with 500 cells for each strategy.
+
+Part 1 in the notebook defines the simulation using the two strategies (same as in the two tutorials).
+
+**Qualitative comparison**. Run the two code blocks for Part2: Visualizing trajectories (1st block simulates, 2nd block is plotter).  The background color indicates concentration: white -> red = low -> high; black dot are starting points; red dots are the points they reached at the end of the simulation; colorful small dots represents trajectories (one color one cell): dark -> bright color = older -> newer time points; dark dashed circle is where concentration reaches 1e8.
+
+Which strategy allows the cell travel towards the higher concentration?
+
+Can we make a conclusion on which default tumbling frequencies are good yet? If not, why?
+
+**Quantitative comparsion**. Because of the high variations due to randomness, trajectories for 3 cells is not convincing enough. To verify your hypothesis on which strategy is better, let's simulate 500 cells for 1500 seconds for each strategy. Run the two code blocks for Part3: Comparing performances (1st block simulates, 2nd block is plotter). Each colored line indicates a strategy, plotting average distances for the 500 cells; the shaded area is standard deviation; grey dashed line is where concentration reaches 1e8.
+
+Which strategy is more efficient?
+
+[Back to Main Text](home_gradient){: .btn .btn--primary .btn--large}
+{: style="font-size: 100%; text-align: center;"}
+
+## Visualizing trajectories for different background tumbling frequencies
+
+Before assessing the performances of different default tumbling frequencies, let's run simulation for 3 cells for 800 seconds for the different tumbling frequencies to get a rough idea of what their trajectories look like. We will use a range of 10x shorter expected run time (0.1s) to 10x longer expected run time (10s).
 
 ~~~ python
-duration = 500   #seconds, duration of the simulation
+duration = 800   #seconds, duration of the simulation
 num_steps = duration * step_per_sec
 num_cells = 3
 origin_to_center = euclidean_distance(start, ligand_center) #Update the global constant
@@ -191,23 +212,18 @@ time_exp = [0.1, 0.25, 0.5, 1.0, 2.0, 5.0, 10.0]
 terminals, path = simulate(num_cells, duration, time_exp)
 ~~~
 
-Run the two code blocks for Part2: Visualizing trajectories (1st block simulates, 2nd block is plotter). The background color indicates concentration: white -> red = low -> high; black dot are starting points; red dots are the points they reached at the end of the simulation; colorful small dots represents trajectories (one color one cell): dark -> bright color = older -> newer time points; dark dashed circle is where concentration reaches 1e8.
+Run the two code blocks for Part2: Visualizing trajectories (1st block simulates, 2nd block is plotter). The background color indicates concentration: white -> red = low -> high; black dot are starting points; red dots are the points they reached at the end of the simulation; colorful small dots represents trajectories (one color one cell): dark -> bright color = older -> newer time points; if highest possible concentration > 1e8, dark dashed circle is where concentration reaches 1e8.
 
-**STOP:** What do you observe? Pay attention to: 1) are the cells moving up the gradient?; 2) what's the differences between the shape of the trajectories?; 3) within the 500 seconds, which expected run time allow the cells reach the black dashed circle (target)?; 4) after reaching the target, which expected run time allow the cells to stay in/near the circle?
+**STOP:** What do you observe? Pay attention to: 1) are the cells moving up the gradient?; 2) what's the differences between the shape of the trajectories?; 3) within the 1500 seconds, which expected run time allow the cells reach the black dashed circle (target)?; 4) after reaching the target, which expected run time allow the cells to stay in/near the circle?
 {: .notice--primary}
 
-**STOP:** Can we make a conclusion on which default tumbling frequencies are good yet? If not, why?
-{: .notice--primary}
+## Comparing performances for different background tumbling frequencies
 
-## Comparing performances
-
-Although the cells with same `time_exp` are under the same mechanisms for random walk, randomness introduced large variations among the trajectories. Therefore, simulation with 3 cells are not convincing. To assess the performances, let's simulate with 500 cells for 800 seconds for each of the `time_exp` values.
-
-For 500 cells, visualizing the trajectories will be messy. We will quantitatively measure the performances by the ability to reach the target at the end of the simulation. We will also calculate the average distance to the center at each time step for each of the `time_exp` values.
+We will quantitatively measure the performances by the ability to reach the target at the end of the simulation. We will also calculate the average distance to the center at each time step for each of the `time_exp` values.
 
 ~~~ python
 #Run simulation for 500 cells with different background tumbling frequencies, Plot average distance to highest concentration point
-duration = 800   #seconds, duration of the simulation
+duration = 1500   #seconds, duration of the simulation
 num_steps = duration * step_per_sec
 num_cells = 500
 time_exp = [0.1, 0.25, 0.5, 1.0, 2.0, 5.0, 10.0]
@@ -240,7 +256,7 @@ Run the two code blocks for Part3: Comparing performances (1st block simulates, 
 **STOP:** Change the value for `duration` and run simulations for `time_exp = [0.25]` only. How long will the cells take to reach near the grey dashed line?
 {: .notice--primary}
 
-**STOP:** For all `time_exp`, after some time the average distance flattens. Why for some of the `time_exp` values, it flattens well before reaching the grey dashed line?
+**STOP:** For all `time_exp`, after some time the average distance flattens. Why for different `time_exp` values, the lines flatten at different distances?
 {: .notice--primary}
 
 
@@ -251,7 +267,7 @@ Run the two code blocks for Part3: Comparing performances (1st block simulates, 
 [^Baker2005]: Baker MD, Wolanin PM, Stock JB. 2005. Signal transduction in bacterial chemotaxis. BioEssays 28:9-22. [Available online](https://pubmed.ncbi.nlm.nih.gov/16369945/)
 
 
-[Back to Main Text](home_gradient){: .btn .btn--primary .btn--large}
+[Back to Main Text](home_conclusion){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 

@@ -25,12 +25,10 @@ Every MCP cellular receptor contains four methylation sites, meaning that betwee
 
 As a result, we have two different ways that tumbling frequency can be elevated. If the concentration of an attractant is low, then CheW and CheA freely form a complex with the MCP, and the phosphorylation cascade passes phosphoryl groups to CheY, which interacts with the flagella and keeps tumbling frequency high. On the other hand, tumbling frequency can also increase as a result of methylation of the MCP.
 
-As illustrated in the figure below, methylation of MCPs is achieved by an additional protein called **CheR**. It is experimentally shown that CheR, when binds to MCPs, preferably methylates ligand-bound MCPs[^Amin2010][^Terwilliger1986], so the rate of MCP methylation by CheR is higher if the MCP is bound to a ligand.[^Spiro1997]. Therefore, say that *E. coli* encounters an increase in attractant concentration. Then the lack of a phosphorylation cascade will mean that there is less phosphorylated CheY, and so the tumbling frequency will decrease. However, if the attractant concentration levels off, then the tumbling frequency will flatten, while CheR starts methylating the MCP. Over time, the rising methylation will increase CheA autophosphorylation, bringing back the phosphorylation cascade and raising tumbling frequency back to normal levels.
+As illustrated in the figure below, methylation of MCPs is achieved by an additional protein called **CheR**. It is experimentally shown that CheR, when binds to MCPs, methylates ligand-bound MCPs faster[^Amin2010][^Terwilliger1986], so the rate of MCP methylation by CheR is higher if the MCP is bound to a ligand.[^Spiro1997]. Therefore, say that *E. coli* encounters an increase in attractant concentration. Then the lack of a phosphorylation cascade will mean that there is less phosphorylated CheY, and so the tumbling frequency will decrease. However, if the attractant concentration levels off, then the tumbling frequency will flatten, while CheR starts methylating the MCP. Over time, the rising methylation will increase CheA autophosphorylation, bringing back the phosphorylation cascade and raising tumbling frequency back to normal levels.
 
 ![image-center](../assets/images/chemotaxis_methylation.png){: .align-center}
 <figcaption>A summary of the methylation pathway. CheA phosphorylates CheB. CheB methylates while CheR demethylates MCP. Blue curve: phosphorylation; grey curve: dephosphorylation; green arrow: methylation. Figure inspired by Parkinson Lab illustrations.[^ParkinsonLab]</figcaption>
-
-* SHUANGER: Why is MCP methylation reaction rate higher if MCP receptor is bound to ligand?
 
  - MCP + CheR -> MCP-CH<sub>3</sub> + CheR
  - CheA-P + CheB -> CheA + CheB-P

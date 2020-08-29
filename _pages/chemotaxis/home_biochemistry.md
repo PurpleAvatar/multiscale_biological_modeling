@@ -32,8 +32,6 @@ As a reminder, this sequence of events is what takes place in the absence of lig
 
 When MCP receptors instead bind to repellent ligands, the situation is reversed. CheA autophosphorylation increases, which increases the rate of phosphorylation of CheY, which increases tumbling frequency.
 
-* SHUANGER: Is this correct?
-
 However, if CheY proteins were to remain phosphorylated in the presence of a repellent, then *E. coli* would tumble forever. We need a reaction that will lower the phosphorylation of CheY, so that CheY can automatically return to a normal unphosphorylated state. The dephosphorylation of CheY is catalyzed by an enzyme called **CheZ**.
  - CheY-P + CheZ -> CheY + CheZ + P
 

@@ -48,23 +48,15 @@ You may like to go it alone and modify the previous tutorial yourself to account
 
 ## Steady-state tumbling frequency remains robust
 
-The following figure shows the plot of different molecules in our model as the concentration of attractant ligand decreases exponentially for *k* equal to XXX. As we expected, the concentration of phosphorylated CheY spikes as bound ligands break free and there are not enough free ligands to replace them. After this spike, methylation of receptors causes the concentration of phosphorylated CheY to steadily return back to its equilibrium.
-
-* SHUANGER: What is *k* in this figure?
-
-* SHUANGER: are you changing the concentration of ligand or bound ligand?  The former seems like it would be stronger.
+The following figure shows the plot of different molecules in our model as the concentration of attractant ligand decreases exponentially with *l*<sub>0</sub> = 10<sup>7</sup> for *k* equal to 0.3. As we expected, the concentration of phosphorylated CheY spikes as bound ligands break free and there are not enough free ligands to replace them. After this spike, methylation of receptors causes the concentration of phosphorylated CheY to steadily return back to its equilibrium.
 
 ![image-center](../assets/images/chemotaxis_tutorial_removal01.png){: .align-center}
 
 In the interest of due diligence, we will also test the robustness of the model to ascertain whether the CheY concentration will return to the same steady-state for a variety of values of *k*. As in the case of an increasing gradient, we see that the more sudden the change in the concentration of attractant, the sharper the spike, but that in each case, methylation does its work to bring the concentration back to the same steady-state. More importantly, these figures are consistent with experimental observations.[^Krembel2015]
 
-We should also observe that `TA, TB, TC` restore to the original state of `adaptation.bngl`.
-
-* SHUANGER: What does this mean?
+To adapt to a higher ligand concentration, the methlyation states of the cell become higher. If the cell then moves down the gradient to somewhere with no ligand present, the methylation states should also be restored. Check that the new steady state concentration of receptors at high, medium, and low methylation states match the starting concentration of our [adaptation simulation](tutorial_adap).
 
 ![image-center](../assets/images/chemotaxis_tutorial_removal02.png){: .align-center}
-
-* SHUANGER: the parameters in this figure seem to be positive.  I think it may make sense to show them as negative ...
 
 ## Connection to next section
 

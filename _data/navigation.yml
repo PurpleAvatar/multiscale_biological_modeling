@@ -109,7 +109,9 @@ chemotaxis:
         url: /chemotaxis/tutorial_gradient
       - title: "Down gradient/Removal"
         url: /chemotaxis/tutorial_removal
-      - title: "chemotaxictic random walk"
+      - title: "Pure random walk"
+        url: /chemotaxis/tutorial_purerandom
+      - title: "chemotactic random walk"
         url: /chemotaxis/tutorial_walk
 
 coronavirus:

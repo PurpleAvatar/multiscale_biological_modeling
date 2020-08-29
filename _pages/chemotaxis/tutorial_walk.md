@@ -9,7 +9,7 @@ In this page, we will:
  - Simulate *E. coli* chemotaxis at a cellular level
  - Compare performances of different default tumbling frequencies.
 
-## Modeling chemotaxis behavior at a cellular level
+## Modeling standard random walk at a cellular level
 
 Please download the simulation and visualization here: <a href="https://purpleavatar.github.io/multiscale_biological_modeling/downloads/downloadable/chemotaxis_walk.ipynb" download="chemotaxis_walk.ipynb">chemotaxis_walk.ipynb</a>. Detailed explanation of the model and each functions can be found in the file too.
 
@@ -19,7 +19,7 @@ Ingredients and simplifying assumptions of the model:
  - Run. The background average duration of each run (`time_exp`) is a variable of interst. When the cell senses concentration change, the cell changes the expected run duration (`exp_run_time`). The duration of each run follows an exponential distribution with mean = `exp_run_time`. 
  - Tumble. The duration of cell tumble follows an exponential distribution with mean 0.1s[^Saragosti2012]. When it tumbles, we assume it only changes the orientation for the next run but doesn't move in space. The degree of reorientation has a mean of 68° and standard deviation of 36°[^Berg1972]. 
  - Response. As we've seen in the BNG model, the cell can respond to the gradient change within 0.5 seconds. In this model, we allow cells to re-measure the concentration after it runs for 0.5 seconds.
- - Gradient. We model an exponential gradient centered at [1500, 1500] with a concentration of 10^8. All cells start at [0, 0], which has a concentration of 10^2. The receptors saturate at a concentration of 10^8. 
+ - Gradient. We model an exponential gradient centered at [1500, 1500] with a concentration of 10<sup>8</sup>. All cells start at [0, 0], which has a concentration of 10<sup>8</sup>. The receptors saturate at a concentration of 10<sup>8</sup>. 
  - Performance. The closer to the center of the gradient the better. 
 
  Please makes sure have dependencies installed:
@@ -63,7 +63,7 @@ origin_to_center = 0 #will be actually calculated later
 saturation_conc = 10 ** 8 #From BNG model
 ~~~
 
-For each point on our 2D plane, the concentration can be calculated with an exponential distribution centered at `ligand_center = [1500, 1500]` with concentration = 1e8; origin `start = [0, 0]` has concentration 1e2. The exponent has a linear relationship with the distance to the center.
+For each point on our 2D plane, the concentration can be calculated with an exponential distribution centered at `ligand_center = [1500, 1500]` with concentration = 1e8; origin `start = [0, 0]` has concentration 1e2. The concentration of ligands [*L*] grows exponentially from (0, 0) to (1500, 1500), such that [*L*] = 100 · 10<sup>(1-*d*/*D*) · 8</sup>, where *d* is the Euclidean distance from the current point to (1500, 1500), and *D* is the Euclidean distance from (0, 0) to (1500, 1500).
 
 ~~~ python
 # Calculates Euclidean distance between point a and b
@@ -185,9 +185,10 @@ To compare the performance of the two strategies, we visualize the trajectories 
 
 Part 1 in the notebook defines the simulation using the two strategies (same as in the two tutorials).
 
-**Qualitative comparison**. Run the two code blocks for Part2: Visualizing trajectories (1st block simulates, 2nd block is plotter).  The background color indicates concentration: white -> red = low -> high; black dot are starting points; red dots are the points they reached at the end of the simulation; colorful small dots represents trajectories (one color one cell): dark -> bright color = older -> newer time points; dark dashed circle is where concentration reaches 1e8.
+**Qualitative comparison**. Run the two code blocks for Part2: Visualizing trajectories (1st block simulates, 2nd block is plotter).  The background color indicates concentration: white -> red = low -> high; black dot are starting points; red dots are the points they reached at the end of the simulation; colorful small dots represents trajectories (one color one cell): dark -> bright color = older -> newer time points; blue cross indicates the goal.
 
-Which strategy allows the cell travel towards the higher concentration?
+**STOP**: Which strategy allows the cell travel towards the higher concentration?
+{: .notice--primary}
 
 Can we make a conclusion on which default tumbling frequencies are good yet? If not, why?
 

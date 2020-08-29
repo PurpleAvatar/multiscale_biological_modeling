@@ -1,23 +1,23 @@
 ---
 permalink: /chemotaxis/tutorial_purerandom
-title: "Pure random walk"
+title: "Standard random walk"
 sidebar: 
  nav: "chemotaxis"
 ---
 
 In this page, we will:
- - Simulate *E. coli* chemotaxis at a cellular level by pure random walk
+ - Simulate *E. coli* chemotaxis at a cellular level by standard random walk
 
 ## Modeling chemotaxis behavior at a cellular level
 
-Please download the simulation and visualization here: <a href="https://purpleavatar.github.io/multiscale_biological_modeling/downloads/downloadable/chemotaxis_pure_random.ipynb" download="chemotaxis_pure_random.ipynb">chemotaxis_pure_random.ipynb</a>. Detailed explanation of the model and each functions can be found in the file too.
+Please download the simulation and visualization here: <a href="https://purpleavatar.github.io/multiscale_biological_modeling/downloads/downloadable/chemotaxis_std_random.ipynb" download="chemotaxis_std_random.ipynb">chemotaxis_std_random.ipynb</a>. Detailed explanation of the model and each functions can be found in the file too.
 
 Our model will be based on observations from BNG simulation and *E. coli* biology. 
 
 Ingredients and simplifying assumptions of the model:
 1. Run. The duration of run follows an exponential distrubtion with mean equals to the background run duration `time_exp`.
 2. Tumble. The duration of cell tumble follows an exponential distribution with mean 0.1s. When it tumbles, we assume it only changes the orientation for the next run but doesn't move in space. The degree of reorientation follows a normal distribution with mean of 68° and standard deviation of 36°.
-3. Gradient. We model an exponential gradient centered at [1500, 1500] with a concentration of 10^8. All cells start at [0, 0], which has a concentration of 10^2. The receptors saturate at a concentration of 10^8. 
+3. Gradient. We model an exponential gradient centered at [1500, 1500] with a concentration of 10<sup>8</sup>. All cells start at [0, 0], which has a concentration of 10<sup>2</sup>. The receptors saturate at a concentration of 10<sup>8</sup>. 
 4. Performance. The closer to the center of the gradient the better.
 
  Please makes sure have dependencies installed:
@@ -59,7 +59,7 @@ origin_to_center = 0 #Distance from start to center, intialized here, will be ac
 saturation_conc = 10 ** 8 #From BNG model
 ~~~
 
-For each point on our 2D plane, the concentration can be calculated with an exponential distribution centered at `ligand_center = [1500, 1500]` with concentration = 1e8; origin `start = [0, 0]` has concentration 1e2. The exponent has a linear relationship with the distance to the center.
+For each point on our 2D plane, the concentration can be calculated with an exponential distribution centered at `ligand_center = [1500, 1500]` with concentration = 1e8; origin `start = [0, 0]` has concentration 1e2. The concentration of ligands [*L*] grows exponentially from (0, 0) to (1500, 1500), such that [*L*] = 100 · 10<sup>(1-*d*/*D*) · 8</sup>, where *d* is the Euclidean distance from the current point to (1500, 1500), and *D* is the Euclidean distance from (0, 0) to (1500, 1500).
 
 ~~~ python
 # Calculates Euclidean distance between point a and b
@@ -103,7 +103,7 @@ For each cell, simulate through time as the following pseudocode:
         increment t by `curr_run_time` and `tumble_time`
 
 ~~~ python
-def simulate_pure_random(num_cells, duration, time_exp):
+def simulate_std_random(num_cells, duration, time_exp):
 
     path = np.zeros((num_cells, duration + 1, 2))
     terminals = []
@@ -136,7 +136,7 @@ def simulate_pure_random(num_cells, duration, time_exp):
 
 ## Visualizing trajectories
 
-Run simulation for 3 cells for 500 seconds for the different tumbling frequencies to get a rough idea of what their trajectories look like. 
+Run simulation for 3 cells for 500 seconds to get a rough idea of what their trajectories look like. 
 
 ~~~ python
 duration = 800   #seconds, duration of the simulation
@@ -144,17 +144,18 @@ num_cells = 3
 origin_to_center = euclidean_distance(start, ligand_center) #Update the global constant
 time_exp = 1.0
 
-terminals, path = simulate_pure_random(num_cells, duration, time_exp)
+terminals, path = simulat_std_random(num_cells, duration, time_exp)
 print(terminals)
 ~~~
 
 Run the two code blocks for Part2: Visualizing trajectories (1st block simulates, 2nd block is plotter). The background color indicates concentration: white -> red = low -> high; black dot are starting points; red dots are the points they reached at the end of the simulation; colorful small dots represents trajectories (one color one cell): dark -> bright color = older -> newer time points; blue cross indicates the highest concentration [1500, 1500].
 
 **STOP:** What do you observe? Are the cells moving up the gradient? Is this a good strategy to search for food?
+{: .notice--primary}
 
 ## Measure performance quantitatively
 
-Although the cells are under the same mechanisms for random walk, randomness introduced large variations among the trajectories. Therefore, simulation with 3 cells are not convincing. To assess the performances, let's simulate with 500 cells for 1500 seconds.
+Although the cells are under the same mechanisms for random walk, randomness introduced large variations among the trajectories. Therefore, simulation with 3 cells is not convincing. To assess the performances, let's simulate with 500 cells for 1500 seconds.
 
 For 500 cells, visualizing the trajectories will be messy. We will quantitatively measure the performances by the ability to reach the target at the end of the simulation. We will calculate the average distance to the center at each time step.
 
@@ -168,7 +169,7 @@ radius_saturation = (1 - ((math.log10(saturation_conc) - start_exponent) / (cent
 
 all_distance = np.zeros((num_cells, duration)) #Initialize to store results
 
-terminals, paths = simulate_pure_random(num_cells, duration, time_exp) #run simulation
+terminals, paths = simulate_std_random(num_cells, duration, time_exp) #run simulation
 
 for c in range(num_cells):
     for t in range(duration):
@@ -183,7 +184,7 @@ all_dist_std = np.std(all_distance, axis = 0)
 **STOP:** Before visualizing the average distances at each time step, what do you expect the result to be (based on the trajectories)?
 {: .notice--primary}
 
-Run the two code blocks for Part3: Comparing performances (1st block simulates, 2nd block is plotter). The colored line indicates average distance of the 500 cells; the shaded area is standard deviation; grey dashed line is where concentration reaches 1e8; blue cross indicates the goal [1500, 1500].
+Run the two code blocks for Part3: Measuring collective performances (1st block simulates, 2nd block is plotter). The colored line indicates average distance of the 500 cells; the shaded area is standard deviation; grey dashed line is where concentration reaches 1e8; blue cross indicates the goal [1500, 1500].
 
 What do you conclude about their performances?
 

@@ -21,6 +21,7 @@ Units in this space are in µm, so that moving from (0, 0) to (0, 20) is 20µm, 
 We will then implement two bacterial strategies. The first strategy is a standard random walk in which the bacterium reorients itself after a fixed rate of time. The second is based on what we have learned about chemotaxis.
 
 **Strategy 1: Standard random walk**
+
 Ingredients and simplifying assumptions of the model:
  - Run. The duration of run follows an exponential distrubtion with mean equals to the background run duration *t*<sub>0</sub>. 
  - Tumble. The duration of cell tumble follows an exponential distribution with mean 0.1s[^Saragosti2012]. When it tumbles, we assume it only changes the orientation for the next run but doesn't move in space. The degree of reorientation follows a normal distribution with mean of 68° and standard deviation of 36°[^Berg1972]. 
@@ -35,6 +36,7 @@ while *time* < duration:
 
 
 **Strategy 2: Chemotactic random walk**
+
 Ingredients and simplifying assumptions of the model:
  - Run. When no change in ligand concentration is detected, the duration of run follows an exponential distrubtion with mean equals to the background run duration *t*<sub>0</sub>. When the cell senses concentration change, the cell changes the expected run duration *t*, with *t* = *t*<sub>0</sub> * (1 + 10 · Δ[*L*]). Since expected run duration should always be positive, we require *t* = max(*t*, 0.000001). To account for the fact that tumbling can't be limitlessly reduced, we require *t* = min(*t*, 4 · *t*<sub>0</sub>).
  - Tumble. The duration of cell tumble follows an exponential distribution with mean 0.1s[^Saragosti2012]. When it tumbles, we assume it only changes the orientation for the next run but doesn't move in space. The degree of reorientation follows a normal distribution with mean of 68° and standard deviation of 36°[^Berg1972]. 
@@ -57,39 +59,47 @@ We will then run our random walk simulations many times for each strategy, where
 
 Also keep in mind that if two mechanisms can get to the "food source" equally well, we will definitely want to get there faster. We will also consider this in comparing our performances.
 
-* SHUANGER: we should have a separate tutorial that focuses *only* on verifying that the random walk is indeed a good strategy.  Let's just use a tumbling frequency of 1 per second for now.  I'd like to verify that
+[Visit pure random walk tutorial](tutorial_purerandom){: .btn .btn--primary .btn--large}
+{: style="font-size: 100%; text-align: center;"}
 
-## New section
+[Visit chemotactic walk tutorial](tutorial_walk){: .btn .btn--primary .btn--large}
+{: style="font-size: 100%; text-align: center;"}
 
-![image-center](../assets/images/chemotaxis_traj_random.png){: .align-center}
-<figcaption>Sample trajectories for the pure random walk model. The background color indicates concentration: white -> red = low -> high; black dots are starting points; red dots are the points they reached at the end of the simulation; colorful dashed lines represent trajectories (one color one cell): dark -> bright color = older -> newer time points. Highest concentration is located at (1500, 1500).</figcaption>
+## Comparing the two strategies
 
-* SHUANGER: Here is where we should have a comparison of the pure random walk against the empirical strategy.  We should then reflect on why the empirical strategy is better.  It is almost as if the attractant detection serves as a "rubber band" -- if it's far from the bacterium, it is not allowed to go very far from the attractant.  As it nears it the tumbling frequency decreases which helps it travel farther. Once it hits the attractant anywhere that it goes, the tumbling frequency *increases*, preventing it from running far away.  This may be where we insert the original chemotaxis video but let's see what you come up with first.
+![image-center](../assets/images/chemotaxis_traj_compare.png){: .align-center}
+<figcaption>Sample trajectories for the pure random walk model. The background color indicates concentration: white -> red = low -> high; black dots are starting points; red dots are the points they reached at the end of the simulation; colorful dashed lines represent trajectories (one color one cell): dark -> bright color = older -> newer time points; blue cross indicates the highest concentration (1500, 1500).</figcaption>
 
-## New section
+After 500 seconds, cells using the pure random walk strategy travels away from the origin, and some of them are located at places with higher concentrations. The cells using chemotactic strategy, on the other hand, successfully move towards the target and stay near it.
 
-* SHUANGER: Now is where we get into the details of the fact that 1 tumble per second appears to be an evolutionarily stable strategy.
+Let's compare the performance of 500 cells for 1500 seconds.
+
+![image-center](../assets/images/chemotaxis_performance_compare.png){: .align-center}
+<figcaption>Average distances through time. The two colored lines indicate the two strategies, plotting average distances for the 500 cells; the shaded area is standard deviation; grey dashed line is where concentration reaches 1e8.</figcaption>
+
+With pure random walk, the average distances towards the goal doesn't decrease. The large standard deviation indicates that many cells are closer to the goal, but many move in the wrong direction. With chemotactic strategy, the cells are able to get closer to the goal. The small standard deviation after the line flattens indicates that the cells are also able to stay near the goal.
+
+Why is the chemotactic strategy better? It is almost as if the attractant detection serves as a "rubber band" -- if it's far from the bacterium, it is not allowed to go very far from the attractant.  As it nears it the tumbling frequency decreases which helps it travel farther. Once it hits the attractant anywhere that it goes, the tumbling frequency *increases*, preventing it from running far away.
+
+## Why 1 tumble per second
+
+The question we left unanswered is why that 1 tumble per second appears to be an evolutionarily stable strategy.
 
 We will tweak the default tumbling frequency (represented as expected duration of run before each tumble, `time_exp`) for each simulation and see if some tumbling frequencies are better than others for bacteria to find the food.
 
-[Visit random walk tutorial](tutorial_walk){: .btn .btn--primary .btn--large}
-{: style="font-size: 100%; text-align: center;"}
-
-## New subsection -- interpreting the results of differing frequencies
+Let's go back to the [chemotactic walk tutorial](tutorial_walk), and visualize the trajectories, and quantitatively compare the performances for different background tumbling frequencies.
 
 With the visualization of trajectories, we see that the cells all move away from the starting point towards the target. However, how efficiently they get to the target is different for different expected run time. For example, after 500 seconds, the cells with `time_exp = 0.1` and `time_exp = 0.25` are still very far from the target; while those with `time_exp = 10` reach the target but don't stay there.
 
 ![image-center](../assets/images/chemotaxis_trajectories.png){: .align-center}
 <figcaption>Sample trajectories for each tumbling frequency. The background color indicates concentration: white -> red = low -> high; black dots are starting points; red dots are the points they reached at the end of the simulation; colorful dashed lines represent trajectories (one color one cell): dark -> bright color = older -> newer time points.</figcaption>
 
-What should a good trajectory look like? A cell should move fast towards the target; after reaching the target, it should tumble immediately when moving to somewhere with a lower concentration and thus stay around the target region. If we plot average distances to the target through time, a good `time_exp` should be characterized by a fast decrease in distance to the target, followed by flattening as close to the target as possible.
+What should a good trajectory look like? A cell should move fast towards the target; after reaching the goal, it should tumble immediately when moving to somewhere with a lower concentration and thus stay around the goal region. If we plot average distances to the goal through time, a good `time_exp` should be characterized by a fast decrease in distance to the goal, followed by flattening as close to the target as possible.
 
 ![image-center](../assets/images/chemotaxis_performance.png){: .align-center}
 <figcaption>Average distances through time. Each colored line indicates a `time_exp`, plotting average distances for the 500 cells; the shaded area is standard deviation; grey dashed line is where concentration reaches 1e8.</figcaption>
 
-There is a tradeoff between moving towards the target fast and staying there. For large `time_exp` values (10.0, 5.0, 2.0), distances to center decrease very quickly at the beginning of the simulation, but the cells don't stay perfectly around the radius of saturation; the larger the `time_exp`, the further the distance becomes. For small `time_exp` values (0.1, 0.25, 0.5), the cells fail to move to the ligand efficiently. Note that for `time_exp = 0.5` and `time_exp = 1.0`, although both stay around the radius of saturation, `time_exp = 0.5` takes about 200s more. If you tried to allow 0.1 and 0.25 to flatten, they will take even longer.
-
-Later we should focus on: why there is a background tumbling frequency of one tumble every second?
+There is a tradeoff between moving towards the target fast and staying there. For large `time_exp` values (10.0, 5.0, 2.0), distances to center decrease very quickly at the beginning of the simulation, but the cells don't stay there perfectly; the larger the `time_exp`, the further the distance becomes. For small `time_exp` values (0.1, 0.25, 0.5), the cells fail to move to the ligand efficiently. Note that for `time_exp = 0.5` and `time_exp = 1.0`, although both stay around the radius of saturation, `time_exp = 0.5` takes about 400s more. If you tried to allow 0.1 and 0.25 to flatten, they will take even longer.
 
 Now we can answer the question of why 1 tumble per second. The goal of chemotaxis is to find the high concentration region and stay there; and the faster the cell can achieve this goal the better. If cells tumble too much, the goal can be achieved, but not efficiently; if tumble too little, they run by the attractant because they don't stop to sniff for food often enough.
 
@@ -120,6 +130,12 @@ With more experimental evidences, the model of *E. coli* chemotaxis has been con
 
 
 [^Saragosti2011]: Saragosti J, Calvez V, Bournaveas, N, Perthame B, Buguin A, Silberzan P. 2011. Directional persistence of chemotactic bacteria in a traveling concentration wave. PNAS. [Available online](https://www.pnas.org/content/pnas/108/39/16235.full.pdf)
+
+[^Saragosti2012]: Saragosti J., Siberzan P., Buguin A. 2012. Modeling *E. coli* tumbles by rotational diffusion. Implications for chemotaxis. PLoS One 7(4):e35412. [available online](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3329434/).
+
+[^Berg1972]: Berg HC, Brown DA. 1972. Chemotaxis in Escherichia coli analysed by three-dimensional tracking. Nature. [Available online](https://www.nature.com/articles/239500a0)
+
+[^Baker2005]: Baker MD, Wolanin PM, Stock JB. 2005. Signal transduction in bacterial chemotaxis. BioEssays 28:9-22. [Available online](https://pubmed.ncbi.nlm.nih.gov/16369945/)
 
 
 [Next chapter](../coronavirus/home){: .btn .btn--primary .btn--large}

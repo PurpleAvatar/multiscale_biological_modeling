@@ -21,7 +21,7 @@ To simulate the removal of ligand, or the traveling down the gradient, we will a
 	#Simulate ligand removal
 	LigandGone: L(t) -> 0 k_gone
 
-In `parameters` section, we define the `k_gone` to be 0.3 first and thus d[L]/dt = -0.3[L]. We will also change the initial ligand concentration to be 1e7. Thus, the concentration of ligand becomes so low that ligand-receptor binding reaches 0 within 50 seconds.
+In `parameters` section, we define the `k_gone` to be 0.3 first and thus d[L]/dt = -0.3[L]. The concentration can be represented as [L] = 10<sup>7</sup>e<sup>-0.3t</sup>. We will also change the initial ligand concentration to be 1e7. Thus, the concentration of ligand becomes so low that ligand-receptor binding reaches 0 within 50 seconds.
 
 		k_gone 0.3
 		L0 1e7
@@ -66,7 +66,7 @@ First specify the directories, model name, species of interest, and rates. Put t
 ~~~ python
 	model_path = "removal"  #The folder containing the model
 	model_name = "removal"  #Name of the model
-	target = "ActiveCheY"    #Target molecule
+	target = "phosphorylated_CheY"    #Target molecule
 	vals = [0.01, 0.03, 0.05, 0.1, 0.3, 0.5]  #Gradients of interest
 ~~~
 

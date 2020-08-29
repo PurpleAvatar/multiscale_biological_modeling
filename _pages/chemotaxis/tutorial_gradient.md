@@ -21,7 +21,17 @@ We will simulate this increase in attractant concentration simply with a "fake r
 	#Simulate exponentially increasing gradient
 	LAdd: L(t) -> L(t) + L(t) k_add
 
-In `parameters` section, we define the rate of ligand increase. We will try a reaction rate 0.1/s first with initial concentration 1e4. So the actual gradient the cell experiences is d[L]/dt = 0.1[L]. By integration then differentiation, we get d[L]/dt = 1000e<sup>0.1t</sup> molecules per second. (You can add `L()` as part of your observables to see how the amount of ligand changed; but since it increases exponentially, seeing other concentrations would be hard.) We will also simulate other rate of ligand increase later. Also change initial ligand amount to 1e4 (too many/few ligands makes increase in ligand concentration too fast/slow), but you can try other values too.
+Like you've observed before, when ligand concentration is very high, the receptors are saturated, so the cell can no longer detect the change in ligand concentration. We can use this fact to cap our ligand concentration at `1e8` (in the [adaptation simulation](tutorial_adap), the cell can't detect `1e8` and a higher concentration). We can do this by defining the rate of this reaction as a function `add_Rate()`. It requires another observable, `AllLigand`. By adding the line `Molecules AllLigand L` in the `observables` sections, `AllLigand` will record the total concentration of ligands in the system. When `AllLigand` is more than `1e8`, the rate of ligand concentration increase becomes 0.
+
+	begin functions
+		addRate() = if(AllLigand>1e8,0,k_add)
+	end functions
+
+Substitute `k_add` in `reaction rules` with `addRate()`
+
+	LAdd: L(t) -> L(t) + L(t) k_add
+
+In `parameters` section, we define the rate of ligand increase. We will try a reaction rate 0.1/s first with initial concentration 1e4. So the actual gradient the cell experiences is d[L]/dt = 0.1[L]. By integration then differentiation, we get [L] = 1000e<sup>0.1t</sup> molecules per second. (You can add `L()` as part of your observables to see how the amount of ligand changed; but since it increases exponentially, seeing other concentrations would be hard.) We will also simulate other rate of ligand increase later. Also change initial ligand amount to 1e4 (too many/few ligands makes increase in ligand concentration too fast/slow), but you can try other values too.
 
 	k_add 0.1
 	L0 1e4
@@ -55,7 +65,7 @@ First specify the directories, model name, species of interest, and rates. Put t
 ~~~ python
 	model_path = "addition"  #The folder containing the model
 	model_name = "addition"  #Name of the model
-	target = "ActiveCheY"    #Target molecule
+	target = "phosphorylated CheY"    #Target molecule
 	vals = [0.01, 0.03, 0.05, 0.1, 0.3, 0.5]  #Gradients of interest
 ~~~
 

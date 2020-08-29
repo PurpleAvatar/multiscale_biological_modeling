@@ -19,8 +19,8 @@ Ingredients and simplifying assumptions of the model:
  - Run. The background average duration of each run (`time_exp`) is a variable of interst. When the cell senses concentration change, the cell changes the expected run duration (`exp_run_time`). The duration of each run follows an exponential distribution with mean = `exp_run_time`. 
  - Tumble. The duration of cell tumble follows an exponential distribution with mean 0.1s[^Saragosti2012]. When it tumbles, we assume it only changes the orientation for the next run but doesn't move in space. The degree of reorientation has a mean of 68° and standard deviation of 36°[^Berg1972]. 
  - Response. As we've seen in the BNG model, the cell can respond to the gradient change within 0.5 seconds. In this model, we allow cells to re-measure the concentration after it runs for 0.5 seconds.
- - Gradient. We model an exponential gradient centered at [1200, 1200] with a concentration of 10^8.5. All cells start at [0, 0], which has a concentration of 10^2. The receptors saturate at a concentration of 10^8. 
- - Performance. The closer to the center of the gradient the better. We could say the cell successfully reaches the target if at the end of the simulation it is at a position with concentration >= 10^8.
+ - Gradient. We model an exponential gradient centered at [1500, 1500] with a concentration of 10^8. All cells start at [0, 0], which has a concentration of 10^2. The receptors saturate at a concentration of 10^8. 
+ - Performance. The closer to the center of the gradient the better. 
 
  Please makes sure have dependencies installed:
  - [Jupyter Notebook](https://jupyter.org/index.html)
@@ -126,7 +126,7 @@ For each cell, simulate through time as the following pseudocode:
 
 	while `t` < duration:
 		Assess the current concentration
-		Update current run duration `curr_run_time` and whether it is up/down gradient
+		Update current run duration `curr_run_time`
 		If `curr_run_time` < 0.5s:
 	    	run for `curr_run_time` second along current direction
 	    	Sample the duration of tumble `tumble_time` and the resulted direction

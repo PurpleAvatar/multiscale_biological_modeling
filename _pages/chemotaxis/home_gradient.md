@@ -52,9 +52,9 @@ The following figure shows the plot of different molecules in our model as the c
 
 ![image-center](../assets/images/chemotaxis_tutorial_removal01.png){: .align-center}
 
-In the interest of due diligence, we will also test the robustness of the model to ascertain whether the CheY concentration will return to the same steady-state for a variety of values of *k*. As in the case of an increasing gradient, we see that the more sudden the change in the concentration of attractant, the sharper the spike, but that in each case, methylation does its work to bring the concentration back to the same steady-state. More importantly, these figures are consistent with experimental observations.[^Krembel2015]
-
 To adapt to a higher ligand concentration, the methlyation states of the cell become higher. If the cell then moves down the gradient to somewhere with no ligand present, the methylation states should also be restored. Check that the new steady state concentration of receptors at high, medium, and low methylation states match the starting concentration of our [adaptation simulation](tutorial_adap).
+
+In the interest of due diligence, we will also test the robustness of the model to ascertain whether the CheY concentration will return to the same steady-state for a variety of values of *k*. As in the case of an increasing gradient, we see that the more sudden the change in the concentration of attractant, the sharper the spike, but that in each case, methylation does its work to bring the concentration back to the same steady-state. More importantly, these figures are consistent with experimental observations.[^Krembel2015]
 
 ![image-center](../assets/images/chemotaxis_tutorial_removal02.png){: .align-center}
 

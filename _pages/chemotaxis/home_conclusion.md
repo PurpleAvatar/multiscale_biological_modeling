@@ -13,28 +13,56 @@ To address this question, we will use what we have learned about chemotaxis and 
 
 In this simulation, a bacterium is represented by a point in two-dimensional space. At any point (*x*, *y*) in the space, there is some concentration *L*(*x*, *y*) of ligand; furthermore, we simulate an attractant by ensuring that there is a point (called the **goal**) at which *L*(*x*, *y*) is maximized, with the concentration of attractant diminishing as the distance from this point increases.
 
-Units in this space are in µm, so that moving from (0, 0) to (0, 20) is 20µm, a distance that we know from the introduction can be covered by the bacterium in 1 second if it does not stop to tumble. The bacterium will start at (0, 0), which we will establish to have a ligand concentration of 100 molecules/µm<sup>3</sup>. The maximum concentration of 1e8.5 molecules/µm<sup>3</sup> is located at the goal (1200, 1200), requiring the bacterium to travel a fair distance to locate the attractant.
-
-* SHUANGER: Why 1e8.5?  Why not an integer exponent?  Or just saying, for example, 10 million?  And why 1200?  This too is a weird number that would make it seem like we are trying to force the model.
-
-* SHUANGER: need a rewritten paragraph here explaining what an exponential gradient is, and how we can compute it based on the distance from 1200, 1200.
+Units in this space are in µm, so that moving from (0, 0) to (0, 20) is 20µm, a distance that we know from the introduction can be covered by the bacterium in 1 second if it does not stop to tumble. The bacterium will start at (0, 0), which we will establish to have a ligand concentration of 100 molecules/µm<sup>3</sup>. The maximum concentration of 10<sup>8</sup> molecules/µm<sup>3</sup> is located at the goal (1500, 1500), requiring the bacterium to travel a fair distance to locate the attractant. The concentration of ligands [*L*] grows exponentially from (0, 0) to (1500, 1500), such that [*L*] = 100 · 10<sup>(1-*d*/*D*) · 8</sup>, where *d* is the Euclidean distance from the current point to (1500, 1500), and *D* is the Euclidean distance from (0, 0) to (1500, 1500).
 
 **STOP:** How can we quantify how well a single bacterium has done at finding the attractant?
 {: .notice--primary}
 
 We will then implement two bacterial strategies. The first strategy is a standard random walk in which the bacterium reorients itself after a fixed rate of time. The second is based on what we have learned about chemotaxis.
 
-* SHUANGER: insert a *very precisely* defined model of how the bacterium responds to its environment based on concentration.
+**Strategy 1: Standard random walk**
+Ingredients and simplifying assumptions of the model:
+ - Run. The duration of run follows an exponential distrubtion with mean equals to the background run duration *t*<sub>0</sub>. 
+ - Tumble. The duration of cell tumble follows an exponential distribution with mean 0.1s[^Saragosti2012]. When it tumbles, we assume it only changes the orientation for the next run but doesn't move in space. The degree of reorientation follows a normal distribution with mean of 68° and standard deviation of 36°[^Berg1972]. 
+
+For each cell, our simulation follows this procedure:
+
+while *time* < duration:
+- Sample the current run duration *curr_run_time*
+- Run for *curr_run_time* second along current direction
+- Sample the duration of tumble *curr_tumble_time* and the resulted direction
+- increment t by *curr_run_time* and *curr_tumble_time*
+
+
+**Strategy 2: Chemotactic random walk**
+Ingredients and simplifying assumptions of the model:
+ - Run. When no change in ligand concentration is detected, the duration of run follows an exponential distrubtion with mean equals to the background run duration *t*<sub>0</sub>. When the cell senses concentration change, the cell changes the expected run duration *t*, with *t* = *t*<sub>0</sub> * (1 + 10 · Δ[*L*]). Since expected run duration should always be positive, we require *t* = max(*t*, 0.000001). To account for the fact that tumbling can't be limitlessly reduced, we require *t* = min(*t*, 4 · *t*<sub>0</sub>).
+ - Tumble. The duration of cell tumble follows an exponential distribution with mean 0.1s[^Saragosti2012]. When it tumbles, we assume it only changes the orientation for the next run but doesn't move in space. The degree of reorientation follows a normal distribution with mean of 68° and standard deviation of 36°[^Berg1972]. 
+ - Response. As we've seen in the BNG model, the cell can respond to the gradient change within 0.5 seconds. In this model, we allow cells to re-measure the concentration after it runs for 0.5 seconds.
+
+For each cell, our simulation follows this procedure:
+
+while *time* < duration:
+- Assess the current concentration
+- Update the current expected run duration *t*, sample the current run duration *curr_run_time*
+- If *curr_run_time* < 0.5s:
+    1. run for *curr_run_time* second along current direction
+    2. Sample the duration of tumble *curr_tumble_time* and the resulted direction
+    3. increment t by *curr_run_time* and *curr_tumble_time*
+- If *curr_run_time* > 0.5s:
+    1. run for 0.5s along current direction
+    2. increment *time* by 0.5s (and then the cell will re-assess the new concentration, and decide the duration of next run)
 
 We will then run our random walk simulations many times for each strategy, where each simulation runs for some fixed time *t* in seconds. (This parameter should be large enough to allow the bacterium to have time to reach the goal.) For each simulated bacterium, we then measure how far it is from the goal. To compare the two strategies, we will compare the average distance to the goal for the simple random walk against the average distance to the goal for the realistic random walk.
 
-Also keep in mind that if two mechanisms can get to the "food source" equally well, we will definitely want to get there faster.
-
-* SHUANGER: this is a good point but does it appear in our simulations?
+Also keep in mind that if two mechanisms can get to the "food source" equally well, we will definitely want to get there faster. We will also consider this in comparing our performances.
 
 * SHUANGER: we should have a separate tutorial that focuses *only* on verifying that the random walk is indeed a good strategy.  Let's just use a tumbling frequency of 1 per second for now.  I'd like to verify that
 
 ## New section
+
+![image-center](../assets/images/chemotaxis_traj_random.png){: .align-center}
+<figcaption>Sample trajectories for the pure random walk model. The background color indicates concentration: white -> red = low -> high; black dots are starting points; red dots are the points they reached at the end of the simulation; colorful dashed lines represent trajectories (one color one cell): dark -> bright color = older -> newer time points. Highest concentration is located at (1500, 1500).</figcaption>
 
 * SHUANGER: Here is where we should have a comparison of the pure random walk against the empirical strategy.  We should then reflect on why the empirical strategy is better.  It is almost as if the attractant detection serves as a "rubber band" -- if it's far from the bacterium, it is not allowed to go very far from the attractant.  As it nears it the tumbling frequency decreases which helps it travel farther. Once it hits the attractant anywhere that it goes, the tumbling frequency *increases*, preventing it from running far away.  This may be where we insert the original chemotaxis video but let's see what you come up with first.
 
@@ -52,7 +80,7 @@ We will tweak the default tumbling frequency (represented as expected duration o
 With the visualization of trajectories, we see that the cells all move away from the starting point towards the target. However, how efficiently they get to the target is different for different expected run time. For example, after 500 seconds, the cells with `time_exp = 0.1` and `time_exp = 0.25` are still very far from the target; while those with `time_exp = 10` reach the target but don't stay there.
 
 ![image-center](../assets/images/chemotaxis_trajectories.png){: .align-center}
-<figcaption>Sample trajectories for each tumbling frequency. The background color indicates concentration: white -> red = low -> high; black dots are starting points; red dots are the points they reached at the end of the simulation; colorful dashed lines represent trajectories (one color one cell): dark -> bright color = older -> newer time points; dark dashed circle is where concentration reaches 1e8.</figcaption>
+<figcaption>Sample trajectories for each tumbling frequency. The background color indicates concentration: white -> red = low -> high; black dots are starting points; red dots are the points they reached at the end of the simulation; colorful dashed lines represent trajectories (one color one cell): dark -> bright color = older -> newer time points.</figcaption>
 
 What should a good trajectory look like? A cell should move fast towards the target; after reaching the target, it should tumble immediately when moving to somewhere with a lower concentration and thus stay around the target region. If we plot average distances to the target through time, a good `time_exp` should be characterized by a fast decrease in distance to the target, followed by flattening as close to the target as possible.
 

@@ -59,7 +59,7 @@ We will then run our random walk simulations many times for each strategy, where
 
 Also keep in mind that if two mechanisms can get to the "food source" equally well, we will definitely want to get there faster. We will also consider this in comparing our performances.
 
-[Visit pure random walk tutorial](tutorial_purerandom){: .btn .btn--primary .btn--large}
+[Visit standard random walk tutorial](tutorial_purerandom){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 [Visit chemotactic walk tutorial](tutorial_walk){: .btn .btn--primary .btn--large}
@@ -70,7 +70,7 @@ Also keep in mind that if two mechanisms can get to the "food source" equally we
 ![image-center](../assets/images/chemotaxis_traj_compare.png){: .align-center}
 <figcaption>Sample trajectories for the two strategies. Left: standard random walk; right: chemotactic random walk. The background color indicates concentration: white -> red = low -> high; black dots are starting points; red dots are the points they reached at the end of the simulation; colorful dashed lines represent trajectories (one color one cell): dark -> bright color = older -> newer time points; blue cross indicates the highest concentration (1500, 1500).</figcaption>
 
-After 500 seconds, cells using the pure standard walk strategy travel away from the origin, and some of them are located at places with higher concentrations. The cells using chemotactic strategy, on the other hand, successfully move towards the goal and stay near it.
+After 500 seconds, cells using the standard standard walk strategy travel away from the origin, and some of them are located at places with higher concentrations. The cells using chemotactic strategy, on the other hand, successfully move towards the goal and stay near it.
 
 Let's compare the performance of 500 cells for 1500 seconds.
 

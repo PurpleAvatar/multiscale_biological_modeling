@@ -68,22 +68,22 @@ Also keep in mind that if two mechanisms can get to the "food source" equally we
 ## Comparing the two strategies
 
 ![image-center](../assets/images/chemotaxis_traj_compare.png){: .align-center}
-<figcaption>Sample trajectories for the pure random walk model. The background color indicates concentration: white -> red = low -> high; black dots are starting points; red dots are the points they reached at the end of the simulation; colorful dashed lines represent trajectories (one color one cell): dark -> bright color = older -> newer time points; blue cross indicates the highest concentration (1500, 1500).</figcaption>
+<figcaption>Sample trajectories for the two strategies. Left: standard random walk; right: chemotactic random walk. The background color indicates concentration: white -> red = low -> high; black dots are starting points; red dots are the points they reached at the end of the simulation; colorful dashed lines represent trajectories (one color one cell): dark -> bright color = older -> newer time points; blue cross indicates the highest concentration (1500, 1500).</figcaption>
 
-After 500 seconds, cells using the pure random walk strategy travels away from the origin, and some of them are located at places with higher concentrations. The cells using chemotactic strategy, on the other hand, successfully move towards the target and stay near it.
+After 500 seconds, cells using the pure standard walk strategy travel away from the origin, and some of them are located at places with higher concentrations. The cells using chemotactic strategy, on the other hand, successfully move towards the goal and stay near it.
 
 Let's compare the performance of 500 cells for 1500 seconds.
 
 ![image-center](../assets/images/chemotaxis_performance_compare.png){: .align-center}
-<figcaption>Average distances through time. The two colored lines indicate the two strategies, plotting average distances for the 500 cells; the shaded area is standard deviation; grey dashed line is where concentration reaches 1e8.</figcaption>
+<figcaption>Average distances through time. Left: standard random walk; right: chemotactic random walk The two colored lines indicate the two strategies, plotting average distances for the 500 cells; the shaded area is standard deviation; grey dashed line is where concentration reaches 1e8.</figcaption>
 
-With pure random walk, the average distances towards the goal doesn't decrease. The large standard deviation indicates that many cells are closer to the goal, but many move in the wrong direction. With chemotactic strategy, the cells are able to get closer to the goal. The small standard deviation after the line flattens indicates that the cells are also able to stay near the goal.
+With standard random walk, the average distances towards the goal doesn't decrease. The large standard deviation indicates that many cells are closer to the goal, but many move in the wrong direction. With chemotactic strategy, the cells are able to get closer to the goal. The small standard deviation after the line flattens indicates that the cells are also able to stay near the goal.
 
 Why is the chemotactic strategy better? It is almost as if the attractant detection serves as a "rubber band" -- if it's far from the bacterium, it is not allowed to go very far from the attractant.  As it nears it the tumbling frequency decreases which helps it travel farther. Once it hits the attractant anywhere that it goes, the tumbling frequency *increases*, preventing it from running far away.
 
-## Why 1 tumble per second
+## Why one tumble per second
 
-The question we left unanswered is why that 1 tumble per second appears to be an evolutionarily stable strategy.
+The question we left unanswered is why that one tumble per second appears to be an evolutionarily stable strategy.
 
 We will tweak the default tumbling frequency (represented as expected duration of run before each tumble, `time_exp`) for each simulation and see if some tumbling frequencies are better than others for bacteria to find the food.
 

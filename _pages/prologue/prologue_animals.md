@@ -46,7 +46,13 @@ Finally, this reaction-diffusion system has a single reaction of the two particl
 
 This reaction is why we compared *A* to prey and *B* to predators, since we can imagine this reaction as two *B* particles consuming an *A* particle and conceiving an offspring *B* particle. Another way of viewing this reaction is that when an *A* particle and two *B* particles encounter each other, the reaction takes place with probability proportional to *r*.
 
-* NOAH: we need to better understand the correspondence between reaction rates and probabilities in MCell.
+## MCell and Simulations
+
+The software MCell and other **particle-based spatial stochastic simulation** methods keep track of several factors which create our model. Firstly, the trajectories of individual particles are tracked to predict movement, introduce random diffusion, and detect collisions. When a collision occurs, particles can undergo reactions which are specified by the user. Our typical reaction rate, which may describe a reaction like: 
+
+<center><em>A</em> + 2<em>B</em> → 3<em>B</em><br></center>
+
+The reaction rate we use in this equation describes the **bulk reaction rate**, or the total number of reactions occuring depending on the concentrations of reactants. Because MCell needs to only have bimolecular reactions occur when a collision occurs, the user will give MCell the bulk reaction rate and MCell will automatically choose a probability of reaction per collision based on how many collisions are expected in order to match the bulk reaction rate.  
 
 * NOAH: this is where the link to the reaction-diffusion tutorial should go I think.
 

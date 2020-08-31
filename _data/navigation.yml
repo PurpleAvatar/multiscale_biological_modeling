@@ -40,6 +40,8 @@ prologue:
         url: /prologue/gs-jupyter
       - title: "Gray-Scott CellBlender"
         url: /prologue/gs-cellblender
+      - title: "Tutorial Diffusion"
+        url: /prologue/tutorial-diffusion
 
 motifs:
   - title: "Finding Motifs in Transcription Factor Networks"

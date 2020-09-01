@@ -154,9 +154,25 @@ $$\mathrm{Pr}(T < t) = \mathrm{Pr}(X = 0) = \dfrac{(\lambda t)^0 e^{-\lambda t}}
 
 Because of this formula, the random variable *T* is said to follow an **exponential distribution.**
 
+## An overview of the Gillespie algorithm
+
+The engine of the Gillespie algorithm runs on a single question: given a well-mixed environment of particles and a reaction involving those particles taking place at some rate, how long should we expect to wait before this reaction occurs somewhere in the environment?
+
 * Phillip will need to start here.
 
-## An overview of the Gillespie algorithm
+* Depending on how many particles we have and the rate of the reaction, the number of reactions taking place in a given unit of time will vary.
+
+* But it is reasonable to use a Poisson process to model these interactions. Thus, we can imagine rolling a die that selects how many of these reactions should occur in a given unit of time.
+
+* More precisely, we will ask how long we should expect to wait between occurrences of each reaction. Just as with the store analogy, because the concentrations of particles are well-mixed and interactions are viewed as independently, we will assume that wait times between reactions follow an exponential distribution.
+
+* Point to numerical techniques that will randomly generate a wait time (delta t) following the exponential distribution. We repeatedly "sample" from this distribution in order to obtain times between reactions.
+
+* If we have multiple reactions, then Gillespie's algorithm still samples a wait time for the next particle interaction, and then determines which reaction should take place based on the rates of the reactions.  The higher the reaction rate, the more probable that reaction should be.  It is as if we are rolling a weighted die and are determining which interaction based on the die roll.
+
+* In this case, we have two reactions (forward and reverse), so the bigger the difference between the bonding and dissociation rates, the bigger the "weight" of the die roll.
+
+* In this way, we are able to keep track of changing particle concentrations and simulate particle reactions without having to track the exact positions of individual particles, which will lead to a vast speed-up in our approach.
 
 We define the states of the system as the discrete amount of reactants, and a transition between one state and another is one molecular event. How likely is a transition to happen is proportional to the rate of that reaction [^Schwartz17].
 

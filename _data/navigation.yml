@@ -87,7 +87,7 @@ chemotaxis:
     children:
       - title: "Introduction: Lost Immortals and Chemotaxis"
         url: /chemotaxis/home
-      - title: "Runs and Tumbles"
+      - title: "Bacterial Runs and Tumbles"
         url: /chemotaxis/home_walk
       - title: "Signaling & ligand-receptor dynamics"
         url: /chemotaxis/home_signal

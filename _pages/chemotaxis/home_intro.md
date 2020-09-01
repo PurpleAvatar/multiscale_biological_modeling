@@ -1,6 +1,6 @@
 ---
 permalink: /chemotaxis/home_walk
-title: "Runs and Tumbles"
+title: "Bacterial Runs and Tumbles"
 sidebar:
  nav: "chemotaxis"
 ---
@@ -23,7 +23,7 @@ Bacteria are amazingly diverse. They have evolved for over three billion years t
 
 And yet despite the diversity present within the bacterial kingdom, the variations in bacterial tumbling frequencies are relatively small. Is there some reason why, regardless of the species, a bacterium's tumbling frequency tends to hover at around one tumble per second or two? It is as if there were some invisible force compelling all of these bacteria to tumble with the same frequency.
 
-This question is a fundamental one, and we will return to it at the close of this module after we have learned more about the biochemical basis of chemotaxis and how a bacterium can adjust its behavior in response to a chemical substance. In the process, we will see that despite bacteria being simple organisms, the reality of how they implement chemotaxis is far more sophisticated than we might ever imagine.
+This question is a fundamental one, and we will return to it at the close of this module after we have learned more about the biochemical basis of chemotaxis and how a bacterium can adjust its behavior in response to a chemical substance. In the process, we will see that despite bacteria being simple organisms, the mechanism they use to implement chemotaxis is far more sophisticated than we might ever imagine.
 
 **STOP:** Say that a bacterium travels 20 µm in a randomly selected direction every second.  After an hour, approximately how far will it have traveled on average?  What if we allow the bacterium to travel for a week?
 {: .notice--primary}

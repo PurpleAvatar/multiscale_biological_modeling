@@ -10,7 +10,7 @@ In this page, we will:
 
 ## Traveling down the gradient
 
-We have simulated how CheY-P changes when the cell is moving up the attractant gradient. At the higher concentration the cell adapted to, methylation states are changed so that they can compensate for the more ligand-receptor binding to restore the CheY-P value. What if the ligands are removed? Along with increased CheY-P because the cell need to tumble more to "escape" from the wrong direction, we should see methylation states restore to the states before the addition of ligands.
+We have simulated how CheY-P changes when the cell is moving up the attractant gradient. With higher concentrations, methylation states are changed so that they can compensate for the more ligand-receptor binding to restore the CheY-P value. What if the ligands are removed? Along with increased CheY-P because the cell need to tumble more to "escape" from the wrong direction, we should see methylation states restore to the states before the addition of ligands.
 
 The simulation can be downloaded here: <a href="https://purpleavatar.github.io/multiscale_biological_modeling/downloads/downloadable/removal.bngl" download="removal.bngl">removal.bngl</a>
 
@@ -28,7 +28,7 @@ In `parameters` section, we define the `k_gone` to be 0.3 first and thus d[L]/dt
 
 We will set the initial concentrations of all `seed species` to be the final concentrations of the simulation result for our `adaptation.bngl` model, and see if our simulation can restore them to the inital concentrations of the `adaptation.bngl` model. 
 
-First go to the `adaptation.bngl` model, and set `L0` as `1e7`. Also include concentration of each combination of methylation state and ligand binding state of the receptor complex as `observables`. (Concentration of other sepcies are already restored to original state, like CheY-P). Run the simulation. Go to `RuleBender-workspace/PROJECT_NAME/results/adaptation/` and find the simulation result at the final time point. 
+First go to the `adaptation.bngl` model, and set `L0` as `1e7`. Also include concentration of each combination of methylation state and ligand binding state of the receptor complex as `observables`. (Concentration of other sepcies are already restored to original state when adapting, like CheY-P). Run the simulation. Go to `RuleBender-workspace/PROJECT_NAME/results/adaptation/` and find the simulation result at the final time point. 
 
 Input those concentrations to the `seed species` section of our `removal.bngl` model.
 
@@ -50,11 +50,9 @@ Input those concentrations to the `seed species` section of our `removal.bngl` m
 
 The simulation can also be downloaded here: <a href="https://purpleavatar.github.io/multiscale_biological_modeling/downloads/downloadable/removal.bngl" download="removal.bngl">removal.bngl</a>
 
-**STOP:** Go to `simulation` and click `Run`. What happens to CheY phosphorylation? Compare the steady state concentration of each methylation states, are they restored to the level before adding ligands to the `adaptation.bngl` model?
-{: .notice--primary}
+Set `simulate({method=>"ssa", t_end=>1800, n_steps=>1800})`. Go to `simulation` and click `Run`. What happens to CheY phosphorylation? Compare the steady state concentration of each methylation states, are they restored to the level before adding ligands to the `adaptation.bngl` model?
 
-**STOP:** Similar to what we did for up gradient, we can try different values for `k_gone`. Change `t_end` in the `simulate` method to 1800 seconds, and simulate with `k_gone` = 0.01, 0.03, 0.05, 0.1, 0.3, 0.5.
-{: .notice--primary}
+Similar to what we did for up gradient, we can try different values for `k_gone`. Change `t_end` in the `simulate` method to 1800 seconds, and simulate with `k_gone` = 0.01, 0.03, 0.05, 0.1, 0.5.
 
 All simulation results are stored in the `RuleBender-workspace/PROJECT_NAME/results/MODEL_NAME/TIME/` directory in your computer. Rename the directory with the `k_gone` values instead of the time of running for simplicity. 
 
@@ -70,10 +68,9 @@ First specify the directories, model name, species of interest, and rates. Put t
 	vals = [0.01, 0.03, 0.05, 0.1, 0.3, 0.5]  #Gradients of interest
 ~~~
 
-The second code block will load simulation result at each time point from the `.gdat` file, which stores concentration of all `observables` at all steps, and plot them.
+The second code block will load simulation result at each time point from the `.gdat` file, which stores concentration of all `observables` at all steps, and plot concentration of phosphorylated CheY through time.
 
-**STOP:** Run the code blocks. How does `k_gone` impact the CheY-P concentrations? Why? Are the tumbling frequencies restored to the background frequency?
-{: .notice--primary}
+Run the code blocks. How does `k_gone` impact the CheY-P concentrations? Why? Are the tumbling frequencies restored to the background frequency?
 
 
 

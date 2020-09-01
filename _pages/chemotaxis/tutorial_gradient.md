@@ -21,7 +21,7 @@ We will simulate this increase in attractant concentration simply with a "fake r
 	#Simulate exponentially increasing gradient
 	LAdd: L(t) -> L(t) + L(t) k_add
 
-Like you've observed before, when ligand concentration is very high, the receptors are saturated, so the cell can no longer detect the change in ligand concentration. We can use this fact to cap our ligand concentration at `1e8` (in the [adaptation simulation](tutorial_adap), the cell can't detect `1e8` and a higher concentration). We can do this by defining the rate of this reaction as a function `add_Rate()`. It requires another observable, `AllLigand`. By adding the line `Molecules AllLigand L` in the `observables` sections, `AllLigand` will record the total concentration of ligands in the system. When `AllLigand` is more than `1e8`, the rate of ligand concentration increase becomes 0.
+Like you've observed before, when ligand concentration is very high, the receptors are saturated, so the cell can no longer detect the change in ligand concentration. We can use this fact to cap our ligand concentration at `1e8` (in the [adaptation simulation](tutorial_adap), the cell can't differentiate between `1e8` and a higher concentration). We can do this by defining the rate of this reaction as a function `add_Rate()`. It requires another observable, `AllLigand`. By adding the line `Molecules AllLigand L` in the `observables` sections, `AllLigand` will record the total concentration of ligands in the system at each time step. When `AllLigand` is more than `1e8`, the rate of ligand concentration increase becomes 0. In the `if` statement, the syntax is `if(condition,valueTrue,valueFalse)`.
 
 	begin functions
 		addRate() = if(AllLigand>1e8,0,k_add)
@@ -29,24 +29,20 @@ Like you've observed before, when ligand concentration is very high, the recepto
 
 Substitute `k_add` in `reaction rules` with `addRate()`
 
-	LAdd: L(t) -> L(t) + L(t) k_add
+	LAdd: L(t) -> L(t) + L(t) addRate()
 
-In `parameters` section, we define the rate of ligand increase. We will try a reaction rate 0.1/s first with initial concentration 1e4. So the actual gradient the cell experiences is d[L]/dt = 0.1[L]. By integration then differentiation, we get [L] = 1000e<sup>0.1t</sup> molecules per second. (You can add `L()` as part of your observables to see how the amount of ligand changed; but since it increases exponentially, seeing other concentrations would be hard.) We will also simulate other rate of ligand increase later. Also change initial ligand amount to 1e4 (too many/few ligands makes increase in ligand concentration too fast/slow), but you can try other values too.
+In `parameters` section, we define the rate of ligand increase. We will try a reaction rate 0.1/s first with initial concentration 1e4. So the actual gradient the cell experiences is d[L]/dt = 0.1[L]. By integration then differentiation, we get [L] = 1000e<sup>0.1t</sup> molecules per second. Change initial ligand amount to 1e4 (too many/few ligands makes increase in ligand concentration too fast/slow), but you can try other values too.
 
 	k_add 0.1
 	L0 1e4
 
 The simulation can be also downloaded here: <a href="https://purpleavatar.github.io/multiscale_biological_modeling/downloads/downloadable/addition.bngl" download="addition.bngl">addition.bngl</a>
 
-**STOP:** Go to `simulation` and click `Run`. What happens to CheY phosphorylation?
-{: .notice--primary}
+Set `simulate({method=>"ssa", t_end=>1000, n_steps=>500})`. Go to `simulation` and click `Run`. What happens to CheY phosphorylation? (Note: you can deselect `AllLigand` to make the plots clearer for phosphorylated CheY)
 
 You will observe that CheY phosphorylation drops gradually first, instead of the instantaneous sharp drop as we add lots of ligand at once. That means, with the ligand concentration increases, the cell is able to continuously lower the tumbling frequency. 
 
-Although our ligand concentration keeps increasing (reaching 1e49 at 1000s), once the receptors are saturated, no more response can be observed, so the cell perceives concentrations higher than saturation concentration as a constant concentration. And the cell is still able to adapt to the constant concentration.
-
-**STOP:** Try different values for `k_add`: 0.01, 0.03, 0.05, 0.1, 0.3, 0.5. What do different `k_add` values imply? How does the system respond to the different values - what are some common trends and some differences?
-{: .notice--primary}
+Try different values for `k_add`: 0.01, 0.03, 0.05, 0.1, 0.3, 0.5. What do different `k_add` values imply? How does the system respond to the different values - what are some common trends and some differences?
 
 All simulation results are stored in the `RuleBender-workspace/PROJECT_NAME/results/MODEL_NAME/TIME/` directory in your computer. Rename the directory with the `k_add` values instead of the time of running for simplicity. 
 
@@ -69,10 +65,9 @@ First specify the directories, model name, species of interest, and rates. Put t
 	vals = [0.01, 0.03, 0.05, 0.1, 0.3, 0.5]  #Gradients of interest
 ~~~
 
-The second code block will load simulation result at each time point from the `.gdat` file, which stores concentration of all `observables` at all steps, and plot them.
+The second code block will load simulation result at each time point from the `.gdat` file, which stores concentration of all `observables` at all steps, and plot concentration of phosphorylated CheY through time.
 
-**STOP:** Run the code blocks. How does `k_add` impact the CheY-P concentrations? Why? Are the tumbling frequencies restored to the background frequency?
-{: .notice--primary}
+Run the code blocks. How does `k_add` impact the CheY-P concentrations? Why? Are the tumbling frequencies restored to the background frequency?
 
 
 [Back to Main Text](home_gradient){: .btn .btn--primary .btn--large}

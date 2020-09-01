@@ -187,14 +187,15 @@ Part 1 in the notebook defines the simulation using the two strategies (same as 
 
 **Qualitative comparison**. Run the two code blocks for Part2: Visualizing trajectories (1st block simulates, 2nd block is plotter).  The background color indicates concentration: white -> red = low -> high; black dot are starting points; red dots are the points they reached at the end of the simulation; colorful small dots represents trajectories (one color one cell): dark -> bright color = older -> newer time points; blue cross indicates the goal.
 
-**STOP**: Which strategy allows the cell travel towards the higher concentration?
-{: .notice--primary}
+Which strategy allows the cell travel towards the higher concentration?
 
 Can we make a conclusion on which default tumbling frequencies are good yet? If not, why?
 
 **Quantitative comparsion**. Because of the high variations due to randomness, trajectories for 3 cells is not convincing enough. To verify your hypothesis on which strategy is better, let's simulate 500 cells for 1500 seconds for each strategy. Run the two code blocks for Part3: Comparing performances (1st block simulates, 2nd block is plotter). Each colored line indicates a strategy, plotting average distances for the 500 cells; the shaded area is standard deviation; grey dashed line is where concentration reaches 1e8.
 
 Which strategy is more efficient?
+
+Go back to main text for now. We will return to this tutorial later.
 
 [Back to Main Text](home_conclusion){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
@@ -215,8 +216,7 @@ terminals, path = simulate(num_cells, duration, time_exp)
 
 Run the two code blocks for Part2: Visualizing trajectories (1st block simulates, 2nd block is plotter). The background color indicates concentration: white -> red = low -> high; black dot are starting points; red dots are the points they reached at the end of the simulation; colorful small dots represents trajectories (one color one cell): dark -> bright color = older -> newer time points; if highest possible concentration > 1e8, dark dashed circle is where concentration reaches 1e8.
 
-**STOP:** What do you observe? Pay attention to: 1) are the cells moving up the gradient?; 2) what's the differences between the shape of the trajectories?; 3) within the 1500 seconds, which expected run time allow the cells reach the black dashed circle (target)?; 4) after reaching the target, which expected run time allow the cells to stay in/near the circle?
-{: .notice--primary}
+What do you observe? Pay attention to: 1) are the cells moving up the gradient?; 2) what's the differences between the shape of the trajectories?; 3) within the 1500 seconds, which expected run time allow the cells reach the black dashed circle (target)?; 4) after reaching the target, which expected run time allow the cells to stay in/near the circle?
 
 ## Comparing performances for different background tumbling frequencies
 
@@ -251,14 +251,11 @@ all_dist_std = np.std(all_distance, axis = 1)
 
 Run the two code blocks for Part3: Comparing performances (1st block simulates, 2nd block is plotter). Each colored line indicates a `time_exp`, plotting average distances for the 500 cells; the shaded area is standard deviation; grey dashed line is where concentration reaches 1e8.
 
-**STOP:** What do you conclude about their performances?
-{: .notice--primary}
+What do you conclude about their performances?
 
-**STOP:** Change the value for `duration` and run simulations for `time_exp = [0.25]` only. How long will the cells take to reach near the grey dashed line?
-{: .notice--primary}
+Change the value for `duration` and run simulations for `time_exp = [0.25]` only. How long will the cells take to reach near the grey dashed line?
 
-**STOP:** For all `time_exp`, after some time the average distance flattens. Why for different `time_exp` values, the lines flatten at different distances?
-{: .notice--primary}
+For all `time_exp`, after some time the average distance flattens. Why for different `time_exp` values, the lines flatten at different distances?
 
 
 [^Saragosti2012]: Saragosti J., Siberzan P., Buguin A. 2012. Modeling *E. coli* tumbles by rotational diffusion. Implications for chemotaxis. PLoS One 7(4):e35412. [available online](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3329434/).

@@ -93,11 +93,11 @@ chemotaxis:
         url: /chemotaxis/home_signal
       - title: "A Biochemically Accurate Model of Chemotaxis"
         url: /chemotaxis/home_biochem
-      - title: "Adaptation"
+      - title: "Methylation Helps Bacteria Adapt to Differing Concentrations"
         url: /chemotaxis/home_senseadap
-      - title: "Gradient"
+      - title: "Modeling a Bacterium's Response to an Attractant Gradient"
         url: /chemotaxis/home_gradient
-      - title: "Conclusion"
+      - title: "Conclusion: The Beauty of *E. coli*'s Randomized Exploration Algorithm"
         url: /chemotaxis/home_conclusion
   - title: Tutorials
     children:

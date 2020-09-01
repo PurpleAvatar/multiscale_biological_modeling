@@ -1,6 +1,6 @@
 ---
 permalink: /chemotaxis/home_conclusion
-title: "Conclusion"
+title: "Conclusion: The Beauty of *E. coli*'s Randomized Exploration Algorithm"
 sidebar:
  nav: "chemotaxis"
 ---
@@ -23,8 +23,8 @@ We will then implement two bacterial strategies. The first strategy is a standar
 **Strategy 1: Standard random walk**
 
 Ingredients and simplifying assumptions of the model:
- - Run. The duration of run follows an exponential distrubtion with mean equals to the background run duration *t*<sub>0</sub>. 
- - Tumble. The duration of cell tumble follows an exponential distribution with mean 0.1s[^Saragosti2012]. When it tumbles, we assume it only changes the orientation for the next run but doesn't move in space. The degree of reorientation follows a normal distribution with mean of 68° and standard deviation of 36°[^Berg1972]. 
+ - Run. The duration of run follows an exponential distrubtion with mean equals to the background run duration *t*<sub>0</sub>.
+ - Tumble. The duration of cell tumble follows an exponential distribution with mean 0.1s[^Saragosti2012]. When it tumbles, we assume it only changes the orientation for the next run but doesn't move in space. The degree of reorientation follows a normal distribution with mean of 68° and standard deviation of 36°[^Berg1972].
 
 For each cell, our simulation follows this procedure:
 
@@ -39,7 +39,7 @@ while *time* < duration:
 
 Ingredients and simplifying assumptions of the model:
  - Run. When no change in ligand concentration is detected, the duration of run follows an exponential distrubtion with mean equals to the background run duration *t*<sub>0</sub>. When the cell senses concentration change, the cell changes the expected run duration *t*, with *t* = *t*<sub>0</sub> * (1 + 10 · Δ[*L*]). Since expected run duration should always be positive, we require *t* = max(*t*, 0.000001). To account for the fact that tumbling can't be limitlessly reduced, we require *t* = min(*t*, 4 · *t*<sub>0</sub>).
- - Tumble. The duration of cell tumble follows an exponential distribution with mean 0.1s[^Saragosti2012]. When it tumbles, we assume it only changes the orientation for the next run but doesn't move in space. The degree of reorientation follows a normal distribution with mean of 68° and standard deviation of 36°[^Berg1972]. 
+ - Tumble. The duration of cell tumble follows an exponential distribution with mean 0.1s[^Saragosti2012]. When it tumbles, we assume it only changes the orientation for the next run but doesn't move in space. The degree of reorientation follows a normal distribution with mean of 68° and standard deviation of 36°[^Berg1972].
  - Response. As we've seen in the BNG model, the cell can respond to the gradient change within 0.5 seconds. In this model, we allow cells to re-measure the concentration after it runs for 0.5 seconds.
 
 For each cell, our simulation follows this procedure:

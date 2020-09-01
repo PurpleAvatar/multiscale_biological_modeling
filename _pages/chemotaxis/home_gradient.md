@@ -1,6 +1,6 @@
 ---
 permalink: /chemotaxis/home_gradient
-title: "Modeling the gradient"
+title: "Modeling a Bacterium's Response to an Attractant Gradient"
 sidebar:
  nav: "chemotaxis"
 ---

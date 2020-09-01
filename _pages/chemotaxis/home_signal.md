@@ -128,19 +128,30 @@ If we solve for [*LT*], we obtain [*LT*] = 4793. Calculate for [*L*] and [*T*]:
 [*L*] = *l*<sub>0</sub> - [*LT*] = 5207<br>
 [*T*] = *t*<sub>0</sub> - [*LT*] = 2207
 
-## Verifying a theoretical steady-state concentration via simulation
+## Verifying a theoretical steady-state concentration via stochastic simulation
 
 In the [previous module](motifs), we saw how that we could avoid keeping track of the positions of individual diffusing particles if we assume that these particles are well-mixed, i.e., uniformly distributed throughout their environment. The *E. coli* cell is so small that we will assume that the concentration of any particle in its immediate surroundings is uniform. Therefore, as a proof of concept, let us see if a well-mixed simulation replicates the steady-state concentrations of particles that we just found.
 
-Even though we can calculate steady-state concentrations by hand, we will find a simulation useful for two reasons. First, a particle-free simulation will give us snapshots of the system over multiple time points and allow us to see how quickly the concentrations reach equilibrium. Second, we will soon expand our model of chemotaxis to have many more particles and reactions, and direct interpretation of the system will quickly become impossible.
+Even though we can calculate steady-state concentrations by hand, we will find a particle-free simulation useful for two reasons. First, this simulation will give us snapshots of the concentrations of particles in the system over multiple time points and allow us to see how quickly the concentrations reach equilibrium. Second, we will soon expand our model of chemotaxis to have many particles and reactions that depend on each other, and direct mathematical analysis of the system like what we have done in the section above will quickly become impossible.  The difficulty at hand is comparable to the famed "*n*-body problem" in physics, where predicting the motions of two celestial objects interacting due to gravity can be done exactly, but there is no known such solution if we add a third body.
 
-In this module, we will use Gillespie's Stochastic Simulation Algorithm (often referred as SSA or Gillespie algorithm). We define the states of the system as the discrete amount of reactants, and a transition between one state and another is one molecular event. How likely is a transition to happen is proportional to the rate of that reaction [^Schwartz17].
+Our particle-free model will apply an approach called **Gillespie's Stochastic Simulation Algorithm**, which is often called the **Gillespie algorithm** or just **SSA** for short.
+
+To appreciate how SSA works, say that you own a store and have noticed that on average, there are *k* customers entering your store in a single hour. Let *X* denote the number of customers that enter the store in the next hour; *X* is an example of a **random variable** because it may change based on random chance. If we assume that customers are independent actors and that two customers cannot arrive at the exact same time, then *X* follows a **Poisson distribution**, which means that the probability that exactly *n* customers arrive in the next hour is given by the probability
+
+$$\mathrm{Pr}(n = N) = \dfrac{\lambda^N e^{-\lambda}}{N!}\,.$$
+
+Furthermore, the probability of observing exactly *n* customers in the next *t* hours is given by
+
+$$P(n = N) = \dfrac{(\lambda t)^N e^{-\lambda t}}{N!}\,.$$
+
+* SHUANGER: provide link out to an explanation of where these formulas come from.
+
+
+We define the states of the system as the discrete amount of reactants, and a transition between one state and another is one molecular event. How likely is a transition to happen is proportional to the rate of that reaction [^Schwartz17].
 
 In our case of ligand-receptor dynamics, we have free ligands *L*, free receptors *T*, which can bind with the rate constant *k*<sub>bind</sub>, and *LT* can dissociate with the rate constant *k*<sub>dissociate</sub>.
 
 At time *t*, there are two reactions that can happen next: *L* + *T* -> *LT* with a rate *k*<sub>bind</sub> · [*L*] · [*T*], and *LT* -> *L* + *T* with a rate *k*<sub>dissociate</sub> · [*LT*]. We define the sum of the two reactions as *R*<sub>tot</sub>. Now we are interested in two questions: when does the next reaction happen, and which reaction is that?
-
-To answer the first question, let's think about the real world question of customer arrival. You are sitting in a store and want to count the number of customers arriving in one hour, *n*. Assume customers are independent of each other, two person cannot arrive at the exact same time, and on average there are *λ* customers arrive within one hour. What's the probability of observing *N* customers arrive in one hour, aka *P(n = N)*? The process of custromer arrival is an example of **Poisson process**, and *P(n = N)* follows the **Poisson distribtution**, $$P(n = N) = \dfrac{\lambda^N e^{-\lambda}}{N!}$$ The probability of observing *N* customers arrive in *t* hour is $$P(n = N) = \dfrac{(\lambda t)^N e^{-\lambda t}}{N!}$$.
 
 If a customer arrives at time *t*<sub>0</sub>, what is the probability of the next customer arrives after we wait for time *t*<sub>wait</sub> hours? The next customer arrives at *t*<sub>0</sub> + *t*<sub>wait</sub> implies that no one arrives until we've waited for *t*<sub>wait</sub>. The probability of no one arrives during *t*<sub>wait</sub> can be described as $$P(n = 0) = \dfrac{(\lambda t_{wait})^0 e^{-\lambda t_{wait}}}{0!} = e^{-\lambda t_{wait}}$$. Therefore, the probability of the next customer arrives within after *t*<sub>wait</sub> hours is $$P(T \leq t_{wait}) = 1 - e^{-\lambda t_{wait}}$$. To get the *P(T = t<sub>wait</sub>*), we differentiate respect to *t*, and get $$P(T = t_{wait}) = \lambda e^{-\lambda t_{wait}}$$. This distribution is **exponential distribution**, and our wait time t<sub>wait</sub> before the next customer arrives follows an exponential distribution. The expected value (or the average) of the distribution is on average how long does it take for the next customer to arrive, 1/*λ*.
 

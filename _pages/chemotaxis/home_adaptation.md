@@ -5,17 +5,17 @@ sidebar:
  nav: "chemotaxis"
 ---
 
-## Adaptation and Robustness
+## Bacterial tumbling frequencies remain constant despite background attractant concentrations
 
 In the previous lesson, we explored the signal transduction pathway by which *E. coli* can change its tumbling frequency in response to a change in the concentration of an attractant. But the reality of cellular environments is that the concentration of a substance in these environments can vary across several orders of magnitude. Because of this, it is important not that the cell detects *absolute* concentrations of attractant or repellent but rather *relative* changes in its environment so that it can move in the direction of an attractant (or away from a repellent).
 
-For example, consider two bacterial cells, both of which are in well-mixed environments with fixed glucose concentrations. The first cell's environment has a glucose concentration of *x*, and the second cell's environment has a glucose concentration of 10*x*. Should the tumbling frequency of the second cell be lower?  What if we drop a sugar cube into both environments?  Shouldn't both cells be able to respond in the same way?
+For example, consider two bacterial cells, both of which are in well-mixed environments with fixed glucose concentrations. The first cell's environment has a glucose concentration of *x*, and the second cell's environment has a glucose concentration of 10*x*. Should the tumbling frequency of the second cell be lower?  What if we drop a sugar cube into both environments?  Shouldn't both cells be able to respond in the same way in response to this attractant?
 
-The challenge is that the ability to react to relative changes in its environment is not currently apparent in our model of chemotaxis. According to our current model, if a cell is in an environment with high background concentration of an attractant, then the cell will detect a signal and lower its tumbling frequency. If the concentration continues to increase, it may not be able to lower this frequency any further.
+The ability of *E. coli* to react to relative changes in its environment is not  present in our current model of chemotaxis. According to our current model, if a cell is in an environment with high background concentration of an attractant, then the cell will detect a signal and lower its tumbling frequency. If the concentration continues to increase, then it may not be able to lower this frequency any further.
 
-*E. coli* is able to detect relative changes in its concentration via **adaptation** to the signal concentration. When this stimulus remains constant for a period of time, the cell is able to return to a background tumbling frequency. Adaptation to have the same stable behavior despite different background concentrations is another example of the principle of *robustness* that we introduced in the previous module. The question is what mechanism *E. coli* uses to achieve such a robust response to variable environments.
+*E. coli* is able to detect relative changes in its concentration via **adaptation** to the signal concentration. If the concentration of attractant remains constant for a period of time, then *regardless* of the absolute value of the concentration, the cell returns to the same background tumbling frequency. The ability of *E. coli* to maintain their default tumbling behavior across varying concentrations of attractant offers another example of the principle of *robustness* that we introduced earlier in this course. The question is what mechanism *E. coli* uses to achieve such a robust response to variable environments.
 
-## Record past concentration through methylation
+## Bacteria have a "memory" of past concentrations using methylation
 
 Recall from the last section that in the absence of an attractant, CheW and CheA bind to the MCP on the interior of the cell, leading to greater autophosphorylation of CheA, which in turn phosphorylates CheY. The greater the concentration of phosphorylated CheY, the more frequently the bacterium tumbles.
 

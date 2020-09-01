@@ -91,7 +91,7 @@ chemotaxis:
         url: /chemotaxis/home_walk
       - title: "Signaling & ligand-receptor dynamics"
         url: /chemotaxis/home_signal
-      - title: "Pathway biochemistry"
+      - title: "A Biochemically Accurate Model of Chemotaxis"
         url: /chemotaxis/home_biochem
       - title: "Adaptation"
         url: /chemotaxis/home_senseadap

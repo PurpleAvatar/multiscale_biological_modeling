@@ -1,6 +1,6 @@
 ---
 permalink: /chemotaxis/home_senseadap
-title: "Adaptation via Methylation"
+title: "Methylation Helps Bacteria Adapt to Differing Concentrations"
 sidebar:
  nav: "chemotaxis"
 ---
@@ -35,7 +35,7 @@ As illustrated in the figure below, methylation of MCPs is achieved by an additi
  - CheB-P -> CheB + P
  - MCP-CH<sub>3</sub> + CheB-P -> MCP + CheB-P
 
-Just as the phosphorylation of CheY can be undone, the methylation of MCPs can be undone as well. In particular, an enzyme called **CheB**, which like CheY is phosphorylated by CheA, demethylates MCPs and autodephosphorylates. The rate of CheB's demethylation of MCPs is dependent on MCP methylation states. MCP methylation is faster when at a low methlylation state, and demethylation is faster when at a high methylation state.[^Spiro1997] 
+Just as the phosphorylation of CheY can be undone, the methylation of MCPs can be undone as well. In particular, an enzyme called **CheB**, which like CheY is phosphorylated by CheA, demethylates MCPs and autodephosphorylates. The rate of CheB's demethylation of MCPs is dependent on MCP methylation states. MCP methylation is faster when at a low methlylation state, and demethylation is faster when at a high methylation state.[^Spiro1997]
 
 The figure below shows a complete picture of the core pathways influencing chemotaxis. In order to model these pathways, we will need to add quite a few molecules and reactions to our current model. In the tutorial linked below, we will expand the BioNetGen model that we built in the previous lesson, and then see if this model can replicate the adaptation behavior of *E. coli* within a changing attractant concentration.
 
@@ -44,7 +44,7 @@ The figure below shows a complete picture of the core pathways influencing chemo
 
 ## New subsection on adding reactions vs rule-based modeling
 
-* SHUANGER: I wonder if we should have a section here before pointing to the tutorial that would walk through how we would add reactions to our current model that would implement what we have seen above.  For example, what if we didn't use rule-based modeling and instead just wanted to add reactions within the current model?  How many reactions would we need?  I think this is as good of a teachable moment for combinatorial explosion here as we will ever have. 
+* SHUANGER: I wonder if we should have a section here before pointing to the tutorial that would walk through how we would add reactions to our current model that would implement what we have seen above.  For example, what if we didn't use rule-based modeling and instead just wanted to add reactions within the current model?  How many reactions would we need?  I think this is as good of a teachable moment for combinatorial explosion here as we will ever have.
 
 Before incorporating the adaptation mechanisms in our BNG model, let's write out the reactions first.
 

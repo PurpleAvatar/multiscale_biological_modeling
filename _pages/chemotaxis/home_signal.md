@@ -134,18 +134,29 @@ In the [previous module](motifs), we saw how that we could avoid keeping track o
 
 Even though we can calculate steady-state concentrations by hand, we will find a particle-free simulation useful for two reasons. First, this simulation will give us snapshots of the concentrations of particles in the system over multiple time points and allow us to see how quickly the concentrations reach equilibrium. Second, we will soon expand our model of chemotaxis to have many particles and reactions that depend on each other, and direct mathematical analysis of the system like what we have done in the section above will quickly become impossible.  The difficulty at hand is comparable to the famed "*n*-body problem" in physics, where predicting the motions of two celestial objects interacting due to gravity can be done exactly, but there is no known such solution if we add a third body.
 
-Our particle-free model will apply an approach called **Gillespie's Stochastic Simulation Algorithm**, which is often called the **Gillespie algorithm** or just **SSA** for short.
+Our particle-free model will apply an approach called **Gillespie's Stochastic Simulation Algorithm**, which is often called the **Gillespie algorithm** or just **SSA** for short. Before we explain how this algorithm works, we take a short detour to provide some probabilistic context.
 
-To appreciate how SSA works, say that you own a store and have noticed that on average, there are *k* customers entering your store in a single hour. Let *X* denote the number of customers that enter the store in the next hour; *X* is an example of a **random variable** because it may change based on random chance. If we assume that customers are independent actors and that two customers cannot arrive at the exact same time, then *X* follows a **Poisson distribution**, which means that the probability that exactly *n* customers arrive in the next hour is given by the probability
+## The Poisson and exponential distributions
 
-$$\mathrm{Pr}(n = N) = \dfrac{\lambda^N e^{-\lambda}}{N!}\,.$$
+Say that you own a store and have noticed that on average, there are *λ* customers entering your store in a single hour. Let *X* denote the number of customers that enter the store in the next hour; *X* is an example of a **random variable** because it may change based on random chance. If we assume that customers are independent actors and that two customers cannot arrive at the exact same time, then *X* follows a **Poisson distribution**, which means that the probability that exactly *n* customers arrive in the next hour is given by the probability
+
+$$\mathrm{Pr}(X = n) = \dfrac{\lambda^n e^{-\lambda}}{n!}\,.$$
 
 Furthermore, the probability of observing exactly *n* customers in the next *t* hours is given by
 
-$$P(n = N) = \dfrac{(\lambda t)^N e^{-\lambda t}}{N!}\,.$$
+$$\mathrm{Pr}(X = n) = \dfrac{(\lambda t)^n e^{-\lambda t}}{n!}\,.$$
 
-* SHUANGER: provide link out to an explanation of where these formulas come from.
+* SHUANGER: provide link out to an explanation of where this formula comes from.
 
+A related question is how long we will have to wait for the next customer to arrive. Specifically, what are the chances that this customer will arrive after *t* units of time? If we let *T* be the random variable corresponding to our wait time, then the probability of *T* being less than *t* is the probability of seeing zero customers in this time period:
+
+$$\mathrm{Pr}(T < t) = \mathrm{Pr}(X = 0) = \dfrac{(\lambda t)^0 e^{-\lambda t}}{0!} = e^{-\lambda t}\,.$$
+
+Because of this formula, the random variable *T* is said to follow an **exponential distribution.**
+
+* Phillip will need to start here.
+
+## An overview of the Gillespie algorithm
 
 We define the states of the system as the discrete amount of reactants, and a transition between one state and another is one molecular event. How likely is a transition to happen is proportional to the rate of that reaction [^Schwartz17].
 
@@ -153,9 +164,7 @@ In our case of ligand-receptor dynamics, we have free ligands *L*, free receptor
 
 At time *t*, there are two reactions that can happen next: *L* + *T* -> *LT* with a rate *k*<sub>bind</sub> · [*L*] · [*T*], and *LT* -> *L* + *T* with a rate *k*<sub>dissociate</sub> · [*LT*]. We define the sum of the two reactions as *R*<sub>tot</sub>. Now we are interested in two questions: when does the next reaction happen, and which reaction is that?
 
-If a customer arrives at time *t*<sub>0</sub>, what is the probability of the next customer arrives after we wait for time *t*<sub>wait</sub> hours? The next customer arrives at *t*<sub>0</sub> + *t*<sub>wait</sub> implies that no one arrives until we've waited for *t*<sub>wait</sub>. The probability of no one arrives during *t*<sub>wait</sub> can be described as $$P(n = 0) = \dfrac{(\lambda t_{wait})^0 e^{-\lambda t_{wait}}}{0!} = e^{-\lambda t_{wait}}$$. Therefore, the probability of the next customer arrives within after *t*<sub>wait</sub> hours is $$P(T \leq t_{wait}) = 1 - e^{-\lambda t_{wait}}$$. To get the *P(T = t<sub>wait</sub>*), we differentiate respect to *t*, and get $$P(T = t_{wait}) = \lambda e^{-\lambda t_{wait}}$$. This distribution is **exponential distribution**, and our wait time t<sub>wait</sub> before the next customer arrives follows an exponential distribution. The expected value (or the average) of the distribution is on average how long does it take for the next customer to arrive, 1/*λ*.
-
-Does this sounds like our question of when the next reaction happen? The process of reactions happening is our Poisson process, the number of reactions happen within a period of time follows the Poisson distribution where reaction rate *R*<sub>tot</sub> indicates the expected number of reactions to happen within the period, and we are interested in the wait time before the next reaction.
+Does this sound like our question of when the next reaction happen? The process of reactions happening is our Poisson process, the number of reactions happen within a period of time follows the Poisson distribution where reaction rate *R*<sub>tot</sub> indicates the expected number of reactions to happen within the period, and we are interested in the wait time before the next reaction.
 
 The wait time, *δt*, before the next reaction to happen follows an exponential distribution with mean of 1/*R*<sub>tot</sub>. Thus, the time of the system becomes *t* + *δt* after this step. We have the probability of *δt* taking each value now, and we need to get the exact value of *δt*. This process is similar to rolling a dice, and we have a dice with infinite number of sides, and the probability of getting each side is not equal; or, plotting cutting a piece of paper to replicate the probability distribution function and throwing darts onto that piece of paper. In simulations, **sampling** is the key to replicate the stochasticity in nature, and can conveniently done by computer programs.
 

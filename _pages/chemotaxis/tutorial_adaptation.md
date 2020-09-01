@@ -12,14 +12,14 @@ In this page, we will:
 
 ## Include methylation in the model
 
-Now let's add methylation states to model how *E. coli* can adapt to a higher attractant concentrations and bring back the tumbling frequency. The methylation states of the receptors store the *past* ligand concentrations. If we have a high level ligand-receptor binding, and that is consistent with the methylation states, then the cell doesn't need to decrease its tumbling frequency because no gradient is present. This is achieved by using higher methylation states to reflect higher past ligand concentration, and higher rates of autophosphorylation for higher methylation states. The increased phosphorylation due to higher methylation states can compensate for the low phosphorylation due to high levels of ligand binding. 
+Now let's add methylation states to model how *E. coli* can adapt to a higher attractant concentrations and bring back the tumbling frequency. The methylation states of the receptors store the *past* ligand concentrations. If we have a high level ligand-receptor binding, and that is consistent with the methylation states, then the cell doesn't need to decrease its tumbling frequency because no gradient is present. This is achieved by using higher methylation states to reflect higher past ligand concentration, leading to higher rates of autophosphorylation. This compensates for the low phosphorylation due to high levels of ligand binding. 
 
 Our model will be based on the [model](https://www.pnas.org/content/94/14/7263) by Spiro et al.[^Spiro1997]
 
 The complete code can be downloaded here: 
 <a href="https://purpleavatar.github.io/multiscale_biological_modeling/downloads/downloadable/adaptation.bngl" download="adaptation.bngl">adaptation.bngl</a>
 
-For simplicity, we will not code up the actual methylation states, but use low (A), medium (B), high (C) to indicate the methylation states instead. We will see why later.
+For simplicity, we will not code up the actual methylation states, but use low (A), medium (B), high (C) to indicate the methylation states instead. 
 
 First add methylation states, low (A), medium (B), high (C), for the ternary complex. Also add a component `r` for later introduction of CheR. Update `T` to be `T(l,r,Meth~A~B~C,Phos~U~P)`.
 
@@ -36,7 +36,7 @@ Then we change the receptor autophosphorylation rules to reflect what we've just
 	TbLP: L(t!1).T(l!1,Meth~B,Phos~U) -> L(t!1).T(l!1,Meth~B,Phos~P) k_TaUnbound_phos*0.8
 	TcLP: L(t!1).T(l!1,Meth~C,Phos~U) -> L(t!1).T(l!1,Meth~C,Phos~P) k_TaUnbound_phos*1.6
 
-The methylation states of the receptor complexes are modified by CheR and CheB. CheR binds to receptor complexes and methylates them; the rate of methylation is higher for ligand-bound receptors. CheB is phosphorylated by CheA in the receptor complex, and CheB-P then demethylates receptor complexes; the rate of demethylation is independent of ligand-binding. Therefore more ligand binding leads to higher methylation states. The rate of entering an intermediate methylation state is faster, enabling fast adaptation. 
+The methylation states of the receptor complexes are modified by CheR and CheB. CheR binds to receptor complexes and methylates them; the rate of methylation is higher for ligand-bound receptors. CheB is phosphorylated by CheA in the receptor complex, and CheB-P then demethylates receptor complexes. Therefore more ligand binding leads to higher methylation states.
 
 Add `CheB(Phos~U~P)` and `CheR(t)` to the `molecule types` section. And add reactions we just discussed to `reaction rules`.
 
@@ -98,9 +98,9 @@ Now we have a complete set of reaction rules. For convenience, give all reaction
 
 ## Adding Compartments
 
-In biological systems, plasma membrane separates molecules inside of the cell from the environment. In our chemotaxis system, ligand are outside of the cell, receptors and flagellar proteins are on the membrane, and CheY, CheR, CheB, CheZ are inside the cell. Therefore we will also add this compartmentalization into our model.
+In biological systems, plasma membrane separates molecules inside of the cell from the environment. In our chemotaxis system, ligand are outside of the cell, receptors and flagellar proteins are on the membrane, and CheY, CheR, CheB, CheZ are inside the cell. We will also add this compartmentalization into our model.
 
-We will define extra-cellular spaces, plasma membrane, and cytoplasm. Here, each row indicates 1) name of the compartment, 2) dimension (2D or 3D), 3) surface area or volumn of the compartment, 4) the name of the parent compartment. More information on compartmentalization can be found page 54-55 [here](http://www.lehman.edu/academics/cmacs/documents/RuleBasedPrimer-2011.pdf).
+We define extra-cellular spaces, plasma membrane, and cytoplasm. Here, each row indicates 1) name of the compartment, 2) dimension (2D or 3D), 3) surface area or volumn of the compartment, 4) the name of the parent compartment. More information on compartmentalization can be found page 54-55 [here](http://www.lehman.edu/academics/cmacs/documents/RuleBasedPrimer-2011.pdf).
 
 	begin compartments
 		EC  3  100       #um^3
@@ -132,15 +132,15 @@ We need to add the compartmentalization information in the `seed species`. Also 
 Specify all the molecules types you want to observe for in the `observable` section.
 
 	begin observables
-		Molecules BoundLigand L(t!1).T(l!1)
-		Molecules ActiveCheY CheY(Phos~P)
-		Molecules TA T(Meth~A)
-		Molecules TB T(Meth~B)
-		Molecules TC T(Meth~C)
-		Molecules ActiveCheB CheB(Phos~P)
+		Molecules bound_ligand L(t!1).T(l!1)
+		Molecules phosphorylated_CheY CheY(Phos~P)
+		Molecules low_methyl_receptor T(Meth~A)
+		Molecules medium_methyl_receptor T(Meth~B)
+		Molecules high_methyl_receptor T(Meth~C)
+		Molecules phosphorylated_CheB CheB(Phos~P)
 	end observables
 
-And the last thing to be done is to assign values to the parameters. Let's start with no ligand is added to the system. We assign the initial number for each molecule and reaction rates by  based on *in vivo* stoichiometry and parameter tuning [^1][^Li2004][^Stock1991]. Specifically, we will add number of CheR, CheB, the state-dependency of receptor complex autophosphorylation, reaction rates for receptor-CheR binding/dissociation, rates of receptor complex methylation and demethylation.
+And the last thing is to assign values to the parameters. Let's start with no ligand is added to the system. We assign the initial number for each molecule and reaction rates based on *in vivo* stoichiometry and parameter tuning [^1][^Li2004][^Stock1991]. Specifically, we will add number of CheR, CheB, the state-dependency of receptor complex autophosphorylation, reaction rates for receptor-CheR binding/dissociation, rates of receptor complex methylation and demethylation.
 
 	begin parameters
 		NaV 6.02e8   #Unit conversion to cellular concentration M/L -> #/um^3
@@ -179,22 +179,19 @@ The complete code can be downloaded here:
 
 Fantastic, we have the model now.
 
-Now run the simulation (please change `t_end` and `n_steps` to 1000). You should be able to observe none of the observable change in concentration with no ligand present.
+Now run the simulation with `simulate({method=>"ssa", t_end=>800, n_steps=>800})`. You should be able to observe none of the observable change in concentration with no ligand present.
 
 ![image-center](../assets/images/chemotaxis_tutorial_oneadd0.png){: .align-center}
 
-**STOP:** Run simulation with `L0 = 1e6`. What happens to CheY activity? What happens to methylation states?
-{: .notice--primary}
+Run simulation with `L0 = 1e6`. What happens to CheY activity? What happens to methylation states?
 
 You will observe CheY acitvity drops immediately, and returns to the original state gradually. You will also see when the system reaches steady state, the there are more highly methlyated receptors, and less weakly methylated receptors.
 
-**STOP:** Try with higher concentrations (L0 = 1e4, 1e5, 1e6, 1e7, 1e8), highlight the line showing CheY-P. What's the general trend? How does the change depend on ligand concentration?
-{: .notice--primary}
+Try higher concentrations (L0 = 1e4, 1e5, 1e6, 1e7, 1e8), highlight the line showing CheY-P. What's the general trend? How does the change depend on ligand concentration?
 
-**STOP:** Also try only simulate the first 10 seconds to zoom in to what happens to the system there. When does CheY activities reach minimum?
-{: .notice--primary}
+Also try only simulate the first 10 seconds to zoom into what happens to the system there. When does CheY activities reach minimum?
 
-That suggests ligand binding can lead to a very quick response (within 1s), and the cell slowly adapts and returns to the background tumbling frequency in several minutes.
+That suggests ligand binding can lead to a very quick response (within 1s), and the cell slowly adapts to the concentration and returns to the background tumbling frequency in several minutes.
 
 
 [^Spiro1997]: Spiro PA, Parkinson JS, and Othmer H. 1997. A model of excitation and adaptation in bacterial chemotaxis. Biochemistry 94:7263-7268. [Available online](https://www.pnas.org/content/94/14/7263).

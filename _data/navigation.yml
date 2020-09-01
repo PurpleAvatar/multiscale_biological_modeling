@@ -97,7 +97,7 @@ chemotaxis:
         url: /chemotaxis/home_senseadap
       - title: "Modeling a Bacterium's Response to an Attractant Gradient"
         url: /chemotaxis/home_gradient
-      - title: "Conclusion: The Beauty of *E. coli*'s Randomized Exploration Algorithm"
+      - title: "Conclusion: The Beauty of E. coli's Randomized Exploration Algorithm"
         url: /chemotaxis/home_conclusion
   - title: Tutorials
     children:

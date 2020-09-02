@@ -18,12 +18,12 @@ Nonetheless, basic visualizations of the Spike protein with its glycans can be m
 
 To see how to visualize glycans in VMD, go to the following tutorial.
 
-[Tutorial](tutorial_glycans){: .btn .btn--primary .btn--large}
+[Visit tutorial](tutorial_glycans){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 <hr>
 
-[Conclusion](conclusion){: .btn .btn--primary .btn--large}
+[Next lesson](conclusion){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 

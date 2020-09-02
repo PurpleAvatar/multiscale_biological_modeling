@@ -23,7 +23,7 @@ toc_sticky: true
 
 If you want to learn more about RMSD and how to do your own calculations or are curious on how well our SARS-CoV-2 models performed, visit the following tutorial.
 
-[Tutorial](rmsd2){: .btn .btn--primary .btn--x-large}
+[Visit tutorial](rmsd2){: .btn .btn--primary .btn--x-large}
 {: style="font-size: 100%; text-align: center;"}
 
 ## Other Accuracy Accessing Methods (if needed)

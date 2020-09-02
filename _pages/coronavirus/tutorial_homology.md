@@ -1,5 +1,5 @@
 ---
-permalink: /coronavirus/modeling_tutorial
+permalink: /coronavirus/tutorial_homology
 title: "Protein Structure Prediction"
 sidebar: 
  nav: "coronavirus"

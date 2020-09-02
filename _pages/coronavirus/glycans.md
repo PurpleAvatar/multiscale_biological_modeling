@@ -5,7 +5,7 @@ sidebar:
  nav: "coronavirus"
 ---
 
-The surface of viruses and host cells are not smooth, but rather “fuzzy”. This is because the surface is decorated by structures called glycans, which consists of numerous monosaccharides linked together by glycosidic bonds. Although this definition is also shared with polysaccharides, glycans typically refer to the carbohydrate portion of glycoproteins, glycolipids, or proteoglycans [^1]. Glycans have been found to have structural and modulatory properties and are crucial in recognition events, most commonly by glycan-binding proteins (GBPs) [^2]. In viral pathogenesis, glycans on host cells act as primary receptors, co-receptors, or attachment factors that are recognized by viral glycoproteins for viral attachment and entry. On the other hand, glycans on viral surfaces are key for viral recognition by the host immune system [^3]. Unfortunately, some viruses have evolved methods that allow them to effectively conceal themselves from the immune system. One such method, which is utilized by SARS-CoV-2, is a “glycan shield”, where glycosylation of surface antigens allows the virus to hide from antibody detection. The Spike protein of SARS-CoV-2 was also found to be heavily glycosylated, shielding around 40% of the Spike protein from antibody recognition [^4]. Such glycosylation does not hinder the Spike protein’s ability to interact with human ACE2 because the Spike protein is able to adopt an open conformation, allowing a large portion of the RBD being exposed.
+The surface of viruses and host cells are not smooth, but rather “fuzzy”. This is because the surface is decorated by structures called glycans, which consists of numerous monosaccharides linked together by glycosidic bonds. Although this definition is also shared with polysaccharides, glycans typically refer to the carbohydrate portion of glycoproteins, glycolipids, or proteoglycans [^1]. Glycans have been found to have structural and modulatory properties and are crucial in recognition events, most commonly by glycan-binding proteins (GBPs) [^2]. In viral pathogenesis, glycans on host cells act as primary receptors, co-receptors, or attachment factors that are recognized by viral glycoproteins for viral attachment and entry. On the other hand, glycans on viral surfaces are key for viral recognition by the host immune system [^3]. Unfortunately, some viruses have evolved methods that allow them to effectively conceal themselves from the immune system. One such method, which is utilized by SARS-CoV-2, is a “glycan shield”, where glycosylation of surface antigens allows the virus to hide from antibody detection. Another notorious virus that utilizes glycan shielding is HIV. The Spike protein of SARS-CoV-2 was also found to be heavily glycosylated, shielding around 40% of the Spike protein from antibody recognition [^4]. Such glycosylation does not hinder the Spike protein’s ability to interact with human ACE2 because the Spike protein is able to adopt an open conformation, allowing a large portion of the RBD being exposed.
 
 Glycans are generally very flexible and have large internal motions that makes it difficult to get an accurate description of their 3D shapes. Fortunately, molecular dynamics (MD) simulations can be employed to predict the motions and shapes of the glycans. With a combination of MD and visualization tools (i.e. VMD), snapshots of the Spike protein with its glycosylation can be created.
 
@@ -16,9 +16,14 @@ Nonetheless, basic visualizations of the Spike protein with its glycans can be m
 
 <img src="../_pages/coronavirus/files/GlycanComparison.png">
 
+To see how to visualize glycans in VMD, go to the following tutorial.
 
+[Tutorial](tutorial_glycans){: .btn .btn--primary .btn--large}
+{: style="font-size: 100%; text-align: center;"}
 
-[Normal Mode Analysis](NMA){: .btn .btn--primary .btn--x-large} [Conclusion](conclusion){: .btn .btn--primary .btn--x-large}
+<hr>
+
+[Conclusion](conclusion){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 

@@ -23,7 +23,7 @@ The result showed four regions of structural differences, the main one being bet
 
 To see how to use Multiseq and replicate these results, go to the following tutorial.
 
-[Tutorial](tutorial_multiseq){: .btn .btn--primary .btn--large}
+[Visit tutorial](tutorial_multiseq){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 <hr>

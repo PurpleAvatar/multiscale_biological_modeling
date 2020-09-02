@@ -163,6 +163,8 @@ coronavirus:
         url: /coronavirus/tutorial_multiseq
       - title: "GNM Calculation"
         url: /coronavirus/tutorial_GNM
+      - title: "ANM Calculation"
+        url: /coronavirus/tutorial_ANM
 
 wbcells:
   - title: Tutorial

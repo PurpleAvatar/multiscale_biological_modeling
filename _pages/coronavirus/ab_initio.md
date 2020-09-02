@@ -48,6 +48,13 @@ toc_sticky: true
 
 Randomness appears once again!
 
+To see an example of *ab initio* structure prediction, go to the following tutorial.
+
+[Tutorial](tutorial_ab_initio){: .btn .btn--primary .btn--large}
+{: style="font-size: 100%; text-align: center;"}
+
+<hr>
+
 [Next lesson](homology){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 

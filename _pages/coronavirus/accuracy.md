@@ -17,11 +17,11 @@ toc_sticky: true
 
 * Due to the molecules being dynamic structures and constantly fluctuating, experimentally determined protein structures are not exact. In fact, most structures determined by x-ray crystallography, the most accurate method of structure determination, has a resolution between one to five angstroms. If we were to compare every single atom between two structures, the RMSD score can be greatly inflated Therefore, we typically only use the minimum requirement and compare the positions of the alpha-Carbons of the protein backbone. Just from the positions of the alpha-Carbons, we can get a pretty good idea of the tertiary structure of the protein (refer back to <a href="structure_intro">Introduction to Protein Structure Prediction</a>).
 
-*	Unfortunately, there is no established threshold RMSD as scores vary based on protein size (larger proteins mean more fluctuating parts) and the resolution of the structure determination method. In addition, RMSD has its own flaws where a single misplaced loop or an off-angle bond can have profound effects on the score. This is why other methods of structure comparisons are used in conjunction to RMSD for a more thorough comparison analysis. Nonetheless, a score under 2.0 angstroms is typically acceptable when comparing large molecules such as proteins.
+*	Unfortunately, there is no established threshold RMSD as scores vary based on protein size (larger proteins mean more fluctuating parts) and the resolution of the structure determination method. In addition, RMSD has its own flaws where a single misplaced loop or an off-angle bond can have profound effects on the score, as shown in the figure below. This is why other methods of structure comparisons are used in conjunction to RMSD for a more thorough comparison analysis. Nonetheless, a score under 2.0 angstroms is typically acceptable when comparing large molecules such as proteins.
 
-<img src="../_pages/coronavirus/files/RMSDExample2.png">
+<img src="../_pages/coronavirus/files/RMSDCartoon.png">
 
-If you want to learn more about RMSD and how to do your own calculations or are curious on how well our own SARS-CoV-2 models performed, visit the following tutorial.
+If you want to learn more about RMSD and how to do your own calculations or are curious on how well our SARS-CoV-2 models performed, visit the following tutorial.
 
 [Tutorial](rmsd2){: .btn .btn--primary .btn--x-large}
 {: style="font-size: 100%; text-align: center;"}

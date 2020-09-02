@@ -19,7 +19,7 @@ From the results, we see that the overall attractive interaction energy between 
 
 To see how to use NAMD Energy and replicate these results, go to the following tutorial.
 
-[Tutorial](tutorial_NAMD){: .btn .btn--primary .btn--large}
+[Visit tutorial](tutorial_NAMD){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 <hr>

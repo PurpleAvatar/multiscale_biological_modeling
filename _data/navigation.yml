@@ -151,8 +151,10 @@ coronavirus:
         url: /coronavirus/prody
       - title: "Setting up VMD"
         url: /coronavirus/VMDTutorial
-      - title: "Structure Prediction"
-        url: /coronavirus/modeling_tutorial
+      - title: "Ab initio Structure Prediction"
+        url: /coronavirus/tutorial_ab_initio
+      - title: "Homology Structure Prediction"
+        url: /coronavirus/tutorial_homology
       - title: "RMSD"
         url: /coronavirus/rmsd2
       - title: "Visualizing Molecules"

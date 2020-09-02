@@ -32,7 +32,7 @@ toc_sticky: true
 
 If you would like to learn more about protein structure prediction, click here to see how we used three publically available protein prediction software to model SARS-CoV-2 S protein.
 
-[Tutorial](tutorial_homology){: .btn .btn--primary .btn--large}
+[Visit tutorial](tutorial_homology){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 <hr>

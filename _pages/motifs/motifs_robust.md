@@ -41,15 +41,13 @@ Because of the spike in the concentration of *Y*, the reaction *Y* + *Z* → *Y*
 
 We might hypothesize that this process would continue, with a tall peak in the concentration of *Z*. However, the peak in the concentration of *Z* is no taller than normal, and the next peak shows a normal concentration of *X*. In other words, the system has very quickly absorbed the blow of an increase in concentration of *Y* and returned to normal within one cycle.
 
-* NOAH: do we have a good high-level explanation for what causes the oscillations to return to normal?
+The repressilator happens to be particularly successful at stabilizing. While there have been some attempts to study what makes oscillators robust, the process remains difficult to describe. By characterizing the number and type of interactions within the oscillator model, it has been shown that about 5 reactions minimum are needed for a very robust oscillator[^repress]. The symmetrical nature of the repressilator model may also contribute to its robustness.
 
 In fact, even with a much larger jolt to the repressilator, we observe the concentrations of the three particles return to normal oscillations very quickly.
 
-* NOAH: can you show one more figure that shows an even bigger shock to the system?
+![image-center](../assets/images/nf_sim_interrupted_spike.PNG){: .align-center}
 
 The repressilator is not the only network motif that leads to oscillations in particle concentrations, but robustness to disturbances in these concentrations is a shared feature of all these motifs.
-
-* NOAH: Cite? Example?
 
 The robustness of our repressilator model also implies a bigger picture moral in biological modeling. If an underlying biological system demonstrates robustness to change, then any model of that system should also be able to withstand this change. Conversely, we should be wary of any model of a robust system that is overly sensitive to changes in the system.
 
@@ -62,3 +60,5 @@ In the meantime, check out the exercises below to continue developing your under
 
 [Next lesson](conclusion){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
+
+[^repress]: Castillo-Hair, S. M., Villota, E. R., & Coronado, A. M. (2015). Design principles for robust oscillatory behavior. Systems and Synthetic Biology, 9(3), 125–133. https://doi.org/10.1007/s11693-015-9178-6

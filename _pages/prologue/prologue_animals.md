@@ -71,36 +71,29 @@ You can think of all these parameters as dials we can turn, observing how the sy
 
 For some parameter values, the system is not particularly interesting.  For example, the following animation is produced for *k* = 500,000 and *f* = 10. It shows that if *k* is too high, then the *B* particles will die out more quickly than they are replenished by the reaction with *A* particles, and so only *A* particles will be left. In this animation, *A* particles have been colored green, and *B* particles have been colored red.
 
-* NOAH: what is the reaction rate *r* for the predator-prey reaction? What is the diffusion rate?  Units? Width of grid?
-
 <iframe width="640" height="360" src="../assets/mert_predator_dies_f1e1_r5e5.mp4" frameborder="0" allowfullscreen></iframe>
-*f* = 10 and *d* = 500,000
+Predators dying out quickly, Feed Rate *f* = 1E1 and Kill Rate *k* = 5E5
 {: .text-center}
 
 On the other hand, if *f* is too high, then there will be an increase in the *A* particles. However, there will also be more interactions between *A* particles and pairs of *B* particles, and so we will then see an explosion in the number of predators.
 
 <iframe width="640" height="360" src="../assets/mert_f1e6_d1e5.mp4" frameborder="0" allowfullscreen></iframe>
-*f* = 10,0000 and *d* = 100,000
+Predators overtaking prey due to excess of prey, Feed Rate *f* = 1E4 and Kill Rate *k* = 1E5
 {: .text-center}
 
 The interesting behavior in this system lies in a sweet spot, where we see interesting macro behavior for a given collection of parameters.
 
-For example,
+Let's scale up the simulation! With more particles and larger simulation space, we will be able to observe larger patterns. For example,
 
 * NOAH: INSERT MERT VIDEO WITH CLEAR EXPLANATION OF PARAMETERS
-<iframe width="640" height="360" src="../assets/mert_f1e5_d2e5.mp4" frameborder="0" allowfullscreen></iframe>
-*f* = 10,000 and *d* = 20,000
+<iframe width="640" height="360" src="../assets/gray_scott_11_by_11_f_1.75_k_2_new.mp4" frameborder="0" allowfullscreen></iframe>
+A fizzling cascade bounces in between larger waves, Feed Rate *f* = 1.75E5 and Kill Rate *k* = 2E5
 {: .text-center}
 
-And yet if we make a slight change to the parameters, we obtain very different macro behavior.
+And yet if we make a slight change to the parameters, we obtain different macro behavior.
 
-* NOAH: INSERT 2-3 MORE MERT VIDEOS, WITH CLEAR EXPLANATION OF PARAMETERS EACH TIME
-<iframe width="640" height="360" src="../assets/mert_f1e5_d1e5.mp4" frameborder="0" allowfullscreen></iframe>
-*f* = 10,000 and *d* = 10,000
-{: .text-center}
-
-<iframe width="640" height="360" src="../assets/mert_f1_5e5_d2e5.mp4" frameborder="0" allowfullscreen></iframe>
-*f* = 15,000 and *d* = 10,000
+<iframe width="640" height="360" src="../assets/gray_scott_11_by_11_f_1.4_k_2.mp4" frameborder="0" allowfullscreen></iframe>
+Each ripple is started by a small spiral, Feed Rate *f* = 1.4E5 and Kill Rate *k* = 2E5
 {: .text-center}
 
 ## Streamlining our simulations

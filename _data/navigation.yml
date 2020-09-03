@@ -34,6 +34,8 @@ prologue:
         url: /prologue/blocks
       - title: "Conclusion"
         url: /prologue/conclusion
+  - title: "Tutorials"
+    children: 
       - title: "Tutorial RW"
         url: /prologue/tutorial-random-walk
       - title: "Gray-Scott Jupyter Notebook"
@@ -42,6 +44,10 @@ prologue:
         url: /prologue/gs-cellblender
       - title: "Tutorial Diffusion"
         url: /prologue/tutorial-diffusion
+      - title: "Setting up CellBlender"
+        url: /motifs/setup
+      - title: "Navigating CellBlender"
+        url: /motifs/navigation
 
 motifs:
   - title: "Finding Motifs in Transcription Factor Networks"
@@ -60,18 +66,14 @@ motifs:
         url: /motifs/feed
       - title: "Building a Biological Oscillator"
         url: /motifs/oscillators
-      - title: "Modeling Oscillator Robustness"
-        url: /motifs/robust
       - title: "Conclusion"
         url: /motifs/conclusion
+      - title: "Modeling Oscillator Robustness"
+        url: /motifs/robust
   - title: Tutorials
     children:
       - title: "Looking for Loops in Transcription Factor Networks"
         url: /motifs/tutorial_loops
-      - title: "Setting up CellBlender"
-        url: /motifs/setup
-      - title: "Navigating CellBlender"
-        url: /motifs/navigation
       - title: "Negative-Autoregulation"
         url: /motifs/tutorial_nar
       - title: "Feed-Forward Loop"

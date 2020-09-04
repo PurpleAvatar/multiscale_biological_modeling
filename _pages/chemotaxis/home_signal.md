@@ -142,11 +142,11 @@ Say that you own a store and have noticed that on average, there are *λ* custom
 
 $$\mathrm{Pr}(X = n) = \dfrac{\lambda^n e^{-\lambda}}{n!}\,.$$
 
-Furthermore, the probability of observing exactly *n* customers in the next *t* hours is given by
+A derivation of this formula can be found (here)[https://medium.com/@andrew.chamberlain/deriving-the-poisson-distribution-from-the-binomial-distribution-840cc1668239].
+
+Furthermore, if we use *λ* to denote the rate of customers arriving (instead of average arrival in one hour), and use *t* to denote time, the probability of observing exactly *n* customers in time period *t* is given by
 
 $$\mathrm{Pr}(X = n) = \dfrac{(\lambda t)^n e^{-\lambda t}}{n!}\,.$$
-
-* SHUANGER: provide link out to an explanation of where this formula comes from.
 
 A related question is how long we will have to wait for the next customer to arrive. Specifically, what are the chances that this customer will arrive after *t* units of time? If we let *T* be the random variable corresponding to our wait time, then the probability of *T* being less than *t* is the probability of seeing zero customers in this time period:
 

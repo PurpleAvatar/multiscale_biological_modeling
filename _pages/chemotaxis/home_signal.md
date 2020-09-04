@@ -113,7 +113,17 @@ In this case, if we solve for [*LT*], we obtain [*LT*] = 36.492; the steady-stat
 **STOP**: What do you think will happen to the steady-state concentration of *LT* if the initial concentration (*l*<sub>0</sub>) increases or decreases? What if the dissociation rate (*k*<sub>dissociate</sub>) increases or decreases?  Confirm your prediction by changing the parameters above and solving the quadratic formula for [*LT*].
 {: .notice--primary}
 
-Let's use our formula to show how we could determine the steady-state concentration of bound receptor-ligand complexes using values obtained from experiments. We will model an *E. coli* with 7000 receptor molecules in an environment with 10000 ligand molecules. The experimentally determined rate constant for ligand-receptor binding is *k*<sub>bind</sub> = 0.0146((molecules/µm<sup>3</sup>)<sup>-1</sup>)s<sup>-1</sup>, and the rate constant for ligand-receptor dissociation is *k*<sub>dissociate</sub> = 35s<sup>-1</sup>.[^Li2004][^Spiro1997][^Stock1991] If we multiply the units of reaction rate constants with the concentrations (with unit molecules/µm<sup>3</sup>) of reactants, we will get the rate of *LT* formation in the unit of (molecules/µm<sup>3</sup>) · (molecules/µm<sup>3</sup>) * ((molecules/µm<sup>3</sup>)<sup>-1</sup>)s<sup>-1</sup> = (molecules/µm<sup>3</sup>)s<sup>-1</sup>; and the rate of *LT* dissociation in the unit of (molecules/µm<sup>3</sup>) · (s<sup>-1</sup>) = (molecules/µm<sup>3</sup>)s<sup>-1</sup>.
+Let's use our formula to show how we could determine the steady-state concentration of bound receptor-ligand complexes using values obtained from experiments. We will model an *E. coli* with 7000 receptor molecules in an environment with 10000 ligand molecules. The experimentally determined rate constant for ligand-receptor binding is *k*<sub>bind</sub> = 0.0146((molecules/µm<sup>3</sup>)<sup>-1</sup>)s<sup>-1</sup>, and the rate constant for ligand-receptor dissociation is *k*<sub>dissociate</sub> = 35s<sup>-1</sup>.[^Li2004][^Spiro1997][^Stock1991]
+
+If we multiply the units of reaction rate constants with the concentrations (with unit molecules/µm<sup>3</sup>) of reactants, we will get the rate of *LT* formation in the unit of 
+
+(molecules/µm<sup>3</sup>) · (molecules/µm<sup>3</sup>) * ((molecules/µm<sup>3</sup>)<sup>-1</sup>)s<sup>-1</sup> = (molecules/µm<sup>3</sup>)s<sup>-1</sup>
+
+and the rate of *LT* dissociation in the unit of 
+
+(molecules/µm<sup>3</sup>) · (s<sup>-1</sup>) = (molecules/µm<sup>3</sup>)s<sup>-1</sup>
+
+Hence the rate of formation and dissociation of *LT* are in the same units.
 
 For these choices of parameters, we obtain the following constants *a*, *b*, *c* in the quadratic equation:
 

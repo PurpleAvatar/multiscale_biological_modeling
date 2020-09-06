@@ -7,7 +7,7 @@ toc: true
 toc_sticky: true
 ---
 
-In the <a href=”home”>Introduction</a>, we discussed that SARS-CoV-2 and SARS are in the same viral genus and both target the human angiotensin-converting enzyme2 (ACE2) with their S protein. However, SARS-CoV-2 is much more infectious, and its S protein has been found to bind to ACE2 with greater affinity than that of SARS. With accurate models of the tertiary structure of both S proteins, we can now structurally compare them to find why this is the case.
+In the <a href=”coronavirus_home”>Introduction</a>, we discussed that SARS-CoV-2 and SARS are in the same viral genus and both target the human angiotensin-converting enzyme2 (ACE2) with their S protein. However, SARS-CoV-2 is much more infectious, and its S protein has been found to bind to ACE2 with greater affinity than that of SARS. With accurate models of the tertiary structure of both S proteins, we can now structurally compare them to find why this is the case.
 The receptor binding domain (RBD) is the part of the S protein that interacts with ACE2, and the receptor binding motif (RBM) is the part of the RBD that mediates contact with ACE2. Therefore, we will narrow our focus to the differences in RBM to find out why SARS-CoV-2 binds better with ACE2.
 
 ## Protein Structure Files
@@ -55,7 +55,7 @@ To see how these visualizations were made, go to the following tutorial.
 
 In the next section, we will take a look at exactly how much these three differences in SARS-CoV-2 contribute to its increased affinity with ACE2.
 
-[Next lesson](NAMD){: .btn .btn--primary .btn--x-large}
+[Next lesson](NAMD){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 [^Shang]: Shang, J., Ye, G., Shi, K., Wan, Y., Luo, C., Aijara, H., Geng, Q., Auerbach, A., Li, F. 2020. Structural basis of receptor recognition by SARS-CoV-2. Nature 581, 221–224. https://doi.org/10.1038/s41586-020-2179-y

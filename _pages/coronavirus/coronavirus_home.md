@@ -9,6 +9,30 @@ sidebar:
 
 ## Introduction: How SARS and COVID-19 Shook the World
 
+### Phillip notes to self
+
+Reference, https://www.axios.com/timeline-the-early-days-of-chinas-coronavirus-outbreak-and-cover-up-ee65211a-afb6-4641-97b8-353718a5faab.html
+
+“A tale of two doctors” – Liu Jianlun and Li Wenliang
+
+Take some of the mystery set up from Liu Jianlun
+
+This is not to say that the coronavirus went anywhere – point about 2017 paper
+
+Then transition to SARS-2.
+
+What could make the second virus so much deadlier than the first?  What are the differences between the viruses and how do these contribute to something that has become a much more infectious disease?
+
+After all, the diseases are startlingly similar – show image of the two under microscope?  They are indistinguishable visually.
+
+They even have the same mechanism of entering host cells – Spike glycoprotein.  Explain what it does.
+
+Two objectives are great: first, we will put ourselves in the shoes of researchers working with the new virus in January 2020 and study the SARS-CoV-2 spike protein.  Second, we will perform a comparative analysis against the SARS—Cov-1 spike protein to determine what makes it more infectious.  This type of study is vital because if we can understand how it attacks our cells then we can start to defend against it.
+
+“One of the world's most important warning systems for a deadly new outbreak is a doctor's or nurse's recognition that some new disease is emerging and then sounding the alarm”, said Tom Inglesby, the Director of the Center for Health Security at Johns Hopkins Bloomberg School of Public Health in Baltimore, MD, USA. “It takes intelligence and courage to step up and say something like that, even in the best of circumstances.”
+
+cite “seventh coronavirus that can infect humans”
+
 ### The Onset of SARS
 
 Severe Acute Respiratory Syndrome (SARS or SARS-CoV for coronvirus) made its first appearance in November 2002 Guangdong, China, where the first case of “atypical pneumonia” was reported [^1]. Near the end of the month, the Canadian Global Public Health Intelligence Network and US Global Emerging Infections Surveillance and Response System, partners of the Global Outbreak Alert and Response Network (GOARN), picked up on media reports describing an “influenza outbreak” in Beijing and Guangzhou. The World Health Organization (WHO) requested information from Chinese Authorities and a report was received on 12 December. The details described an investigation of 23 influenza virus isolates, 22 of which confirmed to be type B strains, and how the number of cases were like that of past seasonal patterns. By 11 February 2003, an official report of a severe respiratory syndrome/atypical pneumonia with more than 300 cases and five deaths was received by the WHO by the Chinese Ministry of Health. The WHO Global Influenza Network was alerted by the potential of a presumed new strain of influenza. When Hong Kong authorities reported two cases of A(H5N1) avian influenza on 20 February, WHO influenza pandemic preparedness plans were activated [^2].
@@ -35,7 +59,7 @@ Just by looking at the name SARS-CoV-2, one can assume that this virus is relate
 
 Of course, each outbreak is never handled in the exact same way, and differences in both time and approach by authorities will impact the spread of the disease. However, biological differences between the viruses are also key aspects. At the highest level, the most common symptoms between the two are very similar: fever, cough, fatigue, shortness of breath. However, SARS tends to be more severe, with 20-30% of cases requiring mechanical ventilation while an estimated 20% of COVID-19 cases requiring ventilation [^11][^12]. In addition, a key difference in symptoms and transmission is that SARS-CoV-2 can be spread by individuals that are asymptomatic [^13]. In contrast, there are no known cases of SARS from exposure to a SARS patient who has not developed symptoms yet [^14]. This most likely played a major role in international transmission and the attributes to the difficulty in containing the disease.
 
-Investigating the biology of the viruses may also reveal key factors in the outbreak difference. SARS and SARS-CoV-2 viruses belong to the genus Betacoronavirus lineage B. On the whole-genome level, SARS-CoV-2 is most closely related to bat coronaviruses, RaTG13, bat-SL-CoVZC45, and bat-SL-CoVZXC2 with a sequence identity of 96%, 87.99% and 87.23%, respectively, and less genetically similar to SARS-CoV with a sequence identity of about 79% [^15]. However, the method of infection between SARS-CoV-2 and SARS-CoV are strikingly similar. The surface of the viruses is decorated with a transmembrane protein called the Spike protein (S protein). The S protein is critical in the recognition and viral entry into human host cells by binding to the human receptor angiotensin-converting enzyme2 (ACE2) on the host cell surface [^16][^17]. Because of the role the S protein plays, it has become one of the targets in developing a vaccine. 
+Investigating the biology of the viruses may also reveal key factors in the outbreak difference. SARS and SARS-CoV-2 viruses belong to the genus Betacoronavirus lineage B. On the whole-genome level, SARS-CoV-2 is most closely related to bat coronaviruses, RaTG13, bat-SL-CoVZC45, and bat-SL-CoVZXC2 with a sequence identity of 96%, 87.99% and 87.23%, respectively, and less genetically similar to SARS-CoV with a sequence identity of about 79% [^15]. However, the method of infection between SARS-CoV-2 and SARS-CoV are strikingly similar. The surface of the viruses is decorated with a transmembrane protein called the Spike protein (S protein). The S protein is critical in the recognition and viral entry into human host cells by binding to the human receptor angiotensin-converting enzyme2 (ACE2) on the host cell surface [^16][^17]. Because of the role the S protein plays, it has become one of the targets in developing a vaccine.
 
 Even though the S proteins of the two viruses have the same general function, there are still notable differences between the two. Careful analysis of the S protein revealed that the receptor binding domain (RBD), the part of the S protein that directly interacts with ACE2, of SARS-CoV-2 binds to ACE2 with greater affinity [^18]. In addition, the S protein of SARS-CoV-2 was found to be only 75% homologous to the SARS-CoV S protein [^19]. The differences between the two S proteins may reveal why SARS-CoV-2 is much more infectious than SARS.
 
@@ -84,6 +108,3 @@ There are two main objectives for this module. First, we will explore publicly a
 [^18]: Shang, J., Ye, G., Shi, K. et al. Structural basis of receptor recognition by SARS-CoV-2. Nature 581, 221–224 (2020). https://doi.org/10.1038/s41586-020-2179-y
 
 [^19]: Jaimes, J. A., André, N. M., Chappie, J. S., Millet, J. K., & Whittaker, G. R. 2020. Phylogenetic Analysis and Structural Modeling of SARS-CoV-2 Spike Protein Reveals an Evolutionary Distinct and Proteolytically Sensitive Activation Loop. Journal of molecular biology, 432(10), 3309–3325. https://doi.org/10.1016/j.jmb.2020.04.009
-
-
-

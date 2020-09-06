@@ -21,6 +21,10 @@ toc_sticky: true
 
 <img src="../_pages/coronavirus/files/RMSDCartoon.png">
 
+(This is another cartoon to show the sensitivity of RMSD. We could use either figure)
+
+<img src="../_pages/coronavirus/files/RMSDCartoon2.png">
+
 If you want to learn more about RMSD and how to do your own calculations or are curious on how well our SARS-CoV-2 models performed, visit the following tutorial.
 
 [Visit tutorial](rmsd2){: .btn .btn--primary .btn--x-large}

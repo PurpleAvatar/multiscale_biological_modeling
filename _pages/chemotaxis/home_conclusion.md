@@ -18,7 +18,7 @@ Units in this space are in µm, so that moving from (0, 0) to (0, 20) is 20µm, 
 **STOP:** How can we quantify how well a single bacterium has done at finding the attractant?
 {: .notice--primary}
 
-We will then implement two bacterial strategies. The first strategy is a standard random walk in which the bacterium reorients itself after a fixed rate of time. The second is based on what we have learned about chemotaxis.
+We will then implement two bacterial random walk strategies. In the first strategy, the bacterium travels in a new direction after an approximately constant rate of time. In the second strategy, the bacterium senses the relative concentration of attractant and adjusts its tumbling frequency, based on what we have learned about chemotaxis.
 
 **Strategy 1: Standard random walk**
 

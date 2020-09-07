@@ -74,7 +74,8 @@ We can adjust the speed of diffusion by adjusting this rate parameter. For examp
 
 We are now ready to implement our model of diffusion and add a visualization to see if our model does a good job of approximating the diffusion process.
 
-* NOAH: link to tutorial on just the diffusion aspect of this.
+[Visit Tutorial](tutorial-random-walk){: .btn .btn--primary .btn--large}
+{: style="font-size: 100%; text-align: center;"}
 
 ## Adding reactions and completing the Gray-Scott model
 
@@ -92,8 +93,6 @@ Recall that we our reaction-diffusion simulation has three reactions.
 Let us address these reactions one at a time. First, we have the feed rate reaction, which takes place at a **feed rate**. It is tempting to simply add some constant value *f* to the concentration of each cell, but this will cause problems if the concentration is close to 1; we want to avoid a situation in which the feed rate causes the concentration of *A* particles to exceed 1.
 
 Instead, if a given cell has concentration *a*, then we will add *f*(1-*a*) to the concentration of the cell.  For example, if *a* is 0.01, then we will add 0.99*f* to the cell because the current concentration is low. If *a* is 0.8, then we will only add 0.2*f* to the concentration.
-
-* NOAH: thoughts on email in which feed rate isn't quite constant?
 
 Second, we consider the death reaction of *B* particles, which takes place at a **kill rate**. Recall that the death reaction takes place at a rate proportional to the current concentration of *B* particles. As a result, if a cell has concentration *b*, then we will subtract *k* · *b* from its concentration in each step for some constant *k* that is between 0 and 1.
 
@@ -115,11 +114,10 @@ As the result of all these processes, we update the concentrations of *A* and *B
 *a*' = 0.7 - 0.14 + 0.08 + 0.09 - 0.175 = 0.555<br>
 *b*' = 0.5 - 0.05 + 0.06 - 0.2 + 0.175 = 0.485
 
-Applying these cell-based reaction-diffusion computations over all cells in parallel and over many generations forms the **Gray-Scott** model. We should now feel confident expanding our previous diffusion tutorial into a model that includes all Gray-Scott reactions. The question is, however, will we still see Turing patterns?
+Applying these cell-based reaction-diffusion computations over all cells in parallel and over many generations forms the **Gray-Scott** model[^gs]. We should now feel confident expanding our previous diffusion tutorial into a model that includes all Gray-Scott reactions. The question is, however, will we still see Turing patterns?
 
-* NOAH: CITE Gray-Scott model original paper.
-
-* NOAH: link to tutorial here
+[Visit Tutorial](gs-cellblender){: .btn .btn--primary .btn--large}
+{: style="font-size: 100%; text-align: center;"}
 
 ## Reflection on the Gray-Scott model
 
@@ -129,3 +127,5 @@ Applying these cell-based reaction-diffusion computations over all cells in para
 
 [Next lesson](#){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
+
+[^gs]: P. Gray and S.K. Scott, Autocatalytic reactions in the isothermal, continuous stirred tank reactor: isolas and other forms of multistability, Chemical Engineering Science 38 (1983) 29-43.

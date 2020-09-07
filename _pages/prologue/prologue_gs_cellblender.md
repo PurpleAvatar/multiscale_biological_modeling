@@ -151,5 +151,5 @@ You can also save and export this movie with the following steps:
 
 The movie will begin playing through, and when the animation is complete the movie file should be in the folder location you selected. 
 
-[Return to main text](ffl#Ensuring-the-same-steady-state-concentration){: .btn .btn--primary .btn--large}
+[Return to main text](blocks##Reflection-on-the-Gray-Scott-model){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}

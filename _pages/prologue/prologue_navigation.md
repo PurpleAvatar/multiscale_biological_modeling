@@ -1,8 +1,8 @@
 ---
-permalink: /motifs/navigation
+permalink: /prologue/navigation
 title: "Navigating CellBlender"
 sidebar: 
- nav: "motifs"
+ nav: "prologue"
 toc: true
 toc_sticky: true
 ---

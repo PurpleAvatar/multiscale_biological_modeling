@@ -54,7 +54,8 @@ The software MCell and other **particle-based spatial stochastic simulation** me
 
 The reaction rate we use in this equation describes the **bulk reaction rate**, or the total number of reactions occuring depending on the concentrations of reactants. Because MCell needs to only have bimolecular reactions occur when a collision occurs, the user will give MCell the bulk reaction rate and MCell will automatically choose a probability of reaction per collision based on how many collisions are expected in order to match the bulk reaction rate.  
 
-* NOAH: this is where the link to the reaction-diffusion tutorial should go I think.
+[Visit Tutorial](tutorial-diffusion){: .btn .btn--primary .btn--large}
+{: style="font-size: 100%; text-align: center;"}
 
 ## Changing parameters influence the macro behavior of the reaction-diffusion system
 

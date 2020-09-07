@@ -1,8 +1,8 @@
 ---
-permalink: /motifs/setup
+permalink: /prologue/setup
 title: "Setting up CellBlender"
 sidebar: 
- nav: "motifs"
+ nav: "prologue"
 toc: true
 toc_sticky: true
 ---

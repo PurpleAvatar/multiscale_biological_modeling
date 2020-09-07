@@ -35,8 +35,6 @@ In what follows, we will introduce a simple particle model based on Turing's ide
 [Next lesson](random-walk){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
-* NOAH -- please cite the following:
-
 [^numbers]: Turing, Alan M. (1936), "On Computable Numbers, with an Application to the Entscheidungsproblem", Proceedings of the London Mathematical Society, Ser. 2, Vol. 42: 230-265.
 
 [^weizenbaum]: Weizenbaum, Joseph (1976), Computer Power and Human Reason (New York: W.H. Freeman).

@@ -36,18 +36,19 @@ prologue:
         url: /prologue/conclusion
   - title: "Tutorials"
     children: 
-      - title: "Tutorial RW"
+      - title: "Setting up CellBlender"
+        url: /prologue/setup
+      - title: "Navigating CellBlender"
+        url: /prologue/navigation
+      - title: "Random Walk CellBlender"
         url: /prologue/tutorial-random-walk
       - title: "Gray-Scott Jupyter Notebook"
         url: /prologue/gs-jupyter
       - title: "Gray-Scott CellBlender"
         url: /prologue/gs-cellblender
-      - title: "Tutorial Diffusion"
+      - title: "Diffusion Jupyter Notebook"
         url: /prologue/tutorial-diffusion
-      - title: "Setting up CellBlender"
-        url: /motifs/setup
-      - title: "Navigating CellBlender"
-        url: /motifs/navigation
+      
 
 motifs:
   - title: "Finding Motifs in Transcription Factor Networks"

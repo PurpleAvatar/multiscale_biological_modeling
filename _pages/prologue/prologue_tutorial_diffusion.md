@@ -108,3 +108,6 @@ imageio.mimsave('dif_images/0diffusion_movie.gif', images)
 You should get images similar to the ones below. If you would like to see more images, you can adjust the *plot_iter* variable or *numIter* variable which controls how often the graph is plotted and how many iterations are in the simulation. 
 
 <iframe width="640" height="360" src="../assets/0diffusion_movie.gif" frameborder="0" allowfullscreen></iframe>
+
+[Return to main text](animals##Changing-parameters-influence-the-macro-behavior-of-the-reaction-diffusion-system){: .btn .btn--primary .btn--large}
+{: style="font-size: 100%; text-align: center;"}

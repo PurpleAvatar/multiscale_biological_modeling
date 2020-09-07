@@ -9,28 +9,28 @@ sidebar:
 
 In the previous lesson, we saw that *E. coli* is able to adapt its default tumbling frequency to the current background concentration of attractant. To replicate this behavior using BioNetGen, we simulated an instantaneous increase in concentration from one stable concentration level to another.
 
-Yet imagine a glucose cube in an aqueous solution. As the cube dissolves, there will be a **gradient** of decreasing glucose concentration that radiates outward from the cube, where this concentration is highest. How will the tumbling frequency of *E. coli* change if the bacterium is moving along a continuous gradient of attractant concentration?  Will the tumbling frequency decrease continuously as well, or will the methylation pathways mentioned in the previous lesson cause more complicated behavior?
+Yet imagine a glucose cube in an aqueous solution. As the cube dissolves, a **gradient** will form, with a decreasing glucose concentration that radiates outward from the cube. How will the tumbling frequency of *E. coli* change if the bacterium is moving up a gradient of increasing attractant concentration?  Will the tumbling frequency decrease continuously as well, or will the methylation pathways mentioned in the previous lesson cause more complicated behavior?
 
 Furthermore, once the cell reaches a region of high attractant concentration, will its default tumbling frequency stabilize to the same steady-state?  And how much does this steady-state tumbling frequency change as we alter the "steepness" of the attractant gradient (i.e., how quickly the attractant concentration increases)?
 
-In the following tutorial, we will modify our model from the previous lesson by increasing the concentration of the attractant ligand at an exponential rate and seeing how the concentration of CheY changes. Moreover, we will examine how the concentration of CheY responds to a change in the rate at which attractant ligand is added.
+In the following tutorial, we will modify our model from the previous lesson by increasing the concentration of the attractant ligand at an exponential rate and seeing how the concentration of phosphorylated CheY changes. Moreover, we will examine how this concentration changes as we change the gradient's "steepness", or the rate at which attractant ligand is increasing.
 
 [Visit tutorial](tutorial_gradient){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 ## Steady-state tumbling frequency is robust when traveling up an attractant gradient
 
-Recall that we used the expression [*L*] to denote the concentration of our ligand *L* and *l*<sub>0</sub> to denote the ligand's initial concentration. To represent exponential growth in the concentration of the ligand, we will have that [*L*] = *l*<sub>0</sub> · *e*<sup>*k* · t</sup>, where *t* is the time and *k* is a parameter dictating exponential growth; the higher the value of *k*, the faster the growth in the ligand concentration.
+Recall that we used the expression [*L*] to denote the concentration of ligand *L* and *l*<sub>0</sub> to denote the initial concentration of the ligand. To represent exponential growth in the concentration of the ligand, [*L*] = *l*<sub>0</sub> · *e*<sup>*k* · t</sup>, where *t* is the time since the start and *k* is a parameter dictating exponential growth; the higher the value of *k*, the faster the growth in the ligand concentration.
 
-For example, the following figure depicts the concentration of phosphorylated CheY (highlighted in blue) over time when *l*<sub>0</sub> = 1000 and *k* = 0.1. The concentration of phosphorylated CheY (and therefore the tumbling frequency) initially decreases sharply as the ligand concentration increases, but after all ligands become bound to receptors (shown by the plateau in the red curve), the methylation of receptors causes the concentration of CheY to return to its equilibrium.
+For example, the following figure depicts the concentration of phosphorylated CheY (highlighted in blue) over time when *l*<sub>0</sub> = 1000 and *k* = 0.1. The concentration of phosphorylated CheY (and therefore the tumbling frequency) initially decreases sharply as the ligand concentration increases, but after all ligands become bound to receptors (shown by the plateau in the red curve), the methylation of receptors causes the concentration of phosophorylated CheY to return to its equilibrium.
 
 ![image-center](../assets/images/chemotaxis_tutorial_addition01.png){: .align-center}
 
-Our next question is what happens if we were to change *k*, the growth rate of the ligand concentration. The following figure plots only the concentration of CheY over time for multiple simulations in which we vary the growth parameter *k*. The faster the rate at which the concentration of the ligand increases, the faster the increase in receptor binding, and the steeper the drop in the concentration of phosphorylated CheY.
+Our next question is what happens if we change *k*, the growth rate of the ligand concentration. The following figure shows the results of multiple simulations in which we vary the growth parameter *k* and plot the concentration of phosphorylated CheY over time. The larger the value of *k*, the faster the increase in receptor binding, and the steeper the drop in the concentration of phosphorylated CheY.
+
+More importantly, note that this figure illustrates the *robustness* of our model to *k*, the growth in ligand concentration. For widely varying rates of increase in ligand concentration, the system is always able to return to approximately the same equilibrium concentration of phosphorylated CheY (and therefore the same background tumbling frequency).
 
 ![image-center](../assets/images/chemotaxis_tutorial_addition03.png){: .align-center}
-
-More importantly, note that regardless of the rate of increase in ligand concentration, the system is always able to return to the same equilibrium concentration of phosphorylated CheY.
 
 ## Reversing the attractant gradient
 

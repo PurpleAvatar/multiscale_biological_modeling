@@ -7,15 +7,13 @@ toc: true
 toc_sticky: true
 ---
 
-## Background tumbling frequency
+## Two randomized exploration strategies
 
-In this module, we have built a model that replicates the chemotaxis pathway in *E. coli*, and we have seen how *E. coli* can adjust the tumbling frequency in response to ligand concentration changes. What we have not answered is *why* it is a good strategy for *E. coli* to tumble less frequently in the presence of increasing attractant. Put more simply, does decreasing this tumbling frequency allow the bacterium to find food more quickly?
+In this final lesson, we will use what we have learned about chemotaxis and the results of our BioNetGen model to build a random walk simulation emulating the behavior of *E. coli* within a background containing a variable concentration of attractant. We will then compare this model against a simple random walk model comparable to the one we introduced in the prologue in which the bacterium has a fixed tumbling frequency regardless of the concentration of attractant. Which "algorithm" will allow the bacterium to locate the attractant more readily?
 
-To address this question, we will use what we have learned about chemotaxis and our BNG model results to build a random walk simulation emulating the behavior of *E. coli*. We will then compare this model against a simple random walk model comparable to the one we introduced in the prologue in which the bacterium has a fixed tumbling frequency regardless of the concentration of attractant. Which "algorithm" will allow the bacterium to locate the attractant more readily?
+In this simulation, a bacterium is represented by a point in two-dimensional space. At any point (*x*, *y*) in the space, there is some concentration *L*(*x*, *y*) of ligand; furthermore, we simulate an attractant gradient by ensuring that there is a point (called the **goal**) at which *L*(*x*, *y*) is maximized, with the concentration of attractant diminishing as the distance from this point increases.
 
-In this simulation, a bacterium is represented by a point in two-dimensional space. At any point (*x*, *y*) in the space, there is some concentration *L*(*x*, *y*) of ligand; furthermore, we simulate an attractant by ensuring that there is a point (called the **goal**) at which *L*(*x*, *y*) is maximized, with the concentration of attractant diminishing as the distance from this point increases.
-
-Units in this space are in µm, so that moving from (0, 0) to (0, 20) is 20µm, a distance that we know from the introduction can be covered by the bacterium in 1 second if it does not stop to tumble. The bacterium will start at (0, 0), which we will establish to have a ligand concentration of 100 molecules/µm<sup>3</sup>. The maximum concentration of 10<sup>8</sup> molecules/µm<sup>3</sup> is located at the goal (1500, 1500), requiring the bacterium to travel a fair distance to locate the attractant. The concentration of ligands [*L*] grows exponentially from (0, 0) to (1500, 1500), such that [*L*] = 100 · 10<sup>(1-*d*/*D*) · 8</sup>, where *d* is the Euclidean distance from the current point to (1500, 1500), and *D* is the Euclidean distance from (0, 0) to (1500, 1500).
+Units in this space are in µm, so that moving from (0, 0) to (0, 20) is 20µm, a distance that we know from the introduction can be covered by the bacterium in 1 second during a contiguous run. The bacterium will start at the **origin** (0, 0), which we will establish to have a ligand concentration of 100 molecules/µm<sup>3</sup>. The maximum concentration of 10<sup>8</sup> molecules/µm<sup>3</sup> is located at the goal, requiring the bacterium to travel a fair distance to locate the attractant. The concentration of ligands [*L*] grows exponentially from the origin to the goal, so that that *L*(*x*, *y*) = 100 · 10<sup>8 · (1-*d*/*D*)</sup>, where *d* is the distance from (*x*, *y*) to the goal, and *D* is the distance from the origin to the goal.
 
 **STOP:** How can we quantify how well a single bacterium has done at finding the attractant?
 {: .notice--primary}
@@ -35,6 +33,9 @@ while *time* < duration:
 - Run for *curr_run_time* second along current direction
 - Sample the duration of tumble *curr_tumble_time* and the resulted direction
 - increment t by *curr_run_time* and *curr_tumble_time*
+
+[Visit standard random walk tutorial](tutorial_purerandom){: .btn .btn--primary .btn--large}
+{: style="font-size: 100%; text-align: center;"}
 
 
 **Strategy 2: Chemotactic random walk**
@@ -60,9 +61,6 @@ while *time* < duration:
 We will then run our random walk simulations many times for each strategy, where each simulation runs for some fixed time *t* in seconds. (This parameter should be large enough to allow the bacterium to have time to reach the goal.) For each simulated bacterium, we then measure how far it is from the goal. To compare the two strategies, we will compare the average distance to the goal for the simple random walk against the average distance to the goal for the realistic random walk.
 
 Also keep in mind that if two mechanisms can get to the "food source" equally well, we will definitely want to get there faster. We will also consider this in comparing our performances.
-
-[Visit standard random walk tutorial](tutorial_purerandom){: .btn .btn--primary .btn--large}
-{: style="font-size: 100%; text-align: center;"}
 
 [Visit chemotactic walk tutorial](tutorial_walk){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}

@@ -9,9 +9,32 @@ toc_sticky: true
 
 * *Ab initio* is Latin for “from the beginning”.
 
-* *Ab initio* structure prediction goal is to be able to use only the information of the primary sequence and rely on our physicochemical knowledge to accurately predict the structure of the protein. Extremely difficult to do, essentially all *ab initio* algorithms utilize information from structural and sequence databases in some form to fill holes.
+* *Ab initio* structure prediction goal is to be able to use only the information of the primary sequence and rely on our physicochemical knowledge to accurately predict how the amino acids will interact and form the structure of the protein. Extremely difficult to do, essentially all *ab initio* algorithms still utilize information from structural and sequence databases in some form to fill holes in our knowlodge.
 
 * Mainly used to predict the structure of unique novel protein.
+
+## How *Ab initio* Structure Prediction Works
+
+* Regardless of the different *ab initio* modeling approaches, it ultimately boils down to solving the problem of finding the 3-D shape of a protein sequence that maximizes some scoring function, where the scoring function indicates how good the 3-D shape is at explaining the sequence. However, one of the important guidelines in protein folding, both in modeling and in biology, is obtaining a low-energy conformation. A general theme in chemistry is that systems move spontaneously towards equilibrium, or stable state, be it a chemical reaction or a molecule itself. Think of a high energy system as a ball on top of a round mountain. The ball will always roll down the hill and stop at the bottom of the valley, where it is the most stable. When a system is at the bottom, it stops moving and is now at equilibrium. The equilibrium of a system is typically at the lowest possible energy state, or minimum free energy. 
+
+<img src="../_pages/coronavirus/files/EnergyCartoon.png">
+
+* In protein structure prediction, the path to the best model is not a straight line. Common approaches often have steps for model refinement. When models are first generated, they are assessed and used to create better models. Although time consuming and computationally heavy, the more times we can repeat this cycle, the better the final product. Approaches for ab initio modeling used are not dissimilar from the biased random walk approach that E. coli uses to explore its space for food. In this case, the “search space” is not a physical space but rather the set of all legal structures of the protein for this structure. The “food” is not the current concentration of an attractant but the current score of a candidate structure. And “nearby” objects are not points in space but rather 3-d protein structures that correspond to making slight changes to the current structure.
+
+* High-level description of the general algorithm:
+  * Start with an arbitrary protein structure.
+  * Consider all its possible neighbors. Neighbors are conformations that differ by a single change, such as rotation of a single bond. Is there one with a score better than the current structure?
+  * If yes, update the current structure to the highest scoring neighbor and repeat the previous step.
+  * If not, return the current structure as the best one found
+
+**STOP:** Are there any drawbacks you see with this approach for predicting a protein’s structure?
+{: .notice--primary}
+
+* Let's say we are exploring a newly discovered planet with a droid that can roll over the surface of the planet. If the droid is looking for the lowest-lying area on the planet by moving in the direction of greatest descent, and it lands at the top of a volcano, it will roll down into the volcano’s cauldron, which is still very high compared to the rest of the planet. 
+
+* The most glaring weakness is that the initial structure chosen can have a huge influence on the final structure that we produce.  As a result, we can get stuck in a “local optimum”, in this case a protein structure that is higher scoring than its neighbors but that doesn’t score very well compared to all possible structures. One resolution to this issue is to run the algorithm multiple times with different starting positions, choosing the solution that has the best score over all these runs. Another solution is to not necessarily always take the best-scoring neighbor as the next current protein structure, but rather to choose a neighbor randomly, where higher-scoring neighbors have a higher probability of selection. 
+
+Randomness appears once again!
 
 ## CAPS, Rosetta, and QUARK
 
@@ -25,30 +48,9 @@ toc_sticky: true
 
 <img src="../_pages/coronavirus/files/QuarkFlowChart.png">
 
-## How *Ab initio* Structure Prediction Works
-
 * As mentioned in the figure, many potential models, or decoys, are created. To select the best performing model, a scoring function is used. Many different scoring functions are used, some combining multiple types of scoring, and generally fall into one of two categories: consensus or clustering. Simply put, consensus follows the idea that the more common the predicted conformations are, the more likely it is to be correct as opposed to structural patterns that are rarely found. On the other hand, clustering methods are much more complicated. Commonly used clustering basis includes stereochemical plausibility of the models, environmental compatibility of the residues, and energy-based calculations such as physics-based functions and knowledge-based statistical potentials [^2].
 
-* Regardless of the different *ab initio* modeling approaches, it ultimately boils down to solving the problem of finding the 3-D shape of a protein sequence that maximizes some scoring function, where the scoring function indicates how good the 3-D shape is at explaining the sequence. However, one of the important guidelines in protein folding, both in modeling and in biology, is obtaining a low-energy conformation. A general theme in chemistry is that systems move spontaneously towards equilibrium, or stable state, be it a chemical reaction or a molecule itself. When a system is at equilibrium, it is typically in its lowest possible energy state, or minimum free energy. Think of a high energy system as a ball on top of a round mountain. The ball will always roll down the hill and stop at the bottom of the valley, where it is the most stable.
-
-* In protein structure prediction, the path to the best model is not a straight line. Common approaches often have steps for model refinement. When models are first generated, they are assessed and used to create better models. Although time consuming and computationally heavy, the more times we can repeat this cycle, the better the final product. Approaches for ab initio modeling used are not dissimilar from the biased random walk approach that E. coli uses to explore its space for food. In this case, the “search space” is not a physical space but rather the set of all legal structures of the protein for this structure. The “food” is not the current concentration of an attractant but the current score of a candidate structure. And “nearby” objects are not points in space but rather 3-d protein structures that correspond to making slight changes to the current structure.
-
-* High-level description of the general algorithm:
-  * Start with an arbitrary protein structure.
-  * Consider all its possible neighbors. Is there one with a score better than the current structure?
-  * If yes, update the current structure to the highest scoring neighbor and repeat the previous step.
-  * If not, return the current structure as the best one found
-
-**STOP:** Are there any drawbacks you see with this approach for predicting a protein’s structure?
-{: .notice--primary}
-
-* The most glaring weakness is that the initial structure chosen can have a huge influence on the final structure that we produce.  As a result, we can get stuck in a “local optimum”, in this case a protein structure that is higher scoring than its neighbors but that doesn’t score very well compared to all possible structures.
-
-* Let's say we are exploring a newly discovered planet with a droid that can roll over the surface of the planet. If the droid is looking for the lowest-lying area on the planet by moving in the direction of greatest descent, and it lands at the top of a volcano, it will roll down into the volcano’s cauldron, which is still very high compared to the rest of the planet. One resolution to this issue is to run the algorithm multiple times with different starting positions, choosing the solution that has the best score over all these runs. Another solution is to not necessarily always take the best-scoring neighbor as the next current protein structure, but rather to choose a neighbor randomly, where higher-scoring neighbors have a higher probability of selection. 
-
-Randomness appears once again!
-
-To see an example of *ab initio* structure prediction, go to the following tutorial.
+To see an example of *ab initio* structure prediction using *Quark*, go to the following tutorial.
 
 [Visit tutorial](tutorial_ab_initio){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}

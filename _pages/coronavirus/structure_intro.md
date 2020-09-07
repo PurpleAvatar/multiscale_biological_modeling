@@ -28,6 +28,8 @@ The **tertiary structure** describes the overall 3D shape of the protein that re
 
 Finally, some proteins have a **quaternary structure**, which describes the protein’s interaction with other copies of itself to form a single functional unit, or a multimer. Many proteins do not have a quaternary structure and functions as an independent monomer.
 
+Proteins are can often be divided into protein domains. Domains are distinct functional/structural units within the protein and are typically responsible for a specific interaction or function. For example, The Sars-CoV-2 S protein has a Receptor Binding Domain (RBD) that is responsible for interacting with ACE2. The rest of the protein does not come into contact with ACE2.
+
 Now that we have a pretty good understanding of protein structure, we need to explain why the 3D structure is so important.
 
 ## Protein Shape is Key
@@ -85,7 +87,7 @@ The point of this question is that we can compare our algorithm for structure pr
 
 Unfortunately, protein structure prediction from sequence is a *extremely difficult* problem. One reason why is the sheer amount of details are required for describing and computationally storing a protein structure. 
 
-Structures that have been determined are typically uploaded into the PDB as a .pdb file. This file is extremely dense as it holds all the details about the protein, from the very basic primary structure of the protein all the way to the position of every single atom. The simplest way to think about how the entire protein is stored is to first represent atoms as points on a 3D plane with each atom having its 3D orthogonal coordinates (X,Y,Z) in the unit of angstroms ($$ 10^{-10} $$). This is the atomic coordinates of the protein. A simplified view of the atomic coordinates section is shown in the figure below. 
+Structures that have been determined are typically uploaded into the PDB as a .pdb file. This file is extremely dense as it holds all the details about the protein, from the very basic primary structure of the protein all the way to the position of every single atom. The simplest way to think about how the entire protein is stored is to first represent atoms as points on a 3D plane with each atom having its 3D orthogonal coordinates (X,Y,Z) in the unit of angstroms ($$ 10^{-10} $$ meter). This is the atomic coordinates of the protein. A simplified view of the atomic coordinates section is shown in the figure below. 
 
 <img src="../_pages/coronavirus/files/simplifiedPDB.png">
 

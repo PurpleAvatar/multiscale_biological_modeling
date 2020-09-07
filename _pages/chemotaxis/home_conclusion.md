@@ -81,7 +81,7 @@ With standard random walk, the average distances towards the goal doesn't decrea
 
 Why is the chemotactic strategy better? It is almost as if the attractant detection serves as a "rubber band" -- if it's far from the bacterium, it is not allowed to go very far from the attractant.  As it nears it the tumbling frequency decreases which helps it travel farther. Once it hits the attractant anywhere that it goes, the tumbling frequency *increases*, preventing it from running far away.
 
-## Why one tumble per second?
+## Why is bacterial background tumbling frequency constant across species?
 
 The question we left unanswered is why that one tumble per second appears to be an evolutionarily stable strategy.
 
@@ -108,17 +108,17 @@ Recall the video of *E. coli* moving towards to the sugar crystal.
 
 Our simulated *E. coli* do behave like those in the video. They generally move towards the crystal and stay close to it. Some run by the crystal, but then turn around to move toward the crystal again.
 
-## Smarter than we thought
+## Bacteria are even smarter than we thought
 
 However, like most things in biology, the reality turns out to be even more complex than we might imagine.
 
 One aspect of chemotaxis that is more advanced than we thought is the degree of reorientation. Consider - if a bacterium tumbles while moving up the gradient vs. moving down the gradient, how would the adjustment of degree of reorientation enable the cell to find food better?
 
-The cell should turn a smaller angle if moving up a gradient - because moving to a very different direction might cause it to lose the gradient. And it should turn a larger angle if moving down the gradient, because turning around could be a good idea. This directional persistence when traveling up or down the gradient is observed in experiments[^Saragosti2011].
+The cell should turn a smaller angle if moving up a gradient - because moving to a very different direction might cause it to lose the gradient. And it should turn a larger angle if moving down the gradient, because turning around could be a good idea. This directional persistence when traveling up or down the gradient is observed in experiments.[^Saragosti2011]
 
 With more experimental evidences, the model of *E. coli* chemotaxis has been constantly improved. That means the cellular systems powering bacteria like *E. coli* are even smarter than we originally thought!
 
-## Exercise
+## Exercises
 
 1. Based on what we've learned about chemotaxis towards higher attractant concentrations, at a molecular level, how will the cell respond to a repellent gradient?
 2. Modify the BNG model for [ligand receptor dynamics tutorial](tutorial_lr) to simulate one of the ligand-receptor system examples on [calculating steady state](home_signal). Does your simulation result match your calculation result?
@@ -138,5 +138,5 @@ With more experimental evidences, the model of *E. coli* chemotaxis has been con
 [^Baker2005]: Baker MD, Wolanin PM, Stock JB. 2005. Signal transduction in bacterial chemotaxis. BioEssays 28:9-22. [Available online](https://pubmed.ncbi.nlm.nih.gov/16369945/)
 
 
-[Next chapter](../coronavirus/home){: .btn .btn--primary .btn--large}
+[Next module](../coronavirus/home){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}

@@ -62,7 +62,13 @@ To be thorough, we should also test the robustness of our model to see whether t
 
 ## Connection to next section
 
-* Note to self: need compelling connection to next section, which is that we have been operating under the assumption that if a bacterium senses a higher attractant gradient, then it should be able to decrease its tumbling frequency.  But its movements are *random* ... why is a decrease in tumbling frequency helpful to find the attractant?  There is no immediate intuitive answer to this question, but we will show in the next section how to provide a compelling explanation for why E. coli has evolved the way it has through the power of modeling.
+We hope that through exploring this module, you have gained an appreciation for the elegant mechanism of bacterial chemotaxis, as well as the power of rule-based modeling for simulating a complex biochemical system.
+
+And yet throughout this discussion we have made one major omission. We have seen that *E. coli* goes to great lengths to ensure that if it detects a relative increase in concentration (i.e., an attractant gradient), then it can reduce its tumbling frequency in response. But what we have not explored is *why* this is a useful strategy.
+
+After all, even though the tumbling frequency is tied to relative attractant concentration, the direction of the bacterium's move in any "run" step is random! So why would a decrease in tumbling frequency help  *E. coli* move toward an attractant?
+
+This question has no immediate intuitive answer, but in this module's final lesson, we will apply modeling to explain why the random-walk algorithm that *E. coli* uses to explore its environment is in fact an extremely clever way of locating resources.
 
 [Next lesson](home_conclusion){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}

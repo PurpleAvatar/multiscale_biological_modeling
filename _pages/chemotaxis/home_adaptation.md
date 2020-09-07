@@ -46,8 +46,7 @@ The figure below adds CheR and CheB to provide a complete picture of the core pa
  ![image-center](../assets/images/chemotaxis_wholestory.png){: .align-center}
  <figcaption>The chemotaxis signal-transduction pathway with methylation included. CheA phosphorylates CheB, which methylates an MCP while CheR demethylates MCP. Blue lines denote phosphorylation, grey lines denote dephosphorylation, and the green arrow denotes methylation. Figure inspired by Parkinson Lab illustrations.[^ParkinsonLab]</figcaption>
 
-## New subsection on adding reactions vs rule-based modeling
-
+## Combinatorial explosion and the need for rule-based modeling
 
 Before incorporating the adaptation mechanisms in our BNG model, let's write out the reactions first.
 

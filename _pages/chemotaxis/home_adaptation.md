@@ -1,8 +1,12 @@
 ---
 permalink: /chemotaxis/home_senseadap
 title: "Methylation Helps Bacteria Adapt to Differing Concentrations"
+toc: true
+toc_sticky: true
 sidebar:
  nav: "chemotaxis"
+toc: true
+toc_sticky: true
 ---
 
 ## Bacterial tumbling frequencies remain constant despite background attractant concentrations

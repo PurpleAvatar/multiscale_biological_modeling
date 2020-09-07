@@ -1,8 +1,10 @@
 ---
 permalink: /chemotaxis/tutorial_lr
 title: "Getting Start and Modeling Steady State"
-sidebar: 
+sidebar:
  nav: "chemotaxis"
+toc: true
+toc_sticky: true
 ---
 
 This set of tutorials will gradually build a chemotaxis simulation with [BioNetGen](https://www.csb.pitt.edu/Faculty/Faeder/?page_id=409) at the molecular level from scratch.
@@ -15,7 +17,7 @@ In this page, we will:
 
 ## What is BioNetGen?
 
-[BioNetGen](http://bionetgen.org/) (BNG) is a software for specification and simulation of rule-based modeling. The chemotaxis pathyway is essentially a set of rules that can specify a set of mathematical equations of concentration of molecules, and we would like to translate it into a simulation. We can specify our rules in BNG, run the simulation, and visualize the results easily. 
+[BioNetGen](http://bionetgen.org/) (BNG) is a software for specification and simulation of rule-based modeling. The chemotaxis pathyway is essentially a set of rules that can specify a set of mathematical equations of concentration of molecules, and we would like to translate it into a simulation. We can specify our rules in BNG, run the simulation, and visualize the results easily.
 
 ## Set-up
 
@@ -23,7 +25,7 @@ In this page, we will:
 
 ## Starting with Ligand-Receptor Dynamics
 
-You can download the simulation file here: 
+You can download the simulation file here:
 <a href="https://purpleavatar.github.io/multiscale_biological_modeling/downloads/downloadable/ligand_receptor.bngl" download="ligand_receptor.bngl">ligand_receptor.bngl</a>
 
 To begin with, let's build a model to simulate ligand-receptor binding dynamics. In our system, there are only two types of molecules: the ligand (L), and the receptor (a receptor complex in our chemotaxis system, and often abbreviated as T). The ligand can bind to the receptor, forming an intermediate, and they could also dissociate. We write this reaction as `L + T <-> L.T`, where the formation of intermediate is **forward reaction**, and its dissociation is **reverse reaction**.
@@ -47,7 +49,7 @@ Rename your `.bngl` file as `ligand_receptor.bngl`. Now you should be able to st
 We will walk through all codes, but for your reference, BNG documentation can be found [here](http://comet.lehman.cuny.edu/griffeth/BioNetGenTutorialFromBioNetWiki.pdf).
 
 We need to tell BNG the rules for our model. To specify our model, specify the `begin model` and `end model`. We will add all model specification information between the two lines. We would also like to add our molecules to the model under the `molecule types` section. The `(t)` specifies that molecule `L` contains one component: the binding site with `T`. Same for `T`, the `(l)` specifies the component binding to `L`. We will use this component for L-R binding later.
-	
+
 	begin model
 
 	begin molecule types
@@ -77,7 +79,7 @@ We can specify how many molecules we would like to put at the beginning of the s
 
 ## Specifying parameters
 
-Now let's declare all the parameters we mentioned __before__ any usage of them (here, before the `reaction rules` section). BNG is unitless. For simplicity, we will use the number of molecule per cell for all cellular components. The reaction rates are conventionally in the unit of M/s. 
+Now let's declare all the parameters we mentioned __before__ any usage of them (here, before the `reaction rules` section). BNG is unitless. For simplicity, we will use the number of molecule per cell for all cellular components. The reaction rates are conventionally in the unit of M/s.
 
 Because of the molecules/cell and the M/s units, we need to do some unit conversion here (when calculating the ligand-receptor binding by hand in the main text, we already did unit conversion for you). The volume of *E. coli* is approximately 1µm^3, so our molecule counts are of unit num_molecule/µm^3. One mole of molecule is approximately 6.02 * 10^23 molecules (Avogadro's number), so the unit M is approximately 6.02 * 10^23 molecules/L, which is about 6.02 * 10^8 molecules/µm^3. We record this as NaV. For bimolecular reactions, the rate constant should have unit (M^-1)(s^-1), and we devide NaV to convert to ((molecules/µm^3)^-1)(s^-1). For monomolecular reactions, the rate constant have unit (s^-1), so no unit conversion is required.
 
@@ -91,7 +93,7 @@ Although the specific numbers of cellular components vary among each bacterium, 
 		k_lr_dis 35           #ligand-receptor dissociation
 	end parameters
 
-Before simulating our model, we would also like to define the observables under `observables` section within the model specification. 
+Before simulating our model, we would also like to define the observables under `observables` section within the model specification.
 
 	begin observables
 		Molecules free_ligand L(t)
@@ -107,7 +109,7 @@ If you save the file now, you should be able to see a Contact-Map indicating the
 
 And now we are ready to simulate. Add the `generate_network` and `simulate` command outside of your model specification. We will specify three arguments:
 
-**Method**. We will use `method=>"ssa"` in all the tutorials, but there are also `method=>"nf"` (network-free) and `method=>"ode"`(ordinary differential equations) that you can try. 
+**Method**. We will use `method=>"ssa"` in all the tutorials, but there are also `method=>"nf"` (network-free) and `method=>"ode"`(ordinary differential equations) that you can try.
 
 **Time span**.`t_end`, the simulation duration. BNG simulation time is unitless; for simplicity we define all time units to be second.
 
@@ -116,7 +118,7 @@ And now we are ready to simulate. Add the `generate_network` and `simulate` comm
 	generate_network({overwrite=>1})
 	simulate({method=>"ssa", t_end=>1, n_steps=>100})
 
-The whole simulation code for ligand-receptor dynamics (you can also download here: 
+The whole simulation code for ligand-receptor dynamics (you can also download here:
 <a href="https://purpleavatar.github.io/multiscale_biological_modeling/downloads/downloadable/ligand_receptor.bngl" download="ligand_receptor.bngl">ligand_receptor.bngl</a>)
 
 	begin model
@@ -169,13 +171,10 @@ If you are interested, a more detailed tutorial on BNG modeling can be found [he
 
 [^Spiro1997]: Spiro PA, Parkinson JS, and Othmer H. 1997. A model of excitation and adaptation in bacterial chemotaxis. Biochemistry 94:7263-7268. [Available online](https://www.pnas.org/content/94/14/7263).
 
-[^Schwartz14]: Schwartz R. Biological Modeling and Simulaton: A Survey of Practical Models, Algorithms, and Numerical Methods. Chapter 14.1. 
+[^Schwartz14]: Schwartz R. Biological Modeling and Simulaton: A Survey of Practical Models, Algorithms, and Numerical Methods. Chapter 14.1.
 
 [^Schwartz17]: Schwartz R. Biological Modeling and Simulaton: A Survey of Practical Models, Algorithms, and Numerical Methods. Chapter 17.2.
 
 
 [Back to Main Text](home_signal){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
-
-
-

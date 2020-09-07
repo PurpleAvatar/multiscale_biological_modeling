@@ -3,6 +3,8 @@ permalink: /chemotaxis/home_walk
 title: "Bacterial Runs and Tumbles"
 sidebar:
  nav: "chemotaxis"
+toc: true
+toc_sticky: true
 ---
 
 ## *E. coli* explores its world via a random walk

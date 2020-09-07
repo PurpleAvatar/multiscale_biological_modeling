@@ -1,8 +1,10 @@
 ---
 permalink: /chemotaxis/tutorial_removal
 title: "Down gradient/Removal"
-sidebar: 
+sidebar:
  nav: "chemotaxis"
+toc: true
+toc_sticky: true
 ---
 
 In this page, we will:
@@ -26,9 +28,9 @@ In `parameters` section, we define the `k_gone` to be 0.3 first and thus d[L]/dt
 		k_gone 0.3
 		L0 1e7
 
-We will set the initial concentrations of all `seed species` to be the final concentrations of the simulation result for our `adaptation.bngl` model, and see if our simulation can restore them to the inital concentrations of the `adaptation.bngl` model. 
+We will set the initial concentrations of all `seed species` to be the final concentrations of the simulation result for our `adaptation.bngl` model, and see if our simulation can restore them to the inital concentrations of the `adaptation.bngl` model.
 
-First go to the `adaptation.bngl` model, and set `L0` as `1e7`. Also include concentration of each combination of methylation state and ligand binding state of the receptor complex as `observables`. (Concentration of other sepcies are already restored to original state when adapting, like CheY-P). Run the simulation. Go to `RuleBender-workspace/PROJECT_NAME/results/adaptation/` and find the simulation result at the final time point. 
+First go to the `adaptation.bngl` model, and set `L0` as `1e7`. Also include concentration of each combination of methylation state and ligand binding state of the receptor complex as `observables`. (Concentration of other sepcies are already restored to original state when adapting, like CheY-P). Run the simulation. Go to `RuleBender-workspace/PROJECT_NAME/results/adaptation/` and find the simulation result at the final time point.
 
 Input those concentrations to the `seed species` section of our `removal.bngl` model.
 
@@ -54,9 +56,9 @@ Set `simulate({method=>"ssa", t_end=>1800, n_steps=>1800})`. Go to `simulation` 
 
 Similar to what we did for up gradient, we can try different values for `k_gone`. Change `t_end` in the `simulate` method to 1800 seconds, and simulate with `k_gone` = 0.01, 0.03, 0.05, 0.1, 0.5.
 
-All simulation results are stored in the `RuleBender-workspace/PROJECT_NAME/results/MODEL_NAME/TIME/` directory in your computer. Rename the directory with the `k_gone` values instead of the time of running for simplicity. 
+All simulation results are stored in the `RuleBender-workspace/PROJECT_NAME/results/MODEL_NAME/TIME/` directory in your computer. Rename the directory with the `k_gone` values instead of the time of running for simplicity.
 
-We will use Jupyter notebook to visualize the results. Download 
+We will use Jupyter notebook to visualize the results. Download
 <a href="https://purpleavatar.github.io/multiscale_biological_modeling/downloads/downloadable/plotter_down.ipynb" download="plotter_down.ipynb">plotter_down.ipynb</a>
 
 First specify the directories, model name, species of interest, and rates. Put the `RuleBender-workspace/PROJECT_NAME/results/MODEL_NAME/` folder inside the same directory as the Jupyter notebook or change the `model_path`.
@@ -81,7 +83,3 @@ Run the code blocks. How does `k_gone` impact the CheY-P concentrations? Why? Ar
 
 [Back to Main Text](home_gradient){: .btn .btn--primary .btn--x-large}
 {: style="font-size: 100%; text-align: center;"}
-
-
-
-

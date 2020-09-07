@@ -1,8 +1,10 @@
 ---
 permalink: /chemotaxis/tutorial_walk
 title: "Chemotactic random walk"
-sidebar: 
+sidebar:
  nav: "chemotaxis"
+toc: true
+toc_sticky: true
 ---
 
 In this page, we will:
@@ -13,14 +15,14 @@ In this page, we will:
 
 Please download the simulation and visualization here: <a href="https://purpleavatar.github.io/multiscale_biological_modeling/downloads/downloadable/chemotaxis_walk.ipynb" download="chemotaxis_walk.ipynb">chemotaxis_walk.ipynb</a>. Detailed explanation of the model and each functions can be found in the file too.
 
-Our model will be based on observations from BNG simulation and *E. coli* biology. 
+Our model will be based on observations from BNG simulation and *E. coli* biology.
 
 Ingredients and simplifying assumptions of the model:
- - Run. The background average duration of each run (`time_exp`) is a variable of interst. When the cell senses concentration change, the cell changes the expected run duration (`exp_run_time`). The duration of each run follows an exponential distribution with mean = `exp_run_time`. 
- - Tumble. The duration of cell tumble follows an exponential distribution with mean 0.1s[^Saragosti2012]. When it tumbles, we assume it only changes the orientation for the next run but doesn't move in space. The degree of reorientation has a mean of 68° and standard deviation of 36°[^Berg1972]. 
+ - Run. The background average duration of each run (`time_exp`) is a variable of interst. When the cell senses concentration change, the cell changes the expected run duration (`exp_run_time`). The duration of each run follows an exponential distribution with mean = `exp_run_time`.
+ - Tumble. The duration of cell tumble follows an exponential distribution with mean 0.1s[^Saragosti2012]. When it tumbles, we assume it only changes the orientation for the next run but doesn't move in space. The degree of reorientation has a mean of 68° and standard deviation of 36°[^Berg1972].
  - Response. As we've seen in the BNG model, the cell can respond to the gradient change within 0.5 seconds. In this model, we allow cells to re-measure the concentration after it runs for 0.5 seconds.
- - Gradient. We model an exponential gradient centered at [1500, 1500] with a concentration of 10<sup>8</sup>. All cells start at [0, 0], which has a concentration of 10<sup>8</sup>. The receptors saturate at a concentration of 10<sup>8</sup>. 
- - Performance. The closer to the center of the gradient the better. 
+ - Gradient. We model an exponential gradient centered at [1500, 1500] with a concentration of 10<sup>8</sup>. All cells start at [0, 0], which has a concentration of 10<sup>8</sup>. The receptors saturate at a concentration of 10<sup>8</sup>.
+ - Performance. The closer to the center of the gradient the better.
 
  Please makes sure have dependencies installed:
  - [Jupyter Notebook](https://jupyter.org/index.html)
@@ -73,7 +75,7 @@ def euclidean_distance(a, b):
 def calc_concentration(pos):
     dist = euclidean_distance(pos, ligand_center)
     exponent = (1 - dist / origin_to_center) * (center_exponent - start_exponent) + start_exponent
-    
+
     return 10 ** exponent
 ~~~
 
@@ -82,20 +84,20 @@ The run duration follows an exponential distribution with `exp_run_time`. When n
 ~~~ python
 # Calculate the wait time for next tumbling event
 def run_time(curr_conc, past_conc, position, time_exp):
-        
+
     curr_conc = min(curr_conc, saturation_conc) #Can't detect higher concentration if receptors saturates
     past_conc = min(past_conc, saturation_conc)
     change = (curr_conc - past_conc) / past_conc #proportion change in concentration
     exp_run_time = time_exp * (1 + 10 * change)
-    
+
     #print(exp_run_time, curr_conc, past_conc, position)
-    
+
     if exp_run_time < 0.000001:
         exp_run_time = 0.000001 #positive wait times
     elif exp_run_time > 4 * time_exp:
         exp_run_time = 4 * time_exp     #the decrease to tumbling frequency is only to a certain extent
     curr_run_time = np.random.exponential(exp_run_time)
-    
+
     return curr_run_time
 ~~~
 
@@ -108,15 +110,15 @@ def tumble_move(curr_dir):
     new_dir = np.random.normal(loc = tumble_angle_mu, scale = tumble_angle_std)
     new_dir *= np.random.choice([-1, 1])
     new_dir += curr_dir
-    
+
     if new_dir > 2 * math.pi:
         new_dir -= 2 * math.pi #Keep within [0, 2pi]
-        
+
     move_h = math.cos(new_dir) #Horizontal displacement for next run
     move_v = math.sin(new_dir) #Vertical displacement for next run
-    
+
     tumble_time = np.random.exponential(tumble_time_mu) #Length of the tumbling
-    
+
     return new_dir, move_h, move_v, tumble_time
 ~~~
 
@@ -156,11 +158,11 @@ def simulate(num_cells, duration, time_exp):
                 curr_run_time = run_time(curr_conc, past_conc, curr_position, time_exp[freq_i])
 
                 # if run time (r) is within the step (s), run for r second and then tumble
-                if curr_run_time < sec_per_step: 
+                if curr_run_time < sec_per_step:
                     curr_position = curr_position + np.array([move_h, move_v]) * speed * curr_run_time
                     curr_direction, move_h, move_v, tumble_time = tumble_move(curr_direction)
                     t += (curr_run_time + tumble_time)
-                
+
                 # if r > s, run for r; then it will be in the next iteration
                 else:
                     curr_position = curr_position + np.array([move_h, move_v]) * speed * sec_per_step
@@ -173,13 +175,13 @@ def simulate(num_cells, duration, time_exp):
                     past_conc = curr_conc
 
             terminals[freq_i].append((path[freq_i, rep, -1]))
-    
+
     return terminals, path
 ~~~
 
 ## Compare performance of the two strategies
 
-Please download the simulation and visualization here: <a href="https://purpleavatar.github.io/multiscale_biological_modeling/downloads/downloadable/chemotaxis_compare.ipynb" download="chemotaxis_compare.ipynb">chemotaxis_compre.ipynb</a>. 
+Please download the simulation and visualization here: <a href="https://purpleavatar.github.io/multiscale_biological_modeling/downloads/downloadable/chemotaxis_compare.ipynb" download="chemotaxis_compare.ipynb">chemotaxis_compre.ipynb</a>.
 
 To compare the performance of the two strategies, we visualize the trajectories of simulation with 3 cells and quantitative compare the performance using simulation with 500 cells for each strategy.
 
@@ -267,7 +269,3 @@ For all `time_exp`, after some time the average distance flattens. Why for diffe
 
 [Back to Main Text](home_conclusion){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
-
-
-
-

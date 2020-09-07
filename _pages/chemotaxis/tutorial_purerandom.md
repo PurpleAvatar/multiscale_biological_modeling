@@ -1,8 +1,10 @@
 ---
 permalink: /chemotaxis/tutorial_purerandom
 title: "Standard random walk"
-sidebar: 
+sidebar:
  nav: "chemotaxis"
+toc: true
+toc_sticky: true
 ---
 
 In this page, we will:
@@ -12,12 +14,12 @@ In this page, we will:
 
 Please download the simulation and visualization here: <a href="https://purpleavatar.github.io/multiscale_biological_modeling/downloads/downloadable/chemotaxis_std_random.ipynb" download="chemotaxis_std_random.ipynb">chemotaxis_std_random.ipynb</a>. Detailed explanation of the model and each functions can be found in the file too.
 
-Our model will be based on observations from BNG simulation and *E. coli* biology. 
+Our model will be based on observations from BNG simulation and *E. coli* biology.
 
 Ingredients and simplifying assumptions of the model:
 1. Run. The duration of run follows an exponential distrubtion with mean equals to the background run duration `time_exp`.
 2. Tumble. The duration of cell tumble follows an exponential distribution with mean 0.1s. When it tumbles, we assume it only changes the orientation for the next run but doesn't move in space. The degree of reorientation follows a normal distribution with mean of 68° and standard deviation of 36°.
-3. Gradient. We model an exponential gradient centered at [1500, 1500] with a concentration of 10<sup>8</sup>. All cells start at [0, 0], which has a concentration of 10<sup>2</sup>. The receptors saturate at a concentration of 10<sup>8</sup>. 
+3. Gradient. We model an exponential gradient centered at [1500, 1500] with a concentration of 10<sup>8</sup>. All cells start at [0, 0], which has a concentration of 10<sup>2</sup>. The receptors saturate at a concentration of 10<sup>8</sup>.
 4. Performance. The closer to the center of the gradient the better.
 
  Please makes sure have dependencies installed:
@@ -69,7 +71,7 @@ def euclidean_distance(a, b):
 def calc_concentration(pos):
     dist = euclidean_distance(pos, ligand_center)
     exponent = (1 - dist / origin_to_center) * (center_exponent - start_exponent) + start_exponent
-    
+
     return 10 ** exponent
 ~~~
 
@@ -82,15 +84,15 @@ def tumble_move(curr_dir):
     new_dir = np.random.normal(loc = tumble_angle_mu, scale = tumble_angle_std)
     new_dir *= np.random.choice([-1, 1])
     new_dir += curr_dir
-    
+
     if new_dir > 2 * math.pi:
         new_dir -= 2 * math.pi #Keep within [0, 2pi]
-        
+
     move_h = math.cos(new_dir) #Horizontal displacement for next run
     move_v = math.sin(new_dir) #Vertical displacement for next run
-    
+
     tumble_time = np.random.exponential(tumble_time_mu) #Length of the tumbling
-    
+
     return new_dir, move_h, move_v, tumble_time
 ~~~
 
@@ -130,13 +132,13 @@ def simulate_std_random(num_cells, duration, time_exp):
                 past_sec= curr_sec
 
         terminals.append((path[rep, -1]))
-    
+
     return terminals, path
 ~~~
 
 ## Visualizing trajectories
 
-Run simulation for 3 cells for 500 seconds to get a rough idea of what their trajectories look like. 
+Run simulation for 3 cells for 500 seconds to get a rough idea of what their trajectories look like.
 
 ~~~ python
 duration = 800   #seconds, duration of the simulation
@@ -198,7 +200,3 @@ What do you conclude about their performances?
 
 [Back to Main Text](home_conclusion){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
-
-
-
-

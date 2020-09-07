@@ -3,6 +3,8 @@ permalink: /chemotaxis/home_gradient
 title: "Modeling a Bacterium's Response to an Attractant Gradient"
 sidebar:
  nav: "chemotaxis"
+toc: true
+toc_sticky: true
 ---
 
 ## Traveling up an attractant gradient

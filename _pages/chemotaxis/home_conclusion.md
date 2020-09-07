@@ -3,6 +3,8 @@ permalink: /chemotaxis/home_conclusion
 title: "Conclusion: The Beauty of *E. coli*'s Randomized Exploration Algorithm"
 sidebar:
  nav: "chemotaxis"
+toc: true
+toc_sticky: true
 ---
 
 ## Background tumbling frequency

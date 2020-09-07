@@ -3,6 +3,8 @@ permalink: /chemotaxis/home_biochem
 title: "A Biochemically Accurate Model of Chemotaxis"
 sidebar:
  nav: "chemotaxis"
+toc: true
+toc_sticky: true
 ---
 
 ## Transducing a signal to a cell's interior

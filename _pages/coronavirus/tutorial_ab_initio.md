@@ -7,17 +7,20 @@ toc: true
 toc_sticky: true
 ---
 
-* *Ab initio* structure prediction is the method of predicting the 3D structure (tertiary structure) of a protein using only its amino acid sequence (primary structure) and physicochemical interactions. This means that previously determined structures are not used as templates or guides to help in this process. In a sense, *ab initio* structure prediction is solving nature's "magic algorithm" of protein folding that was introduced in <a href="structure_intro">Introduction to Protein Structure Prediction</a>.
+* Because this type of structure prediction is incredibly difficult and computationally intensive, there are still many problems with current *ab initio* algorithms. Perhaps one of the largest setbacks is that current algorithms severely limit the length of the input sequence in order to preserve accuracy and reduce runtime. 
 
-* Because this type of structure prediction is incredibly difficult and computationally intensive, there are still many problems with current *ab initio* algorithms. Perhaps one of the largest setbacks is that current algorithms severely limit the length of the input sequence. For example, the leading *ab initio* modeling algorithm *QUARK* limits the input to only 200 amino acids. As a result, we are not even allowed the opportunity to use *ab initio* structure prediction on the RBD of SARS-CoV-2 (about 229 amino acids long according to PDB entry <a href="https://www.rcsb.org/structure/6M0J" target="_blank">6m0j</a>), let alone the entire S protein.
+The leading *ab initio* modeling algorithm *QUARK* limits the input to only 200 amino acids. As a result, we cannot use *ab initio* structure prediction on the RBD of SARS-CoV-2 (about 229 amino acids long according to PDB entry <a href="https://www.rcsb.org/structure/6M0J" target="_blank">6m0j</a>), let alone one of the chains of the S protein (about 1281 amino acids long).
 
-* Nevertheless, we can use *<a href="https://zhanglab.ccmb.med.umich.edu/QUARK2/" target="_blank">QUARK</a>* to try to model the much smaller protein, <a href="https://www.rcsb.org/structure/1nxb" target="_blank">1nxb</a>, a 62 amino acid neurotoxin from the black-banded sea krait.
+* Nevertheless, we can use *QUARK* to try to model a smaller protein. Here we will use the human hemoglobin subunit alpha (from PDB entry <a href="https://www.rcsb.org/structure/1sI4" target="_blank">1si4</a>) , which is 141 amino acids long.
 
-<a href="/multiscale_biological_modeling/_pages/coronavirus/files/1nxb_Seq.txt" download>1nxb Sequence</a>
+First, download the sequence of the protein:
+<a href="/multiscale_biological_modeling/_pages/coronavirus/files/Human_Hemoglobin_subunit_alpha_Seq.txt" download>Hemoglobin Sequence</a>.
 
-* *QUARK* was able to generate five final models of 1nxb, shown in the figure below. All five models looked very similar to the actual 3D structure, albeit with minute differences, especially in the loops connecting the secondary structures. Although the differences may be minor, remember that small perturbations in 3D structure may have drastic effects on the protein's functionality. *Ab initio* structure prediction algorithms have greatly improved over the years. However, we have yet to find the nature's "magic algorithm". As of now, homology modeling and other template-based methods remain the most plausible form of structure prediction.
+Next, go to *<a href="https://zhanglab.ccmb.med.umich.edu/QUARK2/" target="_blank">QUARK</a>* for the job submittion page. Here, we will copy and paste the sequence into the first box. Fill out the desired email adress to recieve the results. If you have never used *QUARK* before, you will need to register for a *QUARK* password. Follow the registration form and you will receive an email containing a six-digit password. Back in the job submittion page, enter your password and then click *Run QUARK*. The results should be finished within a few hours depending on the server load.
 
-<img src="../_pages/coronavirus/files/QuarkNeurotoxin.png">
+<img src="../_pages/coronavirus/files/QuarkTutorial.png">
+
+**Waiting for Results**
 
 
 [Return to main text](ab_initio){: .btn .btn--primary .btn--large}

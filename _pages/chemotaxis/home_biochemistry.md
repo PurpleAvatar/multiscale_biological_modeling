@@ -59,29 +59,31 @@ But does higher attractant concentration in our model really lead to a lower con
 
 ## Tumbling frequency and changing ligand concentrations
 
-When no ligand is added, we see the concentrations remain at steady state. CheY activity remains at the background level, resulting in background tumbling frequency.
+The following figure shows the concentrations of phosphorylated CheA and CheY in a system at equilibrium in the absence of ligand. As we might expect, we see the concentrations of these particles remain at steady-state (with some noise in the concentrations), and we can presume that the cell stays at its background tumbling frequency.
 
 ![image-center](../assets/images/chemotaxis_tutorial5.png){: .align-center}
 
-When we have 5000 attractant molecules, the addition of attractant molecules increases the concentration of bound receptors, therefore leads to less CheA autophosphorylation, and less CheY activities.
+The sudden addition of 5,000 attractant ligand molecules increases the concentration of bound receptors, therefore leading to less CheA autophosphorylation, and less phosphorylated CheY.
 
 ![image-center](../assets/images/chemotaxis_tutorial6.png){: .align-center}
 
-If we have 1e5 attractant molecules, the higher concentration of ligands further decreases the steady state CheY activities.
+If we instead add 100,000 attractant molecules, then we see an even more drastic decrease in phosphorylated CheA and CheY.
 
 ![image-center](../assets/images/chemotaxis_tutorial7.png){: .align-center}
 
-With the addition of attractants, more receptor complexes are bound to attractants, and therefore less CheA autophosphorylation happens (here we include the CheA as part of the receptor complex). As a result, less CheY can be phosphorylated by CheA, and therefore, CheY phosphorylates the flagellar proteins less frequently, reducing tumbling frequency. And a higher attractant concentration leads to more decrease in tumbling frequency (before receptors are saturated and can no longer have higher bound receptor concentration).
+In other words, the BNG simulation is confirming that an increase in attractant reduces the concentration of phosphorylated CheY, and therefore lowers the tumbling frequency.
 
-When we add 5000 repellent molecules, the resulted higher concentration of bound receptors leads to higher CheA autophosphorylation, and therefore higher CheY activities.
+The cell also has MCPs that detect repellents and serve to *increase* CheA autophosphorylation. The following two figures show what happens when we add 5,000 and 100,000 repellent molecules to our simulation, which increases the phosphorylation of both CheA and CheY.
 
 ![image-center](../assets/images/chemotaxis_tutorial_phosrepel5e3.png){: .align-center}
 
-When we add 1e5 repellent molecules, the higher ligand-receptor binding leads to a further increase phosphorylated CheA and phosphorylated CheY.
-
 ![image-center](../assets/images/chemotaxis_tutorial_phosrepel1e5.png){: .align-center}
 
-The ability to detect different ligand concentrations over many different types of ligands and change behavior in a response that is commensurate with the concentration of the ligand is a remarkable feature of bacteria like *E. coli*. But what we have shown in this lesson is just half of the story. In the next lesson, we will see that the biochemical realities of chemotaxis are even more complicated, and for good reason -- this complexity will allow *E. coli* to react surprisingly "intelligently" to an ever-changing environment.
+## So … what's the big deal?
+
+The ability to detect ligand concentration and change behavior commensurately with the concentration of the ligand is a remarkable feature of bacteria like *E. coli*. Furthermore, perhaps you are not surprised that we have been able to build a model that uses simulated chemical reactions to replicate this simple but elegant system.
+
+But what we have shown in this lesson is just half of the story. In the next lesson, we will see that the biochemical realities of chemotaxis are even more complicated, and for good reason --- this complexity will allow *E. coli* to react with surprising "intelligence" to a dynamic world.
 
 [^Munroe]: Randall Munroe. What If? [Available online](https://what-if.xkcd.com/)
 
@@ -119,5 +121,5 @@ The ability to detect different ligand concentrations over many different types 
 
 [^Spiro1997]: Spiro PA, Parkinson JS, and Othmer H. 1997. A model of excitation and adaptation in bacterial chemotaxis. Biochemistry 94:7263-7268. [Available online](https://www.pnas.org/content/94/14/7263).
 
-[Next Page: Adaptation](home_senseadap){: .btn .btn--primary .btn--large}
+[Next lesson](home_senseadap){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}

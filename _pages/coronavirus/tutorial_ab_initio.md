@@ -22,6 +22,7 @@ Next, go to *<a href="https://zhanglab.ccmb.med.umich.edu/QUARK2/" target="_blan
 
 **Waiting for Results**
 
+Later in the module, we will learn how to assess the accuracy of our predicted structure models.
 
 [Return to main text](ab_initio){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}

@@ -6,10 +6,11 @@ sidebar:
 toc: true
 toc_sticky: true
 ---
+* Imagine that we are a group of researchers that wants to study the SARS-CoV-2 S protein starting on January 11, 2020. We have access to the published sequence of the genome and have obtained the primary sequence of the protein. In order to study the protein, we need to obtain the tertiary structure, but no one has determined the structure yet. Can we reproduce the shape of the protein just from the primary sequence? 
 
-* *Ab initio* is Latin for “from the beginning”.
+* This type of structure prediction is called *ab initio* structure prediction. *Ab initio* is Latin for “from the beginning”.
 
-* *Ab initio* structure prediction goal is to be able to use only the information of the primary sequence and rely on our physicochemical knowledge to accurately predict how the amino acids will interact and form the structure of the protein. Extremely difficult to do, essentially all *ab initio* algorithms still utilize information from structural and sequence databases in some form to fill holes in our knowlodge.
+* *Ab initio* structure prediction's goal is to be able to use only the information of the primary sequence and rely on our physicochemical knowledge to accurately predict how the amino acids will interact and form the structure of the protein. Extremely difficult to do, essentially all *ab initio* algorithms still utilize information from structural and sequence databases in some form to fill holes in our knowlodge.
 
 * Mainly used to predict the structure of unique novel protein.
 

@@ -150,10 +150,6 @@ coronavirus:
     url: /coronavirus/conclusion
   - title: Tutorials
     children:
-      - title: "Setting up ProDy"
-        url: /coronavirus/prody
-      - title: "Setting up VMD"
-        url: /coronavirus/VMDTutorial
       - title: "Ab initio Structure Prediction"
         url: /coronavirus/tutorial_ab_initio
       - title: "Homology Structure Prediction"
@@ -170,6 +166,12 @@ coronavirus:
         url: /coronavirus/tutorial_GNM
       - title: "ANM Calculation"
         url: /coronavirus/tutorial_ANM
+   - title: Program Setups
+     children:
+      - title: "Setting up ProDy"
+        url: /coronavirus/prody
+      - title: "Setting up VMD"
+        url: /coronavirus/VMDTutorial
 
 wbcells:
   - title: Tutorial

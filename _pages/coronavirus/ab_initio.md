@@ -51,7 +51,9 @@ Randomness appears once again!
 
 * As mentioned in the figure, many potential models, or decoys, are created. To select the best performing model, a scoring function is used. Many different scoring functions are used, some combining multiple types of scoring, and generally fall into one of two categories: consensus or clustering. Simply put, consensus follows the idea that the more common the predicted conformations are, the more likely it is to be correct as opposed to structural patterns that are rarely found. On the other hand, clustering methods are much more complicated. Commonly used clustering basis includes stereochemical plausibility of the models, environmental compatibility of the residues, and energy-based calculations such as physics-based functions and knowledge-based statistical potentials [^2].
 
-To see an example of *ab initio* structure prediction using *Quark*, go to the following tutorial.
+Current *ab initio* algorithms are constantly being improved. Due to the complexity of protein structure prediction, we are not at the level where we can perfectly predict a protein's tertiary structure from just the primary structure. As a result, *ab initio* structure predictions can end up being inaccurate. The larger the protein, the more inaccurate the model may become. As such, many of the algorithms limit the sequence length in order to preserve accuracy.
+
+To see an example of *ab initio* structure prediction using *QUARK*, go to the following tutorial.
 
 [Visit tutorial](tutorial_ab_initio){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}

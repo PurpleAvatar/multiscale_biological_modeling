@@ -60,7 +60,7 @@ To be thorough, we should also test the robustness of our model to see whether t
 
 ![image-center](../assets/images/chemotaxis_tutorial_removal02.png){: .align-center}
 
-## Connection to next section
+## From changing tumbling frequencies to an algorithm for exploration
 
 We hope that through exploring this module, you have gained an appreciation for the elegant mechanism of bacterial chemotaxis, as well as the power of rule-based modeling for simulating a complex biochemical system.
 

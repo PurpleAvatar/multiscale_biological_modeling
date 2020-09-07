@@ -22,7 +22,7 @@ The **secondary structure** describes the highly regular substructures in the pr
 
 <img src="../_pages/coronavirus/files/SecondaryStructure.png">
 
-The **tertiary structure** describes the overall 3D shape of the protein that results from the fully-folded polypeptide chain. This is what we think of as the "shape" of the protein. <del>The interactions between the side groups are what dictates how the protein folds (e.g. H-bonds, disulfide bridges, hydrophobic/hydrophilic interactions, electrostatic interactions, and van der Waals interactions).<del> Below is the tertiary structure of human hemoglobin subunit alpha.
+The **tertiary structure** describes the overall 3D shape of the protein that results from the fully-folded polypeptide chain. This is what we think of as the "shape" of the protein. In a sense, it is the combination of all the secondary structures and linkages that creates the tertiary structure. Below is the tertiary structure of human hemoglobin subunit alpha.
 
 <img src="../_pages/coronavirus/files/TertiaryStructureExample.png">
 

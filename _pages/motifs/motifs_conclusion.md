@@ -3,6 +3,8 @@ permalink: /motifs/conclusion
 title: "Conclusion"
 sidebar:
  nav: "motifs"
+toc: true
+toc_sticky: true
 ---
 
 ## Engineering a repressilator

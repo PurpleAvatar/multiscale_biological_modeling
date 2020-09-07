@@ -20,6 +20,10 @@ Units in this space are in µm, so that moving from (0, 0) to (0, 20) is 20µm, 
 
 We will then implement two bacterial random walk strategies. In the first strategy, the bacterium travels in a new direction after an approximately constant rate of time. In the second strategy, the bacterium senses the relative concentration of attractant and adjusts its tumbling frequency, based on what we have learned about chemotaxis.
 
+We will then run our random walk simulations many times for each strategy, where each simulation runs for some fixed time *t* in seconds. (This parameter should be large enough to allow the bacterium to have time to reach the goal.) For each simulated bacterium, we then measure how far it is from the goal. To compare the two strategies, we will compare the average distance to the goal for the simple random walk against the average distance to the goal for the realistic random walk.
+
+Also keep in mind that if two mechanisms can get to the "food source" equally well, we will definitely want to get there faster. We will also consider this in comparing our performances.
+
 **Strategy 1: Standard random walk**
 
 Ingredients and simplifying assumptions of the model:
@@ -58,10 +62,6 @@ while *time* < duration:
     1. run for 0.5s along current direction
     2. increment *time* by 0.5s (and then the cell will re-assess the new concentration, and decide the duration of next run)
 
-We will then run our random walk simulations many times for each strategy, where each simulation runs for some fixed time *t* in seconds. (This parameter should be large enough to allow the bacterium to have time to reach the goal.) For each simulated bacterium, we then measure how far it is from the goal. To compare the two strategies, we will compare the average distance to the goal for the simple random walk against the average distance to the goal for the realistic random walk.
-
-Also keep in mind that if two mechanisms can get to the "food source" equally well, we will definitely want to get there faster. We will also consider this in comparing our performances.
-
 [Visit chemotactic walk tutorial](tutorial_walk){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
@@ -81,7 +81,7 @@ With standard random walk, the average distances towards the goal doesn't decrea
 
 Why is the chemotactic strategy better? It is almost as if the attractant detection serves as a "rubber band" -- if it's far from the bacterium, it is not allowed to go very far from the attractant.  As it nears it the tumbling frequency decreases which helps it travel farther. Once it hits the attractant anywhere that it goes, the tumbling frequency *increases*, preventing it from running far away.
 
-## Why one tumble per second
+## Why one tumble per second?
 
 The question we left unanswered is why that one tumble per second appears to be an evolutionarily stable strategy.
 

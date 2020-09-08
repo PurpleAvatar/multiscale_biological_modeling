@@ -13,8 +13,12 @@ toc_sticky: true
 
 * One popular method of comparing a predicted model and the actual structure is by calculating the Root Mean Square Deviation (RMSD). RMSD is commonly used in mathematics to quantitatively measure the difference between two paired sets of values.
 
-**RMSD = $$ sqrt{ frac{1}{n} sum^{n}_{i-1} d^2_i} $$ **
+<a href="https://www.codecogs.com/eqnedit.php?latex=RMSD&space;=&space;\sqrt{\frac{1}{n}\sum_{i-1}^nd^2_i}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?RMSD&space;=&space;\sqrt{\frac{1}{n}\sum_{i-1}^nd^2_i}" title="RMSD = \sqrt{\frac{1}{n}\sum_{i-1}^nd^2_i}" /></a>
 
+where *n* is the number of pairs, *d* is the difference in value or distance between the pair. Below is a simple example of how RMSD is calculated.
+
+<img src="../_pages/coronavirus/files/SampleRMSD.png">
+ 
 * In simple terms, RMSD is calculated by square-rooting the sum of the squared difference between every pair. A lower RMSD value indicates a higher similarity between the two sets and a RMSD value of 0 indicates a perfect fit. Because of the way protein structures are stored, we can superpose two structures and easily use the atomic coordinates to calculate the RMSD between two structures given that they have the same number of atoms. The score would represent how much the positions of atoms deviate between the two structures, which is indicative of how different the overall structures are. By calculating RMSD between the protein model and the actual protein entry on PDB, we can assess how well the software and algorithm performed.
 
 <img src="../_pages/coronavirus/files/RMSDExample.png">

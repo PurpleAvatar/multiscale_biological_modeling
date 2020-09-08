@@ -150,7 +150,7 @@ Say that you own a store and have noticed that on average, there are *λ* custom
 
 $$\mathrm{Pr}(X = n) = \dfrac{\lambda^n e^{-\lambda}}{n!}\,.$$
 
-A derivation of this formula can be found (here)[https://medium.com/@andrew.chamberlain/deriving-the-poisson-distribution-from-the-binomial-distribution-840cc1668239].
+A derivation of this formula can be found [here](https://medium.com/@andrew.chamberlain/deriving-the-poisson-distribution-from-the-binomial-distribution-840cc1668239).
 
 Furthermore, if we use *λ* to denote the rate of customers arriving (instead of average arrival in one hour), and use *t* to denote time, the probability of observing exactly *n* customers in time period *t* is given by
 

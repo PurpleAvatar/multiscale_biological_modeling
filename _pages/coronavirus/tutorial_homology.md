@@ -18,11 +18,11 @@ Next, head over to main page of <a href="https://swissmodel.expasy.org/" target=
 
 <img src="../_pages/coronavirus/files/HomologyTutorial/SWISS1.png">
 
-In the next page, copy and paste the sequence into the *Target Sequence(s):* box. Give the project a name and enter an email address to get a notification of when your results are ready. Finally, click on *Build Model*.
+In the next page, copy and paste the sequence into the *Target Sequence(s):* box. Give the project a name and enter an email address to get a notification of when your results are ready. Finally, click on *Build Model* to submit the job request.
 
 <img src="../_pages/coronavirus/files/HomologyTutorial/SWISS2.png">
 
-Your results may take from an hour to a day depending on how busy the server is. Once you get an email notification saying that your model is ready, follow the link and you can download the models. Our results that we ran previously can also be downloaded below.
+Your results may take from an hour to a day depending on how busy the server is. Once you get an email notification saying that your model is ready, follow the link and you can download the models. For our job, SWISS-MODEL used the one of the PDB entries of SARS S protein as the template (<a href="https://www.rcsb.org/structure/6CRX" target="_blank">6crx</a>) and recognized that it was a homotrimer. As a result, the predicted models were of the whole S protein with all three chains included. Our results that we ran previously can also be downloaded below.
 
 <a href="/multiscale_biological_modeling/_pages/coronavirus/files/SWISS_Model.zip" download>SWISS-MODEL Results</a>
 
@@ -39,7 +39,7 @@ After you are done, go to *Structure Prediction>Submit*.
 
 <img src="../_pages/coronavirus/files/HomologyTutorial/Robetta2.png">
 
-Create a name for the job, i.e. "SARS-CoV-2 Spike Chain". Copy and paste the sequence into the *Protein sequence* box. Check *CM only* (for comparative/homology modeling), complete the simple arithmetic problem and finally click *Submit*. Your results may take between an hour to a day. You will get an email notification after the job is complete, and you will be able to download the results. You can also download our results below.
+Create a name for the job, i.e. "SARS-CoV-2 Spike Chain". Copy and paste the sequence into the *Protein sequence* box. Check *CM only* (for comparative/homology modeling), complete the simple arithmetic problem and finally click *Submit* to submit the job. Your results may take between an hour to a day. You will get an email notification after the job is complete, and you will be able to download the results. You can also download our results below.
 
 <a href="/multiscale_biological_modeling/_pages/coronavirus/files/Robetta_Model.zip" download>Robetta Results</a>
 
@@ -55,7 +55,7 @@ Go to <a href="http://galaxy.seoklab.org/" target="_blank">GalaxyWEB</a>. At the
 
 <img src="../_pages/coronavirus/files/HomologyTutorial/Galaxy1.png">
 
-Enter a job name, i.e. SARS-CoV-2 RBD. Enter an email address and then copy and paste the sequence into the *SEQUENCE* box. Finally, click submit.
+Enter a job name, i.e. SARS-CoV-2 RBD. Enter an email address and then copy and paste the sequence into the *SEQUENCE* box. Finally, click *Submit* to submit the job request.
 
 <img src="../_pages/coronavirus/files/HomologyTutorial/Galaxy2.png">
 
@@ -65,7 +65,7 @@ Your results will be done within a day and you will recieve an email notificatio
 
 <hr>
 
-In the next section and tutorial, we will learn how to assess predicted models and see how accurate our results were.
+In the next lesson, we will learn how to assess the accuracy of our predicted models and compare it to our previous *ab initio* results of human hemoglobin subunit a.
 
 
 [Return to main text](homology){: .btn .btn--primary .btn--x-large}

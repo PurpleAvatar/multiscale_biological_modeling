@@ -95,10 +95,10 @@ With the visualization of trajectories, we see that the cells all move away from
 <figcaption>Sample trajectories for tumble every 0.2 second. The background color indicates concentration: white -> red = low -> high; black dots are starting points; red dots are the points they reached at the end of the simulation; colorful dashed lines represent trajectories (one color one cell): dark -> bright color = older -> newer time points; blue cross is (1500, 1500).</figcaption>
 
 ![image-center](../assets/images/chemotaxis_traj_1.0.png){: .align-center}
-<figcaption>Sample trajectories for tumble every 1.0 second.
+<figcaption>Sample trajectories for tumble every 1.0 second.</figcaption>
  
 ![image-center](../assets/images/chemotaxis_traj_5.0.png){: .align-center}
-<figcaption>Sample trajectories for tumble every 5.0 second.
+<figcaption>Sample trajectories for tumble every 5.0 second.</figcaption>
 
 What should a good trajectory look like? A cell should move fast towards the target; after reaching the goal, it should tumble immediately when moving to somewhere with a lower concentration and thus stay around the goal region. If we plot average distances to the goal through time, a good `time_exp` should be characterized by a fast decrease in distance to the goal, followed by flattening as close to the target as possible.
 

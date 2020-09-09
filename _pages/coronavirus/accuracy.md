@@ -109,7 +109,7 @@ As explained above, these SSGCID models of the S protein released by <a href="ht
 |SSGCID2|2.3274|2.107|
 |SSGCID3|2.12|1.866|
 |SSGCID4|2.0854|2.047|
-|SSGCID|4.9636|4.6443|
+|SSGCID5|4.9636|4.6443|
 
 We can see that the SSGCID models outclass our SWISS-MODEL models for the full S protein and our Robetta models for a single chain. Interestingly, SSGCID3 modeled a more accurate chain, but SSGCID4 modeled a more accurate full protein. Given that the S protein is very large, SSGCID4 may be considered as fairly accurate. In addition, SSGCID3 is within the accepted RMSD score threshold.
 

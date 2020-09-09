@@ -35,8 +35,6 @@ Among the 42 total FFLs in the *E. coli* transcription factor network, 5 of them
 
 ## Modeling a type-1 incoherent feedforward loop
 
-* NOAH: It seems like the tutorial we have doesn't quite work according to how the following indicates. (I think it's just a matter of noticing an issue as we have transitioned to a more complete story.) I would suggest making some slight changes to it accordingly and verify that we get the same interesting results.
-
 As we did in the last section, we will run two simulations. In the first, we will have a simple upregulation of *Z* by *X*, meaning that we will assume *X* is at its steady state concentration and that *Z* is produced by the reaction *X* → *X* + *Z* and removed by the reaction *Z* → *NULL*.
 
 The second simulation will include all of these reactions, but we will also have the reaction *X* → *X* + *Y* to model the upregulation of *Y* by *X*, along with the reaction *Y* + *Z* → *Y* to model the downregulation of *Z* by *Y*. Because *Y* is being produced as the result of a reaction, we will also have a reaction *Y* → *NULL* to model the degradation of *Y*. For the sake of fairness, we will have the same degradation rates for both *Y* and *Z*.
@@ -53,7 +51,7 @@ If you are feeling adventurous, you may like to adapt the [NAR tutorial](motifs_
 In the figure below, we show a plot visualizing the amount of *Z* across the two simulations. As with negative autoregulation, we see that the type-1 incoherent FFL allows the cell to ramp up production of a gene *Z* to steady state much faster than it would under simple regulation.
 
 ![image-center](../assets/images/ffl_graph.PNG){: .align-center}
-In dark purple we see the results of a FFL compared with light blue showing a normal steady state reaction 
+In dark purple we see the results of a FFL compared with light blue showing a normal steady state reaction
 {: style="text-align: center;"}
 
 However, you will note a slightly different pattern to the growth of *Z* than we saw under negative autoregulation. In negative autoregulation, the concentration of the protein approached steady state from below. In the case of the FFL, the amount of *Z* grows so quickly that it passes its steady state and later returns to steady state from above.
@@ -77,7 +75,7 @@ This process is very similar to a true oscillation, in which the concentration o
 [Next lesson](oscillators){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
-[^tfNumber]: According to the Gene ontology (biological process) 
+[^tfNumber]: According to the Gene ontology (biological process)
 "search for trasncription" https://www.uniprot.org/
 
 [^ffl]: Mangan, S., & Alon, U. (2003). Structure and function of the feed-forward loop network motif. Proceedings of the National Academy of Sciences of the United States of America, 100(21), 11980–11985. https://doi.org/10.1073/pnas.2133841100

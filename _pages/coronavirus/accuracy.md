@@ -101,7 +101,7 @@ We see that the model Robetta4 performed the best, yet still exceeds the 2.0 thr
 
 #### SSGCID
 
-As explained above, these SSGCID models of the S protein released by <a href="https://boinc.bakerlab.org/" target="_blank">Rosetta@Home</a> used large amounts of computational power. Therefore, we expect to see RMSD scores lower than those of our models. Like before, we will compare the models to he actual structure from the PDB, <a href="https://www.rcsb.org/structure/6vxx">6vxx</a>. This time, we will assess both the accuracy of the entire S protein and a single chain, and compare them with the scores from SWISS-MODEL and Robetta.
+As explained above, these SSGCID models of the S protein released by <a href="https://boinc.bakerlab.org/" target="_blank">Rosetta@Home</a> used large amounts of computational power. Therefore, we expect to see RMSD scores lower than those of our models. Like before, we will compare the models to the actual structure from the PDB, <a href="https://www.rcsb.org/structure/6vxx">6vxx</a>. This time, we will assess both the accuracy of the entire S protein and a single chain, and compare them with the scores from SWISS-MODEL and Robetta.
 
 | SSGCID | RMSD (Full Protein) | RMSD (Single Chain)|
 |:-------|:--------------------|:-------------------|

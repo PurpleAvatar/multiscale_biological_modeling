@@ -9,7 +9,7 @@ toc_sticky: true
 
 ## RMSD
 
-* We went two methods of protein structure prediction, *ab initio* and template-based (homology and threading), and how there are many competing groups with different approaches. Regardless of how the predicted models are created, we need a way to assess the accuracy of the software and algorithm. We can do this by predicting the structure of a protein already in the Protein Data Bank (PDB) and then comparing the predicted model with the experimentally determined structure.
+* We went through two methods of protein structure prediction, *ab initio* and template-based (homology and threading), and how there are many competing groups with different approaches. Regardless of how the predicted models are created, we need a way to assess the accuracy of the software and algorithm. We can do this by predicting the structure of a protein already in the Protein Data Bank (PDB) and then comparing the predicted model with the experimentally determined structure.
 
 * One popular method of comparing a predicted model and the actual structure is by calculating the Root Mean Square Deviation (RMSD). RMSD is commonly used in mathematics to quantitatively measure the difference between two paired sets of values.
 

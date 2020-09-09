@@ -27,7 +27,10 @@ However, there is an additional step for calculating RMSD when we are comparing 
 
 First, we translate the structures to the same coordinate point, such as the origin. This is easily done by subtracting the coordinates of the centroid, or average coordinates, from all corresponding point coordinates for both structures. Now, both structures will be superposed on top of each other. The next, most tricky part, is finding the right orientation for the structures. This can be done using the Kabsch Algorithm.
 
-**Need help describing Kabsch here. My short write up with linear algebra is in the Box named "RMSD Tutorial and WriteUp".** The output of the algorithm is a rotation matrix that describes how to rotate one of the structures to match the orientation of the other. 
+**Need help describing Kabsch here. Details on algorithm in more_RMSD.md (or click button).** The output of the algorithm is a rotation matrix that describes how to rotate one of the structures to match the orientation of the other. For a more in-depth description of the algorithm, go to the following page.
+
+[More on RMSD](more_RMSD){: .btn .btn--primary .btn--large}
+{: style="font-size: 100%; text-align: center;"}
 
 After this is done, we can then proceed to calculating the RMSD score between the two structures. The score would represent how much the positions of atoms deviate between the two structures, which is indicative of how different the overall structures are. By calculating RMSD between the protein model and the actual protein entry on PDB, we can assess how well the software and algorithm performed.
 
@@ -133,5 +136,5 @@ We can also compare the RMSD scores between *QUARK* and GalaxyWEB. Both servers 
 Regardless of the type of modeling or algorithm, none of the available protein structure prediction servers were able to predict a protein structure with 100% accuracy. From the establishment of the Soviet research institution in 1960s, we have been trying to solve nature's magic algorithm for protein folding. But even now, we still haven't found a complete answer. This goes to show the difficulty and complexity of protein structure prediction.
 
 
-[Next lesson](structural_diff){: .btn .btn--primary .btn--x-large}
+[Next lesson](structural_diff){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}

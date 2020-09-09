@@ -62,7 +62,7 @@ We can interpret from the model why the FFL allows for a fast growth to steady s
 
 As the concentration of *Y* builds up, it starts to downregulate *Z*. The more *Y* we have, and the more *Z* that we have, the more often the reaction *Y* + *Z* → *Y* will occur. Because the amounts of both *Y* and *Z* increase over time, this reaction serves as the "brakes" for the concentration of *Z*; these brakes need to be very powerful because the concentration of *Z* is growing faster than that of *Y*, the transcription factor downregulating it.
 
-## Summary
+## Damped oscillations give us hope of building a biological oscillator
 
 To conclude our work with FFLs, we note that the feedforward process must be vital to the cell. Unlike negative autoregulation, the FFL requires two separate transcription factors working together in order to increase the production of our target gene.
 

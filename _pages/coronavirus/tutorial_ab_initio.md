@@ -20,7 +20,7 @@ Next, go to *<a href="https://zhanglab.ccmb.med.umich.edu/QUARK2/" target="_blan
 
 <img src="../_pages/coronavirus/files/QuarkTutorial.png">
 
-Once your job is finished, you will receive an email notification and the ability to download the results. Below is a figure of the models as well as the real tertiary structure of human hemoglobin subunit alpha from the PDB entry <a href="https://www.rcsb.org/structure/1sI4" target="_blank">1si4</a>. You can also download our models if you wish.
+Once your job is finished, you will receive an email notification and the ability to download the results. Below is a figure of our models as well as the real tertiary structure of human hemoglobin subunit alpha from the PDB entry <a href="https://www.rcsb.org/structure/1sI4" target="_blank">1si4</a>. You can also download our models if you wish.
 
 <img src="../_pages/coronavirus/files/ab_initio_results.png">
 

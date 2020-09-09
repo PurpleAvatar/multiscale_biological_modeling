@@ -49,3 +49,6 @@ In order to ensure that the rotation matrix is a right-handed coordinate system,
 Finally, R can be calculated with the following matrix formula:
 
 <a href="https://www.codecogs.com/eqnedit.php?latex=\large&space;R&space;=&space;W\bigl(\begin{smallmatrix}&space;1&space;&&space;0&space;&&space;0\\&space;0&space;&&space;1&space;&&space;0\\&space;0&space;&&space;0&space;&&space;d&space;\end{smallmatrix}\bigr)&space;V^T" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\large&space;R&space;=&space;W\bigl(\begin{smallmatrix}&space;1&space;&&space;0&space;&&space;0\\&space;0&space;&&space;1&space;&&space;0\\&space;0&space;&&space;0&space;&&space;d&space;\end{smallmatrix}\bigr)&space;V^T" title="\large R = W\bigl(\begin{smallmatrix} 1 & 0 & 0\\ 0 & 1 & 0\\ 0 & 0 & d \end{smallmatrix}\bigr) V^T" /></a>
+
+[Return to main text](accuracy){: .btn .btn--primary .btn--large}
+{: style="font-size: 100%; text-align: center;"}

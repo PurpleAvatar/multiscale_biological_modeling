@@ -19,7 +19,7 @@ Our model will be based on observations from BNG simulation and *E. coli* biolog
 
 Ingredients and simplifying assumptions of the model:
  - Run. The background average duration of each run (`time_exp`) is a variable of interst. When the cell senses concentration change, the cell changes the expected run duration (`exp_run_time`). The duration of each run follows an exponential distribution with mean = `exp_run_time`.
- - Tumble. The duration of cell tumble follows an exponential distribution with mean 0.1s[^Saragosti2012]. When it tumbles, we assume it only changes the orientation for the next run but doesn't move in space. The degree of reorientation has a mean of 68° and standard deviation of 36°[^Berg1972].
+ - Tumble. The duration of cell tumble follows an exponential distribution with mean 0.1s[^Saragosti2012]. When it tumbles, we assume it only changes the orientation for the next run but doesn't move in space. The degree of reorientation follows uniform distribution from 0° to 360°.
  - Response. As we've seen in the BNG model, the cell can respond to the gradient change within 0.5 seconds. In this model, we allow cells to re-measure the concentration after it runs for 0.5 seconds.
  - Gradient. We model an exponential gradient centered at [1500, 1500] with a concentration of 10<sup>8</sup>. All cells start at [0, 0], which has a concentration of 10<sup>8</sup>. The receptors saturate at a concentration of 10<sup>8</sup>.
  - Performance. The closer to the center of the gradient the better.
@@ -49,7 +49,6 @@ SEED = 128  #Any random seed
 np.random.seed(SEED)
 
 #Constants for E.coli tumbling
-tumble_angle_mu, tumble_angle_std = 2 * math.pi * 68 / 360, 2 * math.pi * 36 / 360
 tumble_time_mu = 0.1
 
 #E.coli movement constants
@@ -107,8 +106,7 @@ The duration of cell tumble follows an exponential distribution with mean 0.1s[^
 # Horizontal and Vertical movement of tumbling
 def tumble_move(curr_dir):
     #Sample the new direction
-    new_dir = np.random.normal(loc = tumble_angle_mu, scale = tumble_angle_std)
-    new_dir *= np.random.choice([-1, 1])
+    new_dir = np.random.uniform(low = 0.0, high = 2 * math.pi)
     new_dir += curr_dir
 
     if new_dir > 2 * math.pi:
@@ -126,16 +124,16 @@ Simulation through time for all `time_exp` of all cells.
 
 For each cell, simulate through time as the following pseudocode:
 
-	while `t` < duration:
-		Assess the current concentration
-		Update current run duration `curr_run_time`
-		If `curr_run_time` < 0.5s:
-	    	run for `curr_run_time` second along current direction
-	    	Sample the duration of tumble `tumble_time` and the resulted direction
-	    	increment t by `curr_run_time` and `tumble_time`
-		If `curr_run_time` > 0.5s:
-	    	run for 0.5s along current direction
-	    	increment `t` by 0.5s (and then the cell will re-assess the new concentration, and decide the duration of next run)
+    while `t` < duration:
+        Assess the current concentration
+        Update current run duration `curr_run_time`
+        If `curr_run_time` < 0.5s:
+            run for `curr_run_time` second along current direction
+            Sample the duration of tumble `tumble_time` and the resulted direction
+            increment t by `curr_run_time` and `tumble_time`
+        If `curr_run_time` > 0.5s:
+            run for 0.5s along current direction
+            increment `t` by 0.5s (and then the cell will re-assess the new concentration, and decide the duration of next run)
 
 ~~~ python
 def simulate(num_cells, duration, time_exp):
@@ -211,7 +209,7 @@ duration = 800   #seconds, duration of the simulation
 num_steps = duration * step_per_sec
 num_cells = 3
 origin_to_center = euclidean_distance(start, ligand_center) #Update the global constant
-time_exp = [0.1, 0.25, 0.5, 1.0, 2.0, 5.0, 10.0]
+time_exp = [0.2, 1.0, 5.0]
 
 terminals, path = simulate(num_cells, duration, time_exp)
 ~~~
@@ -229,7 +227,7 @@ We will quantitatively measure the performances by the ability to reach the targ
 duration = 1500   #seconds, duration of the simulation
 num_steps = duration * step_per_sec
 num_cells = 500
-time_exp = [0.1, 0.25, 0.5, 1.0, 2.0, 5.0, 10.0]
+time_exp = [0.1, 0.2, 0.5, 1.0, 2.0, 5.0, 10.0]
 origin_to_center = euclidean_distance(start, ligand_center) #Update the global constant
 radius_saturation = (1 - ((math.log10(saturation_conc) - start_exponent) / (center_exponent - start_exponent))) * origin_to_center
 
@@ -269,3 +267,5 @@ For all `time_exp`, after some time the average distance flattens. Why for diffe
 
 [Back to Main Text](home_conclusion){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
+
+

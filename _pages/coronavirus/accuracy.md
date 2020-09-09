@@ -83,7 +83,7 @@ In the *<a href="tutorial_homology">homology tutorial</a>*, we used two differen
 |SWISS2| 11.3432|
 |SWISS3| 11.3432|
 
-From the scores, we see that model SWISS1 performed the best, but is greatly exceeds the generally accepted threshold score of 2.0. However, we have to consider that the full S protein is very large. Recall that the S protein is made up of three identical chains, each around 1281 amino acids long). Because RMSD is very senstive, larger proteins are more prone to higher RMSD values. Nonetheless, these models can be considered as inaccurate.
+From the scores, we see that model SWISS1 performed the best, but is greatly exceeds the generally accepted threshold score of 2.0. However, we have to consider that the full S protein is very large. Recall that the S protein is made up of three identical chains, each around 1281 amino acids long. Because RMSD is very senstive, larger proteins are more prone to higher RMSD values. Nonetheless, these models can be considered as inaccurate.
 
 #### Robetta
  

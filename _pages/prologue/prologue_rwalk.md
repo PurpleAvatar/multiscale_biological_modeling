@@ -17,9 +17,7 @@ Before we see how this concept can help us understand how zebras get their strip
 **STOP**: After *n* steps, how far do you think the particle will have traveled (as the crow flies) from its starting point?
 {: .notice--primary}
 
-To answer this question, let's generate an animation of the particle and see for ourselves. The video below shows a particle, shown in red, taking XXX steps as part of a random walk in a YYY x YYY plane. If you're interested in building a simulation like this, sit tight --- we will soon see how to use the software used to generate this animation in the context of biological modeling.
-
-* NOAH: Please fill in XXX and YYY.
+To answer this question, let's generate an animation of the particle and see for ourselves. The video below shows a particle, shown in red, taking 1000 steps in a random walk. If you're interested in building a simulation like this, sit tight --- we will soon see how to use the software used to generate this animation in the context of biological modeling.
 
 <iframe width="640" height="360" src="../assets/random_walk_1.mp4" frameborder="0" allowfullscreen></iframe>
 
@@ -32,8 +30,6 @@ The particle's movements are random, but the *average-case* behavior of the part
 This theorem does not say that after *n* steps our particle will be *exactly* distance $$\sqrt{n}$$ from the origin, any more than we would expect that after flipping a coin 2,000 times we would have seen exactly 1,000 heads.  The particle may wind up even farther away, or closer to the origin. Yet the statement about the particle's average behavior is powerful, and it can be seen more clearly if we animate the action of many independent particles following random walks.
 
 <iframe width="640" height="360" src="../assets/random_walk_200.mp4" frameborder="0" allowfullscreen></iframe>
-
-* NOAH: Please add overlay here of radius.
 
 * NOAH: I think this would be a great place to link to the intro to CellBlender/MCell tutorial where we explain how it works and get them to build the above random walk videos. We can recall this tutorial later in both the prologue and the motifs chapter, where we can say "If you didn't follow the intro tutorial in the prologue ...".
 

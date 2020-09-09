@@ -125,7 +125,7 @@ Finally, we used <a href="http://galaxy.seoklab.org/" target="_blank">GalaxyWEB<
 |Galaxy4| 0.1434|
 |Galaxy5| 0.1202|
 
-We see that all models from GalaxyWEB are well within the RMSD score threshold and can be considered as being very accurate. The RBD has a fairly small sequence length of about 229 amino acids. With the RMSD scores being extremely low, the results support the negative correlation between sequence length and prediction accuracy.
+We see that all models from GalaxyWEB are well within the RMSD score threshold and can be considered as being very accurate. These models may have performed extremely well because the RBD has a fairly small sequence length, about 229 amino acids, when compared to the S protein chain of about 1281 amino acids.
 
 ## Main Takeaway
 

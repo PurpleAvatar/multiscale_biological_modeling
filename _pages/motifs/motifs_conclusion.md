@@ -9,7 +9,14 @@ toc_sticky: true
 
 ## Engineering a repressilator
 
-* NOAH: we need to have an overview of the repressilator experiment from 2000, which apparently was refined in 2016.  Could you give a short overview of how this works here and the extent to which they were able to replicate what we have *in vivo*?
+In *A Synthetic Oscillatory Network of Transcriptional Regulators* by Elowitz and Leibler[^oscillator], the repressilator model we have simulated in CellBlender was successfully tested in a real E. coli cell (an *in vivo* experiment). Instead of the X, Y, Z molecules we used in our simulation, the authors inserted the genes *TetR*, *LacI*, and *cI*. These genes were set up in the same arrangement as our simulation, however there were key differences in the scale of the model. Our simulation was carried out in a single space with approximately 300 molecules per species. The reactions were carried out on the order of around 600 reactions per time step for 120,000 steps. 
+
+![image-center](../assets/images/repressilator_ecoli.png){: .align-center}
+The repressilator model used in Elowitz and Leibler's E. coli system
+{: style="text-align: center;"}
+
+In contrast, Elowitz and Leibler described a model with a variety of different reaction rates, such as a 0.0005 promoter strength, 20 proteins created per transcript, and a protein half-life of 10 minutes. Interestingly, this scale led to oscillations occurring with a periodicity that spanned different generations of E. coli! Nevertheless, both the real E. coli repressilator systems and our models have shown clear patterns of oscillations with robustness to interruptions and disturbances. We encourage you to further explore these models in the exercises at the end of the chapter.  
+
 
 ## Looking ahead
 
@@ -68,3 +75,5 @@ Types of Feed Forward Loops[^ffl]
 * (Cite Alon book at some point -- when motifs are introduced? The introduction?)
 
 [^ffl]: Image adapted from Mangan, S., & Alon, U. (2003). Structure and function of the feed-forward loop network motif. Proceedings of the National Academy of Sciences of the United States of America, 100(21), 11980–11985. https://doi.org/10.1073/pnas.2133841100
+
+[^oscillator]: Elowitz, M. B. & Leibler, S. A Synthetic Oscillatory Network of Transcriptional Regulators. Nature 403, 335-338 (2000).

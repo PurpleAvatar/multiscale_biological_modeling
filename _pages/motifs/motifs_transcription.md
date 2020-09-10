@@ -9,24 +9,28 @@ toc_sticky: true
 
 ## Introduction to Transcription
 
-If you would like a refresher on transcription, the following video from the YouTube channel "*Professor Dave Explains*" will give an overview of the process at 1:09. For those more familiar with transcription, skip to 2:50, where Dave gives a great overview of why gene regulation is necessary.
-
-<iframe width="640" height="360" src="https://www.youtube-nocookie.com/embed/J9jhg90A7Lw?start=69" frameborder="0" allowfullscreen></iframe>
-
-As we saw in the video, we can regulate either the DNA encoding a particular protein or the protein itself, both of which we will refer to as a "gene" in gene regulation. The molecules responsible for this regulation, the control elements and transcription factors, are crucial for allowing a cell to respond to external stimuli.
+Some of you might have heard about the [Central Dogma](https://www.youtube.com/watch?v=9kOGOY7vthk) and its power to convert genetic information in DNA (with base pairs A's, C's, T's, and G's) into useful proteins for the cell.
 
 ![image-center](../assets/images/Central_Dogma_of_Molecular_Biochemistry_with_Enzymes.jpg){: .align-center}
 The "Central Dogma" of biology where DNA is transcribed into RNA which is translated into proteins[^dogma]
 {: style="text-align: center;"}
 
-Some of you might have heard about the [Central Dogma](https://www.youtube.com/watch?v=9kOGOY7vthk) and its power to convert genetic information in DNA (with base pairs A's, C's, T's, and G's) into useful proteins for the cell. Now we have an additional motivator for this process: controlling production of proteins to mediate a cell's behavior and response to external stimuli.
+[^book]: Compeau, P., & Pevzner, P. (2018). Bioinformatics Algorithms. La Jolla, CA: Active Learning.
+
+From Bioinformatics Algorithms[^book],
+"According to the Central Dogma, a gene from a genome is first transcribed into a strand of RNA composed of four ribonucleotides: adenine, guanine, cytosine, and uracil. A strand of RNA can be represented as an RNA string, formed over the four-letter alphabet {A, C, G, U}. You can think of the genome as a large cookbook, in which case the gene and its RNA transcript form a recipe in this cookbook. Then, the RNA transcript is translated into an amino acid sequence of a protein."
+
+If you would like a refresher on transcription, the following video from the YouTube channel "*Professor Dave Explains*" will explain the process in eukaryotes at 1:09. For those more familiar with transcription, skip to 2:50, where Dave gives a great overview of why gene regulation is necessary.
+
+<iframe width="640" height="360" src="https://www.youtube-nocookie.com/embed/J9jhg90A7Lw?start=69" frameborder="0" allowfullscreen></iframe>
+
+As we saw in the video, regulation usually occurs on two targets: either the DNA which encodes a particular protein or the protein itself (both of which we will refer to as a "gene" in gene regulation). The proteins responsible for regulating the DNA to RNA process, the **transcription factors**, are crucial for allowing a cell to respond to external stimuli.
 
 ![image-center](../assets/images/signal_pathway.jpg){: .align-center}
 A cell receiving a signal which triggers a response, resulting in transcription[^signalResponse]
 {: style="text-align: center;"}
 
 If a cell receives a signal from the environment, transcription factors are a crucial part of how the cell responds and acts on that signal. As we will later see in simple models, like Negative Autoregulation, the use of transcription factors not only enables a cell to respond to stimuli, but adjust the speed of the reaction as necessary. In more complicated models, like the Repressilator, proteins like transcription factors may rely on "*on*" or "*off*" states which are important for a cell to achieve just the right behavior.
-
 
 ## Determining if a given transcription factor regulates the expression of a given gene
 

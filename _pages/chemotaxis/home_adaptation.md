@@ -52,7 +52,7 @@ The figure below adds CheR and CheB to provide a complete picture of the core pa
 
 ## Combinatorial explosion and the need for rule-based modeling
 
-Before incorporating the adaptation mechanisms in our BNG model, let's write out the reactions first.
+Before incorporating the adaptation mechanisms in our BNG model, let's write out the reactions first. We will write our reactions in a similar fashion as coding in BNGL. For example, by specifying moleclue `L(t-U)`, we specify molecule `L`, which has one component `t` reflecting the potential bonding to MCPs, and the state `U` indicates it is not bound to MCPs. By specifying moleclue `L(t-B).MCP(l-B)`, we specify the bound product of `L` and `MCP`.
 
 Start with MCP complexes. In the [phosphorylation tutorial](tutorial_phos), we identified two components relevant for reactions involving MCPs: a ligand-binding component `l` and a phosphorylation component `Phos`. The adaptation mechanism introduces two new additional reactions: binding with CheR, and methylation/demethylation by CheR and CheB. Thus we can introduce two additional components, `r` for CheR-binding, and `Meth` for methylation states. Note that to simplify our simulation, we will use 3 methylation levels, low, medium, and high.
 

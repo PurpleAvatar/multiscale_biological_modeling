@@ -73,8 +73,27 @@ When writing the code for a reaction, we need to specify each species involved. 
  - L(t-U) + MCP(l-U, Phos-P, r-B, Meth-C) -> L(t-B).MCP(l-B, Phos-P, r-B, Meth-C)
 It takes 12 reactions to just specify the ligand-receptor binding.
 
-However, when we simulate for ligand-receptor binding, we don't care about whether the MCP complex is phosphorylated or not, bound to CheR or not, or which methylation state is at. When only care about the reactive part - it is not bound to a ligand molecule yet. The problem of specifying the states can be circumvented by representing reactions in local rules.[^Chylek2015]
-- L(t-U) + MCP(l-U) -> L(t-B).MCP(l-B)
+And for the reaction of CheR binds to an MCP and then increase its methylation state from A to B or from B to C, we need to write:
+ - L(t-B).MCP(l-B, Phos-U, r-U, Meth-A) + CheR(t-U) -> L(t-B).MCP(l-B, Phos-U, r-B, Meth-A).CheR(t-B)
+ - L(t-B).MCP(l-B, Phos-U, r-U, Meth-B) + CheR(t-U) -> L(t-B).MCP(l-B, Phos-U, r-B, Meth-B).CheR(t-B)
+ - L(t-B).MCP(l-B, Phos-U, r-U, Meth-C) + CheR(t-U) -> L(t-B).MCP(l-B, Phos-U, r-B, Meth-C).CheR(t-B)
+ - MCP(l-U, Phos-U, r-U, Meth-A) + CheR(t-U) -> MCP(l-U, Phos-U, r-B, Meth-A).CheR(t-B)
+ - MCP(l-U, Phos-U, r-U, Meth-B) + CheR(t-U) -> MCP(l-U, Phos-U, r-B, Meth-B).CheR(t-B)
+ - MCP(l-U, Phos-U, r-U, Meth-c) + CheR(t-U) -> MCP(l-U, Phos-U, r-B, Meth-C).CheR(t-B)
+ - And the other 6 reactions for MCP-CheR binding when receptor complex is phosphorylated.
+ - L(t-B).MCP(l-B, Phos-U, r-B, Meth-A).CheR(t-B) -> L(t-B).MCP(l-B, Phos-U, r-U, Meth-B) + CheR(t-U)
+ - L(t-B).MCP(l-B, Phos-U, r-B, Meth-B).CheR(t-B) -> L(t-B).MCP(l-B, Phos-U, r-U, Meth-C) + CheR(t-U)
+ - MCP(l-U, Phos-U, r-B, Meth-A).CheR(t-B) -> MCP(l-U, Phos-U, r-U, Meth-B) + CheR(t-U)
+ - MCP(l-U, Phos-U, r-B, Meth-B).CheR(t-B) -> MCP(l-U, Phos-U, r-U, Meth-C) + CheR(t-U)
+ - And the other 4 reactions when receptor complex is phosphorylated... That's a lot of reactions, and that's not even half of the model.
+
+However, when we simulate for ligand-receptor binding, we don't care about whether the MCP complex is phosphorylated or not, bound to CheR or not, or which methylation state is at. When only care about the reactive part - it is not bound to a ligand molecule yet. Similarly, when for CheR-MCP binding, we don't care about if MCP is phosphorylated or bound to a ligand; we only care about whether the MCP is already bound to CheR. For methylating MCPs, we only care about the current metylation state and whether the MCP is bound to a ligand. The problem of specifying the states can be circumvented by representing reactions in local rules.[^Chylek2015]
+ - L(t-U) + MCP(l-U) -> L(t-B).MCP(l-B)
+ - MCP(r-U) + CheR(t-U) -> MCP(r-B).CheR(t-B)
+ - MCP(l-U, r-B, Meth-A).CheR(t-B) -> MCP(l-U, r-U, Meth-B) + CheR(t-U)
+ - MCP(l-U, r-B, Meth-B).CheR(t-B) -> MCP(l-U, r-U, Meth-C) + CheR(t-U)
+ - L(t-B).MCP(l-B, r-B, Meth-A).CheR(t-B) -> L(t-B).MCP(l-B, r-U, Meth-B) + CheR(t-U)
+ - L(t-B).MCP(l-B, r-B, Meth-B).CheR(t-B) -> L(t-B).MCP(l-B, r-U, Meth-C) + CheR(t-U)
 
 As you might have realized, BNG takes advantage of such **rule-based modeling**. In our simulations, we will only worry about the components that are involved in a particular reactions, or influence the rate constant of that reaction.
 

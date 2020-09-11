@@ -124,71 +124,6 @@ One aspect of chemotaxis that is more advanced than we thought is the degree of 
 
 With more experimental evidences, the model of *E. coli* chemotaxis has been constantly improved. That means the cellular systems powering bacteria like *E. coli* are even smarter than we originally thought!
 
-## Exercises
-
-**1.How do *E. coli* respond to repellants?**
-
-1. Based on what we've learned about chemotaxis towards higher attractant concentrations, can you summarize how would *E. coli* cells repond to an repellant?
-
-2. In [phosphorylation tutorial](tutorial_phos), we defined the rate constant for free CheA autophosphorylation `k_T_phos`, and specified that when the receptor complex is bound to an attractant molecule, the autophosphorylation rate constant becomes `0.2 · k_T_phos`. Now, let's further specify that when the receptor complex is bound to a **repellant** molecule, the autophosphorylation rate constant becomes `5 · k_T_phos`. Please implement this rule in our BNG model.
-
-3. If our system does not have attractant molecules, but instead, was added with `L0` repellant molecules at the beginning of the simulation. Please simulate the system with `L0 = 5000` and `L0 = 1e5` and observe the concentrations of chemical species for 3 seconds. How does the concentration of phosphorylated CheY change? What does that implicate?
-
-**2.What if there are multiple attractant sources?**
-
-1. So far our model only included one type of attractant and one type of receptor. However, *E. coli* has different receptors specific for different types of attractants. Assuming all receptor types influence the downstream reactions equally, can we include multiple ligand/receptor types into our model easily? Please modify your model from [adaptation tutorial](tutorial_senseadap) to reflect 2 types of receptor specific for 2 types of ligand (call them *A* and *B*). Assume we have 3500 receptor molecules of each type. (*Hint*: you won't need to have additional chemical species for `L` and `T`; just specify additional states for them, for example `L(t,Lig~A)` only binds with `T(l,Lig~A)`. Don't forget to update `seed species`.)
-
-2. What will happen if after the cell adapts to concentration of one type of attractant, another type of attractant is suddenly added to the system? Let's model a scenerio such that after the cell adapts to `1e6` ligand molecules *A*, suddenly add `1e6` ligand molecules *B*. To achieve this, we can specify the rate constant for binding of B and its receptor with a `function`: if the cell hasn't adapt to [*A*], the rate constant is 0; otherwise the rate is `k_lr_bind` (Recall defining `function`s in [up-gradient tutorial](tutorial_gradient)). Please observe the concentrations of phosphorylated CheY. Is the cell able to respond to ligand *B* after adapting to the concentration of ligand *A*? (*Hint*: you can judge whether the cell is adapted to `1e6` ligand *A* molecules by methylation levels.)
-
-3. What if there are two nutrient rich locations? In [chemotactic walk tutorial](tutorial_walk), we have a concentration gradient growing exponential from center to the goal (1500, 1500), so that *L(x,y)* = 100 · 10<sup>8 · (1-*d*/*D*)</sup>. Please modify your model from the tutorial to include another goal at location (-1500, 1500), and a similar concentration gradient growing from the center to the goal. The new concentration of ligands, [*L*] will be *L(x,y)* = 100 · 10<sup>8 · (1-*d*<sub>1</sub>/*D*<sub>1</sub>)</sup> + 100 · 10<sup>8 · (1-*d*<sub>2</sub>/*D*<sub>2</sub>)</sup>, where *d*<sub>1</sub> is the distance from *(x,y)* to goal1 (1500, 1500), *d*<sub>2</sub> is the distance from *(x,y)* to goal2 (-1500, 1500), and *D*<sub>1</sub> = *D*<sub>2</sub> are the distances from the origin to goal1 and goal2. Please simulate with tumble every 1 second as the background tumbling frequency, and visualize trajectories for several cells. Are the cells able to find the goals?
-
-**3.The actual tumbling reorientation is smarter than our model?**
-
-Earlier we said that when *E. coli* tumbles, the degree of reorientation is actually not uniformly random from 0° to 360°. With background ligand concentration, the degree of reorientation approximately follows a normal distribution with mean of 68° and standard deviation of 36°. Recent research suggests that when the cell is moving up the gradient, the degree of reorientation is smaller (although we don't have definitive measurements for now)[^Saragosti2011]. Please modify your model from [chemotactic walk tutorial](tutorial_walk) to change the random uniform sampling to the "smarter" sampling. Specifically, in the `tumble_move(curr_dir)` function, replace `new_dir = np.random.uniform(low = 0.0, high = 2 * math.pi)` with
-~~~ python
-if up_gradient:
-	new_dir = np.random.normal(loc = tumble_angle_mu - 0.1, scale = tumble_angle_std)
-else:
-	new_dir = np.random.normal(loc = tumble_angle_mu, scale = tumble_angle_std)
-new_dir *= np.random.choice([-1, 1])
-~~~
-and set `tumble_angle_mu = 2 * math.pi * 68 / 360`, and `tumble_angle_std = 2 * math.pi * 36 / 360` as global parameters. Please implement `up_gradient` as an argument for the updated `tumble_move` function. (*Hint*: `up_gradient` can be decided based on `curr_conc` and `past_conc` during the simulation). 
-
-Please quantitatively measure the chemotaxis performance by calculating the mean and standard deviation of each cell's distance to the goal for 500 cells (you can do that for different background tumbling frequencies too). Why are the cells able to find the goal faster?
-
-**4. Want another BNG model?**
-
-Like what we've seen in this module, BNGL is very good at simulating systems that involve a large number of species and particles yet can be summarized with a small set of rules. Polymerization reactions is another good example of such systems. **Polymerization** is the process of monomer molecules react to form polymer chains, for example, polyvinyl chloride (PVC) is formed from many vinyl polymers. We can build a simplified BNGL model to simulate the polymerization of monomer *A* to form polymer *AAAAAA*... The reaction can be written as *A*<sub>m</sub> + *A*<sub>n</sub> -> *A*<sub>m+n</sub>. There are two sites on `A` that are involved in the reaction: one "head" to join a free "tail", and one "tail" to allow a "head" to bind. We will model a polymerization reaction with BNG (this model is inspired by the [BLBR model in official BNG tutorials](https://github.com/RuleWorld/BNGTutorial/blob/master/CBNGL/BLBR.bngl)).
-
-Please open a new `.bngl` file. We will have only one moleclue type: `A(h,t)`; the `s` and `t` indicates the "head" and "tail". Please implement the four reaction rules: 
-- initializing the series of reactions: two unbound `A` forms the intial dimer; 
-- adding an unbound `A` to the "tail" of an existing `A` n-mer to form an `A` (n+1)-mer; 
-- adding an existing `A` n-mer to the "tail" of an unbound `A` to form an (n+1)-mer;
-- adding an existing `A` m-mer to the "tail" of an existing `A` n-mer to form an (n+m)-mer.
-
- (*Hint*: check out the `!+` grammar in the [ultimate BNG guide](http://comet.lehman.cuny.edu/griffeth/BioNetGenTutorialFromBioNetWiki.pdf).) Set all reaction rate constants to be 1.
-
-We will simulate with 1000 `A` monomers at the beginning of the simulation, and observe for the formation of polymers composed of different number of `A`s. To do so, we select the pattern of containing *x* `A`'s with `A == x`. `Species` instead of `Molecules` is required for selecting polymer patterns.
-
-	begin seed species
-		A(h,t) 1000
-	end seed species
-
-	begin observables
-		Species A1 A==1
-		Species A2 A==2
-		Species A3 A==3
-		Species A4 A==4
-		Species A5 A==5
-		Species ALongChains A>10
-	end observables
-
-For this model, let's try another simulation method - **Network-free** simulation. It is similar to SSA simulation we used before, but instead of simulating transitions between states of the whole *system*, it tracks individual *particles*. In this polymerization model, the possible number of reactions are much higher - we can have any m-mer reacting with any n-mer at any step. Considering all these possible reactions makes SSA slow. Luckily, we don't have that many particles, so trucking each particle will be much faster (in our chemotaxis model, tracking over 10<sup>8</sup> molecules individually is difficult).
-
-Please simulate with the command `simulate({method=>"nf", t_end=>100, n_steps=>100})`. Note that we do not need the `generate_network()` command. What do you observe?
-
-
-
 [^Saragosti2011]: Saragosti J, Calvez V, Bournaveas, N, Perthame B, Buguin A, Silberzan P. 2011. Directional persistence of chemotactic bacteria in a traveling concentration wave. PNAS. [Available online](https://www.pnas.org/content/pnas/108/39/16235.full.pdf)
 
 [^Saragosti2012]: Saragosti J., Siberzan P., Buguin A. 2012. Modeling *E. coli* tumbles by rotational diffusion. Implications for chemotaxis. PLoS One 7(4):e35412. [available online](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3329434/).
@@ -198,5 +133,5 @@ Please simulate with the command `simulate({method=>"nf", t_end=>100, n_steps=>1
 [^Baker2005]: Baker MD, Wolanin PM, Stock JB. 2005. Signal transduction in bacterial chemotaxis. BioEssays 28:9-22. [Available online](https://pubmed.ncbi.nlm.nih.gov/16369945/)
 
 
-[Next module](../coronavirus/home){: .btn .btn--primary .btn--large}
+[Exercises](../home_exercise){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}

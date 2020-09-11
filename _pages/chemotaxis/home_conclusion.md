@@ -147,25 +147,28 @@ With more experimental evidences, the model of *E. coli* chemotaxis has been con
 Earlier we said that when *E. coli* tumbles, the degree of reorientation is actually not uniformly random from 0° to 360°. With background ligand concentration, the degree of reorientation approximately follows a normal distribution with mean of 68° and standard deviation of 36°. Recent research suggests that when the cell is moving up the gradient, the degree of reorientation is smaller (although we don't have definitive measurements for now)[^Saragosti2011]. Please modify your model from [chemotactic walk tutorial](tutorial_walk) to change the random uniform sampling to the "smarter" sampling. Specifically, in the `tumble_move(curr_dir)` function, replace `new_dir = np.random.uniform(low = 0.0, high = 2 * math.pi)` with
 ~~~ python
 if up_gradient:
-		new_dir = np.random.normal(loc = tumble_angle_mu - 0.1, scale = tumble_angle_std)
+	new_dir = np.random.normal(loc = tumble_angle_mu - 0.1, scale = tumble_angle_std)
 else:
 	new_dir = np.random.normal(loc = tumble_angle_mu, scale = tumble_angle_std)
 new_dir *= np.random.choice([-1, 1])
 ~~~
-and set `tumble_angle_mu = 2 * math.pi * 68 / 360`, and `tumble_angle_std = 2 * math.pi * 36 / 360` as global parameters. Please implement `up_gradient` as an argument for the updated `tumble_move` function. (*Hint*: `up_gradient` can be decided based on `curr_conc` and `past_conc` during the simulation). Please quantitatively measure the chemotaxis performance by calculating the mean and standard deviation of each cell's distance to the goal for 500 cells (you can do that for different background tumbling frequencies too). Why are the cells able to find the goal faster?
+and set `tumble_angle_mu = 2 * math.pi * 68 / 360`, and `tumble_angle_std = 2 * math.pi * 36 / 360` as global parameters. Please implement `up_gradient` as an argument for the updated `tumble_move` function. (*Hint*: `up_gradient` can be decided based on `curr_conc` and `past_conc` during the simulation). 
+
+Please quantitatively measure the chemotaxis performance by calculating the mean and standard deviation of each cell's distance to the goal for 500 cells (you can do that for different background tumbling frequencies too). Why are the cells able to find the goal faster?
 
 **4. Want another BNG model?**
 
-Like what we've seen in this module, BNGL is very good at simulating systems that involve a large number of species and particles yet can be summarized with a small set of rules. Polymerization reactions is another good example of such systems. **Polymerization** is the process of monomer molecules react to form polymer chains, for example, polyvinyl chloride (PVC) is formed from many vinyl polymers. We can build a simplified BNGL model to simulate the polymerization of monomer *A* to form polymer *AAAAAA*... The reaction can be written as *A*<sub>m</sub> + *A*<sub>n</sub> -> *A*<sub>m+n</sub>. There are two sites on `A` that are involved in the reaction: one "head" to join a free "tail", and one "tail" to allow a "head" to bind. We will model a polymerization reaction with BNGL (this model is inspired by the [BLBR model in official BNG tutorials](https://github.com/RuleWorld/BNGTutorial/blob/master/CBNGL/BLBR.bngl)).
+Like what we've seen in this module, BNGL is very good at simulating systems that involve a large number of species and particles yet can be summarized with a small set of rules. Polymerization reactions is another good example of such systems. **Polymerization** is the process of monomer molecules react to form polymer chains, for example, polyvinyl chloride (PVC) is formed from many vinyl polymers. We can build a simplified BNGL model to simulate the polymerization of monomer *A* to form polymer *AAAAAA*... The reaction can be written as *A*<sub>m</sub> + *A*<sub>n</sub> -> *A*<sub>m+n</sub>. There are two sites on `A` that are involved in the reaction: one "head" to join a free "tail", and one "tail" to allow a "head" to bind. We will model a polymerization reaction with BNG (this model is inspired by the [BLBR model in official BNG tutorials](https://github.com/RuleWorld/BNGTutorial/blob/master/CBNGL/BLBR.bngl)).
 
 Please open a new `.bngl` file. We will have only one moleclue type: `A(h,t)`; the `s` and `t` indicates the "head" and "tail". Please implement the four reaction rules: 
 - initializing the series of reactions: two unbound `A` forms the intial dimer; 
 - adding an unbound `A` to the "tail" of an existing `A` n-mer to form an `A` (n+1)-mer; 
 - adding an existing `A` n-mer to the "tail" of an unbound `A` to form an (n+1)-mer;
 - adding an existing `A` m-mer to the "tail" of an existing `A` n-mer to form an (n+m)-mer.
+
  (*Hint*: check out the `!+` grammar in the [ultimate BNG guide](http://comet.lehman.cuny.edu/griffeth/BioNetGenTutorialFromBioNetWiki.pdf).) Set all reaction rate constants to be 1.
 
-We will simulate with 1000 `A` monomers at the beginning of the simulation, and observe for the formation of polymers composed of different number of `A`s. To do so, we select the pattern of containing *x* `A`s with `A == x`. `Species` instead of `Molecules` is required for selecting polymer patterns.
+We will simulate with 1000 `A` monomers at the beginning of the simulation, and observe for the formation of polymers composed of different number of `A`s. To do so, we select the pattern of containing *x* `A`'s with `A == x`. `Species` instead of `Molecules` is required for selecting polymer patterns.
 
 	begin seed species
 		A(h,t) 1000

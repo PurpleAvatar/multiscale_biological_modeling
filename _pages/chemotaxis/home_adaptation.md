@@ -52,48 +52,15 @@ The figure below adds CheR and CheB to provide a complete picture of the core pa
 
 ## Combinatorial explosion and the need for rule-based modeling
 
-Before incorporating the adaptation mechanisms in our BNG model, let's write out the reactions first. We will write our reactions in a similar fashion as coding in BNGL. For example, by specifying moleclue `L(t-U)`, we specify molecule `L`, which has one component `t` reflecting the potential bonding to MCPs, and the state `U` indicates it is not bound to MCPs. By specifying moleclue `L(t-B).MCP(l-B)`, we specify the bound product of `L` and `MCP`.
+Before incorporating the adaptation mechanisms in our BNG model, let's write out the reactions first. 
 
-Start with MCP complexes. In the [phosphorylation tutorial](tutorial_phos), we identified two components relevant for reactions involving MCPs: a ligand-binding component `l` and a phosphorylation component `Phos`. The adaptation mechanism introduces two new additional reactions: binding with CheR, and methylation/demethylation by CheR and CheB. Thus we can introduce two additional components, `r` for CheR-binding, and `Meth` for methylation states. Note that to simplify our simulation, we will use 3 methylation levels, low, medium, and high.
+Start with MCP complexes. In the [phosphorylation tutorial](tutorial_phos), we identified two components relevant for reactions involving MCPs: a ligand-binding component `l` and a phosphorylation component `Phos`. The adaptation mechanism introduces two new additional reactions: binding with CheR, and methylation/demethylation by CheR and CheB. Thus we can introduce two additional components, `r` for CheR-binding, and `Meth` for methylation states. Note in our simulation, we will use 3 methylation levels, low, medium, and high because 3 methlytion states are most invovled in the chemotaxis to attractants [^Boyd1980].
 
-For each MCP complex, the state of the molecule can be specified as `(l, Phos, r, Meth)`, where `l` can take 2 values, bound/unbound (U, B); `Phos` can take 2 values, unphosphorylated/phosphorylated (U, P); `r` can take 2 values, bound/unbound (U, B); and `Meth` can take 3 values, low/medium/high methylation states (A, B, C).
+When writing the code for a reaction, we need to specify each species involved. To specify an MCP here, we will need to tell the program the exact state it is at, i.e., whether bound to a ligand, whether bound to CheR, whether phosphorylated, and which methylation state it has. Therefore, there are 2 · 2 · 2 · 3 = 24 possible states for an MCP. For the reaction of a ligand molecule bind to an MCP, we select the MCPs not bound to a ligand yet, that means 12 reactions for just ligand-receptor binding.
 
-When writing the code for a reaction, we need to specify each species involved. To specify an MCP here, we will need to tell the program the exact state it is at. That means, for the reaction of a ligand molecule bind to an MCP, we need to write:
- - L(t-U) + MCP(l-U, Phos-U, r-U, Meth-A) -> L(t-B).MCP(l-B, Phos-U, r-U, Meth-A)
- - L(t-U) + MCP(l-U, Phos-U, r-U, Meth-B) -> L(t-B).MCP(l-B, Phos-U, r-U, Meth-B)
- - L(t-U) + MCP(l-U, Phos-U, r-U, Meth-C) -> L(t-B).MCP(l-B, Phos-U, r-U, Meth-C)
- - L(t-U) + MCP(l-U, Phos-U, r-B, Meth-A) -> L(t-B).MCP(l-B, Phos-U, r-B, Meth-A)
- - L(t-U) + MCP(l-U, Phos-U, r-B, Meth-B) -> L(t-B).MCP(l-B, Phos-U, r-B, Meth-B)
- - L(t-U) + MCP(l-U, Phos-U, r-B, Meth-C) -> L(t-B).MCP(l-B, Phos-U, r-B, Meth-C)
- - L(t-U) + MCP(l-U, Phos-P, r-U, Meth-A) -> L(t-B).MCP(l-B, Phos-P, r-U, Meth-A)
- - L(t-U) + MCP(l-U, Phos-P, r-U, Meth-B) -> L(t-B).MCP(l-B, Phos-P, r-U, Meth-B)
- - L(t-U) + MCP(l-U, Phos-P, r-U, Meth-C) -> L(t-B).MCP(l-B, Phos-P, r-U, Meth-C)
- - L(t-U) + MCP(l-U, Phos-P, r-B, Meth-A) -> L(t-B).MCP(l-B, Phos-P, r-B, Meth-A)
- - L(t-U) + MCP(l-U, Phos-P, r-B, Meth-B) -> L(t-B).MCP(l-B, Phos-P, r-B, Meth-B)
- - L(t-U) + MCP(l-U, Phos-P, r-B, Meth-C) -> L(t-B).MCP(l-B, Phos-P, r-B, Meth-C)
-It takes 12 reactions to just specify the ligand-receptor binding.
+Do we actually need the 12 reactions? When we model ligand-MCP binding, we don't care the MCP is phosphorylated or not, bound to CheR or not, or its methylation state. We only care about the reactive part - it is not bound to a ligand molecule yet. So our 12 reactions can simplify to 1 reaction rule: a free ligand molecule binds to an MCP that is not bound to a ligand molecule. Why is one rule enough? Recall in [Gillespie algorithm](/home_signal#an-overview-of-the-gillespie-algorithm), the wait time before the next reaction and which reaction happen next only depends on the rate of all reactions in the system. The rate of ligand-MCP binding depends on the total concentration of free ligands and MCPs not bound to ligand, but not MCPs' other states.
 
-And for the reaction of CheR binds to an MCP and then increase its methylation state from A to B or from B to C, we need to write:
- - L(t-B).MCP(l-B, Phos-U, r-U, Meth-A) + CheR(t-U) -> L(t-B).MCP(l-B, Phos-U, r-B, Meth-A).CheR(t-B)
- - L(t-B).MCP(l-B, Phos-U, r-U, Meth-B) + CheR(t-U) -> L(t-B).MCP(l-B, Phos-U, r-B, Meth-B).CheR(t-B)
- - L(t-B).MCP(l-B, Phos-U, r-U, Meth-C) + CheR(t-U) -> L(t-B).MCP(l-B, Phos-U, r-B, Meth-C).CheR(t-B)
- - MCP(l-U, Phos-U, r-U, Meth-A) + CheR(t-U) -> MCP(l-U, Phos-U, r-B, Meth-A).CheR(t-B)
- - MCP(l-U, Phos-U, r-U, Meth-B) + CheR(t-U) -> MCP(l-U, Phos-U, r-B, Meth-B).CheR(t-B)
- - MCP(l-U, Phos-U, r-U, Meth-c) + CheR(t-U) -> MCP(l-U, Phos-U, r-B, Meth-C).CheR(t-B)
- - And the other 6 reactions for MCP-CheR binding when receptor complex is phosphorylated.
- - L(t-B).MCP(l-B, Phos-U, r-B, Meth-A).CheR(t-B) -> L(t-B).MCP(l-B, Phos-U, r-U, Meth-B) + CheR(t-U)
- - L(t-B).MCP(l-B, Phos-U, r-B, Meth-B).CheR(t-B) -> L(t-B).MCP(l-B, Phos-U, r-U, Meth-C) + CheR(t-U)
- - MCP(l-U, Phos-U, r-B, Meth-A).CheR(t-B) -> MCP(l-U, Phos-U, r-U, Meth-B) + CheR(t-U)
- - MCP(l-U, Phos-U, r-B, Meth-B).CheR(t-B) -> MCP(l-U, Phos-U, r-U, Meth-C) + CheR(t-U)
- - And the other 4 reactions when receptor complex is phosphorylated... That's a lot of reactions, and that's not even half of the model.
-
-However, when we simulate for ligand-receptor binding, we don't care about whether the MCP complex is phosphorylated or not, bound to CheR or not, or which methylation state is at. When only care about the reactive part - it is not bound to a ligand molecule yet. Similarly, when for CheR-MCP binding, we don't care about if MCP is phosphorylated or bound to a ligand; we only care about whether the MCP is already bound to CheR. For methylating MCPs, we only care about the current metylation state and whether the MCP is bound to a ligand. The problem of specifying the states can be circumvented by representing reactions in local rules.[^Chylek2015]
- - L(t-U) + MCP(l-U) -> L(t-B).MCP(l-B)
- - MCP(r-U) + CheR(t-U) -> MCP(r-B).CheR(t-B)
- - MCP(l-U, r-B, Meth-A).CheR(t-B) -> MCP(l-U, r-U, Meth-B) + CheR(t-U)
- - MCP(l-U, r-B, Meth-B).CheR(t-B) -> MCP(l-U, r-U, Meth-C) + CheR(t-U)
- - L(t-B).MCP(l-B, r-B, Meth-A).CheR(t-B) -> L(t-B).MCP(l-B, r-U, Meth-B) + CheR(t-U)
- - L(t-B).MCP(l-B, r-B, Meth-B).CheR(t-B) -> L(t-B).MCP(l-B, r-U, Meth-C) + CheR(t-U)
+Similarly, if we were to specify each states in the reaction of MCP methylation by CheR, there are 8 possible reactions. However, the rate of methlylation only depends on whether the MCP is bound to ligand, and which methylation state it is currently at. Therefore, we actually only need 4 rules. The problem of specifying the states can be circumvented by representing reactions in local rules.[^Chylek2015]
 
 As you might have realized, BNG takes advantage of such **rule-based modeling**. In our simulations, we will only worry about the components that are involved in a particular reactions, or influence the rate constant of that reaction.
 
@@ -194,6 +161,8 @@ Some resources/reads if you are interested in the chemotaxis biology:
 [^Terwilliger1986]: Terwilliger TC, Wang JY, Koshland DE. 1986. Kinetics of Receptor Modification - the multiply methlated aspartate receptors involved in bacterial chemotaxis. The Journal of Biolobical Chemistry. [Available online](https://www.jbc.org/content/261/23/10814.full.pdf)
 
 [^Chylek2015]: Chylek LA, Harris LA, Tung CS, Faeder JR, Lopez CF, Hlavacek WS. 2015. Rule-based modeling: a computational approach for studying biomolecular site dynamics in cell signaling systems. Wiley Interdiscip Rev Syst Biol Med 6(1):13-36. [Available online](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3947470/)
+
+[^Boyd1980]: Boyd A., and Simon MI. 1980. Multiple electrophoretic forms of methyl-accepting chemotaxis proteins generated by stimulus-elicited methylation in Escherichia coli. Journal of Bacteriology 143(2):809-815. [Available online](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC294367/pdf/jbacter00569-0269.pdf)
 
 [Next lesson](home_gradient){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}

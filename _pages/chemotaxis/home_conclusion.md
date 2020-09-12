@@ -67,6 +67,7 @@ while *time* < duration:
 
 ## Comparing the two strategies
 
+Visualize trajectories of 3 cells using strategy 1 versus strategy 2.
 ![image-center](../assets/images/chemotaxis_traj_compare_uniform.png){: .align-center}
 <figcaption>Sample trajectories for the two strategies. Left: standard random walk; right: chemotactic random walk. The background color indicates concentration: white -> red = low -> high; black dots are starting points; red dots are the points they reached at the end of the simulation; colorful dashed lines represent trajectories (one color one cell): dark -> bright color = older -> newer time points; blue cross indicates the highest concentration (1500, 1500).</figcaption>
 

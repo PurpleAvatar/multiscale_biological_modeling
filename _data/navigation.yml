@@ -102,6 +102,8 @@ chemotaxis:
         url: /chemotaxis/home_gradient
       - title: "Conclusion: The Beauty of E. coli's Randomized Exploration Algorithm"
         url: /chemotaxis/home_conclusion
+      - title: "Exercises"
+        url: /chemotaxis/home_exercise
   - title: Tutorials
     children:
       - title: "Starting BNG Simulation"

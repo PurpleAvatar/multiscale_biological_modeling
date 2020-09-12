@@ -8,6 +8,13 @@ toc: true
 toc_sticky: true
 ---
 
+## Intro to CellBlender
+
+If this is your first time using CellBlender, visit the tutorial for setting up the software and navigating the Blender window. 
+
+[Visit Tutorial](setup){: .btn .btn--primary .btn--large}
+{: style="font-size: 100%; text-align: center;"}
+
 ## CellBlender and the Random Walk
 
 Load in the CellBlender_Tutorial_Template from (Link to Setting up CellBlender). Save as *random_walk.blend*

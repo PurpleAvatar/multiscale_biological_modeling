@@ -46,5 +46,5 @@ Figure S.2 - Resizing the render preview window (where the objects are visible i
 
 Save this file as "CellBlender_Tutorial_Template.blend"
 
-[Previous](oscillators){: .btn .btn--primary .btn--x-large} [Next Page](navigation){: .btn .btn--primary .btn--x-large}
+[Next](navigation){: .btn .btn--primary .btn--x-large} [Next Page](navigation){: .btn .btn--primary .btn--x-large}
 {: style="font-size: 100%; text-align: center;"}

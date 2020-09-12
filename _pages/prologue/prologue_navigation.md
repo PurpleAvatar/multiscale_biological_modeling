@@ -25,5 +25,4 @@ C. This window contains many options relating to a selected object.
 
 D. This is the CellBlender menu, which contains sub-menus which will be noted as follows: CellBlender > Model Objects. It is recommended that the edge of the window is dragged outward to increase visibility (see box “e” on the image) 
 
-[Previous](setup){: .btn .btn--primary .btn--x-large} [Next Page](tutorial_nar){: .btn .btn--primary .btn--x-large}
-{: style="font-size: 100%; text-align: center;"}
+[Back to Tutorial](tutorial-random-walk){: .btn .btn--primary .btn--x-large} 

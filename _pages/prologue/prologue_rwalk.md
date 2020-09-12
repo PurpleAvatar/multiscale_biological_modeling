@@ -31,7 +31,8 @@ This theorem does not say that after *n* steps our particle will be *exactly* di
 
 <iframe width="640" height="360" src="../assets/random_walk_200.mp4" frameborder="0" allowfullscreen></iframe>
 
-* NOAH: I think this would be a great place to link to the intro to CellBlender/MCell tutorial where we explain how it works and get them to build the above random walk videos. We can recall this tutorial later in both the prologue and the motifs chapter, where we can say "If you didn't follow the intro tutorial in the prologue ...".
+[Visit Tutorial](tutorial-random-walk){: .btn .btn--primary .btn--large}
+{: style="font-size: 100%; text-align: center;"}
 
 ## Diffusion: big numbers in small spaces
 

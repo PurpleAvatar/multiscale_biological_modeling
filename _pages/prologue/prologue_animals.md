@@ -86,7 +86,6 @@ The interesting behavior in this system lies in a sweet spot, where we see inter
 
 Let's scale up the simulation! With more particles and larger simulation space, we will be able to observe larger patterns. For example,
 
-* NOAH: INSERT MERT VIDEO WITH CLEAR EXPLANATION OF PARAMETERS
 <iframe width="640" height="360" src="../assets/gray_scott_11_by_11_f_1.75_k_2_new.mp4" frameborder="0" allowfullscreen></iframe>
 A fizzling cascade bounces in between larger waves, Feed Rate *f* = 1.75E5 and Kill Rate *k* = 2E5
 {: .text-center}
@@ -95,6 +94,14 @@ And yet if we make a slight change to the parameters, we obtain different macro 
 
 <iframe width="640" height="360" src="../assets/gray_scott_11_by_11_f_1.4_k_2.mp4" frameborder="0" allowfullscreen></iframe>
 Each ripple is started by a small spiral, Feed Rate *f* = 1.4E5 and Kill Rate *k* = 2E5
+{: .text-center}
+
+<iframe width="640" height="360" src="../assets/gray_scott_11_by_11_f_1_k_1.mp4" frameborder="0" allowfullscreen></iframe>
+When we push the feed even lower, we see much cleaner waves, Feed Rate *f* = 1E5 and Kill Rate *k* = 2E5
+{: .text-center}
+
+<iframe width="640" height="360" src="../assets/gray_scott_11_by_11_f_1_k_2.mp4" frameborder="0" allowfullscreen></iframe>
+Pushing the kill rate down as well leads to a spotty pattern (pause the video at various points for a clear look), Feed Rate *f* = 1E5 and Kill Rate *k* = 1E5
 {: .text-center}
 
 ## Streamlining our simulations

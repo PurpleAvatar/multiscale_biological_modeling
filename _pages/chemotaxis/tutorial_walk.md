@@ -9,9 +9,10 @@ toc_sticky: true
 
 In this page, we will:
  - Simulate *E. coli* chemotaxis at a cellular level
+ - Compare performance of chemotactic walk vs. standard random walk
  - Compare performances of different default tumbling frequencies.
 
-## Modeling standard random walk at a cellular level
+## Modeling chemotactic walk at a cellular level
 
 Please download the simulation and visualization here: <a href="https://purpleavatar.github.io/multiscale_biological_modeling/downloads/downloadable/chemotaxis_walk.ipynb" download="chemotaxis_walk.ipynb">chemotaxis_walk.ipynb</a>. Detailed explanation of the model and each functions can be found in the file too.
 
@@ -110,7 +111,7 @@ def tumble_move(curr_dir):
     new_dir += curr_dir
 
     if new_dir > 2 * math.pi:
-        new_dir -= 2 * math.pi #Keep within [0, 2pi]
+        new_dir -= 2 * math.pi #Keep within [0, 2pi] for cleaner numbers
 
     move_h = math.cos(new_dir) #Horizontal displacement for next run
     move_v = math.sin(new_dir) #Vertical displacement for next run
@@ -122,18 +123,18 @@ def tumble_move(curr_dir):
 
 Simulation through time for all `time_exp` of all cells.
 
-For each cell, simulate through time as the following pseudocode:
+For each cell, simulate through time as the following procedure:
 
-    while `t` < duration:
-        Assess the current concentration
-        Update current run duration `curr_run_time`
-        If `curr_run_time` < 0.5s:
-            run for `curr_run_time` second along current direction
-            Sample the duration of tumble `tumble_time` and the resulted direction
-            increment t by `curr_run_time` and `tumble_time`
-        If `curr_run_time` > 0.5s:
-            run for 0.5s along current direction
-            increment `t` by 0.5s (and then the cell will re-assess the new concentration, and decide the duration of next run)
+while `t` < duration:
+ - Assess the current concentration
+ - Update current run duration `curr_run_time`
+ - If `curr_run_time` < 0.5s:
+        1. run for `curr_run_time` second along current direction
+        2. Sample the duration of tumble `tumble_time` and the resulted direction
+        3. increment t by `curr_run_time` and `tumble_time`
+ - If `curr_run_time` > 0.5s:
+        1. run for 0.5s along current direction
+        2. increment `t` by 0.5s (and then the cell will re-assess the new concentration, and decide the duration of next run)
 
 ~~~ python
 def simulate(num_cells, duration, time_exp):
@@ -200,7 +201,9 @@ Go back to main text for now. We will return to this tutorial later.
 [Back to Main Text](home_conclusion){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
-## Visualizing trajectories for different background tumbling frequencies
+## Qualitative comparison of different background tumbling frequencies
+
+We will use <a href="https://purpleavatar.github.io/multiscale_biological_modeling/downloads/downloadable/chemotaxis_walk.ipynb" download="chemotaxis_walk.ipynb">chemotaxis_walk.ipynb</a> to compare trajectories for different tumbling frequencies.
 
 Before assessing the performances of different default tumbling frequencies, let's run simulation for 3 cells for 800 seconds for the different tumbling frequencies to get a rough idea of what their trajectories look like. We will use a range of 10x shorter expected run time (0.1s) to 10x longer expected run time (10s).
 
@@ -218,7 +221,7 @@ Run the two code blocks for Part2: Visualizing trajectories (1st block simulates
 
 What do you observe? Pay attention to: 1) are the cells moving up the gradient?; 2) what's the differences between the shape of the trajectories?; 3) within the 1500 seconds, which expected run time allow the cells reach the black dashed circle (target)?; 4) after reaching the target, which expected run time allow the cells to stay in/near the circle?
 
-## Comparing performances for different background tumbling frequencies
+## Quantitative comparison of different background tumbling frequencies
 
 We will quantitatively measure the performances by the ability to reach the target at the end of the simulation. We will also calculate the average distance to the center at each time step for each of the `time_exp` values.
 

@@ -10,7 +10,7 @@ toc_sticky: true
 In this page, we will:
  - Simulate *E. coli* chemotaxis at a cellular level by standard random walk
 
-## Modeling chemotaxis behavior at a cellular level
+## Modeling standard random walk at a cellular level
 
 Please download the simulation and visualization here: <a href="https://purpleavatar.github.io/multiscale_biological_modeling/downloads/downloadable/chemotaxis_std_random.ipynb" download="chemotaxis_std_random.ipynb">chemotaxis_std_random.ipynb</a>. Detailed explanation of the model and each functions can be found in the file too.
 
@@ -84,7 +84,7 @@ def tumble_move(curr_dir):
     new_dir += curr_dir
     
     if new_dir > 2 * math.pi:
-        new_dir -= 2 * math.pi #Keep within [0, 2pi]
+        new_dir -= 2 * math.pi #Keep within [0, 2pi] for cleaner numbers
         
     move_h = math.cos(new_dir) #Horizontal displacement for next run
     move_v = math.sin(new_dir) #Vertical displacement for next run
@@ -94,13 +94,13 @@ def tumble_move(curr_dir):
     return new_dir, move_h, move_v, tumble_time
 ~~~
 
-For each cell, simulate through time as the following pseudocode:
+For each cell, simulate through time as the following procedure:
 
-	while `t` < duration:
-		Sample the current run duration `curr_run_time` from an exponential distribution with mean `time_exp`
-        Run for `curr_run_time` second along current direction
-        Sample the duration of tumble `tumble_time` and the resulted direction
-        increment t by `curr_run_time` and `tumble_time`
+while `t` < duration:
+ - Sample the current run duration `curr_run_time` from an exponential distribution with mean `time_exp`
+ - Run for `curr_run_time` second along current direction
+ - Sample the duration of tumble `tumble_time` and the resulted direction
+ - increment t by `curr_run_time` and `tumble_time`
 
 ~~~ python
 def simulate_std_random(num_cells, duration, time_exp):

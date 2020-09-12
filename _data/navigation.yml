@@ -102,7 +102,7 @@ chemotaxis:
         url: /chemotaxis/home_gradient
       - title: "Conclusion: The Beauty of E. coli's Randomized Exploration Algorithm"
         url: /chemotaxis/home_conclusion
-      - title: "Exercises"
+      - title: "Exercises: Beyond the Simple Model"
         url: /chemotaxis/home_exercise
   - title: Tutorials
     children:
@@ -116,9 +116,9 @@ chemotaxis:
         url: /chemotaxis/tutorial_gradient
       - title: "Down gradient/Removal"
         url: /chemotaxis/tutorial_removal
-      - title: "Pure random walk"
+      - title: "Strategy1: Pure random walk"
         url: /chemotaxis/tutorial_purerandom
-      - title: "chemotactic random walk"
+      - title: "Strategy2: Chemotactic random walk"
         url: /chemotaxis/tutorial_walk
 
 coronavirus:

@@ -49,6 +49,18 @@ Types of Feed Forward Loops[^ffl]
 Example of different motifs within the *S. Cerevisiae* network[^scNetwork]
 {: style="text-align: center;"}
 
+6. Using the *NAR_comparison_equal.blend* file from the NAR Tutorial, increase the reaction rate of X1 -> X1 + Y1 to 4e4, so the table should now look like: 
+
+| Reactants |Products|Forward Rate|
+|:--------|:-------:|--------:|
+| X1’  | X1’ + Y1’ | 4e5 |
+| X2’  | X2’ + Y2’ | 4e2 |
+| Y1’  | NULL | 4e2 |
+| Y2’  | NULL | 4e2 |
+|Y2’ + Y2’|Y2’|4e2|
+
+If we plot this graph, we can see the steady states of Y1 and Y2 are different once again. Can you repair the system to find the appropriate reaction rate for X2 -> X2 + Y2 to make the steady states equal once more? Are you about to adjust the reaction Y2 + Y2 -> Y2 as well? Do the reaction rates scale at the same rate? 
+
 ## Internal notes -- resolve before publication
 
 * We also need a note at end of module about the fact that the cell is growing so that in more robust models the concentration is constantly decreasing as a result of the cell growing since it needs to double its volume every cell cycle.

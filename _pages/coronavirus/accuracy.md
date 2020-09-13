@@ -44,7 +44,7 @@ After this is done, we can then proceed to calculating the RMSD score between th
 
 <img src="../_pages/coronavirus/files/RMSDCartoon2.png">
 
-If you want to learn how to do your own RMSD calculations, visit the following tutorial.
+In this tutorial, we will walk through how to calculate RMSD using two experimentally determined protein structures from the PDB: the SARS-CoV-2 S protein, <a href="http://www.rcsb.org/structure/6VXX" target="_blank">6vxx</a>, and SARS S protein, <a href="https://www.rcsb.org/structure/6CRX" target="_blank">6vrx</a>.
 
 [Visit tutorial](rmsd2){: .btn .btn--primary .btn--x-large}
 {: style="font-size: 100%; text-align: center;"}
@@ -53,7 +53,7 @@ If you want to learn how to do your own RMSD calculations, visit the following t
 
 ## Accuracy of Our Structure Prediction Models
 
-In the previous tutorials, we used various publically available protein structure servers to predict the structure of the human hemoglobin subunit alpha (*ab initio*) and SARS-CoV-2 S protein (homology). Now that we know how to assess the accuracy of models using RMSD, let's see how well our models performed.
+In the previous tutorials, we used various publically available protein structure servers to predict the structure of the human hemoglobin subunit alpha (*ab initio*) and SARS-CoV-2 S protein (homology). Using the same method of calculating RMSD from the tutorial, let's see how well our models performed.
 
 ### *Ab initio* (QUARK) models of Human Hemoglobin Subunit Alpha
 
@@ -133,8 +133,9 @@ RMSD is a useful method of calculating a quantitatively assessing the accuracy o
 
 We can also compare the RMSD scores between *QUARK* and GalaxyWEB. Both servers were given a small amino acid sequence to create their models: 141 amino acids for *QUARK*, and 229 amino acids for *GalaxyWEB*. However, all the *QUARK* models exceeded the RMSD threshold, while GalaxyWEB models were highly accurate. From this we can see the difference in accuracy between *ab initio* modeling and homology modeling.
 
-Regardless of the type of modeling or algorithm, none of the available protein structure prediction servers were able to predict a protein structure with 100% accuracy. From the establishment of the Soviet research institution in 1960s, we have been trying to solve nature's magic algorithm for protein folding. But even now, we still haven't found a complete answer. This goes to show the difficulty and complexity of protein structure prediction.
+Although we have yet to find nature's magic algorithm for protein folding, it is amazing how far protein structure prediction has improved over the years from the establishment of the Soviet research institution in the 1960s. The models we assessed here may not be 100% accurate, but they all do a good job on generating an approximate answer to the protein structure. As these algorithms continue to improve, the day when we solve the protein folding problem slowly approaches.
 
+This concludes the part one of this module on how scientists can analyze new proteins before their structures are experimentally determined. In part two of the module, we will explore the differences between SARS and-SARS CoV2 S protein by using the x-ray crystallography structures of the proteins that have been publshed on the PDB during the first wave of outbreak. With this comparison, our goal is to find molecular explanations of why SARS-CoV-2 is much more infectious. 
 
 [Next lesson](structural_diff){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}

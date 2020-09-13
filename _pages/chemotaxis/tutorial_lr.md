@@ -156,7 +156,7 @@ The whole simulation code for ligand-receptor dynamics (you can also download he
 	generate_network({overwrite=>1})
 	simulate({method=>"ssa", t_end=>1, n_steps=>100})
 
-**STOP** Based on your results from calculating by hand, predict how would the concentrations change.
+**STOP:** Based on your results from calculating by hand, predict how would the concentrations change.
 {: .notice--primary}
 
 Go to `Simulation` at the right side of the Contact Map button and click `Run`. You can visualize your `.gdat` data.

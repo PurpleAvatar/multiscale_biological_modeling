@@ -1,17 +1,21 @@
 ---
 permalink: /coronavirus/structural_diff
 title: "Structural and ACE2 Interaction Differences"
-sidebar: 
+sidebar:
  nav: "coronavirus"
 toc: true
 toc_sticky: true
 ---
 
-In the <a href=”coronavirus_home”>Introduction</a>, we discussed that SARS-CoV-2 and SARS are in the same viral genus and both target the human angiotensin-converting enzyme2 (ACE2) with their S protein. However, SARS-CoV-2 is much more infectious, and its S protein has been found to bind to ACE2 with greater affinity than that of SARS. With accurate models of the tertiary structure of both S proteins, we can now structurally compare them to find why this is the case.
+## Need title
+
+In the [introduction](coronavirus_home), we discussed that SARS-CoV-2 and SARS are in the same viral genus and both target the human angiotensin-converting enzyme2 (ACE2) with their S protein. However, SARS-CoV-2 is much more infectious, and its S protein has been found to bind to ACE2 with greater affinity than that of SARS. With accurate models of the tertiary structure of both S proteins, we can now structurally compare them to find why this is the case.
 The receptor binding domain (RBD) is the part of the S protein that interacts with ACE2, and the receptor binding motif (RBM) is the part of the RBD that mediates contact with ACE2. Therefore, we will narrow our focus to the differences in RBM to find out why SARS-CoV-2 binds better with ACE2.
 
+* Add later: "All the analysis will be done using two software: ProDy and VMD. By the end of this module, you will be able to understand more about protein structure prediction and differences in the S proteins that attribute to the higher infectivity of COVID-19."
+
 ## Protein Structure Files
-We will be using two PDB entries for comparison: <a href="https://www.rcsb.org/structure/2AJF" target="_blank">2ajf</a> and <a href="https://www.rcsb.org/structure/6vw1" target="_blank">6vw1</a>. 2ajf contains the structure of SARS RBD complexed with ACE2 and 6vw1 contains the structure of SARS-CoV-2 chimeric RBD complexed with ACE2. 
+We will be using two PDB entries for comparison: <a href="https://www.rcsb.org/structure/2AJF" target="_blank">2ajf</a> and <a href="https://www.rcsb.org/structure/6vw1" target="_blank">6vw1</a>. 2ajf contains the structure of SARS RBD complexed with ACE2 and 6vw1 contains the structure of SARS-CoV-2 chimeric RBD complexed with ACE2.
 SARS-CoV-2 chimeric RBD consist of the SARS RBD core and SARS-CoV-2 RBM. The reason that the chimeric RBD was used is because the SARS RBD core helps facilitate crystallization by acting as the crystallization scaffold for X-ray diffraction (x-ray crystallography). Since the functional unit is still SARS-CoV-2 RBM, data from the comparisons should be similar or equivalent to using native SARS-CoV-2 RBD.
 
 ## Three Sites of Conformational Differences
@@ -26,7 +30,7 @@ A marked difference was found on one of the loops in the ACE2-binding ridge. SAR
 
 <img src="../_pages/coronavirus/files/Ridge.png">
 
-The most noticeable difference is between SARS-CoV-2 Phe486 and SARS-CoV Leu472. In SARS-CoV-2, Phe486 (yellow) is points towards the hydrophobic pocket (silver). Due to phenylalanine's hydrophobic properties, this is a favorable interaction that may improve SARS-CoV-2 affinity with ACE2. In contrast, Leu472 (Yellow) in SARS-CoV does not appear to approach the hydrophobic pocket. 
+The most noticeable difference is between SARS-CoV-2 Phe486 and SARS-CoV Leu472. In SARS-CoV-2, Phe486 (yellow) is points towards the hydrophobic pocket (silver). Due to phenylalanine's hydrophobic properties, this is a favorable interaction that may improve SARS-CoV-2 affinity with ACE2. In contrast, Leu472 (Yellow) in SARS-CoV does not appear to approach the hydrophobic pocket.
 
 ### Hotspot 31
 

@@ -29,58 +29,40 @@ And in 2017, researchers published the result of five years of sampling horsesho
 
 * Chris: please fill in the new citations above below.
 
-## A new threat arises
-
-
-##
-
-
-
-### Phillip notes to self
+## A new threat arises: the COVID-19 pandemic
 
 Reference, https://www.axios.com/timeline-the-early-days-of-chinas-coronavirus-outbreak-and-cover-up-ee65211a-afb6-4641-97b8-353718a5faab.html
 
-
-What could make the second virus so much deadlier than the first?  What are the differences between the viruses and how do these contribute to something that has become a much more infectious disease?
-
-After all, the diseases are startlingly similar – show image of the two under microscope?  They are indistinguishable visually.
-
-They even have the same mechanism of entering host cells – Spike glycoprotein.  Explain what it does.
-
-Two objectives are great: first, we will put ourselves in the shoes of researchers working with the new virus in January 2020 and study the SARS-CoV-2 spike protein.  Second, we will perform a comparative analysis against the SARS—Cov-1 spike protein to determine what makes it more infectious.  This type of study is vital because if we can understand how it attacks our cells then we can start to defend against it.
-
 “One of the world's most important warning systems for a deadly new outbreak is a doctor's or nurse's recognition that some new disease is emerging and then sounding the alarm”, said Tom Inglesby, the Director of the Center for Health Security at Johns Hopkins Bloomberg School of Public Health in Baltimore, MD, USA. “It takes intelligence and courage to step up and say something like that, even in the best of circumstances.”
-
-cite “seventh coronavirus that can infect humans”
-
-
-
-### The COVID-19 Pandemic
 
 Severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2) is responsible for the 2019-2020 COVID-19 pandemic that is believed to have started in Wuhan, China. Although not confirmed, it is believed that the first case dates to 17 November 2019 [^7]. On 31 December 2019, the WHO received reports regarding numerous cases of pneumonia of an undetermined cause from the Wuhan Municipal Health Commission. The next day, the WHO activates the three-level Incident Management Support Team to assess the new disease. The disease spread extremely quickly throughout the city where cases doubled every 7.4 days [^8]. By the end of January, 7818 cases were confirmed across 19 countries, resulting in the WHO declaring the sixth Public Health Emergency of International Concern (PHEIC) [^9][^10].
 
 <img src="../_pages/coronavirus/files/WHOReport10.png">
 
-The very next day, Russia, Italy, and United Kingdom reported their first cases of COVID-19 and joined the list affected countries. From then on, the number of COVID-19 cases has exploded, spreading to around 213 countries and territories across the globe as of 17 August 2020.
+The next day, Russia, Italy, and United Kingdom reported their first cases of COVID-19 and joined the list affected countries. From then on, the number of COVID-19 cases exploded, spreading to around 213 countries and territories across the globe as of 17 August 2020.
 
 <img src="../_pages/coronavirus/files/covid19log.png">
 
 <img src="../_pages/coronavirus/files/CovidTable.png">
 
+* Need to define COVID-19.
+
 ### Why were the two outbreaks so different?
 
-Just by looking at the name SARS-CoV-2, one can assume that this virus is related to SARS-CoV from 2003. In fact, both viruses belong to the broad coronavirus family, with SARS-CoV-2 being the seventh identified coronavirus to be able to infect humans. So how come the outbreak of SARS and COVID-19 are so different?
+The similarity between SARS and SARS-CoV-2 extends well beyond their names. They are both coronaviruses, which means that they are covered in a layer of **Spike proteins** that cause them to look like the sun's corona during an eclipse. In fact, if we look at them under a microscope, they look virtually identical. Both viruses use the same means to infect human cells, by bonding to the ACE2 enzyme on the cellular membrane.[^16][^17] And they cause the same symptoms in humans. So why did SARS fizzle, but SARS-CoV-2, a less harmful[^11][^12] and less deadly disease, transform into an uncontrollable pandemic?
 
-Of course, each outbreak is never handled in the exact same way, and differences in both time and approach by authorities will impact the spread of the disease. However, biological differences between the viruses are also key aspects. At the highest level, the most common symptoms between the two are very similar: fever, cough, fatigue, shortness of breath. However, SARS tends to be more severe, with 20-30% of cases requiring mechanical ventilation while an estimated 20% of COVID-19 cases requiring ventilation [^11][^12]. In addition, a key difference in symptoms and transmission is that SARS-CoV-2 can be spread by individuals that are asymptomatic [^13]. In contrast, there are no known cases of SARS from exposure to a SARS patient who has not developed symptoms yet [^14]. This most likely played a major role in international transmission and the attributes to the difficulty in containing the disease.
+* Insert coronavirus image.
 
-Investigating the biology of the viruses may also reveal key factors in the outbreak difference. SARS and SARS-CoV-2 viruses belong to the genus Betacoronavirus lineage B. On the whole-genome level, SARS-CoV-2 is most closely related to bat coronaviruses, RaTG13, bat-SL-CoVZC45, and bat-SL-CoVZXC2 with a sequence identity of 96%, 87.99% and 87.23%, respectively, and less genetically similar to SARS-CoV with a sequence identity of about 79% [^15]. However, the method of infection between SARS-CoV-2 and SARS-CoV are strikingly similar. The surface of the viruses is decorated with a transmembrane protein called the Spike protein (S protein). The S protein is critical in the recognition and viral entry into human host cells by binding to the human receptor angiotensin-converting enzyme2 (ACE2) on the host cell surface [^16][^17]. Because of the role the S protein plays, it has become one of the targets in developing a vaccine.
+We do not wish to diminish the importance of political and social measures to quell the spread of a disease. Yet at the same time, the ability of SARS-CoV-2 to spread across far more countries and remain a public health threat even in the face of lockdowns can only be explained by its virulence.
 
-Even though the S proteins of the two viruses have the same general function, there are still notable differences between the two. Careful analysis of the S protein revealed that the receptor binding domain (RBD), the part of the S protein that directly interacts with ACE2, of SARS-CoV-2 binds to ACE2 with greater affinity [^18]. In addition, the S protein of SARS-CoV-2 was found to be only 75% homologous to the SARS-CoV S protein [^19]. The differences between the two S proteins may reveal why SARS-CoV-2 is much more infectious than SARS.
+Part of the reason for the spread of SARS-CoV-2 is that it can be spread by individuals that are asymptomatic,[^13] a method of transmission that was never found in SARS.[^14] But we also wonder if we can find a *biological* basis for the difference between the two viruses.
 
-There are two main objectives for this module. First, we will explore publicly available structure prediction software to model the SARS-CoV-2 S protein and then assess their accuracy. Second, we will visualize and perform comparative analysis on the SARS-CoV-2 S protein and SARS-CoV S protein. All the analysis will be done using two software: ProDy and VMD. By the end of this module, you will be able to understand more about protein structure prediction and differences in the S proteins that attribute to the higher infectivity of COVID-19.
+There are two main objectives for this module. First, we will put ourselves in the shoes of early SARS-CoV-2 researchers studying the spike protein of the new virus in January 2020 right as the new virus's genome was sequenced. Can we determine the structure of the viral Spike protein using only its genome?  Second, and more importantly, once we know the structure of this Spike protein in SARS-Cov-2, we will compare it against the same protein in SARS. If we can find a molecular explanation of why this virus can more easily attack our cells, then perhaps we can use this information to start defending against it.
 
+[Continue to part 1: structure prediction](structure_intro){: .btn .btn--primary .btn--large}
+{: style="font-size: 100%; text-align: center;"}
 
-[Next lesson](structure_intro){: .btn .btn--primary .btn--large}
+[Jump to part 2: Spike protein comparisons](structural_diff){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 ## Citations

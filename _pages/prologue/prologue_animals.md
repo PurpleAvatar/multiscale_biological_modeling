@@ -106,7 +106,7 @@ Pushing the kill rate down as well leads to a spotty pattern (pause the video at
 
 ## Turing patterns and hallucinations
 
-When you look at the simulations above, an adjective that may have come to mind is  "trippy". This is no accident. Research dating all the way back to the 1920s has studied the patterns that we see when we hallucinate, which Heinrich Klüver named **form constants** after studying patients who had taken mescaline. Form constants, which include cobwebs, tunnels, and spirals, occur across many individuals regardless of the cause of the hallucinations.
+When you look at the simulations above, an adjective that may have come to mind is  "trippy". This is no accident. Research dating all the way back to the 1920s has studied the patterns that we see when we hallucinate, which Heinrich Klüver named **form constants** after studying patients who had taken mescaline.[^kluver] Form constants, which include cobwebs, tunnels, and spirals, occur across many individuals regardless of the cause of the hallucinations.
 
 * CITE Kluver
 
@@ -124,3 +124,5 @@ Each of the above simulations took several hours to render because simulating an
 
 [Next lesson](blocks){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
+
+[^kluver]: Test

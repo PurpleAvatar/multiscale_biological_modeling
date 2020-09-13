@@ -36,10 +36,6 @@ prologue:
         url: /prologue/conclusion
   - title: "Tutorials"
     children: 
-      - title: "Setting up CellBlender"
-        url: /prologue/setup
-      - title: "Navigating CellBlender"
-        url: /prologue/navigation
       - title: "Random Walk CellBlender"
         url: /prologue/tutorial-random-walk
       - title: "Gray-Scott Jupyter Notebook"

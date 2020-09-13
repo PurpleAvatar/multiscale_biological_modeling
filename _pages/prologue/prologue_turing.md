@@ -7,16 +7,16 @@ toc: true
 toc_sticky: true
 ---
 
-## Turing and his machines
+## Alan Turing and the foundations of computer science
 
 Our story begins with the unlikeliest of major characters: Alan Turing. If you have heard of Turing, then you might be surprised as to why he would appear in a course on biological modeling.
 
 <center>
 <img src = "../assets/images/alan_turing_npg_cc.png" width="250">
-<figcaption>Alan Turing in 1951. © National Portrait Gallery, London</figcaption>
+<figcaption>Alan Turing in 1951. © National Portrait Gallery, London.<br></figcaption>
 </center>
 
-Turing was a genius code breaker during World War II and helped break several German ciphers. But his famous contribution to science came in a 1936 paper in which he introduced what has come to be known as a **Turing machine**[^numbers]. This hypothetical computer reads numbers off of an infinitely long tape, moving up and down the tape, rewriting cells according to a finite collection of internal rules. What is remarkable about Turing machines is that nearly a century later, any task that a computer performs, from the device you are using to read this to the world's most powerful supercomputer, can still be implemented by a Turing machine.
+Turing was a genius cryptographer during World War II and helped break several German ciphers. But his most famous scientific contribution was a 1936 paper in which he introduced what has come to be known as a **Turing machine**[^numbers]. This hypothetical computer reads numbers off of an infinitely long tape, moving up and down the tape, rewriting cells according to a finite collection of internal rules. What is remarkable about Turing machines is that nearly a century later, any task that a computer performs, from the device you are using to read this to the world's most powerful supercomputer, can still be implemented by a Turing machine.
 
 You may be shocked that any computer can ultimately be represented by such a simple machine, one that Joseph Weizenbaum called nothing more than "pebbles on toilet paper"[^weizenbaum]. If Turing machines interest you, we include an excellent introductory video on Turing machines below, including a demonstration of how a Turing machine can be used to solve a problem.
 

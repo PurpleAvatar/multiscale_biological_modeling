@@ -1,16 +1,13 @@
 ---
 permalink: /chemotaxis/tutorial_phos
 title: "Phosphorylation"
-sidebar:
+sidebar: 
  nav: "chemotaxis"
-toc: true
-toc_sticky: true
 ---
 
 In this page, we will:
  - Add phosphorylation mechanisms for chemotaxis
  - Observe cellular behavior in response to attractants
- - Observe cellular behavior in response to repellents
 
 ## Phosphorylation Mechanisms
 
@@ -21,17 +18,17 @@ We have:
 
 **Ligand binding and dissociation**. L + T <-> LT with rate `k_lr_bind`, `k_lr_dis`.
 
-**Receptor complex autophosphorylation**. The receptor complex is composed of MCPs, CheW, and CheA. CheA undergoes autophosphorylation, and the rate of autophosphorylation depends on conformation of the receptor complex. Faster autophosphorylation for free MCPs. Note that the phosphoryl group is from an ATP->ADP reaction, but we will just code as phosphorylation states in modeling for simplicity.
- - T -> T-P    rate `k_T_phos`
- - LT -> LT-P  rate `0.2 · k_T_phos`
+**Receptor complex autophosphorylation**. The receptor complex is composed of MCPs, CheW, and CheA. CheA undergoes autophosphorylation, and the rate of autophosphorylation depends on conformation of the receptor complex. Faster autophosphorylation for free MCPs. Note that the phosphoryl group is from an ATP->ADP reaction, but we will just code as phosphorylation states in modeling for simplicity. 
+ - T -> T-P    rate constant `k_T_phos`
+ - LT -> LT-P  rate constant `0.2 · k_T_phos`
 
-**CheY phosphorylation and dephosphorylation**. CheA-P phosphorylates CheY. Phosphorylated CheY will be responsible for the cellular response (CW rotataion), so we will use the level of CheY-P to indicate the level of cellular response.
+**CheY phosphorylation and dephosphorylation**. CheA-P phosphorylates CheY. Phosphorylated CheY will be responsible for the cellular response (CW rotataion), so we will use the level of CheY-P to indicate the level of cellular response. 
  - T-P + CheY -> T + CheY-P  `k_Y_phos`
  - Z + Y-P -> Z + Y + P `k_Y_dephos`
 
 ## Include phosphorylation in the model
 
-You can download the simulation file here:
+You can download the simulation file here: 
 <a href="https://purpleavatar.github.io/multiscale_biological_modeling/downloads/downloadable/phosphorylation.bngl" download="phosphorylation.bngl">phosphorylation.bngl</a>
 
 First, we introduce `state` in our particles to mark whether it is phosphorylated or not. Change `T(l)` to `T(l,Phos~U~P)`. The `Phos~U~P` indicates we introduce phosphorylation states to `T`: `U` indicates unphosphorylated, and `P` indicates phosphorylated. You can also use other letters. We also add molecule `CheY(Phos~U~P)` and `CheZ()`. (*Note: be careful with the use of spaces; don't put spaces after the comma.*)
@@ -47,16 +44,16 @@ And we update the reaction rules with the phosphorylation and dephosphorylation 
 
 	begin reaction rules
 		LigandReceptor: L(t) + T(l) <-> L(t!1).T(l!1) k_lr_bind, k_lr_dis
-
+		
 		#Free vs. ligand-bound complexes autophosphorylates
 		FreeTP: T(l,Phos~U) -> T(l,Phos~P) k_T_phos
 		BoundTP: L(t!1).T(l!1,Phos~U) -> L(t!1).T(l!1,Phos~P) k_T_phos*0.2
-
+		
 		YP: T(Phos~P) + CheY(Phos~U) -> T(Phos~U) + CheY(Phos~P) k_Y_phos
 		YDep: CheZ() + CheY(Phos~P) -> CheZ() + CheY(Phos~U) k_Y_dephos
 	end reaction rules
 
-We need to indicate the number of molecules at each states present at the beginning of the simulation. Since we are adding ligands at the beginnin of the simulation, the fraction of molecules at the same states should be equal to the equilibrium concentration when no ligand is present.
+We need to indicate the number of molecules at **each state** present at the beginning of the simulation. Since we are adding ligands at the beginnin of the simulation, the initial amount of molecules at each same state should be equal to the equilibrium concentrations when no ligand is present.
 
 	begin seed species
 		L(t) L0
@@ -67,7 +64,7 @@ We need to indicate the number of molecules at each states present at the beginn
 		CheZ() CheZ0
 	end seed species
 
-Let's update all the parameters based on *in vivo* quantities [^Li2004][^Spiro1997][^Stock1991]. Specifically, we include the number of CheY, CheZ, and the rate of receptor complex autophosphorylation, CheY phosphorylation, and CheZ dephosphorylation.
+Update all the parameters based on *in vivo* quantities [^Li2004][^Spiro1997][^Stock1991]. Specifically, we include the number of CheY, CheZ, and the rate constants for receptor complex autophosphorylation, CheY phosphorylation, and CheZ dephosphorylation.
 
 	begin parameters
 		NaV 6.02e8   #Unit conversion to cellular concentration M/L -> #/um^3
@@ -75,7 +72,7 @@ Let's update all the parameters based on *in vivo* quantities [^Li2004][^Spiro19
 		T0 7000       #number of receptor complexes
 		CheY0 20000
 		CheZ0 6000
-
+		
 		k_lr_bind 8.8e6/NaV   #ligand-receptor binding
 		k_lr_dis 35           #ligand-receptor dissociation
 		k_T_phos 15           #receptor complex autophosphorylation
@@ -83,7 +80,7 @@ Let's update all the parameters based on *in vivo* quantities [^Li2004][^Spiro19
 		k_Y_dephos 8.6e5/NaV  #Z dephosphoryaltes CheY
 	end parameters
 
-We would also be interested in the number of T-P and CheY-P during the simulation.
+We are also interested in the number of T-P and CheY-P during the simulation.
 
 	begin observables
 		Molecules phosphorylated_CheY CheY(Phos~P)
@@ -91,31 +88,32 @@ We would also be interested in the number of T-P and CheY-P during the simulatio
 		Molecules bound_ligand L(t!1).T(l!1)
 	end observables
 
-Observe the simulation for longer. Change `t_end` at the bottom to 3.
+Observe the simulation for a bit longer. Change `t_end` at the bottom to 3. 
 
 	generate_network({overwrite=>1})
 	simulate({method=>"ssa", t_end=>3, n_steps=>100})
 
-You can also download the simulation file here:
+You can also download the simulation file here: 
 <a href="https://purpleavatar.github.io/multiscale_biological_modeling/downloads/downloadable/phosphorylation.bngl" download="phosphorylation.bngl">phosphorylation.bngl</a>
 
 ## Simulating responses to attractants
 
-Before running the simulation, let's think about what will happen. If we don't add any ligand molecule into the system, then T phosphorylation happens at rate *k_T_phos*, and T will phosphorylate CheY, which will be dephosphorylated by CheZ. The concentrations of phosphorylated T and CheY will stay at a steady state. That's the initial concentrations of molecules at each state we defined earlier.
+Before running the simulation, let's think about what will happen. If we don't add any ligand molecule into the system, then T phosphorylation happens at rate [*T*]*k_T_phos*, and T will phosphorylate CheY, which will be dephosphorylated by CheZ. The concentrations of phosphorylated T and CheY will stay at a steady state. That's the initial concentrations of molecules at each state we defined earlier. 
 
 Run simulation with no ligand molecule present by setting `L0` in the `parameters` section to 0, and click `Run` under `Simulate`. What do you observe?
 
 When we add ligand molecules into the system, as we did in the tutorial for [ligand-receptor dynamics](tutorial_lr), concentration of bound T increases. What will happen to the concentration of phosphorylated CheA, and phosphorylated CheY? What will happen to steady state concentrations?
 
-Run simulation with `L0 = 5000` and `L0 = 1e5`. What do you observe?
+Run simulation with `L0 = 5000` and `L0 = 1e5` to confirm your hypothesis. What do you observe?
 
 For different `L0`'s, how do the steady state for bound ligand, active receptor, and active CheY differ and why?
 
-Exercise: Try several different `L0` values (ex. 1e3, 1e7, 1e9). Are you seeing what you expected? If at some point the result doesn't change anymore, why? What does it imply about limitation in chemotaxis?
+Exercise: Try several different `L0` values (ex. 1e3, 1e7, 1e9). Are you seeing what you expected? If at some point the result won't change anymore, why? What does it imply about limitation in chemotaxis (but it's already a wide range of concentrations isn't it)?
 
+<!--
 ## Simulating responses to repellents
 
-You can download the simulation file here:
+You can download the simulation file here: 
 <a href="https://purpleavatar.github.io/multiscale_biological_modeling/downloads/downloadable/phosphorylation_repel.bngl" download="phosphorylation_repel.bngl">phosphorylation_repel.bngl</a>
 
 Recall that CheA autophosphorylation is faster when the receptor is bound to repellents. We modify the rate of receptor complex autophosphorylation when ligand is bound.
@@ -126,14 +124,14 @@ In `reaction rules`, update
 
 	BoundTP: L(t!1).T(l!1,Phos~U) -> L(t!1).T(l!1,Phos~P) k_T_phos*0.2
 
-to
+to 
 
 	BoundTP: L(t!1).T(l!1,Phos~U) -> L(t!1).T(l!1,Phos~P) k_T_phos*5
 
 When we add repellent ligand molecules into the system, concentration of bound T increases. What will happen to the concentration of phosphorylated CheA, and phosphorylated CheY? What will happen to steady-state concentrations?
 
 Run simulation with `L0 = 5000` and `L0 = 1e5`. What do you observe?
-
+-->
 
 [^Bertoli2013]: Bertoli C, Skotheim JM, de Bruin RAM. 2013. Control of cell cycle transcription during G1 and S phase. Nature Reviews Molecular Cell Biology 14:518-528. [Available online](https://www.nature.com/articles/nrm3629).
 
@@ -146,3 +144,6 @@ Run simulation with `L0 = 5000` and `L0 = 1e5`. What do you observe?
 
 [Back to Main Text](home_biochem){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
+
+
+

@@ -125,7 +125,27 @@ Applying these cell-based reaction-diffusion computations over all cells in para
 
 * NOAH: please propose a few different GIFs that we can use here that show how slight changes in pattern values lead to very different end behavior.
 
+![image-center](../assets/images/xmorphia-parameter-map.jpg){: .align-center}
+
+<iframe width="640" height="360" src="https://www.youtube-nocookie.com/embed/VY9Bt1mUfDQ" frameborder="0" allowfullscreen></iframe>
+
+Changing Layout with these parameters
+f = 0.025, k = 0.06, r_u = 0.01, r_v = 0.005.
+
+<iframe width="640" height="360" src="../assets/greydots-sqr-1.mpg" frameborder="0" allowfullscreen></iframe>
+Gray-Scott running on a square grid
+{: .text-center}
+
+<iframe width="640" height="360" src="../assets/greydots-hex-2.mpg" frameborder="0" allowfullscreen></iframe>
+Gray-Scott running on a hexagonal grid
+{: .text-center}
+
+
 [Next lesson](#){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 [^gs]: P. Gray and S.K. Scott, Autocatalytic reactions in the isothermal, continuous stirred tank reactor: isolas and other forms of multistability, Chemical Engineering Science 38 (1983) 29-43.
+
+[^robert]: "Reaction-Diffusion by the Gray-Scott Model: Pearson's Parametrization" © 1996-2020 Robert P. Munafo https://mrob.com/pub/comp/xmorphia/index.html
+
+[^grid]: "Gray Scott Model of Reaction Diffusion" Abelson, Adams, Coore, Hanson, Nagpal, Sussman https://groups.csail.mit.edu/mac/projects/amorphous/GrayScott/

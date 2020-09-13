@@ -114,28 +114,30 @@ As the result of all these processes, we update the concentrations of *A* and *B
 *a*' = 0.7 - 0.14 + 0.08 + 0.09 - 0.175 = 0.555<br>
 *b*' = 0.5 - 0.05 + 0.06 - 0.2 + 0.175 = 0.485
 
-Applying these cell-based reaction-diffusion computations over all cells in parallel and over many generations forms the **Gray-Scott** model[^gs]. We should now feel confident expanding our previous diffusion tutorial into a model that includes all Gray-Scott reactions. The question is, however, will we still see Turing patterns?
+Applying these cell-based reaction-diffusion computations over all cells in parallel and over many generations forms the **Gray-Scott** model[^gs]. This model is a variant of a **cellular automaton**, or a grid of cells in which we use rules to update the status of a cell based on the statuses of itself and nearby cells. Cellular automata form a rich area of research dating back to the middle of the 20th Century; if you are interested in learning more about them in the context of programming, check out the [Programming for Lovers](http://compeau.cbd.cmu.edu/programming-for-lovers/chapter-3-building-a-self-replicating-cellular-automaton-with-top-down-programming/) project.
+
+We should now feel confident expanding our previous diffusion tutorial into a model that includes all Gray-Scott reactions. The question is, however, will we still see Turing patterns?
 
 [Visit Tutorial](gs-cellblender){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 ## Reflection on the Gray-Scott model
 
-We can begin to see the Gray-Scott diffusion-reaction patterns in the CellBlender simulation, but it is clear that significant computing power is needed to get the same results as the discrete methods. In our Jupyter Notebook demo, a clear pattern emerges on a grid which requires less than a minute on most modern computers. The CellBlender simulation requires a dramatically higher computing cost. 
+We can begin to see the Gray-Scott diffusion-reaction patterns in the CellBlender simulation, but it is clear that significant computing power is needed to get the same results as the discrete methods. In our Jupyter Notebook demo, a clear pattern emerges on a grid which requires less than a minute on most modern computers. The CellBlender simulation requires a dramatically higher computing cost.
 
 ![image-center](../assets/images/gs2_2400.png){: .align-center}
 
 ![image-center](../assets/images/gs_cellblender_image.PNG){: .align-center}
 
-There are many other ways to model these Gray-Scott patterns, and each type of simulation can lead to slightly different results. Robert P Munafo gives a great overview of how Gray-Scott patterns relate to the feed rate and kill rate, shown in the image below.[^robert] 
+There are many other ways to model these Gray-Scott patterns, and each type of simulation can lead to slightly different results. Robert P Munafo gives a great overview of how Gray-Scott patterns relate to the feed rate and kill rate, shown in the image below.[^robert]
 
 ![image-center](../assets/images/xmorphia-parameter-map.jpg){: .align-center}
 
 <iframe width="640" height="360" src="https://www.youtube-nocookie.com/embed/VY9Bt1mUfDQ" frameborder="0" allowfullscreen></iframe>
-Here we examine one of the squares of the above image. 
+Here we examine one of the squares of the above image.
 {: .text-center}
 
-While our CellBlender simulation uses parameters like "f = 1E5", other layouts may require much smaller parameter values. For instance, the simulations below use the following parameters: 
+While our CellBlender simulation uses parameters like "f = 1E5", other layouts may require much smaller parameter values. For instance, the simulations below use the following parameters:
 f = 0.025, k = 0.06, r_u = 0.01, r_v = 0.005 (r_u and r_v refer to the diffusion constants of the prey and predators respectively).
 
 <iframe width="640" height="360" src="../assets/greydots-sqr-1.mp4" frameborder="0" allowfullscreen></iframe>

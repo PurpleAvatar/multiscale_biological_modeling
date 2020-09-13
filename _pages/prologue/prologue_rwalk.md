@@ -17,7 +17,7 @@ Before we see how this concept can help us understand how zebras get their strip
 **STOP**: After *n* steps, how far do you think the particle will have traveled (as the crow flies) from its starting point?
 {: .notice--primary}
 
-To answer this question, let's generate an animation of the particle and see for ourselves. The video below shows a particle, shown in red, taking 1000 steps in a random walk. If you're interested in building a simulation like this, sit tight --- we will soon see how to use the software used to generate this animation in the context of biological modeling.
+To answer this question, let's generate an animation of the particle and see for ourselves. The video below shows a particle, shown in red, taking 1000 steps in a random walk. If you're interested in building a simulation like this, sit tight --- we will soon see how to use the software that generated this animation in the context of biological modeling.
 
 <iframe width="640" height="360" src="../assets/random_walk_1.mp4" frameborder="0" allowfullscreen></iframe>
 
@@ -36,11 +36,11 @@ This theorem does not say that after *n* steps our particle will be *exactly* di
 
 ## Diffusion: big numbers in small spaces
 
-We also point out that our experience of the world confirms the statement that the **diffusion** of particles via Brownian motion will cause those particles to spread out rapidly from their starting point. We understand, for example, that an infected COVID-19 patient can infect many others in an enclosed space in a short time frame. To take a less macabre example, we also know that when a cake is baking in the oven at home, we will not need to wait long for wonderful smells to waft outward from the kitchen.
+We also point out that our experience of the world confirms the statement that the movements of particles via **Brownian motion** will cause those particles to *diffuse* rapidly from their starting point. We understand, for example, that an infected COVID-19 patient can infect many others in an enclosed space in a short time frame. To take a less macabre example, we also know that when a cake is baking in the oven at home, we will not need to wait long for wonderful smells to waft outward from the kitchen.
 
 Why should a scientist care about random walks? Later in this course, we will see that the random walk model is at the core of a simple but powerful approach that bacteria like *E. coli* use to explore their environment in a search for sustenance.
 
-Before we continue to the next lesson, we would point you to a beautiful animation illustrating just how far a single randomly moving particle can travel in a relatively small amount of time. This animation, which shows a simulation of the path taken by a glucose molecule as the result of Brownian motion, is part of the following excellent instructional video developed by the late Joel Stiles.
+Before we continue to the next lesson, we point you to a beautiful animation illustrating just how far a single randomly moving particle can travel in a relatively small amount of time. This animation, which shows a simulation of the path taken by a glucose molecule as the result of Brownian motion, is part of the following excellent instructional video developed by the late Joel Stiles.
 
 <iframe width="640" height="360" src="https://www.youtube-nocookie.com/embed/KQgydF-fXvc?start=370" frameborder="0" allowfullscreen></iframe>
 

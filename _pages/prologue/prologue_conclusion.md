@@ -20,7 +20,7 @@ It turns out that although Turing's work offers a compelling argument for how ze
 We also have qualitative evidence that the pigmentary patterns arising in fish are due to a fine-tuned system. For example, note that following two photos of giant pufferfish. These fish are genetically very similar, but their skin patterns are very different, with one having spots and the other exhibiting a complex pattern of stripes. What seems like a drastic change in the appearance of the fish can actually be attributable to a small change of parameters in a fine-tuned system that is driven only by random interactions.
 
 ![image-center](../assets/images/Juvenile_Mbu_pufferfish.jpg){: .align-center}
-A juvenile Mbu Pufferfish with a very familiar pattern![^youngfish] 
+A juvenile Mbu Pufferfish with a very familiar pattern![^youngfish]
 {: .text-center}
 
 ![image-center](../assets/images/Giant_Puffer_fish_skin_pattern.jpg){: .align-center}
@@ -41,14 +41,6 @@ An adult Mbu Pufferfish exhibiting another familiar pattern![^pufferfish]
 
 **STOP**: Note that the concentrations of all of the particles add up to 1 in each step. Do you think that this must always be true?
 {: .notice--primary}
-
-## Notes to selves
-
-* Explain the colors used very carefully to tie them to concentrations, but only do so after we initially update them.
-
-* In later iteration of this, we need to probably update the figures to show how things update.
-
-* Note to add link to cellular automata and P4L. Should we explicitly call this an automaton? I think yes.
 
 [Next chapter](../motifs/home){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}

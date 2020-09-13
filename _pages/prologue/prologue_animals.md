@@ -17,7 +17,7 @@ Turing's insight was that remarkable patterns would emerge if we combine a simul
 
 We will consider a reaction-diffusion system having two types of particles, *A* and *B*. The system is not representing a predator-prey relationship, but you may think of *A* as a prey and *B* as a predator for reasons that will become clear soon.
 
-Both types of particles diffuse randomly through the plane, but the *A* particles typically diffuse more quickly as the *B* particles.  In our simulation, we assume that *A* particles diffuse twice as quickly as *B* particles; in terms of the random walk, this faster diffusion means that in a single "step", an *A* particle moves twice as far as a *B* particle.
+Both types of particles diffuse randomly through the plane, but the *A* particles typically diffuse more quickly than the *B* particles.  In our simulation, we assume that *A* particles diffuse twice as quickly as *B* particles; in terms of the random walk, this faster diffusion means that in a single "step", an *A* particle moves twice as far as a *B* particle.
 
 **STOP**: Say that we release one *A* particle and one *B* particle at the same location. On average, how much farther from the origin will *A* be than *B* after *n* steps?
 {: .notice--primary}

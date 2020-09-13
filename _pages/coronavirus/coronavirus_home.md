@@ -67,13 +67,11 @@ There are two main objectives for this module. First, we will put ourselves in t
 
 ## Citations
 
-[^cdc-factsheet] SARS CDC factsheet, from https://www.cdc.gov/sars/about/fs-sars.html.
+[^cdc-factsheet]: CDC SARS Response Timeline. (2013, April 26). Retrieved August 17, 2020, from https://www.cdc.gov/about/history/sars/timeline.htm
 
-[^bats] "Bats Are Natural Reservoirs of SARS-Like Coronaviruses". https://science.sciencemag.org/content/310/5748/676
+[^bats]: Li, W., Shi, Z., Yu, M., Ren, W., Smith, C., Epstein, J., Wang, H., Crameri, G., Hu, Z., Zhang, H., Zhang, J., McEachern, J., Field, H., Daszak, P., Eaton, B. T., Zhang, S., Wang, L. (2005). Bats Are Natural Reservoirs of SARS-Like Coronaviruses. Science, 310(5748), 676-679. doi:10.1126/science.1118391
 
-[^bat-cave]"Discovery of a rich gene pool of bat SARS-related coronaviruses provides new insights into the origin of SARS coronavirus". https://journals.plos.org/plospathogens/article?id=10.1371/journal.ppat.1006698
-
-[^1]: CDC SARS Response Timeline. (2013, April 26). Retrieved August 17, 2020, from https://www.cdc.gov/about/history/sars/timeline.htm
+[^bat-cave]: Hu, B., Zeng, L., Yang, X., Ge, X., Zhang, W., Li, B., Xie, J., Shen, X., Zhang, Y., Wang, N., Luo, D., Zheng, X., Wang, M., Daszak, P., Wang, L., Cui, J., Shi, Z. 2017. Discovery of a rich gene pool of bat SARS-related coronaviruses provides new insights into the origin of SARS coronavirus. PLOS Pathogens, 13(11). doi:10.1371/journal.ppat.1006698
 
 [^2]: Heymann, D.L. 2004. The international response to the outbreak of SARS in 2003. Phil. Trans. R. Soc. Lond. B. 359, 1127-1129. DOI 10.1098/rstb.2004.1484
 

@@ -7,7 +7,7 @@ toc: true
 toc_sticky: true
 ---
 
-## Alan Turing and the foundations of computer science
+## Turing machines and the foundations of computer science
 
 Our story begins with the unlikeliest of major characters: Alan Turing. If you have heard of Turing, then you might be surprised as to why he would appear in a course on biological modeling.
 
@@ -30,7 +30,7 @@ Two years before his untimely demise in 1954, Turing published his only paper on
 
 Turing was not approaching this question from the perspective of why zebras have evolved to have stripes --- this was unsolved in Turing's time, and recent research has indicated that the stripes may be helpful in warding off flies.[^zebra] Rather, Turing reasoned that just as computers can be represented by a simple machine, there must be some simple set of molecular "rules" that cause the stripes to appear on a zebra's coat.
 
-In the next lesson, we will introduce a particle simulation model based on Turing's ideas. We will explore how this model can be tweaked to explain not just the appearance of not just the zebra's stripes but also the leopard's spots.
+In the next two lessons, we will introduce a particle simulation model based on Turing's ideas. We will explore how this model can be tweaked to explain not just the appearance of not just the zebra's stripes but also the leopard's spots.
 
 [Next lesson](random-walk){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}

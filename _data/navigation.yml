@@ -22,7 +22,7 @@ main:
 prologue:
   - title: "Prologue: Random Walks and Turing Patterns"
     children:
-      - title: "Introduction: The Power of Randomness"
+      - title: "Introduction: Life is Random"
         url: /prologue/
       - title: "Alan Turing and the Zebra's Stripes"
         url: /prologue/turing
@@ -35,7 +35,7 @@ prologue:
       - title: "Conclusion"
         url: /prologue/conclusion
   - title: "Tutorials"
-    children: 
+    children:
       - title: "Random Walk CellBlender"
         url: /prologue/tutorial-random-walk
       - title: "Gray-Scott Jupyter Notebook"
@@ -44,7 +44,7 @@ prologue:
         url: /prologue/gs-cellblender
       - title: "Diffusion Jupyter Notebook"
         url: /prologue/tutorial-diffusion
-      
+
 
 motifs:
   - title: "Finding Motifs in Transcription Factor Networks"

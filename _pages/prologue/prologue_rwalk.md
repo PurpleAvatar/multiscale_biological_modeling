@@ -10,16 +10,16 @@ toc_sticky: true
 
 ## The wanderlust of a single particle
 
-In the previous two sections, we have discussed a central theme of our work in this course: the appearance of high-level behavior from simple rules.
-
-Before we see how this concept can help us understand how zebras get their stripes, we will consider a simpler phenomenon by observing the movement of a single particle taking a **random walk** in a two-dimensional plane. At each step, the particle moves a single unit in a randomly chosen direction.
+We have mentioned that our experience of the world is often influenced by the random interactions of objects that we cannot see. Our goal is to see how randomness can help us understand how zebras get their stripes, and to this end, we will consider a simpler phenomenon by observing the movement of a single particle taking a **random walk** in a two-dimensional plane. At each step, the particle moves a single unit in a randomly chosen direction.
 
 **STOP**: After *n* steps, how far do you think the particle will have traveled (as the crow flies) from its starting point?
 {: .notice--primary}
 
-To answer this question, let's generate an animation of the particle and see for ourselves. The video below shows a particle, shown in red, taking 1000 steps in a random walk. If you're interested in building a simulation like this, sit tight --- we will soon see how to use the software that generated this animation in the context of biological modeling.
+Let's generate an animation of a particle following a random walk. The video below shows a randomly walking particle, shown in red, taking 1000 steps. If you are interested in building a simulation like this, sit tight --- we will soon see how to use the software that generated this animation in the context of biological modeling.
 
+<center>
 <iframe width="640" height="360" src="../assets/random_walk_1.mp4" frameborder="0" allowfullscreen></iframe>
+</center>
 
 The distance that the particle wanders from its starting point may surprise you. And yet the astute scientist would point out that this is just a single particle; perhaps it has simply gone rogue, and the typical particle would be much more of a homebody.
 

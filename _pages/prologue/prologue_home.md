@@ -1,6 +1,6 @@
 ---
 permalink: /prologue/
-title: "Introduction: The Power of Randomness"
+title: "Introduction: Life is Random"
 sidebar:
  nav: "prologue"
 ---

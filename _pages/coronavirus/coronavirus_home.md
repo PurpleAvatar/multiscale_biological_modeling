@@ -40,9 +40,6 @@ And in 2017, researchers published the result of five years of sampling horsesho
 
 Reference, https://www.axios.com/timeline-the-early-days-of-chinas-coronavirus-outbreak-and-cover-up-ee65211a-afb6-4641-97b8-353718a5faab.html
 
-This is not to say that the coronavirus went anywhere – point about 2017 paper
-
-Then transition to SARS-2.
 
 What could make the second virus so much deadlier than the first?  What are the differences between the viruses and how do these contribute to something that has become a much more infectious disease?
 
@@ -56,12 +53,7 @@ Two objectives are great: first, we will put ourselves in the shoes of researche
 
 cite “seventh coronavirus that can infect humans”
 
-### The Onset of SARS
 
-Severe Acute Respiratory Syndrome (SARS or SARS-CoV for coronvirus) made its first appearance in November 2002 Guangdong, China, where the first case of “atypical pneumonia” was reported [^1]. Near the end of the month, the Canadian Global Public Health Intelligence Network and US Global Emerging Infections Surveillance and Response System, partners of the Global Outbreak Alert and Response Network (GOARN), picked up on media reports describing an “influenza outbreak” in Beijing and Guangzhou. The World Health Organization (WHO) requested information from Chinese Authorities and a report was received on 12 December. The details described an investigation of 23 influenza virus isolates, 22 of which confirmed to be type B strains, and how the number of cases were like that of past seasonal patterns. By 11 February 2003, an official report of a severe respiratory syndrome/atypical pneumonia with more than 300 cases and five deaths was received by the WHO by the Chinese Ministry of Health. The WHO Global Influenza Network was alerted by the potential of a presumed new strain of influenza. When Hong Kong authorities reported two cases of A(H5N1) avian influenza on 20 February, WHO influenza pandemic preparedness plans were activated [^2].
-
-
-By the middle of March, WHO has received more than 150 new cases in Canada and six Asian countries, and on 15 March, WHO issues an emergency travel advisory global alert along with the disease name SARS. During the containment phase, GOARN recruited laboratory scientists, clinicians, and epidemiologists to provide real-time information, allowing the WHO to provide specific guidance to prevent further spread. Airports began screening individuals for any history of contact with individuals showing SARS-like symptoms to prevent international spread. Eventually, the passengers were asked to avoid traveling to any areas where contact tracing could not link all the cases to known chains of transmission. By 5 July 2003, the SARS outbreak was officially declared to be contained, but not before affecting around 27 countries with 8098 total cases and 774 deaths worldwide [^2][^5]. Later studies identified coronavirus in Chinese horseshoe bats, and in 2017, a population of horseshoe bats in Yunnan province was found to harbor virus strains with all the necessary genetic building blocks to transmit to humans [^6].
 
 ### The COVID-19 Pandemic
 
@@ -75,7 +67,7 @@ The very next day, Russia, Italy, and United Kingdom reported their first cases 
 
 <img src="../_pages/coronavirus/files/CovidTable.png">
 
-### Why were they so different?
+### Why were the two outbreaks so different?
 
 Just by looking at the name SARS-CoV-2, one can assume that this virus is related to SARS-CoV from 2003. In fact, both viruses belong to the broad coronavirus family, with SARS-CoV-2 being the seventh identified coronavirus to be able to infect humans. So how come the outbreak of SARS and COVID-19 are so different?
 
@@ -108,8 +100,6 @@ There are two main objectives for this module. First, we will explore publicly a
 [^4]: Update 95 - SARS: Chronology of a serial killer. (2015, July 24). Retrieved August 17, 2020, from https://www.who.int/csr/don/2003_07_04/en/
 
 [^5]: SARS. (2017, December 06). https://www.cdc.gov/sars/about/fs-sars.html
-
-[^6]: Cyranoski, D. (2017, December 01). Bat cave solves mystery of deadly SARS virus - and suggests new outbreak could occur. https://www.nature.com/articles/d41586-017-07766-99
 
 [^7]: China's first confirmed Covid-19 case traced back to November 17. (2020, March 13). https://www.scmp.com/news/china/society/article/3074991/coronavirus-chinas-first-confirmed-covid-19-case-traced-back
 

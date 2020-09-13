@@ -104,6 +104,20 @@ When we push the feed even lower, we see much cleaner waves, Feed Rate *f* = 1E5
 Pushing the kill rate down as well leads to a spotty pattern (pause the video at various points for a clear look), Feed Rate *f* = 1E5 and Kill Rate *k* = 1E5
 {: .text-center}
 
+## Turing patterns and hallucinations
+
+When you look at the simulations above, an adjective that may have come to mind is  "trippy". This is no accident. Research dating all the way back to the 1920s has studied the patterns that we see when we hallucinate, which Heinrich Klüver named **form constants** after studying patients who had taken mescaline. Form constants, which include cobwebs, tunnels, and spirals, occur across many individuals regardless of the cause of the hallucinations.
+
+* CITE Kluver
+
+Fifty years after Klüver's work, researchers would determine that form constants with seemingly different shapes originate from simpler *linear* patterns of cellular activation in the retina. Because the retina is circular, the brain needs to convert this cellular image into a rectangular field of view; as a result, when the linear patterns are passed to the visual cortex, the brain contorts them into the form constants that we see.
+
+* CITE Cowan and Ermentrout 1979
+
+Yet this work had replaced one question with another: why does hallucination cause patterns of cellular activation in the retina? This question is still unresolved, but some researchers believe that these patterns are in fact Turing patterns and can be explained by a reaction-diffusion model similar to the one that we have considered in this chapter.
+
+* CITE https://www.quantamagazine.org/a-math-theory-for-why-people-hallucinate-20180730/
+
 ## Streamlining our simulations
 
 Each of the above simulations took several hours to render because simulating and visualizing the movement of tens of thousands of particles over thousands of generations of a reaction-diffusion interaction is computationally intensive. The question is whether we can obtain similar conclusions with a faster model that does not require us to keep track of so many particles. We will turn our attention to this question in the next section.

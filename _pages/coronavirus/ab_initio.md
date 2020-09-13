@@ -60,6 +60,8 @@ To see an example of *ab initio* structure prediction using *QUARK*, go to the f
 
 <hr>
 
+From this section, we learned that current *ab initio* algorithms are limited. In the tutorial, we wanted to use *QUARK*, one of the leading *ab initio* methods, to model the SARS-CoV-2 S protein. However, in order to preserve accuracy, the *QUARK* restricted the length of the input sequence to only 200 amino acids. This meant that we could not model the S protein nor the RBD of the S protein. Instead, we had to use a smaller protein, the human hemoglobin subunit alpha, as the example. In the next lesson, we will learn about another type of protein structure prediction that allows researchers to create more accurate results and model large proteins. Using this type of structure prediction, we will be able to predict the structure of the S protein and create models.
+
 [Next lesson](homology){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 

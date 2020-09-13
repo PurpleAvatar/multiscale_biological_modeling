@@ -121,16 +121,22 @@ Applying these cell-based reaction-diffusion computations over all cells in para
 
 ## Reflection on the Gray-Scott model
 
-* This is where we will return from the tutorial and reflect on the different Turing patterns that we can produce at the end of Gray-Scott, perhaps with some embedded GIFs.
+We can begin to see the Gray-Scott diffusion-reaction patterns in the CellBlender simulation, but it is clear that significant computing power is needed to get the same results as the discrete methods. In our Jupyter Notebook demo, a clear pattern emerges on a grid which requires less than a minute on most modern computers. The CellBlender simulation requires a dramatically higher computing cost. 
 
-* NOAH: please propose a few different GIFs that we can use here that show how slight changes in pattern values lead to very different end behavior.
+![image-center](../assets/images/gs2_2400.png){: .align-center}
+
+![image-center](../assets/images/gs_cellblender_image.PNG){: .align-center}
+
+There are many other ways to model these Gray-Scott patterns, and each type of simulation can lead to slightly different results. Robert P Munafo gives a great overview of how Gray-Scott patterns relate to the feed rate and kill rate, shown in the image below.[^robert] 
 
 ![image-center](../assets/images/xmorphia-parameter-map.jpg){: .align-center}
 
 <iframe width="640" height="360" src="https://www.youtube-nocookie.com/embed/VY9Bt1mUfDQ" frameborder="0" allowfullscreen></iframe>
+Here we examine one of the squares of the above image. 
+{: .text-center}
 
-Changing Layout with these parameters
-f = 0.025, k = 0.06, r_u = 0.01, r_v = 0.005.
+While our CellBlender simulation uses parameters like "f = 1E5", other layouts may require much smaller parameter values. For instance, the simulations below use the following parameters: 
+f = 0.025, k = 0.06, r_u = 0.01, r_v = 0.005 (r_u and r_v refer to the diffusion constants of the prey and predators respectively).
 
 <iframe width="640" height="360" src="../assets/greydots-sqr-1.mpg" frameborder="0" allowfullscreen></iframe>
 Gray-Scott running on a square grid
@@ -140,8 +146,7 @@ Gray-Scott running on a square grid
 Gray-Scott running on a hexagonal grid
 {: .text-center}
 
-
-[Next lesson](#){: .btn .btn--primary .btn--large}
+[Next lesson](conclusion){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 [^gs]: P. Gray and S.K. Scott, Autocatalytic reactions in the isothermal, continuous stirred tank reactor: isolas and other forms of multistability, Chemical Engineering Science 38 (1983) 29-43.

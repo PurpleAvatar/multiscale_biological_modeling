@@ -31,7 +31,7 @@ We will then update this grid after a single time step. We will spread out the c
 <figcaption>A grid showing an update to the system in the previous figure after diffusion of *A* particles after a single time step.</figcaption>
 </center>
 
-After an additional time step, we see the particles continue to diffuse to farther neighbors. For example, each diagonal neighbor of the central cell in the above figure, which has a concentration of 0.05, will lose all of its *A* particles in the next step. It will, however, gain 20% of the particles from two of its adjacent neighbors, along with 5% of the particles from the central square. This makes the updated concentration of this cell equal to 0.2(0.2) + 0.2(0.2) = 0.04 + 0.04 = 0.08.
+After an additional time step, we see the particles continue to diffuse to farther neighbors. For example, each diagonal neighbor of the central cell in the above figure, which has a concentration of 0.05, will lose all of its *A* particles in the next step. It will, however, gain 20% of the particles from two of its adjacent neighbors, along with 5% of the particles from the central square (which doesn't have any particles). This makes the updated concentration of this cell equal to 0.2(0.2) + 0.2(0.2) + 0.05(0) = 0.04 + 0.04 + 0 = 0.08.
 
 Each of the four cells adjacent to the central square will receive 20% of the particles from two of its adjacent neighbors, which have a concentration of 0.05 each. This cell will also receive 5% of the particles from two of their diagonal neighbors, which have a concentration of 0.2. Therefore, the updated concentration of each of these cells is 2(0.2)(0.05) + 2(0.05)(0.2) = 0.01 + 0.01 = 0.04.
 
@@ -41,7 +41,7 @@ As a result, the central nine squares after two time steps are as shown in the f
 
 <center>
 <img src = "../assets/images/A_concentration_two_time_steps_partial.png" width="300">
-<figcaption>A grid showing an update to the central nine squares of the diffusion system in the previous figure after an additional time step. The cells labeled "?" are left as an exercise to the reader.</figcaption>
+<figcaption>A grid showing an update to the central nine squares of the diffusion system in the previous figure after an additional time step. The cells labeled "?" are left as an exercise for the reader.</figcaption>
 </center>
 
 **STOP**: What should the values of the "?" cells be in the above figure? Note that these cells are neighbors of cells with positive concentrations after one time step, so their concentrations should be positive. Click <a href="../assets/images/A_concentration_two_time_steps_complete.png" width="300">here</a> to see the answer.
@@ -66,10 +66,10 @@ We can adjust the speed of diffusion by adjusting this rate parameter. For examp
 
 <center>
 <img src = "../assets/images/two_particle_concentration_diffusion.png" width="300">
-<figcaption>A figure showing cellular concentrations after one time step for two particles <em>A</em> and <em>B</em> diffusing at rates <em>d</em><sub><em>B</em></sub> = 0.2 and <em>d</em><sub><em>B</em></sub> = 0.1. Each cell is labeled by an ordered pair (<em>a</em>, <em>b</em>), where <em>a</em> is the concentration of <em>A</em> and <em>b</em> is the concentration of <em>B</em>.</figcaption>
+<figcaption>A figure showing cellular concentrations after one time step for two particles <em>A</em> and <em>B</em> diffusing at rates <em>d</em><sub><em>A</em></sub> = 0.2 and <em>d</em><sub><em>B</em></sub> = 0.1. Each cell is labeled by an ordered pair (<em>a</em>, <em>b</em>), where <em>a</em> is the concentration of <em>A</em> and <em>b</em> is the concentration of <em>B</em>.</figcaption>
 </center>
 
-**STOP**: Update the cells in the above figure for the diffusion rates <em>d</em><sub><em>A</em></sub> = 0.2 and <em>d</em><sub><em>B</em></sub> = 0.1.
+**STOP**: Update the cells in the above figure after another generation of diffusion. Use the diffusion rates <em>d</em><sub><em>A</em></sub> = 0.2 and <em>d</em><sub><em>B</em></sub> = 0.1.
 {: .notice--primary}
 
 We are now ready to implement our model of diffusion and add a visualization to see if our model does a good job of approximating the diffusion process.
@@ -81,7 +81,7 @@ We are now ready to implement our model of diffusion and add a visualization to 
 
 Now that we have established a coarse-grained model for tracking the concentrations of two types of particles as they diffuse in their environment, we will add reactions to the simulation.
 
-Recall that we our reaction-diffusion simulation has three reactions.
+Recall that our reaction-diffusion simulation has three reactions.
 
 1. A "feed" reaction by which new *A* particles are fed into the system at a constant rate.
 2. A "death" reaction by which *B* particles are removed from the system at a rate proportional to their current concentration.

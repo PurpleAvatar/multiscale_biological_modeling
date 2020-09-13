@@ -27,12 +27,13 @@ For those that want to know more about I-TASSER, the full description of the  ca
   
 <hr>
 
-In this tutorial, we will use three publically available protein prediction software to model the SARS-CoV-2 S protein.
+In this tutorial, we will use model the SARS-CoV-2 S protein using publically available homology modeling servers.
 
 [Visit tutorial](tutorial_homology){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 <hr>
+In the tutorial, we used three different servers (SWISS-MODEL, Robetta, and GalaxyWEB) to predict the SARS-CoV-2 S protein in the tutorial. The reason we used multiple servers was because different structure prediction software use different algorithms, and comparing the results will give us more insight on protein prediction modeling. In the next lesson, we will learn how to assess the accuracy of predicted models and see how well our models performed.
 
 [Next lesson](accuracy){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}

@@ -11,15 +11,19 @@ In the [prologue](prologue), we worked with a particle-based model that simulate
 
 DNA offers the lowest level of biological study: the DNA double helix is only about 2.5 nm across, and proteins may be on the order of about 10nm in diameter. To be clear about how tiny this is, a light microscope's highest resolution is about 200 times larger, and the barrier of what can be seen with the naked eye (say, the width of a human hair) is about 10,000 times larger.
 
-This module will also introduce the concept of a **biological network**, a ubiquitous object in biological research that is highlighted in the figure below. When studying the functions and binding of proteins, biologists may build a **protein-protein interaction network** in which nodes are proteins and two proteins are connected with an edge if they are known to interact. When examining the more complex interactions and processes taking place within a cell, they form a **metabolic network**. Here, nodes correspond to any substances in a chemical reactions and an edge connects two nodes if there is some enzyme that catalyzes a reaction involving these substances. Finally, neuroscientists study **neuronal networks** that link neurons together according to how they are linked in the nervous system --- these networks have been studied since the 1940s but have recently exploded as a model for solving applied problems in machine learning.
+This module will also introduce the concept of a **biological network**, a ubiquitous object in biological research that is highlighted in the figure below. When studying the functions and binding of proteins, biologists may build a **protein-protein interaction network** in which nodes are proteins and two proteins are connected with an edge if they are known to interact. 
 
 ![image-center](../assets/images/A-Complete-HCV-Host-Protein-Protein-Interaction-Network-in-Hepatoma-Cells-A-Network.png){: .align-center}
 A Complete HCV-Host Protein-Protein Interaction Network in Hepatoma Cells[^PPInetwork]
 {: style="text-align: center;"}
 
+When examining the more complex interactions and processes taking place within a cell, they form a **metabolic network**. Here, nodes correspond to any substances in a chemical reactions and an edge connects two nodes if there is some enzyme that catalyzes a reaction involving these substances. 
+
 ![image-center](../assets/images/The-metabolic-network-of-tomato-cells-The-system-is-a-cell-with-symbolic-subcellular.png){: .align-center}
 The metabolic network of tomato cells[^metabolicNetwork]
 {: style="text-align: center;"}
+
+Additionally, neuroscientists study **neuronal networks** that link neurons together according to how they are linked in the nervous system --- these networks have been studied since the 1940s but have recently exploded as a model for solving applied problems in machine learning.
 
 ![image-center](../assets/images/Neuron-networks-a-brain-b-neural-network-c-neuron-connecting-structure-d-neuron.png){: .align-center}
 Mapping and models of neurons[^neuralNetwork]

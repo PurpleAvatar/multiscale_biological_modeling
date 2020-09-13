@@ -43,6 +43,12 @@ In contrast, Elowitz and Leibler described a model with a variety of different r
 Types of Feed Forward Loops[^ffl]
 {: style="text-align: center;"}
 
+5. More complex motifs may require more computational power to discover. Can you modify the Jupyter Notebook to identify circular loops of transcription factor regulation, such as the multi-component loop below? 
+
+![image-center](../assets/images/s_cerevisiae_tf_network.jpg){: .align-center}
+Example of different motifs within the *S. Cerevisiae* network[^scNetwork]
+{: style="text-align: center;"}
+
 ## Internal notes -- resolve before publication
 
 * We also need a note at end of module about the fact that the cell is growing so that in more robust models the concentration is constantly decreasing as a result of the cell growing since it needs to double its volume every cell cycle.

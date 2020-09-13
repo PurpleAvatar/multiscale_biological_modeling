@@ -13,6 +13,9 @@ Let's take another look at that *E. coli* network, file can be downloaded here:
 For the full Jupyter Notebook below, download here:
 <a href="https://purpleavatar.github.io/multiscale_biological_modeling/downloads/Network_Demo.ipynb" download="Network_Demo.ipynb">Jupyter Notebook</a>
 
+You will also need this helper file: 
+<a href="https://purpleavatar.github.io/multiscale_biological_modeling/downloads/network_loader.py" download="network_loader.py">Python File</a>
+
 The following software and packages will need to be installed:
 
 | Installation Link | Version[^version] | Check Install | 
@@ -20,6 +23,9 @@ The following software and packages will need to be installed:
 | [Python3](https://www.python.org/downloads/)  |3.7 |*python --version* | 
 | [Jupyter Notebook](https://jupyter.org/index.html) | 4.4.0 | *jupyter --version* |
 | [python-igraph](https://igraph.org/python/doc/tutorial/install.html) | 0.8.0 | *conda list* or *pip list* |
+
+**Warning:** Be careful of the igraph installation and follow the website instructions carefully. When installing via pip or conda, specify "*python-igraph*" instead of "*igraph*". 
+{: .notice--primary}
 
 [^version]: Other versions may be compatible with this code, but those listed are known to work for this tutorial
 
@@ -77,7 +83,7 @@ print("Number of self-loops: ", sum(Graph.is_loop(g)))
 * Number of edges:  477
 * Number of self-loops:  5
 
-And ta-da, the number of self-loops is significantly lower.
+As we can see, the number of self-loops is significantly lower in the random graph. We encourage you to check other random graphs (change the random.seed() value) to confirm that the number of self-loops expected in a random graph is much lower than in the real e. coli network.
 
 [Return to main text](finding#negative-vs-positive-autoregulation){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}

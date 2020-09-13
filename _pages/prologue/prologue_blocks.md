@@ -138,11 +138,11 @@ Here we examine one of the squares of the above image.
 While our CellBlender simulation uses parameters like "f = 1E5", other layouts may require much smaller parameter values. For instance, the simulations below use the following parameters: 
 f = 0.025, k = 0.06, r_u = 0.01, r_v = 0.005 (r_u and r_v refer to the diffusion constants of the prey and predators respectively).
 
-<iframe width="640" height="360" src="../assets/greydots-sqr-1.mpg" frameborder="0" allowfullscreen></iframe>
+<iframe width="640" height="360" src="../assets/greydots-sqr-1.mp4" frameborder="0" allowfullscreen></iframe>
 Gray-Scott running on a square grid
 {: .text-center}
 
-<iframe width="640" height="360" src="../assets/greydots-hex-2.mpg" frameborder="0" allowfullscreen></iframe>
+<iframe width="640" height="360" src="../assets/greydots-hex-2.mp4" frameborder="0" allowfullscreen></iframe>
 Gray-Scott running on a hexagonal grid
 {: .text-center}
 

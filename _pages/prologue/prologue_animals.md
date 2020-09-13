@@ -108,15 +108,9 @@ Pushing the kill rate down as well leads to a spotty pattern (pause the video at
 
 When you look at the simulations above, an adjective that may have come to mind is  "trippy". This is no accident. Research dating all the way back to the 1920s has studied the patterns that we see when we hallucinate, which Heinrich Klüver named **form constants** after studying patients who had taken mescaline.[^kluver] Form constants, which include cobwebs, tunnels, and spirals, occur across many individuals regardless of the cause of the hallucinations.
 
-* CITE Kluver
+Over five decades after Klüver's work, researchers would determine that form constants with seemingly different shapes originate from simpler *linear* patterns of cellular activation in the retina. Because the retina is circular, the brain needs to convert this cellular image into a rectangular field of view; as a result, when the linear patterns are passed to the visual cortex, the brain contorts them into the form constants that we see.[^cowan]
 
-Fifty years after Klüver's work, researchers would determine that form constants with seemingly different shapes originate from simpler *linear* patterns of cellular activation in the retina. Because the retina is circular, the brain needs to convert this cellular image into a rectangular field of view; as a result, when the linear patterns are passed to the visual cortex, the brain contorts them into the form constants that we see.
-
-* CITE Cowan and Ermentrout 1979
-
-Yet this work had replaced one question with another: why does hallucination cause patterns of cellular activation in the retina? This question is still unresolved, but some researchers believe that these patterns are in fact Turing patterns and can be explained by a reaction-diffusion model similar to the one that we have considered in this chapter.
-
-* CITE https://www.quantamagazine.org/a-math-theory-for-why-people-hallucinate-20180730/
+Yet this work had replaced one question with another: why does hallucination cause patterns of cellular activation in the retina? This question is still unresolved, but some researchers[^quanta] believe that these patterns are in fact Turing patterns and can be explained by a reaction-diffusion model similar to the one that we have considered in this chapter.
 
 ## Streamlining our simulations
 
@@ -125,4 +119,8 @@ Each of the above simulations took several hours to render because simulating an
 [Next lesson](blocks){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
-[^kluver]: Test
+[^cowan]: G.B. Ermentrout and J.D. Cowan. "A Mathematical Theory of Visual Hallucination Patterns". *Biol. Cybernetics* 34, 137-150 (1979).
+
+[^kluver]: H. Klüver. *Mescal and Mechanisms of Hallucinations*. University of Chicago Press, 1966.
+
+[^quanta]: J. Ouellette. "A Math Theory for Why People Hallucinate". *Quanta Magazine*, July 30, 2018. https://www.quantamagazine.org/a-math-theory-for-why-people-hallucinate-20180730/

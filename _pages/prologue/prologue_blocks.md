@@ -155,4 +155,4 @@ Gray-Scott running on a hexagonal grid
 
 [^robert]: "Reaction-Diffusion by the Gray-Scott Model: Pearson's Parametrization" © 1996-2020 Robert P. Munafo https://mrob.com/pub/comp/xmorphia/index.html
 
-[^grid]: "Gray Scott Model of Reaction Diffusion" Abelson, Adams, Coore, Hanson, Nagpal, Sussman https://groups.csail.mit.edu/mac/projects/amorphous/GrayScott/
+[^grid]: "Gray Scott Model of Reaction Diffusion". Abelson, Adams, Coore, Hanson, Nagpal, Sussman https://groups.csail.mit.edu/mac/projects/amorphous/GrayScott/

@@ -1,21 +1,44 @@
 ---
 permalink: /coronavirus/home
-title: "Module 3: Coronavirus"
+title: "Introduction: A Tale of Two Doctors"
 sidebar:
  nav: "coronavirus"
 ---
 
 ### by Chris Lee and Phillip Compeau
 
-## Introduction: How SARS and COVID-19 Shook the World
+## The world's fastest outbreak
+
+On February 21, 2003, a Chinese doctor named Liu Jianlun flew to Hong Kong to attend a wedding and checked into Room 911 of the Metropole Hotel. The next day, he became too ill to attend the wedding and was admitted to a hospital. Two weeks later, Dr. Liu was dead.
+
+On his deathbed, Liu told doctors that he had recently treated sick patients in Guangdong Province, China where a deadly, highly contagious respiratory illness had infected hundreds of people. The Chinese government had made brief mention of this incident to the World Health Organization but had concluded that the likely culprit was a common bacterial infection. By the time anyone realized the severity of the disease, it was already too late to stop the outbreak. On February 23, a man who had stayed across the hall from Dr. Liu at the Metropole traveled to Hanoi and died after infecting 80 people. On February 26, a woman checked out of the Metropole, traveled back to Toronto, and died after initiating an outbreak there. On March 1, a third guest was admitted to a hospital in Singapore, where sixteen additional cases of the illness arose within two weeks.
+
+Consider that it took four years for the Black Death, which killed over a third of all Europeans in the 14th Century, to travel from Constantinople to Kiev. Or that HIV took two decades to circle the globe. In contrast, this mysterious new disease had crossed the Pacific Ocean within a week of entering Hong Kong.
+
+As health officials braced for the impact of the fastest-traveling virus in human history, panic set in. Businesses were closed, sick passengers were removed from airplanes, and Chinese officials threatened to execute infected patients who violated quarantine. In the process, the mysterious new disease earned a name: **Severe Acute Respiratory Syndrome**, or **SARS**.
+
+## Finding the source of the outbreak
+
+SARS was deadly, killing close to 10% of those who became sick.[^cdc-factsheet] But it also struggled to spread much farther within the human population, and it was contained in July 2003 with fewer than 10,000 confirmed symptomatic cases worldwide.
+
+Scientists initially thought that humans had contracted SARS from palm civets, which are native to Guangdong. But research would later show that the disease likely originated in bats, a notorious disease carrier.[^bats]
+
+And in 2017, researchers published the result of five years of sampling horseshoe bats from a cave in Yunnan province. They found that the bats harbored coronaviruses with remarkable genetic similarity to SARS, and they hypothesized that the bats may have in fact derived from horseshoe bats. Yet their work is now famous because they identified viruses that were similar to SARS and capable of entering human cells. The following lines from their article are now chilling.[^bat-cave]
+
+> We have also revealed that various SARSr-CoVs ... are still circulating among bats in this region. Thus, the risk of spillover into people and emergence of a disease similar to SARS is possible. This is particularly important given that the nearest village to the bat cave we surveyed is only 1.1 km away, which indicates a potential risk of exposure to bats for the local residents. Thus, we propose that monitoring of SARSr-CoV evolution at this and other sites should continue, as well as examination of human behavioral risk for infection and serological surveys of people, to determine if spillover is already occurring at these sites and to design intervention strategies to avoid future disease emergence.
+
+* Chris: please fill in the new citations above below.
+
+## A new threat arises
+
+
+##
+
+
 
 ### Phillip notes to self
 
 Reference, https://www.axios.com/timeline-the-early-days-of-chinas-coronavirus-outbreak-and-cover-up-ee65211a-afb6-4641-97b8-353718a5faab.html
-
-“A tale of two doctors” – Liu Jianlun and Li Wenliang
-
-Take some of the mystery set up from Liu Jianlun
 
 This is not to say that the coronavirus went anywhere – point about 2017 paper
 
@@ -70,6 +93,12 @@ There are two main objectives for this module. First, we will explore publicly a
 {: style="font-size: 100%; text-align: center;"}
 
 ## Citations
+
+[^cdc-factsheet] SARS CDC factsheet, from https://www.cdc.gov/sars/about/fs-sars.html.
+
+[^bats] "Bats Are Natural Reservoirs of SARS-Like Coronaviruses". https://science.sciencemag.org/content/310/5748/676
+
+[^bat-cave]"Discovery of a rich gene pool of bat SARS-related coronaviruses provides new insights into the origin of SARS coronavirus". https://journals.plos.org/plospathogens/article?id=10.1371/journal.ppat.1006698
 
 [^1]: CDC SARS Response Timeline. (2013, April 26). Retrieved August 17, 2020, from https://www.cdc.gov/about/history/sars/timeline.htm
 

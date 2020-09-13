@@ -15,28 +15,35 @@ We have mentioned that our experience of the world is often influenced by the ra
 **STOP**: After *n* steps, how far do you think the particle will have traveled (as the crow flies) from its starting point?
 {: .notice--primary}
 
-Let's generate an animation of a particle following a random walk. The video below shows a randomly walking particle, shown in red, taking 1000 steps. If you are interested in building a simulation like this, sit tight --- we will soon see how to use the software that generated this animation in the context of biological modeling.
+Let's generate an animation of a particle following a random walk. The video below shows a randomly walking particle, shown in red, taking 1000 steps.
 
 <center>
 <iframe width="640" height="360" src="../assets/random_walk_1.mp4" frameborder="0" allowfullscreen></iframe>
 </center>
 
-The distance that the particle wanders from its starting point may surprise you. And yet the astute scientist would point out that this is just a single particle; perhaps it has simply gone rogue, and the typical particle would be much more of a homebody.
+The distance that the particle wanders from its starting point may surprise you. And yet the astute scientist would point out that this is just a single particle; perhaps the typical particle would be much more of a homebody.
 
-The particle's movements are random, but the *average-case* behavior of the particle can be predicted. This theorem states that after *n* steps of unit length in a random walk, the particle will on average find itself a distance of approximately $$\sqrt{n}$$ from its origin. (For mathematics lovers, we explain why this is true in an optional bonus section at the bottom of this page.)
+The particle's movements are random, but the *average-case* behavior of the particle can be predicted, as the following theorem indicates. For mathematics lovers, we explain why this theorem is true in an optional bonus section at the bottom of this page.
+
+**Random Walk Theorem:** After *n* steps of unit length in a random walk, a particle will on average find itself a distance of approximately $$\sqrt{n}$$ from its origin.
 
 ## From one particle to many
 
-This theorem does not say that after *n* steps our particle will be *exactly* distance $$\sqrt{n}$$ from the origin, any more than we would expect that after flipping a coin 2,000 times we would have seen exactly 1,000 heads.  The particle may wind up even farther away, or closer to the origin. Yet the statement about the particle's average behavior is powerful, and it can be seen more clearly if we animate the action of many independent particles following random walks.
+The Random Walk Theorem does not say that after *n* steps a particle will be exactly $$\sqrt{n}$$ from the origin, any more than we would expect that in flipping a coin 2,000 times the coin will come up heads exactly 1,000 times. Yet the statement about the particle's average behavior is powerful. If we animate the action of many independent particles following random walks, then we will see that although some particles hug their starting point and some wind up far away, most particles steadily move outward as the simulation continues.
 
+<center>
 <iframe width="640" height="360" src="../assets/random_walk_200.mp4" frameborder="0" allowfullscreen></iframe>
+</center>
+
+* Phillip will start here: pointer to tutorial
+If you are interested in seeing how to use
 
 [Visit Tutorial](tutorial-random-walk){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 ## Diffusion: big numbers in small spaces
 
-We also point out that our experience of the world confirms the statement that the movements of particles via **Brownian motion** will cause those particles to *diffuse* rapidly from their starting point. We understand, for example, that an infected COVID-19 patient can infect many others in an enclosed space in a short time frame. To take a less macabre example, we also know that when a cake is baking in the oven at home, we will not need to wait long for wonderful smells to waft outward from the kitchen.
+Our experience of the world confirms the animations above. The movements of particles via **Brownian motion** will cause those particles to *diffuse* rapidly from their starting point. We understand, for example, that an infected COVID-19 patient can infect many others in an enclosed space in a short time frame. To take a less macabre example, we also know that when a cake is baking in the oven at home, we will not need to wait long for wonderful smells to waft outward from the kitchen.
 
 Why should a scientist care about random walks? Later in this course, we will see that the random walk model is at the core of a simple but powerful approach that bacteria like *E. coli* use to explore their environment in a search for sustenance.
 

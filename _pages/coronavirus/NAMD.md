@@ -40,7 +40,9 @@ From the tutorial, we computed the overall interaction energy between the SARS-C
 
 From the results, we see that the overall attractive interaction energy between the RBD and ACE2 is greater in magnitude for SARS-CoV-2, supporting the previous studies that found SARS-CoV-2 Spike having higher affinity with ACE2. For SARS-CoV-2, Hotspot31 (red) has the greatest contribution, followed by Hotspot353 (blue), and finally the loop in the RBM (yellow) providing the least. For SARS, Hotspot353 provides the greatest contribution, followed by the loop, and, surprisingly, Hotspot31 very slightly hindering the interaction. Nevertheless, we see that all three sites in SARS-CoV-2 support binding with ACE2 much more than in SARS. The difference in results support that the residue differences and conformational changes in the three sites do indeed increase the binding affinity between SARS-CoV-2 S protein and ACE2.
 
-[Next lesson](multiseq){: .btn .btn--primary .btn--large}
+In the next lesson, we will learn about another protein analysis method that uses molecular dynamics.
+
+[Next lesson](NMA){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 [^TCBG]: https://www.ks.uiuc.edu/Research/namd/2.9/ug/node22.html

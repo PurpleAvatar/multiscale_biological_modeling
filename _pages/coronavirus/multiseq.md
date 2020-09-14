@@ -11,12 +11,13 @@ Imagine a scenario where we want to find regions of structural differences betwe
 
 <a href="https://www.codecogs.com/eqnedit.php?latex=Q&space;=&space;\frac{2}{(N-1)(N-2)}\sum_{i<j-1}exp[-\frac{(r_{ij}-r_{i,j}^N)^2}{2\sigma_{ij}^2}]" target="_blank"><img src="https://latex.codecogs.com/gif.latex?Q&space;=&space;\frac{2}{(N-1)(N-2)}\sum_{i<j-1}exp[-\frac{(r_{ij}-r_{i,j}^N)^2}{2\sigma_{ij}^2}]" title="Q = \frac{2}{(N-1)(N-2)}\sum_{i<j-1}exp[-\frac{(r_{ij}-r_{i,j}^N)^2}{2\sigma_{ij}^2}]" /></a>
 
-where: 
- * N = number of residues
- * $$r_{ij}$$ = distance between alpha carbon pair
- * $$r_{ij}^N$$ = alpha carbon distance between residue i and residue j in the protein native state
- * $$\sigma_{ij}^2$$ = standard deviation
- * $$0<Q\leq1$$
+where:  
+$$0<Q\leq1$$
+* N = number of residues
+* $$r_{ij}$$ = distance between alpha carbon pair
+* $$r_{ij}^N$$ = alpha carbon distance between residue i and residue j in the protein native state
+* $$\sigma_{ij}^2$$ = standard deviation
+
 
 Q = 1 indicates that the aligned structures are identical. A low Q score implies that the structures do not align well and are different.
  

@@ -6,29 +6,20 @@ sidebar:
 toc: true
 toc_sticky: true
 ---
+## Visualizing the Region of Structural Differences
+In the last lesson, we used Multiseq and Qres to identify a region (SARS-CoV-2 residues 476 to 485) of structural difference between SARS-CoV-2 RBD and SARS RBD that appear to be in or next to the ACE2 binding sites. Now, we want to analyze this region and see what specifically is different between the two RBDs and if these differences actually effect the binding affinity with ACE2. Now that we have a target region, we can use VMD to zoom in and highlight specific amino acid residues to see what these differences look like.
 
-In part 1 of the module, we explored the different methods of predicting the 3D structure of a protein from its amino acid sequence, and how to assess the accuracy of our predicted structures. Because the protein's structure is critical to its function, we use protein structure prediction to analyze proteins where we have yet to determine its real structure using experimental techniques such as x-ray crystallography. Early SARS-CoV-2 researchers that wanted to study the S protein in January 2020 relied on structure prediction.
-
-Now that research groups had enough time, the actual structure of the S protein have been determined and is available in the Protein Data Bank (PDB). With the structures, we can now producing the 3D visualizations the SARS-CoV-2 S protein and compare it with the SARS S protein to see if we can find some molecular explanation of why this virus is much more infectious than SARS.
-
-## ACE2
-
-In the [introduction](coronavirus_home), we discussed that SARS-CoV-2 and SARS both target the human angiotensin-converting enzyme 2 (ACE2) with their S protein. ACE2 is an enzyme that is present in most human organs and can be found on the surface of cells from various human tissues, including lung alveolar epithelial (outer layer) cells, small intestines eterocytes, arteries, and kidneys [^Hamming]. ACE2 is part of the renin-angiotensin system (RAS), which is critical in the regulation of the cardiovascular system and protective role of the lung alveolar epithelial cells [^Samavati]. 
-
-This interaction of the S protein and ACE2 is an important step for the viral entry of both SARS-CoV-2 and SARS into the human cell. However, SARS-CoV-2 is much more infectious, and its S protein has been found to bind to ACE2 with greater affinity than that of SARS. The receptor binding domain (RBD) is the part of the S protein that interacts with ACE2, and the receptor binding motif (RBM) is the part of the RBD that mediates contact with ACE2. Therefore, we will narrow our focus to the differences in RBM to find out why SARS-CoV-2 binds better with ACE2.
-
-* Add later: "All the analysis will be done using two software: ProDy and VMD. By the end of this module, you will be able to understand more about protein structure prediction and differences in the S proteins that attribute to the higher infectivity of COVID-19."
-
-## Protein Structure Files
-We will be using two PDB entries for comparison: <a href="https://www.rcsb.org/structure/2AJF" target="_blank">2ajf</a> and <a href="https://www.rcsb.org/structure/6vw1" target="_blank">6vw1</a>. 2ajf contains the structure of SARS RBD complexed with ACE2 and 6vw1 contains the structure of SARS-CoV-2 chimeric RBD complexed with ACE2. SARS-CoV-2 chimeric RBD consist of the SARS RBD core and SARS-CoV-2 RBM. The reason that the chimeric RBD was used is because the SARS RBD core helps facilitate crystallization by acting as the crystallization scaffold for X-ray diffraction (x-ray crystallography). Since the functional unit is still SARS-CoV-2 RBM, data from the comparisons should be similar or equivalent to using native SARS-CoV-2 RBD. Using these structures, we can produce 3D visualizations of SARS-CoV-2 RBD and SARS RBD interacting with ACE2 and see if we can determine structural differences between the interactions.
-
-Here is a tutorial of how to use *Visual Molecular Dynamics* (VMD) to visualize the PDB entry 6vw1 showing the SARS-CoV-2 chimeric RBD complexed with ACE2.
+For this tutorial, we will show you how to use VMD to focus on a particular region within the SARS-CoV-2 chimeric RBD complexed with ACE2 (PDB entry <a href="https://www.rcsb.org/structure/6vw1" target="_blank">6vw1</a>).
 
 [Visit tutorial](tutorial_visualization){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 ## Three Sites of Conformational Differences
-In the tutorial, we created the visualization of 6vw1 and highlighted specific amino acid residues in a region. This region is actually one of the places that differ greatly from the SARS RBD (2ajf). Jian Shang et. al., were able to identify three areas with significant conformational differences between the SARS-CoV-2 RBD and SARS RBD, each of which contributes to SARS-CoV-2 S protein’s increased affinity with ACE2 [^Shang].
+In the tutorial, we created the visualization of 6vw1 and highlighted specific amino acid residues in region we identified previously. But does this region actually affect ACE2 binding? Below is a table from study by Shang et. al. that compares the critical ACE2-binding residues between different strains of coronavirus.
+
+<img src="../_pages/coronavirus/files/ShangTable.png"> 
+
+Remember that our region is between SARS-CoV-2 residues 476 to 485. We can see that one group of the critical ACE2-binding residues of SARS-CoV-2 actually lies within our region. This indicates that our identified region is actually important to binding with ACE2 and that the structural differences in this region may contribute to SARS-CoV-2's increased affinity with ACE2. This region is actually one of three sites with significant conformational differences between the SARS-CoV-2 RBD and SARS RBD identified by Shang et. al. Each of the three sites are believed to contribute to SARS-CoV-2 S protein’s increased affinity with ACE2 [^Shang].
 
 ### Loop in ACE2-binding ridge
 

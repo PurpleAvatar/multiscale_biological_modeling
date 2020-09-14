@@ -38,7 +38,7 @@ and
 <em>d</em>[<em>B</em>]/<em>dt</em> = -<em>k</em> · <em>[B]</em>.
 </center></p>
 
-Finally, our reaction-diffusion system includes the following reaction involving both particle types.
+Finally, our reaction-diffusion system includes the following reaction involving both particle types. The particles on the left side of this reaction are called **reactants** and the particles on the right side are called **products**.
 
 <p><center><em>A</em> + 2<em>B</em> → 3<em>B</em></center></p>
 
@@ -46,20 +46,9 @@ To simulate this reaction on a particle level, if an *A* particle and two *B* pa
 
 This third reaction is why we compared *A* to prey and *B* to predators, since we may like to conceptualize the reaction as two *B* particles consuming an *A* particle and producing an offspring *B* particle.
 
-## MCell and Simulations
+##Parameters are omnipresent in biological modeling
 
-The software MCell and other **particle-based spatial stochastic simulation** methods keep track of several factors which create our model. Firstly, the trajectories of individual particles are tracked to predict movement, introduce random diffusion, and detect collisions. When a collision occurs, particles can undergo reactions which are specified by the user. Our typical reaction rate, which may describe a reaction like:
-
-<p><center><em>A</em> + 2<em>B</em> → 3<em>B</em><br></center></p>
-
-The reaction rate we use in this equation describes the **bulk reaction rate**, or the total number of reactions occuring depending on the concentrations of reactants. Because MCell needs to only have bimolecular reactions occur when a collision occurs, the user will give MCell the bulk reaction rate and MCell will automatically choose a probability of reaction per collision based on how many collisions are expected in order to match the bulk reaction rate.  
-
-[Visit tutorial](tutorial-diffusion){: .btn .btn--primary .btn--large}
-{: style="font-size: 100%; text-align: center;"}
-
-## Changing parameters influence the macro behavior of the reaction-diffusion system
-
-Our plan is to initiate the system with a uniform concentration of *A* particles spread across the grid, and then add a collection of *B* particles to the center of the grid.  But before we do this, we first point out that the results of this simulation may vary depending upon a few things.
+Our plan is to initiate the system with a uniform concentration of *A* particles spread across the grid and a tightly packed collection of *B* particles in the center of the grid.  But before we do this, we first point out that the results of our simulation may vary depending upon a few things.
 
 A **parameter** is a variable quantity used as input to a model. Parameters are inevitable in biological modeling (and data science in general), and as we will see, changing parameters can cause major changes in the behavior of a system.
 
@@ -69,6 +58,13 @@ You can think of all these parameters as dials we can turn, observing how the sy
 
 **STOP:** What will happen as we increase or decrease the feed rate *f*? What about the kill rate *k*?
 {: .notice--primary}
+
+A reaction like *A* + 2*B* → 3*B* is typically thought of as occurring at a **bulk reaction rate**, which is the total number of reactions occurring as a function of the concentration of reactants. In the following tutorial, we use the software **MCell** to run a particle-based simulation of our reaction-diffusion model; MCell is built upon some advanced probabilistic methods that allow it to use the bulk reaction rate to determine the probability that a reaction will happen if the particles needed as reactants collide. The same goes for the feed and kill reactions; new *A* particles are formed, and old *B* particles are destroyed, via probabilities that are computed from reaction rates. For now, you can think of the rate of a reaction as directly related to its probability of occurring.
+
+[Visit tutorial](tutorial-diffusion){: .btn .btn--primary .btn--large}
+{: style="font-size: 100%; text-align: center;"}
+
+## Tuning parameters produces different Turing patterns
 
 For some parameter values, the system is not particularly interesting.  For example, the following animation is produced for *k* = 500,000 and *f* = 10. It shows that if *k* is too high, then the *B* particles will die out more quickly than they are replenished by the reaction with *A* particles, and so only *A* particles will be left. In this animation, *A* particles have been colored green, and *B* particles have been colored red.
 

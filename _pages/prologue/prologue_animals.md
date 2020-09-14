@@ -9,40 +9,38 @@ toc_sticky: true
 
 ## From random walks to reaction-diffusion
 
-In the previous section, we introduced a random walk, which serves as a model of a particle diffusing through a medium as a result of Brownian motion. But what exactly does diffusion of particles have to do with Alan Turing and zebras?
+In the previous section, we introduced the random walk model of a particle diffusing through a medium as a result of Brownian motion. But what exactly does the random movement of particles have to do with Alan Turing and zebras?
 
-Turing's insight was that remarkable patterns would emerge if we combine a simulation of diffusion with a chemical reaction, in which particles interact with each other as they diffuse. Such a model is called a **reaction-diffusion system**, and the patterns that emerge in the simulation are called **Turing patterns** in Turing's honor.
+Turing's insight was that remarkable patterns could emerge if we combine a simulation of diffusion with a chemical reaction, in which colliding particles interact with each other. Such a model is called a **reaction-diffusion system**, and the patterns that emerge in the simulation are called **Turing patterns** in Turing's honor.
 
 ## An example reaction-diffusion system
 
-We will consider a reaction-diffusion system having two types of particles, *A* and *B*. The system is not representing a predator-prey relationship, but you may think of *A* as a prey and *B* as a predator for reasons that will become clear soon.
+We will consider a reaction-diffusion system having two types of particles, *A* and *B*. The system is not meant to represent a predator-prey relationship, but you may like to think of the *A* particles as prey and the *B* particles as predators for reasons that will become clear soon.
 
-Both types of particles diffuse randomly through the plane, but the *A* particles typically diffuse more quickly than the *B* particles.  In our simulation, we assume that *A* particles diffuse twice as quickly as *B* particles; in terms of the random walk, this faster diffusion means that in a single "step", an *A* particle moves twice as far as a *B* particle.
+Both types of particles diffuse randomly through the plane, but the *A* particles typically diffuse more quickly than the *B* particles.  In the simulation that follows, we will assume that *A* particles diffuse twice as quickly as *B* particles. In terms of the random walk, this faster rate of Brownian motion means that in a single "step", an *A* particle moves twice as far as a *B* particle.
 
-**STOP**: Say that we release one *A* particle and one *B* particle at the same location. On average, how much farther from the origin will *A* be than *B* after *n* steps?
+**STOP**: Say that we release one *A* particle and one *B* particle at the same location. If the two particles move via random walks, and the rate of diffusion of *A* is twice as fast, then how much farther from the origin will *A* be than *B* after *n* steps?
 {: .notice--primary}
 
-We now will add some reactions to our system. The *A* particles are added into the system at some constant **feed rate** *f* (these particles are created as the result of other reactions). In a three-dimensional system, the units of *f* would be in mol/L/s, which means that every second, there are *f* moles of particles added to the system in every liter of volume. (Recall that one mole is 6.02214076 · 10<sup>23</sup>.) This means that in a given unit of time, the number of *A* particles in the system will increase by a constant number.
+We now will add some reactions to our system. The *A* particles are added into the system at some constant **feed rate** *f*, meaning that these particles are created as the result of other reactions that are not part of our model. In a three-dimensional system, the units of *f* are in mol/L/s, which means that every second, there are *f* moles of particles added to the system in every liter of volume. (Recall from your chemistry class long ago that one mole is 6.02214076 · 10<sup>23</sup> particles.) As a result, the concentration of the particles increases by a constant number in each time step.
 
-There is also a **death rate** constant *k* dictating the rate of removal of the *B* particles. As a result of removal, the concentration of *B* particles in the system will decrease by approximately a constant factor in a given time step.
+There is also a **kill rate** constant *k* dictating the rate of removal of the *B* particles. As a result of removal, the number of *B* particles in the system will decrease by a factor of *k* in a given time step. That is, the more *B* particles that are present, the more *B* particles will be removed.
 
-Note that there is a slight difference between the two reactions. In the first reaction, the *number* of *A* particles increases by a constant factor at every step. In the second reaction, the *concentration* of *B* particles decreases by a constant factor at every step. This means that if *A* and *B* denote the number of particles of each type in the system, then in the absence of other reactions,
+Note that there is a slight difference between the feed and kill reactions. In the first reaction, the number of *A* particles increases by a constant number in each time step. In the second reaction, the number of *B* particles decreases by a constant factor multiplied by the current number of *B* particles. In terms of calculus, this means that if [*A*] and [*B*] denote the concentrations of the two particle types, then in the absence of other reactions, we can write
 
 <center>
-<em>dA</em>/<em>dt</em> = <em>c</em><sub>1</sub>
+<em>d[A]</em>/<em>dt</em> = <em>f</em>
 </center>
 
 and
 
 <center>
-<em>dB</em>/<em>dt</em> = -<em>c</em><sub>2</sub> · <em>B</em>
+<em>d[B]</em>/<em>dt</em> = -<em>k</em> · <em>[B]</em>.
 </center>
-
-for some parameters <em>c</em><sub>1</sub> and <em>c</em><sub>2</sub>.
 
 Finally, this reaction-diffusion system has a single reaction of the two particles with each other. If an *A* particle and two *B* particles encounter each other, then the *A* particle is replaced by a third *B* particle at a certain rate *r*. This reaction can be summarized by the following chemical reaction.
 
-<center><em>A</em> + 2<em>B</em> → 3<em>B</em><br></center>
+<p><center><em>A</em> + 2<em>B</em> → 3<em>B</em></center></p>
 
 This reaction is why we compared *A* to prey and *B* to predators, since we can imagine this reaction as two *B* particles consuming an *A* particle and conceiving an offspring *B* particle. Another way of viewing this reaction is that when an *A* particle and two *B* particles encounter each other, the reaction takes place with probability proportional to *r*.
 

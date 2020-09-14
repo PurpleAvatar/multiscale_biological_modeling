@@ -35,34 +35,35 @@ The Random Walk Theorem does not say that after *n* steps a particle will be exa
 <iframe width="640" height="360" src="../assets/random_walk_200.mp4" frameborder="0" allowfullscreen></iframe>
 </center>
 
-* Phillip will start here: pointer to tutorial
-If you are interested in seeing how to use
+If you are interested in seeing how to build this random walk simulation as an introduction to the software that we will soon be using for biological modeling, then please visit the following software tutorial. We have designed this course so that you can appreciate the key ideas behind the biological models that we build without following software tutorials. But we also provide these tutorials so that learners can also dig into the software that we used to generate our conclusions and even use this software in their own work.
 
-[Visit Tutorial](tutorial-random-walk){: .btn .btn--primary .btn--large}
+[Visit tutorial](tutorial-random-walk){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
-## Diffusion: big numbers in small spaces
+## Brownian motion: big numbers in small spaces
 
-Our experience of the world confirms the animations above. The movements of particles via **Brownian motion** will cause those particles to *diffuse* rapidly from their starting point. We understand, for example, that an infected COVID-19 patient can infect many others in an enclosed space in a short time frame. To take a less macabre example, we also know that when a cake is baking in the oven at home, we will not need to wait long for wonderful smells to waft outward from the kitchen.
+Our experience of the world confirms the animations above. The seemingly random movements of particles suspended in a medium via **Brownian motion** will cause those particles to move away from their starting point, even if the concentration of these particles is uniform. We understand, for example, that an infected COVID-19 patient can infect many others in an enclosed space in a short time frame via droplets. To take a less macabre example, we also know that when a cake is baking in the oven at home, we will not need to wait long for wonderful smells to waft outward from the kitchen.
 
-Why should a scientist care about random walks? Later in this course, we will see that the random walk model is at the core of a simple but powerful approach that bacteria like *E. coli* use to explore their environment in a search for sustenance.
+Why should a scientist care about random walks? Later in this course, we will see that the random walk model is at the core of a simple but powerful approach that bacteria like *E. coli* use to explore their environment in the hunt for food. In the next lesson, we will see that mimicking the random movements of particles will be important for building a biological model in which we allow particles to move naturally and interact when they collide.
 
-Before we continue to the next lesson, we point you to a beautiful animation illustrating just how far a single randomly moving particle can travel in a relatively small amount of time. This animation, which shows a simulation of the path taken by a glucose molecule as the result of Brownian motion, is part of the following excellent instructional video developed by the late Joel Stiles.
+Before continuing, we point you to a beautiful animation illustrating just how far a single randomly moving particle can travel in a relatively small amount of time. This animation, which shows a simulation of the path taken by a glucose molecule as the result of Brownian motion, starts at 6:10 of the following excellent instructional video developed by the late Joel Stiles.
 
+<center>
 <iframe width="640" height="360" src="https://www.youtube-nocookie.com/embed/KQgydF-fXvc?start=370" frameborder="0" allowfullscreen></iframe>
+</center>
 
 [Next lesson](animals){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
-## A proof of the expected distance theorem
+## (Optional) A proof of the expected distance theorem
 
-We stated above that the average distance that a random particle would find itself from its starting point after taking *n* steps of unit length is $$\sqrt{n}$$. Below, we provide a justification for why this is true for interested learners who are familiar with probability.
+We stated above that the average distance that a randomly walking particle would find itself from its starting point after taking *n* steps of unit length is $$\sqrt{n}$$. Below, we provide a justification for why this is true for interested learners who are familiar with probability.
 
 Let <b>x<sub><i>i</i></sub></b> denote the random variable corresponding to the vector of the particle's *i*-th step.  The distance *d* traveled by the particle can be represented by the sum of all the <b>x<sub><i>i</i></sub></b>,
 
 $$d = \mathbf{x_1} + \mathbf{x_2} + \cdots + \mathbf{x_n} \,.$$
 
-We will show that the expected value of <i>d</i><sup>2</sup> is equal to *n*. To do so, note that
+We will show that the expected value of <i>d</i><sup>2</sup> is equal to *n*. First note that
 
 $$d^2 = (\mathbf{x_1} + \mathbf{x_2} + \cdots + \mathbf{x_n}) \cdot (\mathbf{x_1} + \mathbf{x_2} + \cdots + \mathbf{x_n})\,.$$
 
@@ -81,7 +82,7 @@ Finally, we rearrange this equation so that the terms $$\mathbf{x_1} \cdot \math
 
 $$d^2 = \sum_{i=1}^n (\mathbf{x_i} \cdot \mathbf{x_i}) + \sum_{i \neq j} (\mathbf{x_i} \cdot \mathbf{x_j})\, .$$
 
-The right side of this equation is the sum of <i>n</i><sup>2</sup> dot products.  When we take the expectation of both sides, then we apply the fundamental result called the "linearity of expectation", which states that for any two random variables $$x$$ and $$y$$, the expectation of their sum $$\mathbb{E}(x + y)$$ is equal to the sum of the corresponding expectations $$\mathbb{E}(x) + \mathbb{E}(y)$$:
+The right side of this equation is the sum of <i>n</i><sup>2</sup> dot products.  When we take the expectation of both sides, we can apply a fundamental theorem called the "linearity of expectation", which states that for any two random variables $$x$$ and $$y$$, the expectation of their sum $$\mathbb{E}(x + y)$$ is equal to the sum of the corresponding expectations $$\mathbb{E}(x) + \mathbb{E}(y)$$:
 
 $$\mathbb{E}(d^2) = \sum_{i=1}^n \mathbb{E}(\mathbf{x_i} \cdot \mathbf{x_i}) + \sum_{i \neq j} \mathbb{E}(\mathbf{x_i} \cdot \mathbf{x_j})\, .$$
 
@@ -89,8 +90,8 @@ For any *i*, $$\mathbf{x_i} \cdot \mathbf{x_i}$$ is just the length of the vecto
 
 $$\mathbb{E}(d^2) = \sum_{i=1}^n 1 + \sum_{i \neq j} 0 = n + 0 = n\, ,$$
 
-which is what we set out to show.
+which is what we set out to prove.
 
 A couple of notes before we continue. First, we did not use anything about the random walk being two-dimensional in this proof; therefore, it holds whether our particle is walking in two, three, or any number of dimensions.
 
-Second, we technically did not show that the expected value of $$d$$ is $$\sqrt{n}$$, but rather that the expected value of $$d^2$$ is $$n$$. It is not exactly true that $$\mathbb{E}(d)$$ is equal to $$\sqrt{n}$$, but rather that as $$n$$ grows, $$\mathbb{E}(d)$$ grows like a constant factor of $$\sqrt{n}$$. A proof is beyond the scope of this course, but it can be shown that as $$n$$ goes off to infinity, $$\mathbb{E}(d)$$ tends toward $$\sqrt{(2/\pi)} \cdot \sqrt{n}$$. Who knew that random walks could be so complicated!
+Second, we technically did not show that the expected value of $$d$$ is $$\sqrt{n}$$, but rather that the expected value of $$d^2$$ is $$n$$. It is not true that $$\mathbb{E}(d)$$ is equal to $$\sqrt{n}$$, but rather that as $$n$$ grows, $$\mathbb{E}(d)$$ grows like $$c \cdot \sqrt{n}$$ for some constant factor $$c$$. A proof is beyond the scope of this course, but it can be shown that as $$n$$ goes off to infinity, $$\mathbb{E}(d)$$ tends toward $$\sqrt{(2/\pi)} \cdot \sqrt{n}$$. Who knew that the mathematics of random walks could be so complicated!

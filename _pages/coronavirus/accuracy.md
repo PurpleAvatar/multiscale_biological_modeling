@@ -134,5 +134,5 @@ Although we have yet to find nature's magic algorithm for protein folding, it is
 
 This concludes the part one of this module on how scientists can analyze new proteins before their structures are experimentally determined. In part two of the module, we will explore the differences between SARS and-SARS CoV2 S protein by using the x-ray crystallography structures of the proteins that have been publshed on the PDB during the first wave of outbreak. With this comparison, our goal is to find molecular explanations of why SARS-CoV-2 is much more infectious. 
 
-[Next lesson](structural_diff){: .btn .btn--primary .btn--large}
+[Next lesson](multiseq){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}

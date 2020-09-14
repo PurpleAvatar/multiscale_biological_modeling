@@ -40,10 +40,11 @@ prologue:
         url: /prologue/tutorial-random-walk
       - title: "Turing Patterns CellBlender"
         url: /prologue/turing-cellblender
-      - title: "Gray-Scott Jupyter Notebook"
-        url: /prologue/gs-jupyter
       - title: "Diffusion Jupyter Notebook"
         url: /prologue/tutorial-diffusion
+      - title: "Gray-Scott Jupyter Notebook"
+        url: /prologue/gs-jupyter
+      
 
 
 motifs:

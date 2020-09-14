@@ -7,7 +7,7 @@ toc: true
 toc_sticky: true
 ---
 
-This section will be on how to use NAMD Energy to calculate the interaction energy between SARS-CoV-2 RBD and ACE2. Be sure to have gone through *<a href="VMDTutorial" target="_blank">Setting up VMD</a>* on how to install VMD and load molecules into the program. In addition to VMD, make sure to download <a href="https://www.ks.uiuc.edu/Development/Download/download.cgi?PackageName=NAMD" target="_blank">NAMD</a>. One of the steps will require you to provide the path to *NAMD*.
+In this tutorial, will use NAMD Energy to calculate the interaction energy between SARS-CoV-2 RBD and ACE2 as well as compute how much interaction energy the loop site contributes. Be sure to have installed VMD and know how to load molecules into the program. If you need a refresher, go to the <a href="tutorial_visualization" target="_blank">Visualization Tutorial</a>. In addition to VMD, make sure to download <a href="https://www.ks.uiuc.edu/Development/Download/download.cgi?PackageName=NAMD" target="_blank">NAMD</a>. One of the steps may require you to provide the path to *NAMD*.
 
 First, load <a href="https://www.rcsb.org/structure/6vw1" target="_blank">6vw1</a> into VMD. Afterwards, we will need to create a protein structure file (<a href="https://www.ks.uiuc.edu/Training/Tutorials/namd/namd-tutorial-unix-html/node23.html" target="_blank">PSF</a>) of 6vw1 in order to simulate the molecule. We will be using the VMD plugin *Atomatic PSF Builder* to create the file. From *VMD Main*, go to *Extensions>Modeling>Automatic PSF Builder*.
 
@@ -35,27 +35,19 @@ The *NAMDEnergy* window will show up. First, change the molecule to be the PSF f
 
 <img src="../_pages/coronavirus/files/NAMDTutorial/Image7.png">
 
-The output file will be created in your current working directory, and can be opened with a simple text-editor. The values of the results may vary very slightly upon repetitive calculations.
+The output file will be created in your current working directory, and can be opened with a simple text-editor. The values of the results may vary slightly upon repetitive calculations.
 
 <img src="../_pages/coronavirus/files/NAMDTutorial/Image8.png">
 
-<hr>
+Now, let's calculate the interaction energy between only the SARS-CoV-2 RBD loop site (residues 482 to 486) and ACE2. In the *NAMDEnergy* window, put "protein and chain B" for *Selection 1* and "protein and chain F and (resid 482 to 486)" for *Selection 2*. Keep everything else the same. You should get results similar to this.
 
-<details>
- <summary>NAMD Energy Exercise 1</summary>
- Try to find the interaction energy between SARS-CoV-2 RBD loop site (residues 482 to 486) and ACE2. Use the chain pair B/F. Try to see if you can get the correct selection by yourself first. *Hint* the selection language is the very similar to that of VMD.
- <details>
-  <summary>Selection Answer</summary>
+
+<img src="../_pages/coronavirus/files/NAMDTutorial/LoopEnergyOutput.png">
  
-  Selection 1: protein and chain B
-  Selection 2: protein and chainF and (resid 482 to 486)
- </details>
-
- You should obtain values close to: Elect = -7.1162; vdW = -5.2101.
-</details>
+You may be curious about why the interaction energy comes out to be a negative number. Just like in physics, the negative value describes the direction of the force. A negative value indicate an attractive force between the two molecules while a positive value indicate a repulsion force. Our results describe the interaction between SARS-CoV-2 RBD and ACE2 as a favorable interaction. The more negative the value, the greater the binding affinity between the two proteins.
 
 <details>
- <summary>NAMD Energy Exercise 2</summary>
+ <summary>NAMD Energy Exercise</summary>
  Try to find the interaction energy between SARS RBD and ACE2. Use the pdb file of <a href="https://www.rcsb.org/structure/2ajf" target="_blank">2ajf</a> and chain pair B/F for the selection step. You should obtain values close to: Elec = -130.517; vdW = -59.6941.
 </details>
 

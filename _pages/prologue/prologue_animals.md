@@ -28,31 +28,33 @@ There is also a **kill rate** constant *k* dictating the rate of removal of the 
 
 Note that there is a slight difference between the feed and kill reactions. In the first reaction, the number of *A* particles increases by a constant number in each time step. In the second reaction, the number of *B* particles decreases by a constant factor multiplied by the current number of *B* particles. In terms of calculus, this means that if [*A*] and [*B*] denote the concentrations of the two particle types, then in the absence of other reactions, we can write
 
-<center>
-<em>d[A]</em>/<em>dt</em> = <em>f</em>
-</center>
+<p><center>
+<em>d</em>[<em>A</em>]/<em>dt</em> = <em>f</em>
+</center></p>
 
 and
 
-<center>
-<em>d[B]</em>/<em>dt</em> = -<em>k</em> · <em>[B]</em>.
-</center>
+<p><center>
+<em>d</em>[<em>B</em>]/<em>dt</em> = -<em>k</em> · <em>[B]</em>.
+</center></p>
 
-Finally, this reaction-diffusion system has a single reaction of the two particles with each other. If an *A* particle and two *B* particles encounter each other, then the *A* particle is replaced by a third *B* particle at a certain rate *r*. This reaction can be summarized by the following chemical reaction.
+Finally, our reaction-diffusion system includes the following reaction involving both particle types.
 
 <p><center><em>A</em> + 2<em>B</em> → 3<em>B</em></center></p>
 
-This reaction is why we compared *A* to prey and *B* to predators, since we can imagine this reaction as two *B* particles consuming an *A* particle and conceiving an offspring *B* particle. Another way of viewing this reaction is that when an *A* particle and two *B* particles encounter each other, the reaction takes place with probability proportional to *r*.
+To simulate this reaction on a particle level, if an *A* particle and two *B* particles collide with each other, then the *A* particle has some fixed probability *r* of being replaced by a third *B* particle.
+
+This third reaction is why we compared *A* to prey and *B* to predators, since we may like to conceptualize the reaction as two *B* particles consuming an *A* particle and producing an offspring *B* particle.
 
 ## MCell and Simulations
 
 The software MCell and other **particle-based spatial stochastic simulation** methods keep track of several factors which create our model. Firstly, the trajectories of individual particles are tracked to predict movement, introduce random diffusion, and detect collisions. When a collision occurs, particles can undergo reactions which are specified by the user. Our typical reaction rate, which may describe a reaction like:
 
-<center><em>A</em> + 2<em>B</em> → 3<em>B</em><br></center>
+<p><center><em>A</em> + 2<em>B</em> → 3<em>B</em><br></center></p>
 
 The reaction rate we use in this equation describes the **bulk reaction rate**, or the total number of reactions occuring depending on the concentrations of reactants. Because MCell needs to only have bimolecular reactions occur when a collision occurs, the user will give MCell the bulk reaction rate and MCell will automatically choose a probability of reaction per collision based on how many collisions are expected in order to match the bulk reaction rate.  
 
-[Visit Tutorial](tutorial-diffusion){: .btn .btn--primary .btn--large}
+[Visit tutorial](tutorial-diffusion){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 ## Changing parameters influence the macro behavior of the reaction-diffusion system

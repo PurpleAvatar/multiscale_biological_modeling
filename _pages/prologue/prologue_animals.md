@@ -46,7 +46,7 @@ To simulate this reaction on a particle level, if an *A* particle and two *B* pa
 
 This third reaction is why we compared *A* to prey and *B* to predators, since we may like to conceptualize the reaction as two *B* particles consuming an *A* particle and producing an offspring *B* particle.
 
-##Parameters are omnipresent in biological modeling
+## Parameters are omnipresent in biological modeling
 
 Our plan is to initiate the system with a uniform concentration of *A* particles spread across the grid and a tightly packed collection of *B* particles in the center of the grid.  But before we do this, we first point out that the results of our simulation may vary depending upon a few things.
 
@@ -83,7 +83,6 @@ The interesting behavior in this system lies in a sweet spot, parameters that pr
 <center>
 <iframe width="640" height="360" src="../assets/gray_scott_11_by_11_f_1.75_k_2_new.mp4" frameborder="0" allowfullscreen></iframe>
 </center>
-A fizzling cascade bounces in between larger waves, Feed Rate *f* = 1.75E5 and Kill Rate *k* = 2E5
 
 And yet if we make a slight change to the parameters, we obtain different macro behavior.
 

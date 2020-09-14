@@ -81,24 +81,24 @@ On the other hand, if *f* is too high, then there will be an increase in the con
 The interesting behavior in this system lies in a sweet spot, parameters that produce patterns. For example, consider the following visualization of the parameters *f* = 175,000 and *k* = 200,000.
 
 <center>
-<iframe width="640" height="360" src="../assets/gray_scott_11_by_11_f_1.75_k_2_new.mp4" frameborder="0" allowfullscreen></iframe>
+<iframe width="750" height="360" src="../assets/gray_scott_11_by_11_f_1.75_k_2_new.mp4" frameborder="0" allowfullscreen></iframe>
 </center>
 
 And yet if we make a slight change to the parameters, we obtain different macro behavior.
 
 <center>
-<iframe width="640" height="360" src="../assets/gray_scott_11_by_11_f_1.4_k_2.mp4" frameborder="0" allowfullscreen></iframe>
+<iframe width="750" height="360" src="../assets/gray_scott_11_by_11_f_1.4_k_2.mp4" frameborder="0" allowfullscreen></iframe>
 </center>
 Each ripple is started by a small spiral, Feed Rate *f* = 1.4E5 and Kill Rate *k* = 2E5
 
 <center>
-<iframe width="640" height="360" src="../assets/gray_scott_11_by_11_f_1_k_1.mp4" frameborder="0" allowfullscreen>
+<iframe width="750" height="360" src="../assets/gray_scott_11_by_11_f_1_k_1.mp4" frameborder="0" allowfullscreen>
 </iframe>
 </center>
 When we push the feed even lower, we see much cleaner waves, Feed Rate *f* = 1E5 and Kill Rate *k* = 2E5
 
 <center>
-<iframe width="640" height="360" src="../assets/gray_scott_11_by_11_f_1_k_2.mp4" frameborder="0" allowfullscreen>
+<iframe width="750" height="360" src="../assets/gray_scott_11_by_11_f_1_k_2.mp4" frameborder="0" allowfullscreen>
 </iframe>
 </center>
 Pushing the kill rate down as well leads to a spotty pattern (pause the video at various points for a clear look), Feed Rate *f* = 1E5 and Kill Rate *k* = 1E5

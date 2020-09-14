@@ -38,10 +38,10 @@ prologue:
     children:
       - title: "Random Walk CellBlender"
         url: /prologue/tutorial-random-walk
+      - title: "Turing Patterns CellBlender"
+        url: /prologue/turing-cellblender
       - title: "Gray-Scott Jupyter Notebook"
         url: /prologue/gs-jupyter
-      - title: "Gray-Scott CellBlender"
-        url: /prologue/gs-cellblender
       - title: "Diffusion Jupyter Notebook"
         url: /prologue/tutorial-diffusion
 

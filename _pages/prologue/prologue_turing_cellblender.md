@@ -1,6 +1,6 @@
 ---
-permalink: /prologue/gs-cellblender
-title: "Gray Scott CellBlender"
+permalink: /prologue/turing-cellblender
+title: "Turing Patterns CellBlender"
 sidebar:
  nav: "prologue"
  nav: "prologue"
@@ -8,9 +8,7 @@ toc: true
 toc_sticky: true
 ---
 
-## “Deterministic Gray-Scott”
-
-Load in the CellBlender_Tutorial_Template from (Link to Setting up CellBlender). Save as *det_gray_scott.blend*
+Load in the CellBlender_Tutorial_Template from the [Random Walk Tutorial](https://purpleavatar.github.io/multiscale_biological_modeling/prologue/tutorial-random-walk). Save as *det_gray_scott.blend*
 
 Go to *CellBlender > Molecules* and create the following molecules:
 

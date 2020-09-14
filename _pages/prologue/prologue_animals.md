@@ -85,36 +85,38 @@ The interesting behavior in this system lies in a sweet spot of the parameters *
 </iframe>
 </center>
 
-Following is *f* is equal to 140,000 and *k* is equal to 200,000.
+When we hold *k* fixed and increase *f* to 140,000, the higher feed rate increases the likelihood of *B* particles encountering *A* particles, and so we see even more waves of *A* cascades.  Note the clear red-green stripes that have appeared at the end of this visualization.
 
 <center>
 <iframe width="750" height="360" src="../assets/gray_scott_11_by_11_f_1.4_k_2.mp4" frameborder="0" allowfullscreen></iframe>
 </center>
 
-For example, consider the following visualization of the parameters *f* = 175,000 and *k* = 200,000.
+As *f* approaches *k*, we see the stripe structure become chaotic and break down because there are so many pockets of growing *B* concentration that they constantly collide and mix with each other. The following animation shows the result of raising *f* to 175,000.
 
 <center>
 <iframe width="750" height="360" src="../assets/gray_scott_11_by_11_f_1.75_k_2_new.mp4" frameborder="0" allowfullscreen></iframe>
 </center>
 
-Finally, *f* and *k* are equal.
+Once *f* and *k* are equal, the stripes are gone, and we might expect this to mean that the *B* particles are uniformly distributed across the background. But what we see is that after an initial outward explosion of *B* particles, the system produces a mottled background, with pockets having higher or lower concentration of *B*. Pay attention to the following video at a point late in the animation. Although the concentrations of the particles are still changing, there is much less large-scale change than in earlier videos. If we freeze the video, our eye cannot help but see patterns of red and green clusters that resemble spots (or at the very least mottling).
 
 <center>
 <iframe width="750" height="360" src="../assets/gray_scott_11_by_11_f_1_k_1.mp4" frameborder="0" allowfullscreen>
 </iframe>
 </center>
 
-## Turing patterns and hallucinations
+## Turing's patterns and Klüver's hallucinations
 
-When you look at the simulations above, an adjective that may have come to mind is  "trippy". This is no accident. Research dating all the way back to the 1920s has studied the patterns that we see when we hallucinate, which Heinrich Klüver named **form constants** after studying patients who had taken mescaline.[^kluver] Form constants, which include cobwebs, tunnels, and spirals, occur across many individuals regardless of the cause of the hallucinations.
+When you look at the simulations above, an adjective that may have come to mind is  "trippy". This is no accident. Research dating all the way back to the 1920s has studied the patterns that we see during visual hallucinations, which Heinrich Klüver named **form constants** after studying patients who had taken mescaline.[^kluver] Form constants, which include cobwebs, tunnels, and spirals, occur across many individuals regardless of the cause of the hallucinations.
 
-Over five decades after Klüver's work, researchers would determine that form constants with seemingly different shapes originate from simpler *linear* patterns of cellular activation in the retina. Because the retina is circular, the brain needs to convert this cellular image into a rectangular field of view; as a result, when the linear patterns are passed to the visual cortex, the brain contorts them into the form constants that we see.[^cowan]
+Over five decades after Klüver's work, researchers would determine that form constants with seemingly different shapes originate from simpler *linear* stripes of cellular activation patterns in the retina. The retina is circular, but the brain needs to convert this cellular image into a rectangular field of view; as a result, when the linear patterns are passed to the visual cortex, the brain contorts them into the form constants that we see.[^cowan]
 
-Yet this work had replaced one question with another: why does hallucination cause patterns of cellular activation in the retina? This question is still unresolved, but some researchers[^quanta] believe that these patterns are in fact Turing patterns and can be explained by a reaction-diffusion model similar to the one that we have considered in this chapter.
+Yet this research had essentially replaced one question with another: why does hallucination cause patterns of cellular activation in the retina? This question is still unresolved, but some researchers[^quanta] believe that these patterns are in fact Turing patterns and can be explained by a reaction-diffusion model similar to the one that we have considered in this chapter.
 
 ## Streamlining our simulations
 
-Each of the above simulations took several hours to render because simulating and visualizing the movement of tens of thousands of particles over thousands of generations of a reaction-diffusion interaction is computationally intensive. The question is whether we can obtain similar conclusions with a faster model that does not require us to keep track of so many particles. We will turn our attention to this question in the next section.
+Despite using advanced modeling and rendering software, each of the visualizations in this lesson took several hours to render. These simulations are computationally intensive because they require us to track the movement of tens of thousands of particles over thousands of generations.
+
+We wonder if it is possible to build a model of Turing patterns that does not require so much computational overhead. In other words, is there a simplification that we can make to our model that will run faster but still produce Turing patterns? We will turn our attention to this question in the next section.
 
 [Next lesson](blocks){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}

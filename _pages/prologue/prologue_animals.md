@@ -78,30 +78,31 @@ On the other hand, if *f* is too high, then there will be an increase in the con
 <iframe width="640" height="360" src="../assets/mert_f1e6_d1e5.mp4" frameborder="0" allowfullscreen></iframe>
 </center>
 
-The interesting behavior in this system lies in a sweet spot, parameters that produce patterns. For example, consider the following visualization of the parameters *f* = 175,000 and *k* = 200,000.
-
-<center>
-<iframe width="750" height="360" src="../assets/gray_scott_11_by_11_f_1.75_k_2_new.mp4" frameborder="0" allowfullscreen></iframe>
-</center>
-
-And yet if we make a slight change to the parameters, we obtain different macro behavior.
-
-<center>
-<iframe width="750" height="360" src="../assets/gray_scott_11_by_11_f_1.4_k_2.mp4" frameborder="0" allowfullscreen></iframe>
-</center>
-Each ripple is started by a small spiral, Feed Rate *f* = 1.4E5 and Kill Rate *k* = 2E5
-
-<center>
-<iframe width="750" height="360" src="../assets/gray_scott_11_by_11_f_1_k_1.mp4" frameborder="0" allowfullscreen>
-</iframe>
-</center>
-When we push the feed even lower, we see much cleaner waves, Feed Rate *f* = 1E5 and Kill Rate *k* = 2E5
+The interesting behavior in this system lies in a sweet spot of the parameters *f* and *k*. For example, consider the following visualization when *f* is equal to 100,000 and *k* is equal to 200,000. We see a very clear stripe of predators expanding outward against a background of prey, with subsequent stripes appearing at locations where there is a critical mass of predators to interact with each other.
 
 <center>
 <iframe width="750" height="360" src="../assets/gray_scott_11_by_11_f_1_k_2.mp4" frameborder="0" allowfullscreen>
 </iframe>
 </center>
-Pushing the kill rate down as well leads to a spotty pattern (pause the video at various points for a clear look), Feed Rate *f* = 1E5 and Kill Rate *k* = 1E5
+
+Following is *f* is equal to 140,000 and *k* is equal to 200,000.
+
+<center>
+<iframe width="750" height="360" src="../assets/gray_scott_11_by_11_f_1.4_k_2.mp4" frameborder="0" allowfullscreen></iframe>
+</center>
+
+For example, consider the following visualization of the parameters *f* = 175,000 and *k* = 200,000.
+
+<center>
+<iframe width="750" height="360" src="../assets/gray_scott_11_by_11_f_1.75_k_2_new.mp4" frameborder="0" allowfullscreen></iframe>
+</center>
+
+Finally, *f* and *k* are equal.
+
+<center>
+<iframe width="750" height="360" src="../assets/gray_scott_11_by_11_f_1_k_1.mp4" frameborder="0" allowfullscreen>
+</iframe>
+</center>
 
 ## Turing patterns and hallucinations
 

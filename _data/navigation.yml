@@ -135,12 +135,12 @@ coronavirus:
         url: /coronavirus/accuracy
   - title: Visualizations and Analyzing Differences
     children:
+      - title: "Searching for Differences"
+        url: /coronavirus/multiseq
       - title: "Structural and ACE2 Interaction Differences"
         url: /coronavirus/structural_diff
       - title: "Interaction Energy with ACE2"
         url: /coronavirus/NAMD
-      - title: "Searching for Differences"
-        url: /coronavirus/multiseq
       - title: "Normal Mode Analysis"
         url: /coronavirus/NMA
       - title: "Glycans"
@@ -155,12 +155,12 @@ coronavirus:
         url: /coronavirus/tutorial_homology
       - title: "RMSD"
         url: /coronavirus/rmsd2
-      - title: "Visualizing Molecules"
+      - title: "VMD and Multiseq"
+        url: /coronavirus/tutorial_multiseq
+      - title: "Visualizing Regions and Residues"
         url: /coronavirus/tutorial_visualization
       - title: "NAMD Energy"
         url: /coronavirus/tutorial_NAMD
-      - title: "Multiseq"
-        url: /coronavirus/tutorial_multiseq
       - title: "GNM Calculation"
         url: /coronavirus/tutorial_GNM
       - title: "ANM Calculation"

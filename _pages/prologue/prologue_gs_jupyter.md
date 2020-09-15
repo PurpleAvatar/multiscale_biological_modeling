@@ -67,8 +67,8 @@ The next step takes in the parameters for the simulation in order to iterate thr
 
 To calculate these changes, we use a **convolve** function and a **laplacian**. The convolve function in this case takes two matrices, *A* and *lapl*, and uses *lapl* as a set of multipliers for each square in the matrix. We can see this operation in action in the image below. 
 
-![image-center](../assets/images/convolution.png){: .align-center}
-A single step in the convolution function which takes the first matrix and adds up each cell multiplied by the number in the second matrix. Here we see (0*0) + (2 * ¼) + (0*0) + (3*¼) + (1*-1) + (2*¼) + (1*0) + (1*¼) +(1*0) = 1
+![image-center](../assets/images/convolution.PNG){: .align-center}
+A single step in the convolution function which takes the first matrix and adds up each cell multiplied by the number in the second matrix. Here we see (0 * 0) + (2 * ¼) + (0 * 0) + (3 * ¼) + (1 * -1) + (2 * ¼) + (1 * 0) + (1 * ¼) +(1 * 0) = 1
 {: .text-center}
 
 Our matrix *lap1* is a laplacian because it describes the gradient, or change over time, for each point in the matrix (not to be confused with a “graph Laplacian”). Because we’re trying to describe the rate of diffusion over this system, the values in the laplacian excluding the center sum to 1. In our code, the value in the center is -1 because we’ve specified the *change* in the system with the convolution function i.e. the matrix *dA*, which we then add to the original matrix *A*. Thus the total sum of the laplacian is 0 which means the total change in number of molecules due to diffusion is 0, even if the molecules are moving to new locations. We don’t want any new molecules created due to just diffusion! 

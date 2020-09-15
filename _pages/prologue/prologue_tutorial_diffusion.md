@@ -42,11 +42,7 @@ import imageio
 images = []
 ~~~
 
-Here we introduce a **convolution function** which uses a **laplacian**. The convolve function will essentially blend our specified laplacian and matrices together to simulate diffusion. The laplacian describes the change in our matrix as we saw in the Gray-Scott Model page. 
-
-<center>
-<img src = "../assets/images/A_concentration_one_time_step.png" width="300">
-</center>
+Here we introduce a **convolution function** which uses a **laplacian**. The convolve function will use our specified laplacian matrix to simulate diffusion. The laplacian describes the change in our matrix as we saw in the Gray-Scott Model page. See the [Gray-Scott Jupyter Notebook](https://purpleavatar.github.io/multiscale_biological_modeling/prologue/gs-jupyter) for a more detailed explanation. 
 
 ~~~ python
 def simulate(numIter, A, B, f, k, dt, dA, dB, lapl, plot_iter):

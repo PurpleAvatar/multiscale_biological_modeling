@@ -57,6 +57,7 @@ Please make sure have dependencies installed:
  - [Matplotlib](https://matplotlib.org/users/installing.html)
  - [Colorspace](https://python-colorspace.readthedocs.io/en/latest/installation.html) (simply [install with pip](https://pypi.org/project/colorspace/) works too)
 -->
+
 | Installation Link | Version | Check install/version |
 |:------|:-----:|------:|
 | [Python3](https://www.python.org/downloads/)  |3.6+ |`python --version` |

@@ -74,7 +74,7 @@ We can adjust the speed of diffusion by adjusting this rate parameter. For examp
 
 We are now ready to implement our model of diffusion and add a visualization to see if our model does a good job of approximating the diffusion process.
 
-[Visit Tutorial](tutorial-random-walk){: .btn .btn--primary .btn--large}
+[Visit Tutorial](tutorial-diffusion){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 ## Adding reactions and completing the Gray-Scott model
@@ -118,7 +118,7 @@ Applying these cell-based reaction-diffusion computations over all cells in para
 
 We should now feel confident expanding our previous diffusion tutorial into a model that includes all Gray-Scott reactions. The question is, however, will we still see Turing patterns?
 
-[Visit Tutorial](gs-cellblender){: .btn .btn--primary .btn--large}
+[Visit Tutorial](gs-jupyter){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 ## Reflection on the Gray-Scott model

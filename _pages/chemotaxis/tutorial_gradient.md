@@ -49,20 +49,21 @@ All simulation results are stored in the `RuleBender-workspace/PROJECT_NAME/resu
 We will use Jupyter notebook to visualize the results. Download 
 <a href="https://purpleavatar.github.io/multiscale_biological_modeling/downloads/downloadable/plotter_up.ipynb" download="plotter_up.ipynb">plotter_up.ipynb</a>
 
+<!--
 Please make sure have dependencies installed:
  - [Jupyter Notebook](https://jupyter.org/index.html)
  - [Python3](https://www.python.org/downloads/), version 3.6+
  - [Numpy](https://numpy.org/install/)
  - [Matplotlib](https://matplotlib.org/users/installing.html)
  - [Colorspace](https://python-colorspace.readthedocs.io/en/latest/installation.html) (simply [install with pip](https://pypi.org/project/colorspace/) works too)
-
+-->
 | Installation Link | Version | Check install/version |
 |:------|:-----:|------:|
 | [Python3](https://www.python.org/downloads/)  |3.6+ |`python --version` |
 | [Jupyter Notebook](https://jupyter.org/index.html) | 4.4.0 | `jupyter --version` |
-| [Numpy](https://numpy.org/install/) | 1.14.5+ | `python3 -c "import numpy; print(numpy.__version__)"` |
-| [Matplotlib](https://matplotlib.org/users/installing.html) | 3.0+ | `import matplotlib; print(matplotlib.__version__)"` |
-| [Colorspace](https://python-colorspace.readthedocs.io/en/latest/installation.html) or with [pip](https://pypi.org/project/colorspace/)| any | `python3 -c "import colorspace" | echo $?` prints `0`|
+| [Numpy](https://numpy.org/install/) | 1.14.5+ | `pip list | grep numpy` |
+| [Matplotlib](https://matplotlib.org/users/installing.html) | 3.0+ | `pip list | grep matplotlib` |
+| [Colorspace](https://python-colorspace.readthedocs.io/en/latest/installation.html) or with [pip](https://pypi.org/project/colorspace/)| any | `pip list | grep colorspace`|
 
 First specify the directories, model name, species of interest, and rates. Put the `RuleBender-workspace/PROJECT_NAME/results/MODEL_NAME/` folder inside the same directory as the Jupyter notebook or change the `model_path`.
 

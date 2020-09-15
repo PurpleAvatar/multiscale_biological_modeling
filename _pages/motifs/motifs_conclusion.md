@@ -15,8 +15,55 @@ In *A Synthetic Oscillatory Network of Transcriptional Regulators* by Elowitz an
 The repressilator model used in Elowitz and Leibler's E. coli system
 {: style="text-align: center;"}
 
-In contrast, Elowitz and Leibler described a model with a variety of different reaction rates, such as a 0.0005 promoter strength, 20 proteins created per transcript, and a protein half-life of 10 minutes. Interestingly, this scale led to oscillations occurring with a periodicity that spanned different generations of E. coli! Nevertheless, both the real E. coli repressilator systems and our models have shown clear patterns of oscillations with robustness to interruptions and disturbances. We encourage you to further explore these models in the exercises at the end of the chapter.  
+In contrast, Elowitz and Leibler described a model with a variety of different reaction rates, such as a 0.0005 promoter strength, 20 proteins created per transcript, and a protein half-life of 10 minutes. Interestingly, this scale led to oscillations occurring with a periodicity that spanned different generations of E. coli! Nevertheless, the real E. coli repressilator systems showed clear patterns of oscillations with robustness to interruptions and disturbances. How would our simulations hold up to interruptions, and why is this kind of behavior needed in oscillators?   
 
+## The need for robustness in biological oscillators
+
+Nothing exemplifies the need for robustness in biological systems better than oscillators. If a palpitation causes your heart to skip a beat, it should be able to return quickly to its natural rhythm. If you hold your breath to dive underwater on a snorkeling tip, you shouldn't hyperventilate when you return to the surface. And regardless of what functions your cells perform or what disturbances they find in their environment, they should be able to maintain a normal cell cycle.
+
+An excellent illustration of the robustness of the circadian clock is the body's ability to handle jet lag. There is no apparent reason why you would have evolved to fly halfway around the world and be able to return to a normal daily cycle after just a few days of fatigue.
+
+In the previous lesson, we saw that the repressilator will produce oscillations even in a noisy environment. This leads us to wonder about the extent to which our repressilator is robust, and how quickly it can respond to a disturbance.
+
+## A coarse-grained model for reaction-diffusion
+
+We have noted that a benefit of using a reaction-diffusion particle model to study network motifs is the inclusion of built-in noise to ensure a measure of robustness. However, a downside of such a model is that simulating the movements of so many particles leads to a slow simulation that does not scale well to many particles or reactions.
+
+Although our model is ultimately interested in the interactions of molecules, the conclusions we have made throughout this chapter are only based on the *concentrations* of these particles. Therefore, as we did in the [prologue](prologue), we might imagine developing a coarser-grained version of our model that allows us to make faster conclusions about particle concentrations without keeping track of the diffusion of individual particles.
+
+For example, say that we are modeling a degradation reaction. If we start with 10,000 *X* particles, then after a single time step, we can simply multiply the number of *X* particles by (1-*r*) where *r* is a parameter related to the rate of the degradation reaction.
+
+As for a repression reaction like *X* + *Y* → *X*, say that the concentrations of *X* and *Y* are uniform throughout the object and the diffusion rates of *X* and *Y* are the same. We can update the concentration of *Y* particles by subtracting some factor times the current concentration of *Y* particles. This factor should be directly related to the current concentrations of both *X* and *Y*.
+
+The technical details behind such a coarse-grained model are beyond the scope of our work in this lesson, but we will return to these technical details in the next module. In the meantime, we provide a tutorial below showing how to build a particle-free simulation replicating the repressilator motif. As part of this tutorial, we will make a major disturbance to the concentration of one of the particles and see how long the disturbance lasts and whether the particle concentrations can resume their oscillations.
+
+[Visit tutorial](tutorial_perturb){: .btn .btn--primary .btn--large}
+{: style="font-size: 100%; text-align: center;"}
+
+## The repressilator is robust to disturbance
+
+In the figure below, we show a plot of concentrations of each particle in our coarse-gained simulation of the repressilator, with one caveat.  Midway through the simulation, we incorporate a disturbance that causes a spike in the concentration of *Y*.
+
+![image-center](../assets/images/nf_sim_interrupted.PNG){: .align-center}
+<figcaption>Adding a significant number of *Y* particles to our simulation produces little ultimate disturbance to the concentrations of the three particles, which return to normal oscillations within a single cycle.</figcaption>
+
+Because of the spike in the concentration of *Y*, the reaction *Y* + *Z* → *Y* suppresses the concentration of *Z* for longer than usual, and so the concentration of *X* is free to increase for longer than normal. As a result, the next peak in the concentration of *X* is higher than normal.
+
+We might hypothesize that this process would continue, with a tall peak in the concentration of *Z*. However, the peak in the concentration of *Z* is no taller than normal, and the next peak shows a normal concentration of *X*. In other words, the system has very quickly absorbed the blow of an increase in concentration of *Y* and returned to normal within one cycle.
+
+The repressilator happens to be particularly successful at stabilizing. While there have been some attempts to study what makes oscillators robust, the process remains difficult to describe. By characterizing the number and type of interactions within the oscillator model, it has been shown that about 5 reactions minimum are needed for a very robust oscillator[^repress]. The symmetrical nature of the repressilator model may also contribute to its robustness.
+
+In fact, even with a much larger jolt to the repressilator, we observe the concentrations of the three particles return to normal oscillations very quickly.
+
+![image-center](../assets/images/nf_sim_interrupted_spike.PNG){: .align-center}
+
+The repressilator is not the only network motif that leads to oscillations in particle concentrations, but robustness to disturbances in these concentrations is a shared feature of all these motifs.
+
+The robustness of our repressilator model also implies a bigger picture moral in biological modeling. If an underlying biological system demonstrates robustness to change, then any model of that system should also be able to withstand this change. Conversely, we should be wary of any model of a robust system that is overly sensitive to changes in the system.
+
+In this module, we have seen that even very simple network motifs can have a powerful effect on a cell's ability to implement elegant systems of behavior. In the next module, we will encounter a much more involved biochemical process, with far more molecules and reactions, that is used by bacteria to cleverly (and robustly) explore their environment. In fact, we will have so many reactions that we will need to rethink how we set up our model. We hope that you will join us!
+
+In the meantime, check out the exercises below to continue developing your understanding of how transcription factor network motifs have evolved.
 
 ## Looking ahead
 
@@ -26,72 +73,12 @@ In contrast, Elowitz and Leibler described a model with a variety of different r
 
 * In the meantime, check out the exercises below for some additional challenges on network motifs.
 
-[Next module](../chemotaxis/home){: .btn .btn--primary .btn--large}
+[Visit Exercises](exercises){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
-## Exercises
-
-1. Modify the Jupyter notebook provided in the [tutorial on loops](tutorial_loops) to count the number of feed-forward loops in the transcription factor network for *E. coli.*
-
-2. How many feedforward loops that you found in the preceding exercise are incoherent type-1 feed-forward loops?
-
-3. (Challenge exercise) How many feed-forward loops would you expect to see in a random network having the same number of nodes as the *E. coli* transcription factor network? How does this compare to your answers to the previous two questions?
-
-4. There are eight types of feedforward loops based on the eight different ways in which we can label the edges in the network with a "+" or a "-" based on upregulation or downregulation. Modify the Jupyter notebook to count the number of loops of each type present in the *E. coli* transcription factor network.
-
-![image-center](../assets/images/ffl_types.png){: .align-center}
-Types of Feed Forward Loops[^ffl]
-{: style="text-align: center;"}
-
-5. More complex motifs may require more computational power to discover. Can you modify the Jupyter Notebook to identify circular loops of transcription factor regulation, such as the multi-component loop below? 
-
-![image-center](../assets/images/s_cerevisiae_tf_network.jpg){: .align-center}
-Example of different motifs within the *S. Cerevisiae* network[^scNetwork]
-{: style="text-align: center;"}
-
-6. Using the *NAR_comparison_equal.blend* file from the NAR Tutorial, increase the reaction rate of X1 -> X1 + Y1 to 4e4, so the table should now look like: 
-
-| Reactants |Products|Forward Rate|
-|:--------|:-------:|--------:|
-| X1’  | X1’ + Y1’ | 4e5 |
-| X2’  | X2’ + Y2’ | 4e2 |
-| Y1’  | NULL | 4e2 |
-| Y2’  | NULL | 4e2 |
-|Y2’ + Y2’|Y2’|4e2|
-
-If we plot this graph, we can see the steady states of Y1 and Y2 are different once again. Can you repair the system to find the appropriate reaction rate for X2 -> X2 + Y2 to make the steady states equal once more? Are you about to adjust the reaction Y2 + Y2 -> Y2 as well? Do the reaction rates scale at the same rate? 
-
-## Internal notes -- resolve before publication
-
-* We also need a note at end of module about the fact that the cell is growing so that in more robust models the concentration is constantly decreasing as a result of the cell growing since it needs to double its volume every cell cycle.
-
-* What about a link to TF networks of other species? Human? Are these datasets readily available?
-
-* Perhaps define the term "response time"
-
-* Define "activate" and "repress" early on in the module and use these wherever possible instead of upregulate and downregulate.
-
-* Need to cite the origin of the repressilator as a synthetic system -- mention 2000 paper and 2016 paper.
-
-* I wonder what happens in the repressilator if all three particles start out at the same concentration ... will there be enough noise in the system to bounce it into an oscillation?
-
-* Something is missing which is that we could increase the degradation rate as well instead of negative autoregulation. Why do you think that the cell doesn't simply have a higher degradation rate? Why might this be impractical?
-
-* In Noah's second tutorial, Phillip needs to have a question at the end of the tutorial asking the user to draw the conclusion on their own.
-
-* In the results section, should say something about there being practical limitations to how much we can increase the reaction producing *Y*, which provides a trade-off hence why the reaction rate isn't higher.
-
-* NOAH: should we have an exercise asking students to use NFSim to replicate the other network motifs studied in this module?
-
-![image-center](../assets/images/nf_sim_interrupted_break.PNG){: .align-center}
-
-![image-center](../assets/images/nf_sim_interrupted_long.PNG){: .align-center}
-
-![image-center](../assets/images/nf_sim_interrupted_spike.PNG){: .align-center}
-
-
-* (Cite Alon book at some point -- when motifs are introduced? The introduction?)
 
 [^ffl]: Image adapted from Mangan, S., & Alon, U. (2003). Structure and function of the feed-forward loop network motif. Proceedings of the National Academy of Sciences of the United States of America, 100(21), 11980–11985. https://doi.org/10.1073/pnas.2133841100
 
 [^oscillator]: Elowitz, M. B. & Leibler, S. A Synthetic Oscillatory Network of Transcriptional Regulators. Nature 403, 335-338 (2000).
+
+[^repress]: Castillo-Hair, S. M., Villota, E. R., & Coronado, A. M. (2015). Design principles for robust oscillatory behavior. Systems and Synthetic Biology, 9(3), 125–133. https://doi.org/10.1007/s11693-015-9178-6

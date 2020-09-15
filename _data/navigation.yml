@@ -34,6 +34,8 @@ prologue:
         url: /prologue/blocks
       - title: "Conclusion"
         url: /prologue/conclusion
+      - title: "Exercises"
+        url: /prologue/exercises
   - title: "Tutorials"
     children:
       - title: "Random Walk CellBlender"
@@ -66,8 +68,8 @@ motifs:
         url: /motifs/oscillators
       - title: "Conclusion"
         url: /motifs/conclusion
-      - title: "Modeling Oscillator Robustness"
-        url: /motifs/robust
+      - title: "Exercises"
+        url: /motifs/exercises
   - title: Tutorials
     children:
       - title: "Looking for Loops in Transcription Factor Networks"

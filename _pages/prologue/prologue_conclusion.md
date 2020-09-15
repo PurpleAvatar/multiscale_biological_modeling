@@ -27,22 +27,7 @@ A juvenile Mbu Pufferfish with a very familiar pattern![^youngfish]
 An adult Mbu Pufferfish exhibiting another familiar pattern![^pufferfish]
 {: .text-center}
 
-
-## Exercises
-
-* Make a cell update an exercise at end.
-
-* Good exercise on changing the diffusion rates outside of what is specified by Gray-Scott.
-
-* Good questions below. May need to be exercises.
-
-**STOP**: Is it ever possible for a square to have a concentration greater than 1? Why or why not?
-{: .notice--primary}
-
-**STOP**: Note that the concentrations of all of the particles add up to 1 in each step. Do you think that this must always be true?
-{: .notice--primary}
-
-[Next chapter](../motifs/home){: .btn .btn--primary .btn--large}
+[Visit Exercises](exercises){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 [^zebrafish]: Nakamasu, A., Takahashi, G., Kanbe, A., & Kondo, S. (2009). Interactions between zebrafish pigment cells responsible for the generation of Turing patterns. Proceedings of the National Academy of Sciences of the United States of America, 106(21), 8429–8434. https://doi.org/10.1073/pnas.0808622106

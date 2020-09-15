@@ -1,10 +1,8 @@
 ---
 permalink: /chemotaxis/tutorial_gradient
 title: "Up gradient/Addition"
-sidebar:
+sidebar: 
  nav: "chemotaxis"
-toc: true
-toc_sticky: true
 ---
 
 In this page, we will:
@@ -42,21 +40,29 @@ The simulation can be also downloaded here: <a href="https://purpleavatar.github
 
 Set `simulate({method=>"ssa", t_end=>1000, n_steps=>500})`. Go to `simulation` and click `Run`. What happens to CheY phosphorylation? (Note: you can deselect `AllLigand` to make the plots clearer for phosphorylated CheY)
 
-You will observe that CheY phosphorylation drops gradually first, instead of the instantaneous sharp drop as we add lots of ligand at once. That means, with the ligand concentration increases, the cell is able to continuously lower the tumbling frequency.
+You will observe that CheY phosphorylation drops gradually first, instead of the instantaneous sharp drop as we add lots of ligand at once. That means, with the ligand concentration increases, the cell is able to continuously lower the tumbling frequency. 
 
 Try different values for `k_add`: 0.01, 0.03, 0.05, 0.1, 0.3, 0.5. What do different `k_add` values imply? How does the system respond to the different values - what are some common trends and some differences?
 
-All simulation results are stored in the `RuleBender-workspace/PROJECT_NAME/results/MODEL_NAME/TIME/` directory in your computer. Rename the directory with the `k_add` values instead of the time of running for simplicity.
+All simulation results are stored in the `RuleBender-workspace/PROJECT_NAME/results/MODEL_NAME/TIME/` directory in your computer. Rename the directory with the `k_add` values instead of the time of running for simplicity. 
 
-We will use Jupyter notebook to visualize the results. Download
+We will use Jupyter notebook to visualize the results. Download 
 <a href="https://purpleavatar.github.io/multiscale_biological_modeling/downloads/downloadable/plotter_up.ipynb" download="plotter_up.ipynb">plotter_up.ipynb</a>
 
-Please makes sure have dependencies installed:
+Please make sure have dependencies installed:
  - [Jupyter Notebook](https://jupyter.org/index.html)
  - [Python3](https://www.python.org/downloads/), version 3.6+
  - [Numpy](https://numpy.org/install/)
  - [Matplotlib](https://matplotlib.org/users/installing.html)
  - [Colorspace](https://python-colorspace.readthedocs.io/en/latest/installation.html) (simply [install with pip](https://pypi.org/project/colorspace/) works too)
+
+| Installation Link | Version | Check install/version |
+|:------|:-----:|------:|
+| [Python3](https://www.python.org/downloads/)  |3.6+ |`python --version` |
+| [Jupyter Notebook](https://jupyter.org/index.html) | 4.4.0 | `jupyter --version` |
+| [Numpy](https://numpy.org/install/) | 1.14.5+ | `python3 -c "import numpy; print(numpy.__version__)"` |
+| [Matplotlib](https://matplotlib.org/users/installing.html) | 3.0+ | `import matplotlib; print(matplotlib.__version__)"` |
+| [Colorspace](https://python-colorspace.readthedocs.io/en/latest/installation.html) or with [pip](https://pypi.org/project/colorspace/)| any | `python3 -c "import colorspace" | echo $?` prints `0`|
 
 First specify the directories, model name, species of interest, and rates. Put the `RuleBender-workspace/PROJECT_NAME/results/MODEL_NAME/` folder inside the same directory as the Jupyter notebook or change the `model_path`.
 
@@ -74,3 +80,7 @@ Run the code blocks. How does `k_add` impact the CheY-P concentrations? Why? Are
 
 [Back to Main Text](home_gradient){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
+
+
+
+

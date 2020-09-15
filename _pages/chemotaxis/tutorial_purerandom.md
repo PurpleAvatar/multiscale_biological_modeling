@@ -10,9 +10,21 @@ toc_sticky: true
 In this page, we will:
  - Simulate *E. coli* chemotaxis at a cellular level by standard random walk
 
-## Modeling standard random walk at a cellular level
+## Simulation files and dependencies
 
 Please download the simulation and visualization here: <a href="https://purpleavatar.github.io/multiscale_biological_modeling/downloads/downloadable/chemotaxis_std_random.ipynb" download="chemotaxis_std_random.ipynb">chemotaxis_std_random.ipynb</a>. Detailed explanation of the model and each functions can be found in the file too.
+
+Please make sure the following dependencies are installed:
+
+| Installation Link | Version | Check install/version |
+|:------|:-----:|------:|
+| [Python3](https://www.python.org/downloads/)  |3.6+ |`python --version` |
+| [Jupyter Notebook](https://jupyter.org/index.html) | 4.4.0+ | `jupyter --version` |
+| [Numpy](https://numpy.org/install/) | 1.14.5+ | `pip list | grep numpy` |
+| [Matplotlib](https://matplotlib.org/users/installing.html) | 3.0+ | `pip list | grep matplotlib` |
+| [Colorspace](https://python-colorspace.readthedocs.io/en/latest/installation.html) or with [pip](https://pypi.org/project/colorspace/)| any | `pip list | grep colorspace`|
+
+## Modeling standard random walk at a cellular level
 
 Our model will be based on observations from BNG simulation and *E. coli* biology. 
 
@@ -21,13 +33,6 @@ Ingredients and simplifying assumptions of the model:
 2. Tumble. The duration of cell tumble follows an exponential distribution with mean 0.1s. When it tumbles, we assume it only changes the orientation for the next run but doesn't move in space. The degree of reorientation follows uniform distribution from 0° to 360°.
 3. Gradient. We model an exponential gradient centered at [1500, 1500] with a concentration of 10<sup>8</sup>. All cells start at [0, 0], which has a concentration of 10<sup>2</sup>. The receptors saturate at a concentration of 10<sup>8</sup>. 
 4. Performance. The closer to the center of the gradient the better.
-
- Please makes sure have dependencies installed:
- - [Jupyter Notebook](https://jupyter.org/index.html)
- - [Python3](https://www.python.org/downloads/), version 3.6+
- - [Numpy](https://numpy.org/install/)
- - [Matplotlib](https://matplotlib.org/users/installing.html)
- - [Colorspace](https://python-colorspace.readthedocs.io/en/latest/installation.html) (simply [install with pip](https://pypi.org/project/colorspace/) works too)
 
 First import all dependencies.
 

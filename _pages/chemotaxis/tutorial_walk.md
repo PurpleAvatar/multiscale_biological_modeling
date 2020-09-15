@@ -12,9 +12,21 @@ In this page, we will:
  - Compare performance of chemotactic walk vs. standard random walk
  - Compare performances of different default tumbling frequencies.
 
-## Modeling chemotactic walk at a cellular level
+## Simulation files and dependencies
 
 Please download the simulation and visualization here: <a href="https://purpleavatar.github.io/multiscale_biological_modeling/downloads/downloadable/chemotaxis_walk.ipynb" download="chemotaxis_walk.ipynb">chemotaxis_walk.ipynb</a>. Detailed explanation of the model and each functions can be found in the file too.
+
+Please make sure the following dependencies are installed:
+
+| Installation Link | Version | Check install/version |
+|:------|:-----:|------:|
+| [Python3](https://www.python.org/downloads/)  |3.6+ |`python --version` |
+| [Jupyter Notebook](https://jupyter.org/index.html) | 4.4.0+ | `jupyter --version` |
+| [Numpy](https://numpy.org/install/) | 1.14.5+ | `pip list | grep numpy` |
+| [Matplotlib](https://matplotlib.org/users/installing.html) | 3.0+ | `pip list | grep matplotlib` |
+| [Colorspace](https://python-colorspace.readthedocs.io/en/latest/installation.html) or with [pip](https://pypi.org/project/colorspace/)| any | `pip list | grep colorspace`|
+
+## Modeling chemotactic walk at a cellular level
 
 Our model will be based on observations from BNG simulation and *E. coli* biology.
 
@@ -24,13 +36,6 @@ Ingredients and simplifying assumptions of the model:
  - Response. As we've seen in the BNG model, the cell can respond to the gradient change within 0.5 seconds. In this model, we allow cells to re-measure the concentration after it runs for 0.5 seconds.
  - Gradient. We model an exponential gradient centered at [1500, 1500] with a concentration of 10<sup>8</sup>. All cells start at [0, 0], which has a concentration of 10<sup>8</sup>. The receptors saturate at a concentration of 10<sup>8</sup>.
  - Performance. The closer to the center of the gradient the better.
-
- Please makes sure have dependencies installed:
- - [Jupyter Notebook](https://jupyter.org/index.html)
- - [Python3](https://www.python.org/downloads/), version 3.6+
- - [Numpy](https://numpy.org/install/)
- - [Matplotlib](https://matplotlib.org/users/installing.html)
- - [Colorspace](https://python-colorspace.readthedocs.io/en/latest/installation.html) (simply [install with pip](https://pypi.org/project/colorspace/) works too)
 
 First import all dependencies.
 

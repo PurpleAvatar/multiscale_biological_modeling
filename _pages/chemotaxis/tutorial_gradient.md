@@ -8,11 +8,23 @@ sidebar:
 In this page, we will:
  - Simulate cellular response when traveling up the gradient.
 
+## Files and dependencies 
+
+The simulation can be downloaded here: <a href="https://purpleavatar.github.io/multiscale_biological_modeling/downloads/downloadable/addition.bngl" download="addition.bngl">addition.bngl</a>
+
+Please make sure the following dependencies are installed.
+
+| Installation Link | Version | Check install/version |
+|:------|:-----:|------:|
+| [Python3](https://www.python.org/downloads/)  |3.6+ |`python --version` |
+| [Jupyter Notebook](https://jupyter.org/index.html) | 4.4.0+ | `jupyter --version` |
+| [Numpy](https://numpy.org/install/) | 1.14.5+ | `pip list | grep numpy` |
+| [Matplotlib](https://matplotlib.org/users/installing.html) | 3.0+ | `pip list | grep matplotlib` |
+| [Colorspace](https://python-colorspace.readthedocs.io/en/latest/installation.html) or with [pip](https://pypi.org/project/colorspace/)| any | `pip list | grep colorspace`|
+
 ## Traveling up the gradient
 
 We've built a model simulating the response of *E. coli* in response to a one-time addition of attractant. However, in real life, the bacterium doesn't suddenly drop into an environment with more attractants; instead, it searches the space to find the gradient. To mimic this phenomenon, we will gradually increase the ligand concentration in the environment, simulating the bacteria moving up the attractant gradient.
-
-The simulation can be downloaded here: <a href="https://purpleavatar.github.io/multiscale_biological_modeling/downloads/downloadable/addition.bngl" download="addition.bngl">addition.bngl</a>
 
 First create a copy of the adaptation model `adaptation.bngl`, name it `addition.bngl`.
 
@@ -57,14 +69,6 @@ Please make sure have dependencies installed:
  - [Matplotlib](https://matplotlib.org/users/installing.html)
  - [Colorspace](https://python-colorspace.readthedocs.io/en/latest/installation.html) (simply [install with pip](https://pypi.org/project/colorspace/) works too)
 -->
-
-| Installation Link | Version | Check install/version |
-|:------|:-----:|------:|
-| [Python3](https://www.python.org/downloads/)  |3.6+ |`python --version` |
-| [Jupyter Notebook](https://jupyter.org/index.html) | 4.4.0 | `jupyter --version` |
-| [Numpy](https://numpy.org/install/) | 1.14.5+ | `pip list | grep numpy` |
-| [Matplotlib](https://matplotlib.org/users/installing.html) | 3.0+ | `pip list | grep matplotlib` |
-| [Colorspace](https://python-colorspace.readthedocs.io/en/latest/installation.html) or with [pip](https://pypi.org/project/colorspace/)| any | `pip list | grep colorspace`|
 
 First specify the directories, model name, species of interest, and rates. Put the `RuleBender-workspace/PROJECT_NAME/results/MODEL_NAME/` folder inside the same directory as the Jupyter notebook or change the `model_path`.
 

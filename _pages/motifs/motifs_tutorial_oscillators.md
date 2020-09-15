@@ -9,7 +9,7 @@ toc_sticky: true
 
 ### The Repressilator
 
-Load in the CellBlender_Tutorial_Template from (Link to Setting up CellBlender). Save as *repressilator.blend*
+Load up the *CellBlender_Tutorial_Template.blend* file from the [Random Walk Tutorial](https://purpleavatar.github.io/multiscale_biological_modeling/prologue/tutorial-random-walk). Save as *repressilator.blend*
 
 Go to *CellBlender > Molecules* and create the following molecules:
 

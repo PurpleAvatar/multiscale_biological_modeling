@@ -9,7 +9,7 @@ toc_sticky: true
 
 ### Comparing "Plain" Regulation with NAR (Non-Negative Auto-Regulation)
 
-Load in CellBlender_Tutorial_Template from (Link to Setting up CellBlender). Save as *NAR_comparison_unqual.blend*
+Load up the *CellBlender_Tutorial_Template.blend* file from the [Random Walk Tutorial](https://purpleavatar.github.io/multiscale_biological_modeling/prologue/tutorial-random-walk). Save as *NAR_comparison_unqual.blend*
 
 Go to *CellBlender > Molecules* and create the following molecules:
 

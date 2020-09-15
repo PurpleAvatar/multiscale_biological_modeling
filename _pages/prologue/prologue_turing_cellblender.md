@@ -8,7 +8,7 @@ toc: true
 toc_sticky: true
 ---
 
-Load in the CellBlender_Tutorial_Template from the [Random Walk Tutorial](https://purpleavatar.github.io/multiscale_biological_modeling/prologue/tutorial-random-walk). Save as *det_gray_scott.blend*
+Load up the *CellBlender_Tutorial_Template.blend* file from the [Random Walk Tutorial](https://purpleavatar.github.io/multiscale_biological_modeling/prologue/tutorial-random-walk). Save as *det_gray_scott.blend*
 
 Go to *CellBlender > Molecules* and create the following molecules:
 

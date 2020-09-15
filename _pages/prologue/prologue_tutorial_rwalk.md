@@ -46,7 +46,7 @@ Figure S.1 - From CellBlender > Model Objects, click on the “(+)” symbol to 
 
 Figure S.2 - Resizing the render preview window (where the objects are visible in the center of the screen) is recommended. From the View menu, select “Top” to align the view directly overhead. With the plane object selected, follow the arrow over to the object parameters menu (the orange cube) and scale the plane by setting the first two values to “1.5”. Then, hover the mouse over the object and either use the ctrl + “+” 6 times or the scroll wheel on the mouse to zoom in. 
 
-Save this file as "CellBlender_Tutorial_Template.blend"
+Save this file as "*CellBlender_Tutorial_Template.blend*"
 
 ### CellBlender Layout
 
@@ -66,7 +66,7 @@ D. This is the CellBlender menu, which contains sub-menus which will be noted as
 
 ## CellBlender and the Random Walk
 
-Load in the CellBlender_Tutorial_Template from (Link to Setting up CellBlender). Save as *random_walk.blend*
+Load up the "*CellBlender_Tutorial_Template.blend*" file. Save as *random_walk.blend*
 
 ![image-center](../assets/images/cellblender_location.png){: .align-center}
 

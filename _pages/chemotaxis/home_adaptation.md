@@ -112,7 +112,7 @@ That means our model is a very simplified version of the actual story. But can w
 
 We can add more receptor species and ligand species to account for the different attractants/repellents and their specific receptors easily. For each trimer of dimer, we will have more binding states and more methylation states, and include dependency of CheA autophosphorylation based on the newly added states. We will modify CheB and CheR reactions to account for 4 methylation sites. The rest can stay unchanged. Adding such complexity will require some coding, but is certainly doable.
 
-The ability of including more complexity easily comes from the power of **rule-based modeling**. Specifying what the simulator should do only depends on the reaction rules, but not the state of the system. If we instead need to specify the states explicitly for the simulator, we will write an astronomical number of lines of code; imagine one typo somewhere.
+The ability of including more complexity easily comes from the power of rule-based modeling. Specifying what the simulator should do only depends on the reaction rules, but not the state of the system. If we instead need to specify the states explicitly for the simulator, we will write an astronomical number of lines of code; imagine one typo somewhere.
 
 ## Additional Resources
 

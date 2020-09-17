@@ -7,7 +7,7 @@ toc: true
 toc_sticky: true
 ---
 
-Normal Mode Wizard (NMWiz) is a plugin in VMD that is designed to be a GUI for ProDy. It uses ProDy for normal mode analysis, including GNM and ANM calculations. In this section, we will perform ANM calculation and produce ANM animations of the SARS-CoV-2 Spike RBD. Be sure to have gone through *<a href="VMDTutorial" target="_blank">Setting up VMD</a>* on how to install VMD and load molecules into the program. 
+In this tutorial, we will use Normal Mode Wizard (NMWiz), a plugin in VMD that is designed to be a GUI for ProDy, to perform ANM analysis on the SARS-CoV-2 RBD. We will visualize the results in a cross-correlation map and square fluctuation plot and then produce ANM animations showing the predicted range of motion of the SARS-CoV-2 Spike RBD. Be sure to have installed VMD and know how to load molecules into the program. If you need a refresher, go to the <a href="tutorial_multiseq" target="_blank">VMD and Multiseq Tutorial</a>.
 
 First, load <a href="https://www.rcsb.org/structure/6vw1" target="_blank">6vw1</a> into VMD by following the steps in the previous section *Loading Molecules*. Then, start up NMWiz by going to *Extensions>Analysis>Normal Mode Wizard*.
 
@@ -53,27 +53,7 @@ Now, you should be able to clearly see the animation of the ANM fluctuations of 
 <source type="video/mp4" src="../_pages/coronavirus/files/ANMTutorial/6vw1_chainF.mp4">
 </video>
 
-<hr>
-
-<details>
- <summary>ANM Animation Exercise</summary>
- Keeping the animation of the RBD, try to create the ANM animation of ACE2 (chain B). *This may take up to several minutes.* Once you finished, disable all visualizations except  for the animations in *VMD Main*. Go to *VMD>Representation* and make the following changes to the animations:
-
- <details>
-  <summary>RBD Animation Representation</summary>
-  <img src="../_pages/coronavirus/files/ANMTutorial/ANMExercise1.png">
- </details>
-
- <details>
-  <summary>ACE2 Animation Representation</summary>
-  <img src="../_pages/coronavirus/files/ANMTutorial/ANMExercise2.png">
- </details>
-
-
- Now, you should have fully recreated the animation from the *Normal Mode Analysis* page, showing the important residues from the identified three sites of differences between SARS-CoV-2 RBD and SARS RBD.
-
- <video width="640" height="480" controls><source type="video/mp4" src="../_pages/coronavirus/files/ANMImages/6vw1_B&F.mp4"></video>
-</details>
+Now let's go back to the main text to interpret the results.
 
 [Return to main text](NMA){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}

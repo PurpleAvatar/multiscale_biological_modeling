@@ -7,24 +7,9 @@ toc: true
 toc_sticky: true
 ---
 
-In this tutorial, we will go through how to visualize molecules in *Visual Molecular Dynamics* (VMD). Here we will visualize the PDB entry 6vw1, which contains the structure of the SARS-CoV-2 chimeric RBD complexed with ACE2. 
+In this tutorial, we will go through how to change the visualization of a molecule and highlight specific residues. Here we will focus on the site that we identified in the previous lesson where the SARS-CoV-2 RBD and SARS RBD differ structurally. Specifically, we will visualize the site in the SARS-CoV-2 RBD using PDB entry 6vw1, which contains the structure of the SARS-CoV-2 chimeric RBD complexed with ACE2. Be sure to have installed VMD and know how to load molecules into the program. If you need a refresher, go to the <a href="tutorial_multiseq" target="_blank">VMD and Multiseq Tutorial</a>.
 
-For this tutorial, please download VMD. The download can be found <a href="https://www.ks.uiuc.edu/Development/Download/download.cgi?PackageName=VMD" target="_blank">here</a>. 
-
-We will need to download the PDB file for 6vw1. First follow this link to the PDB page for <a href="https://www.rcsb.org/structure/6vw1" target="_blank">6vw1</a>. Click on *Download Files* and select *PDB Format*.
-
-<img src="../_pages/coronavirus/files/Ridge%20Tutorial/Ridge0.png">
-
-Next, launch VMD. Three windows will open. *VMD.exe* is the console window, but we do not need to worry about it. *VMD Main* will be where we will be load molecules and change the visualizations. Finally, *OpenGL Display* will display the visualizations. Here, we want to load 6vw1 into VMD. In *VMD Main*, go to *File>New Molecule*. Click on *Browse*, select the molecule (6vw1.pdb) and click *Load*.
-
-<img src="../_pages/coronavirus/files/Ridge%20Tutorial/Ridge1.png">
-<img src="../_pages/coronavirus/files/Ridge%20Tutorial/Ridge2.png">
-
-The molecule should now be listed in *VMD Main* as well as the visualization in the *OpenGL Display*.
-
-<img src="../_pages/coronavirus/files/Ridge%20Tutorial/Ridge3.png">
-
-In the *OpenGL Display* window, you can click and drag the molecule to change the orientation. Pressing ‘r’ on the keyboard allows you to rotate the molecule, pressing ‘t’ on the keyboard allows you to translate the molecule, and finally pressing ‘s’ allows you to enlarge or shrink the molecule (or use scroll wheel). Note that left click and right click are different.
+First, download the PDB entry <a href="https://www.rcsb.org/structure/6vw1" target="_blank">6vw1</a> and load it into VMD.
 
 To change the visualization of the molecule or parts of the molecule, go to *Graphics>Representation*. 
 
@@ -70,7 +55,7 @@ The final visualization should look like this:
 
 <img src="../_pages/coronavirus/files/Ridge%20Tutorial/Ridge10.png">
 
-Congratulations! You have now create the visualizations of one of the three sites of major conformational differences between SARS-CoV-2 RBD and SARS RBD!
+Congratulations! You have now created a more detailed visualization the focuses on our targeted site. You may be wondering why we chose to highlight these specific amino acid residues. These residues actually play a role in increasing the binding affinity of SARS-CoV-2 S protein and ACE2. We will discuss how back in the main text.
 
 [Return to main text](structural_diff){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}

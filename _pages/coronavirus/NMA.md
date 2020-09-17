@@ -73,9 +73,7 @@ In this tutorial, we will use NMWiz, a GUI for ProDy and is available as a plugi
 
 From the tutorial, we were able to generate the cross-correlation map and square fluctuation of the SARS-CoV-2 RBD. The interpretation of these results are identical to the GNM analysis above. Following the same steps, we performed ANM analysis on the SARS RBD using the PDB entry SARS RBD (<a href="http://www.rcsb.org/structure/2ajf" target="_blank">2ajf</a> for comparison.
 
-<img src="../_pages/coronavirus/files/ANMImages/CrossCorr.png">
-
-<img src="../_pages/coronavirus/files/ANMImages/SqFlucts.png">
+<img src="../_pages/coronavirus/files/ANMImages/ANMResults.png">
 
 Perhaps unsurprisingly, the maps and plots show very small differences between SARS-CoV-2 and SARS RBD, just like in the GNM calculations for the S proteins. This indicates that the two RBDs are structurally similar.
 

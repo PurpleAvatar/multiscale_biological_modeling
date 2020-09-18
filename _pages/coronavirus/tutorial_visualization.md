@@ -1,6 +1,6 @@
 ---
 permalink: /coronavirus/tutorial_visualization
-title: "Visualizing Molecules"
+title: "Visualizing Regions and Residues"
 sidebar: 
  nav: "coronavirus"
 toc: true

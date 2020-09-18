@@ -46,10 +46,7 @@ Now, let's calculate the interaction energy between only the SARS-CoV-2 RBD loop
  
 You may be curious about why the interaction energy comes out to be a negative number. Just like in physics, the negative value describes the direction of the force. A negative value indicate an attractive force between the two molecules while a positive value indicate a repulsion force. Our results describe the interaction between SARS-CoV-2 RBD and ACE2 as a favorable interaction. The more negative the value, the greater the binding affinity between the two proteins.
 
-<details>
- <summary>NAMD Energy Exercise</summary>
- Try to find the interaction energy between SARS RBD and ACE2. Use the pdb file of <a href="https://www.rcsb.org/structure/2ajf" target="_blank">2ajf</a> and chain pair B/F for the selection step. You should obtain values close to: Elec = -130.517; vdW = -59.6941.
-</details>
+Now, let's go back to the main text to interpret our results.
 
 [Return to main text](NAMD){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}

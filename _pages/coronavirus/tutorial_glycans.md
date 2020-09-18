@@ -1,15 +1,17 @@
 ---
 permalink: /coronavirus/tutorial_glycans
-title: "Glycan Counting"
+title: "Visualizing Glycans"
 sidebar: 
  nav: "coronavirus"
 toc: true
 toc_sticky: true
 ---
 
-Here, we will show how to visualize glycans in VMD. Be sure to have gone through *<a href="VMDTutorial" target="_blank">Setting up VMD</a>* on how to install VMD and load molecules into the program. 
+Here, we will show how to visualize glycans in VMD. Be sure to have installed VMD and know how to load molecules into the program. If you need a refresher, go to the <a href="tutorial_multiseq" target="_blank">VMD and Multiseq Tutorial</a>. In the <a href="tutorial_visualization" target="_blank">Visualizing Regions and Residues Tutorial</a>, we went over how to change the visualizations of molecules and proteins in VMD. Please visit that tutorial first if you have not done so already.
 
-First, load the open-state SARS-CoV-2 Spike, <a href="https://www.rcsb.org/structure/6VYB" target="_blank">6vyb</a> into VMD. For VMD, there is no specific keyword to select glycans. A workaround is to use the keywords: "not protein and not water". To recreate the basic VMD visualizations of the glycans in the module, use the following representations. (For the protein chains, use *Glass3* for *Material*).
+We will use the PDB entry of the SARS-CoV-2 Spike protein, <a href="https://www.rcsb.org/structure/6VYB" target="_blank">6vyb</a>.
+
+First, download and load 6vyb into VMD and go to *Graphics>Representations*. For VMD, there is no specific keyword to select glycans. A workaround is to use the keywords: "not protein and not water". To recreate the basic VMD visualizations of the glycans in the module, use the following representations. (For the protein chains, use *Glass3* for *Material*).
 
 <img src="../_pages/coronavirus/files/GlycanImage1.png">
 
@@ -17,14 +19,7 @@ The end result should look like this:
 
 <img src="../_pages/coronavirus/files/GlycanImage2.png">
 
-<hr>
-
-<details>
- <summary>Visualization Exercise</summary>
- Try to recreate the visualization of Hotspot31 for SARS-CoV-2 (same molecule as the tutorial). The important residues and their corresponding colors are listed on the left.
-
- <img src="../_pages/coronavirus/files/Hotspot31.png">
-</details>
+In the visualization you just created, the three chains in the S protein are in dark green, dark orange, and dark yellow. The presumed glycans are shown in red. Notice how they are all over the S protein! You may have noticed that one of the chains appear to be different in that part of it is sticking out from the rest of the protein. This is because this the PDB entry 6vyb contains the structure of the SARS-CoV-2 S protein in its open conformation. Let's return to the main text to see what that means.
 
 [Return to main text](glycans){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}

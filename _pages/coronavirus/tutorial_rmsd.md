@@ -6,11 +6,22 @@ sidebar:
 toc: true
 toc_sticky: true
 ---
-## How to Calculate RMSD
+<a href="http://prody.csb.pitt.edu/" target="_blank">ProDy</a> is an open-source Python package that allows users to perform protein structural dynamics analysis. Its flexibility allows users to select specific parts or atoms of the structure for conducting normal mode analysis and structure comparison. Please be sure to have the following installed:
 
-Make sure to have installed ProDy and other necessary packages. If you have not, please follow the instructions in the <a href="prody">ProDy Tutorial</a>.
+<a href="https://www.python.org/downloads/" target="_blank">Python</a> (2.7, 3.5, or later)
 
-In your terminal, go to your desired workspace directory and input the following command to start up IPython.
+<a href="http://prody.csb.pitt.edu/downloads/" target="_blank">ProDy</a>
+
+<a href="https://numpy.org/install/" target="_blank">NumPy</a>
+
+<a href="https://biopython.org/" target="_blank">Biopython</a>
+
+<a href="https://ipython.org/" target="_blank">IPython</a>
+
+<a href="https://matplotlib.org/" target="_blank">Matplotlib</a>
+
+### Getting Started
+It is recommended that you create a workspace for storing created files when using ProDy or storing protein .pdb files. Make sure you are in your workspace before starting up IPython.
 ~~~ python
 ipython --pylab
 ~~~~~
@@ -21,6 +32,9 @@ In[#]: from pylab import *
 In[#]: from prody import *
 In[#]: ion()
 ~~~~~
+
+
+## How to Calculate RMSD
 
 We will be matching chains between the two structures based on sequence identity and sequence overlap. The goal is to calculate the Root Mean Square Deviation scores between the alpha-Carbons of the matched chains. This will give us a basic quantitative measure of the structural differences between the two proteins. First, we will define a function that will list out matched chains for later use.
 ~~~ python
@@ -82,15 +96,7 @@ In[#]: calcRMSD(first_ca, second_ca)
 ~~~~~~
 The result should be an RMSD score of around 11.
 
-<hr>
-
-<details>
- <summary>RMSD Exercise</summary>
- Try to find the RMSD score between all chain matchings in 6vxx and 6crx (i.e. A to A, A to B, A to C, B to A, etc.). Your results should look similar to this:
- 
- <img src="../_pages/coronavirus/files/RMSDExercise1.png">
- 
-</details>
+Now, let's head back to the main text to see how we use RMSD to assess the accuracy of the models we created of the SARS-COV-2 S protein. 
 
 [Return to main text](accuracy){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}

@@ -23,7 +23,9 @@ Remember that our region is between SARS-CoV-2 residues 476 to 485. We can see t
 
 ### Loop in ACE2-binding ridge
 
-A marked difference was found on one of the loops in the ACE2-binding ridge. This is the region that we visualized in the tutorial. SARS contains a three residue motif, proline-proline-alanine, at residues 468 to 471. In contrast, SARS-CoV-2 contains a four residue motif, glycine-valine-glutamate-glycine, at the corresponding residues 482 to 485. The two bulky residues and two flexible glycines causes a conformational change in SARS-CoV-2 RBM. Below is a visual comparison of this region between SARS-CoV-2 and SARS. See if you can spot the major difference before reading what actually happens. *Hint: Look at the yellow residue!*
+A marked difference was found on one of the loops in the ACE2-binding ridge. This is the region that we visualized in the tutorial. SARS contains a three residue motif, proline-proline-alanine, at residues 468 to 471. In contrast, SARS-CoV-2 contains a four residue motif, glycine-valine-glutamate-glycine, at the corresponding residues 482 to 485. The two bulky residues and two flexible glycines causes a conformational change in SARS-CoV-2 RBM. Below is a visual comparison of this region between SARS-CoV-2 and SARS. 
+
+STOP: See if you can spot the major difference between the figures below before reading what actually happens. *Hint: Look at the yellow residue!*? {: .notice--primary}
 
 <img src="../_pages/coronavirus/files/Ridge.png">
 
@@ -35,7 +37,9 @@ The most noticeable difference is between SARS-CoV-2 Phe486 and SARS Leu472. In 
 
 ### Hotspot 31
 
-Hotspot 31 is the second site of marked conformational differences between SARS-CoV-2 and SARS. Again, see if you can spot the differences, it should be more obvious this time around.
+Hotspot 31 is the second site of marked conformational differences between SARS-CoV-2 and SARS. 
+
+STOP: Again, see if you can spot the differences, it should be more obvious this time around. {: .notice--primary}
 
 <img src="../_pages/coronavirus/files/Hotspot31.png">
 

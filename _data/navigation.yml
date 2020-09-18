@@ -135,7 +135,7 @@ coronavirus:
         url: /coronavirus/homology
       - title: "Assessing Model Accuracy"
         url: /coronavirus/accuracy
-  - title: Visualizations and Analyzing Differences
+  - title: Comparing SARS-CoV-2 and SARS
     children:
       - title: "Searching for Differences"
         url: /coronavirus/multiseq
@@ -145,10 +145,10 @@ coronavirus:
         url: /coronavirus/NAMD
       - title: "Normal Mode Analysis"
         url: /coronavirus/NMA
-      - title: "Glycans"
-        url: /coronavirus/glycans
-  - title: Conclusion
-    url: /coronavirus/conclusion
+      - title: Conclusion
+        url: /coronavirus/conclusion
+      - title: Exercises
+        url: /coronavirus/exercises
   - title: Tutorials
     children:
       - title: "Ab initio Structure Prediction"
@@ -167,12 +167,8 @@ coronavirus:
         url: /coronavirus/tutorial_GNM
       - title: "ANM Calculation"
         url: /coronavirus/tutorial_ANM
-  - title: Program Setups
-    children:
-      - title: "Setting up ProDy"
-        url: /coronavirus/prody
-      - title: "Setting up VMD"
-        url: /coronavirus/VMDTutorial
+      - title: "Visualizing Glycans"
+        url: /coronavirus/tutorial_glycans
 
 wbcells:
   - title: Tutorial

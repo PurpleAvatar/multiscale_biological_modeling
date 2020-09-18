@@ -67,7 +67,7 @@ Your results will be done within a day and you will recieve an email notificatio
 
 <img src="../_pages/coronavirus/files/HomologyTutorial/GalaxyResults.png">
 
-<a href="/multiscale_biological_modeling/_pages/coronavirus/files/GalaxyWEB_Models.zip" download> GalaxyWEB Results </a>
+<a href="/multiscale_biological_modeling/_pages/coronavirus/files/GalaxyWEB_Models.zip" download> GalaxyWEB Results</a>
 
 <hr>
 

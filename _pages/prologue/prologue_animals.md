@@ -114,7 +114,7 @@ Yet this research had essentially replaced one question with another: why does h
 
 ## Streamlining our simulations
 
-Despite using advanced modeling and rendering software, each of the visualizations in this lesson took several hours to render. These simulations are computationally intensive because they require us to track the movement of tens of thousands of particles over thousands of generations.
+Despite using advanced modeling and rendering software that has undergone years of development, each of the visualizations in this lesson took several hours to render. These simulations are computationally intensive because they require us to track the movement of tens of thousands of particles over thousands of generations.
 
 We wonder if it is possible to build a model of Turing patterns that does not require so much computational overhead. In other words, is there a simplification that we can make to our model that will run faster but still produce Turing patterns? We will turn our attention to this question in the next section.
 

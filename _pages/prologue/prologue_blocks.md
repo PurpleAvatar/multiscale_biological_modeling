@@ -1,23 +1,19 @@
 ---
 permalink: /prologue/blocks
-title: "The Gray-Scott Model: A Coarse-Grained Turing Pattern Simulation"
+title: "The Gray-Scott Model: A Cellular Automaton Turing Pattern Model"
 sidebar:
  nav: "prologue"
 toc: true
 toc_sticky: true
 ---
 
-## The case for a coarse-grained reaction-diffusion model
+## A coarse-grained model of single particle diffusion
 
-Although this is an introductory module, there is another maxim of biological modeling that we can convey. To produce and render the animations shown in the previous sections required several hours to run on a powerful laptop using state-of-the-art optimized software that has undergone many revisions over a period of years.
+Part of the modeler's work is not only to build models but to look for simple models of a system that captures the essence of what is being modeled but can be run quickly and scaled to large inputs.  Imagine, for example, how much computational power would be needed to build a particle-based model of your brain; the only way to study such a complicated system is by making simplifications.
 
-Part of any modeler's work is to see if a simpler model can be found that contains the same essence and replicates the same results but that is capable of being run faster and scaling to larger inputs. For example, imagine how much computational power would be needed to build a particle-based model of your brain; the only way to study such a complicated system is by making simplifications.
+In our case, we have a very "fine-grained" reaction-diffusion model illustrating Turing patterns, and we will now present a faster "coarse-grained" model that will allow us to visualize Turing patterns. To do so, we will stop keeping track of individual particles and instead grid off two-dimensional space into blocks and store only the *concentration* of particles of the block (i.e., the number of particles in the block). To make things even simpler, we assume that there is some maximum concentration of particles possible, so that we can divide the number of particles by this maximum concentration and obtain a decimal number between 0 and 1.
 
-In other words, we have a very "fine-grained" reaction-diffusion model illustrating Turing patterns, and we will present a coarser model that allows us to make the same conclusions. To do so, we will stop keeping track of individual particles and instead grid off two-dimensional space into blocks and store only the *concentration* of particles within this block. That is, each block may contain thousands of particles of a given type, but we think of it only as its concentration, represented as a decimal between 0 and 1.
-
-## A cellular model showing diffusion of a single particle
-
-Let us begin with a simple example of the diffusion of a single particle (we can add reactions to this model later). Say that we are only considering *A* particles, which are all contained in the central square of our grid. The figure below illustrates the grid, where each square is labeled by its concentration.
+Let us begin with a simple example of the diffusion of only *A* particles (we will add *B* particles as well as reactions to our model later). Say that the particles are at maximum concentration in the central cell of our grid, and are present nowhere else, as the following figure illustrates. 
 
 <center>
 <img src = "../assets/images/initial_A_concentration.png" width="300">

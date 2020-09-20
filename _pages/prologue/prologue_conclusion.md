@@ -1,13 +1,11 @@
 ---
 permalink: /prologue/conclusion
-title: "Conclusion"
+title: "Conclusion: Turing Patterns are Fine-Tuned"
 sidebar:
  nav: "prologue"
  toc: true
  toc_sticky: true
 ---
-
-## A reflection on Turing patterns
 
 The Turing patterns that emerge from our animations in the previous section are a testament to the human eye's ability to find organization within the net behavior of tens of thousands of particles.  The patterns are unquestionably present, but they are also noisy --- even in the dark red regions we will have quite a few green particles, and vice-versa. The rapid inference of large-scale patterns from small-scale visual phenomena is one of the tasks that our brains have evolved to perform well.
 

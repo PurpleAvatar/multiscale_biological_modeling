@@ -32,7 +32,7 @@ prologue:
         url: /prologue/animals
       - title: "The Gray-Scott Model: A Cellular Automaton Generating Turing Patterns"
         url: /prologue/blocks
-      - title: "Conclusion"
+      - title: "Conclusion: Turing Patterns are Fine-Tuned"
         url: /prologue/conclusion
       - title: "Exercises"
         url: /prologue/exercises

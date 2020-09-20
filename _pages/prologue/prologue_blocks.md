@@ -86,31 +86,31 @@ Now that we have established a cellular automaton for tracking concentrations of
 **STOP**: How might we incorporate these reactions into our automaton?
 {: .notice--primary}
 
-We will address these reactions one at a time. First, we have the feed rate reaction, which takes place at a **feed rate**. It is tempting to simply add some constant value *f* to the concentration of each cell in each time step. However, we want to avoid a situation in which the concentration of *A* particles is close to 1 and the feed reaction causes the concentration of *A* particles to exceed 1.
+We will address these reactions one at a time. First, we have the feed reaction, which takes place at a **feed rate**. It is tempting to simply add some constant value *f* to the concentration of each cell in each time step. However, we want to avoid a situation in which the concentration of *A* particles is close to 1 and the feed reaction causes the concentration of *A* particles to exceed 1.
 
 Instead, if a given cell has current concentration [*A*], then we will add *f*(1-[*A*]) to the concentration of the cell.  For example, if [*A*] is 0.01, then we will add 0.99*f* to the cell because the current concentration is low. If [*A*] is 0.8, then we will only add 0.2*f* to the concentration.
 
 Second, we consider the death reaction of *B* particles, which takes place at a **kill rate**. Recall from the previous lesson that the kill rate is proportional to the current concentration of *B* particles. As a result, if a cell has concentration [*B*], then for some constant *k* between 0 and 1, we will subtract *k* · [*B*] from the concentration of *B* particles.
 
-Third, we have the reproduction reaction *A* + 2*B* → 3*B*. The higher the concentration of *A* and *B*, the more this reaction should affect the current concentrations of the two particles. Furthermore, because we need *two* *B* particles in order for the collision to occur, the reaction should be even more rare if we have a low concentration of *B* than if we have a low concentration of *A*. Therefore, if a given cell is represented by the concentrations (*a*, *b*), then we will subtract *a* · *b*<sup>2</sup> from the concentration of *A* and add *a* · *b*<sup>2</sup> to the concentration of *B* in the next time step.
+Third, we have the reproduction reaction *A* + 2*B* → 3*B*. The higher the concentration of *A* and *B*, the more this reaction will take place. Furthermore, because we need *two* *B* particles in order for the collision to occur, the reaction should be even more rare if we have a low concentration of *B* than if we have a low concentration of *A*. Therefore, if a given cell is represented by the concentrations ([*A*], [*B*]), then we will subtract [*A*] · [*B*]<sup>2</sup> from the concentration of *A* and add [*A*] · [*B*]<sup>2</sup> to the concentration of *B* in the next time step.
 
-Let us consider an example of how a single cell might update its concentration of both particle types as a result of reaction and diffusion.  Say that we have the following purely hypothetical parameter values:
+Let us consider an example of how a single cell might update its concentration of both particle types as a result of reaction and diffusion.  Say that we have the following hypothetical parameter values:
 
 * <em>d</em><sub><em>A</em></sub> = 0.2
 * <em>d</em><sub><em>B</em></sub> = 0.1
 * *f* = 0.3
 * *k* = 0.4
 
-Furthermore, say that our cell has the concentrations (*a*, *b*) = (0.7, 0.5). Then as a result of diffusion, the cell's concentration of *A* will decrease by 0.7 · <em>d</em><sub><em>A</em></sub> = 0.14, and its concentration of *B* will decrease by 0.5 · 0.1 = 0.05. It will also receive particles from neighboring cells; for example, say that it receives an increase to its concentration of *A* by 0.08 and an increase to its concentration of *B* by 0.06 as the result of diffusion from neighbors.
+Furthermore, say that our cell has the concentrations ([*A*], [*B*]) = (0.7, 0.5). Then as a result of diffusion, the cell's concentration of *A* will decrease by 0.7 · <em>d</em><sub><em>A</em></sub> = 0.14, and its concentration of *B* will decrease by 0.5 · <em>d</em><sub><em>B</em></sub> = 0.05. It will also receive particles from neighboring cells; for example, say that it receives an increase to its concentration of *A* by 0.08 and an increase to its concentration of *B* by 0.06 as the result of diffusion from neighbors.
 
-Now let us consider the three reactions. The feed reaction will cause the cell's concentration of *A* to increase by (1 - 0.7) · *f* = 0.09. The death reaction will cause its concentration of *B* to decrease by 0.5 · *k* = 0.2. And the reproduction reaction will mean that the concentration of *A* decreases by *a* · *b*<sup>2</sup> = 0.175, with the concentration of *B* increasing by the same amount.
+Now let us consider the three reactions. The feed reaction will cause the cell's concentration of *A* to increase by (1 - [*A*]) · *f* = 0.09. The death reaction will cause its concentration of *B* to decrease by *k* · [*B*] = 0.2. And the reproduction reaction will mean that the concentration of *A* decreases by [*A*] · [*B*]<sup>2</sup> = 0.175, with the concentration of *B* increasing by the same amount.
 
-As the result of all these processes, we update the concentrations of *A* and *B* to the following values (*a*', *b*') in the next time step.
+As the result of all these processes, we update the concentrations of *A* and *B* to the following values ([*A*]', [*B*]') in the next time step.
 
-*a*' = 0.7 - 0.14 + 0.08 + 0.09 - 0.175 = 0.555<br>
-*b*' = 0.5 - 0.05 + 0.06 - 0.2 + 0.175 = 0.485
+[*A*]' = 0.7 - 0.14 + 0.08 + 0.09 - 0.175 = 0.555<br>
+[*B*]' = 0.5 - 0.05 + 0.06 - 0.2 + 0.175 = 0.485
 
-Applying these cell-based reaction-diffusion computations over all cells in parallel and over many generations forms the **Gray-Scott** model[^gs]. We should now feel confident expanding our previous diffusion tutorial into a model that includes all Gray-Scott reactions. The question is, however, will we still see Turing patterns?
+Applying these cell-based reaction-diffusion computations over all cells in parallel and over many generations forms a cellular automaton called the **Gray-Scott** model[^gs]. We should now feel confident expanding the Jupyter notebook from the previous diffusion tutorial to include the additional three reactions. The question is: will we still see Turing patterns?
 
 [Visit Tutorial](gs-jupyter){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}

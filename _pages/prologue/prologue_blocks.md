@@ -1,6 +1,6 @@
 ---
 permalink: /prologue/blocks
-title: "The Gray-Scott Model: A Cellular Automaton Turing Pattern Model"
+title: "The Gray-Scott Model: A Cellular Automaton Generating Turing Patterns"
 sidebar:
  nav: "prologue"
 toc: true
@@ -13,25 +13,25 @@ Part of the modeler's work is not only to build models but to look for simple mo
 
 In our case, we have a very "fine-grained" reaction-diffusion model illustrating Turing patterns, and we will now present a faster "coarse-grained" model that will allow us to visualize Turing patterns. To do so, we will stop keeping track of individual particles and instead grid off two-dimensional space into blocks and store only the *concentration* of particles of the block (i.e., the number of particles in the block). To make things even simpler, we assume that there is some maximum concentration of particles possible, so that we can divide the number of particles by this maximum concentration and obtain a decimal number between 0 and 1.
 
-Let us begin with a simple example of the diffusion of only *A* particles (we will add *B* particles as well as reactions to our model later). Say that the particles are at maximum concentration in the central cell of our grid, and are present nowhere else, as the following figure illustrates. 
+Let us begin with a simple example of the diffusion of only *A* particles (we will later add *B* particles as well as reactions to our model). Say that the particles are at maximum concentration in the central cell of our grid, and are present nowhere else, as the following figure illustrates.
 
 <center>
 <img src = "../assets/images/initial_A_concentration.png" width="300">
-<figcaption>A 5 x 5 grid showing hypothetical initial concentrations of <em>A</em> particles. Cells are labeled by numbers between 0 and 1 representing their concentration of <em>A</em>. In this example, the central cell has maximum concentration, and no particles are contained in any other cell.</figcaption>
+<figcaption>A 5 x 5 grid showing hypothetical initial concentrations of <em>A</em> particles. Cells are labeled by numbers between 0 and 1 representing their concentration of a single particle. In this example, the central cell has maximum concentration, and no particles are contained in any other cell.</figcaption>
 </center>
 
-We will then update this grid after a single time step. We will spread out the concentration in each square to its eight neighbors. One way of doing this is to assume that 20% of the current cell's concentration goes to each of its four adjacent neighbors, and that 5% of the cell's concentration goes to its four diagonal neighbors. Because the central square in our ongoing example is the only cell with any particles, after a single time step, the updated concentrations are as shown in the following figure.
+We will now update the grid of cells after one time step in a way that mimics diffusion. To do so, we will spread out the concentration of particles in each square to its eight neighbors; one way of doing so is to assume that 20% of the current cell's concentration diffuses to each of its four adjacent neighbors, and that 5% of the cell's concentration diffuses to its four diagonal neighbors. Because the central square in our ongoing example is the only cell with any particles, the updated concentrations of our particle after a single time step are shown in the following figure.
 
 <center>
 <img src = "../assets/images/A_concentration_one_time_step.png" width="300">
-<figcaption>A grid showing an update to the system in the previous figure after diffusion of *A* particles after a single time step.</figcaption>
+<figcaption>A grid showing an update to the system in the previous figure after diffusion of particles after a single time step.</figcaption>
 </center>
 
-After an additional time step, we see the particles continue to diffuse to farther neighbors. For example, each diagonal neighbor of the central cell in the above figure, which has a concentration of 0.05, will lose all of its *A* particles in the next step. It will, however, gain 20% of the particles from two of its adjacent neighbors, along with 5% of the particles from the central square (which doesn't have any particles). This makes the updated concentration of this cell equal to 0.2(0.2) + 0.2(0.2) + 0.05(0) = 0.04 + 0.04 + 0 = 0.08.
+After an additional time step, the particles continue to diffuse outward. For example, each diagonal neighbor of the central cell in the above figure, which has a concentration of 0.05, will lose all of its particles in the next step. This cell will also gain 20% of the particles from two of its adjacent neighbors, along with 5% of the particles from the central square (which doesn't have any particles). This makes the updated concentration of this cell equal to 0.2(0.2) + 0.2(0.2) + 0.05(0) = 0.04 + 0.04 + 0 = 0.08.
 
-Each of the four cells adjacent to the central square will receive 20% of the particles from two of its adjacent neighbors, which have a concentration of 0.05 each. This cell will also receive 5% of the particles from two of their diagonal neighbors, which have a concentration of 0.2. Therefore, the updated concentration of each of these cells is 2(0.2)(0.05) + 2(0.05)(0.2) = 0.01 + 0.01 = 0.04.
+Each of the four cells adjacent to the central square will receive 20% of the particles from two of its adjacent neighbors, which have a concentration of 0.05 each. Such a cell will also receive 5% of the particles from two of its diagonal neighbors, which have a concentration of 0.2. Therefore, the updated concentration of each of these cells is 2(0.2)(0.05) + 2(0.05)(0.2) = 0.02 + 0.02 = 0.04.
 
-Finally, the central square receives 20% of the particles from each of its four adjacent neighbors, as well as 5% of the particles from each of its four diagonal neighbors. As a result, the central square is updated as 4(0.2)(0.2) + 4(0.05)(0.05) = 0.16 + 0.01 = 0.17.
+Finally, the central square receives 20% of the particles from each of its four adjacent neighbors, as well as 5% of the particles from each of its four diagonal neighbors. As a result, the central square's concentration is updated to be 4(0.2)(0.2) + 4(0.05)(0.05) = 0.16 + 0.01 = 0.17.
 
 As a result, the central nine squares after two time steps are as shown in the following figure.
 
@@ -43,56 +43,56 @@ As a result, the central nine squares after two time steps are as shown in the f
 **STOP**: What should the values of the "?" cells be in the above figure? Note that these cells are neighbors of cells with positive concentrations after one time step, so their concentrations should be positive. Click <a href="../assets/images/A_concentration_two_time_steps_complete.png" width="300">here</a> to see the answer.
 {: .notice--primary}
 
-## Slowing down diffusion
+The coarse-grained model of particle diffusion that we have built is a variant of a **cellular automaton**, or a grid of cells in which we use fixed rules to update the status of a cell based on its current status and those of its neighbors. Cellular automata form a rich area of research applied to a wide variety of fields dating back to the middle of the 20th Century; if you are interested in learning more about them from the perspective of programming, check out the [Programming for Lovers](http://compeau.cbd.cmu.edu/programming-for-lovers/chapter-3-building-a-self-replicating-cellular-automaton-with-top-down-programming/) project.
 
-There is just one problem. This model of diffusion is too fast! If our model is representing diffusion, then all of the particles would not rush out of the central square in a single time step, only for some of these particles to return in the following time step. Our model is currently too volatile to be reliable as a representation of diffusion.
+## Slowing down the rate of diffusion
 
-The solution is to add a parameter <em>d</em><sub><em>A</em></sub> representing the *rate* of diffusion of *A*. Instead of moving a cell's entire concentration of particles to its neighbors in a single time step, we move only the fraction <em>d</em><sub><em>A</em></sub> of them.
+There is just one problem. Our cellular automaton model of diffusion is too volatile! In a true diffusion process, all of the particles would not rush out of the central square in a single time step.
 
-So, to revisit our original example, say that <em>d</em><sub><em>A</em></sub> is equal to 0.2. Then after the first time step, only 10% of the central cell's particles will be spread to its neighbors. This means that the central square is updated to 0.9, its adjacent neighbors are updated to 0.2(0.2) = 0.04, and its diagonal neighbors are updated to 0.2(0.05) = 0.01. These values after a single time step are summarized in the figure below.
+Our solution is to add a parameter <em>d</em><sub><em>A</em></sub> representing the *rate* of diffusion of *A*. Instead of moving a cell's entire concentration of particles to its neighbors in a single time step, we move only the fraction <em>d</em><sub><em>A</em></sub> of them.
+
+To revisit our original example, say that <em>d</em><sub><em>A</em></sub> is equal to 0.2. After the first time step, only 20% of the central cell's particles will be spread to its neighbors. The figure below illustrates that the central square is updated to 0.8, its adjacent neighbors are updated to 0.2<em>d</em><sub><em>A</em></sub> = 0.04, and its diagonal neighbors are updated to 0.05<em>d</em><sub><em>A</em></sub> = 0.01.
 
 <center>
 <img src = "../assets/images/A_concentration_slower_diffusion.png" width="300">
-<figcaption>An updated grid of cells showing the concentration of *A* particles from our example after one time step if <em>d</em><sub><em>A</em></sub> = 0.2.</figcaption>
+<figcaption>An updated grid of cells showing the concentration of <em>A</em> particles after one time step if <em>d</em><sub><em>A</em></sub> = 0.2.</figcaption>
 </center>
 
 ## Adding a second particle to our diffusion simulation
 
-We can adjust the speed of diffusion by adjusting this rate parameter. For example, say that we wish to add particle *B* to the simulation, which also starts with 100% concentration in the central square. Recall that *B*, our "predator" molecule, diffuses half as fast as *A*, the "prey" molecule. If the diffusion rate <em>d</em><sub><em>B</em></sub> is equal to 0.1, then our cells after a time step will be updated as shown in the figure below. This figure represents the concentration of the two particles in each cell as an ordered pair (*a*, *b*), where *a* is the concentration of *A* and *b* is the concentration of *B*.
+We now will add particle *B* to the simulation, which also starts with 100% concentration in the central square. Recall that *B*, our "predator" molecule, diffuses half as fast as *A*, the "prey" molecule. If we set the diffusion rate <em>d</em><sub><em>B</em></sub> equal to 0.1, then our cells after a time step will be updated as shown in the figure below. This figure represents the concentration of the two particles in each cell as an ordered pair ([*A*], [*B*]).
 
 <center>
 <img src = "../assets/images/two_particle_concentration_diffusion.png" width="300">
-<figcaption>A figure showing cellular concentrations after one time step for two particles <em>A</em> and <em>B</em> diffusing at rates <em>d</em><sub><em>A</em></sub> = 0.2 and <em>d</em><sub><em>B</em></sub> = 0.1. Each cell is labeled by an ordered pair (<em>a</em>, <em>b</em>), where <em>a</em> is the concentration of <em>A</em> and <em>b</em> is the concentration of <em>B</em>.</figcaption>
+<figcaption>A figure showing cellular concentrations after one time step for two particles <em>A</em> and <em>B</em> diffusing at rates <em>d</em><sub><em>A</em></sub> = 0.2 and <em>d</em><sub><em>B</em></sub> = 0.1. Each cell is labeled by the ordered pair ([<em>A</em>], [<em>B</em>]).</figcaption>
 </center>
 
 **STOP**: Update the cells in the above figure after another generation of diffusion. Use the diffusion rates <em>d</em><sub><em>A</em></sub> = 0.2 and <em>d</em><sub><em>B</em></sub> = 0.1.
 {: .notice--primary}
 
-We are now ready to implement our model of diffusion and add a visualization to see if our model does a good job of approximating the diffusion process.
+In the following tutorial, we will implement the cellular automaton using a Jupyter notebook and visualize how well this automaton mimics the diffusion of *A* and *B* particles. We will then continue on in the next section with adding reactions to our automaton model.
 
 [Visit Tutorial](tutorial-diffusion){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 ## Adding reactions and completing the Gray-Scott model
 
-Now that we have established a coarse-grained model for tracking the concentrations of two types of particles as they diffuse in their environment, we will add reactions to the simulation.
+Now that we have established a cellular automaton for tracking concentrations of two types of particles as they diffuse, we will add the following three reactions to complete the model.
 
-Recall that our reaction-diffusion simulation has three reactions.
-
-1. A "feed" reaction by which new *A* particles are fed into the system at a constant rate.
-2. A "death" reaction by which *B* particles are removed from the system at a rate proportional to their current concentration.
+1. A "feed" reaction in which new *A* particles are fed into the system at a constant rate.
+2. A "death" reaction in which *B* particles are removed from the system at a rate proportional to their current concentration.
 3. A "reproduction" reaction *A* + 2*B* → 3*B*.
 
-**STOP**: How might we incorporate these reactions into our coarse-grained model?
+**STOP**: How might we incorporate these reactions into our automaton?
 {: .notice--primary}
 
-Let us address these reactions one at a time. First, we have the feed rate reaction, which takes place at a **feed rate**. It is tempting to simply add some constant value *f* to the concentration of each cell, but this will cause problems if the concentration is close to 1; we want to avoid a situation in which the feed rate causes the concentration of *A* particles to exceed 1.
+We will address these reactions one at a time. First, we have the feed rate reaction, which takes place at a **feed rate**. It is tempting to simply add some constant value *f* to the concentration of each cell in each time step. However, we want to avoid a situation in which the concentration of *A* particles is close to 1 and the feed reaction causes the concentration of *A* particles to exceed 1.
 
-Instead, if a given cell has concentration *a*, then we will add *f*(1-*a*) to the concentration of the cell.  For example, if *a* is 0.01, then we will add 0.99*f* to the cell because the current concentration is low. If *a* is 0.8, then we will only add 0.2*f* to the concentration.
+Instead, if a given cell has current concentration [*A*], then we will add *f*(1-[*A*]) to the concentration of the cell.  For example, if [*A*] is 0.01, then we will add 0.99*f* to the cell because the current concentration is low. If [*A*] is 0.8, then we will only add 0.2*f* to the concentration.
 
-Second, we consider the death reaction of *B* particles, which takes place at a **kill rate**. Recall that the death reaction takes place at a rate proportional to the current concentration of *B* particles. As a result, if a cell has concentration *b*, then we will subtract *k* · *b* from its concentration in each step for some constant *k* that is between 0 and 1.
+Second, we consider the death reaction of *B* particles, which takes place at a **kill rate**. Recall from the previous lesson that the kill rate is proportional to the current concentration of *B* particles. As a result, if a cell has concentration [*B*], then for some constant *k* between 0 and 1, we will subtract *k* · [*B*] from the concentration of *B* particles.
 
-Third, we have the reproduction reaction *A* + 2*B* → 3*B*. The higher the concentration of *A* and *B*, the more this reaction should affect the current concentrations of the two particles. Furthermore, because we need *two* *B* particles in order for the collision to occur, a low concentration of *B* should mean that the reaction is even more rare than if we have a low concentration of *A*. Therefore, if a given cell is represented by the concentrations (*a*, *b*), then we will subtract *a* · *b*<sup>2</sup> from the concentration of *A* and add *a* · *b*<sup>2</sup> to the concentration of *B* in the next time step.
+Third, we have the reproduction reaction *A* + 2*B* → 3*B*. The higher the concentration of *A* and *B*, the more this reaction should affect the current concentrations of the two particles. Furthermore, because we need *two* *B* particles in order for the collision to occur, the reaction should be even more rare if we have a low concentration of *B* than if we have a low concentration of *A*. Therefore, if a given cell is represented by the concentrations (*a*, *b*), then we will subtract *a* · *b*<sup>2</sup> from the concentration of *A* and add *a* · *b*<sup>2</sup> to the concentration of *B* in the next time step.
 
 Let us consider an example of how a single cell might update its concentration of both particle types as a result of reaction and diffusion.  Say that we have the following purely hypothetical parameter values:
 
@@ -110,9 +110,7 @@ As the result of all these processes, we update the concentrations of *A* and *B
 *a*' = 0.7 - 0.14 + 0.08 + 0.09 - 0.175 = 0.555<br>
 *b*' = 0.5 - 0.05 + 0.06 - 0.2 + 0.175 = 0.485
 
-Applying these cell-based reaction-diffusion computations over all cells in parallel and over many generations forms the **Gray-Scott** model[^gs]. This model is a variant of a **cellular automaton**, or a grid of cells in which we use rules to update the status of a cell based on the statuses of itself and nearby cells. Cellular automata form a rich area of research dating back to the middle of the 20th Century; if you are interested in learning more about them in the context of programming, check out the [Programming for Lovers](http://compeau.cbd.cmu.edu/programming-for-lovers/chapter-3-building-a-self-replicating-cellular-automaton-with-top-down-programming/) project.
-
-We should now feel confident expanding our previous diffusion tutorial into a model that includes all Gray-Scott reactions. The question is, however, will we still see Turing patterns?
+Applying these cell-based reaction-diffusion computations over all cells in parallel and over many generations forms the **Gray-Scott** model[^gs]. We should now feel confident expanding our previous diffusion tutorial into a model that includes all Gray-Scott reactions. The question is, however, will we still see Turing patterns?
 
 [Visit Tutorial](gs-jupyter){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}

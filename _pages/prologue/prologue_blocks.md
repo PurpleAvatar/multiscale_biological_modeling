@@ -123,14 +123,6 @@ We can begin to see the Gray-Scott diffusion-reaction patterns in the CellBlende
 
 ![image-center](../assets/images/gs_cellblender_image.PNG){: .align-center}
 
-There are many other ways to model these Gray-Scott patterns, and each type of simulation can lead to slightly different results. Robert P Munafo gives a great overview of how Gray-Scott patterns relate to the feed rate and kill rate, shown in the image below.[^robert]
-
-![image-center](../assets/images/xmorphia-parameter-map.jpg){: .align-center}
-
-<iframe width="640" height="360" src="https://www.youtube-nocookie.com/embed/VY9Bt1mUfDQ" frameborder="0" allowfullscreen></iframe>
-Here we examine one of the squares of the above image.
-{: .text-center}
-
 While our CellBlender simulation uses parameters like "f = 1E5", other layouts may require much smaller parameter values. For instance, the simulations below use the following parameters:
 f = 0.025, k = 0.06, r_u = 0.01, r_v = 0.005 (r_u and r_v refer to the diffusion constants of the prey and predators respectively).
 

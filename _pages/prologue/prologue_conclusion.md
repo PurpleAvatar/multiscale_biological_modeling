@@ -7,15 +7,24 @@ sidebar:
  toc_sticky: true
 ---
 
-The Turing patterns that emerge from our animations in the previous section are a testament to the human eye's ability to find organization within the net behavior of tens of thousands of particles.  The patterns are unquestionably present, but they are also noisy --- even in the dark red regions we will have quite a few green particles, and vice-versa. The rapid inference of large-scale patterns from small-scale visual phenomena is one of the tasks that our brains have evolved to perform well.
+The Turing patterns that emerged from our particle simulations are a testament to the human eye's ability to find organization within the net behavior of tens of thousands of particles. For example, take another look at the video we produced that showed mottling in our particle simulator. Patterns are present, but they are also noisy --- even in the dark red regions we will have quite a few green particles, and vice-versa. The rapid inference of large-scale patterns from small-scale visual phenomena is one of the tasks that our brains have evolved to perform well.
 
-This reaction-diffusion system is remarkable because it is so **fine-tuned**, meaning that very slight changes in parameter values can lead to significant changes in the overall system. In the case of our model, these changes could convert spots to stripes, or they could influence how clearly defined the boundaries of the Turing patterns are.
+<center>
+<iframe width="750" height="360" src="../assets/gray_scott_11_by_11_f_1_k_1.mp4" frameborder="0" allowfullscreen>
+</iframe>
+</center>
 
-Much later in this course, we will see an example of a biological system that is the opposite of fine-tuned. In such a **robust** system, variation in the parameters does not lead to substantive changes in the ultimate behavior of the system. Robust processes are vital for processes in which an organism needs to be resilient to small changes. We will say more about robustness later.
+Our reaction-diffusion system is remarkable because it is so **fine-tuned**, meaning that very slight changes in parameter values can lead to significant changes in the system. These changes could convert spots to stripes, or they could influence how clearly defined the boundaries of the Turing patterns are.
 
-It turns out that although Turing's work offers a compelling argument for how zebras might have gotten their stripes, the exact mechanism by which these stripes form is still an unresolved question. Although zebras are still up in the air, the pigmentation of *zebrafish* does follow a Turing pattern because two types of pigment cells follow a reaction-diffusion model much like the one we presented above.[^zebrafish]
+Robert Munafo provides a great figure, reproduced below, showing how the Turing patterns produced by the Gray-Scott model change as the kill and feed rates vary.[^robert] The kill rate increases along the *x*-axis, and the feed rate increases along the *y*-axis. Notice how quickly the patterns change! You may like to try tweaking the parameters of our own Gray-Scott simulator to see if you can reproduce these different patterns.
 
-We also have qualitative evidence that the pigmentary patterns arising in fish are due to a fine-tuned system. For example, note the following two photos of giant pufferfish. These fish are genetically very similar, but their skin patterns are very different, with one having spots and the other exhibiting a complex pattern of stripes. What seems like a drastic change in the appearance of the fish can actually be attributable to a small change of parameters in a fine-tuned system that is driven only by random interactions.
+![image-center](../assets/images/xmorphia-parameter-map.jpg){: .align-center}
+
+Later in this course, we will see an example of a biological system that is the opposite of fine-tuned. In a **robust** system, variation in parameters does not lead to substantive changes in the ultimate behavior of the system. Robust processes are vital for processes in which an organism needs to be resilient to small changes in its environment.
+
+It turns out that although Turing's work offers a compelling argument for how zebras might have gotten their stripes, the exact mechanism by which these stripes form is still an unresolved question. However, the pigmentation of *zebrafish* does follow a Turing pattern because two types of pigment cells follow a reaction-diffusion model much like the one we presented above.[^zebrafish]
+
+Furthermore, note the following two photos of giant pufferfish. These fish are genetically very similar, but their skin patterns are very different. What may seem like a drastic change in the appearance of the fish from spots to stripes is likely attributable to a small change of parameters in a fine-tuned biological system that, like all of life, is powered  by randomness.
 
 ![image-center](../assets/images/Juvenile_Mbu_pufferfish.jpg){: .align-center}
 A juvenile Mbu Pufferfish with a very familiar pattern![^youngfish]

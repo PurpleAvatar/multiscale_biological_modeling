@@ -9,19 +9,21 @@ sidebar:
 
 In the [prologue](prologue), we worked with a particle-based model that simulated the interactions of skin cells to produce complex Turing patterns. In this module, we will zoom into a much lower biological scale and model protein interactions, which occur on a molecular level.
 
-DNA offers the lowest level of biological study: the DNA double helix is only about 2.5 nm across, and proteins may be on the order of about 10nm in diameter. To be clear about how tiny this is, a light microscope's highest resolution is about 200 times larger, and the barrier of what can be seen with the naked eye (say, the width of a human hair) is about 10,000 times larger.
+The scale of protein interactions is tiny: a protein is typically on the order of about 10nm in diameter. For comparison, a light microscope's highest resolution is about 2000 nm, and the barrier of what can be seen with the naked eye (say, the width of a human hair) is about 100,000 nm.
 
-This module will also introduce the concept of a **biological network**, a ubiquitous object in biological research that is highlighted in the figure below. When studying the functions and binding of proteins, biologists may build a **protein-protein interaction network** in which nodes are proteins and two proteins are connected with an edge if they are known to interact. 
+This module will also introduce the concept of a **biological network**. For example, when studying the functions and binding of proteins, biologists may build a **protein-protein interaction network** in which nodes are proteins and two proteins are connected with an edge if they are known to interact.
 
-![image-center](../assets/images/A-Complete-HCV-Host-Protein-Protein-Interaction-Network-in-Hepatoma-Cells-A-Network.png){: .align-center}
-A Complete HCV-Host Protein-Protein Interaction Network in Hepatoma Cells[^PPInetwork]
-{: style="text-align: center;"}
+<center>
+<img src="../assets/images/PPI_network.png")
+</center>
+<figcaption>A complete hepatitis C virus-host protein-protein interaction network in hepatoma cells.[^PPInetwork] Nodes correspond to proteins, and an edge connects two proteins if the two proteins interact.</figcaption>
 
-When examining the more complex interactions and processes taking place within a cell, they form a **metabolic network**. Here, nodes correspond to any substances in a chemical reactions and an edge connects two nodes if there is some enzyme that catalyzes a reaction involving these substances. 
+When studying the more complex interactions and processes taking place within a cell, biologists form a **metabolic network**. Nodes correspond to substances in a chemical reaction, and an edge connects two nodes if there is some enzyme that catalyzes a reaction involving these substances.
 
-![image-center](../assets/images/The-metabolic-network-of-tomato-cells-The-system-is-a-cell-with-symbolic-subcellular.png){: .align-center}
-The metabolic network of tomato cells[^metabolicNetwork]
-{: style="text-align: center;"}
+<center>
+<img src="../assets/images/The-metabolic-network-of-tomato-cells-The-system-is-a-cell-with-symbolic-subcellular.png">
+</center>
+<figcaption>The metabolic network of tomato cells.[^metabolicNetwork]</figcaption>
 
 Additionally, neuroscientists study **neuronal networks** that link neurons together according to how they are linked in the nervous system --- these networks have been studied since the 1940s but have recently exploded as a model for solving applied problems in machine learning.
 

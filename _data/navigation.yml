@@ -54,7 +54,7 @@ motifs:
     children:
       - title: "Introduction: A Submicroscopic Scale of Interest"
         url: /motifs/home
-      - title: "Transcription and Identifying DNA-Protein Binding"
+      - title: "Transcription and DNA-Protein Binding"
         url: /motifs/transcription
       - title: "Transcription Factor Networks"
         url: /motifs/networks

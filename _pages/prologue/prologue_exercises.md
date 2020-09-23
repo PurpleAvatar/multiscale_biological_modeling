@@ -15,6 +15,12 @@ sidebar:
 
 * Good questions below. May need to be exercises.
 
+* Visiting Robert P. Munafo https://mrob.com/pub/comp/xmorphia/index.html simulations and matching some more up to our Jupyter Notebook simulations
+
+* The Gray-Scott reactions always seem to reach a steady state where the simulation stops moving. Are you able to find parameters or predator placement which creates an oscillatory pattern?
+
+* Play with the seed_size in the Gray-Scott jupyter notebook. What does this parameter control? 
+
 **STOP**: Is it ever possible for a square to have a concentration greater than 1? Why or why not?
 {: .notice--primary}
 

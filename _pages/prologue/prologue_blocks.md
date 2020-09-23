@@ -119,19 +119,20 @@ Applying these cell-based reaction-diffusion computations over all cells in para
 
 We can begin to see the Gray-Scott diffusion-reaction patterns in the CellBlender simulation, but it is clear that significant computing power is needed to get the same results as the discrete methods. In our Jupyter Notebook demo, a clear pattern emerges on a grid which requires less than a minute on most modern computers. The CellBlender simulation requires a dramatically higher computing cost.
 
-![image-center](../assets/images/gs2_2400.png){: .align-center}
+**TO COMPEAU**: Should we rephrase the above to also point out that the jupyter notebook is using the Gray-Scott model, and running this model in a discrete space is computationally easier than what we did in CellBlender? 
 
-![image-center](../assets/images/gs_cellblender_image.PNG){: .align-center}
-
-While our CellBlender simulation uses parameters like "f = 1E5", other layouts may require much smaller parameter values. For instance, the simulations below use the following parameters:
-f = 0.025, k = 0.06, r_u = 0.01, r_v = 0.005 (r_u and r_v refer to the diffusion constants of the prey and predators respectively).
-
-<iframe width="640" height="360" src="../assets/greydots-sqr-1.mp4" frameborder="0" allowfullscreen></iframe>
-Gray-Scott running on a square grid
+<iframe width="640" height="360" src="../assets/gs_movie.gif" frameborder="0" allowfullscreen></iframe>
+Gray-Scott from our tutorial using parameters f = 0.034, k = 0.061
 {: .text-center}
 
-<iframe width="640" height="360" src="../assets/greydots-hex-2.mp4" frameborder="0" allowfullscreen></iframe>
-Gray-Scott running on a hexagonal grid
+<iframe width="640" height="360" src="../assets/0_Bgs_movie.gif" frameborder="0" allowfullscreen></iframe>
+Expanding the size of the simulation and adding new predator locations to our Gray-Scott tutorial
+{: .text-center}
+
+With the same reaction parameters, we can achieve the nearly the same patterns even using different simulation software. Below, we see Gray-Scott run with the same parameters as our previous video above: f = 0.034, k = 0.061
+
+<iframe width="640" height="360" src="https://www.youtube-nocookie.com/embed/6uOSoc7Ukfw" frameborder="0" allowfullscreen></iframe>
+Gray-Scott simulation by Robert Munafo[^robert]
 {: .text-center}
 
 [Next lesson](conclusion){: .btn .btn--primary .btn--large}
@@ -141,4 +142,3 @@ Gray-Scott running on a hexagonal grid
 
 [^robert]: "Reaction-Diffusion by the Gray-Scott Model: Pearson's Parametrization" © 1996-2020 Robert P. Munafo https://mrob.com/pub/comp/xmorphia/index.html
 
-[^grid]: "Gray Scott Model of Reaction Diffusion". Abelson, Adams, Coore, Hanson, Nagpal, Sussman https://groups.csail.mit.edu/mac/projects/amorphous/GrayScott/

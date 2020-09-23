@@ -25,8 +25,8 @@ Repeat the above steps to make sure the follow molecules are entered:
 
 | Molecule Name | Molecule Type | Color | Diffusion Constant| Scale Factor|
 |:--------|:-------:|--------:|--------:|--------:|
-| predator  | Surface | Red | 1e-6  | 3|
-| prey  | Surface  | Green | 1e-6  | 3 |
+| predator  | Surface | Red | 3e-6  | 3|
+| prey  | Surface  | Green | 6e-6  | 3 |
 | A  | Surface  | Blue | 1e-6  | 0 |
 
 

@@ -11,7 +11,7 @@ toc_sticky: true
 
 Once we know which genes each transcription factor regulates, we can consolidate this information into a **transcription factor network**. The nodes in the network represent an organism's proteins, and we connect *X* to *Y* with an edge if *X* is a transcription factor that regulates the expression of protein *Y*.  Any node can have an edge leading into it, but only a transcription factor can have an edge leaving it.
 
-The figure below shows a portion of the transcription factor network for *Escherichia coli*, the workhorse model organism of bacterial studies. Even though *E. coli* is a bacterium, we will be able to draw powerful conclusions about gene regulation from its transcription factor network. The true network is much larger, consisting of thousands of genes and over 250 transcription factors, and we will need to analyze it computationally to draw these conclusions.
+The figure below shows a portion of the transcription factor network for *Escherichia coli*, the workhorse model organism of bacterial studies. Even though *E. coli* is a bacterium, we will be able to draw powerful conclusions about gene regulation from its transcription factor network. The true network is much larger, consisting of thousands of genes and around 300 transcription factors[^tfNumber], and we will need to analyze it computationally to draw these conclusions.
 
 Note that the edges in the *E. coli* transcription factor network below are colored red or green. An edge connecting *X* to *Y* is colored green if *X* upregulates *Y*, and it is colored red if *X* downregulates *Y*. (Alternatively, we could label the edges with a "+" or "-".)
 
@@ -43,3 +43,5 @@ Transcription factor autoregulation leads us to ask two questions. First, how ca
 [^eColiNetwork]: Samal, A. & Jain, S. The regulatory network of *E. coli* metabolism as a Boolean dynamical system exhibits both homeostasis and flexibility of response. *BMC Systems Biology*,  2, 21 (2008). https://doi.org/10.1186/1752-0509-2-21
 
 [^auto]: Arani, B. M. S., Mahmoudi, M., Lahti, L., González, J., & Wit, E. C. (2018). Stability estimation of autoregulated genes under Michaelis-Menten-type kinetics. Physical Review E, 97, 62407. [https://doi.org/10.1103/PhysRevE.97.062407](https://doi.org/10.1103/PhysRevE.97.062407)
+
+[^tfNumber]: Gene ontology database with "transcription" keyword: https://www.uniprot.org/.

@@ -32,7 +32,7 @@ A transcription factor is a protein, which means that because of the Central Dog
 A simplified illustration of autoregulation. "Protein" labels the transcription factor binding factor protein, which binds to the DNA encoding this transcription factor, labeled by "Gene".[^auto]
 {: style="text-align: center; font-size: medium;"}
 
-The presence of transcription factor autoregulation leads us to ask two questions. First, how can we argue rigorously that the number of loops in a transcription factor network is "surprisingly large"? And second, if this is the case, then why is autoregulation so common? That is, why would a transcription factor have evolved to regulate its *own* transcription?
+Transcription factor autoregulation leads us to ask two questions. First, how can we conclude that the number of loops in a transcription factor network is "surprisingly large"? And second, if autoregulation is so common, then why would a transcription factor have evolved to regulate its *own* transcription?
 
 [Next lesson](nar){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}

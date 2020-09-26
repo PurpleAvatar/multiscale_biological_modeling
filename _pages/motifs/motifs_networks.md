@@ -9,12 +9,14 @@ toc_sticky: true
 
 ## Transcription factor networks
 
-Once we know which transcription factors regulate which genes, we will consolidate this information into a bilogical network called a **transcription factor network**. The nodes in the network are an organism's proteins, and we connect *X* to *Y* with an edge if *X* is a transcription factor that regulates the expression of *Y*.  Note that any node can have an edge leading into it, but the only nodes with edges leaving them are transcription factors.
+Once we know which genes each transcription factor regulates, we can consolidate this information into a **transcription factor network**. The nodes in the network represent an organism's proteins, and we connect *X* to *Y* with an edge if *X* is a transcription factor that regulates the expression of protein *Y*.  Any node can have an edge leading into it, but only a transcription factor can have an edge leaving it.
 
-The figure below shows a subset of the transcription factor network for *Escherichia coli*, the workhorse model organism of bacterial studies. *E. coli* is a simple organism, but we will still be able to draw powerful conclusions by studying its transcription factor network.
+The figure below shows a portion of the transcription factor network for *Escherichia coli*, the workhorse model organism of bacterial studies. Even though *E. coli* is a bacterium, we will be able to draw powerful conclusions about gene regulation from its transcription factor network.
 
 ![image-center](../assets/images/e_coli_tf_network.jpeg){: .align-center}
-To view this network in more detail you can download <a href="https://purpleavatar.github.io/multiscale_biological_modeling/downloads/e_coli_tf_network.jpeg" download="e_coli_tf_network.jpeg">here</a>, or to see the full *e. coli* network, see [here](https://bmcsystbiol.biomedcentral.com/articles/10.1186/1752-0509-2-21)
+A subset of the *E. coli* transcription factor network. Click [here](downloads/e_coli_tf_network.jpeg) to zoom in on this network. The full network is available from Samal & Jain 2008.[^eColiNetwork]
+{: style="text-align: center; font-size: medium;"}
+
 
 **STOP:** Do you notice anything interesting about the *E. coli* transcription factor network?
 {: .notice--primary}
@@ -45,4 +47,6 @@ The presence of transcription factor autoregulation leads us to ask two question
 
 [^scNetwork]: Lee, T. I., Rinaldi, N. J., Robert, F., Odom, D. T., Bar-Joseph, Z., Gerber, G. K., … Young, R. A. (2002). Transcriptional regulatory networks in Saccharomyces cerevisiae. Science, 298(5594), 799–804. https://doi.org/10.1126/science.1075090
 
-[^auto]: Arani, B. M. S., Mahmoudi, M., Lahti, L., González, J., & Wit, E. C. (2018). Stability estimation of autoregulated genes under Michaelis-Menten-type kinetics. Physical Review E, 97, 62407. https://doi.org/10.1103/PhysRevE.97.062407
+[^eColiNetwork]: Samal, A. & Jain, S. The regulatory network of *E. coli* metabolism as a Boolean dynamical system exhibits both homeostasis and flexibility of response. *BMC Systems Biology*,  2, 21 (2008). https://doi.org/10.1186/1752-0509-2-21
+
+[^auto]: Arani, B. M. S., Mahmoudi, M., Lahti, L., González, J., & Wit, E. C. (2018). Stability estimation of autoregulated genes under Michaelis-Menten-type kinetics. Physical Review E, 97, 62407. [https://doi.org/10.1103/PhysRevE.97.062407](https://doi.org/10.1103/PhysRevE.97.062407)

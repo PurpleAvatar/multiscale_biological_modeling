@@ -7,16 +7,6 @@ toc: true
 toc_sticky: true
 ---
 
-## Engineering a repressilator
-
-In *A Synthetic Oscillatory Network of Transcriptional Regulators* by Elowitz and Leibler[^oscillator], the repressilator model we have simulated in CellBlender was successfully tested in a real E. coli cell (an *in vivo* experiment). Instead of the X, Y, Z molecules we used in our simulation, the authors inserted the genes *TetR*, *LacI*, and *cI*. These genes were set up in the same arrangement as our simulation, however there were key differences in the scale of the model. Our simulation was carried out in a single space with approximately 300 molecules per species. The reactions were carried out on the order of around 600 reactions per time step for 120,000 steps.
-
-![image-center](../assets/images/repressilator_ecoli.png){: .align-center}
-The repressilator model used in Elowitz and Leibler's *E. coli* system.
-{: style="text-align: center;"}
-
-In contrast, Elowitz and Leibler described a model with a variety of different reaction rates, such as a 0.0005 promoter strength, 20 proteins created per transcript, and a protein half-life of 10 minutes. Interestingly, this scale led to oscillations occurring with a periodicity that spanned different generations of E. coli! Nevertheless, the real E. coli repressilator systems showed clear patterns of oscillations with robustness to interruptions and disturbances. How would our simulations hold up to interruptions, and why is this kind of behavior needed in oscillators?   
-
 ## The need for robustness in biological oscillators
 
 Nothing exemplifies the need for robustness in biological systems better than oscillators. If a palpitation causes your heart to skip a beat, it should be able to return quickly to its natural rhythm. If you hold your breath to dive underwater on a snorkeling tip, you shouldn't hyperventilate when you return to the surface. And regardless of what functions your cells perform or what disturbances they find in their environment, they should be able to maintain a normal cell cycle.
@@ -65,6 +55,16 @@ The robustness of our repressilator model also implies a bigger picture moral in
 In this module, we have seen that even very simple network motifs can have a powerful effect on a cell's ability to implement elegant systems of behavior. In the next module, we will encounter a much more involved biochemical process, with far more molecules and reactions, that is used by bacteria to cleverly (and robustly) explore their environment. In fact, we will have so many reactions that we will need to rethink how we set up our model. We hope that you will join us!
 
 In the meantime, check out the exercises below to continue developing your understanding of how transcription factor network motifs have evolved.
+
+## Engineering a repressilator
+
+In *A Synthetic Oscillatory Network of Transcriptional Regulators* by Elowitz and Leibler[^oscillator], the repressilator model we have simulated in CellBlender was successfully tested in a real E. coli cell (an *in vivo* experiment). Instead of the X, Y, Z molecules we used in our simulation, the authors inserted the genes *TetR*, *LacI*, and *cI*. These genes were set up in the same arrangement as our simulation, however there were key differences in the scale of the model. Our simulation was carried out in a single space with approximately 300 molecules per species. The reactions were carried out on the order of around 600 reactions per time step for 120,000 steps.
+
+![image-center](../assets/images/repressilator_ecoli.png){: .align-center}
+The repressilator model used in Elowitz and Leibler's *E. coli* system.
+{: style="text-align: center;"}
+
+In contrast, Elowitz and Leibler described a model with a variety of different reaction rates, such as a 0.0005 promoter strength, 20 proteins created per transcript, and a protein half-life of 10 minutes. Interestingly, this scale led to oscillations occurring with a periodicity that spanned different generations of E. coli! Nevertheless, the real E. coli repressilator systems showed clear patterns of oscillations with robustness to interruptions and disturbances. How would our simulations hold up to interruptions, and why is this kind of behavior needed in oscillators?   
 
 ## Looking ahead
 

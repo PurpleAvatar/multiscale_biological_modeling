@@ -58,7 +58,7 @@ motifs:
         url: /motifs/transcription
       - title: "Transcription Factor Networks"
         url: /motifs/networks
-      - title: "How to Find Network Motifs"
+      - title: "Using Randomness to Verify Network Motifs"
         url: /motifs/finding
       - title: "The Negative Autoregulation Motif"
         url: /motifs/nar

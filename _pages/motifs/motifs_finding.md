@@ -1,6 +1,6 @@
 ---
 permalink: /motifs/finding
-title: "How to Find Network Motifs"
+title: "Using Randomness to Verify Network Motifs"
 sidebar:
  nav: "motifs"
 toc: true

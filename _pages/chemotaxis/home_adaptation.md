@@ -47,16 +47,17 @@ Just as the phosphorylation of CheY can be undone, MCP methylation can be undone
 
 The figure below adds CheR and CheB to provide a complete picture of the core pathways influencing chemotaxis. In order to model these pathways, we will need to add quite a few molecules and reactions to our current model. In the tutorial linked below, we will expand the BioNetGen model that we built in the previous lesson, and then see if this model can replicate the adaptation behavior of *E. coli* within a changing attractant concentration.
 
- ![image-center](../assets/images/chemotaxis_wholestory.png){: .align-center}
- <figcaption>The chemotaxis signal-transduction pathway with methylation included. CheA phosphorylates CheB, which methylates an MCP while CheR demethylates MCP. Blue lines denote phosphorylation, grey lines denote dephosphorylation, and the green arrow denotes methylation. Image modified from <a href="http://chemotaxis.biology.utah.edu/Parkinson_Lab/projects/ecolichemotaxis/ecolichemotaxis.html">Parkinson Lab</a>'s illustrations.</figcaption>
+![image-center](../assets/images/chemotaxis_wholestory.png){: .align-center}
+The chemotaxis signal-transduction pathway with methylation included. CheA phosphorylates CheB, which methylates an MCP while CheR demethylates MCP. Blue lines denote phosphorylation, grey lines denote dephosphorylation, and the green arrow denotes methylation. Image modified from <a href="http://chemotaxis.biology.utah.edu/Parkinson_Lab/projects/ecolichemotaxis/ecolichemotaxis.html">Parkinson Lab</a>'s illustrations.
+{: style="font-size: medium;"}
 
 ## Combinatorial explosion and the need for rule-based modeling
 
-Before incorporating the adaptation mechanisms in our BNG model, let's write out the reactions first. 
+Before incorporating the adaptation mechanisms in our BNG model, let's write out the reactions first.
 
 Start with MCP complexes. In the [phosphorylation tutorial](tutorial_phos), we identified two components relevant for reactions involving MCPs: a ligand-binding component `l` and a phosphorylation component `Phos`. The adaptation mechanism introduces additional reactions: methylation by CheR, and demethylation by CheB. We also need to include the binding-dissociation with CheR because under normal conditions, most CheR are bound to MCP complexes [^Lupas1989]. Thus we can introduce two additional components, `r` for CheR-binding, and `Meth` for methylation states. In our simulation, we will use 3 methylation levels, low, medium, and high because 3 methlytion states are most invovled in the chemotaxis to attractants [^Boyd1980].
 
-When writing the code for a reaction, we need to specify each species involved. To specify an MCP here, we will need to tell the program the exact state it is at, i.e., whether bound to a ligand, whether bound to CheR, whether phosphorylated, and which methylation state it has. Therefore, there are 2 · 2 · 2 · 3 = 24 possible states for an MCP. 
+When writing the code for a reaction, we need to specify each species involved. To specify an MCP here, we will need to tell the program the exact state it is at, i.e., whether bound to a ligand, whether bound to CheR, whether phosphorylated, and which methylation state it has. Therefore, there are 2 · 2 · 2 · 3 = 24 possible states for an MCP.
 
 When writing the reaction of a ligand molecule binds to an MCP, we select the MCPs not bound to a ligand yet, and there are 1 · 2 · 2 · 3 = 12 states that allow this binding reaction.
 
@@ -80,14 +81,23 @@ As you might have realized, BNG takes advantage of such **rule-based modeling**.
 In the figures below, we show plots of the concentration of each molecule in the system under a few different circumstances. In each case, we suddenly change the concentration of an attractant ligand and examine how this affects the concentration of phosphorylated CheY (the molecule that influences the tumbling frequency). Will the model reflect our biochemical hypothesis that *E. coli* can return to approximately the same steady-state concentration of phosphorylated CheY regardless of the concentration of the ligand?
 
 Here we show simulation results for some different amounts of ligand molecules suddenly added at the beginning of the simulation. First a relatively small amount, by setting `L0 = 1e4`.
+
 ![image-center](../assets/images/chemotaxis_tutorial_oneadd1e4.png){: .align-center}
+
 We gradually increase the amount of ligand molecules added. With `L0 = 1e5`.
+
 ![image-center](../assets/images/chemotaxis_tutorial_oneadd1e5.png){: .align-center}
+
 With `L0 = 1e6`.
+
 ![image-center](../assets/images/chemotaxis_tutorial_oneadd1e6.png){: .align-center}
+
 With `L0 = 1e7`.
+
 ![image-center](../assets/images/chemotaxis_tutorial_oneadd1e7.png){: .align-center}
+
 With `L0 = 1e8`.
+
 ![image-center](../assets/images/chemotaxis_tutorial_oneadd1e8.png){: .align-center}
 
 We can see that the higher the concentration, the deeper the drop of phosphorylated CheY can be observed.
@@ -103,8 +113,9 @@ Why the methylation states can change CheA autophosphorylation actvities? Let's 
  - There are five types of MCPs, Tsr, Tar, Tap, Trg, and Aer, specific for different species of ligand molecules. Most studies focus on the two most abundant types: Tsr (serine receptor) and Tar (aspartate and maltose receptor), and Aer (oxygen receptor) is less well understood.[^Parkinson2015] The MCPs form trimer of dimer structure. A trimer can be a mix of Tsr, Tar, Tap, Trg dimers. Binding with ligands changes the conformation of the receptor dimer. Each receptor dimer within the trimer impacts the activity differently because of asymmetricity in conformation.
  - MCPs, CheA (dimer with 5 subunits), and CheW forms receptor arrays. The receptor arrays generally have 2 states: 1) an ordered, dense state, in which CheA activity is higher; 2) a disordered, relaxed state, in which CheA activity is lower.[^Baker2005] The control of the 4 methylation sites and ligand-receptor binding impact array conformation are important to the precise adaptation mechanism[^Saragosti2001]. A visualization of the arrays from[^Yang2019] is shown below.
 
- ![image-center](../assets/images/chemotaxis_intro_tod.png){: .align-center}
- <figcaption>MCP array structures. From Yang et al.A)The trimer of dimer structure and changes of CheA autophosphorylation actvities depends on ligand binding and methylation states; P1...P5 are subunits of CheA. B)How MCPs, CheA, and CheW form receptor arrays.</figcaption>
+![image-center](../assets/images/chemotaxis_intro_tod.png){: .align-center}
+MCP array structures. From Yang et al.A)The trimer of dimer structure and changes of CheA autophosphorylation actvities depends on ligand binding and methylation states; P1...P5 are subunits of CheA. B)How MCPs, CheA, and CheW form receptor arrays.
+{: style="font-size: medium;"}
 
  - Methylation reduces the negative charge on the receptors, making the receptor array packing more stable, thus increasing CheA autophosphorylation activities. When MCP has a higher methylation state, the rate of CheA autophosphorylation becomes higher.
 

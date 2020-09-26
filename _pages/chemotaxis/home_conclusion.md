@@ -69,14 +69,16 @@ while *time* < duration:
 
 Visualize trajectories of 3 cells using strategy 1 versus strategy 2.
 ![image-center](../assets/images/chemotaxis_traj_compare_uniform.png){: .align-center}
-<figcaption>Sample trajectories for the two strategies. Left: standard random walk; right: chemotactic random walk. The background color indicates concentration: white -> red = low -> high; black dots are starting points; red dots are the points they reached at the end of the simulation; colorful dashed lines represent trajectories (one color one cell): dark -> bright color = older -> newer time points; blue cross indicates the highest concentration (1500, 1500).</figcaption>
+Sample trajectories for the two strategies. Left: standard random walk; right: chemotactic random walk. The background color indicates concentration: white -> red = low -> high; black dots are starting points; red dots are the points they reached at the end of the simulation; colorful dashed lines represent trajectories (one color one cell): dark -> bright color = older -> newer time points; blue cross indicates the highest concentration (1500, 1500).
+{: style="font-size: medium;"}
 
 After 500 seconds, cells using the standard standard walk strategy travel away from the origin, and some of them are located at places with higher concentrations. The cells using chemotactic strategy, on the other hand, successfully move towards the goal and stay near it.
 
 To confirm what we observed in the trajectories is representative of the performance of the two strategies, let's compare the performance of 500 cells for 1500 seconds. The following figure summarizes the average distances of the 500 cells for both strategies.
 
 ![image-center](../assets/images/chemotaxis_performance_compare_uniform.png){: .align-center}
-<figcaption>Average distances through time. Red: standard random walk; blue: chemotactic random walk. The two colored lines indicates average distances for the 500 cells; the shaded area represents one standard deviation.</figcaption>
+Average distances through time. Red: standard random walk; blue: chemotactic random walk. The two colored lines indicates average distances for the 500 cells; the shaded area represents one standard deviation.
+{: style="font-size: medium;"}
 
 With standard random walk, the average distances towards the goal doesn't decrease. The large standard deviation indicates that many cells are closer to the goal, but many move in the wrong direction. With chemotactic strategy, the cells are able to get closer to the goal. The small standard deviation after the line flattens indicates that the cells are also able to stay near the goal.
 
@@ -93,20 +95,24 @@ Let's go back to the [chemotactic walk tutorial](tutorial_walk), and visualize t
 With the visualization of trajectories, we see that the cells all move away from the starting point towards the target. However, how efficiently they get to the target is different for different expected run time. For example, after 800 seconds, the cells tumble every 0.2 second are still very far from the target; while those tumble every 5 seconds reach the target but don't stay there.
 
 ![image-center](../assets/images/chemotaxis_traj_0.2_uniform.png){: .align-center}
-<figcaption>Sample trajectories for tumble every 0.2 second. The background color indicates concentration: white -> red = low -> high; black dots are starting points; red dots are the points they reached at the end of the simulation; colorful dashed lines represent trajectories (one color one cell): dark -> bright color = older -> newer time points; blue cross is (1500, 1500).</figcaption>
+Sample trajectories for tumble every 0.2 second. The background color indicates concentration: white -> red = low -> high; black dots are starting points; red dots are the points they reached at the end of the simulation; colorful dashed lines represent trajectories (one color one cell): dark -> bright color = older -> newer time points; blue cross is (1500, 1500).
+{: style="font-size: medium;"}
 
 ![image-center](../assets/images/chemotaxis_traj_1.0_uniform.png){: .align-center}
-<figcaption>Sample trajectories for tumble every 1.0 second.</figcaption>
- 
+Sample trajectories for tumble every 1.0 second.
+{: style="font-size: medium;"}
+
 ![image-center](../assets/images/chemotaxis_traj_5.0_uniform.png){: .align-center}
-<figcaption>Sample trajectories for tumble every 5.0 second.</figcaption>
+Sample trajectories for tumble every 5.0 second.
+{: style="font-size: medium;"}
 
 What should a good trajectory look like? A cell should move fast towards the target; after reaching the goal, it should tumble immediately when moving to somewhere with a lower concentration and thus stay around the goal region. If we plot average distances to the goal through time, a good `time_exp` should be characterized by a fast decrease in distance to the goal, followed by flattening as close to the target as possible.
 
 To identify the background tumbling frequencies that allow the cells to reach the target fast and stay close to it, let's plot average distances of 500 cells to (1500, 1500) for a variety of background tumbling frequencies.
 
 ![image-center](../assets/images/chemotaxis_performance_uniform.png){: .align-center}
-<figcaption>Average distances through time. Each colored line indicates a background tumbling frequency, plotting average distances for the 500 cells; the shaded area represents one standard deviation.</figcaption>
+Average distances through time. Each colored line indicates a background tumbling frequency, plotting average distances for the 500 cells; the shaded area represents one standard deviation.
+{: style="font-size: medium;"}
 
 There is a tradeoff between moving towards the target fast and staying there. For large `time_exp` values (10.0, 5.0, 2.0), distances to center decrease very quickly at the beginning of the simulation, but the cells don't stay there perfectly; the larger the `time_exp`, the further the distance becomes. For small `time_exp` values (0.1, 0.2, 0.5), the cells fail to move to the ligand efficiently. Note that for `time_exp = 0.5` and `time_exp = 1.0`, although both stay around the radius of saturation, `time_exp = 0.5` takes about 400s more. If you tried to allow 0.1 and 0.25 to flatten, they will take even longer.
 

@@ -14,7 +14,8 @@ Although we did not focus on the details at that time, we have already seen an e
 In the case of chemotaxis, *E. coli* has receptor proteins that detect attractants such as glucose by binding to and forming a complex with these attractant **ligands**. (The cell also contains receptors to detect repellents, but we will focus primarily on attractants.) In this lesson, we will discuss how the bacterium is able to detect this molecular signal; in the next lesson, we focus on how the bacterium can convert the detected signal into an internal sequence of reactions that lead to a change in movement. See the figure below for a high-level overview of this process.
 
 ![image-center](../assets/images/chemotaxis_signal.png){: .align-center}
-<figcaption>An overview of the signaling pathway of chemotaxis. The red circles represent attractant ligands(L). When ligands bind to receptors, this signal is transduced via a series of enzymes, and finally influences the rotation direction of a flagellum. We discuss how this response is achieved in a later lesson.</figcaption>
+An overview of the signaling pathway of chemotaxis. The red circles represent attractant ligands(L). When ligands bind to receptors, this signal is transduced via a series of enzymes, and finally influences the rotation direction of a flagellum. We discuss how this response is achieved in a later lesson.
+{: style="font-size: medium;"}
 
 
 ## Modeling ligand-receptor dynamics
@@ -115,11 +116,11 @@ In this case, if we solve for [*LT*], we obtain [*LT*] = 36.492; the steady-stat
 
 Let's use our formula to show how we could determine the steady-state concentration of bound receptor-ligand complexes using values obtained from experiments. We will model an *E. coli* with 7000 receptor molecules in an environment with 10000 ligand molecules. The experimentally determined rate constant for ligand-receptor binding is *k*<sub>bind</sub> = 0.0146((molecules/µm<sup>3</sup>)<sup>-1</sup>)s<sup>-1</sup>, and the rate constant for ligand-receptor dissociation is *k*<sub>dissociate</sub> = 35s<sup>-1</sup>.[^Li2004][^Spiro1997][^Stock1991]
 
-If we multiply the units of reaction rate constants with the concentrations (with unit molecules/µm<sup>3</sup>) of reactants, we will get the rate of *LT* formation in the unit of 
+If we multiply the units of reaction rate constants with the concentrations (with unit molecules/µm<sup>3</sup>) of reactants, we will get the rate of *LT* formation in the unit of
 
 (molecules/µm<sup>3</sup>) · (molecules/µm<sup>3</sup>) * ((molecules/µm<sup>3</sup>)<sup>-1</sup>)s<sup>-1</sup> = (molecules/µm<sup>3</sup>)s<sup>-1</sup>
 
-and the rate of *LT* dissociation in the unit of 
+and the rate of *LT* dissociation in the unit of
 
 (molecules/µm<sup>3</sup>) · (s<sup>-1</sup>) = (molecules/µm<sup>3</sup>)s<sup>-1</sup>
 
@@ -203,7 +204,8 @@ Therefore, *P(L + T -> LT)* = *k*<sub>bind</sub> · [*L*] · [*T*] / *R*<sub>tot
 This process is visualized below.
 
 ![image-center](../assets/images/chemotaxis_visualizessa.png){: .align-center}
-<figcaption>Visualization of one transition for SSA. Red circles represent ligands(L). Orange Pac-man shape represent receptors. The wait time for a reaction to happen at time <i>t</i>, <i>δt</i> is drawn from an exponential distribution with mean 1/<i>R</i><sub>tot</sub>. The probability of dissociation (upper) or binding (lower) is determined by the rate of the reaction.</figcaption>
+Visualization of one transition for SSA. Red circles represent ligands(L). Orange Pac-man shape represent receptors. The wait time for a reaction to happen at time <i>t</i>, <i>δt</i> is drawn from an exponential distribution with mean 1/<i>R</i><sub>tot</sub>. The probability of dissociation (upper) or binding (lower) is determined by the rate of the reaction.
+{: style="font-size: medium;"}
 
 The following tutorial uses [BioNetGen](http://bionetgen.org/), which we will use throughout this module to build particle-free simulations of chemotaxis. We start by building a model to determine the equilibrium of a reversible reaction involving ligands and receptors.
 
@@ -217,7 +219,8 @@ Here we've shown that using BNG and calculating by hand reach the same conclusio
 From the BNG simulation, we can observe that *L* and *T* drop quickly while *LT* increases quickly at the begining of the simulation, and then reach steady state concentrations. The steady state concentrations match our calculations by hand.
 
 ![image-center](../assets/images/chemotaxis_tutorial4_ssa.png){: .align-center}
-<figcaption>Concentration plot for ligand-receptor dynamics with SSA simulation. The concentrations reach a steady state at the end of the simulation.</figcaption>
+Concentration plot for ligand-receptor dynamics with SSA simulation. The concentrations reach a steady state at the end of the simulation.
+{: style="font-size: medium;"}
 
 * Phillip will then need to point the reader to the next section by saying this is just the beginning of the model we will build to study chemotaxis. (And computing steady-state concentration is just a toy example compared to questions we will ask soon.)
 
@@ -273,4 +276,5 @@ BNG supports simulation with Ordinary Differential Equation (ODE) and with Stoch
 
 Removew the ODE results
 ![image-center](../assets/images/chemotaxis_tutorial4.png){: .align-center}
-<figcaption>Concentration plot for ligand-receptor dynamics with ODE simulation. The concentrations reach a steady state at the end of the simulation. </figcaption>
+Concentration plot for ligand-receptor dynamics with ODE simulation. The concentrations reach a steady state at the end of the simulation.
+{: style="font-size: medium;"}

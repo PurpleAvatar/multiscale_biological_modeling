@@ -52,7 +52,7 @@ The figure below shows the results of our simulation by plotting the number of *
 
 ![image-center](../assets/images/repress_graph.PNG){: .align-center}
 Here we see X in yellow, y in red, and Z in blue
-{: style="text-align: center;"}
+{: style="font-size: medium;"}
 
 Why would the repressilator's three-component feedback loop cause the concentrations of the three particles to oscillate? We will attempt to provide a high-level explanation.
 

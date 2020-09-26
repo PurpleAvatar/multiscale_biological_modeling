@@ -9,17 +9,15 @@ toc_sticky: true
 
 ## Oscillators are everywhere in nature
 
-Even if placed in a bunker, humans will maintain a roughly 24-hour cycle of sleep and wakefulness[^bunker]. However, such a **circadian rhythm** is not unique to humans or even animals but rather is present throughout living things, including plants and even cyanobacteria[^bacteria].
+Even if placed in a bunker, humans will maintain a roughly 24-hour cycle of sleep and wakefulness[^bunker]. This **circadian rhythm** guiding our daily schedule is not unique to animals but rather is present throughout living things, including plants and even cyanobacteria[^bacteria].
 
-Life processes like the circadian rhythm that **oscillate** between different states are not confined to circadian rhythms. You may feel like you have some control over when you go to bed, but your heart and respiratory system both follow cyclical rhythms without you even thinking about it. On a much lower level, eukaryotic cells are governed by a strict cell cycle as the cells grows and divide.
+Life processes like the circadian rhythm that oscillate over time are not confined to circadian rhythms. You may feel like you have some control over when you go to bed, but your heart and respiratory system both follow cyclical rhythms that are subconscious. To take a much lower level example, eukaryotic cells are governed by a strict cell cycle as the cells grow and divide.
 
-We know that there is no intelligence that drives all these cyclic processes, and we might guess from what we have learned in this module that they must be built upon simple rules serving as a **pacemaker** controlling the oscillations. However, the question remains as to what these pacemakers are.
+We might guess from what we have learned in this module that these cyclical processes must be built upon simple rules serving as a **pacemaker** controlling them. However, the question remains as to what these pacemakers are and how they correctly execute oscillations over and over, throughout an organism's life.
 
-We also suspect that these rhythms also must be *robust*. That is, they should be resilient to small changes in order to be executed correctly many times over an organism's life. But how is this robustness achieved?
+Researchers have identified many network motifs that facilitate oscillation, some of which are very complicated and include many components. In this lesson, we will focus on a simple three-component oscillator motif called a **repressilator**[^repress]. In this lesson, we will implement the repressilator with a particle simulator.
 
 ## The repressilator: a synthetic biological oscillator
-
-Researchers have identified many network motifs that facilitate oscillation, some of which are very complicated and include many components. In this lesson, we will focus on a simple three-component oscillator motif called a **repressilator**[^repress]. We will implement the repressilator with a particle simulator but also then analyze the robustness of this system in response to small changes in concentrations of particles.
 
 The repressilator motif is shown in the figure below. In this motif, all three proteins are transcription factors, and they form a cycle in which *X* represses *Y*, *Y* represses *Z*, and *Z* represses *X* (hence the name). The repressilator clearly forms a feedback loop, but nothing *a priori* about this motif would indicate that it would lead to oscillation; after all, we have already seen feedback processes in this module that did not lead to oscillation.
 
@@ -30,15 +28,13 @@ The repressilator motif for three particles <em>X</em>, <em>Y</em>, and <em>Z</e
 **STOP:** Try building a reaction-diffusion model for the repressilator, assuming that we start with an initial concentration of *X* and no *Y* or *Z* particles.
 {: .notice--primary}
 
-## Modeling a repressilator with a reaction-diffusion particle simulation
+To build a reaction-diffusion model accompanying the repressilator, we start with a quantity of *X* particles, and no *Y* or *Z* particles. We assume that all three particles diffuse at the same rate and degrade at the same rate.
 
-To build a reaction-diffusion model accompanying the repressilator, we start with a quantity of *X* particles, and no *Y* or *Z* particles. We then assume that all three particles diffuse at the same rate and degrade at the same rate.
+Furthermore, we assume that all three particles are produced as the result of an activation process by some other transcription factor(s), which we assume happens at the same rate. We will use a **hidden particle** *I* that serves to activate the three visible particles via the three reactions *I* → *I* + *X*, *I* → *I* + *Y*, and *I* → *I* + *Z*, all taking place at the same rate.
 
-Furthermore, we assume that all three particles are produced as the result of an activation process by some other transcription factor(s), which we assume happens at the same rate. We will use a single type of particle *I* that will be hidden and serves to activate the three visible particles by the reactions *I* → *I* + *X*, *I* → *I* + *Y*, and *I* → *I* + *Z*.
+In the previous lesson on the feed-forward loop, we saw that we can use the reaction *X* + *Y* → *X* to model the repression of *Y* by *X*. To complete the repressilator model, we will add the two reactions *Y* + *Z* → *Y* and *Z* + *X* → *Z*, having the same rate as the reaction *X* + *Y* → *X*.
 
-In the previous lesson on the feed-forward loop, we saw that to model a repression of *Y* by *X*, we can use the reaction *X* + *Y* → *X*. We combine this reaction with the additional two reactions *Y* + *Z* → *Y*, and *Z* + *X* → *Z* to complete the repressilator model.
-
-If you have followed our previous tutorials, then you may feel comfortable taking off the training wheels and trying out implementing the repressilator on your own. We also are more than happy to provide a tutorial if you find it useful.
+If you have followed our previous tutorials, then you may feel comfortable taking off the training wheels and implementing the repressilator with your own reaction-diffusion model. We also are happy to provide the following tutorial.
 
 [Visit tutorial](tutorial_oscillators){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}

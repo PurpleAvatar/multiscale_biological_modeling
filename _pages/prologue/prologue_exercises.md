@@ -19,7 +19,7 @@ sidebar:
 
 * The Gray-Scott reactions always seem to reach a steady state where the simulation stops moving. Are you able to find parameters or predator placement which creates an oscillatory pattern?
 
-* Play with the seed_size in the Gray-Scott jupyter notebook. What does this parameter control? 
+* Play with the seed_size in the Gray-Scott jupyter notebook. What does this parameter control?
 
 **STOP**: Is it ever possible for a square to have a concentration greater than 1? Why or why not?
 {: .notice--primary}
@@ -27,6 +27,5 @@ sidebar:
 **STOP**: Note that the concentrations of all of the particles add up to 1 in each step. Do you think that this must always be true?
 {: .notice--primary}
 
-[Next chapter](../motifs/home){: .btn .btn--primary .btn--large}
+[Next module](../motifs/home){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
-

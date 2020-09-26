@@ -22,13 +22,13 @@ toc_sticky: true
 Types of Feed Forward Loops[^ffl]
 {: style="text-align: center;"}
 
-5. More complex motifs may require more computational power to discover. Can you modify the Jupyter Notebook to identify circular loops of transcription factor regulation, such as the multi-component loop below? 
+5. More complex motifs may require more computational power to discover. Can you modify the Jupyter Notebook to identify circular loops of transcription factor regulation, such as the multi-component loop below?
 
 ![image-center](../assets/images/s_cerevisiae_tf_network.jpg){: .align-center}
 Example of different motifs within the *S. Cerevisiae* network[^scNetwork]
 {: style="text-align: center;"}
 
-6. Using the *NAR_comparison_equal.blend* file from the NAR Tutorial, increase the reaction rate of X1 -> X1 + Y1 to 4e4, so the table should now look like: 
+6. Using the *NAR_comparison_equal.blend* file from the NAR Tutorial, increase the reaction rate of X1 -> X1 + Y1 to 4e4, so the table should now look like:
 
 | Reactants |Products|Forward Rate|
 |:--------|:-------:|--------:|
@@ -38,17 +38,13 @@ Example of different motifs within the *S. Cerevisiae* network[^scNetwork]
 | Y2’  | NULL | 4e2 |
 |Y2’ + Y2’|Y2’|4e2|
 
-If we plot this graph, we can see the steady states of Y1 and Y2 are different once again. Can you repair the system to find the appropriate reaction rate for X2 -> X2 + Y2 to make the steady states equal once more? Are you about to adjust the reaction Y2 + Y2 -> Y2 as well? Do the reaction rates scale at the same rate? 
+If we plot this graph, we can see the steady states of Y1 and Y2 are different once again. Can you repair the system to find the appropriate reaction rate for X2 -> X2 + Y2 to make the steady states equal once more? Are you about to adjust the reaction Y2 + Y2 -> Y2 as well? Do the reaction rates scale at the same rate?
 
 ## Internal notes -- resolve before publication
 
 * We also need a note at end of module about the fact that the cell is growing so that in more robust models the concentration is constantly decreasing as a result of the cell growing since it needs to double its volume every cell cycle.
 
 * What about a link to TF networks of other species? Human? Are these datasets readily available?
-
-* Perhaps define the term "response time"
-
-* Define "activate" and "repress" early on in the module and use these wherever possible instead of upregulate and downregulate.
 
 * Need to cite the origin of the repressilator as a synthetic system -- mention 2000 paper and 2016 paper.
 
@@ -73,4 +69,3 @@ If we plot this graph, we can see the steady states of Y1 and Y2 are different o
 
 [Next module](../chemotaxis/home){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
-

@@ -35,6 +35,8 @@ If you would like a refresher on transcription, the following video from the You
 
 * Start here: cover what regulation is, and how it is achieved.
 
+* Define "activate" and "repress" and use these wherever possible instead of upregulate and downregulate. Say that these are the same term.
+
 * Discuss the concept of feedback here -- DNA makes RNA makes a transcription factor, which then feeds back and controls the
 
 * We'll talk about some of the machinery of how the cell actually detects an extracellular signal and conveys it as a response in the next module.

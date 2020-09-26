@@ -49,7 +49,7 @@ In the figure below, we show a plot visualizing the amount of *Z* across the two
 
 ![image-center](../assets/images/ffl_graph.PNG){: .align-center}
 In dark purple we see the results of a FFL compared with light blue showing a normal steady state reaction
-{: style="text-align: center;"}
+{: style="font-size: medium;"}
 
 However, you will note a slightly different pattern to the growth of *Z* than we saw under negative autoregulation. In negative autoregulation, the concentration of the protein approached steady state from below. In the case of the FFL, the amount of *Z* grows so quickly that it passes its steady state and later returns to steady state from above.
 

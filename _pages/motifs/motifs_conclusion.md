@@ -1,6 +1,6 @@
 ---
 permalink: /motifs/conclusion
-title: "Conclusion"
+title: "Conclusion: The Importance of Robustness in Biological Oscillations"
 sidebar:
  nav: "motifs"
 toc: true

@@ -70,6 +70,9 @@ You may also like to check out the following excellent video on identifying gene
 
 <iframe width="640" height="360" src="https://www.youtube-nocookie.com/embed/voEDurUgz_4" frameborder="0" allowfullscreen></iframe>
 
+**STOP:** How to you think that researchers measure whether a transcription factor activates or inhibits a given gene?
+{: .notice--primary}
+
 ## Organizing transcription factor information
 
 As a result of both computational and experimental techniques, we have learned a great deal about which transcription factors regulate which genes. But what do we do with this information?

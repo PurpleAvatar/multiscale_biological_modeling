@@ -11,35 +11,28 @@ toc_sticky: true
 
 Once we know which genes each transcription factor regulates, we can consolidate this information into a **transcription factor network**. The nodes in the network represent an organism's proteins, and we connect *X* to *Y* with an edge if *X* is a transcription factor that regulates the expression of protein *Y*.  Any node can have an edge leading into it, but only a transcription factor can have an edge leaving it.
 
-The figure below shows a portion of the transcription factor network for *Escherichia coli*, the workhorse model organism of bacterial studies. Even though *E. coli* is a bacterium, we will be able to draw powerful conclusions about gene regulation from its transcription factor network.
+The figure below shows a portion of the transcription factor network for *Escherichia coli*, the workhorse model organism of bacterial studies. Even though *E. coli* is a bacterium, we will be able to draw powerful conclusions about gene regulation from its transcription factor network. The true network is much larger, consisting of thousands of genes and over 250 transcription factors, and we will need to analyze it computationally to draw these conclusions.
+
+Note that the edges in the *E. coli* transcription factor network below are colored red or green. An edge connecting *X* to *Y* is colored green if *X* upregulates *Y*, and it is colored red if *X* downregulates *Y*. (Alternatively, we could label the edges with a "+" or "-".)
 
 ![image-center](../assets/images/e_coli_tf_network.jpeg){: .align-center}
-A subset of the *E. coli* transcription factor network. Click [here](downloads/e_coli_tf_network.jpeg) to zoom in on this network. The full network is available from Samal & Jain 2008.[^eColiNetwork]
+A subset of the *E. coli* transcription factor network.[^eColiNetwork] An edge from *X* to *Y* denotes that *X* is a transcription factor that regulates *Y*. Edges corresponding to upregulation are colored green, and edges corresponding to downregulation are colored red. Click [here](downloads/e_coli_tf_network.jpeg) to zoom in on this network.
 {: style="text-align: center; font-size: medium;"}
 
-
-**STOP:** Do you notice anything interesting about the *E. coli* transcription factor network?
-{: .notice--primary}
-
-Note also that the edges in the *E. coli* transcription factor network are colored red or green. An edge connecting *X* to *Y* is colored green if *X* upregulates *Y*, and it is colored red if *X* downregulates *Y*. (Alternatively, we could label the edges with a "+" or "-", respectively.)
-
-**STOP:** How to you think that researchers measure whether a transcription factor upregulates or downregulates a given gene?
+**STOP:** Click on the [expanded view](downloads/e_coli_tf_network.jpeg) of the transcription factor network in the figure above. Do you notice anything interesting about this network?
 {: .notice--primary}
 
 ## Autoregulation
 
-Because of the size and complexity of the *E. coli* transcription factor network, we will need to analyze it computationally to draw rigorous conclusions about the network's structure. However, we do note that the network does seem to have a large number of **loops**, or edges that connect a node to itself.
+The *E. coli* transcription factor network seems to have a surprising number of **loops**, or edges that connect a node to itself. It is worth pausing for a moment to consider the implications of a loop in a transcription factor network. What does it even mean for a transcription factor regulate itself?
 
-It is worth pausing for a moment to consider the implications of a loop in a transcription factor network. What does it even mean for a transcription factor regulate itself?
-
-A transcription factor is a protein, which means that by the Central Dogma of Molecular Biology, the transcription factor is produced as the result of transcription and then translation of a gene appearing in an organism's DNA. In a process called **autoregulation**, the transcription factor protein then binds to the DNA in the upstream region of the gene encoding the *same* transcription factor. This type of **feedback** is a beautiful feature of this biological system.
+A transcription factor is a protein, which means that because of the Central Dogma of Molecular Biology, the transcription factor is produced as the result of transcription and translation of a gene appearing in an organism's DNA. In **autoregulation**, illustrated in the figure below, the transcription factor protein then binds to the DNA in the upstream region of the gene encoding the *same* transcription factor. This type of **feedback** is a beautiful and surprising feature of a simple biological system.
 
 ![image-center](../assets/images/autoregulation_example.png){: .align-center}
-Here, the "Protein" represents the transcription factor binding the the DNA, represented by "Gene". We can see that same gene is responsible for production of the very same protein[^auto]
-{: style="text-align: center;"}
+A simplified illustration of autoregulation. "Protein" labels the transcription factor binding factor protein, which binds to the DNA encoding this transcription factor, labeled by "Gene".[^auto]
+{: style="text-align: center; font-size: medium;"}
 
-The presence of transcription factor autoregulation leads us to ask two questions. First, how can we show that the number of loops in the transcription factor network for *E. coli* is significantly large? And second, if this is the case, then why is autoregulation common? Put another way, why would a transcription factor have evolved to regulate its *own* transcription?
-
+The presence of transcription factor autoregulation leads us to ask two questions. First, how can we argue rigorously that the number of loops in a transcription factor network is "surprisingly large"? And second, if this is the case, then why is autoregulation so common? That is, why would a transcription factor have evolved to regulate its *own* transcription?
 
 [Next lesson](nar){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}

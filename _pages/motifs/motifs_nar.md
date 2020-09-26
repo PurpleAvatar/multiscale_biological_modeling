@@ -37,7 +37,7 @@ To recap, the simulations of both cells will include diffusion of *X* and *Y*, r
 
 ## Ensuring a mathematically controlled comparison
 
-If you followed the tutorial, then you were likely confused and disappointed in our negative autoregulating transcription factor *Y*. The figure below shows a plot of *Y* particles for the two simulations.
+If you followed the tutorial, then you were likely  disappointed in our second cell and its negative autoregulating transcription factor *Y*. The figure below shows a plot of *Y* particles for the two simulations.
 
 ![image-center](../assets/images/nar_unequal_graph.PNG){: .align-center}
 A comparison of the number of *Y* particles across two simulations. In the first cell (shown in red), we only have upregulation of *Y* by *X*, whereas in the second cell (shown in yellow), we keep all parameters fixed but add a reaction simulating negative autoregulation of *Y*.
@@ -45,33 +45,31 @@ A comparison of the number of *Y* particles across two simulations. In the first
 
 By allowing *Y* to slow its own transcription, we wound up with a simulation in which the final concentration of *Y* was lower than when we only had upregulation of *Y* by *X*. It seems like we are back at square one; why in the world would negative autoregulation be so common?
 
-The answer to our quandary is that the model we built was not controlled to ensure a fair comparison between the two systems. In particular, the two simulations that we build must be controlled so that they have approximately the *same* steady-state concentration of *Y*. Ensuring this equal footing for the two simulations is called a **mathematically controlled comparison.**[^Savageau]
+The answer to our quandary is that the model we built was not a fair comparison between the two systems. In particular, the two simulations must be controlled so that they have approximately the *same* steady-state concentration of *Y*. Ensuring this equal footing for the two simulations is called a **mathematically controlled comparison.**[^Savageau]
 
 **STOP:** How can we change the parameters of our models to obtain a mathematically controlled comparison?
 {: .notice--primary}
 
-There are a number of parameters that we must keep constant across the two models. First, the diffusion rates of *X* and *Y*, which we should keep constant across the two simulations. Second, the number of initial particles *X* and *Y*. And third, the degradation rate of *Y*.
+There are a number of parameters that we must keep constant across the two simulations because they are not related to regulation: the diffusion rates of *X* and *Y*, the number of initial particles *X* and *Y*, and the degradation rate of *Y*.
 
-The only way that we will be able to increase the steady-state concentration in the simulation involving autoregulation is if we increase the rate at which the reaction *X* → *X* + *Y* takes place. Finding the exact increase in this rate of reaction is an imperfect art but can be obtained through trial and error. If you followed the previous tutorial, then you may like to try your hand at adjusting the rate of the *X* → *X* + *Y* reaction on your own. The following tutorial adjusts this parameter to build a mathematically controlled comparison.
+With these parameters fixed, the only way that the steady-state concentration of *Y* can be the same in the two simulations is if we *increase* the rate at which the reaction *X* → *X* + *Y* takes place in the second simulation. If you followed the previous tutorial, then you may like to try your hand at adjusting the rate of the *X* → *X* + *Y* reaction on your own. The following tutorial adjusts this parameter to build a mathematically controlled comparison that we will analyze in the next section.
 
 [Visit tutorial](tutorial_nar#Matching-Steady-States){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
-## Interpreting why negative autoregulation may have evolved
+## An evolutionary basis for negative autoregulation
 
-The figure below plots the number of *Y* particles for the two simulations on the same chart over time, with the rate of the *X* → *X* + *Y* reaction increased in the simulation involving negative autoregulation. The two simulations now have approximately the same steady-state concentration of *Y*, and a justification for negative autoregulation appears.
+The figure below plots the number of *Y* particles for the two simulations on the same chart over time, with the rate of the *X* → *X* + *Y* reaction increased in the simulation involving negative autoregulation. The two simulations now have approximately the same steady-state concentration of *Y*.
+
+More importantly, a justification for the evolutionary purpose of negative autoregulation presents itself.
 
 ![image-center](../assets/images/nar_equal_graph.PNG){: .align-center}
 A comparison of the number of *Y* particles across the same two simulations from the previous figure, with the change that in the second simulation (shown in yellow), we increase the rate of the reaction simulating upregulation of *Y* by *X*.  As a result, the two simulations have approximately the same steady state of *Y*, and the simulation involving negative autoregulation reaches this steady state more quickly.
 {: style="font-size: medium;"}
 
-Because the rate of the reaction *X* → *X* + *Y* is higher in the simulation involving negative autoregulation, the number of *Y* particles in this simulation increases at a much faster rate.
+Because the rate of the reaction *X* → *X* + *Y* is higher in the second simulation, the number of *Y* particles in this simulation increases at a much faster rate. As the concentration of *Y* increases, the rate at which new *Y* particles are added to the system is the same in the two simulations because this reaction only depends on the number of *X* particles, which is constant. However, the rate at which *Y* particles are removed is higher in the second simulation because in addition to the degradation reaction *Y* → *NULL*, we have the negative autoregulation reaction 2*Y* → *Y* serving to remove *Y* particles. As a result, the plot of *Y* particles over time flattens more quickly (i.e., its derivative decreases faster) for the second simulation.
 
-As the concentration of *Y* increases, the rate at which new *Y* particles are added to the system remains constant because this reaction only depends on the number of *X* particles, which is constant. However, the rate at which *Y* particles are removed *increases* in the simulation involving negative autoregulation because in addition to the degradation reaction *Y* → *NULL*, we have the negative autoregulation reaction 2*Y* → *Y* serving to remove *Y* particles. As a result, the plot of *Y* particles over time flattens more quickly (i.e., its derivative decreases faster) for the simulation involving negative autoregulation.
-
-More importantly, this plot helps explain *why* negative autoregulation has evolved. The simulation involving negative autoregulation wins the "race" to a steady-state concentration of *Y*, and so we can conclude that a cell in which this transcription factor is negatively autoregulated is more fit for survival than one that does not.
-
-Uri Alon proposed an excellent analogy of a negatively autoregulating transcription factor as a sportscar that has a powerful engine (corresponding to the higher rate of the reaction producing *Y*) and sensitive brakes (corresponding to the negative autoregulation reaction slowing the production of *Y*). This conclusion is reinforced by the plot below, where we show that we can reach steady-state even more quickly if we increase the rates of both of these reactions.
+More importantly, this plot helps explain *why* negative autoregulation may have evolved. The simulation involving negative autoregulation wins the "race" to a steady-state concentration of *Y*, and so we can conclude that a cell in which this transcription factor is negatively autoregulated is more fit for survival than one that does not. Uri Alon[^Alon] has proposed an excellent analogy of a negatively autoregulating transcription factor as a sports car that has a powerful engine (corresponding to the higher rate of the reaction producing *Y*) and sensitive brakes (corresponding to the negative autoregulation reaction slowing the production of *Y*).
 
 In this lesson, we have seen that particle-based simulations can be powerful for justifying why a network motif is prevalent. What are some other commonly occurring network motifs in transcription factor networks? And what evolutionary purposes might they serve? We will spend the remainder of this module delving into these questions.
 
@@ -79,6 +77,8 @@ In this lesson, we have seen that particle-based simulations can be powerful for
 {: style="font-size: 100%; text-align: center;"}
 
 ## Citations
+
+[^Alon]: Alon, Uri. *An Introduction to Systems Biology: Design Principles of Biological Circuits*, 2nd Edition. Chapman & Hall/CRC Mathematical and Computational Biology Series. 2019.
 
 [^Dob]: Dobzhansky, Theodosius (March 1973), "Nothing in Biology Makes Sense Except in the Light of Evolution", American Biology Teacher, 35 (3): 125–129, JSTOR 4444260)
 

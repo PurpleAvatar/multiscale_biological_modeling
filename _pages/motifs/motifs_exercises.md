@@ -44,6 +44,8 @@ If we plot this graph, we can see the steady states of Y1 and Y2 are different o
 
 * We also need a note at end of module about the fact that the cell is growing so that in more robust models the concentration is constantly decreasing as a result of the cell growing since it needs to double its volume every cell cycle.
 
+* Exercise: develop a version of Gray-Scott from prologue that mimics the repressilator (?)
+
 * What about a link to TF networks of other species? Human? Are these datasets readily available?
 
 * Need to cite the origin of the repressilator as a synthetic system -- mention 2000 paper and 2016 paper.

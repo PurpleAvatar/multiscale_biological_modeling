@@ -9,17 +9,17 @@ toc_sticky: true
 
 ## The need for robustness in biological oscillators
 
-Nothing exemplifies the need for robustness in biological systems better than oscillators. If a palpitation causes your heart to skip a beat, it should be able to return quickly to its natural rhythm. If you hold your breath to dive underwater on a snorkeling tip, you shouldn't hyperventilate when you return to the surface. And regardless of what functions your cells perform or what disturbances they find in their environment, they should be able to maintain a normal cell cycle.
+Nothing exemplifies the need for robustness in biological systems better than oscillators. If a palpitation causes your heart to skip a beat, it should be able to return quickly to its natural rhythm. If you hold your breath to dive underwater, you shouldn't hyperventilate when you return to the surface. And regardless of what functions your cells perform or what disturbances they find in their environment, they should be able to maintain a normal cell cycle.
 
-An excellent illustration of the robustness of the circadian clock is the body's ability to handle jet lag. There is no apparent reason why you would have evolved to fly halfway around the world and be able to return to a normal daily cycle after just a few days of fatigue.
+An excellent illustration of the robustness of the circadian clock is the body's ability to handle jet lag. There is no apparent reason why humans would have evolved to be resilient to flying halfway around the world. And yet are circadian clock is so resilient that after a few days of fatigue and crankiness, we return to a normal daily cycle.
 
-In the previous lesson, we saw that the repressilator will produce oscillations even in a noisy environment. This leads us to wonder about the extent to which our repressilator is robust, and how quickly it can respond to a disturbance.
+In the previous lesson, we saw that the repressilator will oscillate even in a noisy environment. This behavior leads us to wonder about the extent to which the repressilator is robust. Much like the circadian clock responding to jet lag, we wonder how quickly the repressilator can respond to the jolt of a sudden disturbance in the concentrations of its particles.
 
-## A coarse-grained model for reaction-diffusion
+## A coarse-grained model for the repressilator
 
-We have noted that a benefit of using a reaction-diffusion particle model to study network motifs is the inclusion of built-in noise to ensure a measure of robustness. However, a downside of such a model is that simulating the movements of so many particles leads to a slow simulation that does not scale well to many particles or reactions.
+We have noted that a benefit of using a reaction-diffusion particle model to study network motifs is the inclusion of built-in noise to ensure a measure of robustness. However, as we saw in the [prologue](prologue) with our work on Turing patterns, a downside of a particle-based model is that tracking the movements of many particles leads to a slow simulation that does not scale well given more particles or reactions.
 
-Although our model is ultimately interested in the interactions of molecules, the conclusions we have made throughout this chapter are only based on the *concentrations* of these particles. Therefore, as we did in the [prologue](prologue), we might imagine developing a coarser-grained version of our model that allows us to make faster conclusions about particle concentrations without keeping track of the diffusion of individual particles.
+Although our model is ultimately interested in molecular interactions, the conclusions we have made throughout this chapter are only based on the *concentrations* of these particles. Therefore, we might imagine developing a coarser-grained version of our model that allows us to make faster conclusions about particle concentrations without keeping track of the diffusion of individual particles.
 
 For example, say that we are modeling a degradation reaction. If we start with 10,000 *X* particles, then after a single time step, we can simply multiply the number of *X* particles by (1-*r*) where *r* is a parameter related to the rate of the degradation reaction.
 

@@ -9,7 +9,7 @@ toc_sticky: true
 
 ## Engineering a repressilator
 
-In *A Synthetic Oscillatory Network of Transcriptional Regulators* by Elowitz and Leibler[^oscillator], the repressilator model we have simulated in CellBlender was successfully tested in a real E. coli cell (an *in vivo* experiment). Instead of the X, Y, Z molecules we used in our simulation, the authors inserted the genes *TetR*, *LacI*, and *cI*. These genes were set up in the same arrangement as our simulation, however there were key differences in the scale of the model. Our simulation was carried out in a single space with approximately 300 molecules per species. The reactions were carried out on the order of around 600 reactions per time step for 120,000 steps. 
+In *A Synthetic Oscillatory Network of Transcriptional Regulators* by Elowitz and Leibler[^oscillator], the repressilator model we have simulated in CellBlender was successfully tested in a real E. coli cell (an *in vivo* experiment). Instead of the X, Y, Z molecules we used in our simulation, the authors inserted the genes *TetR*, *LacI*, and *cI*. These genes were set up in the same arrangement as our simulation, however there were key differences in the scale of the model. Our simulation was carried out in a single space with approximately 300 molecules per species. The reactions were carried out on the order of around 600 reactions per time step for 120,000 steps.
 
 ![image-center](../assets/images/repressilator_ecoli.png){: .align-center}
 The repressilator model used in Elowitz and Leibler's E. coli system
@@ -45,7 +45,8 @@ The technical details behind such a coarse-grained model are beyond the scope of
 In the figure below, we show a plot of concentrations of each particle in our coarse-gained simulation of the repressilator, with one caveat.  Midway through the simulation, we incorporate a disturbance that causes a spike in the concentration of *Y*.
 
 ![image-center](../assets/images/nf_sim_interrupted.PNG){: .align-center}
-<figcaption>Adding a significant number of *Y* particles to our simulation produces little ultimate disturbance to the concentrations of the three particles, which return to normal oscillations within a single cycle.</figcaption>
+Adding a significant number of *Y* particles to our simulation produces little ultimate disturbance to the concentrations of the three particles, which return to normal oscillations within a single cycle.
+{: style="font-size: medium;"}
 
 Because of the spike in the concentration of *Y*, the reaction *Y* + *Z* → *Y* suppresses the concentration of *Z* for longer than usual, and so the concentration of *X* is free to increase for longer than normal. As a result, the next peak in the concentration of *X* is higher than normal.
 

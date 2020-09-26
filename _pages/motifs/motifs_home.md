@@ -17,19 +17,19 @@ When studying the functions and binding of proteins, biologists may build a **pr
 
 ![image-center](../assets/images/PPI_network.png){: .align-center}
 A complete hepatitis C virus-host protein-protein interaction network in hepatoma cells.[^PPInetwork] Nodes correspond to proteins, and an edge connects two proteins if the two proteins interact.
-{: style="text-align: center; font-size: medium;"}
+{: style="font-size: medium;"}
 
 When studying the more complex interactions and processes taking place within a cell, biologists form a **metabolic network** (figure below). Nodes correspond to substances in a chemical reaction, and an edge connects two nodes if there is some enzyme that catalyzes a reaction involving these substances.
 
 ![image-center](../assets/images/The-metabolic-network-of-tomato-cells-The-system-is-a-cell-with-symbolic-subcellular.png){: .align-center}
 The metabolic network of tomato cells.[^metabolicNetwork]
-{: style="text-align: center; font-size: medium;"}
+{: style="font-size: medium;"}
 
 When studying the nervous system, biologists build **neuronal networks** that link neurons together according to how they are linked in the body (figure below). These networks have been studied since the 1940s but have recently exploded as a model for solving applied problems in machine learning.
 
 ![image-center](../assets/images/Neuron-networks-a-brain-b-neural-network-c-neuron-connecting-structure-d-neuron.png){: .align-center}
 Mapping and models of neurons[^neuralNetwork]
-{: style="text-align: center; font-size: medium;"}
+{: style="font-size: medium;"}
 
 In this module, we will introduce yet another fundamental biological network called a **transcription factor network** that involves the proteins that drive a cell's response to its environment. We will hunt for **network motifs**, or commonly occurring structures, hidden in this network. We will then use modeling to address the more challenging question of *why* these motifs have evolved in order to help the cell respond to its environment.
 

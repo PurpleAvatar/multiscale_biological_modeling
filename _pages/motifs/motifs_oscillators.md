@@ -24,9 +24,9 @@ Researchers have identified many network motifs that facilitate oscillation, som
 The repressilator motif is shown in the figure below. In this motif, all three proteins are transcription factors, and they form a cycle in which *X* represses *Y*, *Y* represses *Z*, and *Z* represses *X* (hence the name). The repressilator clearly forms a feedback loop, but nothing *a priori* about this motif would indicate that it would lead to oscillation; after all, we have already seen feedback processes in this module that did not lead to oscillation.
 
 <center>
-<img src="../assets/images/repressilator.png" width="200">
-<figcaption>The repressilator motif for three particles <em>X</em>, <em>Y</em>, and <em>Z</em>. <em>X</em> represses <em>Y</em>, which represses <em>Z</em>, which in turn represses <em>X</em>, forming a feedback loop.</figcaption>
-</center>
+![image-center](../assets/images/repressilator.png){: .align-center}
+The repressilator motif for three particles <em>X</em>, <em>Y</em>, and <em>Z</em>. <em>X</em> represses <em>Y</em>, which represses <em>Z</em>, which in turn represses <em>X</em>, forming a feedback loop.
+{: style="font-size: medium;"}
 
 **STOP:** Try building a reaction-diffusion model for the repressilator, assuming that we start with an initial concentration of *X* and no *Y* or *Z* particles.
 {: .notice--primary}
@@ -52,7 +52,7 @@ The figure below shows the results of our simulation by plotting the number of *
 {: .notice--primary}
 
 ![image-center](../assets/images/repress_graph.PNG){: .align-center}
-Here we see X in yellow, y in red, and Z in blue 
+Here we see X in yellow, y in red, and Z in blue
 {: style="text-align: center;"}
 
 Why would the repressilator's three-component feedback loop cause the concentrations of the three particles to oscillate? We will attempt to provide a high-level explanation.
@@ -89,6 +89,6 @@ In the next lesson, we will explore the concept of robustness further. The noise
 
 [^bacteria]: Grobbelaar N, Huang TC, Lin HY, Chow TJ. 1986. Dinitrogen-fixing endogenous rhythm in Synechococcus RF-1. FEMS Microbiol Lett 37:173–177. doi:10.1111/j.1574-6968.1986.tb01788.x.CrossRefWeb of Science.
 
-[^repress]: Elowitz MB, Leibler S. A synthetic oscillatory network of transcriptional regulators. Nature. 2000;403(6767):335-338. doi:10.1038/35002125 
+[^repress]: Elowitz MB, Leibler S. A synthetic oscillatory network of transcriptional regulators. Nature. 2000;403(6767):335-338. doi:10.1038/35002125
 
-[^noise]: Brandon Ho, Anastasia Baryshnikova, Grant W. Brown. Unification of Protein Abundance Datasets Yields a Quantitative Saccharomyces cerevisiae Proteome. Cell Systems, 2018; DOI: 10.1016/j.cels.2017.12.004 
+[^noise]: Brandon Ho, Anastasia Baryshnikova, Grant W. Brown. Unification of Protein Abundance Datasets Yields a Quantitative Saccharomyces cerevisiae Proteome. Cell Systems, 2018; DOI: 10.1016/j.cels.2017.12.004

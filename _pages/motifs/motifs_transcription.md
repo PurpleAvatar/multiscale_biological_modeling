@@ -15,13 +15,13 @@ The RNA transcript is then **translated** into an amino acid sequence. Because t
 
 ![image-center](http://bioinformaticsalgorithms.com/images/Antibiotics/genetic_code.png){: .align-center}
 The genetic code, which dictates the conversion of RNA codons into amino acids.
-{: style="text-align: center; font-size: medium;"}
+{: style="font-size: medium;"}
 
 DNA can be thought of as a blueprint for storing information that flows from DNA to RNA to protein. This flow of information is called the **Central Dogma of Molecular Biology** (see figure below).
 
 ![image-center](../assets/images/Central_Dogma_of_Molecular_Biochemistry_with_Enzymes.jpg){: .align-center}
 The Central Dogma of molecular biology states that molecular information flows from DNA in the nucleus, into the RNA that is transcribed from DNA, and then into proteins that are translated from RNA.
-{: style="text-align: center; font-size: medium;"}
+{: style="font-size: medium;"}
 
 <!--
 
@@ -64,7 +64,8 @@ The clever trick is to use an **antibody** (i.e., a protein that your immune sys
 In a final step, we unlink the protein from the DNA, leaving a collection of DNA fragments that were previously bonded to a single transcription factor. These fragments are read using **DNA sequencing** to determine the order of nucleotides on each fragment. Once we have read the fragments, we can then scan through the genome to determine the genes that these fragments precede. We can then postulate that these are the genes regulated by the transcription factor!
 
 ![image-center](../assets/images/ChIP-seq_workflow.png){: .align-center}
-<figcaption>An overview of ChIP-seq. Figure courtesy Jkwchui, Wikimedia Commons user.</figcaption>
+An overview of ChIP-seq. Figure courtesy Jkwchui, Wikimedia Commons user.
+{: style="font-size: medium;"}
 
 You may also like to check out the following excellent video on identifying genes regulated by a transcription factor. This video was produced by students in the 2020 [PreCollege Program in Computational Biology](http://www.cbd.cmu.edu/education/pre-college-program-in-computational-biology/) at Carnegie Mellon. The presenters won an award from their peers for their work, and for good reason!
 

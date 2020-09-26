@@ -40,7 +40,7 @@ To recap, the simulations of both cells will include diffusion of *X* and *Y*, r
 If you followed the tutorial, then you were likely confused and disappointed in our negative autoregulating transcription factor *Y*. The figure below shows a plot of *Y* particles for the two simulations.
 
 ![image-center](../assets/images/nar_unequal_graph.PNG){: .align-center}
-A comparison of the number of *Y* particles across two simulations. In the first (shown in red), we only have upregulation of *Y* by *X*, whereas in the second (shown in yellow), we keep all parameters fixed but add a reaction simulating negative autoregulation of *Y*.
+A comparison of the number of *Y* particles across two simulations. In the first cell (shown in red), we only have upregulation of *Y* by *X*, whereas in the second cell (shown in yellow), we keep all parameters fixed but add a reaction simulating negative autoregulation of *Y*.
 {: style="font-size: medium;"}
 
 By allowing *Y* to slow its own transcription, we wound up with a simulation in which the final concentration of *Y* was lower than when we only had upregulation of *Y* by *X*. It seems like we are back at square one; why in the world would negative autoregulation be so common?
@@ -62,7 +62,8 @@ The only way that we will be able to increase the steady-state concentration in 
 The figure below plots the number of *Y* particles for the two simulations on the same chart over time, with the rate of the *X* → *X* + *Y* reaction increased in the simulation involving negative autoregulation. The two simulations now have approximately the same steady-state concentration of *Y*, and a justification for negative autoregulation appears.
 
 ![image-center](../assets/images/nar_equal_graph.PNG){: .align-center}
-<figcaption>A comparison of the number of *Y* particles across the same two simulations from the previous figure, with the change that in the second simulation (shown in yellow), we increase the rate of the reaction simulating upregulation of *Y* by *X*.  As a result, the two simulations have approximately the same steady state of *Y*, and the simulation involving negative autoregulation reaches this steady state more quickly.</figcaption>
+A comparison of the number of *Y* particles across the same two simulations from the previous figure, with the change that in the second simulation (shown in yellow), we increase the rate of the reaction simulating upregulation of *Y* by *X*.  As a result, the two simulations have approximately the same steady state of *Y*, and the simulation involving negative autoregulation reaches this steady state more quickly.
+{: style="font-size: medium;"}
 
 Because the rate of the reaction *X* → *X* + *Y* is higher in the simulation involving negative autoregulation, the number of *Y* particles in this simulation increases at a much faster rate.
 

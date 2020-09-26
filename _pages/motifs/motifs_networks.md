@@ -17,7 +17,7 @@ Note that the edges in the *E. coli* transcription factor network below are colo
 
 ![image-center](../assets/images/e_coli_tf_network.jpeg){: .align-center}
 A subset of the *E. coli* transcription factor network.[^eColiNetwork] An edge from *X* to *Y* denotes that *X* is a transcription factor that regulates *Y*. Edges corresponding to upregulation are colored green, and edges corresponding to downregulation are colored red. Click [here](downloads/e_coli_tf_network.jpeg) to zoom in on this network.
-{: style="text-align: center; font-size: medium;"}
+{: style="font-size: medium;"}
 
 **STOP:** Click on the [expanded view](downloads/e_coli_tf_network.jpeg) of the transcription factor network in the figure above. Do you notice anything interesting about this network?
 {: .notice--primary}
@@ -30,7 +30,7 @@ A transcription factor is a protein, which means that because of the Central Dog
 
 ![image-center](../assets/images/autoregulation_example.png){: .align-center}
 A simplified illustration of autoregulation. "Protein" labels the transcription factor binding factor protein, which binds to the DNA encoding this transcription factor, labeled by "Gene".[^auto]
-{: style="text-align: center; font-size: medium;"}
+{: style="font-size: medium;"}
 
 Transcription factor autoregulation leads us to ask two questions. First, how can we conclude that the number of loops in a transcription factor network is "surprisingly large"? And second, if autoregulation is so common, then why would a transcription factor have evolved to regulate its *own* transcription?
 

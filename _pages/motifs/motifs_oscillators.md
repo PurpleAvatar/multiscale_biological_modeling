@@ -68,15 +68,14 @@ At this point, the reaction *X* + *Y* → *X* will suppress the concentration of
 
 Take another look at the figure showing the oscillations of the repressilator. You will notice that the concentrations zigzag as they travel up or down, and that they peak at slightly different levels each time.
 
-This noise in the repressilator's oscillations is due to variance as the particles travel around. Specifically, the repression reactions require two particles to collide in order for the reaction to take place. Due to random chance, these collisions may occur more or less often than they would be expected in a given time period because of random chance. Some of this noise is also due to the number of proteins represented in our simulation. While we have around 150 molecules at each peak, there are typically on order of 1,000 to 10,000 of each protein within a single cell.[^noise]
+This noise in the repressilator's oscillations is due to variance as the particles travel around randomly. Specifically, the repression reactions require two particles to collide in order for the reaction to take place. Due to random chance, these collisions may occur more or less often than expected because of random chance. We should also note that some of this noise is due to low sample size: we have around 150 molecules at each peak in the above figure, but a given cell may have on the order of 1,000 to 10,000 molecules of a single protein.[^noise]
 
-The noise that appears in the repressilator's oscillations is a feature, not a bug. As we have discussed previously, the cell's molecular interactions are inherently random. So if we see oscillations in a simulation that includes noise arising from random chance, we can be confident that this simulation is *robust* to a certain amount of noise.
+Yet the noise that appears in the repressilator's oscillations is a feature, not a bug. As we have discussed previously, the cell's molecular interactions are inherently random. So if we see oscillations in a simulation that includes noise arising from random chance, we can be confident that this simulation is *robust* to a certain amount of variation.
 
-In the next lesson, we will explore the concept of robustness further. The noise in the oscillations appears to be relatively minor, but what happens if our simulation experiences a much greater disturbance to the concentration of one of the particles?  Will it still be able to recover and return to the same oscillatory pattern?
+In the next lesson, we will further explore the concept of robustness as it pertains to the repressilator. What happens if our simulation experiences a much greater disturbance to the concentration of one of the particles?  Will it still be able to recover and return to the same oscillatory pattern?
 
 [Next lesson](robust){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
-
 
 [^bunker]: Aschoff, J. (1965). Circadian rhythms in man. Science 148, 1427–1432.
 

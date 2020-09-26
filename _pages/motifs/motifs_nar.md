@@ -40,7 +40,8 @@ To recap, the simulations of both cells will include diffusion of *X* and *Y*, r
 If you followed the tutorial, then you were likely confused and disappointed in our negative autoregulating transcription factor *Y*. The figure below shows a plot of *Y* particles for the two simulations.
 
 ![image-center](../assets/images/nar_unequal_graph.PNG){: .align-center}
-A comparison of the number of *Y* particles across two simulations. In the first (shown in red), we only have upregulation of *Y* by *X*, whereas in the second (shown in yellow), we keep all parameters fixed but add a reaction simulating negative autoregulation of *Y*.{: style="font-size: medium;"}
+A comparison of the number of *Y* particles across two simulations. In the first (shown in red), we only have upregulation of *Y* by *X*, whereas in the second (shown in yellow), we keep all parameters fixed but add a reaction simulating negative autoregulation of *Y*.
+{: style="font-size: medium;"}
 
 By allowing *Y* to slow its own transcription, we wound up with a simulation in which the final concentration of *Y* was lower than when we only had upregulation of *Y* by *X*. It seems like we are back at square one; why in the world would negative autoregulation be so common?
 

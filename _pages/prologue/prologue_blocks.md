@@ -15,17 +15,15 @@ In our case, we have a very "fine-grained" reaction-diffusion model illustrating
 
 Let us begin with a simple example of the diffusion of only *A* particles (we will later add *B* particles as well as reactions to our model). Say that the particles are at maximum concentration in the central cell of our grid, and are present nowhere else, as the following figure illustrates.
 
-<center>
-<img src = "../assets/images/initial_A_concentration.png" width="300">
-<figcaption>A 5 x 5 grid showing hypothetical initial concentrations of <em>A</em> particles. Cells are labeled by numbers between 0 and 1 representing their concentration of a single particle. In this example, the central cell has maximum concentration, and no particles are contained in any other cell.</figcaption>
-</center>
+![image-center](../assets/images/initial_A_concentration.png){: .align-center}
+A 5 x 5 grid showing hypothetical initial concentrations of *A* particles. Cells are labeled by numbers between 0 and 1 representing their concentration of a single particle. In this example, the central cell has maximum concentration, and no particles are contained in any other cell.
+{: style="font-size: medium;"}
 
 We will now update the grid of cells after one time step in a way that mimics diffusion. To do so, we will spread out the concentration of particles in each square to its eight neighbors; one way of doing so is to assume that 20% of the current cell's concentration diffuses to each of its four adjacent neighbors, and that 5% of the cell's concentration diffuses to its four diagonal neighbors. Because the central square in our ongoing example is the only cell with any particles, the updated concentrations of our particle after a single time step are shown in the following figure.
 
-<center>
-<img src = "../assets/images/A_concentration_one_time_step.png" width="300">
-<figcaption>A grid showing an update to the system in the previous figure after diffusion of particles after a single time step.</figcaption>
-</center>
+![image-center](../assets/images/A_concentration_one_time_step.png){: .align-center}
+A grid showing an update to the system in the previous figure after diffusion of particles after a single time step.
+{: style="font-size: medium;"}
 
 After an additional time step, the particles continue to diffuse outward. For example, each diagonal neighbor of the central cell in the above figure, which has a concentration of 0.05, will lose all of its particles in the next step. This cell will also gain 20% of the particles from two of its adjacent neighbors, along with 5% of the particles from the central square (which doesn't have any particles). This makes the updated concentration of this cell equal to 0.2(0.2) + 0.2(0.2) + 0.05(0) = 0.04 + 0.04 + 0 = 0.08.
 
@@ -35,10 +33,9 @@ Finally, the central square receives 20% of the particles from each of its four 
 
 As a result, the central nine squares after two time steps are as shown in the following figure.
 
-<center>
-<img src = "../assets/images/A_concentration_two_time_steps_partial.png" width="300">
-<figcaption>A grid showing an update to the central nine squares of the diffusion system in the previous figure after an additional time step. The cells labeled "?" are left as an exercise for the reader.</figcaption>
-</center>
+![image-center](../assets/images/A_concentration_two_time_steps_partial.png){: .align-center}
+A grid showing an update to the central nine squares of the diffusion system in the previous figure after an additional time step. The cells labeled "?" are left as an exercise for the reader.
+{: style="font-size: medium;"}
 
 **STOP**: What should the values of the "?" cells be in the above figure? Note that these cells are neighbors of cells with positive concentrations after one time step, so their concentrations should be positive. Click <a href="../assets/images/A_concentration_two_time_steps_complete.png" width="300">here</a> to see the answer.
 {: .notice--primary}
@@ -53,19 +50,17 @@ Our solution is to add a parameter <em>d</em><sub><em>A</em></sub> representing 
 
 To revisit our original example, say that <em>d</em><sub><em>A</em></sub> is equal to 0.2. After the first time step, only 20% of the central cell's particles will be spread to its neighbors. The figure below illustrates that the central square is updated to 0.8, its adjacent neighbors are updated to 0.2<em>d</em><sub><em>A</em></sub> = 0.04, and its diagonal neighbors are updated to 0.05<em>d</em><sub><em>A</em></sub> = 0.01.
 
-<center>
-<img src = "../assets/images/A_concentration_slower_diffusion.png" width="300">
-<figcaption>An updated grid of cells showing the concentration of <em>A</em> particles after one time step if <em>d</em><sub><em>A</em></sub> = 0.2.</figcaption>
-</center>
+![image-center](../assets/images/A_concentration_slower_diffusion.png){: .align-center}
+An updated grid of cells showing the concentration of <em>A</em> particles after one time step if <em>d</em><sub><em>A</em></sub> = 0.2.
+{: style="font-size: medium;"}
 
 ## Adding a second particle to our diffusion simulation
 
 We now will add particle *B* to the simulation, which also starts with 100% concentration in the central square. Recall that *B*, our "predator" molecule, diffuses half as fast as *A*, the "prey" molecule. If we set the diffusion rate <em>d</em><sub><em>B</em></sub> equal to 0.1, then our cells after a time step will be updated as shown in the figure below. This figure represents the concentration of the two particles in each cell as an ordered pair ([*A*], [*B*]).
 
-<center>
-<img src = "../assets/images/two_particle_concentration_diffusion.png" width="300">
-<figcaption>A figure showing cellular concentrations after one time step for two particles <em>A</em> and <em>B</em> diffusing at rates <em>d</em><sub><em>A</em></sub> = 0.2 and <em>d</em><sub><em>B</em></sub> = 0.1. Each cell is labeled by the ordered pair ([<em>A</em>], [<em>B</em>]).</figcaption>
-</center>
+![image-center](../assets/images/two_particle_concentration_diffusion.png){: .align-center}
+A figure showing cellular concentrations after one time step for two particles <em>A</em> and <em>B</em> diffusing at rates <em>d</em><sub><em>A</em></sub> = 0.2 and <em>d</em><sub><em>B</em></sub> = 0.1. Each cell is labeled by the ordered pair ([<em>A</em>], [<em>B</em>]).
+{: style="font-size: medium;"}
 
 **STOP**: Update the cells in the above figure after another generation of diffusion. Use the diffusion rates <em>d</em><sub><em>A</em></sub> = 0.2 and <em>d</em><sub><em>B</em></sub> = 0.1.
 {: .notice--primary}
@@ -119,21 +114,21 @@ Applying these cell-based reaction-diffusion computations over all cells in para
 
 We can begin to see the Gray-Scott diffusion-reaction patterns in the CellBlender simulation, but it is clear that significant computing power is needed to get the same results as the discrete methods. In our Jupyter Notebook demo, a clear pattern emerges on a grid which requires less than a minute on most modern computers. The CellBlender simulation requires a dramatically higher computing cost.
 
-**TO COMPEAU**: Should we rephrase the above to also point out that the jupyter notebook is using the Gray-Scott model, and running this model in a discrete space is computationally easier than what we did in CellBlender? 
+**TO COMPEAU**: Should we rephrase the above to also point out that the jupyter notebook is using the Gray-Scott model, and running this model in a discrete space is computationally easier than what we did in CellBlender?
 
 <iframe width="640" height="360" src="../assets/gs_movie.gif" frameborder="0" allowfullscreen></iframe>
 Gray-Scott from our tutorial using parameters f = 0.034, k = 0.061
-{: .text-center}
+{: style="font-size: medium;"}
 
 <iframe width="640" height="360" src="../assets/0_Bgs_movie.gif" frameborder="0" allowfullscreen></iframe>
 Expanding the size of the simulation and adding new predator locations to our Gray-Scott tutorial
-{: .text-center}
+{: style="font-size: medium;"}
 
 With the same reaction parameters, we can achieve the nearly the same patterns even using different simulation software. Below, we see Gray-Scott run with the same parameters as our previous video above: f = 0.034, k = 0.061
 
 <iframe width="640" height="360" src="https://www.youtube-nocookie.com/embed/6uOSoc7Ukfw" frameborder="0" allowfullscreen></iframe>
 Gray-Scott simulation by Robert Munafo[^robert]
-{: .text-center}
+{: style="font-size: medium;"}
 
 [Next lesson](conclusion){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
@@ -141,4 +136,3 @@ Gray-Scott simulation by Robert Munafo[^robert]
 [^gs]: P. Gray and S.K. Scott, Autocatalytic reactions in the isothermal, continuous stirred tank reactor: isolas and other forms of multistability, Chemical Engineering Science 38 (1983) 29-43.
 
 [^robert]: "Reaction-Diffusion by the Gray-Scott Model: Pearson's Parametrization" © 1996-2020 Robert P. Munafo https://mrob.com/pub/comp/xmorphia/index.html
-

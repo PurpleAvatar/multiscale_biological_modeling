@@ -28,11 +28,11 @@ Furthermore, note the following two photos of giant pufferfish. These fish are g
 
 ![image-center](../assets/images/Juvenile_Mbu_pufferfish.jpg){: .align-center}
 A juvenile Mbu Pufferfish with a very familiar pattern![^youngfish]
-{: .text-center}
+{: style="font-size: medium;"}
 
 ![image-center](../assets/images/Giant_Puffer_fish_skin_pattern.jpg){: .align-center}
 An adult Mbu Pufferfish exhibiting another familiar pattern![^pufferfish]
-{: .text-center}
+{: style="font-size: medium;"}
 
 [Visit Exercises](exercises){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}

@@ -12,9 +12,9 @@ toc_sticky: true
 
 The following software and packages will need to be installed:
 
-| Installation Link | Version[^version] | Check Install | 
+| Installation Link | Version[^version] | Check Install |
 |:------|:-----:|------:|
-| [Python3](https://www.python.org/downloads/)  |3.7 |*python --version* | 
+| [Python3](https://www.python.org/downloads/)  |3.7 |*python --version* |
 | [Jupyter Notebook](https://jupyter.org/index.html) | 4.4.0 | *jupyter --version* |
 | [matplotlib](https://matplotlib.org/users/installing.html) | 2.2.3 | *conda list* or *pip list* |
 | [numpy](https://numpy.org/install/) | 1.15.1 | *conda list* or *pip list* |
@@ -23,7 +23,7 @@ The following software and packages will need to be installed:
 
 [^version]: Other versions may be compatible with this code, but those listed are known to work for this tutorial
 
-You can read more about various installation options [here](https://realpython.com/installing-python/) or [here](https://docs.conda.io/en/latest/). 
+You can read more about various installation options [here](https://realpython.com/installing-python/) or [here](https://docs.conda.io/en/latest/).
 
 
 ## Diffusion Jupyter Notebook Tutorial
@@ -35,14 +35,14 @@ import matplotlib.pyplot as plt
 import numpy as np
 import time
 from scipy import signal
-import imageio 
+import imageio
 
 %matplotlib inline
 
 images = []
 ~~~
 
-Here we introduce a **convolution function** which uses a **laplacian**. The convolve function will use our specified laplacian matrix to simulate diffusion. The laplacian describes the change in our matrix as we saw in the Gray-Scott Model page. See the [Gray-Scott Jupyter Notebook](https://purpleavatar.github.io/multiscale_biological_modeling/prologue/gs-jupyter) for a more detailed explanation. 
+Here we introduce a **convolution function** which uses a **laplacian**. The convolve function will use our specified laplacian matrix to simulate diffusion. The laplacian describes the change in our matrix as we saw in the Gray-Scott Model page. See the [Gray-Scott Jupyter Notebook](https://purpleavatar.github.io/multiscale_biological_modeling/prologue/gs-jupyter) for a more detailed explanation.
 
 ~~~ python
 def simulate(numIter, A, B, f, k, dt, dA, dB, lapl, plot_iter):
@@ -65,7 +65,7 @@ def simulate(numIter, A, B, f, k, dt, dA, dB, lapl, plot_iter):
             filename = 'dif_images/diffusion_'+str(iter)+'.png'
             plt.savefig(filename)
             images.append(imageio.imread(filename))
-    
+
     return A, B
 ~~~
 
@@ -101,7 +101,7 @@ simulate(numIter, A, B, f, k, dt, dA, dB, lapl, plot_iter)
 imageio.mimsave('dif_images/0diffusion_movie.gif', images)
 ~~~
 
-You should get images similar to the ones below. If you would like to see more images, you can adjust the *plot_iter* variable or *numIter* variable which controls how often the graph is plotted and how many iterations are in the simulation. 
+You should get images similar to the ones below. If you would like to see more images, you can adjust the *plot_iter* variable or *numIter* variable which controls how often the graph is plotted and how many iterations are in the simulation.
 
 <iframe width="640" height="360" src="../assets/0diffusion_movie.gif" frameborder="0" allowfullscreen></iframe>
 

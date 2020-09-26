@@ -11,10 +11,9 @@ toc_sticky: true
 
 Our story begins with the unlikeliest of major characters: Alan Turing. If you have heard of Turing, then you might be surprised as to why he would appear in a course on biological modeling.
 
-<center>
-<img src = "../assets/images/alan_turing_npg_cc.png" width="250">
-<figcaption>Alan Turing in 1951. © National Portrait Gallery, London.<br></figcaption>
-</center>
+![image-center](../assets/images/alan_turing_npg_cc.png){: .align-center}
+Alan Turing in 1951. © National Portrait Gallery, London.
+{: style="font-size: medium;"}
 
 Turing was a genius cryptographer during World War II and helped break several German ciphers. But his most famous scientific contribution was a 1936 paper in which he introduced what has come to be known as a **Turing machine**[^numbers]. This hypothetical computer consists of an infinitely long tape of cells and a reader that can read one cell at a time. Each cell consists of only a single number, and the machine can move one cell at a time, reading and rewriting cells according to a finite collection of internal rules. Turing's major insight was that such a machine, though simple, is enormously powerful. Nearly a century after his work, any task that a computer performs, from the device you are using to read this to the world's most powerful supercomputer, could be implemented by a Turing machine.
 

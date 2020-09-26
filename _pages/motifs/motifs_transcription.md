@@ -45,7 +45,7 @@ Regulation usually occurs on two targets: either the DNA which encodes a particu
 
 ![image-center](../assets/images/signal_pathway.jpg){: .align-center}
 A cell receiving a signal which triggers a response, resulting in transcription[^signalResponse]
-{: style="text-align: center;"}
+{: style="font-size: medium;"}
 
 If a cell receives a signal from the environment, transcription factors are a crucial part of how the cell responds and acts on that signal. As we will later see, the use of transcription factors not only enables a cell to respond to stimuli, but also adjust the speed of its reaction as necessary. In more complicated models, proteins like transcription factors may rely on "*on*" or "*off*" states which are important for a cell to achieve just the right behavior.
 

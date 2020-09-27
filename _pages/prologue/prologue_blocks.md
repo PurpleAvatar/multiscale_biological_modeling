@@ -114,7 +114,7 @@ Applying these cell-based reaction-diffusion computations over all cells in para
 
 In contrast to using a particle simulation, our Jupyter Notebook demo produces a clear pattern in less than a minute on most modern computers.
 
-**TO COMPEAU**: Should we rephrase the above to also point out that the jupyter notebook is using the Gray-Scott model, and running this model in a discrete space is computationally easier than what we did in CellBlender?
+* Need ~3 different choices of parameters showing the appearance of different Turing patterns.
 
 ![image-center](../assets/gs_movie.gif){: .align-center}
 Gray-Scott from our tutorial using parameters f = 0.034, k = 0.061

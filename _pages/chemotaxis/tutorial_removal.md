@@ -10,30 +10,50 @@ toc_sticky: true
 In this page, we will:
  - Simulate cellular response when traveling down the gradient.
 
-## Traveling down the gradient
-
-We have simulated how CheY-P changes when the cell is moving up the attractant gradient. With higher concentrations, methylation states are changed so that they can compensate for the more ligand-receptor binding to restore the CheY-P value. What if the ligands are removed? Along with increased CheY-P because the cell need to tumble more to "escape" from the wrong direction, we should see methylation states restore to the states before the addition of ligands.
+## Files and dependencies 
 
 The simulation can be downloaded here: <a href="https://purpleavatar.github.io/multiscale_biological_modeling/downloads/downloadable/removal.bngl" download="removal.bngl">removal.bngl</a>
+
+The Jupyter notebook for visualizing results can be downloaded here:
+<a href="https://purpleavatar.github.io/multiscale_biological_modeling/downloads/downloadable/plotter_down.ipynb" download="plotter_down.ipynb">plotter_down.ipynb</a>
+
+Please make sure the following dependencies are installed.
+
+| Installation Link | Version | Check install/version |
+|:------|:-----:|------:|
+| [Python3](https://www.python.org/downloads/)  |3.6+ |`python --version` |
+| [Jupyter Notebook](https://jupyter.org/index.html) | 4.4.0+ | `jupyter --version` |
+| [Numpy](https://numpy.org/install/) | 1.14.5+ | `pip list | grep numpy` |
+| [Matplotlib](https://matplotlib.org/users/installing.html) | 3.0+ | `pip list | grep matplotlib` |
+| [Colorspace](https://python-colorspace.readthedocs.io/en/latest/installation.html) or with [pip](https://pypi.org/project/colorspace/)| any | `pip list | grep colorspace`|
+
+## Modeling traveling down the gradient with BNG
+
+We have simulated how CheY-P changes when the cell moves up the attractant gradient. With higher concentrations, methylation states change so that they can compensate for the more ligand-receptor binding to restore the CheY phosphorylation level. What if the ligands are removed? Along with increased CheY-P because the cell need to tumble more to "escape" from the wrong direction, we should see methylation states return to the states before the addition of ligands.
 
 First create a copy of the adaptation model `adaptation.bngl`, name it `removal.bngl`.
 
 To simulate the removal of ligand, or the traveling down the gradient, we will add a "fake reaction" that the ligand disappear with a certain rate. Add this rule within the `reaction rules` section.
 
+~~~ ruby
 	#Simulate ligand removal
 	LigandGone: L(t) -> 0 k_gone
+~~~
 
-In `parameters` section, we define the `k_gone` to be 0.3 first and thus d[L]/dt = -0.3[L]. The concentration can be represented as [L] = 10<sup>7</sup>e<sup>-0.3t</sup>. We will also change the initial ligand concentration to be 1e7. Thus, the concentration of ligand becomes so low that ligand-receptor binding reaches 0 within 50 seconds.
+In `parameters` section, we define the `k_gone` to be 0.3 first and thus d[L]/dt = -0.3[L]. By integration, we can represent the concentration as [L] = 10<sup>7</sup>e<sup>-0.3t</sup>. We will also change the initial ligand concentration to be 1e7. Thus, the concentration of ligand becomes so low that ligand-receptor binding reaches 0 within 50 seconds.
 
+~~~ ruby
 		k_gone 0.3
 		L0 1e7
+~~~
 
 We will set the initial concentrations of all `seed species` to be the final concentrations of the simulation result for our `adaptation.bngl` model, and see if our simulation can restore them to the inital concentrations of the `adaptation.bngl` model.
 
-First go to the `adaptation.bngl` model, and set `L0` as `1e7`. Also include concentration of each combination of methylation state and ligand binding state of the receptor complex as `observables`. (Concentration of other sepcies are already restored to original state when adapting, like CheY-P). Run the simulation. Go to `RuleBender-workspace/PROJECT_NAME/results/adaptation/` and find the simulation result at the final time point.
+Go to the `adaptation.bngl` model, and set `L0` as `1e7`. Also include concentration of each combination of methylation state and ligand binding state of the receptor complex as `observables`. (Concentration of other sepcies are already restored to original state when adapting, like CheY-P). Run the simulation. Go to `RuleBender-workspace/PROJECT_NAME/results/adaptation/` and find the simulation result at the final time point.
 
 Input those concentrations to the `seed species` section of our `removal.bngl` model.
 
+~~~ ruby
 	begin seed species
 		@EC:L(t) L0
 		@PM:T(l!1,r,Meth~A,Phos~U).L(t!1) 1190
@@ -49,6 +69,7 @@ Input those concentrations to the `seed species` section of our `removal.bngl` m
 		@CP:CheB(Phos~P) CheB0*0.38
 		@CP:CheR(t) CheR0
 	end seed species
+~~~
 
 The simulation can also be downloaded here: <a href="https://purpleavatar.github.io/multiscale_biological_modeling/downloads/downloadable/removal.bngl" download="removal.bngl">removal.bngl</a>
 
@@ -58,10 +79,9 @@ Similar to what we did for up gradient, we can try different values for `k_gone`
 
 All simulation results are stored in the `RuleBender-workspace/PROJECT_NAME/results/MODEL_NAME/TIME/` directory in your computer. Rename the directory with the `k_gone` values instead of the time of running for simplicity.
 
-We will use Jupyter notebook to visualize the results. Download
-<a href="https://purpleavatar.github.io/multiscale_biological_modeling/downloads/downloadable/plotter_down.ipynb" download="plotter_down.ipynb">plotter_down.ipynb</a>
+## Visualizing the results
 
-First specify the directories, model name, species of interest, and rates. Put the `RuleBender-workspace/PROJECT_NAME/results/MODEL_NAME/` folder inside the same directory as the Jupyter notebook or change the `model_path`.
+We will use the jupyter notebook <a href="https://purpleavatar.github.io/multiscale_biological_modeling/downloads/downloadable/plotter_up.ipynb" download="plotter_up.ipynb">plotter_down.ipynb</a> to visualize results. First specify the directories, model name, species of interest, and rates. Put the `RuleBender-workspace/PROJECT_NAME/results/MODEL_NAME/` folder inside the same directory as the Jupyter notebook or change the `model_path`.
 
 ~~~ python
 	model_path = "removal"  #The folder containing the model

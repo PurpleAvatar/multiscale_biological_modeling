@@ -117,18 +117,14 @@ In contrast to using a particle simulation, our Jupyter Notebook demo produces a
 **TO COMPEAU**: Should we rephrase the above to also point out that the jupyter notebook is using the Gray-Scott model, and running this model in a discrete space is computationally easier than what we did in CellBlender?
 
 ![image-center](../assets/gs_movie.gif){: .align-center}
-Test.
-{: style="font-size: medium;"}
-
-<iframe width="640" height="360" src="../assets/gs_movie.gif" frameborder="0" allowfullscreen></iframe>
 Gray-Scott from our tutorial using parameters f = 0.034, k = 0.061
 {: style="font-size: medium;"}
 
-<iframe width="640" height="360" src="../assets/0_Bgs_movie.gif" frameborder="0" allowfullscreen></iframe>
-Expanding the size of the simulation and adding new predator locations to our Gray-Scott tutorial
+![image-center](../assets/0_Bgs_movie.gif){: .align-center}
+Expanding the size of the simulation and adding new predator locations to our Gray-Scott tutorial.
 {: style="font-size: medium;"}
 
-With the same reaction parameters, we can achieve the nearly the same patterns even using different simulation software. Below, we see Gray-Scott run with the same parameters as our previous video above: f = 0.034, k = 0.061
+With the same reaction parameters, we can achieve  nearly the same patterns even using different simulation software. Below, we see Gray-Scott run with the same parameters as our previous video above: f = 0.034, k = 0.061.
 
 <iframe width="640" height="360" src="https://www.youtube-nocookie.com/embed/6uOSoc7Ukfw" frameborder="0" allowfullscreen></iframe>
 Gray-Scott simulation by Robert Munafo[^robert]

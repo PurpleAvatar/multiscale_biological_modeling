@@ -55,9 +55,9 @@ Before continuing, we point you to a beautiful animation illustrating just how f
 [Next lesson](animals){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
-## (Optional) A proof of the expected distance theorem
+## (Optional) A proof of the Random Walk Theorem
 
-We stated above that the average distance that a randomly walking particle would find itself from its starting point after taking *n* steps of unit length is $$\sqrt{n}$$. Below, we provide a justification for why this is true for interested learners who are familiar with probability.
+The Random Walk Theorem states that the average distance that a randomly walking particle will find itself from its starting point after taking *n* steps of unit length is $$\sqrt{n}$$. Below, we provide a justification for why this is true for interested learners who are familiar with probability.
 
 Let <b>x<sub><i>i</i></sub></b> denote the random variable corresponding to the vector of the particle's *i*-th step.  The distance *d* traveled by the particle can be represented by the sum of all the <b>x<sub><i>i</i></sub></b>,
 

@@ -33,27 +33,23 @@ If you would like a refresher on transcription, the following video from the You
 
 ## Transcription factors control gene regulation
 
-* Start here: cover what regulation is, and how it is achieved.
+All of your cells have essentially the same DNA, and yet your liver cells, neurons, and brain cells are able to serve different functions. This is because the rates at which these genes are **regulated**, or converted into RNA and then protein, vary between genes in different tissues.
 
-* Define "activate" and "repress" and use these wherever possible instead of upregulate and downregulate. Say that these are the same term.
+Gene regulation typically occurs at either the DNA or protein level. At the DNA level, regulation is modulated by **transcription factors**, master regulator proteins that bind upstream of genes and serve to either **activate** or **repress** a gene's rate of transcription. Activation will cause the gene to be "upregulated", with increased transcription, and repression will cause the gene to be "downregulated".
 
-* Discuss the concept of feedback here -- DNA makes RNA makes a transcription factor, which then feeds back and controls the
+Note that by the Central Dogma, transcription factors are involved in a sort of feedback loop. DNA is transcribed into RNA, which is translated into the protein sequence of a transcription factor, which then binds to the upstream region of some other gene and changes its rate of transcription.
 
-* We'll talk about some of the machinery of how the cell actually detects an extracellular signal and conveys it as a response in the next module.
-
-* Need to discuss upstream regions/promoters
-
-Regulation usually occurs on two targets: either the DNA which encodes a particular protein or the protein itself. The proteins responsible for regulating the DNA to RNA process, the **transcription factors**, are crucial for allowing a cell to respond to external stimuli.
+Transcription factors are vital for the cell's response to its environment because extracellular stimuli can serve to activate a transcription factor via a system of signaling molecules that convey a signal through relay molecules to the transcription factor (see figure below). Only when the transcription factor is activated will it regulate its target protein(s).
 
 ![image-center](../assets/images/signal_pathway.jpg){: .align-center}
 A cell receiving a signal which triggers a response, resulting in transcription[^signalResponse]
 {: style="font-size: medium;"}
 
-If a cell receives a signal from the environment, transcription factors are a crucial part of how the cell responds and acts on that signal. As we will later see, the use of transcription factors not only enables a cell to respond to stimuli, but also adjust the speed of its reaction as necessary. In more complicated models, proteins like transcription factors may rely on "*on*" or "*off*" states which are important for a cell to achieve just the right behavior.
+In a future module, we will discuss the details of how the cell detects an extracellular signal and conveys it as a response within the cell. In this module, we concern ourselves with the study of the relationship between transcription factors and the genes they regulate.
 
 ## Determining if a given transcription factor regulates the expression of a given gene
 
-A natural question is to determine the collection of genes that a given transcription factor regulates. Over the years, a number of both computational and experimental approaches have been developed to answer this question.
+Over the years, a number of both computational and experimental approaches have been developed to identify the collection of genes that a given transcription factor regulates.
 
 For example, genes that are regulated by the same transcription factor often share the same short region of DNA preceding the genes where the transcription factor binds. Computational biologists have developed algorithms to scan through the genome, looking for genes with similar regions preceding them, and predicting that they are regulated by the same transcription factor. If you are interested in learning more about these algorithms, we encourage you to check out [Chapter 2](https://www.bioinformaticsalgorithms.org/bioinformatics-chapter-2) of *Bioinformatics Algorithms: An Active Learning Approach*, which can be read for free online.
 

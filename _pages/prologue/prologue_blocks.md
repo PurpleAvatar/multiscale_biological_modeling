@@ -124,12 +124,6 @@ Gray-Scott from our tutorial using parameters f = 0.034, k = 0.061
 Expanding the size of the simulation and adding new predator locations to our Gray-Scott tutorial.
 {: style="font-size: medium;"}
 
-With the same reaction parameters, we can achieve  nearly the same patterns even using different simulation software. Below, we see Gray-Scott run with the same parameters as our previous video above: f = 0.034, k = 0.061.
-
-<iframe width="640" height="360" src="https://www.youtube-nocookie.com/embed/6uOSoc7Ukfw" frameborder="0" allowfullscreen></iframe>
-Gray-Scott simulation by Robert Munafo[^robert]
-{: style="font-size: medium;"}
-
 [Next lesson](conclusion){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 

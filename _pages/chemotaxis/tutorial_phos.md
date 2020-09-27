@@ -12,7 +12,8 @@ In this page, we will:
 ## Phosphorylation Mechanisms
 
 ![image-center](../assets/images/chemotaxisphosnew.png){: .align-center}
-<figcaption>Visualization of pathway for reference.</figcaption>
+Visualization of pathway for reference.
+{: style="font-size: medium;"}
 
 We have:
 

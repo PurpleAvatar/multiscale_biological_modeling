@@ -44,17 +44,15 @@ Because of the spike in the concentration of *Y*, the reaction *Y* + *Z* → *Y*
 
 We might hypothesize that this process would continue, with a tall peak in the concentration of *Z*. However, the peak in the concentration of *Z* is no taller than normal, and the next peak shows a normal concentration of *X*. In other words, the system has very quickly absorbed the blow of an increase in concentration of *Y* and returned to normal within one cycle.
 
-The repressilator happens to be particularly successful at stabilizing. While there have been some attempts to study what makes oscillators robust, the process remains difficult to describe. By characterizing the number and type of interactions within the oscillator model, it has been shown that about 5 reactions minimum are needed for a very robust oscillator[^repress]. The symmetrical nature of the repressilator model may also contribute to its robustness.
-
-In fact, even with a much larger jolt to the repressilator, we observe the concentrations of the three particles return to normal oscillations very quickly.
+Even with a much larger jolt to the concentration of *Y*, we observe the concentrations of the three particles return to normal oscillations very quickly (figure below).
 
 ![image-center](../assets/images/nf_sim_interrupted_spike.PNG){: .align-center}
 
-The repressilator is not the only network motif that leads to oscillations in particle concentrations, but robustness to disturbances in these concentrations is a shared feature of all these motifs.
+The repressilator is not the only network motif that leads to oscillations of particle concentrations, but robustness to disturbance is a shared feature of all these motifs. This having been said, the repressilator is particularly successful at stabilizing. And although there have been some attempts to study what makes oscillators robust, the process remains difficult to describe. By characterizing the number and type of interactions within the oscillator model, it has been shown that at least five reactions are typically needed to build a very robust oscillator[^repress].
 
-The robustness of our repressilator model also implies a bigger picture moral in biological modeling. If an underlying biological system demonstrates robustness to change, then any model of that system should also be able to withstand this change. Conversely, we should be wary of a model of a robust system that does not display this robustness.
+The robustness of the repressilator also implies a bigger picture moral in biological modeling. If an underlying biological system demonstrates robustness to change, then any model of that system should also be able to withstand this change. Conversely, we should be wary of a model of a robust system that does not display this robustness.
 
-In this module, we have seen that even very simple network motifs can have a powerful effect on a cell's ability to implement elegant behavior. In the next module, we will encounter a much more involved biochemical process, with far more molecules and reactions, that is used by bacteria to cleverly (and robustly) explore their environment. In fact, we will have so many particles and so many reactions that we will need to completely rethink how we set up our model. We hope that you will join us!
+We have seen that even very simple network motifs can have a powerful effect on a cell's ability to implement elegant behavior. In the next module, we will encounter a much more involved biochemical process, with far more molecules and reactions, that is used by bacteria to cleverly (and robustly) explore their environment. In fact, we will have so many particles and so many reactions that we will need to completely rethink how we set up our model. We hope that you will join us!
 
 In the meantime, check out the exercises below to continue developing your understanding of how transcription factor network motifs have evolved.
 

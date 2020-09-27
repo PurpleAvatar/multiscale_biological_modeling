@@ -112,9 +112,13 @@ Applying these cell-based reaction-diffusion computations over all cells in para
 
 ## Reflection on the Gray-Scott model
 
-We can begin to see the Gray-Scott diffusion-reaction patterns in the CellBlender simulation, but it is clear that significant computing power is needed to get the same results as the discrete methods. In our Jupyter Notebook demo, a clear pattern emerges on a grid which requires less than a minute on most modern computers. The CellBlender simulation requires a dramatically higher computing cost.
+In contrast to using a particle simulation, our Jupyter Notebook demo produces a clear pattern in less than a minute on most modern computers.
 
 **TO COMPEAU**: Should we rephrase the above to also point out that the jupyter notebook is using the Gray-Scott model, and running this model in a discrete space is computationally easier than what we did in CellBlender?
+
+![image-center](../assets/gs_movie.gif){: .align-center}
+Test.
+{: style="font-size: medium;"}
 
 <iframe width="640" height="360" src="../assets/gs_movie.gif" frameborder="0" allowfullscreen></iframe>
 Gray-Scott from our tutorial using parameters f = 0.034, k = 0.061

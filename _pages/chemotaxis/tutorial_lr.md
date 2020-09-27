@@ -49,7 +49,8 @@ Rename your `.bngl` file as `ligand_receptor.bngl`. Now you should be able to st
 We will walk through all codes, but for your reference, BNG documentation can be found [here](http://comet.lehman.cuny.edu/griffeth/BioNetGenTutorialFromBioNetWiki.pdf).
 
 We need to tell BNG the rules for our model. To specify our model, specify the `begin model` and `end model`. We will add all model specification information between the two lines. Add molecules to the model under the `molecule types` section. The `(t)` specifies that molecule `L` contains one component: the binding site with `T`. Same for `T`: the `(l)` specifies the component binding to `L`. We will use this component for L-R binding later.
-	
+
+~~~ ruby
 	begin model
 
 	begin molecule types
@@ -58,6 +59,7 @@ We need to tell BNG the rules for our model. To specify our model, specify the `
 	end molecule types
 
 	end model
+~~~
 
 ## Specifying reaction rules
 
@@ -65,17 +67,20 @@ BNG reaction rules are written similar as chemical equations. Left-hand-side inc
 
 Also add reaction rules within the model. At the left-hand-side, by specifying `L(t)`, we select only unbound `L` molecules; by `T(l)`, we select only unbound receptors; if we wanted to select any ligand molecule, simply write `L`. At the right-hand-side of the reaction, `L(t!1).T(l!1)` indicates the formation of the intermediate. In BNG, `!` indicates formation of a bond; and a unique character specifies each bond type. We will denote this bond as `!1`. Since the reaction is bidirectional, we will use `k_lr_bind` to denote the rate of forward reaction, and `k_lr_dis` to denote the rate of reverse reaction. *Note: if you compile now, an error will occur because we haven't define parameters yet.*
 
+~~~ ruby
 	begin reaction rules
 		LR: L(t) + T(l) <-> L(t!1).T(l!1) k_lr_bind, k_lr_dis
 	end reaction rules
+~~~
 
 We need to specify how many molecules we want to put at the start of the simulation within `seed species` section. We are putting `L0` unbound L molecules, and `T0` unbound T molecules at the beginning.
 
+~~~ ruby
 	begin seed species
 		L(t) L0
 		T(l) T0
 	end seed species
-
+~~~
 
 ## Specifying parameters
 
@@ -85,6 +90,7 @@ Because of the molecules/cell and the M/s units, we need to do some unit convers
 
 Although the specific numbers of cellular components vary among each bacterium, the components in chemotaxis pathway follows a relatively constant ratio. For all the simulations in this module, we assign the initial number for each molecule and reaction rates by first deciding a reasonable range based on *in vivo* quantities [^Li2004][^Spiro1997][^Stock1991] and then tuning to fit the model.
 
+~~~ ruby
 	begin parameters
 		NaV 6.02e8    #Unit conversion M -> #/µm^3
 		L0 1e4        #number of ligand molecules
@@ -92,14 +98,17 @@ Although the specific numbers of cellular components vary among each bacterium, 
 		k_lr_bind 8.8e6/NaV   #ligand-receptor binding
 		k_lr_dis 35           #ligand-receptor dissociation
 	end parameters
+~~~
 
 Before simulating our model, we would also like to define the observables under `observables` section within the model specification. 
 
+~~~ ruby
 	begin observables
 		Molecules free_ligand L(t)
 		Molecules bound_ligand L(t!l).T(l!l)
 		Molecules free_receptor T(l)
 	end observables
+~~~
 
 If you save the file now, you should be able to see a Contact-Map indicating the potential bonding of L and T at the upper right corner of your graphical user interface. A contact map helps to visualize the interaction of species in the system.
 
@@ -115,12 +124,15 @@ And now we are ready to simulate. Add the `generate_network` and `simulate` comm
 
 **Number of Steps**. `n_steps` tells the program to break the simulation into how many time points to report the concentration.
 
+~~~ ruby
 	generate_network({overwrite=>1})
 	simulate({method=>"ssa", t_end=>1, n_steps=>100})
+~~~
 
 The whole simulation code for ligand-receptor dynamics (you can also download here: 
 <a href="https://purpleavatar.github.io/multiscale_biological_modeling/downloads/downloadable/ligand_receptor.bngl" download="ligand_receptor.bngl">ligand_receptor.bngl</a>)
 
+~~~ ruby
 	begin model
 
 	begin molecule types
@@ -155,6 +167,7 @@ The whole simulation code for ligand-receptor dynamics (you can also download he
 
 	generate_network({overwrite=>1})
 	simulate({method=>"ssa", t_end=>1, n_steps=>100})
+~~~
 
 **STOP:** Based on your results from calculating by hand, predict how would the concentrations change.
 {: .notice--primary}

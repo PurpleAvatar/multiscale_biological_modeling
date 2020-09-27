@@ -33,23 +33,31 @@ First create a copy of the adaptation model `adaptation.bngl`, name it `addition
 
 We will simulate this increase in attractant concentration simply with a "fake reaction" that one ligand molecule becomes two through time. We will add the following reaction to the `reaction rules` section.
 
+~~~ ruby
 	#Simulate exponentially increasing gradient
 	LAdd: L(t) -> L(t) + L(t) k_add
+~~~
 
 Like you've observed before, when ligand concentration is very high, the receptors are saturated, so the cell can no longer detect the change in ligand concentration. We can use this fact to cap our ligand concentration at `1e8` (in the [adaptation simulation](tutorial_adap), the cell can't differentiate between `1e8` and a higher concentration). We can do this by defining the rate of this reaction as a function `add_Rate()`. It requires another observable, `AllLigand`. By adding the line `Molecules AllLigand L` in the `observables` sections, `AllLigand` will record the total concentration of ligands in the system at each time step. When `AllLigand` is more than `1e8`, the rate of ligand concentration increase becomes 0. In the `if` statement, the syntax is `if(condition,valueTrue,valueFalse)`.
 
+~~~ ruby
 	begin functions
 		addRate() = if(AllLigand>1e8,0,k_add)
 	end functions
+~~~
 
 Substitute `k_add` in `reaction rules` with `addRate()`
 
+~~~ ruby
 	LAdd: L(t) -> L(t) + L(t) addRate()
+~~~
 
 In `parameters` section, we define the rate of ligand increase. We will try a reaction rate 0.1/s first with initial concentration 1e4. So the actual gradient the cell experiences is d[L]/dt = 0.1[L]. By integration then differentiation, we get [L] = 1000e<sup>0.1t</sup> molecules per second. Change initial ligand amount to 1e4 (too many/few ligands makes increase in ligand concentration too fast/slow), but you can try other values too.
 
+~~~ ruby
 	k_add 0.1
 	L0 1e4
+~~~
 
 Set `simulate({method=>"ssa", t_end=>1000, n_steps=>500})`. Go to `simulation` and click `Run`. What happens to CheY phosphorylation? (Note: you can deselect `AllLigand` to make the plots clearer for phosphorylated CheY)
 

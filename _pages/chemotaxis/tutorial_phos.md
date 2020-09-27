@@ -1,7 +1,7 @@
 ---
 permalink: /chemotaxis/tutorial_phos
 title: "Phosphorylation"
-sidebar:
+sidebar: 
  nav: "chemotaxis"
 ---
 
@@ -12,50 +12,54 @@ In this page, we will:
 ## Phosphorylation Mechanisms
 
 ![image-center](../assets/images/chemotaxisphosnew.png){: .align-center}
-Visualization of pathway for reference.
-{: style="font-size: medium;"}
+<figcaption>Visualization of pathway for reference.</figcaption>
 
 We have:
 
 **Ligand binding and dissociation**. L + T <-> LT with rate `k_lr_bind`, `k_lr_dis`.
 
-**Receptor complex autophosphorylation**. The receptor complex is composed of MCPs, CheW, and CheA. CheA undergoes autophosphorylation, and the rate of autophosphorylation depends on conformation of the receptor complex. Faster autophosphorylation for free MCPs. Note that the phosphoryl group is from an ATP->ADP reaction, but we will just code as phosphorylation states in modeling for simplicity.
+**Receptor complex autophosphorylation**. The receptor complex is composed of MCPs, CheW, and CheA. CheA undergoes autophosphorylation, and the rate of autophosphorylation depends on conformation of the receptor complex. Faster autophosphorylation for free MCPs. Note that the phosphoryl group is from an ATP->ADP reaction, but we will just code as phosphorylation states in modeling for simplicity. 
  - T -> T-P    rate constant `k_T_phos`
  - LT -> LT-P  rate constant `0.2 · k_T_phos`
 
-**CheY phosphorylation and dephosphorylation**. CheA-P phosphorylates CheY. Phosphorylated CheY will be responsible for the cellular response (CW rotataion), so we will use the level of CheY-P to indicate the level of cellular response.
+**CheY phosphorylation and dephosphorylation**. CheA-P phosphorylates CheY. Phosphorylated CheY will be responsible for the cellular response (CW rotataion), so we will use the level of CheY-P to indicate the level of cellular response. 
  - T-P + CheY -> T + CheY-P  `k_Y_phos`
  - Z + Y-P -> Z + Y + P `k_Y_dephos`
 
 ## Include phosphorylation in the model
 
-You can download the simulation file here:
+You can download the simulation file here: 
 <a href="https://purpleavatar.github.io/multiscale_biological_modeling/downloads/downloadable/phosphorylation.bngl" download="phosphorylation.bngl">phosphorylation.bngl</a>
 
 First, we introduce `state` in our particles to mark whether it is phosphorylated or not. Change `T(l)` to `T(l,Phos~U~P)`. The `Phos~U~P` indicates we introduce phosphorylation states to `T`: `U` indicates unphosphorylated, and `P` indicates phosphorylated. You can also use other letters. We also add molecule `CheY(Phos~U~P)` and `CheZ()`. (*Note: be careful with the use of spaces; don't put spaces after the comma.*)
 
+~~~ ruby
 	begin molecule types
 		L(t)             #ligand molecule
 		T(l,Phos~U~P)    #receptor complex
 		CheY(Phos~U~P)
 		CheZ()
 	end molecule types
+~~~
 
 And we update the reaction rules with the phosphorylation and dephosphorylation reactions above.
 
+~~~ ruby
 	begin reaction rules
 		LigandReceptor: L(t) + T(l) <-> L(t!1).T(l!1) k_lr_bind, k_lr_dis
-
+		
 		#Free vs. ligand-bound complexes autophosphorylates
 		FreeTP: T(l,Phos~U) -> T(l,Phos~P) k_T_phos
 		BoundTP: L(t!1).T(l!1,Phos~U) -> L(t!1).T(l!1,Phos~P) k_T_phos*0.2
-
+		
 		YP: T(Phos~P) + CheY(Phos~U) -> T(Phos~U) + CheY(Phos~P) k_Y_phos
 		YDep: CheZ() + CheY(Phos~P) -> CheZ() + CheY(Phos~U) k_Y_dephos
 	end reaction rules
+~~~
 
 We need to indicate the number of molecules at **each state** present at the beginning of the simulation. Since we are adding ligands at the beginnin of the simulation, the initial amount of molecules at each same state should be equal to the equilibrium concentrations when no ligand is present.
 
+~~~ ruby
 	begin seed species
 		L(t) L0
 		T(l,Phos~U) T0*0.8
@@ -64,42 +68,49 @@ We need to indicate the number of molecules at **each state** present at the beg
 		CheY(Phos~P) CheY0*0.5
 		CheZ() CheZ0
 	end seed species
+~~~
 
 Update all the parameters based on *in vivo* quantities [^Li2004][^Spiro1997][^Stock1991]. Specifically, we include the number of CheY, CheZ, and the rate constants for receptor complex autophosphorylation, CheY phosphorylation, and CheZ dephosphorylation.
 
+~~~ ruby
 	begin parameters
 		NaV 6.02e8   #Unit conversion to cellular concentration M/L -> #/um^3
 		L0 0        #number of ligand molecules
 		T0 7000       #number of receptor complexes
 		CheY0 20000
 		CheZ0 6000
-
+		
 		k_lr_bind 8.8e6/NaV   #ligand-receptor binding
 		k_lr_dis 35           #ligand-receptor dissociation
 		k_T_phos 15           #receptor complex autophosphorylation
 		k_Y_phos 3.8e6/NaV    #receptor complex phosphorylates CheY
 		k_Y_dephos 8.6e5/NaV  #Z dephosphoryaltes CheY
 	end parameters
+~~~
 
 We are also interested in the number of T-P and CheY-P during the simulation.
 
+~~~ ruby
 	begin observables
 		Molecules phosphorylated_CheY CheY(Phos~P)
 		Molecules phosphorylated_CheA T(Phos~P)
 		Molecules bound_ligand L(t!1).T(l!1)
 	end observables
+~~~
 
-Observe the simulation for a bit longer. Change `t_end` at the bottom to 3.
+Observe the simulation for a bit longer. Change `t_end` at the bottom to 3. 
 
+~~~ ruby
 	generate_network({overwrite=>1})
 	simulate({method=>"ssa", t_end=>3, n_steps=>100})
+~~~
 
-You can also download the simulation file here:
+You can also download the simulation file here: 
 <a href="https://purpleavatar.github.io/multiscale_biological_modeling/downloads/downloadable/phosphorylation.bngl" download="phosphorylation.bngl">phosphorylation.bngl</a>
 
 ## Simulating responses to attractants
 
-Before running the simulation, let's think about what will happen. If we don't add any ligand molecule into the system, then T phosphorylation happens at rate [*T*]*k_T_phos*, and T will phosphorylate CheY, which will be dephosphorylated by CheZ. The concentrations of phosphorylated T and CheY will stay at a steady state. That's the initial concentrations of molecules at each state we defined earlier.
+Before running the simulation, let's think about what will happen. If we don't add any ligand molecule into the system, then T phosphorylation happens at rate [*T*]*k_T_phos*, and T will phosphorylate CheY, which will be dephosphorylated by CheZ. The concentrations of phosphorylated T and CheY will stay at a steady state. That's the initial concentrations of molecules at each state we defined earlier. 
 
 Run simulation with no ligand molecule present by setting `L0` in the `parameters` section to 0, and click `Run` under `Simulate`. What do you observe?
 
@@ -114,7 +125,7 @@ Exercise: Try several different `L0` values (ex. 1e3, 1e7, 1e9). Are you seeing 
 <!--
 ## Simulating responses to repellents
 
-You can download the simulation file here:
+You can download the simulation file here: 
 <a href="https://purpleavatar.github.io/multiscale_biological_modeling/downloads/downloadable/phosphorylation_repel.bngl" download="phosphorylation_repel.bngl">phosphorylation_repel.bngl</a>
 
 Recall that CheA autophosphorylation is faster when the receptor is bound to repellents. We modify the rate of receptor complex autophosphorylation when ligand is bound.
@@ -125,7 +136,7 @@ In `reaction rules`, update
 
 	BoundTP: L(t!1).T(l!1,Phos~U) -> L(t!1).T(l!1,Phos~P) k_T_phos*0.2
 
-to
+to 
 
 	BoundTP: L(t!1).T(l!1,Phos~U) -> L(t!1).T(l!1,Phos~P) k_T_phos*5
 
@@ -145,3 +156,6 @@ Run simulation with `L0 = 5000` and `L0 = 1e5`. What do you observe?
 
 [Back to Main Text](home_biochem){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
+
+
+

@@ -3,18 +3,22 @@ permalink: /chemotaxis/home_signal
 title: "Signaling and Ligand-Receptor Dynamics"
 sidebar:
  nav: "chemotaxis"
+toc: true
+toc_sticky: true
 ---
 
 ## Cells can detect signals via bonding to receptor proteins
 
 Chemotaxis is one example of many ways in which an organism must be able to perceive a change in its environment and react accordingly. This response is governed by a process called **signal transduction**, in which a cell identifies a stimulus outside the cell and then transmits this stimulus into the cell in order to effect a response.
 
-Although we did not focus on the details at that time, we have already seen an example of signal transduction when we discussed transcription in the [previous module](motifs/transcription). When a certain type of molecule's extracellular concentration increases, **receptor proteins** on the outside of the cell have greater bonding with these molecules and are therefore able to detect changes in molecular concentration. This "signal" is then "transduced" via a series of internal chemical processes that changes a transcription factor into an active state.
+Although we did not focus on the details at that time, we have already seen an example of signal transduction when we discussed the activation of transcription factors in the [previous module](motifs/transcription). When a certain type of molecule's extracellular concentration increases, **receptor proteins** on the outside of the cell have greater bonding with these molecules and are therefore able to detect changes in molecular concentration. This "signal" is then "transduced" via a series of internal chemical processes that changes a transcription factor into an active state.
 
-In the case of chemotaxis, *E. coli* has receptor proteins that detect attractants such as glucose by binding to and forming a complex with these attractant **ligands**. (The cell also contains receptors to detect repellents, but we will focus primarily on attractants.) In this lesson, we will discuss how the bacterium is able to detect this molecular signal; in the next lesson, we focus on how the bacterium can convert the detected signal into an internal sequence of reactions that lead to a change in movement. See the figure below for a high-level overview of this process.
+In the case of chemotaxis, *E. coli* has receptor proteins that detect attractants such as glucose by binding to and forming a complex with these attractant **ligands**. The cell also contains receptors to detect repellents, but in this module, we will focus primarily on attractants.
+
+In this lesson, we will discuss how the bacterium is able to detect this molecular signal; in the next lesson, we focus on how the bacterium can convert the detected signal into an internal sequence of reactions that lead to a change in movement. See the figure below for a high-level overview of this process.
 
 ![image-center](../assets/images/chemotaxis_signal.png){: .align-center}
-An overview of the signaling pathway of chemotaxis. The red circles represent attractant ligands(L). When ligands bind to receptors, this signal is transduced via a series of enzymes, and finally influences the rotation direction of a flagellum. We discuss how this response is achieved in a later lesson.
+An overview of the signaling pathway of chemotaxis. The red circles represent attractant ligands(L). When ligands bind to receptors, this signal is transduced via a series of enzymes, and it finally influences the rotation direction of a flagellum. We will discuss how this response is achieved in a later lesson.
 {: style="font-size: medium;"}
 
 
@@ -24,11 +28,11 @@ Although *E. coli* has different types of surface receptors that can sense a var
 
 The chemical reactions that we have considered earlier in this course are **irreversible**, meaning they can only proceed in one direction. For example, in the prologue's reaction-diffusion model for [Turing patterns](prologue/animals), we had the reaction *A* + 2*B* → 3*B*, which we conceptualized as two predators eating a prey and reproducing. But we did not have the reverse reaction 3*B* → *A* + 2*B*.
 
-To model ligand-receptor dynamics, we will use a **reversible** reaction that proceeds continuously in both directions at possibly different rates. If a ligand collides with a receptor, then there is some probability that the two molecules will bond into a complex. But at the same time, in any unit of time, there is also some probability that a bound receptor-ligand complex will **dissociate** into two separate molecules. We will discuss the details what makes two molecules more likely to bond in a future module, but for now, we will assert that the more suited a receptor is to a ligand, the higher the bonding rate and the lower the dissociation rate.
+To model ligand-receptor dynamics, we will use a **reversible** reaction that proceeds continuously in both directions at possibly different rates. If a ligand collides with a receptor, then there is some probability that the two molecules will bond into a complex. But at the same time, in any unit of time, there is also some probability that a bound receptor-ligand complex will **dissociate** into two separate molecules. In a future module, we will discuss the biochemical details underlying what makes two molecules more or less likely to bond, but for now, we assert that the more suited a receptor is to a ligand, the higher the bonding rate and the lower the dissociation rate.
 
-Why should ligand-receptor bonding be reversible? First, surface receptors are typically complicated molecules, and it would be costly to an organism if it needed to keep reproducing these molecules rather than sometimes releasing bound ligands. Second, if complexes dissociate, then a brief signal will not be detected by an organism indefinitely; we will say more about how the cell responds to a changing concentration of ligand over time soon.
+Why should ligand-receptor bonding be reversible? First, surface receptors are typically complicated molecules, and it would be costly to an organism if it needed to keep reproducing these molecules rather than sometimes releasing bound ligands. Second, if complexes dissociate, then a brief signal will not be detected by an organism indefinitely; we will say more about how the cell responds to a *changing* concentration of ligand soon.
 
-For now, we will start building a model of ligand-receptor dynamics. We will represent the receptor molecule by *T*, the ligand molecule by *L*, and the bound complex as *TL*. We have the **forward reaction** *T* + *L* → *TL*, which takes place at some rate *k*<sub>bind</sub>, and the **reverse reaction** *TL* → *T* + *L*, which takes place at some rate *k*<sub>dissociate</sub>. If we start with a free floating supply of *T* and *L* molecules, what will happen?
+For now, we will start building a model of ligand-receptor dynamics. We denote the receptor molecule by *T*, the ligand molecule by *L*, and the bound complex as *TL*. We have the **forward reaction** *T* + *L* → *TL*, which takes place at some rate *k*<sub>bind</sub>, and the **reverse reaction** *TL* → *T* + *L*, which takes place at some rate *k*<sub>dissociate</sub>. If we start with a free floating supply of *T* and *L* molecules, what will happen?
 
 *TL* will initially be formed quickly at the expense of the free-floating *T* and *L* molecules; the reverse reaction will not occur because of the lack of *TL* complexes. As the concentration of *TL* grows and the concentrations of  *T* and *L* decrease, the rate of increase in *TL* will slow. Eventually, the number of *TL* complexes being formed by the forward reaction will balance the number of *TL* complexes being split apart by the reverse reaction. At this point, called a **steady state** or **equilibrium**, the concentration of all particles will stabilize.
 
@@ -36,11 +40,11 @@ For now, we will start building a model of ligand-receptor dynamics. We will rep
 
 In fact, we can calculate the steady state concentrations of *T* and *L* for our reversible reaction by hand.  Suppose that we begin with initial concentrations of *T* and *L* that are represented by *t*<sub>0</sub> and *l*<sub>0</sub>, respectively. Let [*L*], [*T*], and [*LT*] denote the concentrations of the three molecule types. And assume that the reaction rate constants *k*<sub>bind</sub> and *k*<sub>dissociate</sub> are fixed.
 
-Our goal is to find the steady-state concentration of *LT*. When this occurs, we know that the rate of production of *LT* is equal to the rate of its dissociation; in other words, we know that
+Our goal is to find the steady state concentration of *LT*. When this occurs, we know that the rate of production of *LT* is equal to the rate of its dissociation; in other words, we know that
 
 *k*<sub>bind</sub> · [*L*] · [*T*] = *k*<sub>dissociate</sub> · [*LT*].
 
-We also know that by the law of conservation of mass, the total number of *L* and *T* molecules is always constant across the system. In particular, the number of these particles is equal to their initial concentrations. That is, at any time point, we have that
+We also know that by the law of conservation of mass, the concentrations of *L* and *T* molecules are always constant across the system. In particular, the number of these particles is equal to their initial concentrations. That is, at any time point, we have that
 
 [*L*] + [*LT*] = *l*<sub>0</sub>
 
@@ -53,7 +57,7 @@ Solving these equations for [*L*] and [*T*] yields the following two equations:
 [*L*] = *l*<sub>0</sub> - [*LT*]<br>
 [*T*] = *t*<sub>0</sub> - [*LT*]
 
-We will now substitute the expressions on the right for [*L*] and [*T*] into our original steady-state equation:
+We will now substitute the expressions on the right for [*L*] and [*T*] into our original steady state equation:
 
 *k*<sub>bind</sub> · (*l*<sub>0</sub> - [*LT*]) · (*t*<sub>0</sub> - [*LT*]) = *k*<sub>dissociate</sub> · [*LT*]
 
@@ -67,18 +71,16 @@ Finally, we subtract the right side of this equation from both sides:
 
 This equation may look daunting, but most of its components are constants. In fact, the only unknown is [*LT*], which makes this a quadratic equation, or an equation of the form *a* · *x*<sup>2</sup> + *b* · *x* + *c* = 0 for constants *a*, *b*, and *c* and a single unknown *x*. For this quadratic equation, we have the constants *a* = *k*<sub>bind</sub>, *b* = - (*k*<sub>bind</sub> · *l*<sub>0</sub> + *k*<sub>bind</sub> · *t*<sub>0</sub> + *k*<sub>dissociate</sub>), and *c* = *k*<sub>bind</sub> · *l*<sub>0</sub> · *t*<sub>0</sub>.
 
-The "quadratic formula" tells us that the equation *a* · *x*<sup>2</sup> + *b* · *x* + *c* = 0  has solutions given by the following equation:
+The quadratic formula --- which you may have thought you would never use again --- tells us that the equation *a* · *x*<sup>2</sup> + *b* · *x* + *c* = 0  has solutions for *x* given by the following equation:
 
 $$x = \dfrac{-b \pm \sqrt{b^2 - 4 \cdot a \cdot c}}{2 \cdot a}$$
 
-And you thought you'd never need to use the quadratic formula again!
-
-**STOP**: Use the quadratic formula to solve for [*LT*] in our previous equation and find the steady-state concentration of *LT*. How can we use this solution to find the steady-state concentrations of *L* and *T* as well?
+**STOP**: Use the quadratic formula to solve for [*LT*] in our previous equation and find the steady state concentration of *LT*. How can we use this solution to find the steady state concentrations of *L* and *T* as well?
 {: .notice--primary}
 
-Now that we have reduced the computation of the steady-state concentration of *LT* to the solution of a quadratic equation, let's compute this steady-state concentration for a sample collection of parameters. We will then change the parameters and see how the steady-state concentration changes.
+Now that we have reduced the computation of the steady state concentration of *LT* to the solution of a quadratic equation, let's compute this steady state concentration for a sample collection of parameters. We will then change the parameters and see how the steady state concentration changes.
 
-Say that we are given the following parameter values (the units are not important for this toy example):
+Say that we are given the following parameter values (the units of these parameters are not important for this toy example):
 * *k*<sub>bind</sub> = 2;
 * *k*<sub>dissociate</sub> = 5;
 * *l*<sub>0</sub> = 50;
@@ -94,9 +96,9 @@ That is, we are solving the equation 2 · [*LT*]<sup>2</sup> - 205 · [*LT*] + 5
 
 $$[LT] = \dfrac{205 \pm \sqrt{205^2 - 4 \cdot 2 \cdot 5000}}{2 \cdot 2} = 51.25 \pm 11.25$$.
 
-It would seem that there are *two* solutions: 51.25 + 11.25 = 62.5 and 51.25 - 11.25 = 40. However, because *l*<sub>0</sub> and *t*<sub>0</sub>, the respective initial concentrations of *L* and *T*, are both equal to 50, we cannot have that the steady-state concentration of *LT* is 62.5; as a result, it must be 40.
+It would seem that there are *two* solutions: 51.25 + 11.25 = 62.5 and 51.25 - 11.25 = 40. However, because *l*<sub>0</sub> and *t*<sub>0</sub>, the respective initial concentrations of *L* and *T*, are both equal to 50, we cannot have that the steady state concentration of *LT* is 62.5; as a result, it must be 40.
 
-Now that we know the steady-state concentration of *LT*, we can recover the values of [*L*] and [*T*] too:
+Now that we know the steady state concentration of *LT*, we can recover the values of [*L*] and [*T*] too:
 
 [*L*] = *l*<sub>0</sub> - [*LT*] = 10<br>
 [*T*] = *t*<sub>0</sub> - [*LT*] = 10
@@ -109,41 +111,48 @@ What if the forward reaction were slower? We would imagine that the equilibrium 
 
 * *c* = *k*<sub>bind</sub> · *l*<sub>0</sub> · *t*<sub>0</sub> = 2500
 
-In this case, if we solve for [*LT*], we obtain [*LT*] = 36.492; the steady-state concentration has decreased as anticipated.
+In this case, if we solve for [*LT*], we obtain [*LT*] = 36.492; the steady state concentration has decreased as anticipated.
 
-**STOP**: What do you think will happen to the steady-state concentration of *LT* if the initial concentration (*l*<sub>0</sub>) increases or decreases? What if the dissociation rate (*k*<sub>dissociate</sub>) increases or decreases?  Confirm your prediction by changing the parameters above and solving the quadratic formula for [*LT*].
+**STOP**: What do you think will happen to the steady state concentration of *LT* if the initial concentration (*l*<sub>0</sub>) increases or decreases? What if the dissociation rate (*k*<sub>dissociate</sub>) increases or decreases?  Confirm your prediction by changing the parameters above and solving the quadratic formula for [*LT*].
 {: .notice--primary}
 
-Let's use our formula to show how we could determine the steady-state concentration of bound receptor-ligand complexes using values obtained from experiments. We will model an *E. coli* with 7000 receptor molecules in an environment with 10000 ligand molecules. The experimentally determined rate constant for ligand-receptor binding is *k*<sub>bind</sub> = 0.0146((molecules/µm<sup>3</sup>)<sup>-1</sup>)s<sup>-1</sup>, and the rate constant for ligand-receptor dissociation is *k*<sub>dissociate</sub> = 35s<sup>-1</sup>.[^Li2004][^Spiro1997][^Stock1991]
+## Steady state ligand-receptor concentrations for an experimentally verified example
 
-If we multiply the units of reaction rate constants with the concentrations (with unit molecules/µm<sup>3</sup>) of reactants, we will get the rate of *LT* formation in the unit of
+Let's use our formula to show how we could determine the steady state concentration of bound receptor-ligand complexes using values obtained from experimental results. We will model an *E. coli* cell with 7000 receptor molecules in an environment containing 10000 ligand molecules. The experimentally verified bonding rate is *k*<sub>bind</sub> = 0.0146((molecules/µm<sup>3</sup>)<sup>-1</sup>)s<sup>-1</sup>, and the dissociation rate constant is *k*<sub>dissociate</sub> = 35s<sup>-1</sup>.[^Li2004][^Spiro1997][^Stock1991]
 
-(molecules/µm<sup>3</sup>) · (molecules/µm<sup>3</sup>) * ((molecules/µm<sup>3</sup>)<sup>-1</sup>)s<sup>-1</sup> = (molecules/µm<sup>3</sup>)s<sup>-1</sup>
+As an aside, we note that if you find the above units confusing, you are not alone. To clarify these units, consider that the concentration of a particle will be measured in (molecules/µm<sup>3</sup>), or number of molecules per unit volume. So when we multiply the bonding rate by the concentrations of *L* and *T* particles, then the units become
 
-and the rate of *LT* dissociation in the unit of
+((molecules/µm<sup>3</sup>)<sup>-1</sup>)s<sup>-1</sup> · (molecules/µm<sup>3</sup>) · (molecules/µm<sup>3</sup>) = (molecules/µm<sup>3</sup>)s<sup>-1</sup>
 
-(molecules/µm<sup>3</sup>) · (s<sup>-1</sup>) = (molecules/µm<sup>3</sup>)s<sup>-1</sup>
+That is, the resulting units are in molecules/µm<sup>3</sup> per second, which corresponds to the rate at which the concentration of *LT* complexes is increasing.
 
-Hence the rate of formation and dissociation of *LT* are in the same units.
+**STOP**: Verify that the product of the units of the dissociation rate are also
+{: .notice--primary}
 
-For these choices of parameters, we obtain the following constants *a*, *b*, *c* in the quadratic equation:
+On the other hand, when *LT* complexes dissociate, we multiply the dissociation constant by the units of *LT* concentration and obtain the same units as before:
+
+(s<sup>-1</sup>) · (molecules/µm<sup>3</sup>)  = (molecules/µm<sup>3</sup>)s<sup>-1</sup>.
+
+For these parameters, we obtain the following constants *a*, *b*, *c* in the quadratic equation:
 
 * *a* = *k*<sub>bind</sub> = 0.0146
 * *b* = - (*k*<sub>bind</sub> · *l*<sub>0</sub> + *k*<sub>bind</sub> · *t*<sub>0</sub> + *k*<sub>dissociate</sub>) = -283.2
 * *c* = *k*<sub>bind</sub> · *l*<sub>0</sub> · *t*<sub>0</sub> = 1022000
 
-If we solve for [*LT*], we obtain [*LT*] = 4793. Calculate for [*L*] and [*T*]:
+When we solve for [*LT*] in the quadratic equation, we obtain [*LT*] = 4793. Now that we have this value along with *l*<sub>0</sub> and *t*<sub>0</sub>, we can solve for [*L*] and [*T*] as well:
 
 [*L*] = *l*<sub>0</sub> - [*LT*] = 5207<br>
 [*T*] = *t*<sub>0</sub> - [*LT*] = 2207
 
-## Verifying a theoretical steady-state concentration via stochastic simulation
+## Verifying a theoretical steady state concentration via stochastic simulation
 
-In the [previous module](motifs), we saw how that we could avoid keeping track of the positions of individual diffusing particles if we assume that these particles are well-mixed, i.e., uniformly distributed throughout their environment. The *E. coli* cell is so small that we will assume that the concentration of any particle in its immediate surroundings is uniform. Therefore, as a proof of concept, let us see if a well-mixed simulation replicates the steady-state concentrations of particles that we just found.
+In the [previous module](motifs), we saw how that we could avoid keeping track of the positions of individual diffusing particles if we assume that these particles are well-mixed, i.e., uniformly distributed throughout their environment. The *E. coli* cell is so small that we will assume that the concentration of any particle in its immediate surroundings is uniform. Therefore, as a proof of concept, let us see if a well-mixed simulation replicates the steady state concentrations of particles that we just found.
 
-Even though we can calculate steady-state concentrations by hand, we will find a particle-free simulation useful for two reasons. First, this simulation will give us snapshots of the concentrations of particles in the system over multiple time points and allow us to see how quickly the concentrations reach equilibrium. Second, we will soon expand our model of chemotaxis to have many particles and reactions that depend on each other, and direct mathematical analysis of the system like what we have done in the section above will quickly become impossible.  The difficulty at hand is comparable to the famed "*n*-body problem" in physics, where predicting the motions of two celestial objects interacting due to gravity can be done exactly, but there is no known such solution if we add a third body.
+Even though we can calculate steady state concentrations by hand, we will find a particle-free simulation useful for two reasons. First, this simulation will give us snapshots of the concentrations of particles in the system over multiple time points and allow us to see how quickly the concentrations reach equilibrium. Second, we will soon expand our model of chemotaxis to have many particles and reactions that depend on each other, and direct mathematical analysis of the system like what we have done in the section above will quickly become impossible as the number of particles and reactions grows.
 
-Our particle-free model will apply an approach called **Gillespie's Stochastic Simulation Algorithm**, which is often called the **Gillespie algorithm** or just **SSA** for short. Before we explain how this algorithm works, we take a short detour to provide some probabilistic context.
+The difficulty at hand is comparable to the famed "*n*-body problem" in physics. Predicting the motions of two celestial objects interacting due to gravity can be done exactly, but there is no known such solution if we add a third body to the system.
+
+Our particle-free model will apply an approach called **Gillespie's Stochastic Simulation Algorithm**, which is often called the **Gillespie algorithm** or just **SSA** for short. Before we explain how this algorithm works, we take a short detour to provide some needed probabilistic context.
 
 ## The Poisson and exponential distributions
 
@@ -151,9 +160,9 @@ Say that you own a store and have noticed that on average, there are *λ* custom
 
 $$\mathrm{Pr}(X = n) = \dfrac{\lambda^n e^{-\lambda}}{n!}\,.$$
 
-A derivation of this formula can be found [here](https://medium.com/@andrew.chamberlain/deriving-the-poisson-distribution-from-the-binomial-distribution-840cc1668239).
+A derivation of this formula is beyond the scope of our work here, but if you are interested in one, please consider [this post](https://medium.com/@andrew.chamberlain/deriving-the-poisson-distribution-from-the-binomial-distribution-840cc1668239) by Andrew Chamberlain.
 
-Furthermore, if we use *λ* to denote the rate of customers arriving (instead of average arrival in one hour), and use *t* to denote time, the probability of observing exactly *n* customers in time period *t* is given by
+Furthermore, the probability of observing exactly *n* customers in *t* units of time is given by
 
 $$\mathrm{Pr}(X = n) = \dfrac{(\lambda t)^n e^{-\lambda t}}{n!}\,.$$
 
@@ -161,7 +170,7 @@ A related question is how long we will have to wait for the next customer to arr
 
 $$\mathrm{Pr}(T < t) = \mathrm{Pr}(X = 0) = \dfrac{(\lambda t)^0 e^{-\lambda t}}{0!} = e^{-\lambda t}\,.$$
 
-Because of this formula, the random variable *T* is said to follow an **exponential distribution.**
+In other words, the probability $$\mathrm{Pr}(T < t)$$ decays exponentially over time. For this reason, the random variable *T* is said to follow an **exponential distribution.**
 
 ## An overview of the Gillespie algorithm
 
@@ -212,7 +221,7 @@ The following tutorial uses [BioNetGen](http://bionetgen.org/), which we will us
 [Visit tutorial](tutorial_lr){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
-## Does a simulation confirm our steady-state calculations?
+## Does a simulation confirm our steady state calculations?
 
 Here we've shown that using BNG and calculating by hand reach the same conclusion for bimolecular reactions.
 
@@ -222,7 +231,7 @@ From the BNG simulation, we can observe that *L* and *T* drop quickly while *LT*
 Concentration plot for ligand-receptor dynamics with SSA simulation. The concentrations reach a steady state at the end of the simulation.
 {: style="font-size: medium;"}
 
-* Phillip will then need to point the reader to the next section by saying this is just the beginning of the model we will build to study chemotaxis. (And computing steady-state concentration is just a toy example compared to questions we will ask soon.)
+* Phillip will then need to point the reader to the next section by saying this is just the beginning of the model we will build to study chemotaxis. (And computing steady state concentration is just a toy example compared to questions we will ask soon.)
 
 [^Munroe]: Randall Munroe. What If? [Available online](https://what-if.xkcd.com/)
 

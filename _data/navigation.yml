@@ -93,6 +93,8 @@ chemotaxis:
         url: /chemotaxis/home_walk
       - title: "Signaling & ligand-receptor dynamics"
         url: /chemotaxis/home_signal
+      - title: "Stochastic simulation of chemical reactions"
+        url: /chemotaxis/home_signalpart2
       - title: "A Biochemically Accurate Model of Chemotaxis"
         url: /chemotaxis/home_biochem
       - title: "Methylation Helps Bacteria Adapt to Differing Concentrations"

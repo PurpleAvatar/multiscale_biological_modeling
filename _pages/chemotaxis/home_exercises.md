@@ -59,7 +59,7 @@ We will simulate with 1000 `A` monomers at the beginning of the simulation, and 
 		Species ALong A>=30
 	end observables
 
-For this model, let's try another simulation method - **Network-free** simulation. It is similar to the SSA simulation [we used before](home_signal), but instead of simulating transitions between states of the whole *system*, it tracks individual *particles*. In this polymerization model, the possible number of reactions is much higher than we had in chemotaxis models - we can have any m-mer reacting with any n-mer at any step. Considering all these possible reactions makes SSA slow. Luckily, we don't have that many particles, so trucking each particle will be much faster (in our chemotaxis model, tracking over 10<sup>8</sup> molecules individually is difficult).
+For this model, let's try another simulation method - **Network-free** simulation. It is similar to the SSA simulation [we used before](home_signalpart2), but instead of simulating transitions between states of the whole *system*, it tracks individual *particles*. In this polymerization model, the possible number of reactions is much higher than we had in chemotaxis models - we can have any m-mer reacting with any n-mer at any step. Considering all these possible reactions makes SSA slow. Luckily, we don't have that many particles, so trucking each particle will be much faster (in our chemotaxis model, tracking over 10<sup>8</sup> molecules individually is difficult).
 
 Please simulate with the command `simulate({method=>"nf", t_end=>100, n_steps=>1000})`. Note that we do not need the `generate_network()` command. What happens to the concentration of short A polymers? What about the long A polymers?
 

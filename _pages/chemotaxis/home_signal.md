@@ -168,70 +168,62 @@ $$\mathrm{Pr}(X = n) = \dfrac{(\lambda t)^n e^{-\lambda t}}{n!}\,.$$
 
 A related question is how long we will have to wait for the next customer to arrive. Specifically, what are the chances that this customer will arrive after *t* units of time? If we let *T* be the random variable corresponding to our wait time, then the probability of *T* being less than *t* is the probability of seeing zero customers in this time period:
 
-$$\mathrm{Pr}(T < t) = \mathrm{Pr}(X = 0) = \dfrac{(\lambda t)^0 e^{-\lambda t}}{0!} = e^{-\lambda t}\,.$$
+$$\mathrm{Pr}(T > t) = \mathrm{Pr}(X = 0) = \dfrac{(\lambda t)^0 e^{-\lambda t}}{0!} = e^{-\lambda t}\,.$$
 
-In other words, the probability $$\mathrm{Pr}(T < t)$$ decays exponentially over time. For this reason, the random variable *T* is said to follow an **exponential distribution.**
+In other words, the probability $$\mathrm{Pr}(T < t)$$ decays exponentially over time. For this reason, the random variable *T* is said to follow an **exponential distribution.** It can be shown that the mean value of the exponential distribution (i.e., the average amount of time we will need to wait for the next event to occur) is 1/λ.
+
+**STOP**: What is the probability Pr(*T* < *t*)?
+{: .notice--primary}
 
 ## An overview of the Gillespie algorithm
 
-The engine of the Gillespie algorithm runs on a single question: given a well-mixed environment of particles and a reaction involving those particles taking place at some rate, how long should we expect to wait before this reaction occurs somewhere in the environment?
+The engine of the Gillespie algorithm runs on a single question: given a well-mixed environment of particles and a reaction involving those particles taking place at some average rate, how long should we expect to wait before this reaction occurs somewhere in the environment?
 
-* Phillip will need to start here.
+This is the same question as we asked in the previous section; we have simply replaced customers entering a store with chemical reactions. Therefore, an exponential distribution can be used to model the "wait time" between individual reactions.
 
-* Depending on how many particles we have and the rate of the reaction, the number of reactions taking place in a given unit of time will vary.
+Numerical methods exist that will allow us to generate a random number corresponding to the wait time of an exponential distribution. By sampling repeatedly from the exponential distribution, we obtain a collection of varying wait times between consecutive occurrences of the reaction.
 
-* But it is reasonable to use a Poisson process to model these interactions. Thus, we can imagine rolling a die that selects how many of these reactions should occur in a given unit of time.
+If we have multiple reactions, then Gillespie's algorithm will still sample wait times, where these times are computed based on a combination of the rates of the reactions.
 
-* More precisely, we will ask how long we should expect to wait between occurrences of each reaction. Just as with the store analogy, because the concentrations of particles are well-mixed and interactions are viewed as independently, we will assume that wait times between reactions follow an exponential distribution.
+Once a wait time is selected, we must determine the reaction to which this event corresponds. If the rates of the reactions are all equal, then this is an easy problem; we simply choose one of the reactions with equal probability. But if the rates of these reactions are different, then we should choose one of the reactions via a probability that is *weighted* in direct proportion to the rate of the reaction; that is, the larger the rate of the reaction, the more likely that this reaction corresponds to the current event.[^Schwartz17]
 
-* Point to numerical techniques that will randomly generate a wait time (delta t) following the exponential distribution. We repeatedly "sample" from this distribution in order to obtain times between reactions.
+To return to our own ongoing example, we have two reactions corresponding to the forward and reverse reactions of ligand-receptor binding and dissociation, respectively. First, a wait time is chosen according to an exponential distribution with mean value 1/(*k*<sub>bind</sub> + *k*<sub>dissociate</sub>); that is, λ is equal to the sum of reaction rates *k*<sub>bind</sub> + *k*<sub>dissociate</sub>. Then, the probability that the event corresponds to a binding reaction is given by
 
-* If we have multiple reactions, then Gillespie's algorithm still samples a wait time for the next particle interaction, and then determines which reaction should take place based on the rates of the reactions.  The higher the reaction rate, the more probable that reaction should be.  It is as if we are rolling a weighted die and are determining which interaction based on the die roll.
+Pr(*L* + *T* → *LT*) = *k*<sub>bind</sub>/(*k*<sub>bind</sub> + *k*<sub>dissociate</sub>)
 
-* In this case, we have two reactions (forward and reverse), so the bigger the difference between the bonding and dissociation rates, the bigger the "weight" of the die roll.
+and the probability that the event corresponds to a dissociation reaction is
 
-* In this way, we are able to keep track of changing particle concentrations and simulate particle reactions without having to track the exact positions of individual particles, which will lead to a vast speed-up in our approach.
+Pr(*LT* → *L* + *T*) = *k*<sub>dissociate</sub>/(*k*<sub>bind</sub> + *k*<sub>dissociate</sub>)
 
-We define the states of the system as the discrete amount of reactants, and a transition between one state and another is one molecular event. How likely is a transition to happen is proportional to the rate of that reaction [^Schwartz17].
+**STOP**: Verify that these two probabilities sum to 1.
+{: .notice--primary}
 
-In our case of ligand-receptor dynamics, we have free ligands *L*, free receptors *T*, which can bind with the rate constant *k*<sub>bind</sub>, and *LT* can dissociate with the rate constant *k*<sub>dissociate</sub>.
-
-At time *t*, there are two reactions that can happen next: *L* + *T* -> *LT* with a rate *k*<sub>bind</sub> · [*L*] · [*T*], and *LT* -> *L* + *T* with a rate *k*<sub>dissociate</sub> · [*LT*]. We define the sum of the two reactions as *R*<sub>tot</sub>. Now we are interested in two questions: when does the next reaction happen, and which reaction is that?
-
-Does this sound like our question of when the next reaction happen? The process of reactions happening is our Poisson process, the number of reactions happen within a period of time follows the Poisson distribution where reaction rate *R*<sub>tot</sub> indicates the expected number of reactions to happen within the period, and we are interested in the wait time before the next reaction.
-
-The wait time, *δt*, before the next reaction to happen follows an exponential distribution with mean of 1/*R*<sub>tot</sub>. Thus, the time of the system becomes *t* + *δt* after this step. We have the probability of *δt* taking each value now, and we need to get the exact value of *δt*. This process is similar to rolling a dice, and we have a dice with infinite number of sides, and the probability of getting each side is not equal; or, plotting cutting a piece of paper to replicate the probability distribution function and throwing darts onto that piece of paper. In simulations, **sampling** is the key to replicate the stochasticity in nature, and can conveniently done by computer programs.
-
-Our second question was to decide which reaction happen next. This is similar to tossing a biased coin; the faster the reaction rate, the more likely the reaction to happen.
-
-The probability of each reaction to happen is *P(reaction)* = *R*<sub>reaction</sub> / *R*<sub>tot</sub>
-
-Therefore, *P(L + T -> LT)* = *k*<sub>bind</sub> · [*L*] · [*T*] / *R*<sub>tot</sub>
-
-*P(LT -> L + T)* = *k*<sub>dissociate</sub> · [*LT*] / *R*<sub>tot</sub>
-
-This process is visualized below.
+The process of selecting a reaction is visualized in the figure below.
 
 ![image-center](../assets/images/chemotaxis_visualizessa.png){: .align-center}
-Visualization of one transition for SSA. Red circles represent ligands(L). Orange Pac-man shape represent receptors. The wait time for a reaction to happen at time <i>t</i>, <i>δt</i> is drawn from an exponential distribution with mean 1/<i>R</i><sub>tot</sub>. The probability of dissociation (upper) or binding (lower) is determined by the rate of the reaction.
+A visualization of a single reaction event used by the Gillespie algorithm for ligand-receptor binding/dissociation. Red circles represent ligands (*L*), and orange wedges represent receptors (*T*). The wait time for the next reaction is drawn from an exponential distribution with mean 1/(*k*<sub>bind</sub> + *k*<sub>dissociate</sub>). The probability of this event corresponding to a binding or dissociation reaction is proportional to the rate of the respective reaction.
 {: style="font-size: medium;"}
 
-The following tutorial uses [BioNetGen](http://bionetgen.org/), which we will use throughout this module to build particle-free simulations of chemotaxis. We start by building a model to determine the equilibrium of a reversible reaction involving ligands and receptors.
+The following tutorial employs [BioNetGen](http://bionetgen.org/), which we will rely on throughout this module, to build particle-free simulations of chemotaxis. The tutorial starts by building a model based on the Gillespie algorithm to determine the equilibrium of a reversible ligand-receptor binding reaction.
 
 [Visit tutorial](tutorial_lr){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 ## Does a simulation confirm our steady state calculations?
 
-Here we've shown that using BNG and calculating by hand reach the same conclusion for bimolecular reactions.
+We previously showed a worked example in which the steady state concentrations of our three molecules were as follows:
 
-From the BNG simulation, we can observe that *L* and *T* drop quickly while *LT* increases quickly at the begining of the simulation, and then reach steady state concentrations. The steady state concentrations match our calculations by hand.
+* [*LT*] = 4793
+* [*L*] = 5207
+* [*T*] = 2207
+
+Using the BioNetGen simulation from the preceding tutorial, we observe that the Gillespie algorithm quickly converges to these same values for the same parameters. As a result, we can see the power of using a particle-free stochastic simulator to quickly obtian a result without needing to perform any mathematical calculations.
 
 ![image-center](../assets/images/chemotaxis_tutorial4_ssa.png){: .align-center}
-Concentration plot for ligand-receptor dynamics with SSA simulation. The concentrations reach a steady state at the end of the simulation.
+A concentration plot over time for ligand-receptor dynamics via a BioNetGen simulation employing the Gillespie algorithm. The concentrations reach a steady state at the end of the simulation that matches the concentrations identified by hand.
 {: style="font-size: medium;"}
 
-* Phillip will then need to point the reader to the next section by saying this is just the beginning of the model we will build to study chemotaxis. (And computing steady state concentration is just a toy example compared to questions we will ask soon.)
+Yet this simple ligand-receptor model is just the beginning of our study of chemotaxis. In the next section, we will delve into the complex biochemical details of chemotaxis. Furthermore, we will see that the Gillespie algorithm for stochastic simulations will scale easily as our model of this system grows more complex.
 
 [^Munroe]: Randall Munroe. What If? [Available online](https://what-if.xkcd.com/)
 
@@ -274,16 +266,15 @@ Concentration plot for ligand-receptor dynamics with SSA simulation. The concent
 [Next lesson](home_biochem){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
-
+<!--
 ## Extra extra
-
-* The points about SSA, ODE, NFSim need to be fleshed out better. Not sure where they go but I don't think it's in this section. Perhaps in the tutorial unless it is captivating.
 
 BNG supports simulation with Ordinary Differential Equation (ODE) and with Stochastic Simulation Algorithm (SSA, also called Gillespie algorithm). The method is passed in as argument `method=>"ode"` or `method=>"ssa"`.
  - ODE: When simulating a system, we need to define how the system evolves through time. In *continuous* simulation of chemical reactions, the state of the system can be reported given any point in time. The reactions rules specify the rate of change for concentration of the involved species, and they are differential equations. For example, *d[L]/dt=k<sub>dissociate</sub>[L.T] - k<sub>bind</sub>[L][T]*.[^Schwartz14]
  - SSA: When simulating the change of the system through time, we define states of the system. Transition can happen between states that differ by one reaction event. We track the *discrete* amount of each reactants and simulate the system via transition of the states[^Schwartz17]. For example, the state can transit from [#L=100, #T=50, #L.T=0] to [#L=99, #T=49, #L.T=1], with probability determined both by reaction rate *k<sub>bind</sub>* and the the number of ways to choose the L and T molecules.[^Schwartz17] For using SSA, the measurement of abundance of molecules should actually be number of molecule instead of concentration.
 
-Removew the ODE results
+Remove the ODE results
 ![image-center](../assets/images/chemotaxis_tutorial4.png){: .align-center}
 Concentration plot for ligand-receptor dynamics with ODE simulation. The concentrations reach a steady state at the end of the simulation.
 {: style="font-size: medium;"}
+-->

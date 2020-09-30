@@ -38,13 +38,13 @@ prologue:
         url: /prologue/exercises
   - title: "Tutorials"
     children:
-      - title: "Random Walk CellBlender"
+      - title: "Random walk using CellBlender"
         url: /prologue/tutorial-random-walk
-      - title: "Turing Patterns CellBlender"
+      - title: "Turing patterns using CellBlender"
         url: /prologue/turing-cellblender
-      - title: "Diffusion Jupyter Notebook"
+      - title: "Diffusion automaton using Jupyter notebook"
         url: /prologue/tutorial-diffusion
-      - title: "Gray-Scott Jupyter Notebook"
+      - title: "The Gray-Scott model using Jupyter notebook"
         url: /prologue/gs-jupyter
 
 
@@ -52,74 +52,74 @@ prologue:
 motifs:
   - title: "Finding Motifs in Transcription Factor Networks"
     children:
-      - title: "Introduction: A Submicroscopic Scale of Interest"
+      - title: "Introduction: a submicroscopic scale of interest"
         url: /motifs/home
-      - title: "Transcription and DNA-Protein Binding"
+      - title: "Transcription and DNA-protein binding"
         url: /motifs/transcription
-      - title: "Transcription Factor Networks"
+      - title: "Transcription factor networks"
         url: /motifs/networks
-      - title: "Using Randomness to Verify Network Motifs"
+      - title: "Using randomness to verify network motifs"
         url: /motifs/finding
-      - title: "The Negative Autoregulation Motif"
+      - title: "The negative autoregulation motif"
         url: /motifs/nar
-      - title: "The Feedforward Loop Motif"
+      - title: "The feedforward loop motif"
         url: /motifs/feed
-      - title: "Building a Biological Oscillator"
+      - title: "Building a biological oscillator"
         url: /motifs/oscillators
-      - title: "Conclusion: The Importance of Robustness in Biological Oscillations"
+      - title: "Conclusion: the importance of robustness in biological oscillations"
         url: /motifs/conclusion
       - title: "Exercises"
         url: /motifs/exercises
   - title: Tutorials
     children:
-      - title: "Looking for Loops in Transcription Factor Networks"
+      - title: "Looking for loops in transcription factor networks"
         url: /motifs/tutorial_loops
-      - title: "Negative-Autoregulation"
+      - title: "Negative autoregulation"
         url: /motifs/tutorial_nar
-      - title: "Feed-Forward Loop"
+      - title: "The feed-forward loop"
         url: /motifs/tutorial_feed
       - title: "Oscillators"
         url: /motifs/tutorial_oscillators
-      - title: "Perturbing Oscillations"
+      - title: "Perturbing oscillations"
         url: /motifs/tutorial_perturb
 
 
 chemotaxis:
   - title: About Chemotaxis
     children:
-      - title: "Introduction: Lost Immortals and Chemotaxis"
+      - title: "Introduction: Lost Immortals and chemotaxis"
         url: /chemotaxis/home
-      - title: "Bacterial Runs and Tumbles"
+      - title: "Bacterial runs and tumbles"
         url: /chemotaxis/home_walk
       - title: "Signaling & ligand-receptor dynamics"
         url: /chemotaxis/home_signal
       - title: "Stochastic simulation of chemical reactions"
         url: /chemotaxis/home_signalpart2
-      - title: "A Biochemically Accurate Model of Chemotaxis"
+      - title: "A biochemically accurate model of chemotaxis"
         url: /chemotaxis/home_biochem
-      - title: "Methylation Helps Bacteria Adapt to Differing Concentrations"
+      - title: "Methylation helps bacteria adapt to differing concentrations"
         url: /chemotaxis/home_senseadap
-      - title: "Modeling a Bacterium's Response to an Attractant Gradient"
+      - title: "Modeling a bacterium's response to an attractant gradient"
         url: /chemotaxis/home_gradient
-      - title: "Conclusion: The Beauty of E. coli's Randomized Exploration Algorithm"
+      - title: "Conclusion: the beauty of E. coli's randomized exploration algorithm"
         url: /chemotaxis/home_conclusion
-      - title: "Exercises: Beyond the Simple Model"
+      - title: "Exercises"
         url: /chemotaxis/home_exercise
   - title: Tutorials
     children:
-      - title: "Starting BNG Simulation"
+      - title: "Starting BioNetGen simulation"
         url: /chemotaxis/tutorial_lr
-      - title: "Adding Phosphorylation to BNG model"
+      - title: "Adding phosphorylation to our BioNetGen model"
         url: /chemotaxis/tutorial_phos
-      - title: "Modeling Adaptation"
+      - title: "Modeling adaptation"
         url: /chemotaxis/tutorial_adap
-      - title: "Up gradient/Addition"
+      - title: "Traveling up an attractant gradient"
         url: /chemotaxis/tutorial_gradient
-      - title: "Down gradient/Removal"
+      - title: "Traveling down an attractant gradient"
         url: /chemotaxis/tutorial_removal
-      - title: "Strategy1: Pure random walk"
+      - title: "Modeling a pure random walk strategy"
         url: /chemotaxis/tutorial_purerandom
-      - title: "Strategy2: Chemotactic random walk"
+      - title: "Modeling E. coli's sophisticated modified random walk"
         url: /chemotaxis/tutorial_walk
 
 coronavirus:

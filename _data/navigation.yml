@@ -22,17 +22,17 @@ main:
 prologue:
   - title: "Prologue: Random Walks and Turing Patterns"
     children:
-      - title: "Introduction: Life is Random"
+      - title: "Introduction: Life is random"
         url: /prologue/
-      - title: "Alan Turing and the Zebra's Stripes"
+      - title: "Alan Turing and the zebra's stripes"
         url: /prologue/turing
-      - title: "An Introduction to Random Walks"
+      - title: "An introduction to random walks"
         url: /prologue/random-walk
-      - title: "A Reaction-Diffusion Model and Turing Patterns"
+      - title: "A reaction-diffusion model and Turing patterns"
         url: /prologue/animals
-      - title: "The Gray-Scott Model: A Cellular Automaton Generating Turing Patterns"
+      - title: "The Gray-Scott model: a cellular automaton generating Turing patterns"
         url: /prologue/blocks
-      - title: "Conclusion: Turing Patterns are Fine-Tuned"
+      - title: "Conclusion: Turing patterns are fine-tuned"
         url: /prologue/conclusion
       - title: "Exercises"
         url: /prologue/exercises

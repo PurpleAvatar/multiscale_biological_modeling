@@ -4,8 +4,6 @@ title: "Meet the Team"
 layout: splash
 ---
 
-Content below is the team
-
 
 <div class="row">
 

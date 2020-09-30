@@ -4,6 +4,7 @@ title: "Meet the Team"
 layout: splash
 ---
 
+## Meet the Team
 
 <div class="row">
 

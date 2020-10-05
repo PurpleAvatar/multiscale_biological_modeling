@@ -13,15 +13,15 @@ Theodosius Dobzhansky famously wrote that "nothing in biology makes sense except
 
 Say that a transcription factor *X* regulates another transcription factor *Y*, and consider two cells. In both cells, *X* upregulates the transcription of *Y*, but in the second cell, *Y* also negatively autoregulates.
 
-In this lesson, we will simulate a "race" to the steady state concentration of *Y* in the two cells. The premise is that the cell that reaches this steady state faster is able to respond more quickly to its environment and is therefore be more fit for survival.
+In this lesson, we will simulate a "race" to the steady state concentration of *Y* in the two cells. The premise is that the cell that reaches this steady state faster is able to respond more quickly to its environment and is therefore more fit for survival.
 
 ## Simulating transcriptional regulation with a reaction-diffusion model
 
-In the [prologue](prologue), we simulated chemical reactions to run a randomized particle-based model. In this lesson, we will apply the same model, in which the particles correspond to transcription factors *X* and *Y*.
+In the [prologue](/prologue), we simulated chemical reactions to run a randomized particle-based model. In this lesson, we will apply the same model, in which the particles correspond to transcription factors *X* and *Y*.
 
 We will begin with a model of the first cell, in which *X* upregulates *Y* but we do not have negative autoregulation of *Y*. We start without any *Y* particles and a constant number of *X* particles. To simulate *X* upregulating the expression of *Y*, we add the reaction *X* → *X* + *Y*. This reaction ensures that in a given interval of time there is a constant underlying probability that a given *X* particle will spontaneously form a new *Y* particle.
 
-We should also account for the fact that proteins are *degraded* by over time by enzymes called proteases. Protein degradation offers a natural mechanism by which proteins at high concentrations can return to a steady-state. To this end, we add a "kill" reaction that removes *Y* particles. We will assume that *X* starts at steady-state, meaning that *X* is being produced at a rate that exactly balances its degradation rate, and we will therefore not need to add reactions to the model simulating the production or degradation of *X*.
+We should also account for the fact that proteins are *degraded* over time by enzymes called proteases. Protein degradation offers a natural mechanism by which proteins at high concentrations can return to a steady-state. To this end, we add a "kill" reaction that removes *Y* particles. We will assume that *X* starts at steady-state, meaning that *X* is being produced at a rate that exactly balances its degradation rate, and we will therefore not need to add reactions to the model simulating the production or degradation of *X*.
 
 Diffusion of the *X* and *Y* particles is not necessary because there is no reaction in which more than one particle interacts, but we will allow both *X* and *Y* particles to diffuse through the system at the same rate.
 

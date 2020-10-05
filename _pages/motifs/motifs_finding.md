@@ -24,7 +24,7 @@ A seminal biological example of this paradigm is the search tool [BLAST](https:/
 
 ## Comparing a real transcription factor network against a random network
 
-To determine whether the number of loops in the transcription factor network of *E. coli* is significant, we will comparing the number of loops that we find in this network against the expected number of loops we would find in a randomly generated network. If the number of loops in the real network is much higher than the number of loops in the random network, then we have strong evidence that there is some selective force causing a loop to be a network motif.
+To determine whether the number of loops in the transcription factor network of *E. coli* is significant, we will compare the number of loops that we find in this network against the expected number of loops we would find in a randomly generated network. If the number of loops in the real network is much higher than the number of loops in the random network, then we have strong evidence that there is some selective force causing a loop to be a network motif.
 
 There are multiple ways to generate a random network, but we will use an approach developed by Edgar Gilbert in 1959[^Gilbert]. Given an integer *n* and a probability *p* (between 0 and 1), we first form *n* nodes; then, for every possible pair of nodes *X* and *Y*, we connect *X* to *Y* via a directed edge with probability *p*.
 

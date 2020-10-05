@@ -16,10 +16,10 @@ toc_sticky: true
 
 3. (Challenge exercise) How many feed-forward loops would you expect to see in a random network having the same number of nodes as the *E. coli* transcription factor network? How does this compare to your answers to the previous two questions?
 
-4. There are eight types of feedforward loops based on the eight different ways in which we can label the edges in the network with a "+" or a "-" based on upregulation or downregulation. Modify the Jupyter notebook to count the number of loops of each type present in the *E. coli* transcription factor network.
+4. There are eight types of feed-forward loops based on the eight different ways in which we can label the edges in the network with a "+" or a "-" based on upregulation or downregulation. Modify the Jupyter notebook to count the number of loops of each type present in the *E. coli* transcription factor network.
 
 ![image-center](../assets/images/ffl_types.png){: .align-center}
-Types of Feed Forward Loops[^ffl]
+The eight types of feed-forward loops.[^ffl]
 {: style="text-align: center;"}
 
 5. More complex motifs may require more computational power to discover. Can you modify the Jupyter Notebook to identify circular loops of transcription factor regulation, such as the multi-component loop below?
@@ -38,7 +38,7 @@ Example of different motifs within the *S. Cerevisiae* network[^scNetwork]
 | Y2’  | NULL | 4e2 |
 |Y2’ + Y2’|Y2’|4e2|
 
-If we plot this graph, we can see the steady states of Y1 and Y2 are different once again. Can you repair the system to find the appropriate reaction rate for X2 -> X2 + Y2 to make the steady states equal once more? Are you about to adjust the reaction Y2 + Y2 -> Y2 as well? Do the reaction rates scale at the same rate?
+If we plot this graph, we can see the steady states of Y1 and Y2 are different once again. Can you repair the system to find the appropriate reaction rate for X2 -> X2 + Y2 to make the steady states equal once more? Are you able to adjust the reaction Y2 + Y2 -> Y2 as well? Do the reaction rates scale at the same rate?
 
 ## Internal notes -- resolve before publication
 
@@ -47,8 +47,6 @@ If we plot this graph, we can see the steady states of Y1 and Y2 are different o
 * Exercise: develop a version of Gray-Scott from prologue that mimics the repressilator (?)
 
 * What about a link to TF networks of other species? Human? Are these datasets readily available?
-
-* Need to cite the origin of the repressilator as a synthetic system -- mention 2000 paper and 2016 paper.
 
 * I wonder what happens in the repressilator if all three particles start out at the same concentration ... will there be enough noise in the system to bounce it into an oscillation?
 
@@ -80,7 +78,11 @@ In contrast, Elowitz and Leibler described a model with a variety of different r
 
 ![image-center](../assets/images/nf_sim_interrupted_spike.PNG){: .align-center}
 
-[^oscillator]: Elowitz, M. B. & Leibler, S. A Synthetic Oscillatory Network of Transcriptional Regulators. Nature 403, 335-338 (2000).
-
 [Next module](../chemotaxis/home){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
+
+[^ffl]: Image adapted from Mangan, S., & Alon, U. (2003). Structure and function of the feed-forward loop network motif. Proceedings of the National Academy of Sciences of the United States of America, 100(21), 11980–11985. https://doi.org/10.1073/pnas.2133841100
+
+[^oscillator]: Elowitz, M. B. & Leibler, S. A Synthetic Oscillatory Network of Transcriptional Regulators. Nature 403, 335-338 (2000).
+
+[^scNetwork]: Lee, T. I., Rinaldi, N. J., Robert, F., Odom, D. T., Bar-Joseph, Z., Gerber, G. K., … Young, R. A. (2002). Transcriptional regulatory networks in Saccharomyces cerevisiae. Science, 298(5594), 799–804. https://doi.org/10.1126/science.1075090

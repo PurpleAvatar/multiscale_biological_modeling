@@ -16,15 +16,15 @@ The figure below shows a portion of the transcription factor network for *Escher
 Note that the edges in the *E. coli* transcription factor network below are colored red or green. An edge connecting *X* to *Y* is colored green if *X* upregulates *Y*, and it is colored red if *X* downregulates *Y*. (Alternatively, we could label the edges with a "+" or "-".)
 
 ![image-center](../assets/images/e_coli_tf_network.jpeg){: .align-center}
-A subset of the *E. coli* transcription factor network.[^eColiNetwork] An edge from *X* to *Y* denotes that *X* is a transcription factor that regulates *Y*. Edges corresponding to upregulation are colored green, and edges corresponding to downregulation are colored red. Click [here](downloads/e_coli_tf_network.jpeg) to zoom in on this network.
+A subset of the *E. coli* transcription factor network.[^eColiNetwork] An edge from *X* to *Y* denotes that *X* is a transcription factor that regulates *Y*. Edges corresponding to upregulation are colored green, and edges corresponding to downregulation are colored red. Click [here](../downloads/e_coli_tf_network.jpeg) to zoom in on this network.
 {: style="font-size: medium;"}
 
-**STOP:** Click on the [expanded view](downloads/e_coli_tf_network.jpeg) of the transcription factor network in the figure above. Do you notice anything interesting about this network?
+**STOP:** Click on the [expanded view](../downloads/e_coli_tf_network.jpeg) of the transcription factor network in the figure above. Do you notice anything interesting about this network?
 {: .notice--primary}
 
 ## Autoregulation
 
-The *E. coli* transcription factor network seems to have a surprising number of **loops**, or edges that connect a node to itself. It is worth pausing for a moment to consider the implications of a loop in a transcription factor network. What does it even mean for a transcription factor regulate itself?
+The *E. coli* transcription factor network seems to have a surprising number of **loops**, or edges that connect a node to itself. It is worth pausing for a moment to consider the implications of a loop in a transcription factor network. What does it even mean for a transcription factor to regulate itself?
 
 A transcription factor is a protein, which means that because of the Central Dogma of Molecular Biology, the transcription factor is produced as the result of transcription and translation of a gene appearing in an organism's DNA. In **autoregulation**, illustrated in the figure below, the transcription factor protein then binds to the DNA in the upstream region of the gene encoding the *same* transcription factor. This type of **feedback** is a beautiful and surprising feature of a simple biological system.
 
@@ -34,9 +34,8 @@ A simplified illustration of autoregulation. "Protein" labels the transcription 
 
 Transcription factor autoregulation leads us to ask two questions. First, how can we conclude that the number of loops in a transcription factor network is "surprisingly large"? And second, if autoregulation is so common, then why would a transcription factor have evolved to regulate its *own* transcription?
 
-[Next lesson](nar){: .btn .btn--primary .btn--large}
+[Next lesson](finding){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
-
 
 [^scNetwork]: Lee, T. I., Rinaldi, N. J., Robert, F., Odom, D. T., Bar-Joseph, Z., Gerber, G. K., … Young, R. A. (2002). Transcriptional regulatory networks in Saccharomyces cerevisiae. Science, 298(5594), 799–804. https://doi.org/10.1126/science.1075090
 

@@ -7,7 +7,7 @@ toc: true
 toc_sticky: true
 ---
 
-## The Central Dogma of Molecular Biology
+## The central dogma of molecular biology
 
 Recall that DNA is a double-stranded molecule consisting of the four nucleobases adenine, cytosine, guanine, and thymine. A gene is a region of an organism's DNA that is **transcribed** into a single-stranded RNA molecule in which thymine is converted to uracil and the other bases remain the same.
 
@@ -17,10 +17,10 @@ The RNA transcript is then **translated** into an amino acid sequence. Because t
 The genetic code, which dictates the conversion of RNA codons into amino acids.
 {: style="font-size: medium;"}
 
-DNA can be thought of as a blueprint for storing information that flows from DNA to RNA to protein. This flow of information is called the **Central Dogma of Molecular Biology** (see figure below).
+DNA can be thought of as a blueprint for storing information that flows from DNA to RNA to protein. This flow of information is called the **central dogma of molecular biology** (see figure below).
 
 ![image-center](../assets/images/Central_Dogma_of_Molecular_Biochemistry_with_Enzymes.jpg){: .align-center}
-The Central Dogma of molecular biology states that molecular information flows from DNA in the nucleus, into the RNA that is transcribed from DNA, and then into proteins that are translated from RNA.
+The central dogma of molecular biology states that molecular information flows from DNA in the nucleus, into the RNA that is transcribed from DNA, and then into proteins that are translated from RNA.
 {: style="font-size: medium;"}
 
 <!--
@@ -37,12 +37,12 @@ All of your cells have essentially the same DNA, and yet your liver cells, neuro
 
 Gene regulation typically occurs at either the DNA or protein level. At the DNA level, regulation is modulated by **transcription factors**, master regulator proteins that bind upstream of genes and serve to either **activate** or **repress** a gene's rate of transcription. Activation will cause the gene to be "upregulated", with increased transcription, and repression will cause the gene to be "downregulated".
 
-Note that by the Central Dogma, transcription factors are involved in a sort of feedback loop. DNA is transcribed into RNA, which is translated into the protein sequence of a transcription factor, which then binds to the upstream region of some other gene and changes its rate of transcription.
+Note that by the central dogma, transcription factors are involved in a sort of feedback loop. DNA is transcribed into RNA, which is translated into the protein sequence of a transcription factor, which then binds to the upstream region of some other gene and changes its rate of transcription.
 
 Transcription factors are vital for the cell's response to its environment because extracellular stimuli can serve to activate a transcription factor via a system of signaling molecules that convey a signal through relay molecules to the transcription factor (see figure below). Only when the transcription factor is activated will it regulate its target protein(s).
 
 ![image-center](../assets/images/signal_pathway.jpg){: .align-center}
-A cell receiving a signal which triggers a response, resulting in transcription[^signalResponse]
+A cell receiving a signal which triggers a response in which this signal is "transduced" into the cell, resulting in transcription of a gene. We will discuss signal transduction in greater detail in a future module.[^signalResponse]
 {: style="font-size: medium;"}
 
 In a future module, we will discuss the details of how the cell detects an extracellular signal and conveys it as a response within the cell. In this module, we concern ourselves with the study of the relationship between transcription factors and the genes they regulate.
@@ -69,12 +69,12 @@ You may also like to check out the following excellent video on identifying gene
 
 <iframe width="640" height="360" src="https://www.youtube-nocookie.com/embed/voEDurUgz_4" frameborder="0" allowfullscreen></iframe>
 
-**STOP:** How to you think that researchers measure whether a transcription factor activates or inhibits a given gene?
+**STOP:** How do you think that researchers measure whether a transcription factor activates or inhibits a given gene?
 {: .notice--primary}
 
 ## Organizing transcription factor information
 
-As a result of both computational and experimental techniques, we have learned a great deal about which transcription factors regulate which genes. But what do we do with this information?
+As a result of both computational and experimental techniques, we have learned a great deal about which transcription factors regulate which genes. But what can we do with this information?
 
 We would like to organize the relationships between transcription factors and the genes they regulate in a way that will help us identify patterns in these relationships. In the next section, we will see that consolidating gene regulatory information into a *network* will allow us to infer how cells have evolved to quickly change the expression of their genes in response to a dynamic environment.
 

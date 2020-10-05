@@ -13,23 +13,23 @@ Let's take another look at that *E. coli* network, file can be downloaded here:
 For the full Jupyter Notebook below, download here:
 <a href="https://purpleavatar.github.io/multiscale_biological_modeling/downloads/Network_Demo.ipynb" download="Network_Demo.ipynb">Jupyter Notebook</a>
 
-You will also need this helper file: 
+You will also need this helper file:
 <a href="https://purpleavatar.github.io/multiscale_biological_modeling/downloads/network_loader.py" download="network_loader.py">Python File</a>
 
 The following software and packages will need to be installed:
 
-| Installation Link | Version[^version] | Check Install | 
+| Installation Link | Version[^version] | Check Install |
 |:------|:-----:|------:|
-| [Python3](https://www.python.org/downloads/)  |3.7 |*python --version* | 
+| [Python3](https://www.python.org/downloads/)  |3.7 |*python --version* |
 | [Jupyter Notebook](https://jupyter.org/index.html) | 4.4.0 | *jupyter --version* |
 | [python-igraph](https://igraph.org/python/doc/tutorial/install.html) | 0.8.0 | *conda list* or *pip list* |
 
-**Warning:** Be careful of the igraph installation and follow the website instructions carefully. When installing via pip or conda, specify "*python-igraph*" instead of "*igraph*". 
+**Warning:** Be careful of the igraph installation and follow the website instructions carefully. When installing via pip or conda, specify "*python-igraph*" instead of "*igraph*".
 {: .notice--primary}
 
 [^version]: Other versions may be compatible with this code, but those listed are known to work for this tutorial
 
-We can import the network and see how many nodes and edges there are, additionally can see number of self-loops are present.
+We can import the network and see how many nodes and edges there are, as well as count the number of loops.
 
 ~~~ python
 # NOTE: when installing via pip or conda, install python-igraph

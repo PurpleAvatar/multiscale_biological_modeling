@@ -22,7 +22,7 @@ Go to *CellBlender > Molecules* and create the following molecules:
 5. Add a diffusion constant of “1e-6”
 6. Up the scale factor to 5 (click and type “5” or use the arrows)
 
-Repeat the above steps to make sure the follow molecules are entered:
+Repeat the above steps to make sure the following molecules are entered.
 
 | Molecule Name | Molecule Type|Diffusion Constant| Scale Factor|
 |:--------|:-------:|--------:|--------:|--------:|
@@ -46,7 +46,7 @@ Now go to *CellBlender > Molecule Placement* to set the following sites:
 3. Type in the name of the Object/Region “Plane”
 4. Set the Quantity to Release as “150”
 
-Repeat the above steps to make sure the following molecules are entered
+Repeat the above steps to make sure the following molecules are entered.
 
 | Molecule Name | Object/Region|Quantity to Release|
 |:--------|:-------:|--------:|
@@ -64,7 +64,7 @@ Next go to *CellBlender > Reactions* to create the following reactions:
 3. Under products, type “HiddenX’ + X’”
 4. Set the forward rate as “2e3”
 
-Repeat the above steps for the following reactions
+Repeat the above steps for the following reactions.
 
 | Reactants |Products|Forward Rate|
 |:--------|:-------:|--------:|
@@ -98,7 +98,7 @@ Go to *CellBlender > Plot Output Settings* to set up a plot as follows:
 5. Ensure “One Page, Multiple Plots” is selected
 6. Ensure “Molecule Colors” is selected
 
-Repeat the above steps for the following molecules
+Repeat the above steps for the following molecules.
 
 | Molecule Name|Selected Region|
 |:--------|:-------:|

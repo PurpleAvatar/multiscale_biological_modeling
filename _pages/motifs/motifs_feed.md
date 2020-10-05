@@ -21,7 +21,7 @@ Note that *X* and *Y* must be transcription factors because they have edges lead
 
 Furthermore, recall that every edge of a transcription factor network is assigned a "+" or a "-" sign based on whether the interaction corresponds to activation or repression, respectively. Accordingly, there are eight different types of FFLs, depending on the labels of the three edges in this motif.
 
-Among the 42 total FFLs in the *E. coli* transcription factor network, five of them have the structure below, in which the edges connecting *X* to *Y* and *X* to *Z* are assigned a "+" and the edge connecting *Y* to *Z* is assigned a "-". This specific form of the FFL motif is (unfortunately) named a **type-1 incoherent feedforward loop**. This form of the FFL will be our focus for the rest of the module.
+Among the 42 total FFLs in the *E. coli* transcription factor network, five of them have the structure below, in which the edges connecting *X* to *Y* and *X* to *Z* are assigned a "+" and the edge connecting *Y* to *Z* is assigned a "-". This specific form of the FFL motif is  called a **type-1 incoherent feedforward loop**. This form of the FFL will be our focus for the rest of the module.
 
 **STOP:** How could we simulate a feedforward loop with chemical reactions akin to the simulation that we used for negative autoregulation? What would we compare this simulation against?
 {: .notice--primary}
@@ -34,7 +34,7 @@ The incoherent feed-forward loop network motif. Note that *X* upregulates *Y* an
 
 As we did in the last section, we will run two simulations. In the first, we will have a simple activation of *Z* by *X*, meaning that we will assume *X* is at its steady state concentration and that *Z* is produced by the reaction *X* → *X* + *Z* and removed by the reaction *Z* → *NULL*.
 
-The second simulation will include all of these reactions, but we will also have the reaction *X* → *X* + *Y* to model the upregulation of *Y* by *X*, along with the reaction *Y* + *Z* → *Y* to model the repression of *Z* by *Y*. Because *Y* and *Z* are being produced from a reaction, we will also have kill reactions for *Y* and *Z* to model the degradation of these two proteins. For the sake of fairness, we will use the same degradation rates for both *Y* and *Z*.
+The second simulation will include both of these reactions, but we will also have the reaction *X* → *X* + *Y* to model the upregulation of *Y* by *X*, along with the reaction *Y* + *Z* → *Y* to model the repression of *Z* by *Y*. Because *Y* and *Z* are being produced from a reaction, we will also have kill reactions for *Y* and *Z* to model the degradation of these two proteins. For the sake of fairness, we will use the same degradation rates for both *Y* and *Z*.
 
 Furthermore, in order to obtain a mathematically controlled comparison, we will need to make the reaction *X* → *X* + *Z* have a higher rate in the second simulation that models the FFL. If we do not raise the rate of this reaction, then the repression of *Z* by *Y* will cause the steady state concentration of *Z* to be lower in the second simulation.
 
@@ -63,13 +63,13 @@ The feedforward process must be vital to the cell. Unlike negative autoregulatio
 
 We only considered one of the eight types of FFL in this lesson. You might wonder whether any of the other seven FFL structures serve as network motifs.  For example, what happens if *X* activates *Z*, *X* represses *Y*, and *Y* activates *Z*? We will explore these additional FFL structures in the exercises at the end of the module.
 
-Finally, recall the figure above, in which the concentration of *Z* swung past its steady state before returning to the steady state. This figure is reminiscent **damped oscillation** process in which the concentration of a particle alternates between being above and below its steady state, while the amplitude of the oscillation gets smaller and smaller.
+Finally, recall the figure above, in which the concentration of *Z* swung past its steady state before returning to the steady state. This figure is reminiscent of a **damped oscillation** process in which the concentration of a particle alternates between being above and below its steady state, while the amplitude of the oscillation gets smaller and smaller.
 
 ![image-center](../assets/images/damped_oscillator.png){: .align-center}
 In a damped oscillation, the value of some variable (shown on the *y*-axis) back and forth around an asymptotic value while the amplitude of the oscillations decreases.[^dampedOscillator]
 {: style="font-size: medium;"}
 
-A damped oscillation is very similar to a true oscillation, in which the concentration of the particle bounces back and forth around a steady state concentration, but these oscillations neither increase nor decrease over time. Oscillations are common-place in nature and remarkable because the oscillating behavior arises from the system and can be maintained without outside influence. But can oscillations be explained by transcription factor network motifs? We hope you will join us in the next lesson to find out.
+In a true oscillation process, the concentration of the particle is not damped, and this concentration alternates with regularity between a minimum and maximum value. Oscillations are common-place in nature and remarkable because the oscillating behavior arises from the system and can be maintained without outside influence. But can oscillations be explained by transcription factor network motifs? We hope you will join us in the next lesson to find out.
 
 [Next lesson](oscillators){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}

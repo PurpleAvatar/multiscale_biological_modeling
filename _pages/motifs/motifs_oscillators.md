@@ -52,7 +52,7 @@ Modeling the repressilator's concentration of particles. *X* is shown in yellow,
 
 We will attempt to provide a high-level explanation of why the repressilator produces oscillations from a simple set of rules.
 
-Because the concentration of *X* starts out high, with no *Y* or *Z* present, the concentration of *X* briefly increases because its rate of production exceeds its rate of degradation. Because there are no *Y* or *Z* particles present, there are no *Y* or *Z* to degrade, and the concentration of these particles start increasing as well.
+Because the concentration of *X* starts out high, with no *Y* or *Z* present, the concentration of *X* briefly increases because its rate of production exceeds its rate of degradation. Because there are no *Y* or *Z* particles present, there are no *Y* or *Z* to degrade, and the concentrations of these particles start increasing as well.
 
 As soon as there are some *Z* particles present, the reaction *Z* + *X* → *Z* occurs often enough for the rate of removal of *X* to exceed its rate of production, accounting for the first peak in the figure above.
 

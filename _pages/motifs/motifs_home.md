@@ -11,7 +11,7 @@ In the [prologue](prologue), we worked with a particle-based model that simulate
 
 In this module, we turn our attention to the question of how a cell can adjust its protein concentrations in reaction to an ever-changing environment.  We will see that the mechanisms the cell uses to make these changes are rapid, robust, and elegant.
 
-This module will also introduce the concept of a **network**, or a collection of **nodes** along with **edges** that connect pairs of nodes. Before continuing, we will take the opportunity to give a few examples of biological networks.
+We will also introduce the concept of a **network**, or a collection of **nodes** along with **edges** that connect pairs of nodes. Before continuing, we will take the opportunity to give a few examples of biological networks.
 
 When studying the functions and binding of proteins, biologists may build a **protein-protein interaction network** (figure below). Nodes correspond to proteins, and two proteins are connected with an edge if they are known to interact.
 

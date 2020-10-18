@@ -9,7 +9,7 @@ toc_sticky: true
 
 ## Transducing a signal to a cell's interior
 
-In the previous two lessons, we discussed how a cell recognizes an extracellular signal by receptor proteins on the cell's surface bonding to ligands, and how to model the reversible ligand-receptor reaction using stochastic simulation. We now turn to the question of how the cell conveys the extracellular signal it detects via ligand-receptor bonding to the cell's interior in order to produce an action via the process of signal transduction. For example, if *E. coli* senses an increase in the concentration of glucose, meaning that more ligand-receptor bonding is taking place at the receptor that recognizes glucose, how is *E. coli* able to change its behavior as a result of this increased bonding?
+In the previous two lessons, we discussed how a cell recognizes an extracellular signal when receptor proteins on the cell's surface bond to ligands, and how to model the reversible ligand-receptor reaction using stochastic simulation via the Gillespie algorithm. We now turn to the question of how the cell conveys the extracellular signal it detects via ligand-receptor bonding to the cell's interior in order to produce an action via the process of signal transduction. For example, if *E. coli* senses an increase in the concentration of glucose, meaning that more ligand-receptor bonding is taking place at the receptor that recognizes glucose, how is *E. coli* able to change its behavior as a result of this increased bonding?
 
 The engine of signal transduction is a series of **phosphorylation** events. Phosphorylation is a chemical reaction that attaches a phosphoryl group (PO<sub>3</sub><sup>-</sup>) to an organic molecule.  Phosphoryl modifications serve as an information exchange of sorts because they activate or deactivate certain enzymes.
 
@@ -19,7 +19,7 @@ In the case of chemotaxis, a sequence of phosphorylation events inside *E. coli*
 
 ## Chemotaxis pathway
 
-A high-level view of the transduction pathway for chemotaxis is shown in the figure below. The cell membrane contains receptors called **methyl-acceptring chemotaxis proteins (MCPs)**.  The MCPs, which bridge the cellular membrane, bond to ligand stimuli in the cell exterior, and then bond to other proteins on the inside of the cell. The pathway includes a number of additional proteins, which all start with the prefix *Che* (short for "chemotaxis").
+A high-level view of the transduction pathway for chemotaxis is shown in the figure below. The cell membrane contains receptors called **methyl-acceptring chemotaxis proteins (MCPs)**.  The MCPs, which bridge the cellular membrane, bond to ligand stimuli in the cell exterior, and then also bond to other proteins on the inside of the cell. The pathway includes a number of additional proteins, which all start with the prefix *Che* (short for "chemotaxis"). In what follows, we explain the reactions detailed in this figure.
 
 ![image-center](../assets/images/chemotaxisphosnew.png){: .align-center}
 A summary of the chemotaxis transduction pathway. A ligand binding signal is propagated through CheA and CheY phosphorylation, which leads to a response of clockwise flagellar rotation. The blue curved arrow denotes phosphorylation, the grey curved arrow denotes dephosphorylation, and the blue dashed arrow denotes a chemical interaction. Figure is a simplification of <a href="http://chemotaxis.biology.utah.edu/Parkinson_Lab/projects/ecolichemotaxis/ecolichemotaxis.html">Parkinson Lab</a>'s illustrations.
@@ -29,9 +29,9 @@ On the interior of the cellular membrane, MCPs form complexes with two proteins 
 
 If CheA is phosphorylated, then it can pass on the phosphoryl group to a molecule called **CheY**, which interacts with the flagellum in the following way. Each flagellum has a protein complex called the **flagellar motor switch** that is responsible for controlling the direction of flagellar rotation. The interaction of this protein complex with phosphorylated CheY induces the change of flagellar rotation from counter-clockwise to clockwise. As we discussed earlier in this module, this change in flagellar rotation causes the bacterium to tumble, which in the absence of an increase in attractant occurs every 1 to 1.5 seconds.
 
-Yet when a ligand binds to the MCP, the MCP undergoes conformation changes, which reduces the stability of the complex with CheW and CheA. As a result, CheA is less readily able to autophosphorylate, which means that it does not phosphorylate CheY, and so because there is less phosphorylated CheY, the tumbling frequency decreases.
+Yet when a ligand binds to the MCP, the MCP undergoes conformation changes, which reduce the stability of the complex with CheW and CheA. As a result, CheA is less readily able to autophosphorylate, which means that it does not phosphorylate CheY, and so because there is less phosphorylated CheY, the tumbling frequency decreases.
 
-In other words, the exchange of phosphoryl groups means that a ligand exterior to the cell can indirectly serve as an inhibitor for phosphorylated CheA as well as phosphorylated CheY. Thus, ligand binding indirectly *causes* fewer flagellar interactions and in turn less tumbling of the bacterium.
+In other words, the exchange of phosphoryl groups means that a ligand exterior to the cell can indirectly serve as an inhibitor for phosphorylated CheA as well as phosphorylated CheY. Thus, ligand binding *causes* fewer flagellar interactions and in turn less tumbling of the bacterium.
 
 <!--
 When MCP receptors instead bind to repellent ligands, the situation is reversed. CheA autophosphorylation increases, which increases the rate of phosphorylation of CheY, which increases tumbling frequency.
@@ -53,7 +53,7 @@ To do so, we will need to incorporate the following three reactions into our mod
 
 -->
 
-This model is going to become more complicated than any we have introduced thus far in the course. We will need to account for both bound and unbound MCP molecules, as well as phosphorylated and unphosphorylated CheA and CheY enzymes. We will also need to model phosphorylation reactions of CheA that depend on the current concentrations of bound and unbound MCP molecules. The simplifying language provided by the BioNetGen language used in the tutorial below will be crucial in organizing these reactions.
+This model will be more complicated than any we have introduced thus far in the course. We will need to account for both bound and unbound MCP molecules, as well as phosphorylated and unphosphorylated CheA and CheY enzymes. We will also need to model phosphorylation reactions of CheA that depend on the current concentrations of bound and unbound MCP molecules. The simplifying language provided by the BioNetGen language used in the tutorial below will be crucial in organizing these reactions.
 
 Once we have added reactions representing the chemotaxis signal transduction pathway, we would like to see what happens as we change the concentrations of the ligand. Ideally, this system should help the bacterium distinguish between different ligand concentrations. That is, the higher the concentration of an attractant ligand, the lower the concentration of phosphorylated CheY, and thus the lower the tumbling frequency of the bacterium.
 

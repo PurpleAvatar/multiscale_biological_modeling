@@ -54,10 +54,10 @@ For example, given what we currently know about modeling, we would need one part
 Instead, the BioNetGen language will allow us to conceptualize this system much more concisely. To do so, we will make a simplifying assumption about our system that the receptor includes CheA and CheW, so that we do not need to represent these as separate particles. The BioNetGen representation of the four particles in our system is shown below.
 
 ~~~ ruby
-		L(t)             #ligand molecule
-		T(l,Phos~U~P)    #receptor complex
-		CheY(Phos~U~P)
-		CheZ()
+L(t)             #ligand molecule
+T(l,Phos~U~P)    #receptor complex
+CheY(Phos~U~P)
+CheZ()
 ~~~
 
 `L(t)` means that the particle *L* will be capable of bonding with *T*; the same goes for `T(l)`, meaning that *T* can bond with *L*. The notation `Phos~U~P` indicates that a given molecule type can be either phosphorylated or unphosphorylated, so that we do not need multiple different particles to represent the molecule.
@@ -65,21 +65,21 @@ Instead, the BioNetGen language will allow us to conceptualize this system much 
 The conciseness of BioNetGen's molecule representation allows us to represent our reactions concisely as well. First, we represent the binding and dissociation reactions; the language will permit these reactions to be represented by a single reaction that is independent of the phosphorylation status of the receptor complex.
 
 ~~~ ruby
-		LigandReceptor: L(t) + T(l) <-> L(t!1).T(l!1) k_lr_bind, k_lr_dis
+LigandReceptor: L(t) + T(l) <-> L(t!1).T(l!1) k_lr_bind, k_lr_dis
 ~~~
 
 Second, we represent the phosphorylation of the MCP complex. Recall that the phosphorylation of CheA can happen at different rates depending on whether the MCP is bound or not, and so we will need two different reactions to represent these different rates. We will assume that the phosphorylation of the MCP occurs at one fifth the rate when it is bound.
 
 ~~~ ruby
-		FreeTP: T(l,Phos~U) -> T(l,Phos~P) k_T_phos
-		BoundTP: L(t!1).T(l!1,Phos~U) -> L(t!1).T(l!1,Phos~P) k_T_phos*0.2
+FreeTP: T(l,Phos~U) -> T(l,Phos~P) k_T_phos
+BoundTP: L(t!1).T(l!1,Phos~U) -> L(t!1).T(l!1,Phos~P) k_T_phos*0.2
 ~~~
 
 Finally, we represent the phosphorylation and dephosphorylation of CheY. The former requires a phosphorylated MCP receptor, while the latter is done with the help of a CheZ molecule.
 
 ~~~ ruby
-		YP: T(Phos~P) + CheY(Phos~U) -> T(Phos~U) + CheY(Phos~P) k_Y_phos
-		YDep: CheZ() + CheY(Phos~P) -> CheZ() + CheY(Phos~U) k_Y_dephos
+YP: T(Phos~P) + CheY(Phos~U) -> T(Phos~U) + CheY(Phos~P) k_Y_phos
+YDep: CheZ() + CheY(Phos~P) -> CheZ() + CheY(Phos~U) k_Y_dephos
 ~~~
 
 Once we have added these reactions representing the chemotaxis signal transduction pathway, we would like to see what happens as we change the concentrations of the ligand. Ideally, the bacterium should be able to distinguish between different ligand concentrations. That is, the higher the concentration of an attractant ligand, the lower the concentration of phosphorylated CheY, and thus the lower the tumbling frequency of the bacterium.

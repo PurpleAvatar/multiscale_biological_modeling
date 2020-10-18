@@ -82,7 +82,7 @@ YP: T(Phos~P) + CheY(Phos~U) -> T(Phos~U) + CheY(Phos~P) k_Y_phos
 YDep: CheZ() + CheY(Phos~P) -> CheZ() + CheY(Phos~U) k_Y_dephos
 ~~~
 
-Once we have added these reactions representing the chemotaxis signal transduction pathway, we would like to see what happens as we change the concentrations of the ligand. Ideally, the bacterium should be able to distinguish between different ligand concentrations. That is, the higher the concentration of an attractant ligand, the lower the concentration of phosphorylated CheY, and thus the lower the tumbling frequency of the bacterium.
+Once we have added these reactions representing the chemotaxis signal transduction pathway, we would like to see what happens when we *change* the concentrations of the ligand. Ideally, the bacterium should be able to distinguish between different ligand concentrations. That is, the higher the concentration of an attractant ligand, the lower the concentration of phosphorylated CheY, and thus the lower the tumbling frequency of the bacterium.
 
 But does higher attractant concentration in our model really lead to a lower concentration of CheY? Let's find out by incorporating the phosphorylation pathway into our ligand-receptor model in the following BioNetGen tutorial.
 
@@ -103,7 +103,7 @@ If we instead add 100,000 attractant molecules, then we see an even more drastic
 
 ![image-center](../assets/images/chemotaxis_tutorial7.png){: .align-center}
 
-In other words, the BNG simulation is confirming that an increase in attractant reduces the concentration of phosphorylated CheY, and therefore lowers the tumbling frequency.
+In other words, the BNG simulation is confirming that an increase in attractant reduces the concentration of phosphorylated CheY, which therefore lowers the tumbling frequency.
 
 <!--
 
@@ -116,7 +116,7 @@ The cell also has MCPs that detect repellents and serve to *increase* CheA autop
 
 ## So … what's the big deal?
 
-You may not be surprised that we have been able to build a model simulating the system that *E. coli* uses to detect extracellular concentration of ligand and change its behavior accordingly. After all, the biochemistry presented here is as simple as it is elegant.
+You may not be surprised that we have been able to build a model simulating the system that *E. coli* uses to detect extracellular concentration of ligand and change its behavior accordingly. After all, the biochemistry presented here may be elegant, but it is also simple.
 
 But what we have shown in this lesson is just half of the story. In the next lesson, we will see that the biochemical realities of chemotaxis are even more complicated, and for good reason --- this complexity will allow *E. coli* to react with surprising intelligence to a dynamic world.
 

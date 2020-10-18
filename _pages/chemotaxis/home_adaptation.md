@@ -76,27 +76,27 @@ In the following tutorial, we will expand our previous BioNetGen model into one 
 [Visit tutorial](tutorial_adap){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
-## New subsection
+## Bacterial tumbling is resilient to large sudden changes in ligand concentration
 
-In the figures below, we show plots of the concentration of each molecule in the system under a few different circumstances. In each case, we suddenly change the concentration of an attractant ligand and examine how this affects the concentration of phosphorylated CheY (the molecule that influences the tumbling frequency). Will the model reflect our biochemical hypothesis that *E. coli* can return to approximately the same steady-state concentration of phosphorylated CheY regardless of the concentration of the ligand?
+In the figures below, we show plots of the concentration of each molecule in the system under a few different circumstances. In each case, we suddenly change the concentration of an attractant ligand and examine how this affects the concentration of phosphorylated CheY (the molecule whose phosphorylation is directly correlated with increased tumbling frequency). Will the model reflect our biochemical hypothesis that *E. coli* can return to approximately the same steady-state concentration of phosphorylated CheY regardless of the concentration of the ligand?
 
-Here we show simulation results for some different amounts of ligand molecules suddenly added at the beginning of the simulation. First a relatively small amount, by setting `L0 = 1e4`.
+Here we show simulation results for some different amounts of ligand molecules suddenly added at the beginning of the simulation. First a relatively small amount, by setting the initial concentration *l*<sub>0</sub> equal to 10,000.
 
 ![image-center](../assets/images/chemotaxis_tutorial_oneadd1e4.png){: .align-center}
 
-We gradually increase the amount of ligand molecules added. With `L0 = 1e5`.
+We gradually increase the amount of ligand molecules added. With *l*<sub>0</sub> equal to 100,000, we obtain the figure below.
 
 ![image-center](../assets/images/chemotaxis_tutorial_oneadd1e5.png){: .align-center}
 
-With `L0 = 1e6`.
+With *l*<sub>0</sub> equal to 1 million.
 
 ![image-center](../assets/images/chemotaxis_tutorial_oneadd1e6.png){: .align-center}
 
-With `L0 = 1e7`.
+With *l*<sub>0</sub> equal to 10 million.
 
 ![image-center](../assets/images/chemotaxis_tutorial_oneadd1e7.png){: .align-center}
 
-With `L0 = 1e8`.
+With *l*<sub>0</sub> equal to 100 million.
 
 ![image-center](../assets/images/chemotaxis_tutorial_oneadd1e8.png){: .align-center}
 

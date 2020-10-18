@@ -67,15 +67,11 @@ If simulating the reaction of a ligand binding to an MCP, then half of these 24 
 
 If modeling the chemotaxis system using the approaches presented in the prologue and the previous module, we would need to consider 24 different molecule types and write out all of these reactions. Consider how difficult it would be to debug our model if we made just a small typo in one of these reactions! The phenomenon presented here, in which the number of molecules and reactions grows very quickly as a biochemical model grows more complex, is called **combinatorial explosion**. Our model of chemotaxis is ultimately relatively straightforward, but combinatorial explosion means that building realistic models of biochemical systems at scale without a simplifying language can be daunting if not impossible.
 
-A major benefit of using a rule-based modeling language provided by BioNetGen is that it prevents combinatorial explosion by consolidating many reactions into a single rule.
+A major benefit of using a rule-based modeling language provided by BioNetGen is that it circumvents combinatorial explosion by consolidating many reactions into a single rule. For example, when modeling ligand-MCP binding, we can summarize the 12 different reactions with the rule "a free ligand molecule binds to an MCP that is not bound to a ligand molecule."
 
-START HERE
+Why is one rule enough? Recall from our discussion of the [Gillespie algorithm](/home_signalpart2#an-overview-of-the-gillespie-algorithm) that the wait time between reactions depends only on the rate of all relevant reactions in the system. In this particular case, the rate of ligand-MCP binding depends on the total concentration of free ligands and unbound MCPs, but it does not depend on MCPs' other states.
 
-When we model ligand-MCP binding, we don't care the MCP is phosphorylated or not, bound to CheR or not, or its methylation state. We only care about the reactive part - it is not bound to a ligand molecule yet. So our 12 reactions can simplify to 1 reaction rule: a free ligand molecule binds to an MCP that is not bound to a ligand molecule. Why is one rule enough? Recall in [Gillespie algorithm](/home_signal), the wait time before the next reaction and which reaction happen next only depends on the rate of all reactions in the system. The rate of ligand-MCP binding depends on the total concentration of free ligands and MCPs not bound to ligand, but not MCPs' other states.
-
-Similarly, when modeling MCP-CheR binding, we don't care anything except the MCP is not bound to a CheR molecule yet. The 12 possible reactions become 1 too. When modeling methylation, we only need 1 reaction for each combination of states that impacts the rate constant. No more worries about typing out dozens of lines of code that only differ by one word. The problem of specifying the states is circumvented by representing reactions in local rules.[^Chylek2015]
-
-As you might have realized, BNG takes advantage of such **rule-based modeling**. In our simulations, we will only worry about the components that are involved in a particular reactions, or influence the rate constant of that reaction.
+In the following tutorial, we will expand our previous BioNetGen model into one that can incorporate CheR binding as well as MCP methylation while avoiding combinatorial explosion. We will then examine whether this model allows us to learn anything about how a bacterium can adapt to changes in relative concentrations of attractant.
 
 [Visit tutorial](tutorial_adap){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
@@ -110,6 +106,8 @@ But this is limited to a range of concentrations - going over a concentration wh
 
 In the Gradient section, we will see how the ability to respond to the change and adapt to the liigand concentration enable the cells to actually move up the gradient.
 
+<!--
+
 ## Methylation states and Combinatorial Explosion
 
 Why the methylation states can change CheA autophosphorylation actvities? Let's look at more MCP biochemistry.
@@ -128,6 +126,8 @@ That means our model is a very simplified version of the actual story. But can w
 We can add more receptor species and ligand species to account for the different attractants/repellents and their specific receptors easily. For each trimer of dimer, we will have more binding states and more methylation states, and include dependency of CheA autophosphorylation based on the newly added states. We will modify CheB and CheR reactions to account for 4 methylation sites. The rest can stay unchanged. Adding such complexity will require some coding, but is certainly doable.
 
 The ability of including more complexity easily comes from the power of rule-based modeling. Specifying what the simulator should do only depends on the reaction rules, but not the state of the system. If we instead need to specify the states explicitly for the simulator, we will write an astronomical number of lines of code; imagine one typo somewhere.
+
+-->
 
 ## Additional Resources
 

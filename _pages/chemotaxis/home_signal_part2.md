@@ -78,7 +78,9 @@ We previously showed a worked example in which the steady state concentrations o
 * [*L*] = 5207
 * [*T*] = 2207
 
-Using the BioNetGen simulation from the preceding tutorial, we observe that the Gillespie algorithm quickly converges to these same values for the same parameters. As a result, we can see the power of using a particle-free stochastic simulator to quickly obtain a result without needing to perform any mathematical calculations.
+In the BioNetGen model covered in the previous tutorial, we initiate the system with 10,000 free ligand molecules and 7,000 free receptor molecules. The free ligand and receptor molecules can bind together to form a complex, which can then dissociate back to free ligand and receptors. The system evolves via the Gillespie algorithm, and we track the concentration of free ligand molecules (`free_ligand`), ligand molecules bound to receptor molecules (`bound_ligand`), and free receptor molecules (`free_receptors`) over time. Our goal is to see whether the concentrations reach a steady-state, and whether the steady-state matches our calculation.
+
+The figure below demonstrates that the Gillespie algorithm quickly converges to the same values as the ones that we obtained by hand in the last lesson. As a result, we can see the power of using a particle-free stochastic simulator to quickly obtain a result without needing to perform any mathematical calculations.
 
 ![image-center](../assets/images/chemotaxis_tutorial4_ssa.png){: .align-center}
 A concentration plot over time for ligand-receptor dynamics via a BioNetGen simulation employing the Gillespie algorithm. The concentrations reach a steady state at the end of the simulation that matches the concentrations identified by hand.

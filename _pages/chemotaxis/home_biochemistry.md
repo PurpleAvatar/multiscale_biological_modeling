@@ -33,27 +33,29 @@ Yet when a ligand binds to the MCP, the MCP undergoes conformation changes, whic
 
 In other words, the exchange of phosphoryl groups means that a ligand exterior to the cell can indirectly serve as an inhibitor for phosphorylated CheA as well as phosphorylated CheY. Thus, ligand binding *causes* fewer flagellar interactions and in turn less tumbling of the bacterium.
 
-<!--
-When MCP receptors instead bind to repellent ligands, the situation is reversed. CheA autophosphorylation increases, which increases the rate of phosphorylation of CheY, which increases tumbling frequency.
--->
-
 It is critical that as part of this process, a high concentration of phosphorylated CheY can be decreased if a ligand is detected; otherwise, the cell will not be able to change its tumbling frequency. To this end, the cell needs a complementary reaction that reverses the phosphorylation of CheY; this dephosphorylation reaction is catalyzed by an enzyme called **CheZ**.
 
 ## Adding phosphorylation events to our model of chemotaxis
 
 We would like to simulate the reactions driving chemotaxis signal transduction and see what happens if the bacterium "senses an attractant", meaning that the attractant ligand's concentration increases and leads to more receptor-ligand binding. To do so, we will build on the particle-free model for ligand-receptor dynamics that we introduced in the previous lesson.
 
+This model will be more complicated than any we have introduced thus far in the course. We will need to account for both bound and unbound MCP molecules, as well as phosphorylated and unphosphorylated CheA and CheY enzymes. We will also need to model phosphorylation reactions of CheA that depend on the current concentrations of bound and unbound MCP molecules.
+
 <!--
-
-To do so, we will need to incorporate the following three reactions into our model.
-
 * CheA + ATP -> CheA-PO<sub>3</sub><sup>-</sup> + ADP
 * CheA-PO<sub>3</sub><sup>-</sup> + CheY -> CheY-PO<sub>3</sub><sup>-</sup>
 * CheY-PO<sub>3</sub><sup>-</sup> + CheZ -> CheY + CheZ + PO<sub>3</sub><sup>-</sup>
-
 -->
 
-This model will be more complicated than any we have introduced thus far in the course. We will need to account for both bound and unbound MCP molecules, as well as phosphorylated and unphosphorylated CheA and CheY enzymes. We will also need to model phosphorylation reactions of CheA that depend on the current concentrations of bound and unbound MCP molecules. The simplifying language provided by the BioNetGen language used in the tutorial below will be crucial in organizing these reactions.
+We have introduced BioNetGen in a previous tutorial when implementing the Gillespie algorithm for our computation of the equilibrium of bound ligand-receptor complexes. However, BioNetGen is useful not only for running particle-free simulations, but also because it implements its own language for **rule-based modeling**.
+
+In this BNG model, we include four types of molecules: ligands, receptor complexes, CheY, and CheZ. We initiate the system with free ligand molecules and free receptor complexes as we did before, as well as CheY and CheZ molecules. What's new for this model is that we explicitly model whether the receptor complexes and CheY molecules are phosphorylated by explicitly incorporating the phosphorylation states of receptor complexes and CheY in the BNG model. When initializing the system, we start with an equilibrium concentration calculated from trial-and-error for phosphorylated vs. unphosphorylated receptor complex, and phosphorylated vs. unphosphorylated CheY. When the system evolves with the Gillespie algorithm, the following reactions could happen:
+
+ - binding and dissociation between ligands and receptor complexes like we had before,
+ - autophosphorylation of unphosphorylated receptor complexes,
+ - phosphorylated receptor complexes phosphorylates unphosphorylated CheY,
+ - and CheZ dephosphorylates phosphorylated CheY.
+Our goal is to observe added ligands increase the concentration of bound ligand-receptor complexes (`bound_ligand`) thus reduces the concentration of phosphorylated receptor complexes (`phosphorylated_CheA`), leading to decreased concentration of phosphorylated CheY (`phosphorylated_CheY`).
 
 Once we have added reactions representing the chemotaxis signal transduction pathway, we would like to see what happens as we change the concentrations of the ligand. Ideally, this system should help the bacterium distinguish between different ligand concentrations. That is, the higher the concentration of an attractant ligand, the lower the concentration of phosphorylated CheY, and thus the lower the tumbling frequency of the bacterium.
 

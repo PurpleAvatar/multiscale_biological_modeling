@@ -9,31 +9,31 @@ toc_sticky: true
 
 ## Verifying a theoretical steady state concentration via stochastic simulation
 
-In the [previous module](motifs), we saw how that we could avoid keeping track of the positions of individual diffusing particles if we assume that these particles are well-mixed, i.e., uniformly distributed throughout their environment. The *E. coli* cell is so small that we will assume that the concentration of any particle in its immediate surroundings is uniform. Therefore, as a proof of concept, let us see if a well-mixed simulation replicates the steady state concentrations of particles that we just found.
+In the [previous module](motifs), we saw that we could avoid keeping track of the positions of individual diffusing particles in a simulation if we assume that these particles are *well-mixed*, i.e., uniformly distributed throughout their environment. The *E. coli* cell is so small that we will assume that the concentration of any particle in its immediate surroundings is uniform. Therefore, as a proof of concept, let us see if a well-mixed simulation replicates the steady state concentrations of particles that we just found.
 
-Even though we can calculate steady state concentrations by hand, we will find a particle-free simulation useful for two reasons. First, this simulation will give us snapshots of the concentrations of particles in the system over multiple time points and allow us to see how quickly the concentrations reach equilibrium. Second, we will soon expand our model of chemotaxis to have many particles and reactions that depend on each other, and direct mathematical analysis of the system like what we have done in the section above will quickly become impossible as the number of particles and reactions grows.
+Even though we can calculate steady state concentrations by hand, we will find a particle-free simulation useful for two reasons. First, this simulation will give us snapshots of the concentrations of particles in the system over multiple time points and allow us to see how quickly the concentrations reach equilibrium. Second, we will soon expand our model of chemotaxis to have many particles and reactions that depend on each other, and direct mathematical analysis of the system like what we have done in the previous lesson will not just be tedious; it will quickly become impossible as the number of particles and reactions grows.
 
-The difficulty at hand is comparable to the famed "*n*-body problem" in physics. Predicting the motions of two celestial objects interacting due to gravity can be done exactly, but there is no known such solution if we add a third body to the system.
+The difficulty at hand is comparable to the famed "*n*-body problem" in physics. Predicting the motions of two celestial objects interacting due to gravity can be done exactly, but there is no known such solution once we add more bodies to the system.
 
 Our particle-free model will apply an approach called **Gillespie's Stochastic Simulation Algorithm**, which is often called the **Gillespie algorithm** or just **SSA** for short. Before we explain how this algorithm works, we take a short detour to provide some needed probabilistic context.
 
 ## The Poisson and exponential distributions
 
-Say that you own a store and have noticed that on average, there are *λ* customers entering your store in a single hour. Let *X* denote the number of customers that enter the store in the next hour; *X* is an example of a **random variable** because it may change based on random chance. If we assume that customers are independent actors and that two customers cannot arrive at the exact same time, then *X* follows a **Poisson distribution**, which means that the probability that exactly *n* customers arrive in the next hour is given by the probability
+Say that you own a store and have noticed that on average, there are *λ* customers entering your store in a single hour. Let *X* denote the number of customers that enter the store in the next hour; *X* is an example of a **random variable** because it may change based on random chance. If we assume that customers are independent actors and that two customers cannot arrive at the exact same time, then *X* follows a distribution called a **Poisson distribution**; it can be shown that for a Poisson distribution, the probability that exactly *n* customers arrive in the next hour is
 
 $$\mathrm{Pr}(X = n) = \dfrac{\lambda^n e^{-\lambda}}{n!}\,.$$
 
 A derivation of this formula is beyond the scope of our work here, but if you are interested in one, please consider [this post](https://medium.com/@andrew.chamberlain/deriving-the-poisson-distribution-from-the-binomial-distribution-840cc1668239) by Andrew Chamberlain.
 
-Furthermore, the probability of observing exactly *n* customers in *t* units of time is given by
+Furthermore, the probability of observing exactly *n* customers in *t* hours where *t* is an arbitrary positive number is
 
-$$\mathrm{Pr}(X = n) = \dfrac{(\lambda t)^n e^{-\lambda t}}{n!}\,.$$
+$$\dfrac{(\lambda t)^n e^{-\lambda t}}{n!}\,.$$
 
-A related question is how long we will have to wait for the next customer to arrive. Specifically, what are the chances that this customer will arrive after *t* units of time? If we let *T* be the random variable corresponding to our wait time, then the probability of *T* being less than *t* is the probability of seeing zero customers in this time period:
+We can also ask how long we will typically have to wait for the next customer to arrive. Specifically, what are the chances that this customer will arrive after *t* hours? If we let *T* be the random variable corresponding to the wait time on the next customer, then the probability of *T* being at least *t* is the probability of seeing zero customers in *t* hours:
 
 $$\mathrm{Pr}(T > t) = \mathrm{Pr}(X = 0) = \dfrac{(\lambda t)^0 e^{-\lambda t}}{0!} = e^{-\lambda t}\,.$$
 
-In other words, the probability $$\mathrm{Pr}(T < t)$$ decays exponentially over time. For this reason, the random variable *T* is said to follow an **exponential distribution.** It can be shown that the mean value of the exponential distribution (i.e., the average amount of time we will need to wait for the next event to occur) is 1/λ.
+In other words, the probability $$\mathrm{Pr}(T > t)$$ decays exponentially over time as *t* increases. For this reason, the random variable *T* is said to follow an **exponential distribution.** It can be shown that the mean value of the exponential distribution (i.e., the average amount of time we will need to wait for the next event to occur) is 1/λ.
 
 **STOP**: What is the probability Pr(*T* < *t*)?
 {: .notice--primary}
@@ -42,15 +42,13 @@ In other words, the probability $$\mathrm{Pr}(T < t)$$ decays exponentially over
 
 The engine of the Gillespie algorithm runs on a single question: given a well-mixed environment of particles and a reaction involving those particles taking place at some average rate, how long should we expect to wait before this reaction occurs somewhere in the environment?
 
-This is the same question as we asked in the previous section; we have simply replaced customers entering a store with chemical reactions. Therefore, an exponential distribution can be used to model the "wait time" between individual reactions.
+This is the same question as we asked in the previous section; we have simply replaced customers entering a store with chemical reactions. Therefore, an exponential distribution can be used to model the "wait time" between individual reactions. The more reactions we have, and the faster these reactions occur, the larger the value of λ, meaning that we typically do not have to wait very long for the next reaction.
 
-Numerical methods exist that will allow us to generate a random number corresponding to the wait time of an exponential distribution. By sampling repeatedly from the exponential distribution, we obtain a collection of varying wait times between consecutive occurrences of the reaction.
-
-If we have multiple reactions, then Gillespie's algorithm will still sample wait times, where these times are computed based on a combination of the rates of the reactions.
+Numerical methods exist that allow us to generate a random number simulating the wait time of an exponential distribution. By repeatedly sampling from the exponential distribution, we obtain a collection of varying wait times between consecutive occurrences of the reaction.
 
 Once a wait time is selected, we must determine the reaction to which this event corresponds. If the rates of the reactions are all equal, then this is an easy problem; we simply choose one of the reactions with equal probability. But if the rates of these reactions are different, then we should choose one of the reactions via a probability that is *weighted* in direct proportion to the rate of the reaction; that is, the larger the rate of the reaction, the more likely that this reaction corresponds to the current event.[^Schwartz17]
 
-To return to our own ongoing example, we have two reactions corresponding to the forward and reverse reactions of ligand-receptor binding and dissociation, respectively. First, a wait time is chosen according to an exponential distribution with mean value 1/(*k*<sub>bind</sub> + *k*<sub>dissociate</sub>); that is, λ is equal to the sum of reaction rates *k*<sub>bind</sub> + *k*<sub>dissociate</sub>. Then, the probability that the event corresponds to a binding reaction is given by
+We will illustrate the Gillespie algorithm by returning to our ongoing example, in which we are modeling the forward and reverse reactions of ligand-receptor binding and dissociation, respectively. First, a wait time is chosen according to an exponential distribution with mean value 1/(*k*<sub>bind</sub> + *k*<sub>dissociate</sub>); that is, λ is equal to the sum of reaction rates *k*<sub>bind</sub> + *k*<sub>dissociate</sub>. The probability that the event corresponds to a binding reaction is given by
 
 Pr(*L* + *T* → *LT*) = *k*<sub>bind</sub>/(*k*<sub>bind</sub> + *k*<sub>dissociate</sub>)
 
@@ -80,7 +78,7 @@ We previously showed a worked example in which the steady state concentrations o
 * [*L*] = 5207
 * [*T*] = 2207
 
-Using the BioNetGen simulation from the preceding tutorial, we observe that the Gillespie algorithm quickly converges to these same values for the same parameters. As a result, we can see the power of using a particle-free stochastic simulator to quickly obtian a result without needing to perform any mathematical calculations.
+Using the BioNetGen simulation from the preceding tutorial, we observe that the Gillespie algorithm quickly converges to these same values for the same parameters. As a result, we can see the power of using a particle-free stochastic simulator to quickly obtain a result without needing to perform any mathematical calculations.
 
 ![image-center](../assets/images/chemotaxis_tutorial4_ssa.png){: .align-center}
 A concentration plot over time for ligand-receptor dynamics via a BioNetGen simulation employing the Gillespie algorithm. The concentrations reach a steady state at the end of the simulation that matches the concentrations identified by hand.

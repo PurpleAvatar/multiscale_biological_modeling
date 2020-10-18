@@ -49,13 +49,38 @@ This model will be more complicated than any we have introduced thus far in the 
 
 We have introduced BioNetGen in a previous tutorial when implementing the Gillespie algorithm for our computation of the equilibrium of bound ligand-receptor complexes. However, BioNetGen is useful not only for running particle-free simulations, but also because it implements its own language for **rule-based modeling**.
 
-In this BNG model, we include four types of molecules: ligands, receptor complexes, CheY, and CheZ. We initiate the system with free ligand molecules and free receptor complexes as we did before, as well as CheY and CheZ molecules. What's new for this model is that we explicitly model whether the receptor complexes and CheY molecules are phosphorylated by explicitly incorporating the phosphorylation states of receptor complexes and CheY in the BNG model. When initializing the system, we start with an equilibrium concentration calculated from trial-and-error for phosphorylated vs. unphosphorylated receptor complex, and phosphorylated vs. unphosphorylated CheY. When the system evolves with the Gillespie algorithm, the following reactions could happen:
+For example, given what we currently know about modeling, we would need one particle type to represent bound MCP molecules, another particle type to represent ligands, and a third to represent bound complexes. This complex molecule binds with CheA and CheW and can be either phosphorylated or unphosphorylated, necessitating two different molecules. In turn, CheY can be phosphorylated or unphosphorylated as well, requiring two more particles and we will need particles corresponding to CheA and CheZ as well.
 
- - binding and dissociation between ligands and receptor complexes like we had before,
- - autophosphorylation of unphosphorylated receptor complexes,
- - phosphorylated receptor complexes phosphorylates unphosphorylated CheY,
- - and CheZ dephosphorylates phosphorylated CheY.
-Our goal is to observe added ligands increase the concentration of bound ligand-receptor complexes (`bound_ligand`) thus reduces the concentration of phosphorylated receptor complexes (`phosphorylated_CheA`), leading to decreased concentration of phosphorylated CheY (`phosphorylated_CheY`).
+Instead, the BioNetGen language will allow us to conceptualize this system much more concisely. To do so, we will make a simplifying assumption about our system that the receptor includes CheA and CheW, so that we do not need to represent these as separate particles. The BioNetGen representation of the four particles in our system is shown below.
+
+~~~ ruby
+		L(t)             #ligand molecule
+		T(l,Phos~U~P)    #receptor complex
+		CheY(Phos~U~P)
+		CheZ()
+~~~
+
+`L(t)` means that the particle *L* will be capable of bonding with *T*; the same goes for `T(l)`, meaning that *T* can bond with *L*. The notation `Phos~U~P` indicates that a given molecule type can be either phosphorylated or unphosphorylated, so that we do not need multiple different particles to represent the molecule.
+
+The conciseness of BioNetGen's molecule representation allows us to represent our reactions concisely as well. First, we represent the binding and dissociation reactions; the language will permit these reactions to be represented by a single reaction that is independent of the phosphorylation status of the receptor complex.
+
+~~~ ruby
+		LigandReceptor: L(t) + T(l) <-> L(t!1).T(l!1) k_lr_bind, k_lr_dis
+~~~
+
+Second, we represent the phosphorylation of the MCP complex. Recall that the phosphorylation of CheA can happen at different rates depending on whether the MCP is bound or not, and so we will need two different reactions to represent these different rates. We will assume that the phosphorylation of the MCP occurs at one fifth the rate when it is bound.
+
+~~~ ruby
+		FreeTP: T(l,Phos~U) -> T(l,Phos~P) k_T_phos
+		BoundTP: L(t!1).T(l!1,Phos~U) -> L(t!1).T(l!1,Phos~P) k_T_phos*0.2
+~~~
+
+Finally, we represent the phosphorylation and dephosphorylation of CheY. The former requires a phosphorylated MCP receptor, while the latter is done with the help of a CheZ molecule.
+
+~~~ ruby
+		YP: T(Phos~P) + CheY(Phos~U) -> T(Phos~U) + CheY(Phos~P) k_Y_phos
+		YDep: CheZ() + CheY(Phos~P) -> CheZ() + CheY(Phos~U) k_Y_dephos
+~~~
 
 Once we have added reactions representing the chemotaxis signal transduction pathway, we would like to see what happens as we change the concentrations of the ligand. Ideally, this system should help the bacterium distinguish between different ligand concentrations. That is, the higher the concentration of an attractant ligand, the lower the concentration of phosphorylated CheY, and thus the lower the tumbling frequency of the bacterium.
 

@@ -26,17 +26,13 @@ We now will specify the details of the two strategies.
 
 ###Strategy 1: Standard random walk
 
-Ingredients and simplifying assumptions of the model:
- - Run. The duration of run follows an exponential distribution with mean equals to the background run duration *t*<sub>0</sub>.
- - Tumble. The duration of cell tumble follows an exponential distribution with mean 0.1s[^Saragosti2012]. When it tumbles, we assume it only changes the orientation for the next run but doesn't move in space. The degree of reorientation follows a uniform distribution from 0° to 360°.
+The duration of each run follows an exponential distribution with mean equal to an experimentally verified tun length.
 
-For each cell, our simulation follows this procedure:
+When the cell tumbles, we assume that it only changes its orientation and does not change position. The degree of reorientation follows a uniform distribution from 0° to 360°. The duration of each tumble follows an exponential distribution with mean 0.1s[^Saragosti2012].
 
-while *time* < duration:
-- Sample the current run duration *curr_run_time*
-- Run for *curr_run_time* second along current direction
-- Sample the duration of tumble *curr_tumble_time* and the resulted direction
-- increment t by *curr_run_time* and *curr_tumble_time*
+For a specified amount of time, the model takes the following steps. First, we select a random direction of movement along with a duration of our tumble. We then select a random duration to run and let the bacterium run in that direction for the specified amount of time. We then increment the total time by the time required for tumbling and running.
+
+In the following tutorial, we simulate strategy 1 and use a Jupyter notebook to visualize the results of the simulation.
 
 [Visit standard random walk tutorial](tutorial_purerandom){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
@@ -44,8 +40,7 @@ while *time* < duration:
 
 ###Strategy 2: Chemotactic random walk
 
-Ingredients and simplifying assumptions of the model:
- - Run. When no change in ligand concentration is detected, the duration of run follows an exponential distrubtion with mean equals to the background run duration *t*<sub>0</sub>. When the cell senses concentration change, the cell changes the expected run duration *t*, with *t* = *t*<sub>0</sub> * (1 + 10 · Δ[*L*]). Since expected run duration should always be positive, we require *t* = max(*t*, 0.000001). To account for the fact that tumbling can't be limitlessly reduced, we require *t* = min(*t*, 4 · *t*<sub>0</sub>).
+When no change in ligand concentration is detected, the duration of run follows an exponential distrubtion with mean equals to the background run duration *t*<sub>0</sub>. When the cell senses concentration change, the cell changes the expected run duration *t*, with *t* = *t*<sub>0</sub> * (1 + 10 · Δ[*L*]). Since expected run duration should always be positive, we require *t* = max(*t*, 0.000001). To account for the fact that tumbling can't be limitlessly reduced, we require *t* = min(*t*, 4 · *t*<sub>0</sub>).
  - Tumble. The duration of cell tumble follows an exponential distribution with mean 0.1s[^Saragosti2012]. When it tumbles, we assume it only changes the orientation for the next run but doesn't move in space. The degree of reorientation follows a uniform distribution from 0° to 360°.
  - Response. As we've seen in the BNG model, the cell can respond to the gradient change within 0.5 seconds. In this model, we allow cells to re-measure the concentration after it runs for 0.5 seconds.
 

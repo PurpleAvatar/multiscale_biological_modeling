@@ -63,6 +63,7 @@ while *time* < duration:
 ## Comparing the two strategies
 
 Visualize trajectories of 3 cells using strategy 1 versus strategy 2.
+
 ![image-center](../assets/images/chemotaxis_traj_compare_uniform.png){: .align-center}
 Sample trajectories for the two strategies. Left: standard random walk; right: chemotactic random walk. The background color indicates concentration: white -> red = low -> high; black dots are starting points; red dots are the points they reached at the end of the simulation; colorful dashed lines represent trajectories (one color one cell): dark -> bright color = older -> newer time points; blue cross indicates the highest concentration (1500, 1500).
 {: style="font-size: medium;"}
@@ -95,11 +96,11 @@ Sample trajectories for tumble every 0.2 second. The background color indicates 
 
 ![image-center](../assets/images/chemotaxis_traj_1.0_uniform.png){: .align-center}
 Sample trajectories for tumble every 1.0 second.
-{: style="font-size: medium;"}
+{: style="font-size: medium;" text-align: center;}
 
 ![image-center](../assets/images/chemotaxis_traj_5.0_uniform.png){: .align-center}
 Sample trajectories for tumble every 5.0 second.
-{: style="font-size: medium;"}
+{: style="font-size: medium;" text-align: center;}
 
 What should a good trajectory look like? A cell should move fast towards the target; after reaching the goal, it should tumble immediately when moving to somewhere with a lower concentration and thus stay around the goal region. If we plot average distances to the goal through time, a good `time_exp` should be characterized by a fast decrease in distance to the goal, followed by flattening as close to the target as possible.
 

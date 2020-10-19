@@ -124,6 +124,18 @@ Gray-Scott from our tutorial using parameters f = 0.034, k = 0.061
 Expanding the size of the simulation and adding new predator locations to our Gray-Scott tutorial.
 {: style="font-size: medium;"}
 
+![image-center](../assets/0_f34_k63.gif){: .align-center}
+Gray-Scott from our tutorial using parameters f = 0.034, k = 0.063
+{: style="font-size: medium;"}
+
+![image-center](../assets/0_f38_k61.gif){: .align-center}
+Gray-Scott from our tutorial using parameters f = 0.038, k = 0.061
+{: style="font-size: medium;"}
+
+![image-center](../assets/0_f42_k59.gif){: .align-center}
+Gray-Scott from our tutorial using parameters f = 0.042, k = 0.059
+{: style="font-size: medium;"}
+
 [Next lesson](conclusion){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 

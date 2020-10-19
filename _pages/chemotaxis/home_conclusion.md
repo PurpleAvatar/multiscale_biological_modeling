@@ -94,11 +94,11 @@ Sample trajectories for tumble every 0.2 second. The background color indicates 
 
 ![image-center](../assets/images/chemotaxis_traj_1.0_uniform.png){: .align-center}
 Sample trajectories for tumble every 1.0 second.
-{: style="font-size: medium;" text-align: center;}
+{: style="font-size: medium; text-align: center;" }
 
 ![image-center](../assets/images/chemotaxis_traj_5.0_uniform.png){: .align-center}
 Sample trajectories for tumble every 5.0 second.
-{: style="font-size: medium;" text-align: center;}
+{: style="font-size: medium; text-align: center;"}
 
 What should a good trajectory look like? A cell should move fast towards the target; after reaching the goal, it should tumble immediately when moving to somewhere with a lower concentration and thus stay around the goal region. If we plot average distances to the goal through time, a good `time_exp` should be characterized by a fast decrease in distance to the goal, followed by flattening as close to the target as possible.
 

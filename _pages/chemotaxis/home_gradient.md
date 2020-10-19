@@ -9,7 +9,7 @@ toc_sticky: true
 
 ## Traveling up an attractant gradient
 
-In the previous lesson, we saw that *E. coli* is able to adapt its default tumbling frequency to the current background concentration of attractant. To replicate this behavior using BioNetGen, we simulated an instantaneous increase in concentration from one stable concentration level to another.
+In the previous lesson, we saw that *E. coli* is able to adapt its default tumbling frequency to the current background concentration of attractant. To model this behavior, we used the Gillespie algorithm and the rule-based language of BioNetGen to simulate an instantaneous increase in concentration from one stable concentration level to another.
 
 Yet imagine a glucose cube in an aqueous solution. As the cube dissolves, a **gradient** will form, with a decreasing glucose concentration that radiates outward from the cube. How will the tumbling frequency of *E. coli* change if the bacterium is moving up a gradient of increasing attractant concentration?  Will the tumbling frequency decrease continuously as well, or will the methylation pathways mentioned in the previous lesson cause more complicated behavior?
 
@@ -22,55 +22,59 @@ In the following tutorial, we will modify our model from the previous lesson by 
 
 ## Steady-state tumbling frequency is robust when traveling up an attractant gradient
 
-Recall that we used the expression [*L*] to denote the concentration of ligand *L* and *l*<sub>0</sub> to denote the initial concentration of the ligand. To represent exponential growth in the concentration of the ligand, [*L*] = *l*<sub>0</sub> · *e*<sup>*k* · t</sup>, where *t* is the time since the start and *k* is a parameter dictating exponential growth; the higher the value of *k*, the faster the growth in the ligand concentration.
+Recall that we used the expression [*L*] to denote the concentration of ligand *L* and *l*<sub>0</sub> to denote the initial concentration of the ligand. If the concentration of the ligand is growing exponentially, then [*L*] = *l*<sub>0</sub> · *e*<sup>*k* · t</sup>, where *t* is the time since the start and *k* is a parameter dictating exponential growth; the higher the value of *k*, the faster the growth in the ligand concentration.
 
-For example, the following figure depicts the concentration of phosphorylated CheY (highlighted in blue) over time when *l*<sub>0</sub> = 1000 and *k* = 0.1. The concentration of phosphorylated CheY (and therefore the tumbling frequency) initially decreases sharply as the ligand concentration increases, but after all ligands become bound to receptors (shown by the plateau in the red curve), the methylation of receptors causes the concentration of phosophorylated CheY to return to its equilibrium.
+For example, the following figure depicts the concentration of phosphorylated CheY (shown in blue) over time when *l*<sub>0</sub> = 1000 and *k* = 0.1. The concentration of phosphorylated CheY, and therefore the tumbling frequency, initially decreases sharply as the ligand concentration increases, but after all ligands become bound to receptors (shown by the plateau in the red curve), the methylation of receptors causes the concentration of phosophorylated CheY to return to its equilibrium.
 
 ![image-center](../assets/images/chemotaxis_tutorial_addition01.png){: .align-center}
+Plots of relevant molecule concentrations in our system when the concentration of ligand grows exponentially with *l*<sub>0</sub> = 1000 and *k* = 0.1. The concentration of bound ligand (shown in red) quickly hits saturation, which causes a minimum in phosphorylated CheY (and therefore a low tumbling frequency). To respond, the cell increases the methylation of receptors, which boosts the concentration of phosphorylated CheY back to equilibrium.
+{: style="font-size: medium;"}
 
 Our next question is what happens if we change *k*, the growth rate of the ligand concentration. The following figure shows the results of multiple simulations in which we vary the growth parameter *k* and plot the concentration of phosphorylated CheY over time. The larger the value of *k*, the faster the increase in receptor binding, and the steeper the drop in the concentration of phosphorylated CheY.
 
-More importantly, note that this figure illustrates the *robustness* of our model to *k*, the growth in ligand concentration. For widely varying rates of increase in ligand concentration, the system is always able to return to approximately the same equilibrium concentration of phosphorylated CheY (and therefore the same background tumbling frequency).
-
 ![image-center](../assets/images/chemotaxis_tutorial_addition03.png){: .align-center}
+Plots of phosphorylated CheY for different growth rates *k* of the concentration of ligand. The larger the value of *k*, the steeper the initial drop as the concentration of bound ligand becomes saturated, and the faster that the concentration of phosphorylated CheY returns to equilibrium.
+{: style="font-size: medium;"}
+
+More importantly, the above figure illustrates the *robustness* of bacterial chemotaxis to the rate of growth in ligand concentration. Regardless of this growth rate, the system always is able to apply methylation to return to approximately the same equilibrium concentration of phosphorylated CheY, and therefore the same background tumbling frequency.
 
 ## Reversing the attractant gradient
 
 And what if a cell is moving away from an attractant, down a concentration gradient? We would hope that the cell would be able to *increase* its tumbling frequency in this case (i.e., increase the concentration of phosphorylated CheY), and then restore the background tumbling frequency by removing methylation.
 
-To simulate this situation, we will model a cell in a high ligand concentration that is at steady-state, meaning that methylation is also elevated. In this case, we want the ligand concentration to *decay* exponentially, meaning that the ligand concentration is still given by the equation [*L*] = *l*<sub>0</sub> · *e*<sup>*k* · t</sup>, but *k* is negative.
+To simulate a decreasing gradient, we will model a cell in a high ligand concentration that is already at steady-state, meaning that methylation is also elevated. In this case, the ligand concentration will *decay* exponentially, meaning that the ligand concentration is still given by the equation [*L*] = *l*<sub>0</sub> · *e*<sup>*k* · t</sup>, but *k* is negative.
 
 **STOP:** If *k* is negative, what happens to the plot of [*L*] = *l*<sub>0</sub> · *e*<sup>*k* · t</sup> for decreasing values of *k*? How do you think the value of *k* will affect the concentration of phosphorylated CheY over time?
 {: .notice--primary}
 
-You may like to go it alone and modify the previous tutorial yourself to account for traveling down an attractant gradient. Otherwise, we will provide a separate tutorial for you to explore.
+You may like to modify the previous tutorial on your own to account for traveling down an attractant gradient. If not, we are still happy to provide a separate tutorial below.
 
 [Visit tutorial](tutorial_removal){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 ## Steady-state tumbling frequency remains robust when traveling down an attractant gradient
 
-The following figure shows the plot of molecules in our model as the concentration of attractant ligand decreases exponentially with *l*<sub>0</sub> = 10<sup>7</sup> and *k* equal to -0.3. As we expected, the concentration of phosphorylated CheY spikes as bound ligands break free and there are not enough free ligands to replace them. After this spike, methylation of receptors causes the concentration of phosphorylated CheY to steadily return back to its equilibrium. Note also in the figure below that the cell removes methylation as it moves down the gradient.
+The following figure shows the plot of molecules in our model as the concentration of attractant ligand decreases exponentially with *l*<sub>0</sub> = 10<sup>7</sup> and *k* equal to -0.3. As the ligand concentration decreases, the concentration of bound ligands plummet as bound ligands dissociate and there are not enough free ligands to replace the dissociating ones. In the absence of ligand-receptor binding, CheY can readily phosphorylate, causing a spike in phosphorylated CheY. Demethylation of receptors then causes the concentration of phosphorylated CheY to steadily return back to its equilibrium.
 
 ![image-center](../assets/images/chemotaxis_tutorial_removal01.png){: .align-center}
-
-<!--
- In particular, the new steady methylation states  adapt to a higher ligand concentration, the methlyation states of the cell become higher. If the cell then moves down the gradient to somewhere with no ligand present, the methylation states should also be restored. Check that the new steady state concentration of receptors at high, medium, and low methylation states match the starting concentration of our [adaptation simulation](tutorial_adap).
--->
+Simulating a bacterium traveling down an attractant gradient with *l*<sub>0</sub> = 10<sup>7</sup> and *k* equal to -0.3. Phosphorylated CheY follows the opposite pattern to traveling up an attractant gradient, with the concentration of phosphorylated CheY rising quickly only to slowly decrease to equilibrium due to demethylation.
+{: style="font-size: medium;"}
 
 To be thorough, we should also test the robustness of our model to see whether the CheY concentration will return to the same steady-state for a variety of values of *k* when *k* is negative. As in the case of an increasing gradient, the figure below shows that the more sudden the change in the concentration of attractant, the sharper the spike. And yet regardless of the value of *k*, methylation does its work to bring the concentration back to the same steady-state. More importantly, this figure and the one above are confirmed by experimental observations.[^Krembel2015]
 
 ![image-center](../assets/images/chemotaxis_tutorial_removal02.png){: .align-center}
+Varying values of *k* in our exponential decrease in the concentration of attractant ligand produce the same equilibrium concentration of phosphorylated CheY. The smaller the value of *k*, the steeper the initial spike, and the faster the recovery to steady state.
+{: style="font-size: medium;"}
 
-## From changing tumbling frequencies to an algorithm for exploration
+## From changing tumbling frequencies to an exploration algorithm
 
-We hope that through exploring this module, you have gained an appreciation for the elegant mechanism of bacterial chemotaxis, as well as the power of rule-based modeling for simulating a complex biochemical system.
+We hope that in exploring this module, you have gained an appreciation for the elegant mechanism of bacterial chemotaxis, as well as the power of BioNetGen's rule-based modeling for simulating a complex biochemical system without the need to keep track of individual particles.
 
-And yet throughout this discussion we have made one major omission. We have seen that *E. coli* goes to great lengths to ensure that if it detects a relative increase in concentration (i.e., an attractant gradient), then it can reduce its tumbling frequency in response. But what we have not explored is *why* this is a useful strategy for the bacterium to find food.
+And yet we have made a major omission. *E. coli* goes to great lengths to ensure that if it detects a relative increase in concentration (i.e., an attractant gradient), then it can reduce its tumbling frequency in response. But what we have not explored is *why* this change in the bacterium's tumbling frequency would help it find food.
 
-After all, even though the tumbling frequency is tied to relative attractant concentration, the direction of the bacterium's move in any "run" step is random! So why would a decrease in tumbling frequency help  *E. coli* move toward an attractant?
+After all, the direction that a bacterium is moving at any point in time is random! So why would a decrease in tumbling frequency help  *E. coli* move toward an attractant?
 
-This question has no quick intuitive answer, but in this module's final lesson, we will apply modeling to explain why the random-walk algorithm that *E. coli* uses to explore its environment is in fact an extremely clever way of locating resources.
+This question is a biologically deep one and it has no intuitive answer. However, in this module's final lesson, we will build a model to explain why *E. coli*'s random-walk algorithm with a variation in tumbling frequency is in fact an extremely clever way of locating resources in a strange new land.
 
 [Next lesson](home_conclusion){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}

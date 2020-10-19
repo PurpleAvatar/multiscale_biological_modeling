@@ -24,7 +24,7 @@ To measure average-case behavior, we will run our random walk simulations many t
 
 We now will specify the details of the two strategies.
 
-###Strategy 1: Standard random walk
+### Strategy 1: Standard random walk
 
 The duration of each run follows an exponential distribution with mean equal to an experimentally verified tun length.
 
@@ -38,7 +38,7 @@ In the following tutorial, we simulate strategy 1 and use a Jupyter notebook to 
 {: style="font-size: 100%; text-align: center;"}
 
 
-###Strategy 2: Chemotactic random walk
+### Strategy 2: Chemotactic random walk
 
 When no change in ligand concentration is detected, the duration of run follows an exponential distrubtion with mean equals to the background run duration *t*<sub>0</sub>. When the cell senses concentration change, the cell changes the expected run duration *t*, with *t* = *t*<sub>0</sub> * (1 + 10 · Δ[*L*]). Since expected run duration should always be positive, we require *t* = max(*t*, 0.000001). To account for the fact that tumbling can't be limitlessly reduced, we require *t* = min(*t*, 4 · *t*<sub>0</sub>).
  - Tumble. The duration of cell tumble follows an exponential distribution with mean 0.1s[^Saragosti2012]. When it tumbles, we assume it only changes the orientation for the next run but doesn't move in space. The degree of reorientation follows a uniform distribution from 0° to 360°.

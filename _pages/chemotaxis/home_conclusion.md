@@ -62,15 +62,13 @@ while *time* < duration:
 
 ## Comparing the two strategies
 
-Visualize trajectories of 3 cells using strategy 1 versus strategy 2.
+The following figure visualizes the trajectories of three cells using strategy 1 (left) versus strategy 2 (right). After 500 seconds, cells using the standard standard walk strategy travel away from the origin, and some of them are located at places with higher concentrations. The cells using chemotactic strategy, on the other hand, successfully move towards the goal and stay near it.
 
 ![image-center](../assets/images/chemotaxis_traj_compare_uniform.png){: .align-center}
 Sample trajectories for the two strategies. Left: standard random walk; right: chemotactic random walk. The background color indicates concentration: white -> red = low -> high; black dots are starting points; red dots are the points they reached at the end of the simulation; colorful dashed lines represent trajectories (one color one cell): dark -> bright color = older -> newer time points; blue cross indicates the highest concentration (1500, 1500).
 {: style="font-size: medium;"}
 
-After 500 seconds, cells using the standard standard walk strategy travel away from the origin, and some of them are located at places with higher concentrations. The cells using chemotactic strategy, on the other hand, successfully move towards the goal and stay near it.
-
-To confirm what we observed in the trajectories is representative of the performance of the two strategies, let's compare the performance of 500 cells for 1500 seconds. The following figure summarizes the average distances of the 500 cells for both strategies.
+Of course, we should be wary of our small sample size. To confirm that what we observed in these trajectories is true on average, we will compare the two strategies for 500 simulations. The following figure summarizes the average distances to the goal of the 500 cells for both strategies.
 
 ![image-center](../assets/images/chemotaxis_performance_compare_uniform.png){: .align-center}
 Average distances through time. Red: standard random walk; blue: chemotactic random walk. The two colored lines indicates average distances for the 500 cells; the shaded area represents one standard deviation.

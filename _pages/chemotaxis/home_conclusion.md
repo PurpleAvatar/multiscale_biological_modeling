@@ -26,13 +26,13 @@ We now will specify the details of the two strategies.
 
 ### Strategy 1: Standard random walk
 
-The duration of each run follows an exponential distribution with mean equal to an experimentally verified tun length.
+Given a specified amount of time to run the simulation, the model takes the following steps. First, we select a random direction of movement along with a duration of our tumble. The degree of reorientation follows a uniform distribution from 0° to 360°. The duration of each tumble follows an exponential distribution with mean 0.1s[^Saragosti2012]. As the result of a tumble, the cell only changes its orientation, not its position.
 
-When the cell tumbles, we assume that it only changes its orientation and does not change position. The degree of reorientation follows a uniform distribution from 0° to 360°. The duration of each tumble follows an exponential distribution with mean 0.1s[^Saragosti2012].
+We then select a random duration to run and let the bacterium run in that direction for the specified amount of time. The duration of each run follows an exponential distribution with mean equal to an experimentally verified run length.
 
-For a specified amount of time, the model takes the following steps. First, we select a random direction of movement along with a duration of our tumble. We then select a random duration to run and let the bacterium run in that direction for the specified amount of time. We then increment the total time by the time required for tumbling and running.
+We then iterate these two steps of tumbling and running until the total time used is equal to the time devoted to the simulation.
 
-In the following tutorial, we simulate strategy 1 and use a Jupyter notebook to visualize the results of the simulation.
+In the following tutorial, we simulate this strategy using a Jupyter notebook that will help us visualize the results of the simulation.
 
 [Visit standard random walk tutorial](tutorial_purerandom){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
@@ -40,27 +40,20 @@ In the following tutorial, we simulate strategy 1 and use a Jupyter notebook to 
 
 ### Strategy 2: Chemotactic random walk
 
-When no change in ligand concentration is detected, the duration of run follows an exponential distrubtion with mean equals to the background run duration *t*<sub>0</sub>. When the cell senses concentration change, the cell changes the expected run duration *t*, with *t* = *t*<sub>0</sub> * (1 + 10 · Δ[*L*]). Since expected run duration should always be positive, we require *t* = max(*t*, 0.000001). To account for the fact that tumbling can't be limitlessly reduced, we require *t* = min(*t*, 4 · *t*<sub>0</sub>).
- - Tumble. The duration of cell tumble follows an exponential distribution with mean 0.1s[^Saragosti2012]. When it tumbles, we assume it only changes the orientation for the next run but doesn't move in space. The degree of reorientation follows a uniform distribution from 0° to 360°.
- - Response. As we've seen in the BNG model, the cell can respond to the gradient change within 0.5 seconds. In this model, we allow cells to re-measure the concentration after it runs for 0.5 seconds.
+In our second strategy, we mimic the modified random walk that we discussed in previous lessons. The bacterium will still follow a run and tumble model, but the duration of its runs (and therefore its tumbling frequency) depends on the relative change in attractant concentration that it detects.
 
-For each cell, our simulation follows this procedure:
+To ensure a mathematically controlled comparison, we will use the same approach for determining the duration of a tumble and the resulting direction of a run as in strategy 1.
 
-while *time* < duration:
-- Assess the current concentration
-- Update the current expected run duration *t*, sample the current run duration *curr_run_time*
-- If *curr_run_time* < 0.5s:
-    1. run for *curr_run_time* second along current direction
-    2. Sample the duration of tumble *curr_tumble_time* and the resulted direction
-    3. increment t by *curr_run_time* and *curr_tumble_time*
-- If *curr_run_time* > 0.5s:
-    1. run for 0.5s along current direction
-    2. increment *time* by 0.5s (and then the cell will re-assess the new concentration, and decide the duration of next run)
+This strategy will therefore differ only in how it chooses the length of a run. Let *t*<sub>0</sub> to denote the mean background run duration used in the first strategy, and let Δ[*L*] denote the difference between the ligand concentration *L*(*x*, *y*) at the current point and the ligand concentration at the cell's previous point. We would like to choose a simple formula for the expected run duration like *t*<sub>0</sub> * (1 + 10 · Δ[*L*]). The only issue is that if Δ[*L*] is less than -0.1, then the run duration could be negative, and if Δ[*L*] is very large then we could run in one direction for too long without assessing the ligand concentration.
+
+As a result, we will choose a duration for our run step by first taking the maximum of 0.000001 and *t*<sub>0</sub> * (1 + 10 · Δ[*L*]); then, we take the minimum of the resulting value and 4 · *t*<sub>0</sub>.
+
+As with the first strategy, our simulated cell will alternate between tumbling and running until the total amount of time devoted to the simulation has been consumed.
 
 [Visit chemotactic walk tutorial](tutorial_walk){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
-## Comparing the two strategies
+## Comparing the two random walk strategies
 
 The following figure visualizes the trajectories of three cells using strategy 1 (left) versus strategy 2 (right). After 500 seconds, cells using the standard standard walk strategy travel away from the origin, and some of them are located at places with higher concentrations. The cells using chemotactic strategy, on the other hand, successfully move towards the goal and stay near it.
 

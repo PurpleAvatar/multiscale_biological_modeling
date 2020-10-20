@@ -70,7 +70,18 @@ Phillip is passionate about open online education, and his education projects ha
       <div class="container">
         <h2>Mert Inan</h2>
         <p class="title">Content Developer</p>
-        <p markdown="1"> Mert is currently a computer science Ph.D. student at the University of Pittsburgh. Mert is an alumni of the master’s of computational biology program at the Carnegie Mellon University. He loves interdisciplinary fields and have been working at the intersection of computation, biology, neuroscience, and machine intelligence. Unlocking the secrets of biology is a pleasure that Mert truly enjoys even under quarantine conditions.</p>
+        <p markdown="1"> Mert is currently a computer science Ph.D. student at the University of Pittsburgh. Mert is an alum of the M.S. in computational biology program at Carnegie Mellon University. He loves interdisciplinary fields and has been working at the intersection of computation, biology, neuroscience, and machine intelligence. Unlocking the secrets of biology is a pleasure that Mert truly enjoys even under quarantine conditions.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <img src="../assets/images/Nicole_Matamala.jpg" alt="Nicole Matamala" style="display:block; margin:auto; width:256px; border-radius:50%">
+      <div class="container">
+        <h2>Nicole Matamala</h2>
+        <p class="title">Content Developer</p>
+        <p>Nicole Matamala is an alum of the B.S. in computational biology program at Carnegie Mellon University.</p>
       </div>
     </div>
   </div>

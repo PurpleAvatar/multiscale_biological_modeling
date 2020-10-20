@@ -20,11 +20,11 @@
                             {% endfor %}
                         </ul>
                     </li>
-                {% else %}
-                    <li class="masthead__menu-item">
-                        <a href="{{ site.baseurl }}{{ link.url }}">{{ link.title }}</a>
-                    </li>
                 {% endif %}
+                <li class="masthead__menu-item">
+                    <a href="{{ site.baseurl }}{{ link.url }}">{{ link.title }}</a>
+                </li>
+
             {% endfor %}
         </ul>
         <!--

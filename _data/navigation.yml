@@ -6,7 +6,6 @@ main:
   - title: "Contact Us"
     url: /contact/
   - title: "Take the Course"
-    url: /contact/
     sublinks:
       - title: "Prologue: introducing biological modeling with Turing patterns"
         url: /prologue/
@@ -18,7 +17,6 @@ main:
         url: /coronavirus/home
       - title: "Module 4: training a computer to count white blood cells automatically"
         url: /wbcells/tutorial
-    url: /contact/
 
 
 prologue:

@@ -46,7 +46,7 @@ To ensure a mathematically controlled comparison, we will use the same approach 
 
 This strategy will therefore differ only in how it chooses the length of a run. Let *t*<sub>0</sub> denote the mean background run duration, which in the first strategy was equal to 1 second, and let Δ[*L*] denote the difference between the ligand concentration *L*(*x*, *y*) at the current point and the ligand concentration at the cell's previous point. We would like to choose a simple formula for the expected run duration like *t*<sub>0</sub> * (1 + 10 · Δ[*L*]). The only issue is that if Δ[*L*] is less than -0.1, then the run duration could be negative, and if Δ[*L*] is very large then we could run in one direction for too long without assessing the ligand concentration.
 
-As a result, we will choose a duration for our run step by first taking the maximum of 0.000001 and *t*<sub>0</sub> * (1 + 10 · Δ[*L*]); then, we take the minimum of the resulting value and 4 · *t*<sub>0</sub>.
+As a result, we will choose an expected duration for our run step by first taking the maximum of 0.000001 and *t*<sub>0</sub> * (1 + 10 · Δ[*L*]); then, we take the minimum of the resulting value and 4 · *t*<sub>0</sub>. We use this expected duration as the mean for the exponential distribution for this step, and sample the run duration.
 
 As with the first strategy, our simulated cell will alternate between tumbling and running until the total amount of time devoted to the simulation has been consumed. In the following tutorial, we will adapt the Jupyter notebook that we built in the previous tutorial to simulate this strategy. We then will compare the two strategies in the next section.
 

@@ -14,9 +14,9 @@ main:
         url: /motifs/home
       - title: "The Genius of E. coli's Chemotaxis Algorithm"
         url: /chemotaxis/home
-      - title: "Coronavirus"
+      - title: "Studying the Structure of the Coronavirus Spike Protein"
         url: /coronavirus/home
-      - title: "White Blood Cells"
+      - title: "Training an Algorithm to Count White Blood Cells Automatically"
         url: /wbcells/tutorial
 
 

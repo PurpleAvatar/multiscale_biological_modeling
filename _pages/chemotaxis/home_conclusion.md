@@ -48,28 +48,30 @@ This strategy will therefore differ only in how it chooses the length of a run. 
 
 As a result, we will choose a duration for our run step by first taking the maximum of 0.000001 and *t*<sub>0</sub> * (1 + 10 · Δ[*L*]); then, we take the minimum of the resulting value and 4 · *t*<sub>0</sub>.
 
-As with the first strategy, our simulated cell will alternate between tumbling and running until the total amount of time devoted to the simulation has been consumed.
+As with the first strategy, our simulated cell will alternate between tumbling and running until the total amount of time devoted to the simulation has been consumed. In the following tutorial, we will adapt the Jupyter notebook that we built in the previous tutorial to simulate this strategy. We then will compare the two strategies in the next section.
 
 [Visit chemotactic walk tutorial](tutorial_walk){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
-## Comparing the two random walk strategies
+## Comparing the effectiveness of our two random walk strategies
 
-The following figure visualizes the trajectories of three cells using strategy 1 (left) versus strategy 2 (right). After 500 seconds, cells using the standard standard walk strategy travel away from the origin, and some of them are located at places with higher concentrations. The cells using chemotactic strategy, on the other hand, successfully move towards the goal and stay near it.
+The following figure visualizes the trajectories of three cells using strategy 1 (left) and strategy 2 (right). After 500 seconds, cells using strategy 1 have traveled away from the origin, and some of them are found in locations with higher concentrations. The cells using strategy 2, however, quickly hone in on the goal and remain near it.
 
 ![image-center](../assets/images/chemotaxis_traj_compare_uniform.png){: .align-center}
-Sample trajectories for the two strategies. Left: standard random walk; right: chemotactic random walk. The background color indicates concentration: white -> red = low -> high; black dots are starting points; red dots are the points they reached at the end of the simulation; colorful dashed lines represent trajectories (one color one cell): dark -> bright color = older -> newer time points; blue cross indicates the highest concentration (1500, 1500).
+Sample trajectories for the two strategies. The standard random walk strategy is shown on the left, and the chemotactic random walk is shown on the right. Regions that are more heavily colored red correspond to higher concentrations of ligand, with a goal having maximum concentration at the point (1500, 1500), which is highlighted using a blue square. A single cell's walk is colored from darker to lighter colors across the time frame of the trajectory.
 {: style="font-size: medium;"}
 
-Of course, we should be wary of our small sample size. To confirm that what we observed in these trajectories is true on average, we will compare the two strategies for 500 simulations. The following figure summarizes the average distances to the goal of the 500 cells for both strategies.
+Of course, we should be wary of our small sample size. To confirm that what we observed in these trajectories is true on average, we will compare the two strategies for many simulations. The following figure plots the cell's average distance to the goal over 500 simulations for both strategies.
 
 ![image-center](../assets/images/chemotaxis_performance_compare_uniform.png){: .align-center}
-Average distances through time. Red: standard random walk; blue: chemotactic random walk. The two colored lines indicates average distances for the 500 cells; the shaded area represents one standard deviation.
+Average distance to the goal plotted over time for 500 cellular simulations following each of the two strategies; the standard random walk is shown in red, and the chemotactic random walk is shown in blue. The shaded area for each strategy represents one standard deviation from the average.
 {: style="font-size: medium;"}
 
-With standard random walk, the average distances towards the goal doesn't decrease. The large standard deviation indicates that many cells are closer to the goal, but many move in the wrong direction. With chemotactic strategy, the cells are able to get closer to the goal. The small standard deviation after the line flattens indicates that the cells are also able to stay near the goal.
+Using strategy 1, cells have some chance of reaching the goal because they tend to spread out over time, but there is no aspect of the strategy that would keep the cells at the goal, and so the average distance to the goal does not decrease. With strategy 2, the cells are able to get closer to the goal and remain there due to the small standard deviation in their distance to the goal.
 
-Why is the chemotactic strategy better? It is almost as if the attractant detection serves as a "rubber band" -- if it's far from the bacterium, it is not allowed to go very far from the attractant.  As it nears it the tumbling frequency decreases which helps it travel farther. Once it hits the attractant anywhere that it goes, the tumbling frequency *increases*, preventing it from running far away.
+Strategy 2 corresponds to a very slight change in strategy 1 in which we allow the cell to run for a greater distance if it senses an increase in the attractant concentration. But the direction of travel is still *random*. So why would this strategy be so much better than a pure random walk?
+
+The attractant detection serves as a sort of "rubber band". If the bacterium is traveling down an attractant gradient (i.e., away from an attractant), then it is not allowed to travel very far in a single step. If an increase of attractant is detected, then the cell can travel farther before tumbling. On average, then, this effect helps to pull the bacterium in the direction of increasing attractant, even though each of its steps is taken in a random direction.
 
 ## Why is bacterial background tumbling frequency constant across species?
 

@@ -48,7 +48,7 @@ Rename your `.bngl` file as `ligand_receptor.bngl`. Now you should be able to st
 
 We will walk through all codes, but for your reference, BNG documentation can be found [here](http://comet.lehman.cuny.edu/griffeth/BioNetGenTutorialFromBioNetWiki.pdf).
 
-We need to tell BNG the rules for our model. To specify our model, specify the `begin model` and `end model`. We will add all model specification information between the two lines. Add molecules to the model under the `molecule types` section. The `(t)` specifies that molecule `L` contains one component: the binding site with `T`. Same for `T`: the `(l)` specifies the component binding to `L`. We will use this component for L-R binding later.
+We need to tell BNG the rules for our model. To specify our model, specify the `begin model` and `end model`. We will add all model specification information between the two lines. Add molecules to the model under the `molecule types` section. The `(t)` specifies that molecule `L` contains one component: the binding site with `T`. Same for `T`: the `(l)` specifies the component binding to `L`. We will use this component for L-R binding later. Here, the letter of components indicates its binding partner (for example, `t` indicates binding with `T`), but feel free to substitute with other notations.
 
 ~~~ ruby
 	begin model

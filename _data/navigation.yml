@@ -8,11 +8,11 @@ main:
   - title: "Take the Course"
     url: /contact/
     sublinks:
-      - title: "Prologue"
+      - title: "Prologue: An Introduction to Biological Modeling with Turing Patterns"
         url: /prologue/
-      - title: "Motifs"
+      - title: "Finding Motifs in Transcription Factor Networks"
         url: /motifs/home
-      - title: "Chemotaxis"
+      - title: "The Genius of E. coli's Chemotaxis Algorithm"
         url: /chemotaxis/home
       - title: "Coronavirus"
         url: /coronavirus/home

@@ -10,13 +10,13 @@ main:
     sublinks:
       - title: "Prologue: An Introduction to Biological Modeling with Turing Patterns"
         url: /prologue/
-      - title: "Finding Motifs in Transcription Factor Networks"
+      - title: "Module 1: Finding Motifs in Transcription Factor Networks"
         url: /motifs/home
-      - title: "The Genius of E. coli's Chemotaxis Algorithm"
+      - title: "Module 2: The Genius of E. coli's Chemotaxis Algorithm"
         url: /chemotaxis/home
-      - title: "Studying the Structure of the Coronavirus Spike Protein"
+      - title: "Module 3: Studying the Structure of the Coronavirus Spike Protein"
         url: /coronavirus/home
-      - title: "Training an Algorithm to Count White Blood Cells Automatically"
+      - title: "Module 4: Training an Algorithm to Count White Blood Cells Automatically"
         url: /wbcells/tutorial
 
 

@@ -36,7 +36,7 @@ prologue:
         url: /prologue/conclusion
       - title: "Exercises"
         url: /prologue/exercises
-  - title: "Tutorials"
+  - title: "Software Tutorials"
     children:
       - title: "Random walk using CellBlender"
         url: /prologue/tutorial-random-walk
@@ -70,7 +70,7 @@ motifs:
         url: /motifs/conclusion
       - title: "Exercises"
         url: /motifs/exercises
-  - title: Tutorials featuring MCell and CellBlender
+  - title: Software Tutorials (featuring MCell and CellBlender)
     children:
       - title: "Looking for loops in transcription factor networks"
         url: /motifs/tutorial_loops
@@ -105,7 +105,7 @@ chemotaxis:
         url: /chemotaxis/home_conclusion
       - title: "Exercises"
         url: /chemotaxis/home_exercise
-  - title: Tutorials featuring BioNetGen
+  - title: Software Tutorials (featuring BioNetGen)
     children:
       - title: "Starting BioNetGen simulation"
         url: /chemotaxis/tutorial_lr
@@ -151,7 +151,7 @@ coronavirus:
         url: /coronavirus/conclusion
       - title: Exercises
         url: /coronavirus/exercises
-  - title: Tutorials featuring ProDy
+  - title: Software Tutorials (featuring ProDy)
     children:
       - title: "Ab initio Structure Prediction"
         url: /coronavirus/tutorial_ab_initio

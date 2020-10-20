@@ -18,6 +18,7 @@ main:
         url: /coronavirus/home
       - title: "Module 4: training a computer to count white blood cells automatically"
         url: /wbcells/tutorial
+    url: /contact/
 
 
 prologue:

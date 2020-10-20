@@ -28,7 +28,7 @@ We now will specify the details of the two strategies.
 
 Given a specified amount of time to run the simulation, the model takes the following steps. First, we select a random direction of movement along with a duration of our tumble. The degree of reorientation follows a uniform distribution from 0° to 360°. The duration of each tumble follows an exponential distribution with mean 0.1s[^Saragosti2012]. As the result of a tumble, the cell only changes its orientation, not its position.
 
-We then select a random duration to run and let the bacterium run in that direction for the specified amount of time. The duration of each run follows an exponential distribution with mean equal to an experimentally verified run length.
+We then select a random duration to run and let the bacterium run in that direction for the specified amount of time. The duration of each run follows an exponential distribution with mean equal to some parameter *t*<sub>0</sub>, which we set equal to the experimentally verified value of 1 second.
 
 We then iterate these two steps of tumbling and running until the total time used is equal to the time devoted to the simulation.
 
@@ -44,7 +44,7 @@ In our second strategy, we mimic the modified random walk that we discussed in p
 
 To ensure a mathematically controlled comparison, we will use the same approach for determining the duration of a tumble and the resulting direction of a run as in strategy 1.
 
-This strategy will therefore differ only in how it chooses the length of a run. Let *t*<sub>0</sub> to denote the mean background run duration used in the first strategy, and let Δ[*L*] denote the difference between the ligand concentration *L*(*x*, *y*) at the current point and the ligand concentration at the cell's previous point. We would like to choose a simple formula for the expected run duration like *t*<sub>0</sub> * (1 + 10 · Δ[*L*]). The only issue is that if Δ[*L*] is less than -0.1, then the run duration could be negative, and if Δ[*L*] is very large then we could run in one direction for too long without assessing the ligand concentration.
+This strategy will therefore differ only in how it chooses the length of a run. Let *t*<sub>0</sub> denote the mean background run duration, which in the first strategy was equal to 1 second, and let Δ[*L*] denote the difference between the ligand concentration *L*(*x*, *y*) at the current point and the ligand concentration at the cell's previous point. We would like to choose a simple formula for the expected run duration like *t*<sub>0</sub> * (1 + 10 · Δ[*L*]). The only issue is that if Δ[*L*] is less than -0.1, then the run duration could be negative, and if Δ[*L*] is very large then we could run in one direction for too long without assessing the ligand concentration.
 
 As a result, we will choose a duration for our run step by first taking the maximum of 0.000001 and *t*<sub>0</sub> * (1 + 10 · Δ[*L*]); then, we take the minimum of the resulting value and 4 · *t*<sub>0</sub>.
 
@@ -75,50 +75,50 @@ The attractant detection serves as a sort of "rubber band". If the bacterium is 
 
 ## Why is bacterial background tumbling frequency constant across species?
 
-The question we left unanswered is why that one tumble per second appears to be an evolutionarily stable strategy.
+We have shown that a very slight change to a simple randomized algorithm can produce an elegant approach for exploring an unknown environment. But we left one more question unanswered. Why is it that a default tumbling frequency of one tumble per second appears to be evolutionarily stable across a wide range of bacteria?
 
-We will tweak the default tumbling frequency (represented as expected duration of run before each tumble, `time_exp`) for each simulation and see if some tumbling frequencies are better than others for bacteria to find the food.
+To address this question, we will make changes to *t*<sub>0</sub>, the default time for a run step, and see how this affects the ability of a simulated bacterium following the chemotactic strategy to locate the goal. You may like to adjust the value of *t*<sub>0</sub> in the [chemotactic walk tutorial](tutorial_walk) before continuing on.
 
-Let's go back to the [chemotactic walk tutorial](tutorial_walk), and visualize the trajectories, and quantitatively compare the performances for different background tumbling frequencies.
-
-With the visualization of trajectories, we see that the cells all move away from the starting point towards the target. However, how efficiently they get to the target is different for different expected run time. For example, after 800 seconds, the cells tumble every 0.2 second are still very far from the target; while those tumble every 5 seconds reach the target but don't stay there.
+The following figures show three trajectories for a few different values of *t*<sub>0</sub> and a simulation that lasts for 800 seconds. First, we set *t*<sub>0</sub> equal to 0.2 seconds and see that the bacteria are not able to walk far enough in a single step. That is, the "rubber band" effect is too rigid.
 
 ![image-center](../assets/images/chemotaxis_traj_0.2_uniform.png){: .align-center}
-Sample trajectories for tumble every 0.2 second. The background color indicates concentration: white -> red = low -> high; black dots are starting points; red dots are the points they reached at the end of the simulation; colorful dashed lines represent trajectories (one color one cell): dark -> bright color = older -> newer time points; blue cross is (1500, 1500).
+Three sample trajectories of a simulated cell following the chemotactic random walk strategy with a tumble every 0.2 seconds on average.
 {: style="font-size: medium;"}
 
-![image-center](../assets/images/chemotaxis_traj_1.0_uniform.png){: .align-center}
-Sample trajectories for tumble every 1.0 second.
-{: style="font-size: medium; text-align: center;" }
+If we increase *t*<sub>0</sub> to 5.0 seconds, then the rubber band becomes too flexible, meaning that cells can run past the goal without being able to put on the brakes by tumbling.
 
 ![image-center](../assets/images/chemotaxis_traj_5.0_uniform.png){: .align-center}
-Sample trajectories for tumble every 5.0 second.
-{: style="font-size: medium; text-align: center;"}
-
-What should a good trajectory look like? A cell should move fast towards the target; after reaching the goal, it should tumble immediately when moving to somewhere with a lower concentration and thus stay around the goal region. If we plot average distances to the goal through time, a good `time_exp` should be characterized by a fast decrease in distance to the goal, followed by flattening as close to the target as possible.
-
-To identify the background tumbling frequencies that allow the cells to reach the target fast and stay close to it, let's plot average distances of 500 cells to (1500, 1500) for a variety of background tumbling frequencies.
-
-![image-center](../assets/images/chemotaxis_performance_uniform.png){: .align-center}
-Average distances through time. Each colored line indicates a background tumbling frequency, plotting average distances for the 500 cells; the shaded area represents one standard deviation.
+Three sample trajectories of a simulated cell following the chemotactic random walk strategy with a tumble every 5 seconds on average.
 {: style="font-size: medium;"}
 
-There is a tradeoff between moving towards the target fast and staying there. For large `time_exp` values (10.0, 5.0, 2.0), distances to center decrease very quickly at the beginning of the simulation, but the cells don't stay there perfectly; the larger the `time_exp`, the further the distance becomes. For small `time_exp` values (0.1, 0.2, 0.5), the cells fail to move to the ligand efficiently. Note that for `time_exp = 0.5` and `time_exp = 1.0`, although both stay around the radius of saturation, `time_exp = 0.5` takes about 400s more. If you tried to allow 0.1 and 0.25 to flatten, they will take even longer.
+When we set *t*<sub>0</sub> equal to 1.0, we see a "Goldilocks" effect in which the rubber band effect is just right. The simulated bacterium can run for long enough at a time to head quickly toward the goal, and it tumbles frequently enough to keep it there.
 
-Now we can answer the question of why 1 tumble per second. The goal of chemotaxis is to find the high concentration region and stay there; and the faster the cell can achieve this goal the better. If cells tumble too much, the goal can be achieved, but not efficiently; if tumble too little, they run by the attractant because they don't stop to sniff for food often enough.
+![image-center](../assets/images/chemotaxis_traj_1.0_uniform.png){: .align-center}
+Three sample trajectories of a simulated cell following the chemotactic random walk strategy with a tumble on average of once every second.
+{: style="font-size: medium;" }
 
-Recall the video of *E. coli* moving towards to the sugar crystal.
+To make this analysis more concrete, the figure below shows a plot of average distance to the goal over time for 500 simulated cells following the chemotactic strategy for a variety of choices of *t*<sub>0</sub>.
+
+![image-center](../assets/images/chemotaxis_performance_uniform.png){: .align-center}
+Average distance to the goal over time for 500 cells. Each colored line indicates the average distance to the goal over time a different value of *t*<sub>0</sub>; the shaded area represents one standard deviation.
+{: style="font-size: medium;"}
+
+This figure illustrates the a tradeoff between reaching the target quickly and being able to stay there. For large values of *t*<sub>0</sub> (10.0, 5.0, 2.0), distances to the goal decrease very quickly at the beginning of the simulation, but the cells don't stay there effectively. For small values of *t*<sub>0</sub> (0.1, 0.2, 0.5), the cells fail to move to the ligand efficiently. When *t*<sub>0</sub> is equal to 0.5 seconds, the cell is able to remain around the goal, but it takes about 400 seconds longer to reach the goal than when *t*<sub>0</sub> is equal to 1.0 seconds.
+
+Recall the video of *E. coli* moving towards the sugar crystal that we showed at the beginning of this module, which we reproduce below. The video shows that the behavior of real *E. coli* is reflected by our simulated bacteria. Bacteria generally move towards the crystal and then remain close to it; some bacteria run by the crystal, but they then turn around to move toward the crystal again.
 <iframe width="640" height="360" src="https://www.youtube.com/embed/F6QMU3KD7zw" frameborder="0" allowfullscreen></iframe>
-
-Our simulated *E. coli* do behave like those in the video. They generally move towards the crystal and stay close to it. Some run by the crystal, but then turn around to move toward the crystal again.
 
 ## Bacteria are even smarter than we thought
 
-However, like most things in biology, the reality turns out to be even more complex than we might imagine.
+If you closely examine the video above, then you may be curious about the way that bacteria turn around and head back toward the attractant. When they reorient, their behavior appears more intelligent than simply walking in a random direction. The reason for this behavior of the bacteria is that like most things in biology, the reality turns out to be more complex than we might at first imagine.
 
-One aspect of chemotaxis that is more advanced than we thought is the degree of reorientation. Instead of uniformly sample from 0° to 360°, the degree of reorientation when no attractant/repellant presents follows a normal distribution with mean of 68° and standard deviation of 36°[^Berg1972]. Moreover, the degree of reorientation depends on whether the cell is travelling along the correct direction. Consider - if a bacterium tumbles while moving up the gradient vs. moving down the gradient, how would the adjustment of degree of reorientation enable the cell to find food better? The cell should turn a smaller angle if moving up a gradient - because moving to a very different direction might cause it to lose the gradient. And it should turn a larger angle if moving down the gradient, because turning around could be a good idea. This directional persistence when traveling up or down the gradient is observed in experiments.[^Saragosti2011] We will explore the benefit of these in Exercise X.
+Specifically, researchers first showed that the direction of reorientation rather follows a normal distribution with mean of 68° and standard deviation of 36°[^Berg1972]. That is, the bacterium typically does not tend to make as drastic of a change to its orientation as it would in a pure random walk, which would on average have a change in orientation of 90°.
 
-With more experimental evidences, the model of *E. coli* chemotaxis has been constantly improved. That means the cellular systems powering bacteria like *E. coli* are even smarter than we originally thought!
+Yet recent research has shown that the direction of the bacterium's reorientation depends on whether the cell is traveling in the correct direction.[^Saragosti2011] If moving up an attractant gradient, then the cell makes much smaller changes in its reorientation angle. This allows the cell to retain its orientation if it is moving in the correct direction while also to turn around quickly if it starts heading in the wrong direction. We can even see this behavior in the figure above, in which bacteria traveling toward the attractant make only very slight changes in their direction of travel, but reorient themselves more drastically if they overshoot the target.
+
+In this module, we have witnessed the emergence of an apparently intelligent algorithm from a simple collection of reactions that drive an organism's biochemistry. What look like decisions made by the bacterium are in fact robust actions taken as the direct result of chemical reactions.
+
+Bacterial chemotaxis is probably the best understood biological system from the perspective of understanding how low-level chemical actions cause emergent behavior. But that is not to say that it is the only such system. As we pointed out in the prologue, this thread connecting chemical reactions to the behavior that we experience as life is for the most part still invisible. Although a simple system like bacterial chemotaxis can be understood concretely, a rationale for how microscopic processes drive macroscopic action is a mystery that may be unresolved for a very long time to come. 
 
 [^Saragosti2011]: Saragosti J, Calvez V, Bournaveas, N, Perthame B, Buguin A, Silberzan P. 2011. Directional persistence of chemotactic bacteria in a traveling concentration wave. PNAS. [Available online](https://www.pnas.org/content/pnas/108/39/16235.full.pdf)
 

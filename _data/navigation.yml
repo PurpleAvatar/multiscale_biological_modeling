@@ -6,6 +6,7 @@ main:
   - title: "Contact Us"
     url: /contact/
   - title: "Take the Course"
+    url: /contact/
     sublinks:
       - title: "Prologue"
         url: /prologue/

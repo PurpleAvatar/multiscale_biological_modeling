@@ -1,5 +1,5 @@
 ---
-title: "Multiscale Biological Modeling"
+title: "Multiscale Biological Modeling: A Free Online Course"
 classes: wide
 toc: true
 ---

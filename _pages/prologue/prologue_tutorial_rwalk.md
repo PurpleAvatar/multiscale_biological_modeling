@@ -36,26 +36,27 @@ Resizing the render preview window so that objects are visible in the center of 
 
 ![image-center](../assets/images/motifs_setup2.png){: .align-center}
 From the View menu, select `Top` to align the view directly overhead. With the plane object selected, follow the arrow over to the object parameters menu (the orange cube) and scale the plane by setting the first two values to “1.5”. Then, hover the mouse over the object and either use ctrl + “+” 6 times or the scroll wheel on your mouse to zoom in.
+{: style="font-size: medium;"}
 
 ## CellBlender layout
 
-This section will provide images and descriptions for any part of the Blender window referenced in the rest of the module. When a new file has been created, the following shows the menu options available:
+This section will provide images and descriptions for the different components of the Blender window. When a new file has been created, the following figure shows the menu options available.
 
 ![image-center](../assets/images/motifs_nav1.png){: .align-center}
 
-A. This is the window for modules like CellBlender. To start CellBlender, you must click on the “CellBlender” tab and then click the “Initialize CellBlender” button as shown in the image. This will then display the image shown in “D”
+**A:** This is the window for modules like CellBlender. To start CellBlender, you must click on the `CellBlender` tab and then click the `Initialize CellBlender` button as shown in the image. This will then display the image shown as “D” in the figure below.
 
-B. There are many “View” tabs throughout the Blender window. When referring to the “View” tab in future tutorials,  this is the one which will be referenced.
+**B:** There are many `View` tabs throughout the Blender window. Any future tutorials referring to the `View` tab are referencing this tab.
 
-C. This window contains many options relating to a selected object.
+**C:** This window contains options relating to a selected object.
 
 ![image-center](../assets/images/motifs_nav2.png){: .align-center}
 
-D. This is the CellBlender menu, which contains sub-menus which will be noted as follows: CellBlender > Model Objects. It is recommended that the edge of the window is dragged outward to increase visibility (see box “e” on the image)
+**D:** This is the CellBlender menu, which contains sub-menus which will be noted as follows: `CellBlender > Model Objects`. We recommend dragging the edge of the window outward to increase visibility (see box “e” on the image).
 
 ## CellBlender and the random walk
 
-Load up the "*CellBlender_Tutorial_Template.blend*" file. Save as *random_walk.blend*
+Load up the `CellBlender_Tutorial_Template.blend` file from the previous section and save your file as `random_walk.blend`.
 
 ![image-center](../assets/images/cellblender_location.png){: .align-center}
 

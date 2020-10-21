@@ -1,6 +1,6 @@
 ---
 permalink: /prologue/tutorial-diffusion
-title: "Tutorial on Diffusion"
+title: "Software Tutorial: Building a Diffusion Cellular Automaton with Jupyter Notebook"
 sidebar:
  nav: "prologue"
  nav: "prologue"

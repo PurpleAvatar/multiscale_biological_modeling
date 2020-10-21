@@ -1,6 +1,6 @@
 ---
 permalink: /prologue/tutorial-random-walk
-title: "Simulating particle diffusion with CellBlender"
+title: "Software Tutorial: Simulating particle diffusion with CellBlender"
 sidebar:
  nav: "prologue"
  nav: "prologue"

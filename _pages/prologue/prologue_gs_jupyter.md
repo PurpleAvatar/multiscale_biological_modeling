@@ -1,6 +1,6 @@
 ---
 permalink: /prologue/gs-jupyter
-title: "Gray Scott Jupyter Notebook"
+title: "Software Tutorial: Implementing the Gray-Scott Model for Coarse-Grained Reaction-Diffusion with Jupyter Notebook"
 sidebar:
  nav: "prologue"
  nav: "prologue"
@@ -17,9 +17,9 @@ The following tutorial will walk through a Jupyter Notebook, which can be downlo
 
 The following software and packages will need to be installed:
 
-| Installation Link | Version[^version] | Check Install | 
+| Installation Link | Version[^version] | Check Install |
 |:------|:-----:|------:|
-| [Python3](https://www.python.org/downloads/)  |3.7 |*python --version* | 
+| [Python3](https://www.python.org/downloads/)  |3.7 |*python --version* |
 | [Jupyter Notebook](https://jupyter.org/index.html) | 4.4.0 | *jupyter --version* |
 | [matplotlib](https://matplotlib.org/users/installing.html) | 2.2.3 | *conda list* or *pip list* |
 | [numpy](https://numpy.org/install/) | 1.15.1 | *conda list* or *pip list* |
@@ -28,7 +28,7 @@ The following software and packages will need to be installed:
 
 [^version]: Other versions may be compatible with this code, but those listed are known to work for this tutorial
 
-You can read more about various installation options [here](https://realpython.com/installing-python/) or [here](https://docs.conda.io/en/latest/). 
+You can read more about various installation options [here](https://realpython.com/installing-python/) or [here](https://docs.conda.io/en/latest/).
 
 ## Gray-Scott Jupyter Notebook Tutorial
 
@@ -65,18 +65,18 @@ Outputs:
 
 The next step takes in the parameters for the simulation in order to iterate through each grid which will be printed down below.
 
-To calculate these changes, we use a **convolve** function and a **laplacian**. The convolve function in this case takes two matrices, *A* and *lapl*, and uses *lapl* as a set of multipliers for each square in the matrix. We can see this operation in action in the image below. 
+To calculate these changes, we use a **convolve** function and a **laplacian**. The convolve function in this case takes two matrices, *A* and *lapl*, and uses *lapl* as a set of multipliers for each square in the matrix. We can see this operation in action in the image below.
 
 ![image-center](../assets/images/convolution.PNG){: .align-center}
 A single step in the convolution function which takes the first matrix and adds up each cell multiplied by the number in the second matrix. Here we see (0 * 0) + (2 * ¼) + (0 * 0) + (3 * ¼) + (1 * -1) + (2 * ¼) + (1 * 0) + (1 * ¼) +(1 * 0) = 1
 {: .text-center}
 
-Our matrix *lap1* is a laplacian because it describes the gradient, or change over time, for each point in the matrix (not to be confused with a “graph Laplacian”). Because we’re trying to describe the rate of diffusion over this system, the values in the laplacian excluding the center sum to 1. In our code, the value in the center is -1 because we’ve specified the *change* in the system with the convolution function i.e. the matrix *dA*, which we then add to the original matrix *A*. Thus the total sum of the laplacian is 0 which means the total change in number of molecules due to diffusion is 0, even if the molecules are moving to new locations. We don’t want any new molecules created due to just diffusion! 
+Our matrix *lap1* is a laplacian because it describes the gradient, or change over time, for each point in the matrix (not to be confused with a “graph Laplacian”). Because we’re trying to describe the rate of diffusion over this system, the values in the laplacian excluding the center sum to 1. In our code, the value in the center is -1 because we’ve specified the *change* in the system with the convolution function i.e. the matrix *dA*, which we then add to the original matrix *A*. Thus the total sum of the laplacian is 0 which means the total change in number of molecules due to diffusion is 0, even if the molecules are moving to new locations. We don’t want any new molecules created due to just diffusion!
 
-As an additional note, why not just have the center of the laplacian stay 0 and not use dA? While using dA, we can easily specify a time step *dt* < 1  which allows us to take smaller steps in the diffusion reaction for a more accurate simulation. Remember that the larger our approximation for each time step, the more information we might be losing in our model. This is part of the accuracy vs. efficiency tradeoff in modeling! 
+As an additional note, why not just have the center of the laplacian stay 0 and not use dA? While using dA, we can easily specify a time step *dt* < 1  which allows us to take smaller steps in the diffusion reaction for a more accurate simulation. Remember that the larger our approximation for each time step, the more information we might be losing in our model. This is part of the accuracy vs. efficiency tradeoff in modeling!
 
 ~~~ python
-images = [] 
+images = []
 
 def simulate(numIter, A, B, f, k, dt, dA, dB, lapl, plot_iter):
     print("Running Simulation")
@@ -98,9 +98,9 @@ def simulate(numIter, A, B, f, k, dt, dA, dB, lapl, plot_iter):
             filename = 'gs_images/gs_'+str(iter)+'.png'
             plt.savefig(filename)
             images.append(imageio.imread(filename))
-    
+
     return A, B
-~~~ 
+~~~
 
 The following parameters will set up our problem space by defining the grid size, the number of iterations we will range through , and where the predators and prey will start.
 
@@ -116,7 +116,7 @@ B = np.zeros((grid_size,grid_size))
 B[int(grid_size/2)-int(seed_size/2):int(grid_size/2)+int(seed_size/2)+1, \
 int(grid_size/2)-int(seed_size/2):int(grid_size/2)+int(seed_size/2)+1] = \
 np.ones((seed_size,seed_size))
-~~~ 
+~~~
 
 The following parameters will control how the predator and prey interact with each other.
 
@@ -129,7 +129,7 @@ dA = 1.0
 dB = 0.5
 lapl = np.array([[0.05, 0.2, 0.05],[0.2, -1.0, 0.2],[0.05, 0.2, 0.05]])
 plot_iter = 50
-~~~ 
+~~~
 
 Now we can run the program and view the simulations.
 
@@ -138,12 +138,12 @@ simulate(numIter, A, B, f, k, dt, dA, dB, lapl, plot_iter)
 imageio.mimsave('gs_images/gs_movie.gif', images)
 ~~~
 
-You should get images similar to the ones below. If you would like to see more images, you can adjust the *plot_iter* variable or *numIter* variable which controls how often the graph is plotted and how many iterations are in the simulation. 
+You should get images similar to the ones below. If you would like to see more images, you can adjust the *plot_iter* variable or *numIter* variable which controls how often the graph is plotted and how many iterations are in the simulation.
 
 ![image-center](../assets/images/gray_scott_jupyter_1.png)
 ![image-center](../assets/images/gray_scott_jupyter_2.png)
 ![image-center](../assets/images/gray_scott_jupyter_3.png){: .align-center}
 
-A great follow up would be to use a gif library package for python, such as Pillow or ImageIO. https://stackoverflow.com/questions/753190/programmatically-generate-video-or-animated-gif-in-python 
+A great follow up would be to use a gif library package for python, such as Pillow or ImageIO. https://stackoverflow.com/questions/753190/programmatically-generate-video-or-animated-gif-in-python
 
 <iframe width="640" height="360" src="../assets/gs_movie.gif" frameborder="0" allowfullscreen></iframe>

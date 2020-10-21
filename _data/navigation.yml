@@ -40,11 +40,11 @@ prologue:
     children:
       - title: "Simulating particle diffusion with CellBlender"
         url: /prologue/tutorial-random-walk
-      - title: "Turing patterns using CellBlender"
+      - title: "Generating Turing patterns with a reaction-diffusion simulation in CellBlender"
         url: /prologue/turing-cellblender
-      - title: "Diffusion automaton using Jupyter notebook"
+      - title: "Building a diffusion cellular automaton with Jupyter notebook"
         url: /prologue/tutorial-diffusion
-      - title: "The Gray-Scott model using Jupyter notebook"
+      - title: "Implementing the Gray-Scott model for coarse-grained reaction-diffusion with Jupyter notebook"
         url: /prologue/gs-jupyter
 
 

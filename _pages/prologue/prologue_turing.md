@@ -13,7 +13,7 @@ Our story begins with the unlikeliest of major characters: Alan Turing. If you h
 
 ![image-center](../assets/images/alan_turing_npg_cc.png){: .align-center}
 Alan Turing in 1951. © National Portrait Gallery, London.
-{: style="font-size: medium;"}
+{: style="font-size: medium; text-align: center;"}
 
 Turing was a genius cryptographer during World War II and helped break several German ciphers. But his most famous scientific contribution was a 1936 paper in which he introduced what has come to be known as a **Turing machine**[^numbers]. This hypothetical computer consists of an infinitely long tape of cells and a reader that can read one cell at a time. Each cell consists of only a single number, and the machine can move one cell at a time, reading and rewriting cells according to a finite collection of internal rules. Turing's major insight was that such a machine, though simple, is enormously powerful. Nearly a century after his work, any task that a computer performs, from the device you are using to read this to the world's most powerful supercomputer, could be implemented by a Turing machine.
 

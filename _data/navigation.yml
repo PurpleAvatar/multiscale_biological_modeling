@@ -22,27 +22,27 @@ main:
 prologue:
   - title: "Prologue: an Introduction to Biological Modeling via Random Walks and Turing Patterns"
     children:
-      - title: "Introduction: Life is random<br style="line-height: 150%" />"
+      - title: "Introduction: Life is random<br><br>"
         url: /prologue/
       - title: "Alan Turing and the zebra's stripes<hr style="height:30pt; visibility:hidden;" />"
         url: /prologue/turing
-      - title: "An introduction to random walks<br>"
+      - title: "An introduction to random walks<br><br>"
         url: /prologue/random-walk
-      - title: "A reaction-diffusion model and Turing patterns<br>"
+      - title: "A reaction-diffusion model and Turing patterns<br><br>"
         url: /prologue/animals
-      - title: "The Gray-Scott model: a cellular automaton generating Turing patterns<br>"
+      - title: "The Gray-Scott model: a cellular automaton generating Turing patterns<br><br>"
         url: /prologue/blocks
-      - title: "Conclusion: Turing patterns are fine-tuned<br>"
+      - title: "Conclusion: Turing patterns are fine-tuned<br><br>"
         url: /prologue/conclusion
       - title: "Exercises"
         url: /prologue/exercises
   - title: "Software Tutorials"
     children:
-      - title: "Simulating particle diffusion with CellBlender<br>"
+      - title: "Simulating particle diffusion with CellBlender<br><br>"
         url: /prologue/tutorial-random-walk
-      - title: "Generating Turing patterns with a reaction-diffusion simulation in CellBlender<br>"
+      - title: "Generating Turing patterns with a reaction-diffusion simulation in CellBlender<br><br>"
         url: /prologue/turing-cellblender
-      - title: "Building a diffusion cellular automaton with Jupyter notebook<br>"
+      - title: "Building a diffusion cellular automaton with Jupyter notebook<br><br>"
         url: /prologue/tutorial-diffusion
       - title: "Implementing the Gray-Scott model for coarse-grained reaction-diffusion with Jupyter notebook"
         url: /prologue/gs-jupyter

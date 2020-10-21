@@ -10,7 +10,7 @@ The following tutorial will use a Jupyter Notebook to implement the Gray-Scott m
 
 Assuming you have Jupyter notebook, create a new file called `gray-scott.ipynb` (you may instead want to duplicate and modify your `diffusion_automaton.ipynb` file from the diffusion tutorial). **Note**: You should make sure to save this notebook on the same level as another folder named `/dif_images`. ImageIO will not always create this folder automatically, so you may need to create it manually.
 
-At the top of the notebook, we need the following imports and declarations.
+At the top of the notebook, we need the following imports and declarations along with a specification of the `simulate` function that will drive our Gray-Scott simulation.
 
 ~~~ python
 import matplotlib.pyplot as plt
@@ -22,7 +22,7 @@ import imageio
 %matplotlib inline
 
 '''
-simulate function
+Simulate function
 Description: Simulate the Gray-Scott model for numIter iterations.
 Inputs:
     - numIter:  number of iterations
@@ -33,7 +33,7 @@ Inputs:
     - dt:       time constant
     - dA:       prey diffusion constant
     - dB:       predator diffusion constant
-    - Lapl:     Laplacian matrix to calculate diffusion
+    - lapl:     3 x 3 Laplacian matrix to calculate diffusion
 
 Outputs:
     - A_matrices:   Prey matrices over the course of the simulation
@@ -41,14 +41,12 @@ Outputs:
 '''
 ~~~
 
-The next step takes in the parameters for the simulation in order to iterate through each grid which will be printed down below.
-
-POINT BACK TO DIFFUSION TUTORIAL
+The `Simulate` function will take in the same parameters as the `Diffuse` function from the diffusion tutorial, but it will also take parameters `f` and `k` corresponding to the Gray-Scott feed and kill parameters, respectively. The simulation is in fact very similar to the diffusion notebook except for a very slight change that we make by adding the feed, kill, and predator-prey reactions when we update the matrices `A` and `B` containing the concentrations of the two particles over all the cells in the grid.
 
 ~~~ python
 images = []
 
-def simulate(numIter, A, B, f, k, dt, dA, dB, lapl, plot_iter):
+def Simulate(numIter, A, B, f, k, dt, dA, dB, lapl, plot_iter):
     print("Running Simulation")
     start = time.time()
 
@@ -72,7 +70,7 @@ def simulate(numIter, A, B, f, k, dt, dA, dB, lapl, plot_iter):
     return A, B
 ~~~
 
-The following parameters will set up our problem space by defining the grid size, the number of iterations we will range through , and where the predators and prey will start.
+The following parameters will establish the grid size, the number of iterations we will range through, and where the predators and prey will start.
 
 ~~~ python
 # _*_*_*_*_*_*_*_*_* GRID PROPERTIES *_*_*_*_*_*_*_*_*_*
@@ -88,7 +86,7 @@ int(grid_size/2)-int(seed_size/2):int(grid_size/2)+int(seed_size/2)+1] = \
 np.ones((seed_size,seed_size))
 ~~~
 
-The following parameters will control how the predator and prey interact with each other.
+The remaining parameters establish feed rate, kill rate, time interval, diffusion rates, the Laplacian we will use, and how often to draw a board to an image when rendering the animation.
 
 ~~~ python
 # _*_*_*_*_*_*_*_*_* SIMULATION VARIABLES *_*_*_*_*_*_*_*_*_*
@@ -101,15 +99,18 @@ lapl = np.array([[0.05, 0.2, 0.05],[0.2, -1.0, 0.2],[0.05, 0.2, 0.05]])
 plot_iter = 50
 ~~~
 
-Now we can run the program and view the simulations.
+After adding the code below to the bottom of the notebook, we are now ready to save our file and run the program to generate the animations.
 
 ~~~ python
 simulate(numIter, A, B, f, k, dt, dA, dB, lapl, plot_iter)
 imageio.mimsave('gs_images/gs_movie.gif', images)
 ~~~
 
-You should get images similar to the ones below. If you would like to see more images, you can adjust the *plot_iter* variable or *numIter* variable which controls how often the graph is plotted and how many iterations are in the simulation.
+When you run your simulation, you should see an image analogous to the one in the diffusion simulation, but with much more complex behavior since we have added reactions to our model.  Try changing the feed and kill rate very slightly (e.g., by 0.01). How does this affect the end result of your simulation? What if you keep making changes to these parameters? do slight changes in the  should get images similar to the ones below.
 
+In the main text, we will discuss how much as we saw with the particle-based reaction-diffusion model, slight changes to the critical parameters in our model can produce vast differences in the beautiful patterns that emerge.
+
+<!--
 ![image-center](../assets/images/gray_scott_jupyter_1.png)
 ![image-center](../assets/images/gray_scott_jupyter_2.png)
 ![image-center](../assets/images/gray_scott_jupyter_3.png){: .align-center}
@@ -117,3 +118,4 @@ You should get images similar to the ones below. If you would like to see more i
 A great follow up would be to use a gif library package for python, such as Pillow or ImageIO. https://stackoverflow.com/questions/753190/programmatically-generate-video-or-animated-gif-in-python
 
 <iframe width="640" height="360" src="../assets/gs_movie.gif" frameborder="0" allowfullscreen></iframe>
+-->

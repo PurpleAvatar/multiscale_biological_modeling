@@ -22,17 +22,17 @@ main:
 prologue:
   - title: "Prologue: an Introduction to Biological Modeling via Random Walks and Turing Patterns"
     children:
-      - title: "Introduction: Life is random"
+      - title: "Introduction: Life is random<br>"
         url: /prologue/
-      - title: "Alan Turing and the zebra's stripes"
+      - title: "Alan Turing and the zebra's stripes<br>"
         url: /prologue/turing
-      - title: "An introduction to random walks"
+      - title: "An introduction to random walks<br>"
         url: /prologue/random-walk
-      - title: "A reaction-diffusion model and Turing patterns"
+      - title: "A reaction-diffusion model and Turing patterns<br>"
         url: /prologue/animals
-      - title: "The Gray-Scott model: a cellular automaton generating Turing patterns"
+      - title: "The Gray-Scott model: a cellular automaton generating Turing patterns<br>"
         url: /prologue/blocks
-      - title: "Conclusion: Turing patterns are fine-tuned"
+      - title: "Conclusion: Turing patterns are fine-tuned<br>"
         url: /prologue/conclusion
       - title: "Exercises"
         url: /prologue/exercises
@@ -44,7 +44,7 @@ prologue:
         url: /prologue/turing-cellblender
       - title: "Building a diffusion cellular automaton with Jupyter notebook<br>"
         url: /prologue/tutorial-diffusion
-      - title: "Implementing the Gray-Scott model for coarse-grained reaction-diffusion with Jupyter notebook<br>"
+      - title: "Implementing the Gray-Scott model for coarse-grained reaction-diffusion with Jupyter notebook"
         url: /prologue/gs-jupyter
   - title: "Exercises"
     url: /prologue/exercises

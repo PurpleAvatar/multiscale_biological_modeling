@@ -18,7 +18,7 @@ We have mentioned that our experience of the world is often influenced by the ra
 Let's generate an animation of a particle following a random walk. The video below shows a randomly walking particle, shown in red, taking 1000 steps.
 
 <center>
-<iframe width="100%" src="../assets/random_walk_1.mp4" frameborder="0" allowfullscreen></iframe>
+<iframe width="800" src="../assets/random_walk_1.mp4" frameborder="0" allowfullscreen></iframe>
 </center>
 
 The distance that the particle wanders from its starting point may surprise you. And yet the astute scientist would point out that this is just a single particle; perhaps the typical particle would be much more of a homebody.

@@ -4,37 +4,13 @@ title: "Software Tutorial: Implementing the Gray-Scott Model for Coarse-Grained 
 sidebar:
  nav: "prologue"
  nav: "prologue"
-toc: true
-toc_sticky: true
 ---
 
-## Setting Up
+The following tutorial will use a Jupyter Notebook to implement the Gray-Scott model. It requires a familiarity with Python, and installation instructions can be found in our coarse-grained [diffusion tutorial](tutorial-diffusion). If you are interested in downloading the completed notebook, please click <a href="../downloads/Gray-Scott_Reaction_Diffusion_Model.ipynb" download="Gray-Scott_Reaction_Diffusion_Model.ipynb">here</a>.
 
-The following tutorial will walk through a Jupyter Notebook, which can be downloaded <a href="../downloads/Gray-Scott_Reaction_Diffusion_Model.ipynb" download="Gray-Scott_Reaction_Diffusion_Model.ipynb">here</a>.
+Assuming you have Jupyter notebook, create a new file called `gray-scott.ipynb` (you may instead want to duplicate and modify your `diffusion_automaton.ipynb` file from the diffusion tutorial). **Note**: You should make sure to save this notebook on the same level as another folder named `/dif_images`. ImageIO will not always create this folder automatically, so you may need to create it manually.
 
-If you have not already installed
-
-**NOTE**: You will need to place this file on the same level as another folder named "/gs_images". ImageIO will not always create this folder automatically, so it may need to be created manually.
-{: .notice--primary}
-
-The following software and packages will need to be installed:
-
-| Installation Link | Version[^version] | Check Install |
-|:------|:-----:|------:|
-| [Python3](https://www.python.org/downloads/)  |3.7 |*python --version* |
-| [Jupyter Notebook](https://jupyter.org/index.html) | 4.4.0 | *jupyter --version* |
-| [matplotlib](https://matplotlib.org/users/installing.html) | 2.2.3 | *conda list* or *pip list* |
-| [numpy](https://numpy.org/install/) | 1.15.1 | *conda list* or *pip list* |
-| [scipy](https://www.scipy.org/install.html) |  1.1.0 | *conda list* or *pip list* |
-| [imageio](https://imageio.readthedocs.io/en/stable/installation.html) | 2.4.1 | *conda list* or *pip list* |
-
-[^version]: Other versions may be compatible with this code, but those listed are known to work for this tutorial
-
-You can read more about various installation options [here](https://realpython.com/installing-python/) or [here](https://docs.conda.io/en/latest/).
-
-## Gray-Scott Jupyter Notebook Tutorial
-
-In this Jupyter notebook, we will be simulating a Turing pattern generator, called the Gray-Scott Reaction-Diffusion model. Gray-Scott model is a model that has only two variables: a prey and a predator. Predator eats the prey to multiply and prey is present in the environment constantly.
+At the top of the notebook, we need the following imports and declarations.
 
 ~~~ python
 import matplotlib.pyplot as plt

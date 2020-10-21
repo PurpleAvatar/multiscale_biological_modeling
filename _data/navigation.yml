@@ -46,6 +46,8 @@ prologue:
         url: /prologue/tutorial-diffusion
       - title: "Implementing the Gray-Scott model for coarse-grained reaction-diffusion with Jupyter notebook"
         url: /prologue/gs-jupyter
+  - title: "Exercises"
+    url: /prologue/exercises
 
 
 

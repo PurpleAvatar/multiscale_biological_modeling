@@ -22,9 +22,9 @@ main:
 prologue:
   - title: "Prologue: an Introduction to Biological Modeling via Random Walks and Turing Patterns"
     children:
-      - title: "Introduction: Life is random<br style="line-height: 100px" />"
+      - title: "Introduction: Life is random<br style="line-height: 150%" />"
         url: /prologue/
-      - title: "Alan Turing and the zebra's stripes<br>"
+      - title: "Alan Turing and the zebra's stripes<hr style="height:30pt; visibility:hidden;" />"
         url: /prologue/turing
       - title: "An introduction to random walks<br>"
         url: /prologue/random-walk

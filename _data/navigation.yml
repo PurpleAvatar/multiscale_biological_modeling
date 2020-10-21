@@ -20,7 +20,7 @@ main:
 
 
 prologue:
-  - title: "Prologue: Random Walks and Turing Patterns"
+  - title: "Prologue: an Introduction to Biological Modeling via Random Walks and Turing Patterns"
     children:
       - title: "Introduction: Life is random"
         url: /prologue/
@@ -38,7 +38,7 @@ prologue:
         url: /prologue/exercises
   - title: "Software Tutorials"
     children:
-      - title: "Random walk using CellBlender"
+      - title: "Simulating particle diffusion with CellBlender"
         url: /prologue/tutorial-random-walk
       - title: "Turing patterns using CellBlender"
         url: /prologue/turing-cellblender

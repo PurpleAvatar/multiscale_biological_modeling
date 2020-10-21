@@ -1,6 +1,6 @@
 ---
 permalink: /prologue/animals
-title: "A Reaction-Diffusion Model and Turing Patterns"
+title: "A Reaction-Diffusion Model Generating Turing Patterns"
 sidebar:
  nav: "prologue"
 toc: true
@@ -61,10 +61,12 @@ You can think of all these parameters as dials we can turn, observing how the sy
 
 A reaction like *A* + 2*B* → 3*B* is typically thought of as occurring at a **bulk reaction rate**, which is the total number of reactions occurring as a function of the concentration of reactants. In the following tutorial, CellBlender uses the software **MCell** to simulate our reaction-diffusion model; MCell is built upon some advanced probabilistic methods that allow it to use the bulk reaction rate to determine the probability that a reaction will happen if the particles needed as reactants collide. The same goes for the feed and kill reactions; new *A* particles are formed, and old *B* particles are destroyed, via probabilities that are computed from reaction rates. For now, you can think of the rate of a reaction as directly related to its probability of occurring.
 
+When we return from this tutorial, we will examine the patterns that we are able to draw within this tutorial.
+
 [Visit tutorial](turing-cellblender){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
-## Tuning parameters produces different Turing patterns
+## Tuning reaction-diffusion parameters produces different Turing patterns
 
 For some parameter values, our reaction-diffusion system is not particularly interesting.  For example, the following animation is produced for *k* = 500,000 and *f* = 1000. It shows that if *k* is too high, then the *B* particles will die out more quickly than they are replenished by the reaction with *A* particles, and so only *A* particles will be left. In this animation, *A* particles have been colored green, and *B* particles have been colored red.
 

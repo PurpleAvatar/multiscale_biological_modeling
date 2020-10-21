@@ -28,7 +28,7 @@ prologue:
         url: /prologue/turing
       - title: "An introduction to random walks<br><br>"
         url: /prologue/random-walk
-      - title: "A reaction-diffusion model and Turing patterns<br><br>"
+      - title: "A reaction-diffusion model generating Turing patterns<br><br>"
         url: /prologue/animals
       - title: "The Gray-Scott model: a cellular automaton generating Turing patterns<br><br>"
         url: /prologue/blocks

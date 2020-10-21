@@ -24,7 +24,7 @@ First, instead of downloading the newest version of Blender, go to the previous 
 
 Second, once Blender is downloaded,  the file path may be different from what is shown in the CellBlender tutorial- instead of *Blender/2.79/python/bin*, the pathway may be something like: *blender-2.79/2.79/python/bin*. Changing the name of the downloaded Blender folder to match the path in the tutorial may help reduce confusion.
 
-## Setting-up CellBlender simulations
+## Setting up CellBlender simulations
 
 From a new Blender file, initialize CellBlender. Delete the existing default cube by right-clicking on the cube to select the cube (an orange outline should be around the cube when it is selected) and pressing the “x” key to delete. Then, in the tab `CellBlender > Model Objects`, insert a new plane, following the figure below.
 
@@ -38,7 +38,7 @@ Resizing the render preview window so that objects are visible in the center of 
 From the View menu, select `Top` to align the view directly overhead. With the plane object selected, follow the arrow over to the object parameters menu (the orange cube) and scale the plane by setting the first two values to “1.5”. Then, hover the mouse over the object and either use ctrl + “+” 6 times or the scroll wheel on your mouse to zoom in.
 {: style="font-size: medium;"}
 
-## CellBlender layout
+## Navigating the CellBlender window
 
 This section will provide images and descriptions for the different components of the Blender window. When a new file has been created, the following figure shows the menu options available.
 
@@ -52,15 +52,15 @@ This section will provide images and descriptions for the different components o
 
 ![image-center](../assets/images/motifs_nav2.png){: .align-center}
 
-**D:** This is the CellBlender menu, which contains sub-menus which will be noted as follows: `CellBlender > Model Objects`. We recommend dragging the edge of the window outward to increase visibility (see box “e” on the image).
+**D:** This is the `CellBlender` menu, which opens after CellBlender has been initialized, and contains sub-menus which will be noted as follows: `CellBlender > Model Objects`. We recommend dragging the edge of the window outward to increase visibility (see box “e” on the image above).
 
 ## CellBlender and the random walk
 
-Load up the `CellBlender_Tutorial_Template.blend` file from the previous section and save your file as `random_walk.blend`.
+In CellBlender, load the `CellBlender_Tutorial_Template.blend` file from the previous section and save your file as `random_walk.blend`.
 
 ![image-center](../assets/images/cellblender_location.png){: .align-center}
 
-Right click on the plane object to ensure it is selected. Go to the object parameters menu (the orange cube) and move the plane by setting the third *location* value to 1.0 instead of 0.0
+Right click on the plane object to ensure it is selected. Go to the object parameters menu (the orange cube) and move the plane by setting the third `location` value to 1.0 instead of 0.0.
 
 Go to *CellBlender > Molecules* and create the following molecules:
 

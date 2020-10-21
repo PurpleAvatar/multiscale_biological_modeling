@@ -38,7 +38,7 @@ prologue:
         url: /prologue/exercises
   - title: "Software Tutorials"
     children:
-      - title: "Simulating particle diffusion with CellBlender"<br>
+      - title: "Simulating particle diffusion with CellBlender"<br><br>
         url: /prologue/tutorial-random-walk
       - title: "Generating Turing patterns with a reaction-diffusion simulation in CellBlender"
         url: /prologue/turing-cellblender

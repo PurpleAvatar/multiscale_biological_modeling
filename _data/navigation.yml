@@ -32,10 +32,8 @@ prologue:
         url: /prologue/animals
       - title: "The Gray-Scott model: a cellular automaton generating Turing patterns<br><br>"
         url: /prologue/blocks
-      - title: "Conclusion: Turing patterns are fine-tuned<br><br>"
+      - title: "Conclusion: Turing patterns are fine-tuned"
         url: /prologue/conclusion
-      - title: "Exercises"
-        url: /prologue/exercises
   - title: "Software Tutorials"
     children:
       - title: "Simulating particle diffusion with CellBlender<br><br>"
@@ -47,7 +45,9 @@ prologue:
       - title: "Implementing the Gray-Scott model for coarse-grained reaction-diffusion with Jupyter notebook"
         url: /prologue/gs-jupyter
   - title: "Exercises"
-    url: /prologue/exercises
+    children:
+      - title: "Exercises on Random Walks and Turing Patterns"
+        url: /prologue/exercises
 
 
 

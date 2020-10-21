@@ -24,7 +24,7 @@ prologue:
     children:
       - title: "Introduction: Life is random<br><br>"
         url: /prologue/
-      - title: "Alan Turing and the zebra's stripes<hr style="height:30pt; visibility:hidden;" />"
+      - title: "Alan Turing and the zebra's stripes<br><br>"
         url: /prologue/turing
       - title: "An introduction to random walks<br><br>"
         url: /prologue/random-walk

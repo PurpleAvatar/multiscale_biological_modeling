@@ -54,62 +54,59 @@ This section will provide images and descriptions for the different components o
 
 **D:** This is the `CellBlender` menu, which opens after CellBlender has been initialized, and contains sub-menus which will be noted as follows: `CellBlender > Model Objects`. We recommend dragging the edge of the window outward to increase visibility (see box “e” on the image above).
 
-## CellBlender and the random walk
+## Implementing particle diffusion
 
 In CellBlender, load the `CellBlender_Tutorial_Template.blend` file from the previous section and save your file as `random_walk.blend`.
 
 ![image-center](../assets/images/cellblender_location.png){: .align-center}
 
-Right click on the plane object to ensure it is selected. Go to the object parameters menu (the orange cube) and move the plane by setting the third `location` value to 1.0 instead of 0.0.
+Right click on the plane object to ensure it is selected. Visit the object parameters menu (the orange cube) and move the plane by setting the third `location` value to 1.0 instead of 0.0.
 
-Go to *CellBlender > Molecules* and create the following molecules:
+Then select `CellBlender > Molecules` and create the following molecules:
 
 ![image-center](../assets/images/motifs_norm1.png){: .align-center}
 
-1. Click on the plus button
-2. Select a color (such as orange)
-3. Name the molecule “X”
-4. Select the molecule type as “Surface Molecule”
-5. Add a diffusion constant of “1e-6”
-6. Up the scale factor to 5 (click and type “5” or use the arrows)
+1. Click on the `+` button.
+2. Select a color (such as orange).
+3. Name the molecule `X`.
+4. Select the molecule type as `Surface Molecule`.
+5. Add a diffusion constant of `1e-6`.
+6. Increase the scale factor to `5` (click and type `5` or use the arrows).
 
-Now go to *CellBlender > Molecule Placement* to set the following sites:
+Now visit `CellBlender > Molecule Placement` to set the following sites for molecules to be released:
 
 ![image-center](../assets/images/motifs_norm3.png){: .align-center}
 
-1. Click on the plus button
-2. Select or type in the molecule “X”
-3. Type in the name of the Object/Region “Plane”
-4. Set the Quantity to Release as “1”
+1. Click on the `+` button.
+2. Select or type in the molecule `X`.
+3. Type in the name of the Object/Region `Plane`.
+4. Set the Quantity to Release as `1`.
 
-Go to *CellBlender > Run Simulation* and select the following options:
+Finally, we are ready to run our diffusion simulation. Visit `CellBlender > Run Simulation` and select the following options:
 
 ![image-center](../assets/images/motifs_norm7.png){: .align-center}
 
-1. Set the number of iterations to “1000”
-2. Ensure the time step is set as “1e-6”
-3. Click Export & Run
+1. Set the number of iterations to `1000`.
+2. Ensure the time step is set as `1e-6`.
+3. Click `Export & Run`.
 
-Click on *CellBlender > Reload Visualization Data*
+The simulation should run quickly, and we are ready to visualize the outcome of the simulation. To do so, visit `CellBlender > Reload Visualization Data`. You have the option of watching the animation within the Blender window by clicking the play button at the bottom of the screen, as indicated in the figure below. Then, save your file.
 
 ![image-center](../assets/images/motifs_norm8.png){: .align-center}
 
-Save this file
-
-You have the option of watching the animation within the Blender window by clicking the play button at the bottom of the screen.
-
-You can also save and export this movie with the following steps:
+You can also save and export the movie of your animation using the following steps:
 
 ![image-center](../assets/images/cellblender_render.png){: .align-center}
 
-Click on the movie tab
-Scroll down to the file name
-Select a suitable location for the file
-Select the FFmpeg_video file format or whatever type works best for you
-Click on *Render > OpenGL Render Animation*
+1. Click on the movie tab.
+2. Scroll down to the file name.
+3. Select a suitable location for your file.
+4. Select your favorite file format (we suggest FFmpeg_video).
+5. Click on `Render > OpenGL Render Animation`.
 
-The movie will begin playing through, and when the animation is complete the movie file should be in the folder location you selected.
+The movie will begin playing, and when the animation is complete, the movie file should be found in the folder location you selected.
 
+Now that we have run and visualized our diffusion, we will head back to the main text, where we will continue on with our discussion of how the diffusion of particles can help us find Turing patterns.
 
-[Return to main text](random-walk#Ensuring-the-same-steady-state-concentration){: .btn .btn--primary .btn--large}
+[Return to main text](random-walk#brownian-motion-big-numbers-in-small-spaces){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}

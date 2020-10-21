@@ -10,7 +10,9 @@ toc_sticky: true
 
 ## Setting Up
 
-The following tutorial will walk through a Jupyter Notebook, which can be downloaded <a href="https://purpleavatar.github.io/multiscale_biological_modeling/downloads/Gray-Scott_Reaction_Diffusion_Model.ipynb" download="Gray-Scott_Reaction_Diffusion_Model.ipynb">here</a>.
+The following tutorial will walk through a Jupyter Notebook, which can be downloaded <a href="../downloads/Gray-Scott_Reaction_Diffusion_Model.ipynb" download="Gray-Scott_Reaction_Diffusion_Model.ipynb">here</a>.
+
+If you have not already installed
 
 **NOTE**: You will need to place this file on the same level as another folder named "/gs_images". ImageIO will not always create this folder automatically, so it may need to be created manually.
 {: .notice--primary}
@@ -65,15 +67,7 @@ Outputs:
 
 The next step takes in the parameters for the simulation in order to iterate through each grid which will be printed down below.
 
-To calculate these changes, we use a **convolve** function and a **laplacian**. The convolve function in this case takes two matrices, *A* and *lapl*, and uses *lapl* as a set of multipliers for each square in the matrix. We can see this operation in action in the image below.
-
-![image-center](../assets/images/convolution.PNG){: .align-center}
-A single step in the convolution function which takes the first matrix and adds up each cell multiplied by the number in the second matrix. Here we see (0 * 0) + (2 * ¼) + (0 * 0) + (3 * ¼) + (1 * -1) + (2 * ¼) + (1 * 0) + (1 * ¼) +(1 * 0) = 1
-{: .text-center}
-
-Our matrix *lap1* is a laplacian because it describes the gradient, or change over time, for each point in the matrix (not to be confused with a “graph Laplacian”). Because we’re trying to describe the rate of diffusion over this system, the values in the laplacian excluding the center sum to 1. In our code, the value in the center is -1 because we’ve specified the *change* in the system with the convolution function i.e. the matrix *dA*, which we then add to the original matrix *A*. Thus the total sum of the laplacian is 0 which means the total change in number of molecules due to diffusion is 0, even if the molecules are moving to new locations. We don’t want any new molecules created due to just diffusion!
-
-As an additional note, why not just have the center of the laplacian stay 0 and not use dA? While using dA, we can easily specify a time step *dt* < 1  which allows us to take smaller steps in the diffusion reaction for a more accurate simulation. Remember that the larger our approximation for each time step, the more information we might be losing in our model. This is part of the accuracy vs. efficiency tradeoff in modeling!
+POINT BACK TO DIFFUSION TUTORIAL
 
 ~~~ python
 images = []

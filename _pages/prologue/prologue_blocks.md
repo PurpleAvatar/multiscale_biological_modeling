@@ -9,7 +9,7 @@ toc_sticky: true
 
 ## A coarse-grained model of single particle diffusion
 
-Part of the modeler's work is not only to build models but to look for simple models of a system that capture the essence of what is being modeled but can be run quickly and scaled to large inputs.  Imagine, for example, how much computational power would be needed to build a particle-based model of your brain; the only way to study such a complicated system is by making simplifications.
+Part of the modeler's work is not only to build models but to look for simple models of a system that capture the essence of what is being modeled and that can be run quickly and scaled to large inputs.  Imagine, for example, how much computational power would be needed to build a particle-based model of your brain; the only way to study such a complicated system is by making simplifications.
 
 In our case, we have a very "fine-grained" reaction-diffusion model illustrating Turing patterns, and we will now present a faster "coarse-grained" model that will allow us to visualize Turing patterns. To do so, we will stop keeping track of individual particles and instead grid off two-dimensional space into blocks and store only the *concentration* of particles of the block (i.e., the number of particles in the block). To make things even simpler, we assume that there is some maximum concentration of particles possible, so that we can divide the number of particles by this maximum concentration and obtain a decimal number between 0 and 1.
 
@@ -67,7 +67,7 @@ A figure showing cellular concentrations after one time step for two particles <
 
 In the following tutorial, we will implement the cellular automaton using a **Jupyter notebook** and visualize how well this automaton mimics the diffusion of *A* and *B* particles. We will then continue on in the next section with adding reactions to our automaton model.
 
-[Visit Tutorial](tutorial-diffusion){: .btn .btn--primary .btn--large}
+[Visit tutorial](tutorial-diffusion){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 ## Adding reactions and completing the Gray-Scott model
@@ -107,7 +107,7 @@ As the result of all these processes, we update the concentrations of *A* and *B
 
 Applying these cell-based reaction-diffusion computations over all cells in parallel and over many generations forms a cellular automaton called the **Gray-Scott** model[^gs]. We should now feel confident expanding the Jupyter notebook from the previous diffusion tutorial to include the additional three reactions. The question is: will we still see Turing patterns?
 
-[Visit Tutorial](gs-jupyter){: .btn .btn--primary .btn--large}
+[Visit tutorial](gs-jupyter){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 ## Reflection on the Gray-Scott model

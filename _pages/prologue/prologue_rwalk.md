@@ -35,7 +35,7 @@ The Random Walk Theorem does not say that after *n* steps a particle will be exa
 <iframe width="640" height="360" src="../assets/random_walk_200.mp4" frameborder="0" allowfullscreen></iframe>
 </center>
 
-If you are interested in seeing how to build this random walk simulation as an introduction to the software that we will soon be using for biological modeling, then please visit the following software tutorial. This tutorial uses **CellBlender**, an add-on to the popular open graphics software program **Blender**, that allows us to create and visualize biological models. 
+If you are interested in seeing how to build this random walk simulation as an introduction to the software that we will soon be using for biological modeling, then please visit the following software tutorial. This tutorial uses **CellBlender**, an add-on to the popular open graphics software program **Blender**, that allows us to create and visualize biological models.
 
 We have designed this course so that you can appreciate the key ideas behind the biological models that we build without following software tutorials. But we also provide these tutorials so that you can explore the modeling software that we have used to generate our conclusions. If you find this software helpful, perhaps you can even use this software in your own work!
 
@@ -44,7 +44,7 @@ We have designed this course so that you can appreciate the key ideas behind the
 
 ## Brownian motion: big numbers in small spaces
 
-Our experience of the world confirms the animations above. The seemingly random movements of particles suspended in a medium via **Brownian motion** will cause those particles to move away from their starting point, even if the concentration of these particles is uniform. We understand, for example, that an infected COVID-19 patient can infect many others in an enclosed space in a short time frame via droplets. To take a less macabre example, we also know that when a cake is baking in the oven at home, we will not need to wait long for wonderful smells to waft outward from the kitchen.
+Our experience of the world confirms what we see in the animations produced by CellBlender. The seemingly random movements of particles suspended in a medium via **Brownian motion** will cause those particles to move away from their starting point, even if the concentration of these particles is uniform. We understand, for example, that an infected COVID-19 patient can infect many others in an enclosed space in a short time frame. To take a less macabre example, we also know that when a cake is baking in the oven at home, we will not need to wait long for wonderful smells to waft outward from the kitchen.
 
 Why should a scientist care about random walks? Later in this course, we will see that the random walk model is at the core of a simple but powerful approach that bacteria like *E. coli* use to explore their environment in the hunt for food. In the next lesson, we will see that mimicking the random movements of particles will be important for building a biological model in which we allow particles to move naturally and interact when they collide.
 

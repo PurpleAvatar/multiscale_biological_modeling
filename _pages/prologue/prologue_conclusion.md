@@ -26,10 +26,6 @@ It turns out that although Turing's work offers a compelling argument for how ze
 
 Furthermore, note the following two photos of giant pufferfish. These fish are genetically very similar, but their skin patterns are very different. What may seem like a drastic change in the appearance of the fish from spots to stripes is likely attributable to a small change of parameters in a fine-tuned biological system that, like all of life, is powered by randomness.
 
-## A final note
-
-Thank you for making it this far! We hope that you are enjoying the course. You can join the next module of the course by clicking on the "next module" button below. In the meantime, we ask that you complete the <a href="https://forms.gle/egmmBxGtBciDPYNS8" target="_blank">course survey</a> if you have not done so already.
-
 ![image-center](../assets/images/Juvenile_Mbu_pufferfish.jpg){: .align-center}
 A juvenile Mbu Pufferfish with a very familiar pattern![^youngfish]
 {: style="font-size: medium;"}
@@ -37,6 +33,11 @@ A juvenile Mbu Pufferfish with a very familiar pattern![^youngfish]
 ![image-center](../assets/images/Giant_Puffer_fish_skin_pattern.jpg){: .align-center}
 An adult Mbu Pufferfish exhibiting another familiar pattern![^pufferfish]
 {: style="font-size: medium;"}
+
+## A final note
+
+Thank you for making it this far! We hope that you are enjoying the course. You can join the next module of the course by clicking on the "next module" button below. In the meantime, we ask that you complete the <a href="https://forms.gle/egmmBxGtBciDPYNS8" target="_blank">course survey</a> if you have not done so already.
+
 
 [Next module](/motifs){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}

@@ -24,7 +24,11 @@ Later in this course, we will see an example of a biological system that is the 
 
 It turns out that although Turing's work offers a compelling argument for how zebras might have gotten their stripes, the exact mechanism by which these stripes form is still an unresolved question. However, the pigmentation of *zebrafish* does follow a Turing pattern because two types of pigment cells follow a reaction-diffusion model much like the one we presented above.[^zebrafish]
 
-Furthermore, note the following two photos of giant pufferfish. These fish are genetically very similar, but their skin patterns are very different. What may seem like a drastic change in the appearance of the fish from spots to stripes is likely attributable to a small change of parameters in a fine-tuned biological system that, like all of life, is powered  by randomness.
+Furthermore, note the following two photos of giant pufferfish. These fish are genetically very similar, but their skin patterns are very different. What may seem like a drastic change in the appearance of the fish from spots to stripes is likely attributable to a small change of parameters in a fine-tuned biological system that, like all of life, is powered by randomness.
+
+## A final note
+
+Thank you for making it this far! We hope that you are enjoying the course. You can join the next module of the course by clicking on the "next module" button below. In the meantime, we ask that you complete the <a href="https://forms.gle/egmmBxGtBciDPYNS8" target="_blank">course survey</a> if you have not done so already.
 
 ![image-center](../assets/images/Juvenile_Mbu_pufferfish.jpg){: .align-center}
 A juvenile Mbu Pufferfish with a very familiar pattern![^youngfish]
@@ -34,7 +38,7 @@ A juvenile Mbu Pufferfish with a very familiar pattern![^youngfish]
 An adult Mbu Pufferfish exhibiting another familiar pattern![^pufferfish]
 {: style="font-size: medium;"}
 
-[Visit Exercises](exercises){: .btn .btn--primary .btn--large}
+[Next module](/motifs){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 [^robert]: "Reaction-Diffusion by the Gray-Scott Model: Pearson's Parametrization" © 1996-2020 Robert P. Munafo https://mrob.com/pub/comp/xmorphia/index.html

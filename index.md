@@ -25,7 +25,7 @@ We hope that we have piqued your interest! If you are ready to jump in and get s
 
 ## Course survey and testimonials
 
-Please use our anonymous survey form so that we can track information about the demographics of our learners.
+Please use our anonymous <a href="https://forms.gle/egmmBxGtBciDPYNS8" target="_blank">survey</a> so that we can track information about the demographics of our learners.
 
 If you loved our course, then we would love to hear from you as a testimonial. Please use the [contact](contact) form to get in touch!
 

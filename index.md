@@ -23,25 +23,15 @@ We hope that we have piqued your interest! If you are ready to jump in and get s
 [Get started!](prologue){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
-## Course survey
-
-* The first way is through a survey (use the Google form from P4L as a template.)
-
 ## Course survey and testimonials
 
 Please use our anonymous survey form so that we can track information about the demographics of our learners.
 
-If you loved our course, then we would love to hear from you as a testimonial.
-
-
-
-* The second way is through writing us a testimonial -- use the [contact](contact) form to get in touch!
-
-* Offline dissemination. Point that it is part of the materials for PreCollege program in computational biology.
+If you loved our course, then we would love to hear from you as a testimonial. Please use the [contact](contact) form to get in touch!
 
 ## For instructors
 
-If you are an instructor who is interested in adopting any or all of these materials in your teaching, please feel free to do so! We only ask you to:
+If you are an instructor who is interested in adopting any or all of these materials in your teaching, please feel free to do so! We only ask that you:
 
 1. Make sure to refer your students to our website.
 

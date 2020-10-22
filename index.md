@@ -25,11 +25,15 @@ We hope that we have piqued your interest! If you are ready to jump in and get s
 
 ## Course survey
 
-## Testimonials
-
-If you are a learner who enjoyed this course, we would love to hear from you.
-
 * The first way is through a survey (use the Google form from P4L as a template.)
+
+## Course survey and testimonials
+
+Please use our anonymous survey form so that we can track information about the demographics of our learners.
+
+If you loved our course, then we would love to hear from you as a testimonial.
+
+
 
 * The second way is through writing us a testimonial -- use the [contact](contact) form to get in touch!
 
@@ -68,8 +72,6 @@ This online course is a dissemination effort for the <a href="https://mmbios.pit
 ## Other
 
 * Synergies with MMBioS projects so that users of one software resource can become familiar with other resources
-
-* Pointer to MMBioS in general with logo of MMBioS -- URL: https://mmbios.pitt.edu
 
 * Overview of what each software resource does.
 

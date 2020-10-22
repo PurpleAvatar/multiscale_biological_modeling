@@ -35,7 +35,6 @@ If you are a learner who enjoyed this course, we would love to hear from you.
 
 * Offline dissemination. Point that it is part of the materials for PreCollege program in computational biology.
 
-
 ## For instructors
 
 If you are an instructor who is interested in adopting any or all of these materials in your teaching, please feel free to do so! We only ask you to:

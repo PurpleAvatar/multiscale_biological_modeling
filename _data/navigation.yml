@@ -1,10 +1,10 @@
 main:
-  - title: "About"
-    url: /about/
   - title: "Meet the Team"
     url: /meet-the-team/
   - title: "Contact Us"
     url: /contact/
+  - title: "About"
+    url: /about/
   - title: "Take the Course"
     sublinks:
       - title: "Prologue: introducing biological modeling with Turing patterns"

@@ -39,7 +39,7 @@ If you are an instructor who is interested in adopting any or all of these mater
 
 ## Meet the team
 
-This course was lovingly put together by a professor and a team of students in Carnegie Mellon University's [Computational Biology Department](http://cbd.cmu.edu).  You can meet us on our [Meet the Team](meet-the-team) page.
+This course was lovingly put together by a professor and a team of superlative students in Carnegie Mellon University's [Computational Biology Department](http://cbd.cmu.edu), one of seven departments within CMU's School of Computer Science. You can meet us on our [Meet the Team](meet-the-team) page.
 
 ## You might also enjoy...
 

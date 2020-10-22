@@ -6,15 +6,15 @@ toc: true
 
 ## Welcome to our course!
 
-Have you ever wondered how your cells can react to their environment and perform complex tasks without any intelligence guiding them? Have you ever wondered what process causes zebras to have stripes?  Have you wondered why the original SARS coronavirus did not become a pandemic in 2003 but SARS-CoV-2 has spread like wildfire through the population?
-
-We will see how each of these questions can be answered by biological modeling.
-
 Welcome to our free and open course in multiscale biological modeling.
 
 That may seem like a mouthful. By "biological modeling" we mean that we are going to build  models of biological systems that are relatively simple but nevertheless provide us with some deep insights into how those systems operate.
 
 Furthermore, we will perform modeling of molecular and cellular biological systems at multiple "scales" of resolution, from the study of a single protein molecule within a cell's cytoplasm, to observing the interaction of proteins molecules interacting with each other as a whole, to a much wider view that considers cells themselves interacting with each other.  There are fascinating insights lurking at all these levels of resolution, and the goal of this course is to help learners understand some approaches that lead us to these insights.
+
+Have you ever wondered how your cells can react to their environment and perform complex tasks without any intelligence guiding them? Have you ever wondered what process causes zebras to have stripes?  Have you wondered why the original SARS coronavirus did not become a pandemic in 2003 but SARS-CoV-2 has spread like wildfire through the population?
+
+We will see how each of these questions can be answered by biological modeling.
 
 ## Getting started
 
@@ -39,16 +39,18 @@ Whether you are a student who would like to provide us with a testimonial, or an
 
 * The first way is through a survey (use the Google form from P4L as a template.)
 
-* The second way is through writing us a testimonial -- use the contact form to get in touch!
-
-## For instructors
+* The second way is through writing us a testimonial -- use the [contact](contact) form to get in touch!
 
 * Offline dissemination. Point that it is part of the materials for PreCollege program in computational biology.
+
+
+## For instructors
 
 If you are an instructor who is interested in adopting any or all of these materials in your teaching, please feel free to do so! We only ask you to:
 
 1. Make sure to refer your students to our website.
-2. Get in touch with us using our [Contact](contact) form so that we can add you to our list of adopting instructors and provide you with updates about the project in the future. We plan to build a community of instructors adopting this course.
+
+2. Get in touch with us using our [contact](contact) form so that we can add you to our list of adopting instructors and provide you with updates about the project in the future. We plan to build a community of instructors adopting this course.
 
 ## You might also enjoy...
 

@@ -23,19 +23,11 @@ We hope that we have piqued your interest! If you are ready to jump in and get s
 [Get started!](prologue){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
-## Meet the team
+## Course survey
 
-This course was lovingly put together by a professor and a team of students in Carnegie Mellon University's [Computational Biology Department](http://cbd.cmu.edu).  You can meet us on our [Meet the Team](meet-the-team) page.
+## Testimonials
 
-## Contact
-
-Whether you are a student who would like to provide us with a testimonial, or an instructor interested in adopting this material for your own courses, we would be happy to hear from you.  Please reach out to us on the [Contact](contact) page.
-
-## Current offline projects
-
-## Course survey and testimonials
-
-* If you are a learner who enjoyed this course, we would love to hear from you.
+If you are a learner who enjoyed this course, we would love to hear from you.
 
 * The first way is through a survey (use the Google form from P4L as a template.)
 
@@ -51,6 +43,10 @@ If you are an instructor who is interested in adopting any or all of these mater
 1. Make sure to refer your students to our website.
 
 2. Get in touch with us using our [contact](contact) form so that we can add you to our list of adopting instructors and provide you with updates about the project in the future. We plan to build a community of instructors adopting this course.
+
+## Meet the team
+
+This course was lovingly put together by a professor and a team of students in Carnegie Mellon University's [Computational Biology Department](http://cbd.cmu.edu).  You can meet us on our [Meet the Team](meet-the-team) page.
 
 ## You might also enjoy...
 

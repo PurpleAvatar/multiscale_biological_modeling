@@ -23,13 +23,17 @@ toc: true
 
 ## You might also enjoy...
 
-If you enjoy this course, we think that you would also love some of the other free and open educational materials developed by the project founder (Phillip Compeau).  We list these below.
+If you enjoy this course, and you are interested into
+
+If you enjoy this course, we think that you would also love some of the other free and open educational materials developed by the project founder.  We list these below.
 
 * <a href="http://compeau.cbd.cmu.edu/programming-for-lovers/" target="_blank">Programming for Lovers</a>: FILL IN
 
 * <a href="https://bioinformaticsalgorithms.org" target="_blank">Bioinformatics Algorithms: An Active Learning Approach</a>: FILL IN
 
 * <a href="http://rosalind.info" target="_blank">Rosalind</a>: FILL IN
+
+## Acknowledgements
 
 ## Other
 
